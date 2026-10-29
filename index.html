@@ -151,13 +151,14 @@ img { max-width:100%; display:block }
 }
 .sc-card:hover .sc-arrow { opacity:1 }
 
-/* Card positions */
-.sc-card:nth-child(1) { left:5%;  top:10px; rotate:-8deg; z-index:3 }
-.sc-card:nth-child(2) { left:26%; top:40px; rotate:-3deg; z-index:4 }
-.sc-card:nth-child(3) { left:48%; top:20px; rotate: 4deg; z-index:3 }
-.sc-card:nth-child(4) { left:68%; top:50px; rotate: 9deg; z-index:2 }
+/* Card positions — tags moved OUT of cards-stage, so nth-child counts correctly */
+.sc-card:nth-child(1) { left:0%;   top:30px; rotate:-9deg; z-index:2 }
+.sc-card:nth-child(2) { left:20%;  top:10px; rotate:-4deg; z-index:3 }
+.sc-card:nth-child(3) { left:40%;  top:25px; rotate: 2deg; z-index:5 }
+.sc-card:nth-child(4) { left:60%;  top:15px; rotate: 6deg; z-index:3 }
+.sc-card:nth-child(5) { left:78%;  top:40px; rotate:11deg; z-index:2 }
 
-/* floating label tags */
+/* floating label tags — relative to .hero (position:relative) */
 .hero-tag {
   position:absolute;
   background:#fff;
@@ -168,10 +169,11 @@ img { max-width:100%; display:block }
   box-shadow:0 4px 16px rgba(0,0,0,.08);
   display:flex; align-items:center; gap:6px;
   white-space:nowrap;
+  z-index:10;
 }
-.tag-1 { top:5%;  left:2%;  color:#16a34a; background:#f0fdf4; border-color:#bbf7d0 }
-.tag-2 { top:30%; right:1%; color:#0068ff; background:#eff6ff; border-color:#bfdbfe }
-.tag-3 { bottom:5%; left:8%; color:#7c3aed; background:#faf5ff; border-color:#ddd6fe }
+.tag-1 { bottom:28%; left:4%;  color:#16a34a; background:#f0fdf4; border-color:#bbf7d0 }
+.tag-2 { bottom:20%; left:36%; color:#0068ff; background:#eff6ff; border-color:#bfdbfe }
+.tag-3 { bottom:14%; left:68%; color:#7c3aed; background:#faf5ff; border-color:#ddd6fe }
 
 /* ── STATS BAR ── */
 .stats-bar {
@@ -290,9 +292,10 @@ img { max-width:100%; display:block }
 @media(max-width:860px){
   .tpl-row { grid-template-columns:1fr; gap:36px }
   .tpl-row.reverse { direction:ltr }
-  .cards-stage { height:320px }
-  .sc-card { width:180px }
-  .sc-card:nth-child(3),.sc-card:nth-child(4) { display:none }
+  .cards-stage { height:300px }
+  .sc-card { width:160px }
+  .sc-card:nth-child(4),.sc-card:nth-child(5) { display:none }
+  .hero-tag { display:none }
 }
 
 /* ── SERVICES ── */
@@ -320,6 +323,79 @@ img { max-width:100%; display:block }
 .svc-price { font-size:1.5rem; font-weight:800; letter-spacing:-.03em; color:#0d0d0d }
 .svc-price small { font-size:.78rem; font-weight:400; color:#888 }
 @media(max-width:760px){.svc-grid{grid-template-columns:1fr}}
+
+/* ── PORTFOLIO (LIVE PROJECTS) ── */
+.portfolio-bg { background:#0d0d0d; color:#fff }
+.portfolio-bg .sec-label { color:#666 }
+.portfolio-bg .sec-label::before { background:#22c55e }
+.portfolio-bg .sec-h2 { color:#fff }
+.portfolio-bg .sec-p { color:#888 }
+.pf-grid {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:24px; margin-top:60px;
+}
+.pf-card {
+  background:#111;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:20px; overflow:hidden;
+  transition:.5s; position:relative;
+}
+.pf-card:hover {
+  transform:translateY(-8px);
+  border-color:rgba(34,197,94,.3);
+  box-shadow:0 40px 80px rgba(0,0,0,.5);
+}
+.pf-browser {
+  background:#1a1a1a; padding:11px 16px;
+  display:flex; align-items:center; gap:12px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.pf-url-bar {
+  flex:1; background:#222; border-radius:6px;
+  padding:5px 12px; font-size:.72rem; color:#666;
+  border:1px solid rgba(255,255,255,.06);
+}
+.pf-screen {
+  width:100%; aspect-ratio:16/9;
+  object-fit:cover; object-position:top;
+  display:block; transition:.8s;
+  filter:brightness(.95);
+}
+.pf-card:hover .pf-screen { filter:brightness(1.05) }
+.pf-overlay {
+  position:absolute; inset:0; top:40px;
+  background:linear-gradient(0deg,rgba(13,13,13,1) 0%,rgba(13,13,13,.4) 50%,transparent 100%);
+  pointer-events:none;
+}
+.pf-body { padding:24px 26px 28px }
+.pf-live {
+  display:inline-flex; align-items:center; gap:7px;
+  background:rgba(34,197,94,.12);
+  border:1px solid rgba(34,197,94,.3);
+  border-radius:999px; padding:5px 12px;
+  font-size:.7rem; font-weight:700; color:#22c55e;
+  margin-bottom:14px; letter-spacing:.05em;
+}
+.pf-live i { width:7px; height:7px; border-radius:50%; background:#22c55e; animation:blink 2s infinite }
+.pf-body h3 { font-size:1.4rem; font-weight:800; letter-spacing:-.03em; margin-bottom:8px; color:#fff }
+.pf-body p { color:#888; font-size:.88rem; line-height:1.65; margin-bottom:18px }
+.pf-chips { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:22px }
+.pf-chips span {
+  font-size:.68rem; font-weight:600;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:7px; padding:4px 10px; color:#aaa;
+}
+.pf-foot { display:flex; gap:10px }
+.btn-pf-visit {
+  display:inline-flex; align-items:center; gap:7px;
+  background:#22c55e; color:#fff;
+  padding:11px 22px; border-radius:10px;
+  font-weight:700; font-size:.82rem; transition:.3s;
+}
+.btn-pf-visit:hover { filter:brightness(1.1); transform:translateY(-2px) }
+.pf-card-solo { grid-column:1/-1; max-width:640px; margin:0 auto; width:100% }
+@media(max-width:760px){.pf-grid{grid-template-columns:1fr}.pf-card-solo{max-width:100%}}
 
 /* ── PROCESS ── */
 .prc-grid {
@@ -445,12 +521,13 @@ img { max-width:100%; display:block }
     <a href="https://zalo.me/0974100372" target="_blank" class="btn-secondary" id="hero-btn-zalo">Nhắn Zalo miễn phí</a>
   </div>
 
-  <!-- Scattered cards -->
-  <div class="cards-stage rv">
-    <div class="hero-tag tag-1">🌿 Spa Hội An</div>
-    <div class="hero-tag tag-2">✦ NOIR Nail Lounge</div>
-    <div class="hero-tag tag-3">🏮 Phố Hội Nail</div>
+  <!-- Floating tags — must be OUTSIDE cards-stage to avoid nth-child bug -->
+  <div class="hero-tag tag-1">🌿 Spa Hội An</div>
+  <div class="hero-tag tag-2">✦ NOIR Nail</div>
+  <div class="hero-tag tag-3">🏮 Tattoos by Thu</div>
 
+  <!-- Scattered cards — nth-child(1..5) counts correctly now -->
+  <div class="cards-stage rv">
     <a href="templates/spa-hoi-an/index.html" target="_blank" class="sc-card" id="card-spa">
       <img src="templates/spa-hoi-an/images/hero.png" alt="Spa Hội An">
       <div class="sc-label"><span>Spa Hội An</span><small>Xem demo →</small></div>
@@ -471,12 +548,21 @@ img { max-width:100%; display:block }
       <div class="sc-label"><span>Tiệm Nail</span><small>Xem demo →</small></div>
       <span class="sc-arrow">↗</span>
     </a>
+    <a href="https://tattoosbythu.com" target="_blank" rel="noopener" class="sc-card" id="card-tattoo">
+      <img src="https://tattoosbythu.com/wp-content/uploads/2026/06/tattoo-artist-thu-vo-le-hygienic-tattooing-process-usa.webp" alt="Tattoos by Thu" loading="lazy">
+      <div class="sc-label">
+        <span>Tattoos by Thu</span>
+        <small style="color:#22c55e;font-weight:700">● Live</small>
+      </div>
+      <span class="sc-arrow">↗</span>
+    </a>
   </div>
 </section>
 
 <!-- STATS -->
 <div class="stats-bar">
   <div><b>4+</b><small>Mẫu có sẵn</small></div>
+  <div><b>1+</b><small>Dự án live</small></div>
   <div><b>7 ngày</b><small>Bàn giao</small></div>
   <div><b>100%</b><small>Mobile ready</small></div>
   <div><b>Miễn phí</b><small>Tư vấn</small></div>
@@ -612,6 +698,48 @@ img { max-width:100%; display:block }
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section portfolio-bg" id="du-an">
+  <div style="padding:0 5%">
+    <div class="sec-label rv">Dự án thực tế</div>
+    <h2 class="sec-h2 rv">Website đã <em>bàn giao</em> live</h2>
+    <p class="sec-p rv">Những website thật đang hoạt động, có thể vào xem trực tiếp.</p>
+    <div class="pf-grid">
+
+      <!-- tattoosbythu.com -->
+      <div class="pf-card pf-card-solo rv">
+        <div class="pf-browser">
+          <div class="tpl-dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+          <div class="pf-url-bar">tattoosbythu.com</div>
+        </div>
+        <img
+          src="https://tattoosbythu.com/wp-content/uploads/2026/06/tattoo-artist-thu-vo-le-hygienic-tattooing-process-usa.webp"
+          alt="Tattoos by Thu website"
+          class="pf-screen"
+          loading="lazy"
+        >
+        <div class="pf-overlay"></div>
+        <div class="pf-body">
+          <div class="pf-live"><i></i> Đang hoạt động</div>
+          <h3>Tattoos by Thu</h3>
+          <p>Website cho tattoo artist chuyên nghiệp tại USA. WordPress, đa ngôn ngữ, SEO chuẩn, tích hợp booking và portfolio tác phẩm.</p>
+          <div class="pf-chips">
+            <span>WordPress</span>
+            <span>Tattoo Studio</span>
+            <span>USA Market</span>
+            <span>SEO Rank Math</span>
+            <span>Custom Design</span>
+          </div>
+          <div class="pf-foot">
+            <a href="https://tattoosbythu.com" target="_blank" rel="noopener" class="btn-pf-visit" id="visit-tattoobythu">🔗 Xem website live ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
