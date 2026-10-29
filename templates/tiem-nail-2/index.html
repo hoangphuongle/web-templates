@@ -55,20 +55,30 @@ h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
 <!-- ═══════════════ BASE: KẾT THÚC ═══════════════ -->
 </head>
 <body>
-  <!-- HP Showcase Bar -->
-  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(13,13,13,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:48px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 2px 24px rgba(0,0,0,.35)">
-    <span style="display:flex;align-items:center;gap:10px">
-      <span style="background:#22c55e;width:8px;height:8px;border-radius:50%;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
-      <b style="font-weight:700;letter-spacing:-.02em">Hoang Phuong.</b>
-      <span style="color:#666;display:none" class="hp-desk">&nbsp;·&nbsp;Bạn đang xem demo mẫu website</span>
-    </span>
-    <span style="display:flex;gap:8px;align-items:center">
-      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#999;text-decoration:none;font-size:12px;padding:6px 14px;border:1px solid rgba(255,255,255,.12);border-radius:999px;white-space:nowrap">← Xem tất cả mẫu</a>
-      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 18px;border-radius:999px;white-space:nowrap">Đặt mẫu này</a>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="https://hoangphuongle.github.io/web-templates/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">📞 0974 100 372</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Chốt ngay qua Zalo
+      </a>
     </span>
   </div>
-  <div style="height:48px"></div>
-  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.3}}@media(min-width:600px){.hp-desk{display:inline!important}}</style>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
 
 
 
