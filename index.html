@@ -497,6 +497,83 @@ img { max-width:100%; display:block }
 /* ── REVEAL ── */
 .rv { opacity:0; transform:translateY(30px); transition:1s cubic-bezier(.2,.7,.2,1) }
 .rv.show { opacity:1; transform:none }
+
+/* ── FILTER TABS ── */
+.filter-bar {
+  display:flex; gap:8px; flex-wrap:wrap; margin:36px 0 0;
+}
+.f-tab {
+  padding:9px 20px; border-radius:999px;
+  font-size:.82rem; font-weight:600;
+  border:1.5px solid rgba(0,0,0,.1);
+  background:#fff; color:#555;
+  cursor:pointer; transition:.25s;
+  user-select:none;
+}
+.f-tab:hover { border-color:#0d0d0d; color:#0d0d0d }
+.f-tab.active { background:#0d0d0d; color:#fff; border-color:#0d0d0d }
+.tpl-row { transition:opacity .3s, transform .3s }
+.tpl-row.hidden { display:none }
+
+/* ── TESTIMONIALS ── */
+.tst-bg { background:#fff }
+.tst-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:20px; margin-top:56px;
+}
+.tst-card {
+  background:#f7f6f2;
+  border-radius:20px; padding:30px 28px;
+  border:1px solid rgba(0,0,0,.06);
+  position:relative; transition:.4s;
+}
+.tst-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.07) }
+.tst-stars { color:#f59e0b; font-size:1rem; letter-spacing:2px; margin-bottom:16px }
+.tst-text {
+  font-size:.95rem; color:#333; line-height:1.75;
+  margin-bottom:22px; font-style:italic;
+}
+.tst-text::before { content:'\201C'; font-size:2rem; color:#ddd; line-height:0; vertical-align:-.4em; margin-right:4px }
+.tst-author { display:flex; align-items:center; gap:12px }
+.tst-avatar {
+  width:42px; height:42px; border-radius:50%;
+  background:linear-gradient(135deg,#22c55e,#0068ff);
+  display:grid; place-items:center;
+  font-weight:800; font-size:.9rem; color:#fff; flex-shrink:0;
+}
+.tst-name { font-weight:700; font-size:.88rem; color:#0d0d0d }
+.tst-role { font-size:.76rem; color:#888 }
+@media(max-width:760px){.tst-grid{grid-template-columns:1fr}}
+
+/* ── FAQ ── */
+.faq-list { max-width:720px; margin:52px auto 0; display:grid; gap:12px }
+.faq-item {
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:16px; overflow:hidden;
+  transition:.3s;
+}
+.faq-item:hover { border-color:rgba(0,0,0,.18) }
+.faq-q {
+  width:100%; text-align:left;
+  padding:20px 24px; background:none; border:none;
+  display:flex; align-items:center; justify-content:space-between;
+  font-size:.95rem; font-weight:700; color:#0d0d0d;
+  cursor:pointer; gap:16px;
+}
+.faq-icon {
+  width:28px; height:28px; border-radius:50%;
+  background:#f4f4f3; display:grid; place-items:center;
+  font-size:1rem; flex-shrink:0; transition:.35s;
+}
+.faq-item.open .faq-icon { transform:rotate(45deg); background:#0d0d0d; color:#fff }
+.faq-a {
+  max-height:0; overflow:hidden;
+  transition:max-height .4s cubic-bezier(.2,.8,.2,1);
+  font-size:.9rem; color:#555; line-height:1.75;
+}
+.faq-item.open .faq-a { max-height:300px }
+.faq-a-inner { padding:0 24px 20px }
 </style>
 </head>
 <body>
@@ -584,12 +661,19 @@ img { max-width:100%; display:block }
     <div class="sec-label rv">Mẫu website demo</div>
     <h2 class="sec-h2 rv">Xem <em>thực tế</em><br>trước khi quyết định</h2>
     <p class="sec-p rv">Tất cả mẫu đều chạy được ngay, responsive trên điện thoại. Click "Xem demo" để mở trang web thật.</p>
+    <!-- FILTER TABS -->
+    <div class="filter-bar rv" id="filterBar">
+      <button class="f-tab active" data-filter="all">Tất cả</button>
+      <button class="f-tab" data-filter="nail">Nail &amp; Beauty</button>
+      <button class="f-tab" data-filter="spa">Spa &amp; Wellness</button>
+      <button class="f-tab" data-filter="edu">Giáo dục</button>
+    </div>
   </div>
 
-  <div class="tpl-list">
+  <div class="tpl-list" id="tplList">
 
-    <!-- 1 -->
-    <div class="tpl-row rv">
+    <!-- 1: Spa -->
+    <div class="tpl-row rv" data-cat="spa">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag">Spa & Wellness</span>
         <div class="tpl-browser">
@@ -619,8 +703,8 @@ img { max-width:100%; display:block }
     </div>
     <div class="tpl-divider"></div>
 
-    <!-- 2 -->
-    <div class="tpl-row reverse rv">
+    <!-- 2: Nail -->
+    <div class="tpl-row reverse rv" data-cat="nail">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#d4af6a;color:#16120e">Nail · Luxury</span>
         <div class="tpl-browser">
@@ -649,8 +733,8 @@ img { max-width:100%; display:block }
     </div>
     <div class="tpl-divider"></div>
 
-    <!-- 3 -->
-    <div class="tpl-row rv">
+    <!-- 3: Nail -->
+    <div class="tpl-row rv" data-cat="nail">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#b8382a">Nail · Phố cổ</span>
         <div class="tpl-browser">
@@ -679,8 +763,8 @@ img { max-width:100%; display:block }
     </div>
     <div class="tpl-divider"></div>
 
-    <!-- 4 -->
-    <div class="tpl-row reverse rv">
+    <!-- 4: Nail -->
+    <div class="tpl-row reverse rv" data-cat="nail">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#e8578c">Nail · Hiện đại</span>
         <div class="tpl-browser">
@@ -709,8 +793,8 @@ img { max-width:100%; display:block }
     </div>
     <div class="tpl-divider"></div>
 
-    <!-- 5: BRITISH ACCENT -->
-    <div class="tpl-row rv">
+    <!-- 5: Education -->
+    <div class="tpl-row rv" data-cat="edu">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#1e3a5f">Giáo dục · Khóa học</span>
         <div class="tpl-browser">
@@ -858,6 +942,74 @@ img { max-width:100%; display:block }
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section tst-bg" id="faq" style="padding-top:80px;padding-bottom:80px">
+  <div style="text-align:center;max-width:600px;margin:0 auto">
+    <div class="sec-label rv" style="justify-content:center">Hỏi đáp</div>
+    <h2 class="sec-h2 rv">Câu hỏi <em>thường gặp</em></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item rv">
+      <button class="faq-q">Giá thiết kế website bao nhiêu?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Thiết kế theo mẫu có sẵn từ <strong>1.500.000đ</strong>. Thiết kế riêng hoàn toàn từ <strong>3.000.000đ</strong> tùy độ phức tạp. Bạn nhắn Zalo để được tư vấn cụ thể nhé!</div></div>
+    </div>
+    <div class="faq-item rv">
+      <button class="faq-q">Bao lâu thì có website?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Theo mẫu có sẵn: <strong>3–5 ngày</strong>. Thiết kế riêng: <strong>7–10 ngày</strong>. Thời gian tính từ khi nhận đủ thông tin (logo, ảnh, nội dung).</div></div>
+    </div>
+    <div class="faq-item rv">
+      <button class="faq-q">Sau khi nhận web có tự sửa được không?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Có! Mình hướng dẫn bạn cách cập nhật nội dung cơ bản. Nếu cần sửa nhiều, mình hỗ trợ đời sau bàn giao với giá ưu đãi.</div></div>
+    </div>
+    <div class="faq-item rv">
+      <button class="faq-q">Website có chạy trên điện thoại không?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">100% có! Tất cả mẫu đều được thiết kế <strong>mobile-first</strong> — đẹp trên điện thoại trước, sau đó mới tới máy tính. Khách vào từ Zalo, Facebook đều đẹp.</div></div>
+    </div>
+    <div class="faq-item rv">
+      <button class="faq-q">Có cần đăng ký domain (tên miền) không?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Không bắt buộc! Web có thể dùng link miễn phí (netlify.app). Nếu muốn domain riêng như <em>tiemnailcuaban.vn</em> thì thêm khoảng 300.000đ/năm, mình hậu rđăng ký cho.</div></div>
+    </div>
+    <div class="faq-item rv">
+      <button class="faq-q">Có gắn Zalo, Google Maps không?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Có hết! Nút Zalo nổi, số điện thoại click gọi thẳng, Google Maps nhúng vào địa chỉ — tất cả đều có trong gói thiết kế.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" id="testimonials" style="padding-top:60px">
+  <div style="text-align:center;max-width:560px;margin:0 auto">
+    <div class="sec-label rv" style="justify-content:center">Khách hàng nói gì</div>
+    <h2 class="sec-h2 rv">Họ đã có web <em>đẹp</em></h2>
+  </div>
+  <div class="tst-grid">
+    <div class="tst-card rv">
+      <div class="tst-stars">★★★★★</div>
+      <p class="tst-text">Sau 4 ngày là có web chạy luôn. Khách lút vào Facebook thấy link là bấm vào người ta chạm tiệm. Nhận rất nhiều lịch hơn trước.</p>
+      <div class="tst-author">
+        <div class="tst-avatar">L</div>
+        <div><div class="tst-name">Chị Lan</div><div class="tst-role">Chủ tiệm nail · TP.HCM</div></div>
+      </div>
+    </div>
+    <div class="tst-card rv">
+      <div class="tst-stars">★★★★★</div>
+      <p class="tst-text">Mình đưa link cho khách quốc tế xem, họ khen website rất professional. Giá cả hợp lý, tác phong nhanh, hướng dẫn tận tình.</p>
+      <div class="tst-author">
+        <div class="tst-avatar" style="background:linear-gradient(135deg,#d4af6a,#8a6c3c)">H</div>
+        <div><div class="tst-name">Chị Hương</div><div class="tst-role">Chủ spa · Hội An</div></div>
+      </div>
+    </div>
+    <div class="tst-card rv">
+      <div class="tst-stars">★★★★★</div>
+      <p class="tst-text">Mình không biết gì về công nghệ mà vẫn có website đẹp. Chỉ cần gửi ảnh, bảng giá là xong. Rất dễ cho chủ tiệm bận rộn.</p>
+      <div class="tst-author">
+        <div class="tst-avatar" style="background:linear-gradient(135deg,#e8578c,#c0176a)">T</div>
+        <div><div class="tst-name">Chị Thảo</div><div class="tst-role">Giáo viên tiếng Anh · Nha Trang</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section" id="lien-he">
   <div class="cta-box rv">
@@ -930,6 +1082,36 @@ img { max-width:100%; display:block }
     io.observe(el);
   });
 })();
+</script>
+
+<script>
+// ── FILTER TABS ──
+document.querySelectorAll('.f-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.f-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const filter = tab.dataset.filter;
+    document.querySelectorAll('.tpl-row').forEach(row => {
+      const cat = row.dataset.cat || 'all';
+      row.classList.toggle('hidden', filter !== 'all' && cat !== filter);
+    });
+    // also hide/show dividers next to hidden rows
+    document.querySelectorAll('.tpl-divider').forEach((div, i) => {
+      const rows = document.querySelectorAll('.tpl-row');
+      div.style.display = (rows[i] && rows[i].classList.contains('hidden')) ? 'none' : '';
+    });
+  });
+});
+
+// ── FAQ ACCORDION ──
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
 </script>
 </body>
 </html>
