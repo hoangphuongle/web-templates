@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rosé Nails & Beauty – Tiệm Nail Cao Cấp | Đặt lịch qua Zalo</title>
+<meta name="description" content="Rosé Nails – tiệm nail cao cấp: sơn gel, đắp bột, vẽ móng nghệ thuật, chăm sóc da tay. Dụng cụ tiệt trùng, giá minh bạch. Đặt lịch nhanh qua Zalo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║  CÁCH DÙNG FILE NÀY                                              ║
+║  - Phần "BASE" bên dưới: màu sắc, font, nút bấm, hiệu ứng chung. ║
+║    → BẮT BUỘC có ở mọi trang. Đổi màu thương hiệu tại :root.      ║
+║  - Mỗi SECTION trong <body> là 1 khối độc lập gồm:               ║
+║      <style> + HTML + <script> (nếu có)                          ║
+║    → Copy nguyên khối từ dòng "SECTION: ... BẮT ĐẦU"              ║
+║      đến "SECTION: ... KẾT THÚC" là dán sang trang khác được.     ║
+║  - Xoá section không cần: xoá nguyên khối đó.                    ║
+║  - Đổi thứ tự: cắt/dán nguyên khối.                              ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<!-- ═══════════════ BASE: BẮT ĐẦU (bắt buộc) ═══════════════ -->
+<style>
+:root{
+  /* ĐỔI MÀU THƯƠNG HIỆU TẠI ĐÂY */
+  --rose:#d98a94; --rose-d:#b9636f; --blush:#f8e9e7; --cream:#fffaf7;
+  --gold:#c9a36a; --ink:#3b2a2c; --muted:#8a7476; --white:#fff;
+  --radius:22px; --shadow:0 20px 50px -20px rgba(185,99,111,.35);
+  --font-body:'Be Vietnam Pro',sans-serif;
+  --font-head:'Playfair Display',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-head);font-weight:700;line-height:1.2}
+.container{width:min(1180px,92%);margin:auto}
+.section{padding:100px 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto 56px}
+.section-head h2{font-size:clamp(2rem,4vw,2.8rem)}
+.section-head p{color:var(--muted);margin-top:12px}
+.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:999px;font-weight:600;transition:.35s;cursor:pointer;border:none;font:inherit;font-weight:600;font-size:.95rem}
+.btn-primary{background:linear-gradient(135deg,var(--rose),var(--rose-d));color:#fff;box-shadow:var(--shadow)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 25px 50px -15px rgba(185,99,111,.55)}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+/* Hiệu ứng hiện dần khi cuộn: thêm class "reveal" vào phần tử bất kỳ */
+.reveal{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.reveal.show{opacity:1;transform:none}
+@keyframes float{50%{transform:translateY(-14px)}}
+@media(max-width:960px){.grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.section{padding:70px 0}.grid-3{grid-template-columns:1fr}}
+</style>
+<!-- ═══════════════ BASE: KẾT THÚC ═══════════════ -->
+</head>
+<body>
+
+
+<!-- ═══════════════ SECTION: HEADER / MENU – BẮT ĐẦU ═══════════════ -->
+<style>
+.hd{position:fixed;inset:0 0 auto;z-index:50;transition:.4s;padding:20px 0}
+.hd.scrolled{background:rgba(255,250,247,.85);backdrop-filter:blur(14px);padding:12px 0;box-shadow:0 5px 30px -15px rgba(0,0,0,.15)}
+.hd-nav{display:flex;align-items:center;justify-content:space-between}
+.hd-logo{font-family:var(--font-head);font-size:1.6rem;font-weight:700}
+.hd-logo span{color:var(--rose);font-style:italic}
+.hd-menu{display:flex;gap:34px;list-style:none}
+.hd-menu a{font-size:.92rem;font-weight:500;position:relative}
+.hd-menu a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:var(--rose);transition:.3s}
+.hd-menu a:hover::after{width:100%}
+.hd-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--ink)}
+@media(max-width:960px){
+  .hd-menu{position:fixed;inset:0 0 0 30%;background:var(--cream);flex-direction:column;padding:100px 40px;transform:translateX(100%);transition:.4s;box-shadow:-20px 0 40px rgba(0,0,0,.1)}
+  .hd-menu.open{transform:none}
+  .hd-toggle{display:block;z-index:2}
+  .hd-nav .btn{display:none}
+}
+</style>
+<header class="hd" id="header">
+  <div class="container hd-nav">
+    <a href="#" class="hd-logo">Rosé <span>Nails</span></a>
+    <ul class="hd-menu" id="hdMenu">
+      <li><a href="#dich-vu">Dịch vụ</a></li>
+      <li><a href="#bang-gia">Bảng giá</a></li>
+      <li><a href="#mau-nail">Mẫu nail</a></li>
+      <li><a href="#danh-gia">Đánh giá</a></li>
+      <li><a href="#dat-lich">Liên hệ</a></li>
+    </ul>
+    <a href="#dat-lich" class="btn btn-primary">Đặt lịch ngay</a>
+    <button class="hd-toggle" id="hdToggle" aria-label="Mở menu">☰</button>
+  </div>
+</header>
+<script>
+(()=>{
+  const h=document.getElementById('header'),m=document.getElementById('hdMenu');
+  addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>40));
+  document.getElementById('hdToggle').onclick=()=>m.classList.toggle('open');
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+})();
+</script>
+<!-- ═══════════════ SECTION: HEADER / MENU – KẾT THÚC ═══════════════ -->
+
+
+<main>
+
+<!-- ═══════════════ SECTION: HERO (ĐẦU TRANG) – BẮT ĐẦU ═══════════════ -->
+<style>
+.hero{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:60px;padding-top:110px;position:relative}
+.hero::before{content:'';position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(var(--blush),transparent 70%);left:-200px;top:80px;z-index:-1}
+.hero h1{font-size:clamp(2.6rem,5.5vw,4.4rem)}
+.hero h1 em{color:var(--rose);font-weight:500}
+.hero-desc{color:var(--muted);font-size:1.08rem;margin:22px 0 34px;max-width:480px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:40px;margin-top:50px}
+.hero-stats b{display:block;font-family:var(--font-head);font-size:2rem;color:var(--rose-d)}
+.hero-stats small{color:var(--muted);font-size:.85rem}
+.hero-img{position:relative}
+.hero-img img{border-radius:240px 240px var(--radius) var(--radius);aspect-ratio:4/5;object-fit:cover;box-shadow:var(--shadow);animation:float 7s ease-in-out infinite}
+.hero-badge{position:absolute;background:rgba(255,255,255,.8);backdrop-filter:blur(12px);padding:14px 20px;border-radius:18px;box-shadow:0 15px 40px -15px rgba(0,0,0,.2);font-size:.85rem;display:flex;align-items:center;gap:12px}
+.hero-badge .ic{width:40px;height:40px;border-radius:12px;background:var(--blush);display:grid;place-items:center;font-size:1.2rem}
+.hero-badge-1{left:-40px;bottom:70px;animation:float 6s ease-in-out infinite reverse}
+.hero-badge-2{right:-20px;top:90px;animation:float 8s ease-in-out infinite}
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:120px}
+  .hero-desc{margin-inline:auto}
+  .hero-actions,.hero-stats{justify-content:center}
+  .hero-img{max-width:440px;margin:auto}
+}
+@media(max-width:600px){.hero-badge-1{left:0}.hero-badge-2{right:0}.hero-stats{gap:24px}}
+</style>
+<section class="container hero">
+  <div class="reveal">
+    <span class="eyebrow">✦ Nail & Beauty Studio</span>
+    <h1>Bàn tay đẹp,<br><em>tự tin</em> rạng ngời</h1>
+    <p class="hero-desc">Sơn gel, đắp bột, vẽ móng nghệ thuật và chăm sóc da tay trong không gian thư giãn. Dụng cụ tiệt trùng 100%, sản phẩm chính hãng.</p>
+    <div class="hero-actions">
+      <a href="#dat-lich" class="btn btn-primary">Đặt lịch – Giảm 20% ✦</a>
+      <a href="#bang-gia" class="btn btn-ghost">Xem bảng giá</a>
+    </div>
+    <div class="hero-stats">
+      <div><b>8+</b><small>Năm kinh nghiệm</small></div>
+      <div><b>15K</b><small>Khách hài lòng</small></div>
+      <div><b>4.9★</b><small>Đánh giá Google</small></div>
+    </div>
+  </div>
+  <div class="hero-img reveal">
+    <img src="images/hero.png" alt="Bộ móng nude đính vàng tại Rosé Nails">
+    <div class="hero-badge hero-badge-1"><span class="ic">🧴</span><div><b>Tiệt trùng 100%</b><br><small>Dụng cụ riêng từng khách</small></div></div>
+    <div class="hero-badge hero-badge-2"><span class="ic">💅</span><div><b>500+ mẫu</b><br><small>Cập nhật xu hướng</small></div></div>
+  </div>
+</section>
+<!-- ═══════════════ SECTION: HERO (ĐẦU TRANG) – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: DỊCH VỤ – BẮT ĐẦU ═══════════════ -->
+<style>
+.sv{background:var(--white)}
+.sv-card{background:var(--cream);border-radius:var(--radius);padding:40px 32px;transition:.4s;border:1px solid transparent;position:relative;overflow:hidden}
+.sv-card::before{content:'';position:absolute;inset:auto -40% -60% auto;width:200px;height:200px;border-radius:50%;background:var(--blush);transition:.5s;z-index:0}
+.sv-card:hover{transform:translateY(-8px);border-color:var(--blush);box-shadow:var(--shadow)}
+.sv-card:hover::before{transform:scale(1.6)}
+.sv-card>*{position:relative;z-index:1}
+.sv-card .ic{font-size:2.2rem;margin-bottom:18px}
+.sv-card h3{font-size:1.35rem;margin-bottom:10px}
+.sv-card p{color:var(--muted);font-size:.93rem}
+.sv-card .price{margin-top:18px;font-weight:600;color:var(--rose-d)}
+</style>
+<section class="section sv" id="dich-vu">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Dịch vụ</span>
+      <h2>Chăm chút từng chi tiết</h2>
+      <p>Thợ tay nghề cao, làm kỹ, bền màu từ 3–4 tuần.</p>
+    </div>
+    <div class="grid-3">
+      <!-- Thêm/bớt dịch vụ: copy 1 thẻ <div class="sv-card"> -->
+      <div class="sv-card reveal"><div class="ic">💅</div><h3>Sơn gel cao cấp</h3><p>Sơn gel Hàn Quốc, bóng đẹp, không hại móng.</p><div class="price">Từ 120.000đ</div></div>
+      <div class="sv-card reveal"><div class="ic">✨</div><h3>Đắp bột / Úp móng</h3><p>Tạo form móng chuẩn: oval, almond, coffin, vuông.</p><div class="price">Từ 250.000đ</div></div>
+      <div class="sv-card reveal"><div class="ic">🎨</div><h3>Vẽ móng nghệ thuật</h3><p>Vẽ tay, đính đá, nhũ, ombre, mắt mèo theo yêu cầu.</p><div class="price">Từ 30.000đ/ngón</div></div>
+      <div class="sv-card reveal"><div class="ic">🌸</div><h3>Chăm sóc da tay</h3><p>Tẩy da chết, đắp mặt nạ, massage tay thư giãn.</p><div class="price">Từ 150.000đ</div></div>
+      <div class="sv-card reveal"><div class="ic">🦶</div><h3>Chăm sóc móng chân</h3><p>Ngâm thảo dược, cắt da, massage chân.</p><div class="price">Từ 180.000đ</div></div>
+      <div class="sv-card reveal"><div class="ic">👁️</div><h3>Nối mi & Gội đầu</h3><p>Nối mi tự nhiên, gội đầu dưỡng sinh thư giãn.</p><div class="price">Từ 200.000đ</div></div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════ SECTION: DỊCH VỤ – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: BẢNG GIÁ (CÓ TAB) – BẮT ĐẦU ═══════════════ -->
+<style>
+.pr-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:40px;flex-wrap:wrap}
+.pr-tab{padding:10px 24px;border-radius:999px;border:1.5px solid var(--blush);background:none;font:inherit;font-weight:500;cursor:pointer;transition:.3s;color:var(--ink)}
+.pr-tab.active,.pr-tab:hover{background:var(--rose);border-color:var(--rose);color:#fff}
+.pr-list{max-width:760px;margin:auto;background:var(--white);border-radius:var(--radius);padding:20px 40px;box-shadow:var(--shadow)}
+.pr-group{display:none;animation:prFade .5s}
+.pr-group.active{display:block}
+.pr-item{display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px dashed #ecd6d3}
+.pr-item:last-child{border:none}
+.pr-item .name{font-weight:600}
+.pr-item .name small{display:block;font-weight:400;color:var(--muted);font-size:.83rem}
+.pr-item .dots{flex:1;border-bottom:1px dotted #d9c3c0;transform:translateY(-4px)}
+.pr-item .val{font-family:var(--font-head);font-size:1.2rem;color:var(--rose-d);white-space:nowrap}
+@keyframes prFade{from{opacity:0;transform:translateY(10px)}}
+@media(max-width:600px){.pr-list{padding:10px 22px}}
+</style>
+<section class="section" id="bang-gia">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Bảng giá</span>
+      <h2>Giá minh bạch, không phát sinh</h2>
+    </div>
+    <!-- data-tab của nút phải trùng với id của nhóm giá -->
+    <div class="pr-tabs reveal">
+      <button class="pr-tab active" data-tab="pr-tay">Móng tay</button>
+      <button class="pr-tab" data-tab="pr-chan">Móng chân</button>
+      <button class="pr-tab" data-tab="pr-combo">Combo tiết kiệm</button>
+    </div>
+    <div class="pr-list reveal">
+      <div class="pr-group active" id="pr-tay">
+        <div class="pr-item"><div class="name">Sơn thường<small>Cắt da, dũa form</small></div><span class="dots"></span><span class="val">80.000đ</span></div>
+        <div class="pr-item"><div class="name">Sơn gel<small>Bền màu 3–4 tuần</small></div><span class="dots"></span><span class="val">150.000đ</span></div>
+        <div class="pr-item"><div class="name">Úp móng + sơn gel<small>Móng giả tự nhiên</small></div><span class="dots"></span><span class="val">250.000đ</span></div>
+        <div class="pr-item"><div class="name">Đắp bột<small>Form theo yêu cầu</small></div><span class="dots"></span><span class="val">350.000đ</span></div>
+        <div class="pr-item"><div class="name">Tháo móng<small>Không hại móng thật</small></div><span class="dots"></span><span class="val">50.000đ</span></div>
+      </div>
+      <div class="pr-group" id="pr-chan">
+        <div class="pr-item"><div class="name">Sơn thường chân</div><span class="dots"></span><span class="val">90.000đ</span></div>
+        <div class="pr-item"><div class="name">Sơn gel chân</div><span class="dots"></span><span class="val">160.000đ</span></div>
+        <div class="pr-item"><div class="name">Spa chân thảo dược<small>Ngâm, tẩy da chết, massage</small></div><span class="dots"></span><span class="val">200.000đ</span></div>
+        <div class="pr-item"><div class="name">Trị nứt gót</div><span class="dots"></span><span class="val">150.000đ</span></div>
+      </div>
+      <div class="pr-group" id="pr-combo">
+        <div class="pr-item"><div class="name">Combo Gel tay + chân<small>Tiết kiệm 50.000đ</small></div><span class="dots"></span><span class="val">260.000đ</span></div>
+        <div class="pr-item"><div class="name">Combo Cô dâu<small>Đắp bột, vẽ, spa tay chân</small></div><span class="dots"></span><span class="val">690.000đ</span></div>
+        <div class="pr-item"><div class="name">Combo Thư giãn<small>Gel + spa tay + gội đầu</small></div><span class="dots"></span><span class="val">420.000đ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+document.querySelectorAll('.pr-tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.pr-tab,.pr-group').forEach(e=>e.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById(t.dataset.tab).classList.add('active');
+});
+</script>
+<!-- ═══════════════ SECTION: BẢNG GIÁ (CÓ TAB) – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: THƯ VIỆN MẪU (GALLERY) – BẮT ĐẦU ═══════════════ -->
+<style>
+.gl{background:var(--white)}
+.gl-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:18px}
+.gl-item{border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer}
+.gl-item:nth-child(1){grid-row:span 2}
+.gl-item:nth-child(4){grid-column:span 2}
+.gl-item:nth-child(6){grid-row:span 2}
+.gl-art{width:100%;height:100%;transition:.6s;display:grid;place-items:center;background-size:cover;background-position:center}
+.gl-item:hover .gl-art{transform:scale(1.08)}
+.gl-item .lbl{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);padding:6px 14px;border-radius:999px;font-size:.8rem;font-weight:600;opacity:0;transform:translateY(10px);transition:.4s}
+.gl-item:hover .lbl{opacity:1;transform:none}
+/* Hình móng vẽ bằng CSS (thay bằng ảnh thật: style="background-image:url(images/xxx.jpg)") */
+.gl-nails{display:flex;gap:10px;align-items:flex-end}
+.gl-nails i{display:block;width:30px;height:62px;border-radius:15px 15px 8px 8px;box-shadow:inset -4px -6px 10px rgba(0,0,0,.08),inset 4px 4px 8px rgba(255,255,255,.5)}
+.gl-nails i:nth-child(2),.gl-nails i:nth-child(4){height:72px}
+.gl-nails i:nth-child(3){height:80px}
+@media(max-width:960px){.gl-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.gl-grid{grid-auto-rows:160px}.gl-item:nth-child(4){grid-column:span 1}}
+</style>
+<section class="section gl" id="mau-nail">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Bộ sưu tập</span>
+      <h2>Mẫu nail hot nhất mùa này</h2>
+    </div>
+    <div class="gl-grid reveal">
+      <div class="gl-item"><div class="gl-art" style="background-image:url(images/hero.png)"></div><span class="lbl">Nude đính vàng</span></div>
+      <div class="gl-item"><div class="gl-art" style="background:linear-gradient(135deg,#fde2e4,#fad2e1)"><div class="gl-nails"><i style="background:#f4a7b9"></i><i style="background:#f7c5d0"></i><i style="background:#f4a7b9"></i><i style="background:#f7c5d0"></i></div></div><span class="lbl">Hồng ombre</span></div>
+      <div class="gl-item"><div class="gl-art" style="background:linear-gradient(135deg,#2d1f21,#5a3d42)"><div class="gl-nails"><i style="background:linear-gradient(#7a1f2b,#3d0d14)"></i><i style="background:linear-gradient(#a32a3a,#5a1320)"></i><i style="background:linear-gradient(#7a1f2b,#3d0d14)"></i><i style="background:linear-gradient(#a32a3a,#5a1320)"></i></div></div><span class="lbl">Đỏ rượu vang</span></div>
+      <div class="gl-item"><div class="gl-art" style="background:linear-gradient(135deg,#e8f0ee,#f6efe6)"><div class="gl-nails"><i style="background:linear-gradient(160deg,#fff 40%,#e9c9a6)"></i><i style="background:linear-gradient(160deg,#fff 40%,#c9a36a)"></i><i style="background:linear-gradient(160deg,#fff 40%,#e9c9a6)"></i><i style="background:linear-gradient(160deg,#fff 40%,#c9a36a)"></i><i style="background:linear-gradient(160deg,#fff 40%,#e9c9a6)"></i></div></div><span class="lbl">French tip nhũ vàng</span></div>
+      <div class="gl-item"><div class="gl-art" style="background:linear-gradient(135deg,#e3e0f3,#cfd8f0)"><div class="gl-nails"><i style="background:radial-gradient(circle at 50% 40%,#c9d6ff,#4a5bb5)"></i><i style="background:radial-gradient(circle at 50% 40%,#e0d0ff,#6b4ab5)"></i><i style="background:radial-gradient(circle at 50% 40%,#c9d6ff,#4a5bb5)"></i></div></div><span class="lbl">Mắt mèo galaxy</span></div>
+      <div class="gl-item"><div class="gl-art" style="background:linear-gradient(160deg,#f6e3d6,#efd2c4)"><div class="gl-nails"><i style="background:#e8c4b0"></i><i style="background:#d9a891"></i><i style="background:#c98f78"></i><i style="background:#b77a65"></i></div></div><span class="lbl">Tone nude Hàn Quốc</span></div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════ SECTION: THƯ VIỆN MẪU (GALLERY) – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: VÌ SAO CHỌN CHÚNG TÔI – BẮT ĐẦU ═══════════════ -->
+<style>
+.why{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.why h2{font-size:clamp(2rem,4vw,2.6rem)}
+.why-img img{border-radius:var(--radius) 200px var(--radius) var(--radius);aspect-ratio:1;object-fit:cover;object-position:60% 60%}
+.why-list{display:grid;gap:22px;margin-top:30px}
+.why-item{display:flex;gap:18px}
+.why-item .ic{flex:none;width:52px;height:52px;border-radius:16px;background:var(--blush);display:grid;place-items:center;font-size:1.4rem}
+.why-item h4{font-size:1.05rem;margin-bottom:4px}
+.why-item p{color:var(--muted);font-size:.92rem}
+@media(max-width:960px){.why{grid-template-columns:1fr}}
+</style>
+<section class="section">
+  <div class="container why">
+    <div class="why-img reveal"><img src="images/hero.png" alt="Không gian tiệm Rosé Nails"></div>
+    <div class="reveal">
+      <span class="eyebrow">Vì sao chọn chúng tôi</span>
+      <h2>Không chỉ làm đẹp, mà là trải nghiệm thư giãn</h2>
+      <div class="why-list">
+        <div class="why-item"><span class="ic">🛡️</span><div><h4>An toàn tuyệt đối</h4><p>Dụng cụ hấp tiệt trùng, dũa dùng một lần cho mỗi khách.</p></div></div>
+        <div class="why-item"><span class="ic">💎</span><div><h4>Sản phẩm chính hãng</h4><p>Sơn OPI, Gelish, sơn Hàn Quốc – có giấy tờ rõ ràng.</p></div></div>
+        <div class="why-item"><span class="ic">☕</span><div><h4>Không gian thư giãn</h4><p>Phòng máy lạnh, ghế massage, trà & bánh miễn phí.</p></div></div>
+        <div class="why-item"><span class="ic">🔁</span><div><h4>Bảo hành 7 ngày</h4><p>Bong tróc trong 7 ngày – làm lại miễn phí.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════ SECTION: VÌ SAO CHỌN CHÚNG TÔI – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: ĐÁNH GIÁ KHÁCH HÀNG – BẮT ĐẦU ═══════════════ -->
+<style>
+.rv{background:linear-gradient(160deg,var(--blush),var(--cream))}
+.rv-card{background:var(--white);border-radius:var(--radius);padding:34px;box-shadow:0 15px 40px -25px rgba(0,0,0,.2)}
+.rv-stars{color:var(--gold);letter-spacing:3px;margin-bottom:14px}
+.rv-card p{font-style:italic;color:#5b4648}
+.rv-who{display:flex;align-items:center;gap:12px;margin-top:22px}
+.rv-avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--gold))}
+.rv-who small{display:block;color:var(--muted)}
+</style>
+<section class="section rv" id="danh-gia">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Khách hàng nói gì</span>
+      <h2>Hơn 15.000 khách đã tin chọn</h2>
+    </div>
+    <div class="grid-3">
+      <div class="rv-card reveal"><div class="rv-stars">★★★★★</div><p>“Làm móng ở đây 2 năm rồi, sơn gel bền cả tháng không bong. Các bạn thợ dễ thương, tư vấn mẫu rất có gu.”</p><div class="rv-who"><span class="rv-avatar">T</span><div><b>Thu Trang</b><small>Quận 3, TP.HCM</small></div></div></div>
+      <div class="rv-card reveal"><div class="rv-stars">★★★★★</div><p>“Làm combo cô dâu ở Rosé, móng đẹp xuất sắc, ai cũng khen. Giá lại hợp lý, không phát sinh gì thêm.”</p><div class="rv-who"><span class="rv-avatar">L</span><div><b>Ngọc Linh</b><small>Bình Thạnh, TP.HCM</small></div></div></div>
+      <div class="rv-card reveal"><div class="rv-stars">★★★★★</div><p>“Tiệm sạch sẽ, dụng cụ tiệt trùng kỹ nên mình rất yên tâm. Đặt lịch qua Zalo nhanh, đến là làm luôn.”</p><div class="rv-who"><span class="rv-avatar">H</span><div><b>Minh Hà</b><small>Phú Nhuận, TP.HCM</small></div></div></div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════ SECTION: ĐÁNH GIÁ KHÁCH HÀNG – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: FORM ĐẶT LỊCH – BẮT ĐẦU ═══════════════ -->
+<style>
+.bk-box{display:grid;grid-template-columns:1fr 1.1fr;border-radius:32px;overflow:hidden;background:var(--ink);color:#fff;box-shadow:var(--shadow)}
+.bk-info{padding:60px 50px;background:linear-gradient(160deg,#4a3336,#2d1f21)}
+.bk-info h2{font-size:2.4rem;margin-bottom:16px}
+.bk-info p{opacity:.75}
+.bk-line{display:flex;gap:14px;margin-top:22px;align-items:flex-start}
+.bk-line span:first-child{font-size:1.3rem}
+.bk-form{padding:60px 50px;background:var(--white);color:var(--ink);display:grid;gap:16px}
+.bk-form label{font-size:.85rem;font-weight:600}
+.bk-form input,.bk-form select{width:100%;margin-top:6px;padding:14px 18px;border-radius:14px;border:1.5px solid #f0dfdc;font:inherit;background:var(--cream);transition:.3s}
+.bk-form input:focus,.bk-form select:focus{outline:none;border-color:var(--rose);background:#fff}
+.bk-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bk-msg{display:none;padding:14px;border-radius:14px;background:#eaf7ee;color:#2f7a48;font-weight:500;text-align:center}
+@media(max-width:960px){.bk-box{grid-template-columns:1fr}}
+@media(max-width:600px){.bk-info,.bk-form{padding:40px 26px}.bk-row{grid-template-columns:1fr}}
+</style>
+<section class="section" id="dat-lich">
+  <div class="container">
+    <div class="bk-box reveal">
+      <div class="bk-info">
+        <span class="eyebrow">Đặt lịch</span>
+        <h2>Giữ chỗ ngay – không phải chờ</h2>
+        <p>Đặt lịch online hôm nay nhận ưu đãi <b style="color:var(--rose)">giảm 20%</b> cho lần đầu.</p>
+        <div class="bk-line"><span>📍</span><span>123 Nguyễn Trãi, Quận 1, TP.HCM</span></div>
+        <div class="bk-line"><span>⏰</span><span>9:00 – 21:00 (cả Thứ 7 & Chủ nhật)</span></div>
+        <div class="bk-line"><span>📞</span><span>0909 123 456 (Zalo)</span></div>
+      </div>
+      <!-- LƯU Ý: form demo, chưa gửi dữ liệu đi đâu. Muốn nhận thật trên Netlify: thêm  data-netlify="true" name="dat-lich"  vào thẻ <form> và name="" cho từng ô, rồi xoá đoạn <script> bên dưới -->
+      <form class="bk-form" id="bkForm">
+        <div class="bk-row">
+          <label>Họ tên<input name="ho-ten" required placeholder="Nguyễn Thị A"></label>
+          <label>Số điện thoại<input name="sdt" required type="tel" placeholder="09xx xxx xxx"></label>
+        </div>
+        <label>Dịch vụ
+          <select name="dich-vu"><option>Sơn gel</option><option>Đắp bột / Úp móng</option><option>Vẽ móng nghệ thuật</option><option>Combo cô dâu</option><option>Spa tay / chân</option></select>
+        </label>
+        <div class="bk-row">
+          <label>Ngày<input name="ngay" type="date" required></label>
+          <label>Giờ<input name="gio" type="time" required></label>
+        </div>
+        <button class="btn btn-primary" type="submit">Xác nhận đặt lịch ✦</button>
+        <div class="bk-msg" id="bkMsg">🎉 Đặt lịch thành công! Rosé Nails sẽ gọi xác nhận trong 5 phút.</div>
+      </form>
+    </div>
+  </div>
+</section>
+<script>
+document.getElementById('bkForm').onsubmit=e=>{
+  e.preventDefault();
+  document.getElementById('bkMsg').style.display='block';
+  e.target.reset();
+};
+</script>
+<!-- ═══════════════ SECTION: FORM ĐẶT LỊCH – KẾT THÚC ═══════════════ -->
+
+</main>
+
+
+<!-- ═══════════════ SECTION: FOOTER – BẮT ĐẦU ═══════════════ -->
+<style>
+.ft{padding:60px 0 30px;text-align:center;color:var(--muted);font-size:.9rem}
+.ft-logo{font-family:var(--font-head);font-size:1.6rem;font-weight:700;color:var(--ink);margin-bottom:10px}
+.ft-logo span{color:var(--rose);font-style:italic}
+</style>
+<footer class="ft">
+  <div class="container">
+    <div class="ft-logo">Rosé <span>Nails</span></div>
+    <p>© 2026 Rosé Nails & Beauty. Mẫu giao diện demo.</p>
+  </div>
+</footer>
+<!-- ═══════════════ SECTION: FOOTER – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: NÚT ZALO + GỌI NỔI – BẮT ĐẦU ═══════════════ -->
+<!-- Đổi số điện thoại ở 2 chỗ: zalo.me/SỐ và tel:SỐ -->
+<style>
+.fc{position:fixed;right:20px;bottom:24px;display:grid;gap:12px;z-index:60}
+.fc a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:.8rem;box-shadow:0 10px 25px -8px rgba(0,0,0,.35);transition:.3s;position:relative}
+.fc a:hover{transform:scale(1.1)}
+.fc-zalo{background:#0068ff}
+.fc-phone{background:linear-gradient(135deg,var(--rose),var(--rose-d))}
+.fc-phone::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid var(--rose);animation:fcPing 1.8s infinite}
+@keyframes fcPing{to{transform:scale(1.6);opacity:0}}
+</style>
+<div class="fc">
+  <a href="https://zalo.me/0909123456" target="_blank" rel="noopener" class="fc-zalo" aria-label="Chat Zalo">Zalo</a>
+  <a href="tel:0909123456" class="fc-phone" aria-label="Gọi điện">📞</a>
+</div>
+<!-- ═══════════════ SECTION: NÚT ZALO + GỌI NỔI – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ BASE SCRIPT: HIỆU ỨNG HIỆN DẦN (bắt buộc, để cuối trang) ═══════════════ -->
+<script>
+(()=>{
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.1+'s';io.observe(el)});
+})();
+</script>
+</body>
+</html>

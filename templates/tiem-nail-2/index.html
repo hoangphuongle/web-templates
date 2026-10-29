@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOIR Nail Lounge – Tiệm Nail Sang Trọng | Đặt lịch qua Zalo</title>
+<meta name="description" content="NOIR Nail Lounge – không gian nail sang trọng phong cách đen & vàng: tráng gương chrome, đắp gel, vẽ nghệ thuật, combo cô dâu. Đặt lịch nhanh qua Zalo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║  MẪU NAIL – PHIÊN BẢN 2: "NOIR" (Đen & Vàng sang trọng)          ║
+║  - BASE (bên dưới): màu, font, nút, hiệu ứng chung → BẮT BUỘC.   ║
+║  - Mỗi SECTION = 1 khối độc lập (<style> + HTML + <script>).     ║
+║    Copy từ "BẮT ĐẦU" đến "KẾT THÚC" để dán sang trang khác.       ║
+║  - BASE SCRIPT ở cuối trang → BẮT BUỘC.                          ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<!-- ═══════════════ BASE: BẮT ĐẦU (bắt buộc) ═══════════════ -->
+<style>
+:root{
+  /* ĐỔI MÀU THƯƠNG HIỆU TẠI ĐÂY */
+  --bg:#0e0c0b; --bg-2:#171412; --bg-3:#211c19;
+  --gold:#d4af6a; --gold-2:#f3dca4; --gold-d:#9c7a3c;
+  --text:#ece6dd; --muted:#9d948a; --line:rgba(212,175,106,.18);
+  --radius:4px;
+  --font-body:'Be Vietnam Pro',sans-serif;
+  --font-head:'Cormorant Garamond',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);font-weight:300;color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
+.container{width:min(1200px,90%);margin:auto}
+.section{padding:120px 0}
+.label{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px}
+.label::before{content:'';width:40px;height:1px;background:var(--gold)}
+.title{font-size:clamp(2.4rem,5vw,3.8rem)}
+.title em{font-style:italic;color:var(--gold)}
+.gold-text{background:linear-gradient(120deg,var(--gold-d),var(--gold-2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 34px;font:inherit;font-size:.8rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border:none;transition:.4s;position:relative;overflow:hidden}
+.btn-gold{background:linear-gradient(120deg,var(--gold-d),var(--gold),var(--gold-2));background-size:200%;color:#16120e}
+.btn-gold:hover{background-position:100%;box-shadow:0 10px 40px -10px rgba(212,175,106,.6)}
+.btn-line{border:1px solid var(--gold);color:var(--gold);background:none}
+.btn-line:hover{background:var(--gold);color:#16120e}
+.reveal{opacity:0;transform:translateY(50px);transition:1.1s cubic-bezier(.2,.7,.2,1)}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:700px){.section{padding:80px 0}}
+</style>
+<!-- ═══════════════ BASE: KẾT THÚC ═══════════════ -->
+</head>
+<body>
+
+
+<!-- ═══════════════ SECTION: HEADER / MENU – BẮT ĐẦU ═══════════════ -->
+<style>
+.nh{position:fixed;inset:0 0 auto;z-index:50;padding:26px 0;transition:.4s}
+.nh.scrolled{padding:14px 0;background:rgba(14,12,11,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nh-in{display:flex;align-items:center;justify-content:space-between}
+.nh-logo{font-family:var(--font-head);font-size:1.8rem;letter-spacing:.3em;font-weight:600}
+.nh-logo small{display:block;font-family:var(--font-body);font-size:.55rem;letter-spacing:.5em;color:var(--gold);margin-top:-4px}
+.nh-menu{display:flex;gap:40px;list-style:none}
+.nh-menu a{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:.3s}
+.nh-menu a:hover{color:var(--gold)}
+.nh-toggle{display:none;background:none;border:none;color:var(--gold);font-size:1.6rem;cursor:pointer}
+@media(max-width:960px){
+  .nh-menu{position:fixed;inset:0;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:.4s}
+  .nh-menu.open{opacity:1;pointer-events:auto}
+  .nh-menu a{font-size:1rem;color:var(--text)}
+  .nh-toggle{display:block;z-index:2}
+  .nh-in>.btn{display:none}
+}
+</style>
+<header class="nh" id="nh">
+  <div class="container nh-in">
+    <a href="#" class="nh-logo">NOIR<small>NAIL LOUNGE</small></a>
+    <ul class="nh-menu" id="nhMenu">
+      <li><a href="#dich-vu">Dịch vụ</a></li>
+      <li><a href="#goi-dich-vu">Bảng giá</a></li>
+      <li><a href="#bo-suu-tap">Bộ sưu tập</a></li>
+      <li><a href="#hoi-dap">Hỏi đáp</a></li>
+      <li><a href="#lien-he">Liên hệ</a></li>
+    </ul>
+    <a href="#lien-he" class="btn btn-line">Đặt lịch</a>
+    <button class="nh-toggle" id="nhToggle" aria-label="Mở menu">☰</button>
+  </div>
+</header>
+<script>
+(()=>{
+  const h=document.getElementById('nh'),m=document.getElementById('nhMenu');
+  addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>40));
+  document.getElementById('nhToggle').onclick=()=>m.classList.toggle('open');
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+})();
+</script>
+<!-- ═══════════════ SECTION: HEADER / MENU – KẾT THÚC ═══════════════ -->
+
+
+<main>
+
+<!-- ═══════════════ SECTION: HERO TOÀN MÀN HÌNH – BẮT ĐẦU ═══════════════ -->
+<!-- Đổi ảnh nền: sửa url(images/hero.png) trong .fh-bg -->
+<style>
+.fh{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.fh-bg{position:absolute;inset:0;background:url(images/hero.png) 70% center/cover;transform:scale(1.1);animation:fhZoom 20s ease-out forwards}
+.fh::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 25%,rgba(14,12,11,.55) 60%,rgba(14,12,11,.2)),linear-gradient(0deg,var(--bg),transparent 30%)}
+.fh-in{position:relative;z-index:1;max-width:640px;padding-top:80px}
+.fh h1{font-size:clamp(3rem,7vw,5.8rem);margin-bottom:26px}
+.fh h1 em{font-style:italic}
+.fh p{color:var(--muted);font-size:1.05rem;max-width:460px;margin-bottom:40px}
+.fh-actions{display:flex;gap:16px;flex-wrap:wrap}
+.fh-scroll{position:absolute;left:50%;bottom:34px;z-index:1;transform:translateX(-50%);font-size:.65rem;letter-spacing:.4em;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:12px}
+.fh-scroll::after{content:'';width:1px;height:50px;background:linear-gradient(var(--gold),transparent);animation:fhLine 2s infinite}
+@keyframes fhZoom{to{transform:scale(1)}}
+@keyframes fhLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:700px){.fh::after{background:linear-gradient(0deg,var(--bg) 35%,rgba(14,12,11,.5))}.fh{align-items:flex-end;padding-bottom:110px}}
+</style>
+<section class="fh">
+  <div class="fh-bg"></div>
+  <div class="container">
+    <div class="fh-in reveal">
+      <span class="label">Since 2016 · Quận 1</span>
+      <h1>Nghệ thuật<br>trên <em class="gold-text">đầu ngón tay</em></h1>
+      <p>Không gian nail lounge riêng tư dành cho phái đẹp hiện đại. Mỗi bộ móng là một tác phẩm được chế tác thủ công.</p>
+      <div class="fh-actions">
+        <a href="#lien-he" class="btn btn-gold">Đặt lịch ngay</a>
+        <a href="#bo-suu-tap" class="btn btn-line">Xem bộ sưu tập</a>
+      </div>
+    </div>
+  </div>
+  <div class="fh-scroll">CUỘN XUỐNG</div>
+</section>
+<!-- ═══════════════ SECTION: HERO TOÀN MÀN HÌNH – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: DẢI CHỮ CHẠY – BẮT ĐẦU ═══════════════ -->
+<!-- Nội dung được nhân đôi để chạy liền mạch – sửa cả 2 nhóm giống nhau -->
+<style>
+.mq{border-block:1px solid var(--line);padding:26px 0;overflow:hidden;background:var(--bg-2)}
+.mq-track{display:flex;width:max-content;animation:mqRun 30s linear infinite}
+.mq-track span{font-family:var(--font-head);font-size:1.7rem;font-style:italic;padding:0 36px;white-space:nowrap;color:var(--text)}
+.mq-track span:nth-child(even){color:var(--gold);font-style:normal}
+@keyframes mqRun{to{transform:translateX(-50%)}}
+</style>
+<div class="mq">
+  <div class="mq-track">
+    <span>Tráng gương Chrome</span><span>✦</span><span>Đắp gel Nhật</span><span>✦</span><span>Vẽ nghệ thuật</span><span>✦</span><span>Mắt mèo 9D</span><span>✦</span><span>Combo cô dâu</span><span>✦</span>
+    <span>Tráng gương Chrome</span><span>✦</span><span>Đắp gel Nhật</span><span>✦</span><span>Vẽ nghệ thuật</span><span>✦</span><span>Mắt mèo 9D</span><span>✦</span><span>Combo cô dâu</span><span>✦</span>
+  </div>
+</div>
+<!-- ═══════════════ SECTION: DẢI CHỮ CHẠY – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: GIỚI THIỆU + CON SỐ – BẮT ĐẦU ═══════════════ -->
+<style>
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.ab p{color:var(--muted);margin:26px 0}
+.ab-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:40px}
+.ab-stats div{padding:28px 0}
+.ab-stats b{display:block;font-family:var(--font-head);font-size:2.8rem;font-weight:500;color:var(--gold)}
+.ab-stats small{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.ab-img{position:relative}
+.ab-img img{aspect-ratio:3/4;object-fit:cover;object-position:60% center;filter:grayscale(.2)}
+.ab-img::before{content:'';position:absolute;inset:-24px 24px 24px -24px;border:1px solid var(--gold);z-index:-1}
+.ab-sign{position:absolute;right:-30px;bottom:40px;background:var(--bg-3);border:1px solid var(--line);padding:22px 28px;font-family:var(--font-head);font-style:italic;font-size:1.3rem}
+.ab-sign small{display:block;font-family:var(--font-body);font-style:normal;font-size:.7rem;letter-spacing:.2em;color:var(--gold);margin-top:4px}
+@media(max-width:960px){.ab{grid-template-columns:1fr;gap:60px}.ab-sign{right:10px}}
+</style>
+<section class="section">
+  <div class="container ab">
+    <div class="reveal">
+      <span class="label">Về NOIR</span>
+      <h2 class="title">Nơi vẻ đẹp được <em>chăm chút</em> tỉ mỉ</h2>
+      <p>NOIR không chỉ là tiệm nail – đây là lounge thư giãn với ghế sofa êm ái, trà thượng hạng và âm nhạc nhẹ nhàng. Thợ của chúng tôi được đào tạo bài bản, cập nhật xu hướng Hàn – Nhật mỗi tháng.</p>
+      <a href="#lien-he" class="btn btn-line">Ghé thăm chúng tôi</a>
+      <div class="ab-stats">
+        <div><b data-count="8">0</b><small>Năm kinh nghiệm</small></div>
+        <div><b data-count="12">0</b><small>Nghệ nhân</small></div>
+        <div><b data-count="20">0</b><small>Nghìn khách</small></div>
+      </div>
+    </div>
+    <div class="ab-img reveal">
+      <img src="images/hero.png" alt="Bộ móng chrome vàng tại NOIR">
+      <div class="ab-sign">Mỗi bộ móng là một tác phẩm<small>— FOUNDER, NOIR</small></div>
+    </div>
+  </div>
+</section>
+<script>
+(()=>{
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,end=+el.dataset.count;let n=0;
+    const t=setInterval(()=>{n++;el.textContent=n+(n===end?'+':'');if(n>=end)clearInterval(t)},60);
+    io.unobserve(el);
+  }));
+  document.querySelectorAll('[data-count]').forEach(el=>io.observe(el));
+})();
+</script>
+<!-- ═══════════════ SECTION: GIỚI THIỆU + CON SỐ – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: DỊCH VỤ DẠNG DANH SÁCH SỐ – BẮT ĐẦU ═══════════════ -->
+<style>
+.sl{background:var(--bg-2)}
+.sl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:60px;flex-wrap:wrap}
+.sl-head p{color:var(--muted);max-width:380px}
+.sl-item{display:grid;grid-template-columns:80px 1fr 1.2fr auto;gap:30px;align-items:center;padding:34px 10px;border-top:1px solid var(--line);transition:.5s;position:relative}
+.sl-item:last-child{border-bottom:1px solid var(--line)}
+.sl-item::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(212,175,106,.08),transparent);transform:scaleX(0);transform-origin:left;transition:.6s}
+.sl-item:hover::before{transform:scaleX(1)}
+.sl-item:hover{padding-left:30px}
+.sl-no{font-family:var(--font-head);font-size:1.2rem;color:var(--gold)}
+.sl-item h3{font-size:2rem}
+.sl-item p{color:var(--muted);font-size:.92rem}
+.sl-price{font-family:var(--font-head);font-size:1.4rem;color:var(--gold);white-space:nowrap}
+@media(max-width:800px){.sl-item{grid-template-columns:50px 1fr;gap:8px 16px}.sl-item p,.sl-price{grid-column:2}}
+</style>
+<section class="section sl" id="dich-vu">
+  <div class="container">
+    <div class="sl-head reveal">
+      <div><span class="label">Dịch vụ</span><h2 class="title">Trải nghiệm <em>đặc quyền</em></h2></div>
+      <p>Sử dụng sản phẩm cao cấp nhập khẩu từ Nhật Bản, Hàn Quốc và Mỹ.</p>
+    </div>
+    <!-- Thêm dịch vụ: copy 1 khối <div class="sl-item"> -->
+    <div class="sl-item reveal"><span class="sl-no">01</span><h3>Tráng gương Chrome</h3><p>Hiệu ứng gương kim loại vàng, bạc, hologram – sang trọng tuyệt đối.</p><span class="sl-price">từ 250K</span></div>
+    <div class="sl-item reveal"><span class="sl-no">02</span><h3>Đắp gel Nhật Bản</h3><p>Form móng tự nhiên, mỏng nhẹ, bền 4–5 tuần không hại móng thật.</p><span class="sl-price">từ 350K</span></div>
+    <div class="sl-item reveal"><span class="sl-no">03</span><h3>Vẽ nghệ thuật</h3><p>Vẽ tay, đính đá Swarovski, hoa khô, nhũ vàng 24K theo yêu cầu.</p><span class="sl-price">từ 40K/ngón</span></div>
+    <div class="sl-item reveal"><span class="sl-no">04</span><h3>Spa tay & chân</h3><p>Ngâm sữa thảo mộc, tẩy tế bào chết, đắp paraffin, massage đá nóng.</p><span class="sl-price">từ 200K</span></div>
+  </div>
+</section>
+<!-- ═══════════════ SECTION: DỊCH VỤ DẠNG DANH SÁCH SỐ – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: GÓI DỊCH VỤ (3 CỘT GIÁ) – BẮT ĐẦU ═══════════════ -->
+<style>
+.pk-head{text-align:center;margin-bottom:70px}
+.pk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.pk-card{border:1px solid var(--line);padding:50px 40px;display:flex;flex-direction:column;transition:.5s;background:var(--bg)}
+.pk-card:hover{border-color:var(--gold);transform:translateY(-10px)}
+.pk-card.hot{background:linear-gradient(170deg,var(--bg-3),var(--bg));border-color:var(--gold);position:relative}
+.pk-card.hot::before{content:'PHỔ BIẾN NHẤT';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#16120e;font-size:.65rem;letter-spacing:.25em;padding:5px 16px;font-weight:600}
+.pk-name{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.pk-price{font-family:var(--font-head);font-size:3.4rem;margin:16px 0 4px}
+.pk-price small{font-size:1rem;color:var(--muted)}
+.pk-desc{color:var(--muted);font-size:.9rem;padding-bottom:26px;border-bottom:1px solid var(--line)}
+.pk-card ul{list-style:none;margin:26px 0 36px;flex:1}
+.pk-card li{padding:9px 0;font-size:.92rem;display:flex;gap:12px}
+.pk-card li::before{content:'✦';color:var(--gold);font-size:.7rem;margin-top:5px}
+@media(max-width:960px){.pk-grid{grid-template-columns:1fr;max-width:440px;margin:auto}}
+</style>
+<section class="section" id="goi-dich-vu">
+  <div class="container">
+    <div class="pk-head reveal"><span class="label">Bảng giá</span><h2 class="title">Chọn gói <em>phù hợp</em> với bạn</h2></div>
+    <div class="pk-grid">
+      <div class="pk-card reveal">
+        <span class="pk-name">Essential</span>
+        <div class="pk-price">290K</div>
+        <p class="pk-desc">Chăm sóc cơ bản cho vẻ đẹp hằng ngày.</p>
+        <ul><li>Cắt da, dũa form</li><li>Sơn gel 1 màu</li><li>Dưỡng da tay</li><li>Trà thảo mộc</li></ul>
+        <a href="#lien-he" class="btn btn-line">Chọn gói</a>
+      </div>
+      <div class="pk-card hot reveal">
+        <span class="pk-name">Signature</span>
+        <div class="pk-price gold-text">590K</div>
+        <p class="pk-desc">Trải nghiệm trọn vẹn được yêu thích nhất.</p>
+        <ul><li>Đắp gel Nhật Bản</li><li>Tráng gương / mắt mèo</li><li>Vẽ nghệ thuật 2 ngón</li><li>Spa tay paraffin</li><li>Bảo hành 10 ngày</li></ul>
+        <a href="#lien-he" class="btn btn-gold">Chọn gói</a>
+      </div>
+      <div class="pk-card reveal">
+        <span class="pk-name">Bridal</span>
+        <div class="pk-price">1.290K</div>
+        <p class="pk-desc">Dành riêng cho ngày trọng đại của bạn.</p>
+        <ul><li>Tư vấn thiết kế riêng</li><li>Đắp gel tay + chân</li><li>Đính đá Swarovski</li><li>Spa tay chân cao cấp</li><li>Thử mẫu trước 1 tuần</li></ul>
+        <a href="#lien-he" class="btn btn-line">Chọn gói</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════ SECTION: GÓI DỊCH VỤ (3 CỘT GIÁ) – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: BỘ SƯU TẬP CUỘN NGANG – BẮT ĐẦU ═══════════════ -->
+<!-- Thay ảnh thật: thêm style="background-image:url(images/xxx.jpg)" vào .hs-art -->
+<style>
+.hs{background:var(--bg-2);overflow:hidden}
+.hs-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;gap:20px;flex-wrap:wrap}
+.hs-nav{display:flex;gap:10px}
+.hs-nav button{width:54px;height:54px;border:1px solid var(--gold);background:none;color:var(--gold);font-size:1.2rem;cursor:pointer;transition:.3s}
+.hs-nav button:hover{background:var(--gold);color:#16120e}
+.hs-track{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-left:max(5vw,calc((100vw - 1200px)/2));padding-right:5vw}
+.hs-track::-webkit-scrollbar{display:none}
+.hs-item{flex:0 0 300px;scroll-snap-align:start}
+.hs-art{height:400px;background-size:cover;background-position:center;display:grid;place-items:center;overflow:hidden;position:relative;transition:.6s}
+.hs-item:hover .hs-art{filter:brightness(1.15)}
+.hs-item h4{font-family:var(--font-head);font-size:1.5rem;font-weight:500;margin-top:18px}
+.hs-item small{color:var(--gold);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase}
+.hs-nails{display:flex;gap:12px;align-items:flex-end}
+.hs-nails i{display:block;width:34px;height:80px;border-radius:17px 17px 6px 6px;box-shadow:inset -5px -8px 12px rgba(0,0,0,.3),inset 5px 5px 10px rgba(255,255,255,.35)}
+.hs-nails i:nth-child(2),.hs-nails i:nth-child(4){height:94px}
+.hs-nails i:nth-child(3){height:104px}
+</style>
+<section class="section hs" id="bo-suu-tap">
+  <div class="container hs-head reveal">
+    <div><span class="label">Bộ sưu tập</span><h2 class="title">Mẫu <em>thịnh hành</em></h2></div>
+    <div class="hs-nav"><button id="hsPrev" aria-label="Trước">←</button><button id="hsNext" aria-label="Sau">→</button></div>
+  </div>
+  <div class="hs-track reveal" id="hsTrack">
+    <div class="hs-item"><div class="hs-art" style="background-image:url(images/hero.png)"></div><h4>Noir & Gold</h4><small>Chrome · Coffin</small></div>
+    <div class="hs-item"><div class="hs-art" style="background:radial-gradient(circle at 30% 20%,#3a2a1c,#120e0b)"><div class="hs-nails"><i style="background:linear-gradient(135deg,#f3dca4,#9c7a3c,#f3dca4)"></i><i style="background:linear-gradient(135deg,#9c7a3c,#f3dca4,#9c7a3c)"></i><i style="background:linear-gradient(135deg,#f3dca4,#9c7a3c,#f3dca4)"></i><i style="background:linear-gradient(135deg,#9c7a3c,#f3dca4,#9c7a3c)"></i></div></div><h4>Liquid Gold</h4><small>Tráng gương</small></div>
+    <div class="hs-item"><div class="hs-art" style="background:radial-gradient(circle at 70% 30%,#3b1219,#110709)"><div class="hs-nails"><i style="background:linear-gradient(#8e1c2c,#3a0a12)"></i><i style="background:linear-gradient(#b02a3d,#4d0d18)"></i><i style="background:linear-gradient(#8e1c2c,#3a0a12)"></i><i style="background:linear-gradient(#b02a3d,#4d0d18)"></i></div></div><h4>Bordeaux</h4><small>Đỏ rượu vang</small></div>
+    <div class="hs-item"><div class="hs-art" style="background:radial-gradient(circle at 40% 30%,#1d2340,#0a0c16)"><div class="hs-nails"><i style="background:radial-gradient(circle at 50% 35%,#c9d6ff,#2b3a8f 60%,#0d1440)"></i><i style="background:radial-gradient(circle at 50% 35%,#e0d0ff,#4a2b8f 60%,#160d40)"></i><i style="background:radial-gradient(circle at 50% 35%,#c9d6ff,#2b3a8f 60%,#0d1440)"></i></div></div><h4>Midnight Galaxy</h4><small>Mắt mèo 9D</small></div>
+    <div class="hs-item"><div class="hs-art" style="background:radial-gradient(circle at 50% 30%,#3a302a,#15110e)"><div class="hs-nails"><i style="background:linear-gradient(170deg,#f5ece0 55%,#d4af6a)"></i><i style="background:linear-gradient(170deg,#f5ece0 55%,#d4af6a)"></i><i style="background:linear-gradient(170deg,#f5ece0 55%,#d4af6a)"></i><i style="background:linear-gradient(170deg,#f5ece0 55%,#d4af6a)"></i><i style="background:linear-gradient(170deg,#f5ece0 55%,#d4af6a)"></i></div></div><h4>Golden French</h4><small>French tip</small></div>
+    <div class="hs-item"><div class="hs-art" style="background:radial-gradient(circle at 50% 30%,#2e2925,#100d0b)"><div class="hs-nails"><i style="background:#1a1715"></i><i style="background:#2a2522"></i><i style="background:#1a1715"></i><i style="background:#2a2522"></i></div></div><h4>Velvet Black</h4><small>Đen nhung lì</small></div>
+  </div>
+</section>
+<script>
+(()=>{
+  const t=document.getElementById('hsTrack');
+  document.getElementById('hsPrev').onclick=()=>t.scrollBy({left:-324,behavior:'smooth'});
+  document.getElementById('hsNext').onclick=()=>t.scrollBy({left:324,behavior:'smooth'});
+})();
+</script>
+<!-- ═══════════════ SECTION: BỘ SƯU TẬP CUỘN NGANG – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: ĐÁNH GIÁ DẠNG SLIDER – BẮT ĐẦU ═══════════════ -->
+<style>
+.ts{text-align:center}
+.ts-wrap{max-width:820px;margin:auto;position:relative;min-height:260px}
+.ts-quote{font-family:var(--font-head);font-size:6rem;line-height:1;color:var(--gold);opacity:.5}
+.ts-slide{position:absolute;inset:60px 0 auto;opacity:0;transform:translateY(20px);transition:.8s;pointer-events:none}
+.ts-slide.active{opacity:1;transform:none;pointer-events:auto}
+.ts-slide p{font-family:var(--font-head);font-size:clamp(1.4rem,2.6vw,2rem);font-style:italic;line-height:1.5}
+.ts-slide b{display:block;margin-top:28px;font-weight:500;letter-spacing:.15em;font-size:.85rem}
+.ts-slide small{color:var(--gold);font-size:.75rem;letter-spacing:.2em}
+.ts-dots{display:flex;justify-content:center;gap:12px;margin-top:40px}
+.ts-dots button{width:30px;height:2px;background:var(--line);border:none;cursor:pointer;transition:.4s}
+.ts-dots button.active{background:var(--gold);width:60px}
+@media(max-width:700px){.ts-wrap{min-height:340px}}
+</style>
+<section class="section ts">
+  <div class="container">
+    <span class="label">Khách hàng</span>
+    <div class="ts-wrap reveal">
+      <div class="ts-quote">“</div>
+      <div class="ts-slide active"><p>Không gian quá sang, cảm giác như đang ở spa 5 sao. Bộ móng chrome vàng làm mình được khen suốt cả tuần.</p><b>KHÁNH VY</b><small>★★★★★ · Quận 2</small></div>
+      <div class="ts-slide"><p>Gói Bridal thật sự xứng đáng. Các chị tư vấn mẫu rất tận tâm, móng bền đẹp đến tận sau tuần trăng mật.</p><b>BẢO NGỌC</b><small>★★★★★ · Quận 7</small></div>
+      <div class="ts-slide"><p>Mình rất kỹ vụ vệ sinh, ở NOIR dụng cụ được tiệt trùng và mở túi ngay trước mặt. Rất yên tâm.</p><b>THU HƯƠNG</b><small>★★★★★ · Quận 3</small></div>
+    </div>
+    <div class="ts-dots" id="tsDots"></div>
+  </div>
+</section>
+<script>
+(()=>{
+  const s=[...document.querySelectorAll('.ts-slide')],d=document.getElementById('tsDots');let i=0,timer;
+  s.forEach((_,k)=>{const b=document.createElement('button');b.setAttribute('aria-label','Đánh giá '+(k+1));b.onclick=()=>go(k);d.appendChild(b)});
+  const dots=[...d.children];
+  function go(k){s[i].classList.remove('active');dots[i].classList.remove('active');i=k;s[i].classList.add('active');dots[i].classList.add('active');clearInterval(timer);timer=setInterval(()=>go((i+1)%s.length),5000)}
+  go(0);
+})();
+</script>
+<!-- ═══════════════ SECTION: ĐÁNH GIÁ DẠNG SLIDER – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: HỎI ĐÁP (FAQ) – BẮT ĐẦU ═══════════════ -->
+<style>
+.fq{background:var(--bg-2)}
+.fq-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:80px}
+.fq-grid>div:first-child p{color:var(--muted);margin-top:20px}
+.fq-item{border-bottom:1px solid var(--line)}
+.fq-q{width:100%;background:none;border:none;color:var(--text);font:inherit;font-size:1.05rem;font-weight:400;text-align:left;padding:26px 0;cursor:pointer;display:flex;justify-content:space-between;gap:20px}
+.fq-q::after{content:'+';color:var(--gold);font-size:1.5rem;line-height:1;transition:.4s}
+.fq-item.open .fq-q::after{transform:rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .5s ease;color:var(--muted)}
+.fq-a p{padding-bottom:26px}
+@media(max-width:900px){.fq-grid{grid-template-columns:1fr;gap:40px}}
+</style>
+<section class="section fq" id="hoi-dap">
+  <div class="container fq-grid">
+    <div class="reveal"><span class="label">Hỏi đáp</span><h2 class="title">Câu hỏi <em>thường gặp</em></h2><p>Chưa thấy câu trả lời? Nhắn Zalo cho NOIR, phản hồi trong 5 phút.</p></div>
+    <div class="reveal">
+      <div class="fq-item"><button class="fq-q">Có cần đặt lịch trước không?</button><div class="fq-a"><p>Nên đặt trước 1 ngày để được chọn thợ và giờ đẹp. Khách vãng lai vẫn được phục vụ nếu còn chỗ.</p></div></div>
+      <div class="fq-item"><button class="fq-q">Móng gel giữ được bao lâu?</button><div class="fq-a"><p>Trung bình 3–5 tuần tuỳ cơ địa. Bong tróc trong thời gian bảo hành sẽ được làm lại miễn phí.</p></div></div>
+      <div class="fq-item"><button class="fq-q">Dụng cụ có được tiệt trùng không?</button><div class="fq-a"><p>100% dụng cụ kim loại được hấp tiệt trùng nhiệt độ cao, dũa và buffer dùng một lần cho mỗi khách.</p></div></div>
+      <div class="fq-item"><button class="fq-q">Có chỗ đậu xe không?</button><div class="fq-a"><p>Có chỗ giữ xe máy miễn phí ngay trước tiệm, ô tô có bãi gửi cách 50m.</p></div></div>
+    </div>
+  </div>
+</section>
+<script>
+document.querySelectorAll('.fq-q').forEach(q=>q.onclick=()=>{
+  const it=q.parentElement,a=q.nextElementSibling,open=it.classList.toggle('open');
+  a.style.maxHeight=open?a.scrollHeight+'px':0;
+});
+</script>
+<!-- ═══════════════ SECTION: HỎI ĐÁP (FAQ) – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: LIÊN HỆ + ĐẶT LỊCH QUA ZALO – BẮT ĐẦU ═══════════════ -->
+<!-- Form này mở Zalo kèm nội dung đặt lịch. Đổi số Zalo ở biến ZALO trong <script> -->
+<style>
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.ct-info{display:grid;gap:30px;margin-top:40px}
+.ct-info small{display:block;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.ct-info div{font-size:1.05rem}
+.ct-form{display:grid;gap:26px;border:1px solid var(--line);padding:50px;background:var(--bg-2)}
+.ct-form h3{font-size:2rem}
+.ct-field{position:relative}
+.ct-field input,.ct-field select{width:100%;background:none;border:none;border-bottom:1px solid var(--line);color:var(--text);font:inherit;padding:14px 0;transition:.3s}
+.ct-field select option{background:var(--bg)}
+.ct-field input:focus,.ct-field select:focus{outline:none;border-color:var(--gold)}
+.ct-field label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.ct-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ct-note{font-size:.8rem;color:var(--muted);text-align:center}
+@media(max-width:900px){.ct-grid{grid-template-columns:1fr;gap:50px}}
+@media(max-width:600px){.ct-form{padding:34px 24px}.ct-row{grid-template-columns:1fr}}
+</style>
+<section class="section" id="lien-he">
+  <div class="container ct-grid">
+    <div class="reveal">
+      <span class="label">Liên hệ</span>
+      <h2 class="title">Hẹn gặp bạn tại <em>NOIR</em></h2>
+      <div class="ct-info">
+        <div><small>Địa chỉ</small>88 Lê Thánh Tôn, Quận 1, TP.HCM</div>
+        <div><small>Giờ mở cửa</small>9:30 – 21:30 · Tất cả các ngày</div>
+        <div><small>Hotline / Zalo</small>0909 888 999</div>
+        <div><small>Ưu đãi</small><span class="gold-text">Giảm 15% cho khách đặt lịch online lần đầu</span></div>
+      </div>
+    </div>
+    <form class="ct-form reveal" id="ctForm">
+      <h3>Đặt lịch hẹn</h3>
+      <div class="ct-row">
+        <div class="ct-field"><label>Họ tên</label><input name="ten" required></div>
+        <div class="ct-field"><label>Số điện thoại</label><input name="sdt" type="tel" required></div>
+      </div>
+      <div class="ct-field"><label>Gói dịch vụ</label><select name="goi"><option>Essential – 290K</option><option>Signature – 590K</option><option>Bridal – 1.290K</option><option>Khác / cần tư vấn</option></select></div>
+      <div class="ct-row">
+        <div class="ct-field"><label>Ngày</label><input name="ngay" type="date" required></div>
+        <div class="ct-field"><label>Giờ</label><input name="gio" type="time" required></div>
+      </div>
+      <button class="btn btn-gold" type="submit">Gửi qua Zalo ✦</button>
+      <p class="ct-note">Nội dung đặt lịch sẽ được sao chép, bạn chỉ cần dán vào Zalo.</p>
+    </form>
+  </div>
+</section>
+<script>
+(()=>{
+  const ZALO='0909888999'; // ← ĐỔI SỐ ZALO
+  document.getElementById('ctForm').onsubmit=e=>{
+    e.preventDefault();
+    const f=new FormData(e.target);
+    const msg=`Đặt lịch NOIR\nTên: ${f.get('ten')}\nSĐT: ${f.get('sdt')}\nGói: ${f.get('goi')}\nThời gian: ${f.get('gio')} ngày ${f.get('ngay')}`;
+    navigator.clipboard?.writeText(msg).catch(()=>{});
+    alert('Đã sao chép nội dung đặt lịch. Zalo sẽ mở ra – bạn dán (Ctrl/Cmd+V) và gửi nhé!');
+    window.open('https://zalo.me/'+ZALO,'_blank');
+  };
+})();
+</script>
+<!-- ═══════════════ SECTION: LIÊN HỆ + ĐẶT LỊCH QUA ZALO – KẾT THÚC ═══════════════ -->
+
+</main>
+
+
+<!-- ═══════════════ SECTION: FOOTER – BẮT ĐẦU ═══════════════ -->
+<style>
+.nf{border-top:1px solid var(--line);padding:70px 0 30px;text-align:center}
+.nf-logo{font-family:var(--font-head);font-size:3rem;letter-spacing:.4em;font-weight:500}
+.nf-social{display:flex;justify-content:center;gap:30px;margin:26px 0 40px}
+.nf-social a{font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);transition:.3s}
+.nf-social a:hover{color:var(--gold)}
+.nf small{color:var(--muted);font-size:.75rem}
+</style>
+<footer class="nf">
+  <div class="container">
+    <div class="nf-logo gold-text">NOIR</div>
+    <div class="nf-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Zalo</a></div>
+    <small>© 2026 NOIR Nail Lounge · Mẫu giao diện demo</small>
+  </div>
+</footer>
+<!-- ═══════════════ SECTION: FOOTER – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ SECTION: NÚT ZALO + GỌI NỔI – BẮT ĐẦU ═══════════════ -->
+<!-- Đổi số ở 2 chỗ: zalo.me/SỐ và tel:SỐ -->
+<style>
+.nfc{position:fixed;right:22px;bottom:24px;display:grid;gap:12px;z-index:60}
+.nfc a{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:.75rem;font-weight:600;transition:.3s;position:relative;box-shadow:0 10px 30px -8px rgba(0,0,0,.6)}
+.nfc a:hover{transform:scale(1.1)}
+.nfc-zalo{background:#0068ff;color:#fff}
+.nfc-phone{background:linear-gradient(135deg,var(--gold-d),var(--gold-2));color:#16120e;font-size:1.2rem!important}
+.nfc-phone::after{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold);animation:nfcPing 2s infinite}
+@keyframes nfcPing{to{transform:scale(1.7);opacity:0}}
+</style>
+<div class="nfc">
+  <a href="https://zalo.me/0909888999" target="_blank" rel="noopener" class="nfc-zalo" aria-label="Chat Zalo">Zalo</a>
+  <a href="tel:0909888999" class="nfc-phone" aria-label="Gọi điện">✆</a>
+</div>
+<!-- ═══════════════ SECTION: NÚT ZALO + GỌI NỔI – KẾT THÚC ═══════════════ -->
+
+
+<!-- ═══════════════ BASE SCRIPT: HIỆU ỨNG HIỆN DẦN (bắt buộc, để cuối trang) ═══════════════ -->
+<script>
+(()=>{
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.12+'s';io.observe(el)});
+})();
+</script>
+</body>
+</html>
