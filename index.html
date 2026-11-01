@@ -125,10 +125,16 @@ img { max-width:100%; display:block }
 .btn-secondary:hover { border-color:#0d0d0d; transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.08) }
 
 /* ── SCATTERED CARDS (HERO) ── */
+.cards-wrap {
+  width:100%; overflow:hidden;
+  cursor:grab; user-select:none;
+}
+.cards-wrap.is-grabbing { cursor:grabbing }
 .cards-stage {
-  width:100%; max-width:960px;
+  width:960px;
   height:480px; position:relative;
-  margin:0 auto;
+  will-change:transform;
+  transition:transform .08s linear;
 }
 .sc-card {
   position:absolute;
@@ -304,10 +310,12 @@ img { max-width:100%; display:block }
 @media(max-width:860px){
   .tpl-row { grid-template-columns:1fr; gap:36px }
   .tpl-row.reverse { direction:ltr }
-  .cards-stage { height:300px }
-  .sc-card { width:140px }
-  .sc-card:nth-child(n+4) { display:none }
   .hero-tag { display:none }
+  /* Show all cards on mobile */
+  .sc-card:nth-child(n+4){ display:block }
+  /* Slightly smaller cards */
+  .sc-card { width:160px }
+  .cards-stage { height:360px }
 }
 
 /* ── SERVICES ── */
@@ -653,42 +661,46 @@ img { max-width:100%; display:block }
   <div class="hero-tag tag-2">✦ NOIR Nail</div>
   <div class="hero-tag tag-3">🏮 Tattoos by Thu</div>
 
-  <!-- Scattered cards — nth-child(1..5) counts correctly now -->
-  <div class="cards-stage rv">
-    <a href="https://hoaispa-demo.netlify.app" target="_blank" class="sc-card" id="card-spa">
-      <img src="templates/spa-hoi-an/images/hero.png" alt="Spa Hội An">
-      <div class="sc-label"><span>Spa Hội An</span><small>Xem demo →</small></div>
-      <span class="sc-arrow">↗</span>
-    </a>
-    <a href="https://noirnail-demo.netlify.app" target="_blank" class="sc-card" id="card-noir">
-      <img src="templates/tiem-nail-2/images/hero.png" alt="NOIR Nail">
-      <div class="sc-label"><span>NOIR Nail</span><small>Xem demo →</small></div>
-      <span class="sc-arrow">↗</span>
-    </a>
-    <a href="https://phohoinail-demo.netlify.app" target="_blank" class="sc-card" id="card-phoihoi">
-      <img src="templates/tiem-nail-3/images/hero.png" alt="Phố Hội Nail">
-      <div class="sc-label"><span>Phố Hội Nail</span><small>Xem demo →</small></div>
-      <span class="sc-arrow">↗</span>
-    </a>
-    <a href="https://tiemnailpro-demo.netlify.app" target="_blank" class="sc-card" id="card-nail1">
-      <img src="templates/tiem-nail/images/hero.png" alt="Tiệm Nail">
-      <div class="sc-label"><span>Tiệm Nail</span><small>Xem demo →</small></div>
-      <span class="sc-arrow">↗</span>
-    </a>
-    <a href="https://tattoosbythu.com" target="_blank" rel="noopener" class="sc-card" id="card-tattoo">
-      <img src="https://tattoosbythu.com/wp-content/uploads/2026/06/tattoo-artist-thu-vo-le-hygienic-tattooing-process-usa.webp" alt="Tattoos by Thu" loading="lazy">
-      <div class="sc-label">
-        <span>Tattoos by Thu</span>
-        <small style="color:#22c55e;font-weight:700">● Live</small>
-      </div>
-      <span class="sc-arrow">↗</span>
-    </a>
-    <a href="https://huybritish-demo.netlify.app" target="_blank" class="sc-card" id="card-british">
-      <img src="templates/British%20learing/images/thumbnail.jpg" alt="British Accent" loading="lazy">
-      <div class="sc-label"><span>British Accent</span><small>Xem demo →</small></div>
-      <span class="sc-arrow">↗</span>
-    </a>
+  <!-- Scattered cards — drag pan to explore -->
+  <div class="cards-wrap" id="cardsWrap">
+    <div class="cards-stage rv" id="cardsStage">
+      <a href="https://hoaispa-demo.netlify.app" target="_blank" class="sc-card" id="card-spa">
+        <img src="templates/spa-hoi-an/images/hero.png" alt="Spa Hội An">
+        <div class="sc-label"><span>Spa Hội An</span><small>Xem demo →</small></div>
+        <span class="sc-arrow">↗</span>
+      </a>
+      <a href="https://noirnail-demo.netlify.app" target="_blank" class="sc-card" id="card-noir">
+        <img src="templates/tiem-nail-2/images/hero.png" alt="NOIR Nail">
+        <div class="sc-label"><span>NOIR Nail</span><small>Xem demo →</small></div>
+        <span class="sc-arrow">↗</span>
+      </a>
+      <a href="https://phohoinail-demo.netlify.app" target="_blank" class="sc-card" id="card-phoihoi">
+        <img src="templates/tiem-nail-3/images/hero.png" alt="Phố Hội Nail">
+        <div class="sc-label"><span>Phố Hội Nail</span><small>Xem demo →</small></div>
+        <span class="sc-arrow">↗</span>
+      </a>
+      <a href="https://tiemnailpro-demo.netlify.app" target="_blank" class="sc-card" id="card-nail1">
+        <img src="templates/tiem-nail/images/hero.png" alt="Tiệm Nail">
+        <div class="sc-label"><span>Tiệm Nail</span><small>Xem demo →</small></div>
+        <span class="sc-arrow">↗</span>
+      </a>
+      <a href="https://tattoosbythu.com" target="_blank" rel="noopener" class="sc-card" id="card-tattoo">
+        <img src="https://tattoosbythu.com/wp-content/uploads/2026/06/tattoo-artist-thu-vo-le-hygienic-tattooing-process-usa.webp" alt="Tattoos by Thu" loading="lazy">
+        <div class="sc-label">
+          <span>Tattoos by Thu</span>
+          <small style="color:#22c55e;font-weight:700">● Live</small>
+        </div>
+        <span class="sc-arrow">↗</span>
+      </a>
+      <a href="https://huybritish-demo.netlify.app" target="_blank" class="sc-card" id="card-british">
+        <img src="templates/British%20learing/images/thumbnail.jpg" alt="British Accent" loading="lazy">
+        <div class="sc-label"><span>British Accent</span><small>Xem demo →</small></div>
+        <span class="sc-arrow">↗</span>
+      </a>
+    </div>
   </div>
+  <!-- drag hint -->
+  <p style="font-size:.72rem;color:#aaa;margin-top:12px;letter-spacing:.04em">← Kéo để xem thêm mẫu →</p>
 </section>
 
 <!-- STATS -->
@@ -1481,6 +1493,69 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if (!isOpen) item.classList.add('open');
   });
 });
+
+// ── DRAG PAN – cards stage (keeps scattered layout) ──
+(function(){
+  const wrap  = document.getElementById('cardsWrap');
+  const stage = document.getElementById('cardsStage');
+  if(!wrap || !stage) return;
+
+  let panX = 0, startX = 0, startPan = 0;
+  let isDragging = false, moved = false;
+
+  function getMaxPan(){
+    // max left pan = wrap width - stage width (negative)
+    return Math.min(0, wrap.clientWidth - stage.offsetWidth);
+  }
+  function clamp(v){ return Math.max(getMaxPan(), Math.min(0, v)); }
+  function apply(x, instant){
+    panX = clamp(x);
+    stage.style.transition = instant ? 'none' : 'transform .25s ease';
+    stage.style.transform  = panX === 0 ? '' : `translateX(${panX}px)`;
+  }
+
+  // ── MOUSE ──
+  wrap.addEventListener('mousedown', e=>{
+    isDragging = true; moved = false;
+    startX   = e.clientX;
+    startPan = panX;
+    wrap.classList.add('is-grabbing');
+    stage.style.transition = 'none';
+  });
+  window.addEventListener('mousemove', e=>{
+    if(!isDragging) return;
+    const dx = e.clientX - startX;
+    if(Math.abs(dx) > 3) moved = true;
+    apply(startPan + dx, true);
+  });
+  window.addEventListener('mouseup', ()=>{
+    if(!isDragging) return;
+    isDragging = false;
+    wrap.classList.remove('is-grabbing');
+  });
+  // Block card click if dragged
+  stage.querySelectorAll('a').forEach(a=>{
+    a.addEventListener('click', e=>{ if(moved){ e.preventDefault(); moved=false; } });
+  });
+
+  // ── TOUCH ──
+  wrap.addEventListener('touchstart', e=>{
+    startX   = e.touches[0].clientX;
+    startPan = panX;
+    stage.style.transition = 'none';
+  }, {passive:true});
+  wrap.addEventListener('touchmove', e=>{
+    const dx = e.touches[0].clientX - startX;
+    apply(startPan + dx, true);
+  }, {passive:true});
+  wrap.addEventListener('touchend', ()=>{
+    // snap back if over-panned
+    apply(panX, false);
+  });
+
+  // Re-clamp on resize
+  window.addEventListener('resize', ()=> apply(panX, true));
+})();
 </script>
 </body>
 </html>
