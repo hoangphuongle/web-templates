@@ -128,10 +128,11 @@ img { max-width:100%; display:block }
 .cards-wrap {
   width:100%; overflow:hidden;
   cursor:grab; user-select:none;
+  display:flex; justify-content:center;
 }
 .cards-wrap.is-grabbing { cursor:grabbing }
 .cards-stage {
-  width:960px;
+  width:960px; flex-shrink:0;
   height:480px; position:relative;
   will-change:transform;
   transition:transform .08s linear;
@@ -1503,11 +1504,15 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   let panX = 0, startX = 0, startPan = 0;
   let isDragging = false, moved = false;
 
-  function getMaxPan(){
-    // max left pan = wrap width - stage width (negative)
-    return Math.min(0, wrap.clientWidth - stage.offsetWidth);
+  function getBounds(){
+    const overflow = stage.offsetWidth - wrap.clientWidth;
+    if(overflow <= 0) return {min:0, max:0}; // all cards visible
+    return {min:-overflow, max:0}; // pan left to reveal right cards
   }
-  function clamp(v){ return Math.max(getMaxPan(), Math.min(0, v)); }
+  function clamp(v){
+    const b = getBounds();
+    return Math.max(b.min, Math.min(b.max, v));
+  }
   function apply(x, instant){
     panX = clamp(x);
     stage.style.transition = instant ? 'none' : 'transform .25s ease';
