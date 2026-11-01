@@ -75,7 +75,27 @@ img { max-width:100%; display:block }
   display:flex; flex-direction:column; align-items:center;
   text-align:center;
   position:relative; overflow:hidden;
+  /* Dot grid */
+  background-image: radial-gradient(circle, rgba(0,0,0,.055) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
+/* Green blobs */
+.hero::before {
+  content:'';
+  position:absolute; top:-120px; right:-120px;
+  width:560px; height:560px; border-radius:50%;
+  background:radial-gradient(circle, rgba(34,197,94,.13) 0%, transparent 65%);
+  pointer-events:none; z-index:0;
+}
+.hero::after {
+  content:'';
+  position:absolute; bottom:80px; left:-80px;
+  width:380px; height:380px; border-radius:50%;
+  background:radial-gradient(circle, rgba(34,197,94,.08) 0%, transparent 65%);
+  pointer-events:none; z-index:0;
+}
+/* Keep hero content above blobs */
+.hero > * { position:relative; z-index:1; }
 .hero-pill {
   display:inline-flex; align-items:center; gap:8px;
   background:#fff; border:1px solid rgba(0,0,0,.1);
@@ -655,6 +675,26 @@ img { max-width:100%; display:block }
   <div class="hero-btns rv">
     <a href="#templates" class="btn-primary" id="hero-btn-templates">Xem mẫu website ↓</a>
     <a href="https://zalo.me/0974100372" target="_blank" class="btn-secondary" id="hero-btn-zalo">Nhắn Zalo miễn phí</a>
+  </div>
+
+  <!-- Decorative floating badges -->
+  <div style="position:absolute;top:18%;left:4%;background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:14px;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,.07);display:flex;align-items:center;gap:10px;z-index:2;animation:floatA 5s ease-in-out infinite">
+    <span style="font-size:1.3rem">⭐</span>
+    <div style="text-align:left">
+      <div style="font-size:.72rem;font-weight:800;color:#0d0d0d">5.0 / 5.0</div>
+      <div style="font-size:.65rem;color:#888">Đánh giá khách hàng</div>
+    </div>
+  </div>
+  <div style="position:absolute;top:15%;right:4%;background:#0d0d0d;border-radius:14px;padding:12px 18px;box-shadow:0 4px 20px rgba(0,0,0,.15);z-index:2;animation:floatB 6s ease-in-out infinite">
+    <div style="font-size:.7rem;font-weight:700;color:#22c55e;letter-spacing:.05em">✓ RESPONSIVE</div>
+    <div style="font-size:.65rem;color:rgba(255,255,255,.5);margin-top:2px">Mobile · Tablet · Desktop</div>
+  </div>
+  <div style="position:absolute;bottom:44%;left:3%;background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:12px;padding:10px 14px;box-shadow:0 4px 16px rgba(0,0,0,.07);z-index:2;animation:floatA 7s ease-in-out infinite;display:flex;align-items:center;gap:8px">
+    <span style="font-size:1.1rem">🚀</span>
+    <div style="text-align:left">
+      <div style="font-size:.68rem;font-weight:800;color:#0d0d0d">Bàn giao 7 ngày</div>
+      <div style="font-size:.62rem;color:#888">Nhanh · Đúng hẹn</div>
+    </div>
   </div>
 
   <!-- Floating tags — must be OUTSIDE cards-stage to avoid nth-child bug -->
