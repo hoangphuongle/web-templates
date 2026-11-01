@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Đất Mới V1 - Đặt Vé Xe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="https://hoangphuongle.github.io/web-templates/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        Chốt ngay qua Zalo
+      </a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
+
+    <div class="banner-wrapper">
+        <!-- Lớp phủ tối cho banner để làm nổi bật chữ -->
+        <div class="banner-overlay"></div>
+
+
+
+        <!-- Floating Main Header (Header dạng viên thuốc) -->
+        <div class="container relative-header">
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-bus-simple"></i>
+                    <span>ĐẤT MỚI</span>
+                </a>
+                
+                <!-- Danh mục Menu -->
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="active">Trang chủ</a></li>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Dịch vụ</a></li>
+                        <li><a href="#">Tin tức</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Actions bên phải -->
+                <div class="header-actions">
+                    <a href="#" class="btn-assistant">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Trợ lý<br>Tư vấn</span>
+                    </a>
+                    <div class="action-pill">
+                        <a href="#" title="Tìm kiếm"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="#" title="Tài khoản"><i class="fa-regular fa-user"></i></a>
+                        <a href="#" title="Kiểm tra lịch sử đặt vé">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Red Info Ribbon -->
+            <div class="info-ribbon">
+                <div class="info-item"><i class="fa-regular fa-clock"></i> Thời gian: 24/7</div>
+                <div class="info-item"><i class="fa-solid fa-phone"></i> Hotline: 1900 6750</div>
+                <div class="info-item"><i class="fa-solid fa-location-dot"></i> Địa chỉ: 123 Đường Bến Xe, TP.HCM</div>
+            </div>
+        </div>
+
+        <!-- Banner Content -->
+        <div class="banner-content container">
+            <h1>Hành Trình Tiện Nghi,<br>Kết Nối Mọi Nẻo Đường</h1>
+            <p>Trải nghiệm dịch vụ xe khách cao cấp với Đất Mới Bus.</p>
+            <a href="#" class="btn-book">ĐẶT VÉ NGAY</a>
+        </div>
+    </div>
+
+    <!-- Section Về Chúng Tôi -->
+    <section class="about-section">
+        <div class="container relative-about">
+            <div class="section-header">
+                <h2>VỀ CHÚNG TÔI</h2>
+                <div class="line-divider"></div>
+            </div>
+            <div class="about-grid">
+                <!-- Cột 1 -->
+                <div class="about-item">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Giới thiệu chung</h3>
+                    <p>Chúng tôi thực hiện dịch vụ vận chuyển hàng hóa trên toàn quốc bằng đường bộ, đường hàng không, đường biển với mọi tuyến đường theo nhu cầu của khách hàng. Ngoài ra, chúng tôi còn có nhiều dịch vụ vận chuyển khác để phục vụ khách hàng.</p>
+                </div>
+                <!-- Cột 2 -->
+                <div class="about-item">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3>Sứ mệnh</h3>
+                    <p>Chúng tôi mong muốn không chỉ mang đến cho khách hàng một dịch vụ chất lượng theo tiêu chuẩn quốc tế với sự trải nghiệm thân thiện và nhiệt tình mà còn cùng khách hàng của mình xây dựng một cuộc sống tốt đẹp hơn cho người Việt.</p>
+                </div>
+                <!-- Cột 3 -->
+                <div class="about-item">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-binoculars"></i>
+                    </div>
+                    <h3>Tầm nhìn</h3>
+                    <p>Nằm trong top 3 về quy mô và mạng lưới chuyển phát tại Việt Nam, trở thành công ty số 1 về chất lượng dịch vụ và chỉ số niềm tin cho từng đơn hàng. Là nơi làm việc hấp dẫn, cùng đóng góp công sức - cùng chia sẻ thành công.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Dịch Vụ -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <span class="badge">DỊCH VỤ CỦA CHÚNG TÔI</span>
+                <h2>Hành Trình An Toàn & Tiện Nghi</h2>
+                <p>Chúng tôi cung cấp các giải pháp vận chuyển đa dạng, chất lượng cao, mang lại trải nghiệm thoải mái và an tâm tuyệt đối trên mọi nẻo đường.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.pexels.com/photos/1178448/pexels-photo-1178448.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Xe bus sân bay">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Dịch vụ xe bus đưa đón sân bay</h3>
+                        <p>Tuyến xe bus nhanh chóng, đúng giờ, giúp bạn di chuyển giữa sân bay và trung tâm thành phố một cách thuận tiện và tiết kiệm nhất.</p>
+                        <a href="#" class="btn-detail">Xem chi tiết <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.pexels.com/photos/326259/pexels-photo-326259.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Limousine sân bay">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-van-shuttle"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Dịch vụ xe limousine đưa đón sân bay</h3>
+                        <p>Trải nghiệm đẳng cấp với dòng xe Limousine nội thất sang trọng, ghế massage, không gian riêng tư cho chuyến đi trọn vẹn.</p>
+                        <a href="#" class="btn-detail">Xem chi tiết <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img-wrapper">
+                        <img src="https://images.pexels.com/photos/1178430/pexels-photo-1178430.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Xe tham quan du lịch">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Dịch vụ xe đưa đón tham quan du lịch</h3>
+                        <p>Đội xe đời mới đa dạng chỗ ngồi, tài xế chuyên nghiệp am hiểu tuyến điểm, đồng hành cùng bạn khám phá mọi danh lam thắng cảnh.</p>
+                        <a href="#" class="btn-detail">Xem chi tiết <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Quy Trình Làm Việc -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>QUY TRÌNH LÀM VIỆC</h2>
+                <div class="line-divider" style="background-color: var(--primary);"></div>
+            </div>
+            
+            <div class="process-grid">
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="step-icon-wrapper">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <span class="step-number">01</span>
+                    </div>
+                    <h3>Tiếp nhận yêu cầu và tư vấn</h3>
+                    <p>Khách hàng gửi yêu cầu dịch vụ theo nhu cầu. Chúng tôi nhanh chóng phản hồi với chi phí tối ưu và giải pháp phù hợp nhất.</p>
+                    <div class="step-arrow">
+                        <svg width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 20 Q 40 0 75 20" stroke="#ccc" stroke-width="2" stroke-dasharray="4 4" fill="none" />
+                            <path d="M72 15 L80 20 L70 23 Z" fill="#ccc" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="step-icon-wrapper">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-users-gear"></i>
+                        </div>
+                        <span class="step-number">02</span>
+                    </div>
+                    <h3>Điều phối và triển khai</h3>
+                    <p>Sau khi thống nhất, chúng tôi tiếp nhận thông tin, xác nhận chi tiết và bắt đầu tiến hành các thủ tục xử lý chính xác và nhanh chóng.</p>
+                    <div class="step-arrow">
+                        <svg width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 20 Q 40 0 75 20" stroke="#ccc" stroke-width="2" stroke-dasharray="4 4" fill="none" />
+                            <path d="M72 15 L80 20 L70 23 Z" fill="#ccc" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="step-icon-wrapper">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <span class="step-number">03</span>
+                    </div>
+                    <h3>Theo dõi và cập nhật</h3>
+                    <p>Lộ trình chuyến đi được theo dõi và giám sát chặt chẽ, đảm bảo hành trình an toàn, đúng tuyến, kịp thời hỗ trợ khi cần thiết.</p>
+                    <div class="step-arrow">
+                        <svg width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 20 Q 40 0 75 20" stroke="#ccc" stroke-width="2" stroke-dasharray="4 4" fill="none" />
+                            <path d="M72 15 L80 20 L70 23 Z" fill="#ccc" />
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-step">
+                    <div class="step-icon-wrapper">
+                        <div class="step-icon">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+                        <span class="step-number">04</span>
+                    </div>
+                    <h3>Đón khách theo lịch hẹn</h3>
+                    <p>Chúng tôi tiến hành đón trả khách đúng địa điểm, đúng thời gian với các phương tiện chuyên dụng, đảm bảo an toàn tuyệt đối.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tại Sao Chọn Chúng Tôi -->
+    <section class="why-choose-section">
+        <div class="container why-choose-container">
+            <!-- Cột ảnh trái -->
+            <div class="why-image">
+                <img src="https://images.pexels.com/photos/1036936/pexels-photo-1036936.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Đội ngũ chuyên nghiệp">
+            </div>
+            
+            <!-- Cột nội dung phải -->
+            <div class="why-content">
+                <div class="section-header align-left">
+                    <h2>TẠI SAO NÊN CHỌN CHÚNG TÔI</h2>
+                    <div class="line-divider"></div>
+                </div>
+                
+                <div class="why-grid">
+                    <!-- Feature 1 -->
+                    <div class="why-item">
+                        <div class="why-item-header">
+                            <div class="why-number">01</div>
+                            <h3>Chủ động lịch trình</h3>
+                        </div>
+                        <p>Hệ thống đặt vé và quản lý Online cho phép khách hàng có thể chủ động kiểm tra và theo dõi hành trình của chuyến đi.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="why-item">
+                        <div class="why-item-header">
+                            <div class="why-number">02</div>
+                            <h3>Đội ngũ chuyên nghiệp</h3>
+                        </div>
+                        <p>Với đội ngũ tài xế lâu năm cùng với bộ phận chăm sóc khách hàng tận tâm, mang lại sự an tâm tuyệt đối.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="why-item">
+                        <div class="why-item-header">
+                            <div class="why-number">03</div>
+                            <h3>Mạng lưới tuyến đường rộng khắp</h3>
+                        </div>
+                        <p>Chúng tôi vận chuyển hành khách tới 63 tỉnh/thành phố toàn quốc cùng hệ thống trạm dừng nghỉ chuẩn 5 sao.</p>
+                    </div>
+                    
+                    <!-- Feature 4 -->
+                    <div class="why-item">
+                        <div class="why-item-header">
+                            <div class="why-number">04</div>
+                            <h3>Đa dạng dòng xe cao cấp</h3>
+                        </div>
+                        <p>Chúng tôi mang tới nhiều sự lựa chọn dòng xe phù hợp với từng yêu cầu đặc thù của cá nhân hoặc tổ chức.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner Carousel -->
+    <section class="promo-carousel-section">
+        <div class="carousel-container">
+            <!-- Slide 1 (Trái - peek) -->
+            <div class="carousel-slide peek-slide">
+                <div class="slide-content">
+                    <img src="https://images.pexels.com/photos/1178430/pexels-photo-1178430.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Banner Khuyến Mãi 1">
+                </div>
+            </div>
+            
+            <!-- Slide 2 (Giữa - Active) -->
+            <div class="carousel-slide active-slide">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h2>Thoát khỏi căng thẳng<br>đắm mình trong chuyến đi</h2>
+                        <p>Trải nghiệm sự tiện nghi tuyệt đối với các dòng xe đời mới dành riêng cho bạn.</p>
+                        <a href="#" class="btn-discover">Tìm hiểu thêm <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <!-- Ảnh minh họa bên phải -->
+                    <img src="https://images.pexels.com/photos/385997/pexels-photo-385997.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Banner Khuyến Mãi 2" class="right-img">
+                </div>
+            </div>
+            
+            <!-- Slide 3 (Phải - peek) -->
+            <div class="carousel-slide peek-slide">
+                <div class="slide-content">
+                    <img src="https://images.pexels.com/photos/326259/pexels-photo-326259.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Banner Khuyến Mãi 3">
+                </div>
+            </div>
+            
+            <!-- Nút Next -->
+            <button class="nav-btn right-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Floating Social Bar -->
+    <div class="floating-social-wrapper">
+        <div class="social-pill">
+            <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" title="Hotline"><i class="fa-solid fa-phone"></i></a>
+            <a href="#" title="Zalo" class="zalo-icon">Zalo</a>
+            <a href="#" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <a href="#" class="scroll-btn"><i class="fa-solid fa-chevron-down"></i></a>
+    </div>
+    <!-- Section Đánh giá -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-layout">
+                <!-- Cột trái: Tiêu đề -->
+                <div class="reviews-intro">
+                    <div class="line-divider" style="margin: 0 0 20px 0;"></div>
+                    <h2>REVIEW VỀ ĐẤT MỚI</h2>
+                    <p>Đất Mới mong nhận được những góp ý và phản hồi từ hành khách để không ngừng nâng cao chất lượng dịch vụ vận tải trong tương lai.</p>
+                    <a href="#" class="btn-primary" style="border-radius: 5px;">Xem tất cả</a>
+                </div>
+                <!-- Cột phải: Danh sách review -->
+                <div class="reviews-list">
+                    <!-- Review Card 1 -->
+                    <div class="review-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-success">Tuyệt vời!</h4>
+                        <p>Dịch vụ xe Limousine rất chuyên nghiệp, đúng giờ. Tài xế thân thiện và chạy xe êm ái. Xe sạch sẽ và thoải mái vô cùng.</p>
+                        <div class="reviewer">
+                            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Avatar">
+                            <div class="reviewer-info">
+                                <strong>Anh Hoàng Dũng</strong>
+                                <span>Khách hàng Limousine</span>
+                            </div>
+                        </div>
+                        <div class="quote-icon">”</div>
+                    </div>
+                    <!-- Review Card 2 -->
+                    <div class="review-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-success">Tuyệt vời!</h4>
+                        <p>Lần đầu tiên đặt xe sân bay bên Đất Mới và cảm thấy rất hài lòng. Sẽ ủng hộ và giới thiệu cho người thân, bạn bè.</p>
+                        <div class="reviewer">
+                            <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Avatar">
+                            <div class="reviewer-info">
+                                <strong>Chị Mai Anh</strong>
+                                <span>Khách hàng sân bay</span>
+                            </div>
+                        </div>
+                        <div class="quote-icon">”</div>
+                    </div>
+                    <!-- Review Card 3 -->
+                    <div class="review-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-success">Tuyệt vời!</h4>
+                        <p>Đội ngũ tổng đài hỗ trợ nhiệt tình, báo giá rõ ràng. Hành trình diễn ra suôn sẻ, đúng như lịch trình đã hẹn.</p>
+                        <div class="reviewer">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Avatar">
+                            <div class="reviewer-info">
+                                <strong>Anh Trần Hùng</strong>
+                                <span>Khách hàng du lịch</span>
+                            </div>
+                        </div>
+                        <div class="quote-icon">”</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tin Tức -->
+    <section class="news-section">
+        <div class="container">
+            <div class="news-layout">
+                <!-- Cột Tin tức mới nhất -->
+                <div class="news-column">
+                    <h2 class="news-col-title">Tin tức mới nhất</h2>
+                    <div class="news-list">
+                        <!-- News Item 1 -->
+                        <div class="news-item">
+                            <img src="https://images.pexels.com/photos/1178430/pexels-photo-1178430.jpeg?auto=compress&cs=tinysrgb&w=300" alt="News">
+                            <div class="news-info">
+                                <h4>Khai trương tuyến xe bus sân bay mới</h4>
+                                <span class="news-date"><i class="fa-regular fa-calendar-days"></i> 26/05/2026</span>
+                                <p>Đất Mới chính thức mở rộng thêm tuyến đường phục vụ nhu cầu di chuyển...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 2 -->
+                        <div class="news-item">
+                            <img src="https://images.pexels.com/photos/326259/pexels-photo-326259.jpeg?auto=compress&cs=tinysrgb&w=300" alt="News">
+                            <div class="news-info">
+                                <h4>Nâng cấp toàn bộ dàn xe Limousine</h4>
+                                <span class="news-date"><i class="fa-regular fa-calendar-days"></i> 20/05/2026</span>
+                                <p>Nhằm mang lại trải nghiệm tốt nhất, chúng tôi vừa nhập lô xe mới tinh...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-outline-full">Xem tất cả</a>
+                </div>
+                
+                <!-- Cột Tuyển dụng -->
+                <div class="news-column">
+                    <h2 class="news-col-title">Tuyển dụng</h2>
+                    <div class="news-list">
+                        <!-- News Item 1 -->
+                        <div class="news-item">
+                            <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=300" alt="News">
+                            <div class="news-info">
+                                <h4>Tuyển gấp 10 tài xế bằng D/E lương hấp dẫn</h4>
+                                <span class="news-date"><i class="fa-regular fa-calendar-days"></i> 26/05/2026</span>
+                                <p>Nhằm đáp ứng nhu cầu mở rộng quy mô, Đất Mới cần tuyển dụng gấp tài xế...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 2 -->
+                        <div class="news-item">
+                            <img src="https://images.pexels.com/photos/8867431/pexels-photo-8867431.jpeg?auto=compress&cs=tinysrgb&w=300" alt="News">
+                            <div class="news-info">
+                                <h4>Tuyển dụng nhân viên tổng đài chăm sóc KH</h4>
+                                <span class="news-date"><i class="fa-regular fa-calendar-days"></i> 15/05/2026</span>
+                                <p>Cơ hội làm việc trong môi trường chuyên nghiệp, chế độ phúc lợi đầy đủ...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-outline-full">Xem tất cả</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Section 1) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col brand-col">
+                    <a href="#" class="footer-logo">ĐẤT MỚI</a>
+                    <p class="slogan">Chất lượng - An toàn</p>
+                    <p class="intro">Đơn vị vận tải hành khách hàng đầu, cung cấp giải pháp di chuyển tiện lợi và an tâm.</p>
+                    <ul class="footer-contact">
+                        <li><strong>Địa chỉ:</strong> 123 Sân Bay, P.2, Tân Bình, TP.HCM</li>
+                        <li><strong>Điện thoại:</strong> 1900 1234</li>
+                        <li><strong>Email:</strong> contact@datmoi.vn</li>
+                    </ul>
+                </div>
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h4>CHÍNH SÁCH</h4>
+                    <ul>
+                        <li><a href="#">Chính sách thành viên</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Chính sách đổi trả/hoàn tiền</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách hành lý</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h4>HƯỚNG DẪN</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn đặt vé</a></li>
+                        <li><a href="#">Hướng dẫn thanh toán</a></li>
+                        <li><a href="#">Chương trình đối tác</a></li>
+                        <li><a href="#">Tìm kiếm</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+                    <div class="social-squares">
+                        <a href="#" class="sq-fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="sq-yt"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="sq-tw"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="sq-ig"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <h4 class="mt-30">HÌNH THỨC THANH TOÁN</h4>
+                    <div class="payment-methods">
+                        <span class="pay-box"><i class="fa-solid fa-money-bill"></i> Tiền mặt</span>
+                        <span class="pay-box"><i class="fa-solid fa-money-check-dollar"></i> Chuyển khoản</span>
+                        <span class="pay-box" style="padding: 5px 12px;"><i class="fa-brands fa-cc-visa" style="color: #1a1f71; font-size: 16px;"></i> Visa</span>
+                        <span class="pay-box" style="padding: 5px 12px;"><i class="fa-brands fa-cc-mastercard" style="color: #eb001b; font-size: 16px;"></i> MasterCard</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Section Newsletter (Section 2) -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-box">
+                <h2>Đăng ký email để nhận được ưu đãi mới nhất của chúng tôi</h2>
+                <p>Rất hân hạnh được phục vụ bạn. Chúc bạn có trải nghiệm tuyệt vời về dịch vụ của Đất Mới</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn tại đây ...">
+                    <button type="button" class="btn-subscribe">ĐĂNG KÝ NGAY</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact Map (Section 3) -->
+    <section class="contact-map-section">
+        <div class="map-bg">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3308182747164!2d106.65089601525997!3d10.78595956196726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ebda37911b3%3A0xc3b2e3c0800dc0cb!2sTan%20Son%20Nhat%20International%20Airport!5e0!3m2!1sen!2s!4v1680104107567!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="container contact-container">
+            <div class="contact-box">
+                <!-- Info Left -->
+                <div class="contact-info">
+                    <h3>Công ty cổ phần xe khách Đất Mới</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-location-dot"></i> <strong>Địa chỉ:</strong> 123 Đường Sân Bay, Phường 2, Tân Bình, TP.HCM</li>
+                        <li><i class="fa-solid fa-phone"></i> <strong>Hotline:</strong> 1900 1234</li>
+                        <li><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> contact@datmoi.vn</li>
+                        <li><i class="fa-regular fa-clock"></i> <strong>Giờ làm việc:</strong> 8h00 - 22h00 từ thứ 2 đến Chủ nhật</li>
+                    </ul>
+                </div>
+                <!-- Form Right -->
+                <div class="contact-form">
+                    <h3>Gửi thông tin phản hồi cho chúng tôi</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Họ và tên">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Nội dung" rows="3"></textarea>
+                        </div>
+                        <button type="button" class="btn-submit">Gửi tin nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom-bar">
+        <div class="container">
+            <p>&copy; 2026 Đất Mới Bus. All rights reserved. Designed for Premium Service.</p>
+        </div>
+    </div>
+</body>
+</html>

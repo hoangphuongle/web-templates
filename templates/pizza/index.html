@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Lab - Giao Hàng Pizza Nhanh Chóng & Thơm Ngon</title>
+    <meta name="description"
+        content="Trải nghiệm pizza chuẩn vị Ý tại Pizza Lab. Đặt hàng online nhanh chóng, nhiều khuyến mãi hấp dẫn mỗi ngày.">
+    <!-- Google Fonts: Inter & Outfit for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for high-quality icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="https://hoangphuongle.github.io/web-templates/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        Chốt ngay qua Zalo
+      </a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
+
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <!-- Top bar with running marquee text left, static info right -->
+        <div class="top-bar-marquee">
+            <div class="container top-bar-flex-container">
+                <div class="top-bar-marquee-left">
+                    <div class="marquee-track">
+                        <span>🔥 Ưu đãi cực lớn: Giảm ngay 20% cho hóa đơn đặt bàn trực tuyến hôm nay!
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 👑 Trải nghiệm Pizza chuẩn hoàng gia tại
+                            Pizza King! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🍕 Thưởng thức Combo mua 1 tặng
+                            1 siêu hấp dẫn!</span>
+                        <span>🔥 Ưu đãi cực lớn: Giảm ngay 20% cho hóa đơn đặt bàn trực tuyến hôm nay!
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 👑 Trải nghiệm Pizza chuẩn hoàng gia tại
+                            Pizza King! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 🍕 Thưởng thức Combo mua 1 tặng
+                            1 siêu hấp dẫn!</span>
+                    </div>
+                </div>
+                <div class="top-bar-info-right">
+                    <span class="info-item"><i class="fa-solid fa-phone"></i> Hotline: <strong>1900 6750</strong></span>
+                    <span class="info-divider">|</span>
+                    <span class="info-item"><i class="fa-regular fa-clock"></i> 8h00 - 22h00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="main-header">
+            <div class="container main-header-container">
+
+                <!-- Logo (Pizza King with gold styling) -->
+                <a href="#" class="logo-wrapper" id="site-logo">
+                    <div class="logo-icon-box royal-gold-box">
+                        <i class="fa-solid fa-pizza-slice logo-icon"></i>
+                        <i class="fa-solid fa-crown logo-crown-overlay"></i>
+                    </div>
+                    <div class="logo-text-box">
+                        <span class="logo-brand">Pizza<span class="brand-accent-gold">King</span></span>
+                        <span class="logo-tagline">online pizza delivery</span>
+                    </div>
+                </a>
+
+                <!-- Search Container -->
+                <div class="search-wrapper">
+                    <input type="text" class="search-input" id="search-bar"
+                        placeholder="Tìm kiếm pizza, combo, đồ uống...">
+                    <button class="search-submit-btn" aria-label="Tìm kiếm">
+                        <i class="fa-solid fa-magnifying-glass search-btn-icon"></i>
+                    </button>
+                </div>
+
+                <!-- Đặt bàn (previously cart-info-btn) -->
+                <a href="#" class="btn-booking-table" id="booking-btn">
+                    <i class="fa-regular fa-calendar-check icon-booking"></i>
+                    <span class="booking-text">Đặt bàn</span>
+                </a>
+
+                <!-- Hệ thống cửa hàng (previously cart-badge icon) -->
+                <a href="#" class="btn-store-locations" id="store-btn">
+                    <i class="fa-solid fa-map-location-dot icon-store"></i>
+                    <span class="store-text">Hệ thống cửa hàng</span>
+                </a>
+
+                <!-- Vertical Divider -->
+                <div class="header-divider"></div>
+
+                <!-- Authentication Actions -->
+                <div class="auth-wrapper">
+                    <a href="#" class="btn-link-login" id="login-link">Đăng nhập</a>
+                    <a href="#" class="btn-pill-register" id="register-link">Đăng ký</a>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Horizontal Navigation Strip (E-commerce Style) -->
+        <div class="nav-bar-strip">
+            <div class="container nav-bar-strip-container">
+
+                <!-- Red Categories Box -->
+                <div class="category-menu-wrapper" id="category-menu-box">
+                    <button class="category-menu-btn" id="category-menu-toggle">
+                        <i class="fa-solid fa-bars menu-hamburger-icon"></i>
+                        <span>THỰC ĐƠN</span>
+                    </button>
+
+                    <!-- Mega Menu (Dropdown) -->
+                    <div class="mega-menu-panel" id="mega-menu">
+                        <!-- Left Sidebar Categories -->
+                        <div class="mega-sidebar">
+                            <ul>
+                                <li><a href="#" class="sidebar-item">Dụng cụ & Máy làm bánh</a></li>
+                                <li><a href="#" class="sidebar-item">Đồ dùng nhà bếp</a></li>
+                                <li><a href="#" class="sidebar-item">Dụng cụ nhà bếp</a></li>
+                                <li><a href="#" class="sidebar-item active">Gia dụng nhà bếp <i
+                                            class="fa-solid fa-caret-right caret-arrow"></i></a></li>
+                                <li><a href="#" class="sidebar-item">Thiết bị gia đình</a></li>
+                                <li><a href="#" class="sidebar-item">Dụng cụ vệ sinh nhà bếp</a></li>
+                                <li><a href="#" class="sidebar-item">Đồ gia dụng nhà bếp khác</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Mega Panel (3 Text Columns + 1 Image Column) -->
+                        <div class="mega-content">
+                            <!-- Column 1 -->
+                            <div class="mega-col">
+                                <h4 class="mega-col-title">Bếp/Nồi</h4>
+                                <ul class="mega-col-list">
+                                    <li><a href="#">Bếp điện từ</a></li>
+                                    <li><a href="#">Bếp hồng ngoại</a></li>
+                                    <li><a href="#">Bếp điện đôi</a></li>
+                                    <li><a href="#">Nồi cơm điện cơ</a></li>
+                                    <li><a href="#">Nồi cơm điện tử</a></li>
+                                    <li><a href="#">Nồi lẩu</a></li>
+                                    <li><a href="#">Nồi áp suất</a></li>
+                                    <li><a href="#">Nồi hầm</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Column 2 -->
+                            <div class="mega-col">
+                                <h4 class="mega-col-title">Máy ép/xay</h4>
+                                <ul class="mega-col-list">
+                                    <li><a href="#">Máy ép hoa quả</a></li>
+                                    <li><a href="#">Máy xay đậu nành</a></li>
+                                    <li><a href="#">Máy xay sinh tố</a></li>
+                                    <li><a href="#">Máy ép chậm</a></li>
+                                    <li><a href="#">Máy xay thịt</a></li>
+                                    <li><a href="#">Máy xay cầm tay</a></li>
+                                    <li><a href="#">Máy xay đa năng</a></li>
+                                    <li><a href="#">Máy vắt cam</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Column 3 -->
+                            <div class="mega-col">
+                                <h4 class="mega-col-title">Đồ gia dụng khác</h4>
+                                <ul class="mega-col-list">
+                                    <li><a href="#">Lò nướng</a></li>
+                                    <li><a href="#">Lò vi sóng</a></li>
+                                    <li><a href="#">Nồi chiên không dầu</a></li>
+                                    <li><a href="#">Vỉ nướng</a></li>
+                                    <li><a href="#">Máy nướng bánh mỳ</a></li>
+                                    <li><a href="#">Máy làm tỏi đen</a></li>
+                                    <li><a href="#">Bình siêu tốc</a></li>
+                                    <li><a href="#">Bình thuỷ điện</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Column 4: Promo Banner -->
+                            <div class="mega-col-promo">
+                                <div class="promo-banner-box">
+                                    <img src="assets/menu_banner.png" alt="High-quality Kitchenware Banner"
+                                        class="promo-banner-img">
+                                    <div class="promo-banner-badge">HÀNG MỚI VỀ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horizontal Nav Links -->
+                <nav class="horizontal-nav-links">
+                    <ul>
+                        <li><a href="#" class="nav-link active">TRANG CHỦ</a></li>
+                        <li><a href="#" class="nav-link">GIỚI THIỆU</a></li>
+                        <li class="has-submenu">
+                            <a href="#" class="nav-link">SẢN PHẨM <i class="fa-solid fa-chevron-down caret-nav"></i></a>
+                        </li>
+                        <li><a href="#" class="nav-link">TIN TỨC</a></li>
+                        <li><a href="#" class="nav-link">LIÊN HỆ</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+        
+    <!-- Premium Hero Section to highlight the header -->
+    <main>
+        <!-- Large Slider Banner Section (Spa Style Container with Apple Content) -->
+        <section class="slider-section">
+            <div class="container slider-outer-wrap">
+                <div class="slider-container" id="hero-slider">
+
+                    <!-- Slide 1 (Full-bleed photographic cover style) -->
+                    <div class="slide active"
+                        style="background: linear-gradient(to right, rgba(0,0,0,0.95) 35%, rgba(0,0,0,0.1) 75%), url('assets/pizza_hero.png') no-repeat right center / contain, #080808;">
+                        <div class="slide-inner-container">
+                            <div class="slide-text-col">
+                                <h2 class="slide-title"><i class="fa-solid fa-crown gold-crown-icon"></i> Pizza King Pro
+                                    Max</h2>
+                                <p class="slide-subtitle">Titan Phô Mai. Thật đậm đà. Thật thơm ngon. Thật đẳng cấp.</p>
+                                <div class="slide-badge-row">
+                                    <span class="badge-item font-gold">Đặc quyền mua 1 tặng 1</span>
+                                    <span class="badge-separator">•</span>
+                                    <span class="badge-item font-green">GIAO HÀNG 0Đ</span>
+                                </div>
+                                <button class="slide-cta-btn" onclick="addToCart()">CHÍNH THỨC MỞ BÁN</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 (Full-bleed cover style) -->
+                    <div class="slide"
+                        style="background: linear-gradient(to right, rgba(0,0,0,0.95) 35%, rgba(0,0,0,0.2) 75%), url('assets/menu_banner.png') no-repeat right center / cover;">
+                        <div class="slide-inner-container">
+                            <div class="slide-text-col">
+                                <h2 class="slide-title"><i class="fa-solid fa-fire text-danger"></i> Combo Thượng Hạng
+                                </h2>
+                                <p class="slide-subtitle">Đủ vị. Thập toàn. Thơm phức. Giòn tan.</p>
+                                <div class="slide-badge-row">
+                                    <span class="badge-item font-gold">Đặc quyền giảm 50%</span>
+                                    <span class="badge-separator">•</span>
+                                    <span class="badge-item font-green">TẶNG PEPSI LẠNH</span>
+                                </div>
+                                <button class="slide-cta-btn" onclick="addToCart()">ĐẶT MUA NGAY</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left / Right Navigation Arrow Buttons overlayed like mockup -->
+                    <button class="slider-arrow-btn prev-arrow" onclick="prevSlide()" aria-label="Slide trước">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-arrow-btn next-arrow" onclick="nextSlide()" aria-label="Slide sau">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <!-- Slider Navigation Dots -->
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="setSlide(0)"></span>
+                        <span class="dot" onclick="setSlide(1)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two Sub-Banners Side-by-Side Section -->
+        <section class="sub-banners-section">
+            <div class="container sub-banners-grid">
+
+                <!-- Left Sub-Banner (Dark theme: Gà Cuộn) -->
+                <div class="sub-banner-card dark-wrap-card">
+                    <div class="sub-banner-content">
+                        <span class="sub-banner-tag text-danger-red">GIÁ SỐC 28K</span>
+                        <h3 class="sub-banner-title">GÀ CUỘN NGON TUYỆT</h3>
+                        <p class="sub-banner-offer">Ưu Đãi 50% Off</p>
+                        <a href="#" class="sub-banner-btn-red" onclick="addToCart()">ĐẶT NGAY <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="sub-banner-img-box">
+                        <span class="sub-banner-badge-circle">50%<br>OFF</span>
+                        <img src="assets/chicken_wrap.png" alt="Gà Cuộn Ngon Tuyệt">
+                    </div>
+                </div>
+
+                <!-- Right Sub-Banner (Orange theme: Gà Rán) -->
+                <div class="sub-banner-card orange-combo-card">
+                    <div class="sub-banner-content">
+                        <span class="sub-banner-tag text-white">GIÁ SỐC 55K</span>
+                        <h3 class="sub-banner-title">GÀ RÁN CAY GIÒN</h3>
+                        <p class="sub-banner-offer">Ưu Đãi Hấp Dẫn</p>
+                        <a href="#" class="sub-banner-btn-red" onclick="addToCart()">ĐẶT NGAY <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="sub-banner-img-box">
+                        <span class="sub-banner-badge-circle">50%<br>OFF</span>
+                        <img src="assets/chicken_burger_combo.png" alt="Gà Rán Cay Giòn">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Suggestions Section (Explore Menu - "KHÁM PHÁ THỰC ĐƠN") -->
+        <section class="explore-menu-section">
+            <div class="container explore-menu-container">
+
+                <!-- Section Header and Tabs -->
+                <div class="explore-menu-header">
+                    <h2>KHÁM PHÁ THỰC ĐƠN</h2>
+                    <div class="explore-menu-tabs">
+                        <span class="explore-tab active">Món mới</span>
+                        <span class="explore-tab">Món bán chạy</span>
+                        <span class="explore-tab">Combo khuyến mãi</span>
+                    </div>
+                </div>
+
+                <!-- Products 4-Column Grid -->
+                <div class="explore-menu-grid">
+
+                    <!-- Card 1 -->
+                    <div class="explore-card">
+                        <div class="explore-img-box">
+                            <img src="assets/pizza_hero.png" alt="Pizza Thập Cẩm Hoàng Gia">
+                        </div>
+                        <h3 class="explore-card-title">Pizza Thập Cẩm Hoàng Gia</h3>
+                        <div class="explore-price-row">
+                            <span class="price-orange">189.000<u>đ</u></span>
+                            <span class="price-original-gray">230.000đ</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="explore-card">
+                        <div class="explore-img-box">
+                            <img src="assets/pizza_seafood.png" alt="Pizza Hải Sản Xốt Pesto">
+                        </div>
+                        <h3 class="explore-card-title">Pizza Hải Sản Xốt Pesto</h3>
+                        <div class="explore-price-row">
+                            <span class="price-orange">249.000<u>đ</u></span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="explore-card">
+                        <div class="explore-img-box">
+                            <span class="explore-badge-new">MỚI</span>
+                            <img src="assets/pizza_bbq.png" alt="Pizza Bò Nướng BBQ">
+                        </div>
+                        <h3 class="explore-card-title">Pizza Bò Nướng BBQ</h3>
+                        <div class="explore-price-row">
+                            <span class="price-orange">210.000<u>đ</u></span>
+                            <span class="price-original-gray">230.000đ</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="explore-card">
+                        <div class="explore-img-box">
+                            <span class="explore-badge-new">MỚI</span>
+                            <img src="assets/pizza_chicken.png" alt="Pizza Gà Nướng Bơ Tỏi">
+                        </div>
+                        <h3 class="explore-card-title">Pizza Gà Nướng Bơ Tỏi</h3>
+                        <div class="explore-price-row">
+                            <span class="price-orange">199.000<u>đ</u></span>
+                            <span class="price-original-gray">260.000đ</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="explore-card">
+                        <div class="explore-img-box">
+                            <img src="assets/pizza_supreme.png" alt="Pizza Pepperoni Thượng Hạng">
+                        </div>
+                        <h3 class="explore-card-title">Pizza Pepperoni Thượng Hạng</h3>
+                        <div class="explore-price-row">
+                            <span class="price-orange">229.000<u>đ</u></span>
+                            <span class="price-original-gray">290.000đ</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="explore-card">
+                        <div class="explore-img-box">
+                            <span class="explore-badge-new">MỚI</span>
+                            <img src="assets/fried_chicken.png" alt="Gà Rán Giòn Cay (4 Miếng)">
+                        </div>
+                        <h3 class="explore-card-title">Gà Rán Giòn Cay (4 Miếng)</h3>
+                        <div class="explore-price-row">
+                            <span class="price-orange">129.000<u>đ</u></span>
+                            <span class="price-original-gray">159.000đ</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="explore-card">
+                        <div class="explore-img-box">
+                            <span class="explore-badge-new">MỚI</span>
+                            <img src="assets/combo_chicken_pizza.png" alt="Combo Pizza & Gà Rán Siêu Tiết Kiệm">
+                        </div>
+                        <h3 class="explore-card-title">Combo Pizza & Gà Rán Siêu Tiết Kiệm</h3>
+                        <div class="explore-price-row">
+                            <span class="price-orange">159.000<u>đ</u></span>
+                            <span class="price-original-gray">200.000đ</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="explore-card">
+                        <div class="explore-img-box">
+                            <img src="assets/combo_chicken_spaghetti.png" alt="Combo Spaghetti & Gà Rán Món Mới">
+                        </div>
+                        <h3 class="explore-card-title">Combo Spaghetti & Gà Rán Món Mới</h3>
+                        <div class="explore-price-row">
+                            <span class="price-orange">159.000<u>đ</u></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotions Section (Flash Sale Countdown) -->
+        <section class="promo-sale-section">
+            <div class="container promo-sale-container">
+
+                <!-- Promotions Outer Frame with Thin Red Border -->
+                <div class="promo-outer-frame">
+
+                    <!-- Promotions Header Panel -->
+                    <div class="promo-header-panel">
+                        <div class="promo-header-left">
+                            <div class="promo-header-icon-box">
+                                <i class="fa-solid fa-bolt promo-header-icon"></i>
+                            </div>
+                            <div class="promo-header-text">
+                                <h2>DEAL HẾT SẢY, GIÁ TAN CHẢY</h2>
+                                <p>TOP COMBO BEST SALE</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inner Gray Cards Panel (Mockup Styled Container) -->
+                    <div class="promo-inner-content">
+                        <!-- Inner Navigation Row -->
+                        <div class="promo-nav-row">
+                            <div class="promo-nav-arrows">
+                                <button class="promo-arrow-btn prev-promo-arrow" onclick="scrollPromoLeft()"
+                                    aria-label="Trước"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="promo-arrow-btn next-promo-arrow" onclick="scrollPromoRight()"
+                                    aria-label="Sau"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                            <a href="#" class="promo-view-all" onclick="openBookingModal()">Xem tất cả <i
+                                    class="fa-solid fa-arrow-right-long"></i></a>
+                        </div>
+
+                        <!-- Promo Cards Flex Wrapper (Horizontal Scroll Container) -->
+                        <div class="promo-cards-slider" id="promo-cards-slider">
+
+                            <!-- Card 1 -->
+                            <div class="promo-product-card">
+                                <div class="promo-card-image-box">
+                                    <span class="promo-discount-tag">-18%</span>
+                                    <img src="assets/pizza_hero.png" alt="Pizza Classic Queen">
+                                </div>
+                                <div class="promo-card-info-box">
+                                    <h3 class="promo-card-brand">Pizza King</h3>
+                                    <h4 class="promo-card-name">Classic Queen Lạp Sườn</h4>
+                                    <div class="promo-card-options">
+                                        <span>10-inch</span>
+                                        <span>Đế mỏng</span>
+                                        <span>+1</span>
+                                    </div>
+                                    <div class="promo-card-price-row">
+                                        <span class="price-sale">189.000đ</span>
+                                        <span class="price-original">230.000đ</span>
+                                    </div>
+                                    <div class="promo-card-action-row">
+                                        <button class="promo-select-btn" onclick="addToCart()">Tùy chọn</button>
+                                        <button class="promo-quickview-btn" onclick="addToCart()"><i
+                                                class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="promo-product-card">
+                                <div class="promo-card-image-box">
+                                    <span class="promo-discount-tag">-27%</span>
+                                    <img src="assets/pizza_seafood.png" alt="Pizza Seafood Pesto">
+                                </div>
+                                <div class="promo-card-info-box">
+                                    <h3 class="promo-card-brand">Pizza King</h3>
+                                    <h4 class="promo-card-name">Seafood Pesto Xốt Xanh</h4>
+                                    <div class="promo-card-options">
+                                        <span>12-inch</span>
+                                        <span>Đế dày</span>
+                                        <span>+2</span>
+                                    </div>
+                                    <div class="promo-card-price-row">
+                                        <span class="price-sale">249.000đ</span>
+                                        <span class="price-original">340.000đ</span>
+                                    </div>
+                                    <div class="promo-card-action-row">
+                                        <button class="promo-select-btn" onclick="addToCart()">Tùy chọn</button>
+                                        <button class="promo-quickview-btn" onclick="addToCart()"><i
+                                                class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="promo-product-card">
+                                <div class="promo-card-image-box">
+                                    <span class="promo-discount-tag">-8%</span>
+                                    <img src="assets/pizza_bbq.png" alt="Pizza Beef Barbecue">
+                                </div>
+                                <div class="promo-card-info-box">
+                                    <h3 class="promo-card-brand">Pizza King</h3>
+                                    <h4 class="promo-card-name">Beef Barbecue Xốt BBQ</h4>
+                                    <div class="promo-card-options">
+                                        <span>10-inch</span>
+                                        <span>Đế vừa</span>
+                                        <span>+1</span>
+                                    </div>
+                                    <div class="promo-card-price-row">
+                                        <span class="price-sale">210.000đ</span>
+                                        <span class="price-original">230.000đ</span>
+                                    </div>
+                                    <div class="promo-card-action-row">
+                                        <button class="promo-select-btn" onclick="addToCart()">Tùy chọn</button>
+                                        <button class="promo-quickview-btn" onclick="addToCart()"><i
+                                                class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="promo-product-card">
+                                <div class="promo-card-image-box">
+                                    <span class="promo-discount-tag">-23%</span>
+                                    <img src="assets/pizza_chicken.png" alt="Pizza Chicken Garlic">
+                                </div>
+                                <div class="promo-card-info-box">
+                                    <h3 class="promo-card-brand">Pizza King</h3>
+                                    <h4 class="promo-card-name">Garlic Chicken Phô Mai</h4>
+                                    <div class="promo-card-options">
+                                        <span>12-inch</span>
+                                        <span>Đế mỏng</span>
+                                        <span>+1</span>
+                                    </div>
+                                    <div class="promo-card-price-row">
+                                        <span class="price-sale">199.000đ</span>
+                                        <span class="price-original">260.000đ</span>
+                                    </div>
+                                    <div class="promo-card-action-row">
+                                        <button class="promo-select-btn" onclick="addToCart()">Tùy chọn</button>
+                                        <button class="promo-quickview-btn" onclick="addToCart()"><i
+                                                class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="promo-product-card">
+                                <div class="promo-card-image-box">
+                                    <span class="promo-discount-tag">-21%</span>
+                                    <img src="assets/pizza_supreme.png" alt="Pizza Royal Supreme">
+                                </div>
+                                <div class="promo-card-info-box">
+                                    <h3 class="promo-card-brand">Pizza King</h3>
+                                    <h4 class="promo-card-name">Royal Pepperoni Supreme</h4>
+                                    <div class="promo-card-options">
+                                        <span>10-inch</span>
+                                        <span>Đế vừa</span>
+                                        <span>+3</span>
+                                    </div>
+                                    <div class="promo-card-price-row">
+                                        <span class="price-sale">229.000đ</span>
+                                        <span class="price-original">290.000đ</span>
+                                    </div>
+                                    <div class="promo-card-action-row">
+                                        <button class="promo-select-btn" onclick="addToCart()">Tùy chọn</button>
+                                        <button class="promo-quickview-btn" onclick="addToCart()"><i
+                                                class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suggestions Section ("Gợi ý cho bạn") -->
+        <section class="suggestions-section">
+            <div class="container suggestions-container">
+                <div class="suggestions-outer-frame">
+
+                    <!-- Section Title and Category Tabs -->
+                    <div class="suggestions-header">
+                        <h2>Gợi ý cho bạn</h2>
+                        <div class="suggestions-tabs">
+                            <span class="tab-item active">Gà rán</span>
+                            <span class="tab-item">Burger</span>
+                            <span class="tab-item">Pizza</span>
+                        </div>
+                    </div>
+
+                    <!-- Products Two-Column Grid -->
+                    <div class="suggestions-grid">
+
+                        <!-- Column 1 (Left) -->
+                        <div class="suggestions-col">
+                            <!-- Product 1 (Active/Hovered design in mockup) -->
+                            <div class="suggest-product-item">
+                                <div class="suggest-img-box">
+                                    <img src="assets/fried_chicken.png" alt="Gà Rán (4 Miếng)">
+                                </div>
+                                <div class="suggest-info-box">
+                                    <h3 class="suggest-title">Gà Rán (4 Miếng)</h3>
+                                    <div class="suggest-stars gold">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <div class="suggest-price">129.000<u>đ</u></div>
+                                </div>
+                                <div class="suggest-action-box">
+                                    <!-- Tooltip visible on active item -->
+                                    <div class="suggest-tooltip">Tùy chọn</div>
+                                    <button class="suggest-btn suggest-btn-orange" onclick="addToCart()"
+                                        aria-label="Tùy chọn">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 3 -->
+                            <div class="suggest-product-item">
+                                <div class="suggest-img-box">
+                                    <img src="assets/fried_chicken.png" alt="Gà Rán (6 Miếng)">
+                                </div>
+                                <div class="suggest-info-box">
+                                    <h3 class="suggest-title">Gà Rán (6 Miếng)</h3>
+                                    <div class="suggest-stars gray">
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="suggest-price">159.000<u>đ</u></div>
+                                </div>
+                                <div class="suggest-action-box">
+                                    <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                        aria-label="Tùy chọn">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 5 (Combo) -->
+                            <div class="suggest-product-item">
+                                <div class="suggest-img-box">
+                                    <img src="assets/combo_chicken_pizza.png" alt="Combo C">
+                                </div>
+                                <div class="suggest-info-box">
+                                    <h3 class="suggest-title">Combo C (1 người) (1 miếng gà + 1 pizza hải sản S + 1 phần
+                                        khoai...</h3>
+                                    <div class="suggest-stars gray">
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="suggest-price">159.000<u>đ</u></div>
+                                </div>
+                                <div class="suggest-action-box">
+                                    <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                        aria-label="Thêm vào giỏ">
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 7 (Combo) -->
+                            <div class="suggest-product-item">
+                                <div class="suggest-img-box">
+                                    <img src="assets/combo_chicken_spaghetti.png" alt="Combo H">
+                                </div>
+                                <div class="suggest-info-box">
+                                    <h3 class="suggest-title">Combo H (1 người)(1 Miếng Gà + Mì Ý Truyền Thống + Coca
+                                        Cola)</h3>
+                                    <div class="suggest-stars gray">
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="suggest-price">159.000<u>đ</u></div>
+                                </div>
+                                <div class="suggest-action-box">
+                                    <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                        aria-label="Thêm vào giỏ">
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Column 2 (Right) -->
+                        <div class="suggestions-col">
+                            <!-- Product 2 -->
+                            <div class="suggest-product-item">
+                                <div class="suggest-img-box">
+                                    <img src="assets/fried_chicken.png" alt="Gà Rán (2 Miếng)">
+                                </div>
+                                <div class="suggest-info-box">
+                                    <h3 class="suggest-title">Gà Rán (2 Miếng)</h3>
+                                    <div class="suggest-stars gray">
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="suggest-price">69.000<u>đ</u></div>
+                                </div>
+                                <div class="suggest-action-box">
+                                    <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                        aria-label="Tùy chọn">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 4 -->
+                            <div class="suggest-product-item">
+                                <div class="suggest-img-box">
+                                    <img src="assets/fried_chicken.png" alt="Gà Rán (9 Miếng)">
+                                </div>
+                                <div class="suggest-info-box">
+                                    <h3 class="suggest-title">Gà Rán (9 Miếng)</h3>
+                                    <div class="suggest-stars gray">
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="suggest-price">239.000<u>đ</u></div>
+                                </div>
+                                <div class="suggest-action-box">
+                                    <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                        aria-label="Tùy chọn">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Product 6 (Combo) -->
+                            <div class="suggest-product-item">
+                                <div class="suggest-img-box">
+                                    <img src="assets/sub_banner_1.png" alt="Combo A">
+                                </div>
+                                <div class="suggest-info-box">
+                                    <h3 class="suggest-title">Combo A (2 người) (4 Miếng Gà Rán + 1 Phần Khoai Tây Lớn +
+                                        2...</h3>
+                                    <div class="suggest-stars gray">
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </div>
+                                    <div class="suggest-price">159.000<u>đ</u></div>
+                                </div>
+                                <div class="suggest-action-box">
+                                    <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                        aria-label="Thêm vào giỏ">
+                                        <i class="fa-solid fa-basket-shopping"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Footer Link -->
+                    <div class="suggestions-footer">
+                        <a href="#" class="btn-suggest-view-all" onclick="openBookingModal()">Xem tất cả <i
+                                class="fa-solid fa-chevron-right chevron-footer"></i></a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Utilities Section (Tiện ích cho khách hàng) -->
+        <section class="utilities-section">
+            <div class="container utilities-container">
+
+                <!-- Heading -->
+                <div class="utilities-header">
+                    <h2><span class="text-green-util">TIỆN ÍCH</span> <span class="text-blue-util">CHO KHÁCH HÀNG</span>
+                    </h2>
+                </div>
+
+                <div class="utilities-grid">
+
+                    <!-- Left: 2x2 Grid of benefits -->
+                    <div class="utilities-benefits-list">
+
+                        <!-- Benefit 1 (Active/Lavender blue background matching mockup) -->
+                        <div class="utility-card active-blue-card">
+                            <div class="utility-icon-box">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </div>
+                            <h3>Đặt lịch tư vấn sức khỏe</h3>
+                            <p>Quý khách hàng sử dụng tiện ích này để đặt lịch tư vấn sức khỏe tại các cơ sở của Pizza
+                                King</p>
+                            <a href="#" class="utility-link" onclick="openBookingModal()">Đặt lịch <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+
+                        <!-- Benefit 2 (White background) -->
+                        <div class="utility-card">
+                            <div class="utility-icon-box text-green">
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                            </div>
+                            <h3>Tra cứu đơn hàng</h3>
+                            <p>Quý khách hàng sử dụng tiện ích này để tra cứu đơn hàng khi mua tại Pizza King</p>
+                            <a href="#" class="utility-link text-blue-link" onclick="openBookingModal()">Tra cứu <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+
+                        <!-- Benefit 3 (White background) -->
+                        <div class="utility-card">
+                            <div class="utility-icon-box text-green-circle">
+                                <i class="fa-regular fa-circle-question"></i>
+                            </div>
+                            <h3>Hỏi đáp chuyên gia</h3>
+                            <p>Quý khách hàng sử dụng tiện ích này để đặt câu hỏi và nhận hướng dẫn, giải đáp thắc mắc
+                                từ chuyên gia y tế của Pizza King</p>
+                            <a href="#" class="utility-link text-blue-link" onclick="openBookingModal()">Xem chi tiết <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+
+                        <!-- Benefit 4 (White background) -->
+                        <div class="utility-card">
+                            <div class="utility-icon-box text-blue-dollar">
+                                <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                            </div>
+                            <h3>Nguồn gốc hàng hóa</h3>
+                            <p>Quý khách hàng sử dụng tiện ích này để tra cứu nguồn gốc xuất xứ hàng hóa tránh hàng giả,
+                                hàng kém chất lượng</p>
+                            <a href="#" class="utility-link text-blue-link" onclick="openBookingModal()">Kiểm tra ngay
+                                <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+
+                    </div>
+
+                    <!-- Right: Photo Collage of Chefs -->
+                    <div class="utilities-collage">
+
+                        <!-- Left floating avatar circle/card -->
+                        <div class="collage-item collage-left-avatar">
+                            <img src="assets/chef_male.png" alt="Male Chef">
+                        </div>
+
+                        <!-- Decorative dark blue semi-circle -->
+                        <div class="collage-shape collage-shape-blue"></div>
+
+                        <!-- Main large right avatar shield shape -->
+                        <div class="collage-item collage-main-female">
+                            <img src="assets/chef_female.png" alt="Female Chef">
+                        </div>
+
+                        <!-- Bottom test lab / baking pizza card -->
+                        <div class="collage-item collage-bottom-baking">
+                            <img src="assets/chef_baking_pizza.png" alt="Chef Baking Pizza">
+                        </div>
+
+                        <!-- Decorative green semi-circle background -->
+                        <div class="collage-shape collage-shape-green"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Cooking Corner / News Section ("Chuyên mục vào bếp") -->
+        <section class="news-kitchen-section">
+            <div class="container news-kitchen-container">
+                <div class="news-kitchen-outer-banner"
+                    style="background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 40%, rgba(0, 0, 0, 0.4) 100%), url('assets/news_bg.png') no-repeat center center / cover;">
+
+                    <!-- Left: Section Intro Text -->
+                    <div class="news-kitchen-intro">
+                        <h2>Chuyên mục<br>vào bếp</h2>
+                        <p>Vào bếp cùng chuyên gia với nhiều công thức nấu ăn ngon mỗi ngày đơn giản dễ làm, hướng dẫn
+                            làm bánh, món mặn, món chay, món ăn theo các dịp lễ.</p>
+                        <a href="#" class="news-kitchen-btn" onclick="openBookingModal()">Xem Thêm</a>
+                    </div>
+
+                    <!-- Right: News Cards Slider/Flex -->
+                    <div class="news-kitchen-cards">
+
+                        <!-- News Card 1 -->
+                        <div class="news-card-item">
+                            <div class="news-card-img">
+                                <img src="assets/news_sweet_potato.png" alt="4 lý do nên ăn khoai lang">
+                            </div>
+                            <div class="news-card-title-box">
+                                <a href="#" onclick="openBookingModal()">4 lý do &lt;nên ăn "khoai lang" thường&gt;
+                                    xuyên</a>
+                            </div>
+                        </div>
+
+                        <!-- News Card 2 -->
+                        <div class="news-card-item">
+                            <div class="news-card-img">
+                                <img src="assets/news_lemon_honey.png" alt="Sai lầm thường gặp khi ngâm chanh đào">
+                            </div>
+                            <div class="news-card-title-box">
+                                <a href="#" onclick="openBookingModal()">Sai lầm thường gặp khi ngâm chanh đào với mật
+                                    ong</a>
+                            </div>
+                        </div>
+
+                        <!-- News Card 3 -->
+                        <div class="news-card-item">
+                            <div class="news-card-img">
+                                <img src="assets/news_croquettes.png" alt="Dùng thực phẩm chiên thế nào">
+                            </div>
+                            <div class="news-card-title-box">
+                                <a href="#" onclick="openBookingModal()">Dùng thực phẩm chiên thế nào để không ảnh hưởng
+                                    đến sức khỏe</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section ("Giải đáp thắc mắc") -->
+        <section class="faq-section">
+            <div class="container faq-container">
+                <!-- Two-column grid -->
+                <div class="faq-grid">
+                    <!-- Left: FAQ Accordion and Content -->
+                    <div class="faq-left-col">
+                        <span class="faq-badge">Câu hỏi thường gặp</span>
+                        <h2 class="faq-title">Giải Đáp Thắc Mắc Cùng <span class="text-brand-color">Pizza King</span>
+                        </h2>
+                        <p class="faq-subtitle">Nếu bạn không tìm thấy câu hỏi phù hợp, đừng ngần ngại liên hệ với chúng
+                            tôi qua hotline, email, hoặc fanpage để được hỗ trợ tốt nhất!</p>
+
+                        <!-- Accordion Stack -->
+                        <div class="faq-accordion-stack">
+
+                            <!-- FAQ Item 1 (Active/Open by default) -->
+                            <div class="faq-item active">
+                                <button class="faq-header" aria-expanded="true">
+                                    <span class="faq-question">Pizza King có dịch vụ giao hàng tận nơi không?</span>
+                                    <div class="faq-icon-circle">
+                                        <i class="fa-solid fa-minus icon-minus"></i>
+                                        <i class="fa-solid fa-plus icon-plus"></i>
+                                    </div>
+                                </button>
+                                <div class="faq-body">
+                                    <p class="faq-answer">Có. Pizza King cung cấp dịch vụ giao hàng tận nơi nhanh chóng
+                                        trong bán kính 10km. Chúng tôi sử dụng túi giữ nhiệt chuyên dụng để đảm bảo bánh
+                                        pizza và các món ăn kèm luôn giữ được độ nóng hổi, giòn ngon và phô mai kéo sợi
+                                        tuyệt vời nhất khi đến tay bạn.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 2 (Collapsed) -->
+                            <div class="faq-item">
+                                <button class="faq-header" aria-expanded="false">
+                                    <span class="faq-question">Giá trị các combo khuyến mãi tại Pizza King là bao
+                                        nhiêu?</span>
+                                    <div class="faq-icon-circle">
+                                        <i class="fa-solid fa-minus icon-minus"></i>
+                                        <i class="fa-solid fa-plus icon-plus"></i>
+                                    </div>
+                                </button>
+                                <div class="faq-body">
+                                    <p class="faq-answer">Chúng tôi cung cấp nhiều gói combo đa dạng phù hợp cho cá
+                                        nhân, cặp đôi hay gia đình với mức giá chỉ từ 129.000đ cho Combo Single và lên
+                                        đến 349.000đ cho các Combo Feast siêu lớn. Đặc biệt khi đặt trước, bạn sẽ được
+                                        nhận thêm nhiều ưu đãi chiết khấu trực tiếp.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 3 (Collapsed) -->
+                            <div class="faq-item">
+                                <button class="faq-header" aria-expanded="false">
+                                    <span class="faq-question">Làm sao để đặt bàn trước và nhận ưu đãi giảm giá
+                                        20%?</span>
+                                    <div class="faq-icon-circle">
+                                        <i class="fa-solid fa-minus icon-minus"></i>
+                                        <i class="fa-solid fa-plus icon-plus"></i>
+                                    </div>
+                                </button>
+                                <div class="faq-body">
+                                    <p class="faq-answer">Bạn chỉ cần nhấp vào nút "Đặt bàn" trên thanh tiện ích nổi
+                                        hoặc ở đầu trang, điền đầy đủ các thông tin cá nhân, số lượng khách và giờ đến.
+                                        Hệ thống sẽ tự động ghi nhận và áp dụng chương trình giảm giá 20% cho hóa đơn đồ
+                                        ăn của bạn khi đến nhà hàng.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right: Curved FAQ Banner Image -->
+                    <div class="faq-right-col">
+                        <div class="faq-image-wrapper">
+                            <img src="assets/faq_banner.png" alt="FAQ Pizza King" class="faq-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Testimonials Section ("Phản hồi từ khách hàng") -->
+        <section class="reviews-section">
+            <div class="container reviews-container">
+                <div class="reviews-outer-card">
+
+                    <!-- Top Panel: Header row -->
+                    <div class="reviews-header-panel">
+                        <!-- Left Side: Title and badge -->
+                        <div class="reviews-header-left">
+                            <span class="reviews-badge">Phản hồi từ khách hàng</span>
+                            <h2 class="reviews-title">Khách Hàng Nói Gì?</h2>
+                            <p class="reviews-subtitle">Những lời chia sẻ chân thành từ khách hàng là động lực để Pizza
+                                King không ngừng hoàn thiện và nâng cao chất lượng dịch vụ mỗi ngày.</p>
+                        </div>
+
+                        <!-- Right Side: Google & Facebook rating block + Avatars -->
+                        <div class="reviews-header-right">
+                            <!-- Ratings Column -->
+                            <div class="reviews-ratings-col">
+                                <!-- Google Rating -->
+                                <div class="rating-brand-item">
+                                    <div class="rating-brand-icon">
+                                        <svg width="26" height="26" viewBox="0 0 24 24">
+                                            <path fill="#4285F4"
+                                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                            <path fill="#34A853"
+                                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                            <path fill="#FBBC05"
+                                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22c-.77-.63-1.32-1.46-1.66-2.63z" />
+                                            <path fill="#EA4335"
+                                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                                        </svg>
+                                    </div>
+                                    <div class="rating-brand-info">
+                                        <span class="rating-brand-title">Đánh giá google</span>
+                                        <div class="rating-stars-row">
+                                            <span class="rating-score">5.0</span>
+                                            <div class="rating-stars">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Facebook Fanpage (User Request: chèn thêm logo facebook và ghi theo dõi fanpage bên cạnh logo google) -->
+                                <div class="rating-brand-item">
+                                    <a href="https://facebook.com/pizzaking.vn" target="_blank"
+                                        rel="noopener noreferrer" class="rating-brand-link">
+                                        <div class="rating-brand-icon">
+                                            <svg width="26" height="26" viewBox="0 0 24 24" fill="#1877f2">
+                                                <path
+                                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                            </svg>
+                                        </div>
+                                        <div class="rating-brand-info">
+                                            <span class="rating-brand-title font-facebook-follow">Theo dõi
+                                                fanpage</span>
+                                            <div class="rating-stars-row">
+                                                <span class="rating-score">4.9</span>
+                                                <div class="rating-stars">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Avatars Stack -->
+                            <div class="reviews-avatar-stack">
+                                <img src="assets/review_user_1.png" alt="Avatar 1" class="stack-avatar">
+                                <img src="assets/review_user_2.png" alt="Avatar 2" class="stack-avatar">
+                                <img src="assets/review_user_3.png" alt="Avatar 3" class="stack-avatar">
+                                <img src="assets/chef_female.png" alt="Avatar 4" class="stack-avatar">
+                                <div class="stack-avatar stack-count-pill">+5K</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Panel: Cards Grid (3 Columns) -->
+                    <div class="reviews-cards-grid">
+
+                        <!-- Review Card 1 -->
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="review-text">"Đế bánh pizza mỏng, giòn xốp đúng điệu, nhân gà nấm ngập tràn phô
+                                mai thơm ngậy ăn không hề bị ngấy. Nhân viên phục vụ chu đáo, thân thiện, không gian
+                                sạch sẽ, ấm cúng. Chắc chắn sẽ quay lại!"</p>
+
+                            <div class="review-author-block">
+                                <img src="assets/review_user_1.png" alt="Nguyễn Thảo" class="review-author-img">
+                                <div class="review-author-info">
+                                    <span class="review-author-name">Nguyễn Thảo – Hà Nội</span>
+                                    <span class="review-author-desc">Nhân viên văn phòng</span>
+                                </div>
+                                <div class="review-quote-mark">
+                                    <i class="fa-solid fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 2 -->
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="review-text">"Tôi rất ấn tượng với chất lượng và nguồn gốc nông sản làm topping ở
+                                Pizza King. Toàn bộ rau củ đều tươi xanh và sạch sẽ, gà rán giòn rụm đậm vị. Giá cả cực
+                                kỳ hợp lý so với chất lượng nhận được."</p>
+
+                            <div class="review-author-block">
+                                <img src="assets/review_user_2.png" alt="Minh Tuấn" class="review-author-img">
+                                <div class="review-author-info">
+                                    <span class="review-author-name">Minh Tuấn – TP.HCM</span>
+                                    <span class="review-author-desc">Kỹ sư công nghệ</span>
+                                </div>
+                                <div class="review-quote-mark">
+                                    <i class="fa-solid fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Card 3 -->
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="review-text">"Combo siêu khổng lồ cho cả gia đình ăn no nê mà giá lại được giảm
+                                tới 20% khi đặt bàn trước. Dịch vụ giao hàng rất nhanh, bánh đến nơi vẫn còn nóng hổi và
+                                phô mai kéo sợi tuyệt vời!"</p>
+
+                            <div class="review-author-block">
+                                <img src="assets/review_user_3.png" alt="Thu Hà" class="review-author-img">
+                                <div class="review-author-info">
+                                    <span class="review-author-name">Thu Hà – Đà Nẵng</span>
+                                    <span class="review-author-desc">Kinh doanh tự do</span>
+                                </div>
+                                <div class="review-quote-mark">
+                                    <i class="fa-solid fa-quote-right"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Bottom Dots Carousel Indicators -->
+                    <div class="reviews-carousel-dots">
+                        <span class="reviews-dot active"></span>
+                        <span class="reviews-dot"></span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form Banner Section ("Đặt bàn như mẫu") -->
+        <section class="booking-banner-section">
+            <div class="container booking-banner-container">
+                <div class="booking-banner-outer"
+                    style="background: linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 100%), url('assets/booking_banner_bg.png') no-repeat center center / cover;">
+
+                    <!-- Left Side: Peach Form Overlay -->
+                    <div class="booking-form-overlay">
+                        <span class="booking-form-badge">Tư vấn & đặt bàn miễn phí</span>
+                        <h2 class="booking-form-title">Liên Hệ Pizza King Để Được Phục Vụ Chu Đáo</h2>
+                        <p class="booking-form-desc">Đội ngũ phục vụ chuyên nghiệp của Pizza King luôn sẵn sàng lắng
+                            nghe, tư vấn chi tiết và chuẩn bị những bàn tiệc ấm cúng, phù hợp nhất với nhu cầu ẩm thực
+                            của quý khách hàng, đem lại trải nghiệm trọn vẹn nhất.</p>
+
+                        <!-- Underline Style Booking Form -->
+                        <form class="booking-banner-form" id="booking-banner-form">
+                            <div class="form-underline-grid">
+
+                                <!-- Họ và tên -->
+                                <div class="form-underline-group">
+                                    <input type="text" id="banner-name" required placeholder="Họ và tên">
+                                </div>
+
+                                <!-- Điện thoại -->
+                                <div class="form-underline-group">
+                                    <input type="tel" id="banner-phone" required placeholder="Điện thoại">
+                                </div>
+
+                                <!-- Email -->
+                                <div class="form-underline-group">
+                                    <input type="email" id="banner-email" required placeholder="Email">
+                                </div>
+
+                                <!-- Địa chỉ -->
+                                <div class="form-underline-group">
+                                    <input type="text" id="banner-address" placeholder="Địa chỉ">
+                                </div>
+
+                                <!-- Chọn dịch vụ / chi nhánh -->
+                                <div class="form-underline-group select-wrapper">
+                                    <select id="banner-service" required>
+                                        <option value="" disabled selected>Chọn cơ sở / dịch vụ</option>
+                                        <option value="Chi nhánh Quận 1">Pizza King Quận 1 (Hai Bà Trưng)</option>
+                                        <option value="Chi nhánh Bình Thạnh">Pizza King Bình Thạnh (Điện Biên Phủ)
+                                        </option>
+                                        <option value="Chi nhánh Quận 5">Pizza King Quận 5 (Nguyễn Trãi)</option>
+                                        <option value="Đặt tiệc tại nhà">Dịch vụ đặt tiệc buffet/sinh nhật tại nhà
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <!-- Ngày đặt (Calendar) -->
+                                <div class="form-underline-group date-wrapper">
+                                    <input type="date" id="banner-date" required value="2026-05-26">
+                                </div>
+
+                            </div>
+
+                            <!-- Nội dung -->
+                            <div class="form-underline-group textarea-group">
+                                <textarea id="banner-notes" rows="2"
+                                    placeholder="Nội dung yêu cầu đặc biệt..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-submit-row">
+                                <button type="submit" class="booking-banner-submit-btn">Gửi thông tin <i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- News & Recruitment Section ("Tin tức & Tuyển dụng") -->
+        <section class="news-recruitment-section">
+            <div class="container news-recruitment-container">
+                <div class="news-recruitment-grid">
+
+                    <!-- Left Column: Tin tức mới nhất -->
+                    <div class="news-col-box">
+                        <h2 class="news-col-title">Tin tức mới nhất</h2>
+                        <div class="news-list-stack">
+
+                            <!-- News Item 1 -->
+                            <div class="news-row-item">
+                                <div class="news-row-img-box">
+                                    <img src="assets/pizza_hero.png" alt="Khai trương cơ sở mới" class="news-row-img">
+                                </div>
+                                <div class="news-row-info">
+                                    <span class="news-row-date"><i class="fa-regular fa-calendar"></i> 26/05/2026</span>
+                                    <a href="#" class="news-row-title" onclick="openBookingModal(event)">Khai trương chi
+                                        nhánh Pizza King thứ 5 tại Quận 2 - Nhận ngay ưu đãi giảm 30%</a>
+                                    <p class="news-row-desc">Chào mừng cơ sở mới tại số 15 Song Hành, Thảo Điền, Pizza
+                                        King tưng bừng ưu đãi khủng nhất trong tuần lễ khai trương...</p>
+                                </div>
+                            </div>
+
+                            <!-- News Item 2 -->
+                            <div class="news-row-item">
+                                <div class="news-row-img-box">
+                                    <img src="assets/news_sweet_potato.png" alt="Rau củ hữu cơ VietGAP"
+                                        class="news-row-img">
+                                </div>
+                                <div class="news-row-info">
+                                    <span class="news-row-date"><i class="fa-regular fa-calendar"></i> 20/05/2026</span>
+                                    <a href="#" class="news-row-title" onclick="openBookingModal(event)">Hợp tác chiến
+                                        lược nguồn rau hữu cơ sạch tiêu chuẩn VietGAP cùng Đà Lạt</a>
+                                    <p class="news-row-desc">Nhằm nâng cao chất lượng dinh dưỡng và nguồn gốc nông sản
+                                        an toàn vệ sinh, Pizza King đã ký kết cung ứng xà lách sạch...</p>
+                                </div>
+                            </div>
+
+                            <!-- News Item 3 -->
+                            <div class="news-row-item">
+                                <div class="news-row-img-box">
+                                    <img src="assets/pizza_supreme.png" alt="Top 10 thương hiệu F&B"
+                                        class="news-row-img">
+                                </div>
+                                <div class="news-row-info">
+                                    <span class="news-row-date"><i class="fa-regular fa-calendar"></i> 15/05/2026</span>
+                                    <a href="#" class="news-row-title" onclick="openBookingModal(event)">Pizza King vinh
+                                        dự lọt Top 10 Thương hiệu ẩm thực F&B được yêu thích nhất năm</a>
+                                    <p class="news-row-desc">Vượt qua hàng trăm tên tuổi lớn, Pizza King tự hào được
+                                        đông đảo khách hàng tin yêu bình chọn nhờ hương vị độc bản...</p>
+                                </div>
+                            </div>
+
+                            <!-- News Item 4 -->
+                            <div class="news-row-item">
+                                <div class="news-row-img-box">
+                                    <img src="assets/chef_baking_pizza.png" alt="Lớp học Bé làm Chef Pizza"
+                                        class="news-row-img">
+                                </div>
+                                <div class="news-row-info">
+                                    <span class="news-row-date"><i class="fa-regular fa-calendar"></i> 08/05/2026</span>
+                                    <a href="#" class="news-row-title" onclick="openBookingModal(event)">Khởi động lớp
+                                        học 'Bé tập làm Chef Pizza' miễn phí vào chủ nhật hàng tuần</a>
+                                    <p class="news-row-desc">Sân chơi bổ ích sáng tạo dành cho bé từ 5 đến 12 tuổi tự
+                                        tay nhào bột bột, trang trí topping và nướng bánh cùng chuyên gia...</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <a href="#" class="news-view-all-btn" onclick="openBookingModal(event)">Xem tất cả</a>
+                    </div>
+
+                    <!-- Right Column: Tuyển dụng -->
+                    <div class="news-col-box">
+                        <h2 class="news-col-title">Tuyển dụng</h2>
+                        <div class="news-list-stack">
+
+                            <!-- Recruit Item 1 -->
+                            <div class="news-row-item">
+                                <div class="news-row-img-box">
+                                    <img src="assets/chef_male.png" alt="Tuyển Bếp trưởng" class="news-row-img">
+                                </div>
+                                <div class="news-row-info">
+                                    <span class="news-row-date"><i class="fa-regular fa-calendar"></i> 26/05/2026</span>
+                                    <a href="#" class="news-row-title" onclick="openBookingModal(event)">Tuyển dụng Bếp
+                                        trưởng chuyên dòng Pizza Ý - Thu nhập lên đến 25 triệu/tháng</a>
+                                    <p class="news-row-desc">Tìm kiếm nhân tài bếp trưởng dẫn dắt gian bếp Pizza King,
+                                        có kinh nghiệm quản lý, sáng tạo thực đơn và am hiểu nướng củi...</p>
+                                </div>
+                            </div>
+
+                            <!-- Recruit Item 2 -->
+                            <div class="news-row-item">
+                                <div class="news-row-img-box">
+                                    <img src="assets/chef_female.png" alt="Tuyển phục vụ" class="news-row-img">
+                                </div>
+                                <div class="news-row-info">
+                                    <span class="news-row-date"><i class="fa-regular fa-calendar"></i> 22/05/2026</span>
+                                    <a href="#" class="news-row-title" onclick="openBookingModal(event)">Tuyển gấp 20
+                                        Nhân viên phục vụ bàn Part-time/Full-time tại các chi nhánh TP.HCM</a>
+                                    <p class="news-row-desc">Không yêu cầu kinh nghiệm, đào tạo bài bản kỹ năng giao
+                                        tiếp chuyên nghiệp. Ca làm xoay linh hoạt phù hợp với sinh viên...</p>
+                                </div>
+                            </div>
+
+                            <!-- Recruit Item 3 -->
+                            <div class="news-row-item">
+                                <div class="news-row-img-box">
+                                    <img src="assets/chicken_burger_combo.png" alt="Tuyển Shipper" class="news-row-img">
+                                </div>
+                                <div class="news-row-info">
+                                    <span class="news-row-date"><i class="fa-regular fa-calendar"></i> 18/05/2026</span>
+                                    <a href="#" class="news-row-title" onclick="openBookingModal(event)">Tuyển 10 Nhân
+                                        viên Giao hàng (Shipper) nội thành Quận 1 & Quận 3</a>
+                                    <p class="news-row-desc">Hỗ trợ xe máy, phụ cấp xăng xe đầy đủ, thu nhập ổn định từ
+                                        8 - 12 triệu/tháng tùy theo số lượng đơn hàng giao thành công...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="news-view-all-btn" onclick="openBookingModal(event)">Xem tất cả</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Site Footer -->
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <!-- 1. Top Subscription Card -->
+                <div class="footer-subscribe-box">
+                    <div class="subscribe-left-col">
+                        <h3 class="subscribe-title">Đăng ký nhận tin khuyến mãi</h3>
+                        <p class="subscribe-desc">Nhập email của bạn để nhận thông tin ưu đãi mới nhất và quà tặng đặc
+                            biệt từ Pizza King hằng tuần nhé!</p>
+                        <form class="subscribe-form-pill" id="footer-subscribe-form">
+                            <input type="email" class="subscribe-input" placeholder="Nhập địa chỉ email của bạn..."
+                                required>
+                            <button type="submit" class="subscribe-submit-btn">Đăng ký</button>
+                        </form>
+                    </div>
+                    <div class="subscribe-right-col">
+                        <img src="assets/pizza_combo_footer.png" alt="Combo Pizza King" class="subscribe-combo-img">
+                    </div>
+                </div>
+
+                <!-- 2. Bottom Foot Columns -->
+                <div class="footer-columns-row">
+
+                    <!-- Col 1: Pizza King Branding & Contact -->
+                    <div class="footer-brand-column">
+                        <div class="footer-brand-title">
+                            <span
+                                style="font-family: var(--font-heading); font-weight: 850; letter-spacing: 0.5px;">Pizza<span
+                                    class="brand-accent-gold"
+                                    style="color: #e5a93b; font-weight: 800;">King</span></span>
+                        </div>
+
+                        <p class="brand-info-desc"
+                            style="font-size: 13.5px; color: rgba(255, 255, 255, 0.85); margin-bottom: 20px; line-height: 1.6; font-family: var(--font-body);">
+                            Pizza King - Thương hiệu Pizza Hoàng Gia Ý đích thực, nướng củi thủ công chuẩn vị, giao hàng
+                            siêu tốc trong 30 phút. Giá siêu tốt - Phục vụ chu đáo.<br>
+                            <span class="text-slogan-gold"
+                                style="color: #e5a93b; font-weight: 700; font-size: 13px;">Hương Vị Hoàng Gia - Giao
+                                Hàng Siêu Tốc</span>
+                        </p>
+
+                        <div class="brand-contact-details">
+                            <p class="brand-info-item"><i class="fa-solid fa-location-dot"></i> Địa chỉ: 70 Lữ Gia,
+                                Phường 15, Quận 11, TP.HCM</p>
+                            <p class="brand-info-item"><i class="fa-solid fa-phone"></i> Điện thoại: <span
+                                    class="text-gold-phone" style="color: #e5a93b; font-weight: 700;">1900 6750</span>
+                            </p>
+                            <p class="brand-info-item"><i class="fa-solid fa-envelope"></i> Email: support@pizzaking.vn
+                            </p>
+                        </div>
+
+                        <!-- Payment Support Badge stack (from style.css) -->
+                        <div class="payment-support-stack">
+                            <h4 class="payment-title">HÌNH THỨC THANH TOÁN</h4>
+                            <div class="payment-badges-row">
+                                <span class="payment-badge cash-badge">
+                                    <i class="fa-solid fa-money-bill-1-wave" style="color: #10b981;"></i> Tiền mặt
+                                </span>
+                                <span class="payment-badge bank-badge">
+                                    <i class="fa-solid fa-building-columns" style="color: #10b981;"></i> Chuyển khoản
+                                </span>
+                                <span class="payment-badge cards-badge">
+                                    <i class="fa-brands fa-cc-visa" style="color: #1a1f71;"></i>
+                                    <i class="fa-brands fa-cc-mastercard" style="color: #ff5f00;"></i>
+                                    <i class="fa-solid fa-money-check-dollar" style="color: #00a2e8;"></i> Thẻ
+                                </span>
+                                <span class="payment-badge momo-badge">
+                                    <span class="momo-dot"></span> MoMo
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: CHÍNH SÁCH -->
+                    <div class="footer-links-column">
+                        <h3 class="footer-column-heading">CHÍNH SÁCH</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="#" onclick="openBookingModal(event)">Chính sách thành viên</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Chính sách thanh toán</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Chính sách đổi trả sản phẩm</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Chính sách bảo mật</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Chính sách cộng tác viên</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Chính sách bảo hành</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: HƯỚNG DẪN -->
+                    <div class="footer-links-column">
+                        <h3 class="footer-column-heading">HƯỚNG DẪN</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="#" onclick="openBookingModal(event)">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Hướng dẫn đổi trả</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Hướng dẫn thanh toán</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Chương trình cộng tác viên</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Tìm kiếm thông tin</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Liên hệ phản hồi</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 4: HỖ TRỢ -->
+                    <div class="footer-links-column">
+                        <h3 class="footer-column-heading">HỖ TRỢ</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="#" onclick="openBookingModal(event)">Member Card</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Gói quà miễn phí</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Câu hỏi thường gặp</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Đặt bàn & Giao hàng nhanh</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 5: DANH MỤC -->
+                    <div class="footer-links-column">
+                        <h3 class="footer-column-heading">DANH MỤC</h3>
+                        <ul class="footer-links-list">
+                            <li><a href="#" onclick="openBookingModal(event)">Pizza truyền thống</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Pizza hải sản thượng hạng</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Món ăn kèm & Tráng miệng</a></li>
+                            <li><a href="#" onclick="openBookingModal(event)">Đồ uống thanh mát</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Footer Bottom Copyright Bar -->
+                <div class="footer-bottom-bar">
+                    <p class="copyright-text">© Bản quyền thuộc về <span class="brand-highlight">Thiện Tech</span></p>
+                    <div class="footer-social-row">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                            class="social-icon-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                            class="social-icon-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon-link"
+                            aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://zalo.me" target="_blank" rel="noopener noreferrer"
+                            class="social-icon-link zalo-text-icon" aria-label="Zalo">Zalo</a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+        <!-- Table Booking Modal -->
+        <div class="booking-modal" id="booking-modal">
+            <div class="booking-modal-overlay" id="booking-modal-overlay"></div>
+            <div class="booking-modal-content">
+                <button class="booking-close-btn" id="booking-close-btn">&times;</button>
+
+                <!-- Cursive Calligraphy Header with Utensils Ornaments -->
+                <div class="booking-modal-header">
+                    <div class="header-utensil-ornament">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h2 class="modal-cursive-title">Liên hệ đặt bàn</h2>
+                    <div class="header-utensil-ornament">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                </div>
+
+                <!-- 2-column Grid Form matching mockup -->
+                <form class="booking-form" id="booking-form">
+                    <div class="form-grid-mockup">
+
+                        <!-- Tên của bạn -->
+                        <div class="form-group-mockup">
+                            <label for="booking-name">Tên của bạn:</label>
+                            <input type="text" id="booking-name" placeholder="Tên của bạn..." required>
+                        </div>
+
+                        <!-- Email của bạn -->
+                        <div class="form-group-mockup">
+                            <label for="booking-email">Email của bạn:</label>
+                            <input type="email" id="booking-email" placeholder="Email" required>
+                        </div>
+
+                        <!-- Số điện thoại của bạn -->
+                        <div class="form-group-mockup">
+                            <label for="booking-phone">Số điện thoại của bạn:</label>
+                            <input type="tel" id="booking-phone" placeholder="Số điện thoại..." required>
+                        </div>
+
+                        <!-- Bạn có thể đến dùng ngày nào? -->
+                        <div class="form-group-mockup">
+                            <label for="booking-date">Bạn có thể đến dùng ngày nào?</label>
+                            <input type="date" id="booking-date" required>
+                        </div>
+
+                        <!-- Bạn đi mấy người? -->
+                        <div class="form-group-mockup">
+                            <label for="booking-guests">Bạn đi mấy người?</label>
+                            <input type="text" id="booking-guests" placeholder="Số người..." required>
+                        </div>
+
+                        <!-- Thời gian bạn đến? -->
+                        <div class="form-group-mockup">
+                            <label for="booking-time">Thời gian bạn đến?</label>
+                            <input type="time" id="booking-time" required>
+                        </div>
+
+                    </div>
+
+                    <!-- Gold Warning Contact text -->
+                    <p class="booking-warning-note">Khách đặt tiệc hội nghị, liên hoan vui lòng gọi trực tiếp: <span
+                            class="text-gold-phone">1900 6750</span></p>
+
+                    <!-- Golden/Orange submit button -->
+                    <div class="form-submit-row-mockup">
+                        <button type="submit" class="booking-submit-btn-mockup">Đặt bàn ngay</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Floating Social Connection Suite -->
+        <div class="floating-social-suite" id="social-float-suite">
+            <!-- Floating Stack -->
+            <div class="social-float-stack" id="social-float-stack">
+                <!-- 1. Facebook Card (Mockup Style - Vertical blue rounded card) -->
+                <div class="social-float-item facebook-card-item">
+                    <a href="https://facebook.com/pizzaking.vn" target="_blank" rel="noopener noreferrer"
+                        class="facebook-mockup-card" title="Ghé thăm Facebook của chúng tôi">
+                        <div class="fb-card-icon">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </div>
+                        <span class="fb-card-text">Facebook</span>
+                    </a>
+                </div>
+
+                <!-- 2. Đặt Bàn -->
+                <div class="social-float-item">
+                    <span class="social-float-tooltip">Đặt Bàn Nhận Ưu Đãi 20%</span>
+                    <a href="#" class="social-float-btn booking-btn" onclick="openBookingModal(event)">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </a>
+                </div>
+
+                <!-- 3. Zalo -->
+                <div class="social-float-item">
+                    <span class="social-float-tooltip">Chat Zalo Hỗ Trợ Nhanh</span>
+                    <a href="https://zalo.me/19006750" target="_blank" rel="noopener noreferrer"
+                        class="social-float-btn zalo-btn">
+                        <svg class="zalo-svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 5.58 2 10c0 1.93.82 3.7 2.19 5.09L3.1 19.3c-.22.48.24.97.72.75l4.31-1.92c1.21.37 2.52.57 3.87.57 5.52 0 10-3.58 10-8s-4.48-8-10-8zm-1.8 11.2H8.4V7.8h1.8v5.4zm3.6 0H12v-5.4h1.8v5.4zm3.6 0H15.6V7.8H17.4v5.4z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- 4. Tel (Organic green with hotline call link) -->
+                <div class="social-float-item">
+                    <span class="social-float-tooltip">Gọi Hotline: 1900 6750</span>
+                    <a href="tel:19006750" class="social-float-btn tel-btn pulsing-btn">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </a>
+                </div>
+
+                <!-- 5. Email (Warm orange envelope icon) -->
+                <div class="social-float-item">
+                    <span class="social-float-tooltip">Gửi Email Liên Hệ</span>
+                    <a href="mailto:info@pizzaking.vn" class="social-float-btn email-btn">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Support Trigger Button -->
+            <button class="social-trigger-btn" id="social-float-trigger" aria-label="Liên hệ hỗ trợ">
+                <span class="pulse-ring"></span>
+                <span class="pulse-ring-slow"></span>
+                <i class="fa-solid fa-headset trigger-icon-chat"></i>
+                <i class="fa-solid fa-xmark trigger-icon-close"></i>
+            </button>
+        </div>
+
+        <!-- Custom Script -->
+        <script src="script.js"></script>
+</body>
+
+</html>

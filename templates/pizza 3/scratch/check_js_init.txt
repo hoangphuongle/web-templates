@@ -1,0 +1,70 @@
+Position: 5576
+ISTENERS
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    // Render danh sách sản phẩm ban đầu ra HTML
+    renderProducts(PRODUCTS);
+
+    // Cập nhật giao diện giỏ hàng ban đầu
+    updateCartUI();
+
+    // Khởi tạo bộ đếm ngược deal
+    initCou
+
+
+=== Match ===
+Position: 43865
+ecution matching readyState
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+        initFloatingWidget();
+        initTestimonialSlider();
+    });
+} else {
+    initFloatingWidget();
+    initTestimonialSlider();
+}
+
+// ================================================
+
+
+=== Match ===
+Position: 43930
+) {
+    document.addEventListener("DOMContentLoaded", () => {
+        initFloatingWidget();
+        initTestimonialSlider();
+    });
+} else {
+    initFloatingWidget();
+    initTestimonialSlider();
+}
+
+// ==========================================================================
+// PREMIUM TESTIMONIALS SLIDER SECTION
+// =
+
+
+=== Match ===
+Position: 44002
+itFloatingWidget();
+        initTestimonialSlider();
+    });
+} else {
+    initFloatingWidget();
+    initTestimonialSlider();
+}
+
+// ==========================================================================
+// PREMIUM TESTIMONIALS SLIDER SECTION
+// =========================================================================
+
+
+=== Match ===
+Position: 44234
+IDER SECTION
+// ==========================================================================
+function initTestimonialSlider() {
+    const prevBtn = document.getElementById("testimonialPrev");
+    const nextBtn = document.getElementById("testimonialNext");
+    const slides = document.querySelectorAll(".testimonial-slide");

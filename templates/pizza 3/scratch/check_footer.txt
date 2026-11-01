@@ -1,0 +1,73 @@
+Footer: 1427 to 1496
+
+1427:     <footer class="main-footer" id="lien-he">
+1428:         <div class="footer-bg-shape"></div>
+1429:         <div class="container footer-grid">
+1430:             <!-- Footer Info -->
+1431:             <div class="footer-col footer-info">
+1432:                 <div class="footer-logo">
+1433:                     <img src="assets/pizza_logo.png" alt="Pizza King" class="footer-logo-img">
+1434:                     <span>PIZZA KING</span>
+1435:                 </div>
+1436:                 <p class="footer-tagline">Chúng tôi tự hào mang đến những chiếc Pizza ngon chuẩn Ý, chế biến thủ công bằng cả trái tim gửi trọn vị ngon thượng hạng đến gia đình bạn.</p>
+1437:                 <div class="footer-contact-details">
+1438:                     <p><i class="fa-solid fa-location-dot text-gold"></i> Trụ sở chính: 235 Nguyễn Trãi, Quận 1, TP. HCM</p>
+1439:                     <p><i class="fa-solid fa-phone text-gold"></i> Tổng đài đặt hàng: <a href="tel:18006750"><strong>1800 6750</strong></a></p>
+1440:                     <p><i class="fa-solid fa-envelope text-gold"></i> Email: <a href="mailto:support@pizzaking.vn">support@pizzaking.vn</a></p>
+1441:                 </div>
+1442:             </div>
+1443: 
+1444:             <!-- Footer Links -->
+1445:             <div class="footer-col">
+1446:                 <h3>Thực Đơn</h3>
+1447:                 <ul class="footer-links">
+1448:                     <li><a href="#thuc-don" onclick="filterCategory('bo')"><i class="fa-solid fa-caret-right"></i> Pizza Bò Mỹ</a></li>
+1449:                     <li><a href="#thuc-don" onclick="filterCategory('hai-san')"><i class="fa-solid fa-caret-right"></i> Pizza Hải Sản</a></li>
+1450:                     <li><a href="#thuc-don" onclick="filterCategory('ga')"><i class="fa-solid fa-caret-right"></i> Pizza Gà Nướng BBQ</a></li>
+1451:                     <li><a href="#thuc-don" onclick="filterCategory('chay')"><i class="fa-solid fa-caret-right"></i> Pizza Chay Ngũ Nấm</a></li>
+1452:                     <li><a href="#thuc-don" onclick="filterCategory('khai-vi')"><i class="fa-solid fa-caret-right"></i> Khai Vị & Thức Uống</a></li>
+1453:                 </ul>
+1454:             </div>
+1455: 
+1456:             <!-- Footer Policy -->
+1457:             <div class="footer-col">
+1458:                 <h3>Chính Sách</h3>
+1459:                 <ul class="footer-links">
+1460:                     <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Chính sách giao hàng 30 phút</a></li>
+1461:                     <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Chính sách bảo mật thông tin</a></li>
+1462:                     <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Quy định sử dụng và Cookies</a></li>
+1463:                     <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Chính sách hoàn tiền 100%</a></li>
+1464:                     <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Tuyển dụng Đại sứ Giao bánh</a></li>
+1465:                 </ul>
+1466:             </div>
+1467: 
+1468:             <!-- Footer Newsletter -->
+1469:             <div class="footer-col footer-newsletter">
+1470:                 <h3>Nhận Bản Tin Ưu Đãi</h3>
+1471:                 <p>Đăng ký nhận email để nhận ngay mã giảm giá <strong>-10%</strong> cho đơn hàng đầu tiên của bạn!</p>
+1472:                 <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Đăng ký nhận tin thành công! Cảm ơn bạn.'); this.reset();">
+1473:                     <input type="email" placeholder="Nhập email của bạn..." required class="newsletter-input">
+1474:                     <button type="submit" class="newsletter-btn" aria-label="Gửi"><i class="fa-solid fa-paper-plane"></i></button>
+1475:                 </form>
+1476:                 <div class="social-links">
+1477:                     <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+1478:                     <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+1479:                     <a href="#" class="social-icon" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+1480:                     <a href="#" class="social-icon" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+1481:                 </div>
+1482:             </div>
+1483:         </div>
+1484: 
+1485:         <div class="footer-bottom">
+1486:             <div class="container footer-bottom-flex">
+1487:                 <p>&copy; 2026 Pizza King. Bản quyền giao diện thuộc về Pizza King Việt Nam. Thiết kế tinh tế chuẩn 5 sao.</p>
+1488:                 <div class="payment-methods">
+1489:                     <i class="fa-brands fa-cc-visa"></i>
+1490:                     <i class="fa-brands fa-cc-mastercard"></i>
+1491:                     <i class="fa-solid fa-wallet"></i>
+1492:                     <i class="fa-solid fa-money-bill-1-wave"></i>
+1493:                 </div>
+1494:             </div>
+1495:         </div>
+1496:     </footer>
+1497: 

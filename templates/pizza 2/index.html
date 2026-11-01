@@ -1,0 +1,2335 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Lab - Giao Hàng Pizza Nhanh Chóng & Thơm Ngon</title>
+    <meta name="description"
+        content="Trải nghiệm pizza chuẩn vị Ý tại Pizza Lab. Đặt hàng online nhanh chóng, nhiều khuyến mãi hấp dẫn mỗi ngày.">
+    <!-- Google Fonts: Inter & Outfit for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for high-quality icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css?v=2.4">
+    <!-- Inline overrides to immediately bypass aggressive local browser file cache (file:/// protocol) -->
+    <style>
+        .site-footer {
+            border-radius: 40px 40px 0 0 !important;
+            padding: 70px 0 25px 0 !important;
+            color: #ffffff !important;
+            margin-top: 70px !important; /* Balanced margin for a clean section transition */
+            position: relative !important;
+        }
+        .footer-container {
+            width: 100% !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 24px !important;
+            box-sizing: border-box !important;
+        }
+        .footer-main-layout {
+            display: grid !important;
+            grid-template-columns: 360px 1fr !important;
+            gap: 50px !important;
+            align-items: flex-start !important; /* Align to top to let columns take their natural compact height */
+            margin-bottom: 30px !important;
+        }
+        .footer-subscribe-card {
+            margin-top: -45px !important; /* Perfect floating overlap matching the mockup precisely */
+            position: relative !important;
+            z-index: 10 !important;
+        }
+        @media (max-width: 1024px) {
+            .footer-main-layout {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+            .footer-subscribe-card {
+                max-width: 500px !important;
+                margin: 0 auto !important;
+                margin-top: 0 !important; /* Reset margin on smaller screens */
+                width: 100% !important;
+            }
+            .footer-contact-row {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 15px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="https://hoangphuongle.github.io/web-templates/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        Chốt ngay qua Zalo
+      </a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
+
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <!-- Top bar with running marquee text left, static info right -->
+        <div class="top-bar-marquee" style="background-color: #0b8a5a;">
+            <div class="container top-bar-flex-container">
+                <div class="top-bar-marquee-left" style="overflow: visible;">
+                    <span style="font-weight: 500; font-size: 13.5px; color: #ffffff; letter-spacing: 0.5px;">Chào mừng
+                        bạn đến với Pizza King!</span>
+                </div>
+                <div class="top-bar-info-right"
+                    style="display: flex; align-items: center; gap: 20px; font-weight: 500; font-size: 13.5px;">
+                    <a href="#"
+                        style="color: #ffffff; text-decoration: none; display: flex; align-items: center; gap: 6px;"
+                        onclick="openBookingModal(event)"><i class="fa-regular fa-user"></i> Tài khoản</a>
+                    <span class="info-item" style="color: #ffffff; display: flex; align-items: center; gap: 6px;"><i
+                            class="fa-solid fa-phone"></i> Hotline: <strong
+                            style="font-weight: 700; color: #f2a900;">1900 6750</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="main-header" style="background-color: #ffffff; padding: 16px 0; border-bottom: 1px solid #e5e7eb;">
+            <div class="container main-header-container"
+                style="display: flex; align-items: center; justify-content: space-between;">
+
+                <!-- Logo (Pizza King with gold styling) -->
+                <a href="#" class="logo-wrapper" id="site-logo" style="text-decoration: none;">
+                    <div class="logo-icon-box royal-gold-box">
+                        <i class="fa-solid fa-pizza-slice logo-icon"></i>
+                        <i class="fa-solid fa-crown logo-crown-overlay"></i>
+                    </div>
+                    <div class="logo-text-box">
+                        <span class="logo-brand">Pizza<span class="brand-accent-gold">King</span></span>
+                        <span class="logo-tagline">online pizza delivery</span>
+                    </div>
+                </a>
+
+                <!-- Search Container -->
+                <div class="search-wrapper" style="flex: 1; max-width: 420px; position: relative; margin: 0 24px;">
+                    <input type="text" class="search-input" id="search-bar"
+                        placeholder="Tìm kiếm pizza, combo, đồ uống..."
+                        style="width: 100%; height: 44px; border: 1px solid #d1d5db; border-radius: 30px; padding: 0 48px 0 20px; font-size: 14px; outline: none; transition: all 0.2s;">
+                    <button class="search-submit-btn" aria-label="Tìm kiếm"
+                        style="position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: #4b5563; font-size: 16px; background: none; border: none; cursor: pointer;">
+                        <i class="fa-solid fa-magnifying-glass search-btn-icon"></i>
+                    </button>
+                </div>
+
+                <!-- Four Pill Actions matching mockup exactly -->
+                <div class="header-pill-actions" style="display: flex; align-items: center; gap: 12px;">
+
+                    <!-- 1. Hệ thống -->
+                    <a href="#" class="header-pill-btn" onclick="openBookingModal(event)"
+                        style="position: relative; display: flex; align-items: center; gap: 8px; background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 20px; padding: 8px 18px; font-size: 13.5px; font-weight: 700; color: #4b5563; text-decoration: none; transition: all 0.2s;">
+                        <span class="pill-badge-count"
+                            style="position: absolute; top: -8px; left: 8px; background-color: #0b8a5a; color: #ffffff; font-size: 10px; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">5</span>
+                        <i class="fa-solid fa-store" style="font-size: 14px;"></i>
+                        <span>Hệ thống</span>
+                    </a>
+
+                    <!-- 2. Đặt bàn -->
+                    <a href="#" class="header-pill-btn" onclick="openBookingModal(event)"
+                        style="position: relative; display: flex; align-items: center; gap: 8px; background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 20px; padding: 8px 18px; font-size: 13.5px; font-weight: 700; color: #4b5563; text-decoration: none; transition: all 0.2s;">
+                        <span class="pill-badge-count"
+                            style="position: absolute; top: -8px; left: 8px; background-color: #0b8a5a; color: #ffffff; font-size: 10px; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">0</span>
+                        <i class="fa-solid fa-calendar-check" style="font-size: 14px;"></i>
+                        <span>Đặt bàn</span>
+                    </a>
+
+                    <!-- 3. Yêu thích -->
+                    <a href="#" class="header-pill-btn" onclick="openBookingModal(event)"
+                        style="position: relative; display: flex; align-items: center; gap: 8px; background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 20px; padding: 8px 18px; font-size: 13.5px; font-weight: 700; color: #4b5563; text-decoration: none; transition: all 0.2s;">
+                        <span class="pill-badge-count"
+                            style="position: absolute; top: -8px; left: 8px; background-color: #0b8a5a; color: #ffffff; font-size: 10px; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">0</span>
+                        <i class="fa-regular fa-heart" style="font-size: 14px;"></i>
+                        <span>Yêu thích</span>
+                    </a>
+
+                    <!-- 4. Giỏ hàng -->
+                    <a href="#" class="header-pill-btn" onclick="openBookingModal(event)"
+                        style="position: relative; display: flex; align-items: center; gap: 8px; background-color: #ffffff; border: 1px solid #d1d5db; border-radius: 20px; padding: 8px 18px; font-size: 13.5px; font-weight: 700; color: #4b5563; text-decoration: none; transition: all 0.2s;">
+                        <span class="pill-badge-count"
+                            style="position: absolute; top: -8px; left: 8px; background-color: #0b8a5a; color: #ffffff; font-size: 10px; font-weight: 800; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">0</span>
+                        <i class="fa-solid fa-bag-shopping" style="font-size: 14px;"></i>
+                        <span>Giỏ hàng</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Horizontal Navigation Strip (E-commerce Style) -->
+        <div class="nav-bar-strip">
+            <div class="container nav-bar-strip-container">
+
+                <!-- Red Categories Box -->
+                <div class="category-menu-wrapper" id="category-menu-box">
+                    <button class="category-menu-btn" id="category-menu-toggle"
+                        style="background-color: #f2a900; color: #111827; height: 100%; border: none; font-weight: 800; font-size: 15px; padding: 0 25px; display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <i class="fa-solid fa-bars menu-hamburger-icon" style="color: #111827;"></i>
+                        <span>THỰC ĐƠN</span>
+                    </button>
+
+                    <!-- Mega Menu (Dropdown) -->
+                    <div class="mega-menu-panel" id="mega-menu">
+                        <!-- Left Sidebar Categories -->
+                        <div class="mega-sidebar">
+                            <ul>
+                                <li><a href="#" class="sidebar-item">Dụng cụ & Máy làm bánh</a></li>
+                                <li><a href="#" class="sidebar-item">Đồ dùng nhà bếp</a></li>
+                                <li><a href="#" class="sidebar-item">Dụng cụ nhà bếp</a></li>
+                                <li><a href="#" class="sidebar-item active">Gia dụng nhà bếp <i
+                                            class="fa-solid fa-caret-right caret-arrow"></i></a></li>
+                                <li><a href="#" class="sidebar-item">Thiết bị gia đình</a></li>
+                                <li><a href="#" class="sidebar-item">Dụng cụ vệ sinh nhà bếp</a></li>
+                                <li><a href="#" class="sidebar-item">Đồ gia dụng nhà bếp khác</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Mega Panel (3 Text Columns + 1 Image Column) -->
+                        <div class="mega-content">
+                            <!-- Column 1 -->
+                            <div class="mega-col">
+                                <h4 class="mega-col-title">Bếp/Nồi</h4>
+                                <ul class="mega-col-list">
+                                    <li><a href="#">Bếp điện từ</a></li>
+                                    <li><a href="#">Bếp hồng ngoại</a></li>
+                                    <li><a href="#">Bếp điện đôi</a></li>
+                                    <li><a href="#">Nồi cơm điện cơ</a></li>
+                                    <li><a href="#">Nồi cơm điện tử</a></li>
+                                    <li><a href="#">Nồi lẩu</a></li>
+                                    <li><a href="#">Nồi áp suất</a></li>
+                                    <li><a href="#">Nồi hầm</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Column 2 -->
+                            <div class="mega-col">
+                                <h4 class="mega-col-title">Máy ép/xay</h4>
+                                <ul class="mega-col-list">
+                                    <li><a href="#">Máy ép hoa quả</a></li>
+                                    <li><a href="#">Máy xay đậu nành</a></li>
+                                    <li><a href="#">Máy xay sinh tố</a></li>
+                                    <li><a href="#">Máy ép chậm</a></li>
+                                    <li><a href="#">Máy xay thịt</a></li>
+                                    <li><a href="#">Máy xay cầm tay</a></li>
+                                    <li><a href="#">Máy xay đa năng</a></li>
+                                    <li><a href="#">Máy vắt cam</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Column 3 -->
+                            <div class="mega-col">
+                                <h4 class="mega-col-title">Đồ gia dụng khác</h4>
+                                <ul class="mega-col-list">
+                                    <li><a href="#">Lò nướng</a></li>
+                                    <li><a href="#">Lò vi sóng</a></li>
+                                    <li><a href="#">Nồi chiên không dầu</a></li>
+                                    <li><a href="#">Vỉ nướng</a></li>
+                                    <li><a href="#">Máy nướng bánh mỳ</a></li>
+                                    <li><a href="#">Máy làm tỏi đen</a></li>
+                                    <li><a href="#">Bình siêu tốc</a></li>
+                                    <li><a href="#">Bình thuỷ điện</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Column 4: Promo Banner -->
+                            <div class="mega-col-promo">
+                                <div class="promo-banner-box">
+                                    <img src="assets/menu_banner.png" alt="High-quality Kitchenware Banner"
+                                        class="promo-banner-img">
+                                    <div class="promo-banner-badge">HÀNG MỚI VỀ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horizontal Nav Links -->
+                <nav class="horizontal-nav-links">
+                    <ul style="list-style: none; display: flex; align-items: center; gap: 15px; margin: 0; padding: 0;">
+                        <li><a href="#" class="nav-link active">TRANG CHỦ</a></li>
+                        <li><a href="#about-section" class="nav-link">GIỚI THIỆU</a></li>
+                        <li class="has-submenu" style="position: relative;">
+                            <a href="#" class="nav-link">KHUYẾN MÃI <i class="fa-solid fa-chevron-down caret-nav"
+                                    style="font-size: 11px; opacity: 0.8;"></i></a>
+                        </li>
+                        <li><a href="#" class="nav-link">TUYỂN DỤNG</a></li>
+                        <li><a href="#news-kitchen-section" class="nav-link">TIN TỨC</a></li>
+                        <li><a href="#contact-section" class="nav-link">LIÊN HỆ</a></li>
+                        <li>
+                            <a href="#" class="nav-btn-red" onclick="openBookingModal(event)"
+                                style="background-color: #e63946; color: #ffffff; padding: 8px 20px; border-radius: 20px; font-weight: 700; font-size: 13.5px; text-decoration: none; display: inline-block; transition: all 0.2s; box-shadow: 0 4px 10px rgba(230, 57, 70, 0.2); text-transform: uppercase;">
+                                Mua hàng nhanh
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+
+        <!-- Premium Hero Section to highlight the header -->
+        <main>
+            <!-- Large Slider Banner Section (Spa Style Container with Apple Content) -->
+            <section class="slider-section">
+                <div class="container slider-outer-wrap">
+                    <div class="slider-container" id="hero-slider">
+
+                        <div class="slider-track" id="slider-track">
+                            <!-- Slide 1 (Left peeking slide - wicker hat and basket) -->
+                            <div class="slide"
+                                style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.45)), url('assets/sub_banner_1.png') no-repeat center center / cover;">
+                                <div class="slide-inner-container">
+                                    <div class="slide-text-col">
+                                        <h2 class="slide-title-cursive"
+                                            style="font-family: 'Dancing Script', cursive; font-size: 52px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                                            Tinh Hoa Cót Cói</h2>
+                                        <p class="slide-subtitle"
+                                            style="font-size: 15px; margin-bottom: 20px; max-width: 480px; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">
+                                            Bộ sưu tập mũ cói, thảm và giỏ cói được đan tay mộc mạc, đậm đà bản sắc thợ
+                                            thủ công Việt.</p>
+                                        <a href="#" class="slide-cta-btn-gold" onclick="openBookingModal(event)"
+                                            style="background-color: #d18a4d; color: #ffffff; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 14px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">Khám
+                                            phá ngay &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 (Center active slide - Sudes Craft center) -->
+                            <div class="slide active"
+                                style="background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.5)), url('assets/sub_banner_2.png') no-repeat center center / cover;">
+                                <div class="slide-inner-container">
+                                    <div class="slide-text-col">
+                                        <h2 class="slide-title-cursive"
+                                            style="font-family: 'Dancing Script', cursive; font-size: 60px; margin-bottom: 12px; font-weight: 700; text-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                                            Sudes Craft – Chạm vào vẻ đẹp thủ công Việt!</h2>
+                                        <p class="slide-subtitle"
+                                            style="font-size: 16px; margin-bottom: 25px; max-width: 600px; text-shadow: 0 2px 8px rgba(0,0,0,0.5); line-height: 1.5;">
+                                            Khám phá bộ sưu tập túi xách, đèn, chậu cây và vật dụng trang trí được làm
+                                            từ mây tre, cói và gốm sứ – nơi mỗi chi tiết đều mang hơi thở tự nhiên và
+                                            bàn tay khéo léo của người thợ thủ công.</p>
+                                        <a href="#" class="slide-cta-btn-gold" onclick="openBookingModal(event)"
+                                            style="background-color: #d18a4d; color: #ffffff; padding: 12px 32px; border-radius: 30px; font-weight: 700; font-size: 14.5px; text-decoration: none; display: inline-flex; align-items: center; box-shadow: 0 4px 15px rgba(209,138,77,0.3);">Xem
+                                            chi tiết &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 (Right peeking slide - Tinh hoa mây tre) -->
+                            <div class="slide"
+                                style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.45)), url('assets/menu_banner.png') no-repeat center center / cover;">
+                                <div class="slide-inner-container">
+                                    <div class="slide-text-col">
+                                        <h2 class="slide-title-cursive"
+                                            style="font-family: 'Dancing Script', cursive; font-size: 52px; margin-bottom: 10px; font-weight: 700; text-shadow: 0 4px 10px rgba(0,0,0,0.5);">
+                                            Tinh Hoa Mây Tre</h2>
+                                        <p class="slide-subtitle"
+                                            style="font-size: 15px; margin-bottom: 20px; max-width: 480px; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">
+                                            Sự kết hợp hoàn hảo giữa vật liệu tre nứa mộc mạc và kỹ thuật đan lát truyền
+                                            thống tinh xảo.</p>
+                                        <a href="#" class="slide-cta-btn-gold" onclick="openBookingModal(event)"
+                                            style="background-color: #d18a4d; color: #ffffff; padding: 10px 24px; border-radius: 30px; font-weight: 700; font-size: 14px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">Xem
+                                            bộ sưu tập &rarr;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Left / Right Navigation Arrow Buttons overlayed like mockup -->
+                        <button class="slider-arrow-btn prev-arrow" onclick="prevSlide()" aria-label="Slide trước">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button class="slider-arrow-btn next-arrow" onclick="nextSlide()" aria-label="Slide sau">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Slider Navigation Dots -->
+                        <div class="slider-dots">
+                            <span class="dot" onclick="setSlide(0)"></span>
+                            <span class="dot active" onclick="setSlide(1)"></span>
+                            <span class="dot" onclick="setSlide(2)"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Two Sub-Banners Side-by-Side Section -->
+            <section class="sub-banners-section">
+                <div class="container sub-banners-grid">
+
+                    <!-- Left Sub-Banner (Dark theme: Gà Cuộn) -->
+                    <div class="sub-banner-card dark-wrap-card">
+                        <div class="sub-banner-content">
+                            <span class="sub-banner-tag text-danger-red">GIÁ SỐC 28K</span>
+                            <h3 class="sub-banner-title">GÀ CUỘN NGON TUYỆT</h3>
+                            <p class="sub-banner-offer">Ưu Đãi 50% Off</p>
+                            <a href="#" class="sub-banner-btn-red" onclick="addToCart()">ĐẶT NGAY <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="sub-banner-img-box">
+                            <span class="sub-banner-badge-circle">50%<br>OFF</span>
+                            <img src="assets/chicken_wrap.png" alt="Gà Cuộn Ngon Tuyệt">
+                        </div>
+                    </div>
+
+                    <!-- Right Sub-Banner (Orange theme: Gà Rán) -->
+                    <div class="sub-banner-card orange-combo-card">
+                        <div class="sub-banner-content">
+                            <span class="sub-banner-tag text-white">GIÁ SỐC 55K</span>
+                            <h3 class="sub-banner-title">GÀ RÁN CAY GIÒN</h3>
+                            <p class="sub-banner-offer">Ưu Đãi Hấp Dẫn</p>
+                            <a href="#" class="sub-banner-btn-red" onclick="addToCart()">ĐẶT NGAY <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="sub-banner-img-box">
+                            <span class="sub-banner-badge-circle">50%<br>OFF</span>
+                            <img src="assets/chicken_burger_combo.png" alt="Gà Rán Cay Giòn">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Menu Section (Explore Menu - Khám phá thực đơn) -->
+            <section class="explore-menu-section" id="menu-section">
+                <div class="container">
+
+                    <!-- Section Header (Mockup style) -->
+                    <div class="explore-menu-header">
+                        <h2 class="explore-menu-title-mockup">KHÁM PHÁ <span class="bold-text">THỰC ĐƠN</span><span
+                                class="spark-icon">&#10022;</span></h2>
+                    </div>
+
+                    <!-- Centered Pill Category Tabs Bar -->
+                    <div class="menu-tabs-bar">
+                        <button class="menu-tab-btn active" data-target="menu-pizza">Pizza</button>
+                        <button class="menu-tab-btn inactive" data-target="menu-myy">Mỳ Ý</button>
+                        <button class="menu-tab-btn inactive" data-target="menu-steak">Steak</button>
+                        <button class="menu-tab-btn inactive" data-target="menu-salad">Salad</button>
+                        <button class="menu-tab-btn inactive" data-target="menu-thucuong">Thức uống</button>
+                    </div>
+
+                    <!-- ==================== CATEGORY 1: PIZZA ==================== -->
+                    <div class="category-wrapper">
+                        <h3 class="category-heading" id="menu-pizza">Pizza</h3>
+                        <div class="explore-menu-grid">
+
+                            <!-- Item 1 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/pizza_hero.png" alt="Pizza Puff_Gà BBQ Nướng Dứa">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Pizza Puff_Gà BBQ Nướng Dứa</h4>
+                                    <p class="menu-item-desc">Gà nướng dứa cùng phô mai thơm béo và sốt Thousand Island.
+                                        1. Ăn vỏ bánh trước tiên. Nhóm người tạo...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">89.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/pizza_chicken.png" alt="Pizza Chốt_Gà Nướng Dứa">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Pizza Chốt_Gà Nướng Dứa</h4>
+                                    <p class="menu-item-desc">Hòa quyện vị giác với thịt gà nướng cùng với dứa và nhiều
+                                        loại phô mai thượng hạng. 1. Ăn vỏ...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">89.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/pizza_supreme.png" alt="Pizza Chốt_Giăm Bông & Thịt Xông Khói">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Pizza Chốt_Giăm Bông & Thịt Xông Khói</h4>
+                                    <p class="menu-item-desc">Vị truyền thống với thịt xông khói và thịt nguội hòa trộn
+                                        với cà chua, phô mai và sốt béo...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">89.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/pizza_seafood.png" alt="Pizza Chốt_Thanh Cua và Xúc Xích Cocktail">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Pizza Chốt_Thanh Cua và Xúc Xích Cocktail</h4>
+                                    <p class="menu-item-desc">Chất ngập với hỗn hợp phô mai, thịt xông khói với mùi tây,
+                                        thanh cua và sốt Thousand Island...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">89.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="menu-more-btn-wrap">
+                            <a href="#" class="menu-more-btn" onclick="openBookingModal(event)">Xem chi tiết &gt;</a>
+                        </div>
+                    </div>
+
+                    <!-- ==================== CATEGORY 2: MỲ Ý ==================== -->
+                    <div class="category-wrapper">
+                        <h3 class="category-heading" id="menu-myy">Mỳ Ý</h3>
+                        <div class="explore-menu-grid">
+
+                            <!-- Item 1 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/combo_chicken_spaghetti.png" alt="Mỳ Ý thịt bò bằm">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Mỳ Ý thịt bò bằm</h4>
+                                    <p class="menu-item-desc">Một phong cách Ý đặc biệt với sốt thịt bò bằm kết hợp cùng
+                                        mỳ Ý. Ăn vỏ bánh trước...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">129.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/combo_chicken_spaghetti.png" alt="Mỳ Ý Giăm Bông Và Nấm Sốt Kem">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Mỳ Ý Giăm Bông Và Nấm Sốt Kem</h4>
+                                    <p class="menu-item-desc">Sự kết hợp tuyệt vời giữa giăm bông và nấm đậm đà hương
+                                        vị, được nấu cùng với sốt kem trắng...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">119.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/combo_chicken_spaghetti.png" alt="Mỳ Ý Cay Xúc Xích">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Mỳ Ý Cay Xúc Xích</h4>
+                                    <p class="menu-item-desc">Đánh thức vị ngon với một đĩa Mỳ Ý xúc xích cay nồng, thêm
+                                        vị tươi ngon của thảo mộc...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">119.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/combo_chicken_spaghetti.png" alt="Mỳ Ý Tôm Sốt Kem Cà Chua">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Mỳ Ý Tôm Sốt Kem Cà Chua</h4>
+                                    <p class="menu-item-desc">Sự tươi ngon của tôm kết hợp với sốt kem cà chua. 1. Ăn vỏ
+                                        bánh trước tiên. Nhóm người tạo...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">139.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="menu-more-btn-wrap">
+                            <a href="#" class="menu-more-btn" onclick="openBookingModal(event)">Xem chi tiết &gt;</a>
+                        </div>
+                    </div>
+
+                    <!-- ==================== CATEGORY 3: STEAK ==================== -->
+                    <div class="category-wrapper">
+                        <h3 class="category-heading" id="menu-steak">Steak</h3>
+                        <div class="explore-menu-grid">
+
+                            <!-- Item 1 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/news_croquettes.png" alt="Bít Tết Bò Mỹ Sốt Tiêu Đen">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Bít Tết Bò Mỹ Sốt Tiêu Đen</h4>
+                                    <p class="menu-item-desc">Bít tết bò Mỹ nhập khẩu mềm mọng nướng vừa chín, rưới sốt
+                                        tiêu đen Phú Quốc cay nồng đậm vị, kèm măng tây.</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">189.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/chicken_wrap.png" alt="Bít Tết Sốt Phô Mai Kéo Sợi">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Bít Tết Sốt Phô Mai Kéo Sợi</h4>
+                                    <p class="menu-item-desc">Bò bít tết hảo hạng kết hợp hoàn hảo cùng nước sốt phô mai
+                                        Mozzarella đút lò thơm béo, kéo sợi cực kỳ kích thích.</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">199.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/combo_chicken_spaghetti.png" alt="Steak Bò Úc Sốt Kem Nấm">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Steak Bò Úc Sốt Kem Nấm</h4>
+                                    <p class="menu-item-desc">Thịt bò Úc tươi ngon nướng chín vừa phải giữ độ ngọt tự
+                                        nhiên, phủ sốt kem nấm truffle thơm lừng béo ngậy.</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">209.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/fried_chicken.png" alt="Bít Tết Sốt Bơ Tỏi Thảo Mộc">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Bít Tết Sốt Bơ Tỏi Thảo Mộc</h4>
+                                    <p class="menu-item-desc">Thịt bò áp chảo chín tới hòa quyện cùng bơ tỏi thơm nồng
+                                        và các loại thảo mộc Ý mang hương vị thanh tao.</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">179.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="menu-more-btn-wrap">
+                            <a href="#" class="menu-more-btn" onclick="openBookingModal(event)">Xem chi tiết &gt;</a>
+                        </div>
+                    </div>
+
+                    <!-- ==================== CATEGORY 4: SALAD ==================== -->
+                    <div class="category-wrapper">
+                        <h3 class="category-heading" id="menu-salad">Salad</h3>
+                        <div class="explore-menu-grid">
+
+                            <!-- Item 1 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/pizza_combo_footer.png" alt="Salad Trộn Sốt Caesar">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Salad Trộn Sốt Caesar</h4>
+                                    <p class="menu-item-desc">Món rau trộn phong cách Ý dùng kèm với sốt Caesar ngon
+                                        tuyệt...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">69.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/pizza_combo_footer.png" alt="Salad Da Cá Hồi Giòn">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Salad Da Cá Hồi Giòn</h4>
+                                    <p class="menu-item-desc">Món salad độc đáo với phần da cá hồi chiên giòn kết hợp
+                                        với các loại rau củ tươi ngon...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">89.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/pizza_combo_footer.png" alt="Salad Gà Giòn Không Xương">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Salad Gà Giòn Không Xương</h4>
+                                    <p class="menu-item-desc">Salad Gà giòn tạo thêm lựa chọn hương vị mới mẻ, kết hợp
+                                        với các nguyên liệu không thể thiếu...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">89.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/pizza_combo_footer.png" alt="Salad Hui">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Salad Hui</h4>
+                                    <p class="menu-item-desc">Các loại trái cây thanh mát đào, thanh long, táo, dưa hấu,
+                                        cà chua bi hòa quyện cùng xốt béo...</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">79.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="menu-more-btn-wrap">
+                            <a href="#" class="menu-more-btn" onclick="openBookingModal(event)">Xem chi tiết &gt;</a>
+                        </div>
+                    </div>
+
+                    <!-- ==================== CATEGORY 5: THỨC UỐNG ==================== -->
+                    <div class="category-wrapper">
+                        <h3 class="category-heading" id="menu-thucuong">Thức uống</h3>
+                        <div class="explore-menu-grid">
+
+                            <!-- Item 1 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/chicken_burger_combo.png" alt="Pepsi Lon">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Pepsi Lon</h4>
+                                    <p class="menu-item-desc">Nước giải khát Pepsi thơm ngon, sảng khoái mát lạnh tức
+                                        thì.</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">29.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/chicken_burger_combo.png" alt="Bia Heineken">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Bia Heineken</h4>
+                                    <p class="menu-item-desc">Bia Heineken lon 330ml ướp đá cực đã, chuẩn vị đậm đà hảo
+                                        hạng.</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">49.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/chicken_burger_combo.png" alt="Aquafina Chai">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">Aquafina Chai</h4>
+                                    <p class="menu-item-desc">Nước uống tinh khiết Aquafina tốt cho sức khỏe, giải khát
+                                        lành mạnh.</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">20.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Item 4 -->
+                            <div class="menu-item-card">
+                                <div class="menu-item-img-box">
+                                    <img src="assets/chicken_burger_combo.png" alt="7Up Lon">
+                                </div>
+                                <div class="menu-item-info">
+                                    <i class="fa-regular fa-heart menu-item-heart"
+                                        onclick="event.stopPropagation(); alert('Đã thêm vào danh sách yêu thích!');"></i>
+                                    <h4 class="menu-item-title">7Up Lon</h4>
+                                    <p class="menu-item-desc">Nước giải khát 7Up hương chanh tự nhiên, sảng khoái và cực
+                                        thanh mát.</p>
+                                    <a href="#" class="menu-item-more-red" onclick="openBookingModal(event)">Xem
+                                        thêm</a>
+                                    <div class="menu-item-bottom">
+                                        <div class="menu-item-price-col">
+                                            <span class="price-label">Giá chỉ từ</span>
+                                            <span class="price-value">29.000đ</span>
+                                        </div>
+                                        <button class="menu-item-add-btn" onclick="addToCart()">Thêm</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="menu-more-btn-wrap">
+                            <a href="#" class="menu-more-btn" onclick="openBookingModal(event)">Xem chi tiết &gt;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Promotions Section (Khuyến mãi - Combo Best Seller) -->
+            <section class="promo-sale-section">
+                <div class="container">
+                    <div class="promo-outer-box">
+
+                        <!-- Top Large Banner Card -->
+                        <div class="promo-banner-card">
+
+                            <!-- Left Side: Image Background -->
+                            <div class="promo-banner-img-col" style="background-image: url('assets/faq_banner.png');">
+                            </div>
+
+                            <!-- Right Side: Content -->
+                            <div class="promo-banner-info-col">
+                                <h2 class="promo-banner-heading">Combo best seller</h2>
+
+                                <!-- Decorative Scroll Divider -->
+                                <div class="promo-decorative-divider">
+                                    <span class="divider-line"></span>
+                                    <span class="divider-icon">&#10087;</span>
+                                    <span class="divider-line"></span>
+                                </div>
+
+                                <p class="promo-banner-desc">Chúng tôi luôn đưa ra nhiều chương trình khuyến mãi để quý
+                                    khách có thể trải nghiệm và tận hưởng mọi sản phẩm từ cửa hàng.</p>
+                                <p class="promo-banner-notice">Chương trình khuyến mãi diễn ra hàng ngày, đặt online
+                                    giao tận nơi cực kỳ nhanh chóng!</p>
+
+                                <a href="#" class="promo-banner-btn-blue" onclick="openBookingModal(event)">Xem ngay</a>
+                            </div>
+
+                        </div>
+
+                        <!-- Bottom: Horizontal Row of 4 Cards -->
+                        <div class="promo-cards-row">
+
+                            <!-- Card 1 -->
+                            <div class="promo-small-card">
+                                <div class="promo-small-card-img" style="background-color: #e3f2fd;">
+                                    <img src="assets/pizza_hero.png" alt="Pizza Thập Cẩm Hoàng Gia (S)">
+                                </div>
+                                <h3 class="promo-small-card-title">Pizza Thập Cẩm Hoàng Gia (S)</h3>
+                                <div class="promo-small-card-price">139.000đ</div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="promo-small-card">
+                                <div class="promo-small-card-img" style="background-color: #f5f5f5;">
+                                    <img src="assets/pizza_seafood.png" alt="Pizza Hải Sản Xốt Pesto (S)">
+                                </div>
+                                <h3 class="promo-small-card-title">Pizza Hải Sản Xốt Pesto (S)</h3>
+                                <div class="promo-small-card-price">159.000đ</div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="promo-small-card">
+                                <div class="promo-small-card-img" style="background-color: #faf0e6;">
+                                    <img src="assets/combo_chicken_pizza.png" alt="Combo Pizza & Gà Rán Tiết Kiệm">
+                                </div>
+                                <h3 class="promo-small-card-title">Combo Pizza & Gà Rán Tiết Kiệm</h3>
+                                <div class="promo-small-card-price">189.000đ</div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="promo-small-card">
+                                <div class="promo-small-card-img" style="background-color: #fcfcfc;">
+                                    <img src="assets/combo_chicken_spaghetti.png" alt="Combo Spaghetti & Gà Rán Cay">
+                                </div>
+                                <h3 class="promo-small-card-title">Combo Spaghetti & Gà Rán Cay</h3>
+                                <div class="promo-small-card-price">159.000đ</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Suggestions Section ("Gợi ý cho bạn") -->
+            <section class="suggestions-section">
+                <div class="container suggestions-container">
+                    <div class="suggestions-outer-frame">
+
+                        <!-- Section Title and Category Tabs -->
+                        <div class="suggestions-header">
+                            <h2>Gợi ý cho bạn</h2>
+                            <div class="suggestions-tabs">
+                                <span class="tab-item active">Gà rán</span>
+                                <span class="tab-item">Burger</span>
+                                <span class="tab-item">Pizza</span>
+                            </div>
+                        </div>
+
+                        <!-- Products Two-Column Grid -->
+                        <div class="suggestions-grid">
+
+                            <!-- Column 1 (Left) -->
+                            <div class="suggestions-col">
+                                <!-- Product 1 (Active/Hovered design in mockup) -->
+                                <div class="suggest-product-item">
+                                    <div class="suggest-img-box">
+                                        <img src="assets/fried_chicken.png" alt="Gà Rán (4 Miếng)">
+                                    </div>
+                                    <div class="suggest-info-box">
+                                        <h3 class="suggest-title">Gà Rán (4 Miếng)</h3>
+                                        <div class="suggest-stars gold">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <div class="suggest-price">129.000<u>đ</u></div>
+                                    </div>
+                                    <div class="suggest-action-box">
+                                        <!-- Tooltip visible on active item -->
+                                        <div class="suggest-tooltip">Tùy chọn</div>
+                                        <button class="suggest-btn suggest-btn-orange" onclick="addToCart()"
+                                            aria-label="Tùy chọn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Product 3 -->
+                                <div class="suggest-product-item">
+                                    <div class="suggest-img-box">
+                                        <img src="assets/fried_chicken.png" alt="Gà Rán (6 Miếng)">
+                                    </div>
+                                    <div class="suggest-info-box">
+                                        <h3 class="suggest-title">Gà Rán (6 Miếng)</h3>
+                                        <div class="suggest-stars gray">
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <div class="suggest-price">159.000<u>đ</u></div>
+                                    </div>
+                                    <div class="suggest-action-box">
+                                        <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                            aria-label="Tùy chọn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Product 5 (Combo) -->
+                                <div class="suggest-product-item">
+                                    <div class="suggest-img-box">
+                                        <img src="assets/combo_chicken_pizza.png" alt="Combo C">
+                                    </div>
+                                    <div class="suggest-info-box">
+                                        <h3 class="suggest-title">Combo C (1 người) (1 miếng gà + 1 pizza hải sản S + 1
+                                            phần
+                                            khoai...</h3>
+                                        <div class="suggest-stars gray">
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <div class="suggest-price">159.000<u>đ</u></div>
+                                    </div>
+                                    <div class="suggest-action-box">
+                                        <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                            aria-label="Thêm vào giỏ">
+                                            <i class="fa-solid fa-basket-shopping"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Product 7 (Combo) -->
+                                <div class="suggest-product-item">
+                                    <div class="suggest-img-box">
+                                        <img src="assets/combo_chicken_spaghetti.png" alt="Combo H">
+                                    </div>
+                                    <div class="suggest-info-box">
+                                        <h3 class="suggest-title">Combo H (1 người)(1 Miếng Gà + Mì Ý Truyền Thống +
+                                            Coca
+                                            Cola)</h3>
+                                        <div class="suggest-stars gray">
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <div class="suggest-price">159.000<u>đ</u></div>
+                                    </div>
+                                    <div class="suggest-action-box">
+                                        <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                            aria-label="Thêm vào giỏ">
+                                            <i class="fa-solid fa-basket-shopping"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 2 (Right) -->
+                            <div class="suggestions-col">
+                                <!-- Product 2 -->
+                                <div class="suggest-product-item">
+                                    <div class="suggest-img-box">
+                                        <img src="assets/fried_chicken.png" alt="Gà Rán (2 Miếng)">
+                                    </div>
+                                    <div class="suggest-info-box">
+                                        <h3 class="suggest-title">Gà Rán (2 Miếng)</h3>
+                                        <div class="suggest-stars gray">
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <div class="suggest-price">69.000<u>đ</u></div>
+                                    </div>
+                                    <div class="suggest-action-box">
+                                        <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                            aria-label="Tùy chọn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Product 4 -->
+                                <div class="suggest-product-item">
+                                    <div class="suggest-img-box">
+                                        <img src="assets/fried_chicken.png" alt="Gà Rán (9 Miếng)">
+                                    </div>
+                                    <div class="suggest-info-box">
+                                        <h3 class="suggest-title">Gà Rán (9 Miếng)</h3>
+                                        <div class="suggest-stars gray">
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <div class="suggest-price">239.000<u>đ</u></div>
+                                    </div>
+                                    <div class="suggest-action-box">
+                                        <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                            aria-label="Tùy chọn">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Product 6 (Combo) -->
+                                <div class="suggest-product-item">
+                                    <div class="suggest-img-box">
+                                        <img src="assets/sub_banner_1.png" alt="Combo A">
+                                    </div>
+                                    <div class="suggest-info-box">
+                                        <h3 class="suggest-title">Combo A (2 người) (4 Miếng Gà Rán + 1 Phần Khoai Tây
+                                            Lớn +
+                                            2...</h3>
+                                        <div class="suggest-stars gray">
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                        <div class="suggest-price">159.000<u>đ</u></div>
+                                    </div>
+                                    <div class="suggest-action-box">
+                                        <button class="suggest-btn suggest-btn-peach" onclick="addToCart()"
+                                            aria-label="Thêm vào giỏ">
+                                            <i class="fa-solid fa-basket-shopping"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Footer Link -->
+                        <div class="suggestions-footer">
+                            <a href="#" class="btn-suggest-view-all" onclick="openBookingModal()">Xem tất cả <i
+                                    class="fa-solid fa-chevron-right chevron-footer"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Booking & Ordering Symmetrical Steps Section -->
+            <section class="booking-order-steps-section" id="booking-steps-section">
+                <div class="container">
+                    <div class="steps-container">
+
+                        <!-- Left Column (Order) -->
+                        <div class="step-col-left">
+                            <h2 class="step-title">Chọn những gì bạn muốn,<br>chọn thời gian nhận hàng</h2>
+                            <p class="step-desc">Nhà hàng chuyên phục vụ những món ăn đặc sắc, đúng hương vị do chính
+                                các đầu bếp Việt Nam chế biến từ những nguyên liệu tươi ngon nhất với một mức chi phí
+                                hợp lý.</p>
+                            <button class="step-btn-yellow" onclick="openBookingModal(event)">Order ngay</button>
+                        </div>
+
+                        <!-- Center Column (Welcoming Staff Avatar) -->
+                        <div class="step-center-img-box">
+                            <img src="assets/chef_female.png" alt="Nhân viên phục vụ chuyên nghiệp"
+                                class="step-center-img">
+                        </div>
+
+                        <!-- Right Column (Booking) -->
+                        <div class="step-col-right">
+                            <h2 class="step-title">Đặt chỗ trước<br>không chờ đợi</h2>
+                            <p class="step-desc">Để chúng tôi phục vụ và mang lại trải nghiệm tốt nhất, quý khách hãy
+                                đặt bàn trước.</p>
+                            <button class="step-btn-yellow" onclick="openBookingModal(event)">Đặt bàn ngay</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Utilities Section (Tiện ích cho khách hàng) -->
+            <section class="utilities-section">
+                <div class="container utilities-container">
+
+                    <!-- Heading -->
+                    <div class="utilities-header">
+                        <h2><span class="text-green-util">TIỆN ÍCH</span> <span class="text-blue-util">CHO KHÁCH
+                                HÀNG</span>
+                        </h2>
+                    </div>
+
+                    <div class="utilities-grid">
+
+                        <!-- Left: 2x2 Grid of benefits -->
+                        <div class="utilities-benefits-list">
+
+                            <!-- Benefit 1 (Active/Lavender blue background matching mockup) -->
+                            <div class="utility-card active-blue-card">
+                                <div class="utility-icon-box">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                </div>
+                                <h3>Đặt tiệc & Sự kiện</h3>
+                                <p>Quý khách hàng sử dụng tiện ích này để đặt lịch tiệc sinh nhật, liên hoan tại các cơ
+                                    sở của Pizza King với vị trí đẹp nhất</p>
+                                <a href="#" class="utility-link" onclick="openBookingModal()">Đặt bàn ngay <i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Benefit 2 (White background) -->
+                            <div class="utility-card">
+                                <div class="utility-icon-box text-green">
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                </div>
+                                <h3>Tra cứu đơn hàng</h3>
+                                <p>Quý khách hàng sử dụng tiện ích này để theo dõi hành trình giao nhận và trạng thái
+                                    đơn hàng Pizza King của mình</p>
+                                <a href="#" class="utility-link text-blue-link" onclick="openBookingModal()">Tra cứu <i
+                                        class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Benefit 3 (White background) -->
+                            <div class="utility-card">
+                                <div class="utility-icon-box text-green-circle">
+                                    <i class="fa-regular fa-circle-question"></i>
+                                </div>
+                                <h3>Hỏi đáp & Hỗ trợ nhanh</h3>
+                                <p>Quý khách hàng sử dụng tiện ích này để gửi thắc mắc về thực đơn, ưu đãi và nhận giải
+                                    đáp nhanh chóng từ ban quản lý Pizza King</p>
+                                <a href="#" class="utility-link text-blue-link" onclick="openBookingModal()">Xem chi
+                                    tiết <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Benefit 4 (White background) -->
+                            <div class="utility-card">
+                                <div class="utility-icon-box text-blue-dollar">
+                                    <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                                </div>
+                                <h3>Nguồn gốc nguyên liệu</h3>
+                                <p>Quý khách hàng sử dụng tiện ích này để tra cứu nguồn gốc xuất xứ nông sản tươi sạch
+                                    VietGAP Đà Lạt và phô mai Ý hảo hạng</p>
+                                <a href="#" class="utility-link text-blue-link" onclick="openBookingModal()">Kiểm tra
+                                    ngay
+                                    <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+
+                        </div>
+
+                        <!-- Right: Photo Collage of Chefs -->
+                        <div class="utilities-collage">
+
+                            <!-- Left floating avatar circle/card -->
+                            <div class="collage-item collage-left-avatar">
+                                <img src="assets/chef_male.png" alt="Male Chef">
+                            </div>
+
+                            <!-- Decorative dark blue semi-circle -->
+                            <div class="collage-shape collage-shape-blue"></div>
+
+                            <!-- Main large right avatar shield shape -->
+                            <div class="collage-item collage-main-female">
+                                <img src="assets/chef_female.png" alt="Female Chef">
+                            </div>
+
+                            <!-- Bottom test lab / baking pizza card -->
+                            <div class="collage-item collage-bottom-baking">
+                                <img src="assets/chef_baking_pizza.png" alt="Chef Baking Pizza">
+                            </div>
+
+                            <!-- Decorative green semi-circle background -->
+                            <div class="collage-shape collage-shape-green"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Cooking Corner / News Section ("Chuyên mục vào bếp") -->
+            <section class="news-kitchen-section">
+                <div class="container news-kitchen-container">
+                    <div class="news-kitchen-outer-banner"
+                        style="background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 40%, rgba(0, 0, 0, 0.4) 100%), url('assets/news_bg.png') no-repeat center center / cover;">
+
+                        <!-- Left: Section Intro Text -->
+                        <div class="news-kitchen-intro">
+                            <h2>Chuyên mục<br>vào bếp</h2>
+                            <p>Vào bếp cùng chuyên gia với nhiều công thức nấu ăn ngon mỗi ngày đơn giản dễ làm, hướng
+                                dẫn
+                                làm bánh, món mặn, món chay, món ăn theo các dịp lễ.</p>
+                            <a href="#" class="news-kitchen-btn" onclick="openBookingModal()">Xem Thêm</a>
+                        </div>
+
+                        <!-- Right: News Cards Slider/Flex -->
+                        <div class="news-kitchen-cards">
+
+                            <!-- News Card 1 -->
+                            <div class="news-card-item">
+                                <div class="news-card-img">
+                                    <img src="assets/news_sweet_potato.png" alt="Pizza khoai lang mật ong độc đáo">
+                                </div>
+                                <div class="news-card-title-box">
+                                    <a href="#" onclick="openBookingModal(event)">Thử ngay Pizza Khoai Lang Mật Ong - Sự
+                                        kết hợp độc đáo Âu - Việt</a>
+                                </div>
+                            </div>
+
+                            <!-- News Card 2 -->
+                            <div class="news-card-item">
+                                <div class="news-card-img">
+                                    <img src="assets/news_lemon_honey.png" alt="Trà chanh đào mật ong mát lạnh">
+                                </div>
+                                <div class="news-card-title-box">
+                                    <a href="#" onclick="openBookingModal(event)">Bí quyết pha Trà Chanh Đào Mật Ong mát
+                                        lạnh đập tan cái nóng mùa hè</a>
+                                </div>
+                            </div>
+
+                            <!-- News Card 3 -->
+                            <div class="news-card-item">
+                                <div class="news-card-img">
+                                    <img src="assets/news_croquettes.png" alt="Khoai tây chiên Croquette phô mai">
+                                </div>
+                                <div class="news-card-title-box">
+                                    <a href="#" onclick="openBookingModal(event)">Cách làm Khoai Tây Chiên Croquette phô
+                                        mai kéo sợi thơm ngon chuẩn Ý</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Us Section (Về chúng tôi) -->
+            <section class="about-section" id="about-section">
+                <div class="container">
+                    <div class="about-grid">
+
+                        <!-- Left Large Card: Dấu ấn từ mùi hương -->
+                        <div class="about-left-card">
+                            <h2>Dấu ấn từ mùi hương</h2>
+                            <p>Chào mừng bạn đến với Sudes, nơi hội tụ những hương vị pizza Ý tinh tế, nóng hổi và đầy
+                                cảm xúc. Chúng tôi tin rằng mỗi lát bánh nướng củi thơm ngon là một tác phẩm nghệ thuật,
+                                mang đến dấu ấn quyến rũ riêng biệt và khơi gợi vị giác của thực khách...</p>
+                            <div class="about-counter-large">
+                                +2000 <span>ngày hoạt động</span>
+                            </div>
+                            <a href="#news-kitchen-section" class="about-pill-btn">
+                                <span>Tìm hiểu thêm</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <!-- Right Column: Info & 2 Cards -->
+                        <div class="about-right-col">
+                            <div class="about-header">
+                                <span class="about-badge">Giới thiệu</span>
+                                <h2 class="about-title">SUDES PIZZA</h2>
+                                <p class="about-desc">Sudes mang đến những dòng pizza chính hiệu Ý, tinh tế và phù hợp
+                                    với từng khẩu vị. Chúng tôi không chỉ chế biến món ăn thơm ngon, mà còn giúp bạn tận
+                                    hưởng những khoảnh khắc vui vẻ trọn vẹn bên gia đình.</p>
+                            </div>
+
+                            <!-- 2 Cards Grid -->
+                            <div class="about-cards-grid">
+
+                                <!-- Card 1: 3000 Khách hàng -->
+                                <div class="about-small-card card-bg-1">
+                                    <h3>+3000</h3>
+                                    <h4>Khách hàng toàn quốc</h4>
+                                    <p>Với hơn 3.000 thực khách tin tưởng mỗi ngày, Sudes tự hào là điểm đến uy tín cho
+                                        những ai đam mê pizza chuẩn vị nướng củi Ý truyền thống.</p>
+                                    <a href="#about-section" class="about-pill-btn">
+                                        <span>Tìm hiểu thêm</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+
+                                <!-- Card 2: 1000 Feedback -->
+                                <div class="about-small-card card-bg-2">
+                                    <h3>+1000</h3>
+                                    <h4>Feedback tích cực</h4>
+                                    <p>Thực khách lựa chọn Sudes không chỉ vì những lát bánh giòn tan hảo hạng, mà còn
+                                        bởi sự hài lòng về thái độ phục vụ tận tâm và phản hồi chuyên nghiệp.</p>
+                                    <a href="https://www.facebook.com/" target="_blank" class="about-pill-btn">
+                                        <span>Tìm hiểu thêm</span>
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section ("Giải đáp thắc mắc") -->
+            <section class="faq-section">
+                <div class="container faq-container">
+                    <!-- Two-column grid -->
+                    <div class="faq-grid">
+
+                        <!-- Left: Curved FAQ Banner Image (Pizza on the left) -->
+                        <div class="faq-left-col">
+                            <div class="faq-image-wrapper">
+                                <img src="assets/faq_banner.png" alt="FAQ Pizza King" class="faq-image">
+                            </div>
+                        </div>
+
+                        <!-- Right: FAQ Accordion and Content (Accordion on the right) -->
+                        <div class="faq-right-col">
+                            <span class="faq-badge-dotted">Câu hỏi thường gặp</span>
+                            <h2 class="faq-title">Giải Đáp Thắc Mắc Cùng <br><span class="text-brand-color">pizaa
+                                    king</span></h2>
+                            <p class="faq-subtitle">Nếu bạn không tìm thấy câu hỏi phù hợp, đừng ngần ngại liên hệ với
+                                chúng tôi qua hotline, email, hoặc fanpage để được hỗ trợ tốt nhất!</p>
+
+                            <!-- Accordion Stack -->
+                            <div class="faq-accordion-stack">
+
+                                <!-- FAQ Item 1 (Active/Open by default) -->
+                                <div class="faq-item active">
+                                    <button class="faq-header" aria-expanded="true">
+                                        <span class="faq-question">Pizza King có dịch vụ giao hàng tận nơi không?</span>
+                                        <div class="faq-icon-circle">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </button>
+                                    <div class="faq-body">
+                                        <p class="faq-answer">Có. Pizza King cung cấp dịch vụ giao hàng tận nơi nhanh
+                                            chóng trong bán kính 10km. Chúng tôi sử dụng túi giữ nhiệt chuyên dụng để
+                                            đảm bảo bánh pizza và các món ăn kèm luôn giữ được độ nóng hổi, giòn ngon và
+                                            phô mai kéo sợi tuyệt vời nhất khi đến tay bạn.</p>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 2 (Collapsed) -->
+                                <div class="faq-item">
+                                    <button class="faq-header" aria-expanded="false">
+                                        <span class="faq-question">Giá trị các combo khuyến mãi tại Pizza King là bao
+                                            nhiêu?</span>
+                                        <div class="faq-icon-circle">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </button>
+                                    <div class="faq-body">
+                                        <p class="faq-answer">Chúng tôi cung cấp nhiều gói combo đa dạng phù hợp cho cá
+                                            nhân, cặp đôi hay gia đình với mức giá chỉ từ 129.000đ cho Combo Single và
+                                            lên đến 349.000đ cho các Combo Feast siêu lớn. Đặc biệt khi đặt trước, bạn
+                                            sẽ được nhận thêm nhiều ưu đãi chiết khấu trực tiếp.</p>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 3 (Collapsed) -->
+                                <div class="faq-item">
+                                    <button class="faq-header" aria-expanded="false">
+                                        <span class="faq-question">Làm sao để đặt bàn trước và nhận ưu đãi giảm giá
+                                            20%?</span>
+                                        <div class="faq-icon-circle">
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </div>
+                                    </button>
+                                    <div class="faq-body">
+                                        <p class="faq-answer">Bạn chỉ cần nhấp vào nút "Đặt bàn" trên thanh tiện ích nổi
+                                            hoặc ở đầu trang, điền đầy đủ các thông tin cá nhân, số lượng khách và giờ
+                                            đến. Hệ thống sẽ tự động ghi nhận và áp dụng chương trình giảm giá 20% cho
+                                            hóa đơn đồ ăn của bạn khi đến nhà hàng.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Customer Testimonials Section ("Phản hồi từ khách hàng") -->
+            <section class="reviews-section">
+                <div class="container">
+                    <div class="reviews-grid-v2">
+
+                        <!-- Left: Fixed Restaurant Image -->
+                        <div class="reviews-left-img">
+                            <img src="assets/chef_baking_pizza.png" alt="Không gian nhà hàng Pizza King">
+                        </div>
+
+                        <!-- Right: Beige Panel Container -->
+                        <div class="reviews-right-panel">
+
+                            <!-- Top: Rating Badges Pilled tags -->
+                            <div class="review-pill-badges">
+                                <a href="https://google.com" target="_blank" rel="noopener noreferrer"
+                                    class="review-pill-badge">
+                                    <div class="pill-icon-circle">
+                                        <i class="fa-brands fa-google" style="color: #4285F4;"></i>
+                                    </div>
+                                    <span>ĐÁNH GIÁ GOOGLE</span>
+                                </a>
+                                <a href="https://facebook.com/pizzaking.vn" target="_blank" rel="noopener noreferrer"
+                                    class="review-pill-badge">
+                                    <div class="pill-icon-circle">
+                                        <i class="fa-brands fa-facebook-f" style="color: #1877f2;"></i>
+                                    </div>
+                                    <span>THEO DÕI FANPAGE</span>
+                                </a>
+                            </div>
+
+                            <!-- Cursive Heading & Subtitle exactly as mockup -->
+                            <div class="reviews-header-group">
+                                <h2 class="reviews-title-cursive">Khách hàng nói về chúng tôi</h2>
+                                <p class="reviews-subtitle-v2">Hơn +20,000 khách hàng đã sử dụng cảm nhận như thế nào về
+                                    Sudes Home</p>
+                            </div>
+
+                            <!-- Content: White Card Carousel -->
+                            <div class="review-white-card">
+                                <div class="review-slides-container">
+
+                                    <!-- Slide 1 (Hồng Vân) -->
+                                    <div class="review-slide active" data-index="0">
+                                        <div class="review-slide-flex">
+                                            <div class="review-avatar-col">
+                                                <img src="assets/review_user_1.png" alt="Hồng Vân"
+                                                    class="review-avatar-img">
+                                            </div>
+                                            <div class="review-content-col">
+                                                <div class="quote-icon-orange">99</div>
+                                                <p class="review-quote">Mình luôn yêu thích đồ thủ công, và Sudes Craft
+                                                    khiến mình cảm thấy được kết nối lại với những giá trị xưa cũ. Từng
+                                                    món đồ, từ túi cói đến chậu gốm, đều mang nét riêng mộc mạc, giản dị
+                                                    mà vẫn hiện đại. Mình cảm nhận rõ tâm huyết của người làm – nhẹ
+                                                    nhàng, chân thật và rất Việt Nam.</p>
+                                                <div class="review-author-meta">
+                                                    <strong class="author-name">Hồng Vân</strong>
+                                                    <span class="author-role">Người mẫu</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 2 (Minh Tuấn) -->
+                                    <div class="review-slide" data-index="1">
+                                        <div class="review-slide-flex">
+                                            <div class="review-avatar-col">
+                                                <img src="assets/review_user_2.png" alt="Minh Tuấn"
+                                                    class="review-avatar-img">
+                                            </div>
+                                            <div class="review-content-col">
+                                                <div class="quote-icon-orange">99</div>
+                                                <p class="review-quote">Không gian sống của mình như được thổi thêm làn
+                                                    gió mới từ các sản phẩm mây tre đan của Sudes Home. Những chiếc giỏ
+                                                    tre, chụp đèn đan tay tinh xảo không chỉ bền đẹp mà còn mang lại cảm
+                                                    giác ấm áp, gần gũi với thiên nhiên.</p>
+                                                <div class="review-author-meta">
+                                                    <strong class="author-name">Minh Tuấn</strong>
+                                                    <span class="author-role">Kiến trúc sư</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3 (Thu Hà) -->
+                                    <div class="review-slide" data-index="2">
+                                        <div class="review-slide-flex">
+                                            <div class="review-avatar-col">
+                                                <img src="assets/review_user_3.png" alt="Thu Hà"
+                                                    class="review-avatar-img">
+                                            </div>
+                                            <div class="review-content-col">
+                                                <div class="quote-icon-orange">99</div>
+                                                <p class="review-quote">Mình rất ấn tượng với bộ sản phẩm gốm sứ và thảm
+                                                    cói tại Sudes Craft. Đường nét đan mộc mạc, màu sắc gốm men chảy tự
+                                                    nhiên cực kỳ sang trọng. Sản phẩm đóng gói kỹ lưỡng, giao hàng nhanh
+                                                    chóng.</p>
+                                                <div class="review-author-meta">
+                                                    <strong class="author-name">Thu Hà</strong>
+                                                    <span class="author-role">Chủ chuỗi Homestay</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Carousel Dots outside the card, centered in the beige panel background -->
+                            <div class="reviews-carousel-dots">
+                                <span class="reviews-dot active" data-slide="0"></span>
+                                <span class="reviews-dot" data-slide="1"></span>
+                                <span class="reviews-dot" data-slide="2"></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact & Operating Hours Section ("Liên hệ / Giờ hoạt động") -->
+            <section class="contact-hours-section" id="contact-section">
+                <div class="container contact-hours-container">
+                    <div class="contact-hours-outer"
+                        style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/pizza_hero.png') no-repeat center center / cover;">
+
+                        <!-- Center Overlay Card -->
+                        <div class="hours-card-overlay">
+                            <span class="hours-card-badge-cursive">pizaa king</span>
+                            <h2 class="hours-card-title">THỜI GIAN HOẠT ĐỘNG</h2>
+
+                            <div class="hours-card-divider">
+                                <span class="diamond-shape">◇</span>
+                            </div>
+
+                            <p class="hours-card-desc">
+                                Pizza King là chuỗi nhà hàng ẩm thực với những hương vị pizza nướng củi thơm ngon đặc
+                                trưng kết hợp với không gian sang trọng, âm nhạc tinh tế tạo nên phong cách lịch sự, gần
+                                gũi. Phong cách riêng biệt chỉ Pizza King mới có.
+                            </p>
+
+                            <!-- Times Grid -->
+                            <div class="hours-grid-row">
+                                <div class="hours-grid-col">
+                                    <h4 class="hours-days-title">Thứ 2 - Thứ 6 hàng tuần</h4>
+                                    <p class="hours-time-item">7am - 11am</p>
+                                    <p class="hours-time-item">11am - 10pm</p>
+                                </div>
+                                <div class="hours-grid-col">
+                                    <h4 class="hours-days-title">Thứ 7 - Chủ nhật hàng tuần</h4>
+                                    <p class="hours-time-item">8am - 11 am</p>
+                                    <p class="hours-time-item">11am - 9pm</p>
+                                </div>
+                            </div>
+
+                            <!-- Footer Hotline Block -->
+                            <div class="hours-hotline-block">
+                                <div class="delivery-icon-wrap">
+                                    <!-- Delivery guy/scooter icon matching mockup -->
+                                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'><circle cx='50' cy='50' r='45' fill='%23ffffff' stroke='%23f05a42' stroke-width='3'\/><path d='M35 60 L65 60 M40 60 A8 8 0 1 1 40 61 M60 60 A8 8 0 1 1 60 61' stroke='%23f05a42' stroke-width='4' stroke-linecap='round'\/><path d='M42 50 L58 50 L63 38 L50 32 L40 38 Z' fill='%23f05a42'\/><path d='M48 30 A4 4 0 1 1 48 31' fill='%23222222'\/><\/svg>"
+                                        alt="Delivery Rider" class="delivery-rider-img">
+                                </div>
+                                <div class="hotline-text-wrap">
+                                    <span class="hotline-label">Hotline đặt hàng</span>
+                                    <a href="tel:19006750" class="hotline-number">1900 6750</a>
+                                </div>
+                            </div>
+
+                            <!-- The "ĐẶT HÀNG NGAY" button is deleted as requested -->
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- News & Recruitment Section ("Tin tức & Tuyển dụng") -->
+            <section class="news-recruitment-section">
+                <div class="container news-recruitment-container">
+                    <div class="news-recruitment-grid">
+
+                        <!-- Left Column: Tin tức mới nhất -->
+                        <div class="news-col-box">
+                            <h2 class="news-col-title">Tin tức mới nhất</h2>
+                            <div class="news-list-stack">
+
+                                <!-- News Item 1 -->
+                                <div class="news-row-item">
+                                    <div class="news-row-img-box">
+                                        <img src="assets/pizza_hero.png" alt="Khai trương cơ sở mới"
+                                            class="news-row-img">
+                                    </div>
+                                    <div class="news-row-info">
+                                        <span class="news-row-date"><i class="fa-regular fa-calendar"></i>
+                                            26/05/2026</span>
+                                        <a href="#" class="news-row-title" onclick="openBookingModal(event)">Khai trương
+                                            chi
+                                            nhánh Pizza King thứ 5 tại Quận 2 - Nhận ngay ưu đãi giảm 30%</a>
+                                        <p class="news-row-desc">Chào mừng cơ sở mới tại số 15 Song Hành, Thảo Điền,
+                                            Pizza
+                                            King tưng bừng ưu đãi khủng nhất trong tuần lễ khai trương...</p>
+                                    </div>
+                                </div>
+
+                                <!-- News Item 2 -->
+                                <div class="news-row-item">
+                                    <div class="news-row-img-box">
+                                        <img src="assets/news_sweet_potato.png" alt="Rau củ hữu cơ VietGAP"
+                                            class="news-row-img">
+                                    </div>
+                                    <div class="news-row-info">
+                                        <span class="news-row-date"><i class="fa-regular fa-calendar"></i>
+                                            20/05/2026</span>
+                                        <a href="#" class="news-row-title" onclick="openBookingModal(event)">Hợp tác
+                                            chiến
+                                            lược nguồn rau hữu cơ sạch tiêu chuẩn VietGAP cùng Đà Lạt</a>
+                                        <p class="news-row-desc">Nhằm nâng cao chất lượng dinh dưỡng và nguồn gốc nông
+                                            sản
+                                            an toàn vệ sinh, Pizza King đã ký kết cung ứng xà lách sạch...</p>
+                                    </div>
+                                </div>
+
+                                <!-- News Item 3 -->
+                                <div class="news-row-item">
+                                    <div class="news-row-img-box">
+                                        <img src="assets/pizza_supreme.png" alt="Top 10 thương hiệu F&B"
+                                            class="news-row-img">
+                                    </div>
+                                    <div class="news-row-info">
+                                        <span class="news-row-date"><i class="fa-regular fa-calendar"></i>
+                                            15/05/2026</span>
+                                        <a href="#" class="news-row-title" onclick="openBookingModal(event)">Pizza King
+                                            vinh
+                                            dự lọt Top 10 Thương hiệu ẩm thực F&B được yêu thích nhất năm</a>
+                                        <p class="news-row-desc">Vượt qua hàng trăm tên tuổi lớn, Pizza King tự hào được
+                                            đông đảo khách hàng tin yêu bình chọn nhờ hương vị độc bản...</p>
+                                    </div>
+                                </div>
+
+                                <!-- News Item 4 -->
+                                <div class="news-row-item">
+                                    <div class="news-row-img-box">
+                                        <img src="assets/chef_baking_pizza.png" alt="Lớp học Bé làm Chef Pizza"
+                                            class="news-row-img">
+                                    </div>
+                                    <div class="news-row-info">
+                                        <span class="news-row-date"><i class="fa-regular fa-calendar"></i>
+                                            08/05/2026</span>
+                                        <a href="#" class="news-row-title" onclick="openBookingModal(event)">Khởi động
+                                            lớp
+                                            học 'Bé tập làm Chef Pizza' miễn phí vào chủ nhật hàng tuần</a>
+                                        <p class="news-row-desc">Sân chơi bổ ích sáng tạo dành cho bé từ 5 đến 12 tuổi
+                                            tự
+                                            tay nhào bột bột, trang trí topping và nướng bánh cùng chuyên gia...</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <a href="#" class="news-view-all-btn" onclick="openBookingModal(event)">Xem tất cả</a>
+                        </div>
+
+                        <!-- Right Column: Tuyển dụng -->
+                        <div class="news-col-box">
+                            <h2 class="news-col-title">Tuyển dụng</h2>
+                            <div class="news-list-stack">
+
+                                <!-- Recruit Item 1 -->
+                                <div class="news-row-item">
+                                    <div class="news-row-img-box">
+                                        <img src="assets/chef_male.png" alt="Tuyển Bếp trưởng" class="news-row-img">
+                                    </div>
+                                    <div class="news-row-info">
+                                        <span class="news-row-date"><i class="fa-regular fa-calendar"></i>
+                                            26/05/2026</span>
+                                        <a href="#" class="news-row-title" onclick="openBookingModal(event)">Tuyển dụng
+                                            Bếp
+                                            trưởng chuyên dòng Pizza Ý - Thu nhập lên đến 25 triệu/tháng</a>
+                                        <p class="news-row-desc">Tìm kiếm nhân tài bếp trưởng dẫn dắt gian bếp Pizza
+                                            King,
+                                            có kinh nghiệm quản lý, sáng tạo thực đơn và am hiểu nướng củi...</p>
+                                    </div>
+                                </div>
+
+                                <!-- Recruit Item 2 -->
+                                <div class="news-row-item">
+                                    <div class="news-row-img-box">
+                                        <img src="assets/chef_female.png" alt="Tuyển phục vụ" class="news-row-img">
+                                    </div>
+                                    <div class="news-row-info">
+                                        <span class="news-row-date"><i class="fa-regular fa-calendar"></i>
+                                            22/05/2026</span>
+                                        <a href="#" class="news-row-title" onclick="openBookingModal(event)">Tuyển gấp
+                                            20
+                                            Nhân viên phục vụ bàn Part-time/Full-time tại các chi nhánh TP.HCM</a>
+                                        <p class="news-row-desc">Không yêu cầu kinh nghiệm, đào tạo bài bản kỹ năng giao
+                                            tiếp chuyên nghiệp. Ca làm xoay linh hoạt phù hợp với sinh viên...</p>
+                                    </div>
+                                </div>
+
+                                <!-- Recruit Item 3 -->
+                                <div class="news-row-item">
+                                    <div class="news-row-img-box">
+                                        <img src="assets/chicken_burger_combo.png" alt="Tuyển Shipper"
+                                            class="news-row-img">
+                                    </div>
+                                    <div class="news-row-info">
+                                        <span class="news-row-date"><i class="fa-regular fa-calendar"></i>
+                                            18/05/2026</span>
+                                        <a href="#" class="news-row-title" onclick="openBookingModal(event)">Tuyển 10
+                                            Nhân
+                                            viên Giao hàng (Shipper) nội thành Quận 1 & Quận 3</a>
+                                        <p class="news-row-desc">Hỗ trợ xe máy, phụ cấp xăng xe đầy đủ, thu nhập ổn định
+                                            từ
+                                            8 - 12 triệu/tháng tùy theo số lượng đơn hàng giao thành công...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="news-view-all-btn" onclick="openBookingModal(event)">Xem tất cả</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Connection Section (Kết nối truyền thông dạng Ruy-băng) -->
+            <section class="social-connect-section" id="social-connect">
+                <div class="social-grid">
+
+                    <!-- Card 1: Youtube Text (Solid Red) -->
+                    <div class="social-card text-card youtube-card">
+                        <span class="watermark-quote">“</span>
+                        <div class="card-text-content">
+                            <h3 class="card-heading">Kết Nối Youtube</h3>
+                            <p class="card-text">Khám phá hành trình cùng Pizza King</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: TikTok Image (assets/pizza_hero.png) -->
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
+                        class="social-card image-card">
+                        <div class="card-bg" style="background-image: url('assets/pizza_hero.png');"></div>
+                        <div class="card-content-wrap">
+                            <div class="social-logo"><i class="fa-brands fa-tiktok"></i></div>
+                            <h4 class="social-title">Tiktok</h4>
+                            <span class="social-handle">@pizzaking</span>
+                            <div class="social-discover-btn tiktok-btn">
+                                <span>KHÁM PHÁ</span>
+                                <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: TikTok Text (Solid Black) -->
+                    <div class="social-card text-card tiktok-card-black">
+                        <span class="watermark-quote">“</span>
+                        <div class="card-text-content">
+                            <h3 class="card-heading">Kết Nối Tiktok</h3>
+                            <p class="card-text">Cùng chúng tôi hòa nhịp xu hướng TikTok</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Facebook Image (assets/chef_baking_pizza.png) -->
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                        class="social-card image-card">
+                        <div class="card-bg" style="background-image: url('assets/chef_baking_pizza.png');"></div>
+                        <div class="card-content-wrap">
+                            <div class="social-logo"><i class="fa-brands fa-facebook-f"></i></div>
+                            <h4 class="social-title">Facebook</h4>
+                            <span class="social-handle">@pizzaking</span>
+                            <div class="social-discover-btn facebook-btn">
+                                <span>KHÁM PHÁ</span>
+                                <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 5: Facebook Text (Solid Blue) -->
+                    <div class="social-card text-card facebook-card-blue">
+                        <span class="watermark-quote">“</span>
+                        <div class="card-text-content">
+                            <h3 class="card-heading">Kết Nối Facebook</h3>
+                            <p class="card-text">Theo dõi tin mới nhất từ chúng tôi trên Facebook</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Instagram Image (assets/sub_banner_1.png) -->
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                        class="social-card image-card">
+                        <div class="card-bg" style="background-image: url('assets/sub_banner_1.png');"></div>
+                        <div class="card-content-wrap">
+                            <div class="social-logo"><i class="fa-brands fa-instagram"></i></div>
+                            <h4 class="social-title">Instagram</h4>
+                            <span class="social-handle">@pizzaking</span>
+                            <div class="social-discover-btn instagram-btn">
+                                <span>KHÁM PHÁ</span>
+                                <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- Policy Commitment Section (Chính sách cam kết) -->
+            <section class="policy-section">
+                <div class="container">
+                    <div class="policy-card-wrap">
+                        <div class="policy-grid">
+
+                            <!-- Policy Item 1 -->
+                            <div class="policy-item">
+                                <div class="policy-icon-box">
+                                    <i class="fa-solid fa-truck-fast"></i>
+                                </div>
+                                <h3>Đặt online giao tận nhà</h3>
+                                <p>Đảm bảo pizza nóng hổi đến tay bạn trong thời gian ngắn nhất.</p>
+                            </div>
+
+                            <!-- Policy Item 2 -->
+                            <div class="policy-item">
+                                <div class="policy-icon-box">
+                                    <i class="fa-solid fa-wallet"></i>
+                                </div>
+                                <h3>Thanh toán đa dạng</h3>
+                                <p>Hỗ trợ nhiều phương thức thanh toán linh hoạt và an toàn.</p>
+                            </div>
+
+                            <!-- Policy Item 3 -->
+                            <div class="policy-item">
+                                <div class="policy-icon-box">
+                                    <i class="fa-solid fa-headset"></i>
+                                </div>
+                                <h3>Hỗ trợ khách hàng</h3>
+                                <p>Hỗ trợ khách hàng tận tâm, sẵn sàng giải đáp mọi thắc mắc 24/7.</p>
+                            </div>
+
+                            <!-- Policy Item 4 -->
+                            <div class="policy-item">
+                                <div class="policy-icon-box">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <h3>Nguyên liệu thực phẩm tươi sạch</h3>
+                                <p>Cam kết 100% nguyên liệu tươi sạch, nguồn gốc xuất xứ rõ ràng.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Site Footer -->
+            <footer class="site-footer"
+                style="background: linear-gradient(rgba(13, 35, 20, 0.94), rgba(13, 35, 20, 0.96)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1920&auto=format&fit=crop') no-repeat center center / cover;">
+                <div class="footer-container">
+                    <div class="footer-main-layout">
+
+                        <!-- Left: Large Vertical Subscription Card -->
+                        <div class="footer-subscribe-card">
+                            <div class="subscribe-card-icon">
+                                <i class="fa-regular fa-envelope-open"></i>
+                            </div>
+                            <h3 class="subscribe-card-title">Nhận tin khuyến mãi</h3>
+                            <p class="subscribe-card-desc">Đăng ký ngay và được giảm giá 15% cho lần mua hàng đầu tiên
+                                và nhiều chương trình hấp dẫn dành cho bạn!</p>
+                            <form class="subscribe-card-form" id="footer-subscribe-form">
+                                <input type="email" class="subscribe-card-input"
+                                    placeholder="Nhập email nhận tin khuyến mãi" required>
+                                <button type="submit" class="subscribe-card-submit-btn">ĐĂNG KÝ</button>
+                            </form>
+                        </div>
+
+                        <!-- Right: Contact info row & Columns -->
+                        <div class="footer-right-content">
+
+                            <!-- Top Contact Info Row -->
+                            <div class="footer-contact-row">
+                                <div class="contact-row-item">
+                                    <div class="contact-icon-circle">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div class="contact-text-wrap">
+                                        <span class="contact-label">Địa chỉ:</span>
+                                        <span class="contact-val">70 Lữ Gia, Phường 15, Quận 11, TP.HCM</span>
+                                    </div>
+                                </div>
+                                <div class="contact-row-item">
+                                    <div class="contact-icon-circle">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div class="contact-text-wrap">
+                                        <span class="contact-label">Điện thoại:</span>
+                                        <a href="tel:19006750" class="contact-val">1900 6750</a>
+                                    </div>
+                                </div>
+                                <div class="contact-row-item">
+                                    <div class="contact-icon-circle">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text-wrap">
+                                        <span class="contact-label">Email:</span>
+                                        <a href="mailto:support@pizzaking.vn"
+                                            class="contact-val">support@pizzaking.vn</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Divider line exactly like mockup -->
+                            <div class="footer-contact-divider"></div>
+
+                            <!-- Bottom columns -->
+                            <div class="footer-links-grid">
+
+                                <!-- Col 1: Chính sách -->
+                                <div class="footer-links-col">
+                                    <h3 class="footer-col-title">Chính sách</h3>
+                                    <ul class="footer-links-list-v2">
+                                        <li><a href="#" onclick="openBookingModal(event)">Chính sách thành viên</a></li>
+                                        <li><a href="#" onclick="openBookingModal(event)">Chính sách thanh toán</a></li>
+                                        <li><a href="#" onclick="openBookingModal(event)">Chính sách vận chuyển và giao
+                                                nhận</a></li>
+                                        <li><a href="#" onclick="openBookingModal(event)">Bảo mật thông tin cá nhân</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Col 2: Hướng dẫn -->
+                                <div class="footer-links-col">
+                                    <h3 class="footer-col-title">Hướng dẫn</h3>
+                                    <ul class="footer-links-list-v2">
+                                        <li><a href="#" onclick="openBookingModal(event)">Hướng dẫn mua hàng</a></li>
+                                        <li><a href="#" onclick="openBookingModal(event)">Hướng dẫn thanh toán</a></li>
+                                        <li><a href="#" onclick="openBookingModal(event)">Hướng dẫn giao nhận</a></li>
+                                        <li><a href="#" onclick="openBookingModal(event)">Điều khoản dịch vụ</a></li>
+                                    </ul>
+                                </div>
+
+                                <!-- Col 3: Thông tin (Intro paragraph + Social follows) -->
+                                <div class="footer-links-col">
+                                    <h3 class="footer-col-title">Thông tin</h3>
+                                    <p class="footer-info-desc">
+                                        Pizza King là doanh nghiệp ẩm thực tiên phong chuyên sản xuất và cung cấp thực
+                                        phẩm hữu cơ chuẩn vị Ý truyền thống, an toàn vệ sinh và tốt cho sức khỏe. Chúng
+                                        tôi áp dụng quy trình nướng củi hiện đại theo tiêu chuẩn châu Âu, nói "không"
+                                        với hóa chất và chất bảo quản.
+                                    </p>
+
+                                    <!-- Social row exactly like mockup -->
+                                    <div class="footer-social-wrapper">
+                                        <span class="social-follow-label">Theo dõi chúng tôi</span>
+                                        <div class="footer-social-row-v2">
+                                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                                                class="social-circle-btn fb-btn" aria-label="Facebook"><i
+                                                    class="fa-brands fa-facebook-f"></i></a>
+                                            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+                                                class="social-circle-btn yt-btn" aria-label="Youtube"><i
+                                                    class="fa-brands fa-youtube"></i></a>
+                                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                                                class="social-circle-btn tw-btn" aria-label="Twitter"><i
+                                                    class="fa-brands fa-twitter"></i></a>
+                                            <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer"
+                                                class="social-circle-btn pin-btn" aria-label="Pinterest"><i
+                                                    class="fa-brands fa-pinterest-p"></i></a>
+                                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                                                class="social-circle-btn insta-btn" aria-label="Instagram"><i
+                                                    class="fa-brands fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Divider line above payment support -->
+                            <div class="footer-contact-divider"></div>
+
+                            <!-- Payment support row inside the right column -->
+                            <div class="footer-payment-support-row">
+                                <span class="payment-support-label">HỖ TRỢ THANH TOÁN:</span>
+                                <div class="payment-badges-row-v2">
+                                    <span class="payment-badge-v2 cash-badge-v2" title="Tiền mặt">
+                                        <i class="fa-solid fa-money-bill-1-wave" style="color: #10b981;"></i> Tiền mặt
+                                    </span>
+                                    <span class="payment-badge-v2 bank-badge-v2" title="Chuyển khoản">
+                                        <i class="fa-solid fa-building-columns" style="color: #4285F4;"></i> Chuyển
+                                        khoản
+                                    </span>
+                                    <span class="payment-badge-v2 visa-badge-v2" title="Thẻ Visa">
+                                        <i class="fa-brands fa-cc-visa" style="color: #1a1f71;"></i> Visa
+                                    </span>
+                                    <span class="payment-badge-v2 master-badge-v2" title="Mastercard">
+                                        <i class="fa-brands fa-cc-mastercard" style="color: #ff5f00;"></i> Mastercard
+                                    </span>
+                                    <span class="payment-badge-v2 momo-badge-v2" title="Momo">
+                                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23A50064'/><circle cx='50' cy='50' r='25' fill='%23ffffff'/><circle cx='50' cy='50' r='15' fill='%23A50064'/></svg>"
+                                            alt="MoMo" class="momo-icon-inline"> MoMo
+                                    </span>
+                                    <span class="payment-badge-v2 zalo-badge-v2" title="ZaloPay">
+                                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230088FF'/><path d='M30 65 L45 35 L55 35 L70 65 M38 52 L62 52' stroke='%23ffffff' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/></svg>"
+                                            alt="ZaloPay" class="zalo-icon-inline"> ZaloPay
+                                    </span>
+                                    <span class="payment-badge-v2 apple-badge-v2" title="Apple Pay">
+                                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23000000'/><path d='M42 35 C38 35 34 38 34 42 C34 48 40 55 45 55 C50 55 56 48 56 42 C56 38 52 35 48 35 M48 30 C49 27 52 25 54 25 C54 27 52 30 50 31' stroke='%23ffffff' stroke-width='4' fill='none'/></svg>"
+                                            alt="Apple Pay" class="apple-icon-inline"> Apple Pay
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Copyright Bar exactly like mockup -->
+                    <div class="footer-bottom-bar-v2">
+                        <p class="copyright-text-v2">Bản quyền thuộc về <span class="highlight-brand">Thien Tech</span>.
+                            Cung cấp bởi <span class="highlight-brand">Thien Tech</span></p>
+                    </div>
+
+                </div>
+            </footer>
+
+            <!-- Table Booking Modal -->
+            <div class="booking-modal" id="booking-modal">
+                <div class="booking-modal-overlay" id="booking-modal-overlay"></div>
+                <div class="booking-modal-content">
+                    <button class="booking-close-btn" id="booking-close-btn">&times;</button>
+
+                    <!-- Cursive Calligraphy Header with Utensils Ornaments -->
+                    <div class="booking-modal-header">
+                        <div class="header-utensil-ornament">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h2 class="modal-cursive-title">Liên hệ đặt bàn</h2>
+                        <div class="header-utensil-ornament">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                    </div>
+
+                    <!-- 2-column Grid Form matching mockup -->
+                    <form class="booking-form" id="booking-form">
+                        <div class="form-grid-mockup">
+
+                            <!-- Tên của bạn -->
+                            <div class="form-group-mockup">
+                                <label for="booking-name">Tên của bạn:</label>
+                                <input type="text" id="booking-name" placeholder="Tên của bạn..." required>
+                            </div>
+
+                            <!-- Email của bạn -->
+                            <div class="form-group-mockup">
+                                <label for="booking-email">Email của bạn:</label>
+                                <input type="email" id="booking-email" placeholder="Email" required>
+                            </div>
+
+                            <!-- Số điện thoại của bạn -->
+                            <div class="form-group-mockup">
+                                <label for="booking-phone">Số điện thoại của bạn:</label>
+                                <input type="tel" id="booking-phone" placeholder="Số điện thoại..." required>
+                            </div>
+
+                            <!-- Bạn có thể đến dùng ngày nào? -->
+                            <div class="form-group-mockup">
+                                <label for="booking-date">Bạn có thể đến dùng ngày nào?</label>
+                                <input type="date" id="booking-date" required>
+                            </div>
+
+                            <!-- Bạn đi mấy người? -->
+                            <div class="form-group-mockup">
+                                <label for="booking-guests">Bạn đi mấy người?</label>
+                                <input type="text" id="booking-guests" placeholder="Số người..." required>
+                            </div>
+
+                            <!-- Thời gian bạn đến? -->
+                            <div class="form-group-mockup">
+                                <label for="booking-time">Thời gian bạn đến?</label>
+                                <input type="time" id="booking-time" required>
+                            </div>
+
+                        </div>
+
+                        <!-- Gold Warning Contact text -->
+                        <p class="booking-warning-note">Khách đặt tiệc hội nghị, liên hoan vui lòng gọi trực tiếp: <span
+                                class="text-gold-phone">1900 6750</span></p>
+
+                        <!-- Golden/Orange submit button -->
+                        <div class="form-submit-row-mockup">
+                            <button type="submit" class="booking-submit-btn-mockup">Đặt bàn ngay</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Floating Social Connection Suite -->
+            <div class="floating-social-suite" id="social-float-suite">
+                <!-- Floating Stack -->
+                <div class="social-float-stack" id="social-float-stack">
+                    <!-- 1. Facebook Card (Mockup Style - Vertical blue rounded card) -->
+                    <div class="social-float-item facebook-card-item">
+                        <a href="https://facebook.com/pizzaking.vn" target="_blank" rel="noopener noreferrer"
+                            class="facebook-mockup-card" title="Ghé thăm Facebook của chúng tôi">
+                            <div class="fb-card-icon">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </div>
+                            <span class="fb-card-text">Facebook</span>
+                        </a>
+                    </div>
+
+                    <!-- 2. Đặt Bàn -->
+                    <div class="social-float-item">
+                        <span class="social-float-tooltip">Đặt Bàn Nhận Ưu Đãi 20%</span>
+                        <a href="#" class="social-float-btn booking-btn" onclick="openBookingModal(event)">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </a>
+                    </div>
+
+                    <!-- 3. Zalo -->
+                    <div class="social-float-item">
+                        <span class="social-float-tooltip">Chat Zalo Hỗ Trợ Nhanh</span>
+                        <a href="https://zalo.me/19006750" target="_blank" rel="noopener noreferrer"
+                            class="social-float-btn zalo-btn">
+                            <svg class="zalo-svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 5.58 2 10c0 1.93.82 3.7 2.19 5.09L3.1 19.3c-.22.48.24.97.72.75l4.31-1.92c1.21.37 2.52.57 3.87.57 5.52 0 10-3.58 10-8s-4.48-8-10-8zm-1.8 11.2H8.4V7.8h1.8v5.4zm3.6 0H12v-5.4h1.8v5.4zm3.6 0H15.6V7.8H17.4v5.4z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- 4. Tel (Organic green with hotline call link) -->
+                    <div class="social-float-item">
+                        <span class="social-float-tooltip">Gọi Hotline: 1900 6750</span>
+                        <a href="tel:19006750" class="social-float-btn tel-btn pulsing-btn">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </a>
+                    </div>
+
+                    <!-- 5. Email (Warm orange envelope icon) -->
+                    <div class="social-float-item">
+                        <span class="social-float-tooltip">Gửi Email Liên Hệ</span>
+                        <a href="mailto:info@pizzaking.vn" class="social-float-btn email-btn">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Main Support Trigger Button -->
+                <button class="social-trigger-btn" id="social-float-trigger" aria-label="Liên hệ hỗ trợ">
+                    <span class="pulse-ring"></span>
+                    <span class="pulse-ring-slow"></span>
+                    <i class="fa-solid fa-headset trigger-icon-chat"></i>
+                    <i class="fa-solid fa-xmark trigger-icon-close"></i>
+                </button>
+            </div>
+
+            <!-- Custom Script -->
+            <script src="script.js"></script>
+</body>
+
+</html>

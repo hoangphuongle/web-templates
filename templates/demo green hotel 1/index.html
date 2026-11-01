@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Hotel - Du Lịch & Nghỉ Dưỡng Đẳng Cấp</title>
+    <link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="https://hoangphuongle.github.io/web-templates/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        Chốt ngay qua Zalo
+      </a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
+
+    <header class="header">
+        <div class="top-header">
+            <div class="container flex-row">
+                <div class="top-message">
+                    HỆ THỐNG DU LỊCH & NGHỈ DƯỠNG QUỐC TẾ HÀNG ĐẦU VIỆT NAM
+                </div>
+                <div class="top-actions-wrapper">
+                    <div class="top-actions">
+                        <a href="tel:19006750" class="top-btn btn-gold">
+                            <i class="fa-solid fa-phone"></i> 1900 6750
+                        </a>
+                        <a href="#" class="top-btn btn-gold">
+                            <i class="fa-solid fa-bag-shopping"></i> <span class="badge">0</span>
+                        </a>
+                        <a href="#" class="top-btn btn-gold">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container flex-row">
+                <div class="logo-box">
+                    <a href="/" class="logo">
+                        <div class="logo-icon">
+                            <img src="https://img.icons8.com/ios-filled/50/008477/around-the-globe.png" alt="Logo Icon">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-motto">Khám phá thế giới cùng bạn</span>
+                            <span class="logo-brand">Green <span>Hotel</span></span>
+                        </div>
+                    </a>
+                </div>
+                <nav class="navigation">
+                    <ul class="main-menu">
+                        <li><a href="#" class="active">Trang Chủ</a></li>
+                        <li class="has-dropdown">
+                            <a href="#">Về Chúng Tôi <i class="fa-solid fa-chevron-down"></i></a>
+                        </li>
+                        <li class="has-dropdown">
+                            <a href="#" id="openBooking">Đặt Phòng <i class="fa-solid fa-chevron-down"></i></a>
+                        </li>
+                        <li><a href="#">Tuyển Dụng</a></li>
+                        <li class="has-dropdown">
+                            <a href="#">Điểm Đến <i class="fa-solid fa-chevron-down"></i></a>
+                        </li>
+                        <li><a href="#">Liên Hệ</a></li>
+                        <li class="search-item">
+                            <a href="#"><i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Booking Widget -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Nghỉ dưỡng dễ dàng khắp mọi nơi cùng Green Hotel</h1>
+                    <p class="hero-subtitle">Với nguồn lực dồi dào, kinh nghiệm và uy tín trong lĩnh vực dịch vụ nghỉ dưỡng, chúng tôi cam kết mang đến cho khách hàng những trải nghiệm giá trị nhất.</p>
+                    
+                    <div class="booking-container">
+                        <div class="booking-tabs">
+                            <button class="tab-btn active">Booking đặt phòng</button>
+                            <button class="tab-btn">Tra cứu booking</button>
+                        </div>
+                        <div class="booking-bar">
+                            <div class="bar-item">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <div class="item-content">
+                                    <label>Ngày đến</label>
+                                    <input type="date" placeholder="Chọn ngày đến">
+                                </div>
+                            </div>
+                            <div class="bar-divider"></div>
+                            <div class="bar-item">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <div class="item-content">
+                                    <label>Ngày đi</label>
+                                    <input type="date" placeholder="Chọn ngày đi">
+                                </div>
+                            </div>
+                            <div class="bar-divider"></div>
+                            <div class="bar-item">
+                                <i class="fa-solid fa-bed"></i>
+                                <div class="item-content">
+                                    <label>Số phòng</label>
+                                    <input type="text" placeholder="Phòng đơn, đôi...">
+                                </div>
+                            </div>
+                            <div class="bar-divider"></div>
+                            <div class="bar-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div class="item-content">
+                                    <label>Email</label>
+                                    <input type="email" placeholder="Email nhận tin">
+                                </div>
+                            </div>
+                            <button class="btn-main-search">Gửi yêu cầu đặt phòng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Us Section -->
+        <section class="about-us">
+            <div class="container flex-row about-flex">
+                <div class="about-img-box">
+                    <img src="https://images.pexels.com/photos/1051073/pexels-photo-1051073.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Về Green Hotel" class="main-about-img">
+                    <div class="floating-icon icon-1"><img src="https://img.icons8.com/color/48/heart-health.png" alt="Icon"></div>
+                    <div class="floating-icon icon-2"><img src="https://img.icons8.com/color/48/natural-food.png" alt="Icon"></div>
+                    <div class="floating-icon icon-3"><img src="https://img.icons8.com/color/48/spa.png" alt="Icon"></div>
+                </div>
+                <div class="about-content">
+                    <span class="subtitle">VỀ CHÚNG TÔI</span>
+                    <h2 class="title">Giới thiệu về Green Hotel</h2>
+                    <p>Green Hotel luôn hướng đến mục tiêu mang lại những kỳ nghỉ dưỡng tuyệt vời và dịch vụ lữ hành chuyên nghiệp cho khách hàng. Điều này, trước đây vốn chỉ nằm trong ý tưởng của những người đam mê du lịch, nay đã trở thành hiện thực tại Việt Nam. Với niềm đam mê và sự sáng tạo của mình, Green Hotel đã được thành lập và mang đến những trải nghiệm tốt nhất cho khách hàng.</p>
+                    <p>Hệ thống Green Hotel luôn mong muốn được đồng hành, phục vụ những chuyến đi của cộng đồng với chất lượng tốt nhất và giá cả hợp lý.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <img src="https://img.icons8.com/color/48/group.png" alt="Icon">
+                            <span>Khách hàng là trọng tâm</span>
+                        </div>
+                        <div class="feature-item">
+                            <img src="https://img.icons8.com/color/48/checked-checkbox.png" alt="Icon">
+                            <span>Chất lượng tốt</span>
+                        </div>
+                        <div class="feature-item">
+                            <img src="https://img.icons8.com/color/48/star.png" alt="Icon">
+                            <span>Uy tín hàng đầu</span>
+                        </div>
+                        <div class="feature-item">
+                            <img src="https://img.icons8.com/color/48/support.png" alt="Icon">
+                            <span>Tư vấn tận tâm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel CTA Banner -->
+        <section class="cta-banner-section">
+            <div class="container">
+                <div class="cta-banner">
+                    <div class="cta-text">
+                        <h3>Cùng Green Hotel kiến tạo<br>những hành trình tuyệt vời của bạn</h3>
+                        <a href="#" class="btn-cta">Xem chi tiết</a>
+                    </div>
+                    <div class="cta-img">
+                        <img src="https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Travel Banner">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Gallery & Info Section (Farmer Style) -->
+        <section class="travel-info">
+            <div class="container flex-row info-flex">
+                <div class="info-img-large">
+                    <img src="https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel Couple">
+                </div>
+                <div class="info-content">
+                    <span class="script-subtitle">Chúng tôi mang đến</span>
+                    <h2 class="main-title">TRẢI NGHIỆM DU LỊCH TUYỆT VỜI</h2>
+                    <p><strong>Green Hotel</strong> là người bạn đồng hành tin cậy trên mỗi chuyến hành trình của bạn. Với mong muốn mang tới cho khách hàng những kì nghỉ an toàn, tiện nghi và đẳng cấp nhất, chúng tôi không ngừng nỗ lực hoàn thiện dịch vụ.</p>
+                    <p class="info-motto">"Mang thế giới đến gần bạn hơn"</p>
+                    
+                    <div class="info-small-grid">
+                        <div class="small-img">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Hotel 1">
+                        </div>
+                        <div class="small-img">
+                            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&q=80" alt="Hotel 2">
+                        </div>
+                        <div class="small-img">
+                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&q=80" alt="Hotel 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Slider Section (Perfume Model) -->
+        <section class="services-slider-section">
+            <div class="container flex-row slider-wrapper">
+                <div class="slider-info">
+                    <span class="info-subtitle">Danh mục dịch vụ</span>
+                    <h2 class="info-title">HỆ THỐNG PHÒNG NGHỈ</h2>
+                    <div class="info-text-container">
+                        <div class="info-text active" data-index="1">
+                            <p>Phòng đơn tại Green Hotel là sự hòa quyện tinh tế giữa phong cách tối giản và tiện nghi hiện đại. Mang đến cảm giác ấm cúng, riêng tư cho những chuyến đi đơn độc hoặc công tác ngắn ngày. Với tầm nhìn hướng phố hoặc hướng biển, bạn sẽ tìm thấy sự bình yên tuyệt đối.</p>
+                        </div>
+                        <div class="info-text" data-index="2">
+                            <p>Phòng đôi là lựa chọn hoàn hảo cho các cặp đôi hoặc bạn thân. Không gian rộng rãi, trang bị đầy đủ tiện nghi cao cấp cùng lối kiến trúc mở giúp đón trọn ánh sáng tự nhiên. Mỗi khoảnh khắc nghỉ dưỡng đều trở nên lãng mạn và đáng nhớ hơn bao giờ hết.</p>
+                        </div>
+                        <div class="info-text" data-index="3">
+                            <p>Hạng phòng Suite đẳng cấp quốc tế dành cho những khách hàng thượng lưu. Sở hữu phòng khách riêng biệt, bồn tắm nằm cao cấp và dịch vụ quản gia 24/7. Đây không chỉ là nơi nghỉ ngơi, mà là một không gian sống xa hoa bậc nhất giữa lòng thiên nhiên.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-more">Tìm hiểu thêm <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="slider-item active" data-index="1">
+                            <span class="item-number">01</span>
+                            <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Phòng Đơn">
+                            <span class="item-label">PHÒNG ĐƠN LUXURY</span>
+                        </div>
+                        <div class="slider-item" data-index="2">
+                            <span class="item-number">02</span>
+                            <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Phòng Đôi">
+                            <span class="item-label">PHÒNG ĐÔI DELUXE</span>
+                        </div>
+                        <div class="slider-item" data-index="3">
+                            <span class="item-number">03</span>
+                            <img src="https://images.pexels.com/photos/262048/pexels-photo-262048.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Phòng Suite">
+                            <span class="item-label">PHÒNG SUITE ROYAL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <div class="nav-arrows">
+                            <button class="prev-slide"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="next-slide"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Vouchers Section -->
+        <section class="vouchers-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="subtitle">Ưu đãi độc quyền</span>
+                    <h2 class="title">SĂN MÃ GIẢM GIÁ NGAY</h2>
+                </div>
+                <div class="vouchers-grid">
+                    <!-- Voucher 1 -->
+                    <div class="voucher-card">
+                        <div class="voucher-left">
+                            <div class="voucher-info">
+                                <h3>Nhập mã: THIEN10</h3>
+                                <p>Mã giảm 10% cho tất cả các tour du lịch trong nước từ 2 triệu trở lên.</p>
+                            </div>
+                            <button class="btn-copy">Sao chép mã</button>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="barcode"></div>
+                        </div>
+                    </div>
+                    <!-- Voucher 2 -->
+                    <div class="voucher-card">
+                        <div class="voucher-left">
+                            <div class="voucher-info">
+                                <h3>Nhập mã: WELCOME26</h3>
+                                <p>Giảm ngay 200k cho khách hàng lần đầu đặt phòng khách sạn tại Green Hotel.</p>
+                            </div>
+                            <button class="btn-copy">Sao chép mã</button>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="barcode"></div>
+                        </div>
+                    </div>
+                    <!-- Voucher 3 -->
+                    <div class="voucher-card">
+                        <div class="voucher-left">
+                            <div class="voucher-info">
+                                <h3>Nhập mã: RESORT99</h3>
+                                <p>Giảm 99k cho các dịch vụ spa và ẩm thực tại hệ thống resort đối tác.</p>
+                            </div>
+                            <button class="btn-copy">Sao chép mã</button>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="barcode"></div>
+                        </div>
+                    </div>
+                    <!-- Voucher 4 -->
+                    <div class="voucher-card">
+                        <div class="voucher-left">
+                            <div class="voucher-info">
+                                <h3>Nhập mã: TRAVELFLY</h3>
+                                <p>Miễn phí xe đưa đón sân bay cho các đoàn khách từ 5 người trở lên.</p>
+                            </div>
+                            <button class="btn-copy">Sao chép mã</button>
+                        </div>
+                        <div class="voucher-right">
+                            <div class="barcode"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Amenities Slider Section -->
+        <section class="amenities-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="subtitle-with-icon">
+                        <img src="https://img.icons8.com/color/48/service.png" alt="Icon">
+                        Dịch vụ của chúng tôi
+                    </span>
+                    <h2 class="title">CHÚNG TÔI MANG ĐẾN NHỮNG GÌ</h2>
+                </div>
+                
+                <div class="amenities-slider">
+                    <div class="amenities-track">
+                        <!-- Card 1 -->
+                        <div class="amenity-card">
+                            <div class="amenity-img">
+                                <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dịch vụ phòng">
+                            </div>
+                            <div class="amenity-label">
+                                <div class="label-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+                                <h3>Dịch vụ phòng 24/7</h3>
+                                <div class="label-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="amenity-card">
+                            <div class="amenity-img">
+                                <img src="https://images.pexels.com/photos/4050291/pexels-photo-4050291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Wifi">
+                            </div>
+                            <div class="amenity-label">
+                                <div class="label-icon"><i class="fa-solid fa-wifi"></i></div>
+                                <h3>Wifi tốc độ cao</h3>
+                                <div class="label-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="amenity-card">
+                            <div class="amenity-img">
+                                <img src="https://images.pexels.com/photos/1004125/pexels-photo-1004125.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Parking">
+                            </div>
+                            <div class="amenity-label">
+                                <div class="label-icon"><i class="fa-solid fa-car"></i></div>
+                                <h3>Chỗ đậu xe miễn phí</h3>
+                                <div class="label-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="amenity-card">
+                            <div class="amenity-img">
+                                <img src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Breakfast">
+                            </div>
+                            <div class="amenity-label">
+                                <div class="label-icon"><i class="fa-solid fa-utensils"></i></div>
+                                <h3>Ăn sáng buffet</h3>
+                                <div class="label-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="amenity-card">
+                            <div class="amenity-img">
+                                <img src="https://images.pexels.com/photos/7166567/pexels-photo-7166567.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Staff">
+                            </div>
+                            <div class="amenity-label">
+                                <div class="label-icon"><i class="fa-solid fa-user-tie"></i></div>
+                                <h3>Nhân viên thân thiện</h3>
+                                <div class="label-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us">
+            <div class="container why-flex">
+                <div class="why-video-box">
+                    <div class="brush-mask-container">
+                        <img src="img/image (2).png" alt="Travel Brush Stroke" class="brush-image">
+                    </div>
+                </div>
+                
+                <div class="why-content">
+                    <span class="script-subtitle">Green Hotel</span>
+                    <h2 class="title">TẠI SAO CHỌN CHÚNG TÔI</h2>
+                    <p class="desc">Với nhiều năm kinh nghiệm trong lĩnh vực du lịch và nghỉ dưỡng, Green Hotel tự hào là điểm đến tin cậy, mang lại không gian xanh và dịch vụ đẳng cấp nhất cho khách hàng.</p>
+                    
+                    <div class="accordion">
+                        <div class="accordion-item active">
+                            <div class="accordion-header">
+                                <h3>Đặt phòng nhanh chóng</h3>
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>Thao tác chỉ mất 60 giây trên website, xác nhận tức thì qua email và SMS. Chúng tôi cam kết thủ tục check-in nhanh gọn nhất.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3>Giá cả minh bạch</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>Cam kết giá tốt nhất, không có phí ẩn. Mọi chi phí đều được liệt kê rõ ràng trước khi bạn thanh toán.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3>Dịch vụ đa dạng</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>Từ phòng nghỉ, spa, ẩm thực đến các tour tham quan địa phương, chúng tôi đáp ứng mọi nhu cầu của bạn.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3>Nhân viên chuyên nghiệp</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>Đội ngũ nhân viên được đào tạo bài bản theo tiêu chuẩn quốc tế, luôn sẵn sàng phục vụ với thái độ thân thiện và tận tâm nhất.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Banners Section -->
+        <section class="promo-banners">
+            <div class="container">
+                <div class="promo-header">
+                    <h2 class="promo-title">Chỉ có tại Green Hotel</h2>
+                    <div class="promo-line"></div>
+                </div>
+                
+                <div class="banners-grid">
+                    <!-- Banner 1 -->
+                    <div class="banner-item blue-bg">
+                        <div class="banner-content">
+                            <span class="tag">Ưu đãi</span>
+                            <h3>Đặt Phòng Sớm<br>Tặng Voucher 500k</h3>
+                            <p>Áp dụng cho các booking nghỉ dưỡng trong tháng 6 & 7.</p>
+                            <a href="#" class="banner-btn">XEM CHI TIẾT <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                        <div class="banner-img">
+                            <img src="https://images.pexels.com/photos/1078983/pexels-photo-1078983.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Promo 1">
+                        </div>
+                    </div>
+                    <!-- Banner 2 -->
+                    <div class="banner-item beige-bg">
+                        <div class="banner-content">
+                            <span class="tag">Combo</span>
+                            <h3>Mùa Hè Rực Rỡ<br>Giảm 30% Combo</h3>
+                            <p>Khách sạn 5 sao tại Phú Quốc & Nha Trang.</p>
+                            <a href="#" class="banner-btn">ĐẶT NGAY <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                        <div class="banner-img">
+                            <img src="https://images.pexels.com/photos/189333/pexels-photo-189333.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Promo 2">
+                        </div>
+                    </div>
+                    <!-- Banner 3 -->
+                    <div class="banner-item pink-bg">
+                        <div class="banner-content">
+                            <span class="tag">Mới</span>
+                            <h3>Nghỉ Dưỡng Sang<br>Trải Nghiệm Đẳng Cấp</h3>
+                            <p>Tặng bữa tối lãng mạn cho cặp đôi đặt phòng Suite.</p>
+                            <a href="#" class="banner-btn">KHÁM PHÁ <i class="fa-solid fa-chevron-right"></i></a>
+                        </div>
+                        <div class="banner-img">
+                            <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Promo 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section">
+            <div class="container reviews-grid">
+                <!-- Intro Column -->
+                <div class="reviews-intro">
+                    <div class="yellow-line"></div>
+                    <h2 class="title">REVIEW VỀ<br>GREEN HOTEL</h2>
+                    <p class="desc">Green Hotel luôn trân trọng những góp ý và phản hồi từ quý khách để không ngừng hoàn thiện dịch vụ nghỉ dưỡng trong tương lai.</p>
+                    <a href="#" class="btn-all">Xem tất cả</a>
+                </div>
+                
+                <!-- Review Card 1 -->
+                <div class="review-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="review-status">Tuyệt vời!</h3>
+                    <p class="review-text">Chuyến đi Nha Trang vừa rồi thật sự ấn tượng. Khách sạn view biển đẹp, nhân viên hỗ trợ nhiệt tình từ lúc đặt phòng đến khi kết thúc hành trình. Rất hài lòng!</p>
+                    <div class="reviewer">
+                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Avatar">
+                        <div class="reviewer-info">
+                            <h4>Nguyễn Trung Dũng</h4>
+                            <span>Khách hàng Resort Nha Trang</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 -->
+                <div class="review-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="review-status">Dịch vụ đẳng cấp!</h3>
+                    <p class="review-text">Tôi đã sử dụng nhiều khách sạn nhưng Green Hotel mang lại cảm giác rất khác biệt. Mọi thứ đều được chuẩn bị chu đáo, tinh tế đến từng chi tiết nhỏ nhất.</p>
+                    <div class="reviewer">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Avatar">
+                        <div class="reviewer-info">
+                            <h4>Trần Hoàng Mai</h4>
+                            <span>Khách hàng Combo Phú Quốc</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 -->
+                <div class="review-card">
+                    <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="review-status">Rất đáng tiền!</h3>
+                    <p class="review-text">Giá cả minh bạch, không phát sinh thêm chi phí. Đội ngũ nhân viên thân thiện và am hiểu dịch vụ. Chắc chắn sẽ quay lại ủng hộ trong tương lai gần.</p>
+                    <div class="reviewer">
+                        <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Avatar">
+                        <div class="reviewer-info">
+                            <h4>Lê Tấn Dũng</h4>
+                            <span>Khách hàng phòng Suite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- News & Knowledge Section -->
+        <section class="news-knowledge">
+            <div class="container news-flex">
+                <!-- Column 1: Tin tức mới nhất -->
+                <div class="news-column">
+                    <h2 class="column-title">Tin tức mới nhất</h2>
+                    <div class="news-list">
+                        <!-- News Item 1 -->
+                        <div class="news-item">
+                            <div class="news-img">
+                                <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=300" alt="News 1">
+                            </div>
+                            <div class="news-info">
+                                <h3>Green Hotel nhận giải thưởng "Khách sạn xanh của năm"</h3>
+                                <div class="news-date"><i class="fa-solid fa-calendar-days"></i> 26/05/2026</div>
+                                <p>Tự hào là đơn vị tiên phong trong việc bảo vệ môi trường và phát triển du lịch bền vững tại Việt Nam...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 2 -->
+                        <div class="news-item">
+                            <div class="news-img">
+                                <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=300" alt="News 2">
+                            </div>
+                            <div class="news-info">
+                                <h3>Khai trương phân khu Villa cao cấp "Hidden Eden"</h3>
+                                <div class="news-date"><i class="fa-solid fa-calendar-days"></i> 24/05/2026</div>
+                                <p>Không gian nghỉ dưỡng biệt lập, đắm mình trong thiên nhiên hoang sơ với đầy đủ tiện nghi hiện đại...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 3 -->
+                        <div class="news-item">
+                            <div class="news-img">
+                                <img src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=300" alt="News 3">
+                            </div>
+                            <div class="news-info">
+                                <h3>Thưởng thức ẩm thực Farm-to-Table tại nhà hàng Bloom</h3>
+                                <div class="news-date"><i class="fa-solid fa-calendar-days"></i> 22/05/2026</div>
+                                <p>Trải nghiệm hương vị tinh khiết từ những nguyên liệu sạch được thu hoạch ngay tại trang trại của khách sạn...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 4 -->
+                        <div class="news-item">
+                            <div class="news-img">
+                                <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=300" alt="News 4">
+                            </div>
+                            <div class="news-info">
+                                <h3>Chương trình ưu đãi "Mùa Hè Xanh" cùng Green Hotel</h3>
+                                <div class="news-date"><i class="fa-solid fa-calendar-days"></i> 20/05/2026</div>
+                                <p>Đón hè rực rỡ với gói ưu đãi lên đến 40% cho các dịch vụ nghỉ dưỡng và spa trọn gói...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-view-more">Xem tất cả</a>
+                </div>
+
+                <!-- Column 2: Cẩm nang du lịch -->
+                <div class="news-column">
+                    <h2 class="column-title">Cẩm nang du lịch</h2>
+                    <div class="news-list">
+                        <!-- News Item 1 -->
+                        <div class="news-item">
+                            <div class="news-img">
+                                <img src="https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Guide 1">
+                            </div>
+                            <div class="news-info">
+                                <h3>Du lịch xanh là gì? Tại sao xu hướng này lại lên ngôi?</h3>
+                                <div class="news-date"><i class="fa-solid fa-calendar-days"></i> 26/05/2026</div>
+                                <p>Tìm hiểu về khái niệm du lịch bền vững và cách chúng ta có thể bảo vệ trái đất trong mỗi chuyến đi...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 2 -->
+                        <div class="news-item">
+                            <div class="news-img">
+                                <img src="https://images.pexels.com/photos/1004125/pexels-photo-1004125.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Guide 2">
+                            </div>
+                            <div class="news-info">
+                                <h3>5 vật dụng không thể thiếu cho một chuyến du lịch sinh thái</h3>
+                                <div class="news-date"><i class="fa-solid fa-calendar-days"></i> 24/05/2026</div>
+                                <p>Chuẩn bị hành lý gọn nhẹ nhưng đầy đủ cho những hành trình khám phá thiên nhiên hoang dã...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 3 -->
+                        <div class="news-item">
+                            <div class="news-img">
+                                <img src="https://images.pexels.com/photos/7166567/pexels-photo-7166567.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Guide 3">
+                            </div>
+                            <div class="news-info">
+                                <h3>Lợi ích của việc nghỉ dưỡng sau những ngày làm việc căng thẳng</h3>
+                                <div class="news-date"><i class="fa-solid fa-calendar-days"></i> 22/05/2026</div>
+                                <p>Tại sao bạn nên dành thời gian để tái tạo năng lượng và chăm sóc sức khỏe tinh thần tại các resort...</p>
+                            </div>
+                        </div>
+                        <!-- News Item 4 -->
+                        <div class="news-item">
+                            <div class="news-img">
+                                <img src="https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Guide 4">
+                            </div>
+                            <div class="news-info">
+                                <h3>Cách chọn khách sạn thân thiện với môi trường cho kỳ nghỉ</h3>
+                                <div class="news-date"><i class="fa-solid fa-calendar-days"></i> 20/05/2026</div>
+                                <p>Những tiêu chí quan trọng để đánh giá một khách sạn xanh và cam kết bảo vệ môi trường thực sự...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-view-more">Xem tất cả</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-banner">
+                <div class="faq-header">
+                    <div class="faq-watermark">GREEN HOTEL</div>
+                    <img src="img/icon-title.webp" alt="Mountain" style="width: 80px; margin-bottom: 15px; filter: brightness(0) invert(1); display: inline-block;">
+                    <h2>CÂU HỎI THƯỜNG GẶP</h2>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="faq-content-wrapper">
+                    <!-- Left: FAQ Accordion -->
+                    <div class="faq-accordion-box">
+                        <div class="faq-item active">
+                            <div class="faq-question">
+                                <h3>Có những hoạt động nào tại Green Hotel?</h3>
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Tại Green Hotel, bạn có thể tham gia nhiều hoạt động ngoài trời hấp dẫn như trekking qua rừng, chèo thuyền kayak và SUP trên hồ, câu cá thư giãn, hay tham gia các trò chơi team building đầy thử thách. Vào buổi tối, đừng quên trải nghiệm lửa trại, thưởng thức món nướng và chia sẻ câu chuyện dưới bầu trời sao. Tất cả đều mang đến những khoảnh khắc kết nối tuyệt vời với thiên nhiên và bạn bè.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Green Hotel có cho thuê thiết bị cắm trại không?</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Có, chúng tôi cung cấp đầy đủ các thiết bị cắm trại chuyên nghiệp từ lều, túi ngủ đến bếp nướng và dụng cụ nấu ăn ngoài trời.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Có Wi-Fi và các tiện nghi khác trong khu vực không?</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Green Hotel cung cấp Wi-Fi tốc độ cao tại khu vực trung tâm và các phòng nghỉ, đảm bảo bạn luôn được kết nối.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3>Tôi cần chuẩn bị gì khi đến nghỉ dưỡng tại Green Hotel?</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Bạn chỉ cần mang theo trang phục cá nhân và tinh thần thoải mái, mọi thứ khác đã có chúng tôi lo chu đáo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Traveler Image & CTA -->
+                    <div class="faq-right">
+                        <div class="traveler-box">
+                            <img src="https://images.pexels.com/photos/4553618/pexels-photo-4553618.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travelers">
+                        </div>
+                        <a href="#" class="btn-consult">ĐĂNG KÝ NHẬN TƯ VẤN</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="mailto:info@greenhotel.com" class="social-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+        </a>
+        <a href="tel:0123456789" class="social-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>Hotline</span>
+        </a>
+        <a href="#" class="social-item">
+            <img src="https://img.icons8.com/color/48/zalo.png" alt="Zalo">
+            <span>Chat Zalo</span>
+        </a>
+        <a href="#" class="social-item">
+            <i class="fa-brands fa-facebook-messenger"></i>
+            <span>Messenger</span>
+        </a>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main-content">
+                <!-- Left: Newsletter Box -->
+                <div class="footer-newsletter">
+                    <div class="newsletter-icon">
+                        <img src="https://img.icons8.com/ios-filled/100/ffffff/email-open.png" alt="Mail Icon">
+                    </div>
+                    <h3>Nhận tin khuyến mãi</h3>
+                    <p>Đăng ký ngay và được giảm giá 15% cho lần mua hàng đầu tiên và nhiều chương trình hấp dẫn dành cho bạn!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Nhập email nhận tin khuyến mãi">
+                        <button type="submit" class="btn-subscribe">ĐĂNG KÝ</button>
+                    </form>
+                </div>
+
+                <!-- Right Side -->
+                <div class="footer-right-side">
+                    <!-- Contact Info Boxes -->
+                    <div class="footer-info-flex">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-text">
+                                <label>Địa chỉ:</label>
+                                <span>70 Lữ Gia, P.15, Q.11</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="info-text">
+                                <label>Điện thoại:</label>
+                                <span>1900 6750</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="info-text">
+                                <label>Email:</label>
+                                <span>support@greenhotel.vn</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Links and Info -->
+                    <div class="footer-links-grid">
+                    <div class="footer-column">
+                        <h4>Chính sách</h4>
+                        <ul>
+                            <li><a href="#">Chính sách thành viên</a></li>
+                            <li><a href="#">Chính sách thanh toán</a></li>
+                            <li><a href="#">Chính sách vận chuyển</a></li>
+                            <li><a href="#">Bảo mật thông tin cá nhân</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Hướng dẫn</h4>
+                        <ul>
+                            <li><a href="#">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#">Hướng dẫn thanh toán</a></li>
+                            <li><a href="#">Hướng dẫn giao nhận</a></li>
+                            <li><a href="#">Điều khoản dịch vụ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column info-column">
+                        <h4>Thông tin</h4>
+                        <p>Green Hotel là hệ thống nghỉ dưỡng hàng đầu, cam kết mang đến không gian xanh và dịch vụ chuẩn quốc tế.</p>
+                        
+                        <div class="social-follow">
+                            <label>Theo dõi chúng tôi</label>
+                            <div class="social-icons">
+                                <a href="#" class="social-fb"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="social-yt"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="#" class="social-tw"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="social-pt"><i class="fa-brands fa-pinterest-p"></i></a>
+                                <a href="#" class="social-ig"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="payment-support">
+                            <label>Hỗ trợ thanh toán</label>
+                            <div class="payment-icons">
+                                <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
+                                <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard">
+                                <img src="https://img.icons8.com/color/48/jcb.png" alt="JCB">
+                                <img src="https://img.icons8.com/color/48/paypal.png" alt="Paypal">
+                                <img src="https://img.icons8.com/color/48/apple-pay.png" alt="Apple Pay">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Bản quyền thuộc về <strong>Green Hotel</strong>. Cung cấp bởi <strong>Thien TECH</strong></p>
+            </div>
+        </div>
+        
+        <!-- Floating Buttons -->
+        <div class="footer-floating-btns">
+            <a href="#" class="btn-zalo-chat" title="Chat Zalo">
+                <img src="https://img.icons8.com/color/48/zalo.png" alt="Zalo Chat">
+            </a>
+            <button id="backToTop" class="btn-back-to-top" title="Lên đầu trang">
+                <i class="fa-solid fa-chevron-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Modal Đặt Bàn (Updated to Room Booking) -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>YÊU CẦU ĐẶT PHÒNG</h2>
+            </div>
+            <form class="booking-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Họ và tên" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Số điện thoại" required>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label>Ngày đến</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày đi</label>
+                        <input type="date" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Số phòng (phòng đơn, phòng đôi...)" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <button type="submit" class="btn-submit">GỬI YÊU CẦU ĐẶT PHÒNG</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,2 +1,31 @@
-# Local Netlify folder
-.netlify
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build output
+dist/
+build/
+.cache/
+
+# Netlify (keep .netlify state per template but ignore functions-internal)
+**/.netlify/functions-internal/
+**/.netlify/v1/

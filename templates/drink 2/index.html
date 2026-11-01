@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee House - Premium Drink</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="https://hoangphuongle.github.io/web-templates/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        Chốt ngay qua Zalo
+      </a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
+
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-flex">
+            <div class="top-left">Chào mừng bạn đến với Coffee House !</div>
+            <div class="top-right">
+                <a href="#">Đăng ký</a> <span>/</span> <a href="#">Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Red Marquee Banner -->
+    <div class="marquee-banner">
+        <div class="marquee-content">
+            <span>Nhanh tay chọn cho mình những sản phẩm ưng ý nhất!</span>
+            <span>Nhanh tay chọn cho mình những sản phẩm ưng ý nhất!</span>
+            <span>Nhanh tay chọn cho mình những sản phẩm ưng ý nhất!</span>
+            <span>Nhanh tay chọn cho mình những sản phẩm ưng ý nhất!</span>
+        </div>
+    </div>
+
+    <!-- Main Background Wrapper -->
+    <div class="main-wrapper-bg">
+        <!-- Header Section -->
+        <header class="header">
+        <div class="container header-container">
+            <!-- Pill Nav -->
+            <nav class="nav-pill">
+                <ul class="nav-left">
+                    <li><a href="#" class="active">Trang chủ</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Thực đơn</a></li>
+                </ul>
+                
+                <div class="logo-center">
+                    <div class="logo-circle">
+                        <i class="fa-solid fa-mug-hot" style="color: var(--gold-accent); font-size: 16px; margin-bottom: 2px;"></i>
+                        <div class="logo-text">COFFEE</div>
+                        <div class="logo-sub">HOUSE</div>
+                        <div class="logo-mini">PREMIUM COFFEE</div>
+                        <div class="logo-bars">|||</div>
+                    </div>
+                </div>
+
+                <ul class="nav-right">
+                    <li><a href="#">Khuyến mãi</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right Cluster (Trợ lý & Search/User/Cart) -->
+            <div class="header-right-cluster">
+                <a href="#" class="btn-assistant">
+                    <div class="icon-wrap">
+                        <i class="fa-solid fa-bell-concierge"></i>
+                    </div>
+                    <div class="btn-text">
+                        <span>Trợ lý</span>
+                        <strong>Đặt bàn</strong>
+                    </div>
+                </a>
+                <div class="action-pill">
+                    <a href="#" class="action-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#" class="action-icon"><i class="fa-regular fa-user"></i></a>
+                    <a href="#" class="action-icon cart-icon" title="Tra cứu lịch sử mua">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        <span class="badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="container hero-grid">
+                <!-- Left: Deal Info -->
+                <div class="hero-deal">
+                    <div class="deal-badge">
+                        <i class="fa-solid fa-bolt"></i> DEAL HOT TRONG NGÀY
+                    </div>
+                    <h2 class="deal-title">
+                        Mua <span>1 phần nước</span> bất kì<br>
+                        Tặng ngay <span>1 phần bánh ngọt</span> trị giá 30k
+                    </h2>
+                    <div class="deal-code">
+                        Nhập "TANGBANHNGOT"
+                    </div>
+                    <div>
+                        <a href="#" class="btn-order-now">ĐẶT HÀNG NGAY</a>
+                    </div>
+                </div>
+
+                <!-- Right: Product List -->
+                <div class="hero-products">
+                    <!-- Product 1 -->
+                    <div class="hero-product-item">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=150&q=80" alt="Mocha">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-row-1">
+                                <div class="product-name"><i class="fa-solid fa-diamond"></i> MOCHA RECIPE</div>
+                                <div class="product-price">49.000đ</div>
+                            </div>
+                            <div class="product-divider"></div>
+                            <div class="product-row-2">
+                                <div class="product-stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>
+                                </div>
+                                <div class="product-add"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="hero-product-item">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?w=150&q=80" alt="Vanila Latte">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-row-1">
+                                <div class="product-name"><i class="fa-solid fa-diamond"></i> VANILA LATTE</div>
+                                <div class="product-price">Liên hệ</div>
+                            </div>
+                            <div class="product-divider"></div>
+                            <div class="product-row-2">
+                                <div class="product-stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="product-add"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="hero-product-item">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1536939459926-301728717817?q=80&w=150&auto=format&fit=crop" alt="Latte">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-row-1">
+                                <div class="product-name"><i class="fa-solid fa-diamond"></i> LATTE</div>
+                                <div class="product-price">49.000đ</div>
+                            </div>
+                            <div class="product-divider"></div>
+                            <div class="product-row-2">
+                                <div class="product-stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="product-add"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="hero-product-item">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=150&q=80" alt="Americano">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-row-1">
+                                <div class="product-name"><i class="fa-solid fa-diamond"></i> AMERICANO</div>
+                                <div class="product-price">46.000đ</div>
+                            </div>
+                            <div class="product-divider"></div>
+                            <div class="product-row-2">
+                                <div class="product-stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="product-add"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="hero-product-item">
+                        <div class="product-img">
+                            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=150&q=80" alt="Iced Espresso">
+                        </div>
+                        <div class="product-details">
+                            <div class="product-row-1">
+                                <div class="product-name"><i class="fa-solid fa-diamond"></i> ICED ESPRESSO</div>
+                                <div class="product-price">Liên hệ</div>
+                            </div>
+                            <div class="product-divider"></div>
+                            <div class="product-row-2">
+                                <div class="product-stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="product-add"><i class="fa-solid fa-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">LÝ DO BẠN NÊN CHỌN COFFEE HOUSE LÀM<br>NGƯỜI BẠN ĐỒNG HÀNH?</h2>
+                <div class="title-divider"></div>
+                <p class="section-subtitle">Coffee House rất hân hạnh đồng hành cùng bạn trong mỗi khoảnh khắc, mang đến những trải nghiệm hương vị tuyệt vời nhất.</p>
+            </div>
+
+            <div class="about-content">
+                <!-- Left: Image -->
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop" alt="Coffee House Experience">
+                    <div class="image-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <!-- Right: Grid of Cards -->
+                <div class="about-features">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                        <h3>ĐẢM BẢO SỐ LƯỢNG</h3>
+                        <p>Đáp ứng mọi nhu cầu hội nghị, sự kiện, dã ngoại với năng lực phục vụ lên đến hàng ngàn phần.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+                        <h3>CAM KẾT CHẤT LƯỢNG</h3>
+                        <p>Tất cả sản phẩm đều được tuyển chọn và đáp ứng tiêu chuẩn khắt khe về an toàn và chất lượng.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-gift"></i></div>
+                        <h3>CHÍNH SÁCH ƯU ĐÃI</h3>
+                        <p>Khách hàng thân thiết, thẻ thành viên với vô vàn chương trình tích điểm và quà tặng hấp dẫn.</p>
+                    </div>
+                    <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>HƯƠNG VỊ BẢO ĐẢM</h3>
+                        <p>Cam kết hương vị nguyên bản, 1 đổi 1 nếu sản phẩm bạn nhận được không đạt tiêu chuẩn tốt nhất.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Selection Section -->
+    <section class="menu-selection-section">
+        <div class="container">
+            <h2 class="menu-title">Lựa chọn thực đơn</h2>
+            
+            <!-- Category Row -->
+            <div class="category-row">
+                <!-- Category 1 -->
+                <div class="category-card">
+                    <div class="cat-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=200&auto=format&fit=crop" alt="Cà phê">
+                    </div>
+                    <p>Cà phê</p>
+                </div>
+                <!-- Category 2 -->
+                <div class="category-card">
+                    <div class="cat-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=200&auto=format&fit=crop" alt="Trà trái cây">
+                    </div>
+                    <p>Trà trái cây</p>
+                </div>
+                <!-- Category 3 -->
+                <div class="category-card">
+                    <div class="cat-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=200&auto=format&fit=crop" alt="Sinh tố">
+                    </div>
+                    <p>Sinh tố</p>
+                </div>
+                <!-- Category 4 -->
+                <div class="category-card">
+                    <div class="cat-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1589396575653-c09c794ff6a6?q=80&w=200&auto=format&fit=crop" alt="Trà sữa">
+                    </div>
+                    <p>Trà sữa</p>
+                </div>
+                <!-- Category 5 -->
+                <div class="category-card">
+                    <div class="cat-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=200&auto=format&fit=crop" alt="Bánh ngọt">
+                    </div>
+                    <p>Bánh ngọt</p>
+                </div>
+                <!-- Category 6 -->
+                <div class="category-card">
+                    <div class="cat-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544787210-2213d84ad960?q=80&w=200&auto=format&fit=crop" alt="Trà nóng">
+                    </div>
+                    <p>Trà nóng</p>
+                </div>
+            </div>
+
+            <!-- Vouchers Row -->
+            <div class="voucher-row">
+                <!-- Voucher 1 -->
+                <div class="voucher-card">
+                    <div class="voucher-left">
+                        <h3>EGA15</h3>
+                    </div>
+                    <div class="voucher-right">
+                        <p class="v-desc">Giảm 15% cho đơn hàng có giá trị tối thiểu 500K.</p>
+                        <p class="v-condition"><i class="fa-solid fa-circle-info"></i> Điều kiện</p>
+                        <div class="v-bottom">
+                            <span class="v-date">28/03/2025</span>
+                            <button class="btn-voucher btn-disabled">Hết hạn</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Voucher 2 -->
+                <div class="voucher-card">
+                    <div class="voucher-left">
+                        <h3>EGA30</h3>
+                    </div>
+                    <div class="voucher-right">
+                        <p class="v-desc">Giảm 30% cho đơn hàng có giá trị tối thiểu 1500K.</p>
+                        <p class="v-condition"><i class="fa-solid fa-circle-info"></i> Điều kiện</p>
+                        <div class="v-bottom">
+                            <span class="v-date">20/03/2025</span>
+                            <button class="btn-voucher btn-disabled">Hết hạn</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Voucher 3 -->
+                <div class="voucher-card">
+                    <div class="voucher-left">
+                        <h3>FSHIP</h3>
+                    </div>
+                    <div class="voucher-right">
+                        <p class="v-desc">Miễn phí vận chuyển cho đơn hàng trên 200K</p>
+                        <p class="v-condition"><i class="fa-solid fa-circle-info"></i> Điều kiện</p>
+                        <div class="v-bottom">
+                            <span class="v-date">30/12/2025</span>
+                            <button class="btn-voucher btn-disabled">Hết hạn</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Voucher 4 -->
+                <div class="voucher-card">
+                    <div class="voucher-left">
+                        <h3>EGA50</h3>
+                    </div>
+                    <div class="voucher-right">
+                        <p class="v-desc">Giảm 50% cho đơn hàng có giá trị tối thiểu 10 triệu.</p>
+                        <p class="v-condition"><i class="fa-solid fa-circle-info"></i> Điều kiện</p>
+                        <div class="v-bottom">
+                            <span class="v-date"></span>
+                            <button class="btn-voucher btn-copy">Sao chép</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Today Section -->
+    <section class="menu-today-section">
+        <div class="container">
+            <div class="menu-today-header">
+                <h2 class="menu-today-title">MENU HÔM NAY</h2>
+                <p class="menu-today-subtitle">Xem menu hôm nay</p>
+            </div>
+            
+            <!-- Filter Tabs -->
+            <div class="menu-tabs">
+                <button class="tab-btn active">Cà phê thế giới</button>
+                <button class="tab-btn">Cà phê pha Việt</button>
+                <button class="tab-btn">Cà phê cảm hứng</button>
+                <button class="tab-btn">Đồ uống</button>
+            </div>
+
+            <!-- Menu List -->
+            <div class="menu-list-grid">
+                <!-- Item 1 -->
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=150" alt="Cà phê Trứng">
+                    </div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <h3 class="item-name">Cà phê Trứng</h3>
+                            <div class="leader-line"></div>
+                            <span class="item-price">50.000đ</span>
+                        </div>
+                        <p class="item-desc">Cà phê Trứng được chọn lọc kỹ lưỡng từ vùn...</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?q=80&w=150" alt="Cà phê The Caipirinha">
+                    </div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <h3 class="item-name">Cà phê The Caipirinha</h3>
+                            <div class="leader-line"></div>
+                            <span class="item-price">50.000đ</span>
+                        </div>
+                        <p class="item-desc">Cà phê The Caipirinha được chọn lọc kỹ lưỡ...</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=150&auto=format&fit=crop" alt="Cà phê mocha">
+                    </div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <h3 class="item-name">Cà phê mocha</h3>
+                            <div class="leader-line"></div>
+                            <span class="item-price">66.000đ</span>
+                        </div>
+                        <p class="item-desc">Cà phê mocha được chọn lọc kỹ lưỡng từ vùn...</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=150" alt="Cà phê Latte">
+                    </div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <h3 class="item-name">Cà phê Latte</h3>
+                            <div class="leader-line"></div>
+                            <span class="item-price">130.000đ</span>
+                        </div>
+                        <p class="item-desc">Cà phê Latte được chọn lọc kỹ lưỡng từ vùn...</p>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=150" alt="Cà phê Cappuccino">
+                    </div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <h3 class="item-name">Cà phê Cappuccino</h3>
+                            <div class="leader-line"></div>
+                            <span class="item-price">300.000đ</span>
+                        </div>
+                        <p class="item-desc">Cà phê Cappuccino được chọn lọc kỹ lưỡng t...</p>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=150" alt="Cà phê Espresso con panda">
+                    </div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <h3 class="item-name">Cà phê Espresso con panda</h3>
+                            <div class="leader-line"></div>
+                            <span class="item-price">120.000đ</span>
+                        </div>
+                        <p class="item-desc">Cà phê Espresso con panda được chọn lọc kỹ...</p>
+                    </div>
+                </div>
+                <!-- Item 7 -->
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1510707577719-af7c183f1fdf?q=80&w=150&auto=format&fit=crop" alt="Cà phê Espresso">
+                    </div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <h3 class="item-name">Cà phê Espresso</h3>
+                            <div class="leader-line"></div>
+                            <span class="item-price">200.000đ</span>
+                        </div>
+                        <p class="item-desc">Cà phê Espresso được chọn lọc kỹ lưỡng từ ...</p>
+                    </div>
+                </div>
+                <!-- Item 8 -->
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=150" alt="Cà phê Americano">
+                    </div>
+                    <div class="menu-item-info">
+                        <div class="menu-item-top">
+                            <h3 class="item-name">Cà phê Americano</h3>
+                            <div class="leader-line"></div>
+                            <span class="item-price">150.000đ</span>
+                        </div>
+                        <p class="item-desc">Cà phê Americano được chọn lọc kỹ lưỡng từ...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-today-footer">
+                <a href="#" class="btn-view-more">Xem thêm <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banners Section -->
+    <section class="promo-banners-section">
+        <div class="container">
+            <div class="promo-grid">
+                <!-- Banner 1 -->
+                <div class="promo-card" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=600&auto=format&fit=crop');">
+                    <div class="promo-overlay"></div>
+                    <div class="promo-badge">
+                        <span>50%</span>
+                        <small>OFF</small>
+                    </div>
+                    <div class="promo-content">
+                        <span class="promo-tag text-red">GIÁ SỐC TỪ 28K</span>
+                        <h3 class="promo-title">COMBO SÁNG</h3>
+                        <span class="promo-sub text-orange">Ưu Đãi Giờ Vàng</span>
+                        <a href="#" class="btn-promo btn-red">ĐẶT NGAY <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Banner 2 -->
+                <div class="promo-card" style="background-image: url('https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?q=80&w=600&auto=format&fit=crop');">
+                    <div class="promo-overlay"></div>
+                    <div class="promo-badge">
+                        <span>30%</span>
+                        <small>OFF</small>
+                    </div>
+                    <div class="promo-content">
+                        <span class="promo-tag text-red">GIÁ SỐC CHỈ 28K</span>
+                        <h3 class="promo-title">SỮA ĐÁ KẸP</h3>
+                        <span class="promo-sub text-orange">Ưu Đãi Chớp Nhoáng</span>
+                        <a href="#" class="btn-promo btn-orange">ĐẶT NGAY <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Banner 3 -->
+                <div class="promo-card" style="background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=600&auto=format&fit=crop');">
+                    <div class="promo-overlay"></div>
+                    <div class="promo-badge">
+                        <span>20%</span>
+                        <small>OFF</small>
+                    </div>
+                    <div class="promo-content">
+                        <span class="promo-tag text-red">GIÁ SỐC CHỈ 35K</span>
+                        <h3 class="promo-title">TRÀ TRÁI CÂY</h3>
+                        <span class="promo-sub text-orange">Ưu Đãi Cuối Tuần</span>
+                        <a href="#" class="btn-promo btn-red">ĐẶT NGAY <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Bestsale Section -->
+    <section class="bestsale-section">
+        <div class="container">
+            <div class="bestsale-wrapper">
+                <!-- Left Content -->
+                <div class="bestsale-content">
+                    <div class="watermark-text" id="bs-watermark">COMBO</div>
+                    <p class="bs-subtitle">Danh mục sản phẩm</p>
+                    <h2 class="bs-title" id="bs-title">COMBO TRÀ SỮA & BÁNH</h2>
+                    <p class="bs-desc" id="bs-desc">Combo hoàn hảo cho buổi chiều năng lượng. Trà sữa trân châu đường đen thơm béo kết hợp cùng bánh ngọt Pháp mềm mịn, tạo nên sự giao thoa hương vị tuyệt đỉnh. Không chỉ là thức uống, đây còn là trải nghiệm thư giãn trọn vẹn dành riêng cho bạn sau những giờ làm việc căng thẳng.</p>
+                    
+                    <a href="#" class="btn-bs">
+                        <span class="btn-bs-text">Tìm hiểu thêm</span>
+                        <span class="btn-bs-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                </div>
+
+                <!-- Right Slider -->
+                <div class="bestsale-slider">
+                    <div class="bs-cards-container" id="bs-cards-container">
+                        <!-- Card 1 -->
+                        <div class="bs-card active" data-index="0">
+                            <span class="bs-number">01</span>
+                            <div class="bs-img"><img src="img/combo tra sua banh.png" alt="Trà sữa"></div>
+                            <h4 class="bs-card-title">COMBO TRÀ SỮA & BÁNH</h4>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bs-card" data-index="1">
+                            <span class="bs-number">02</span>
+                            <div class="bs-img"><img src="img/02.png" alt="Cà phê & Croissant"></div>
+                            <h4 class="bs-card-title">COMBO CÀ PHÊ & CROISSANT</h4>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="bs-card" data-index="2">
+                            <span class="bs-number">03</span>
+                            <div class="bs-img"><img src="img/03.png" alt="Trà & Macaron"></div>
+                            <h4 class="bs-card-title">COMBO TRÀ TRÁI CÂY</h4>
+                        </div>
+                    </div>
+
+                    <!-- Slider Controls -->
+                    <div class="bs-controls">
+                        <div class="bs-progress">
+                            <div class="bs-progress-bar" id="bs-progress-bar" style="width: 33.33%;"></div>
+                        </div>
+                        <div class="bs-arrows">
+                            <button class="bs-arrow prev" id="bs-prev"><i class="fa-solid fa-arrow-left"></i></button>
+                            <button class="bs-arrow next" id="bs-next"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banners 2 Columns Section -->
+    <section class="promo-banners-2-section" style="padding: 0 0 80px; background-color: #fdfbf7;">
+        <div class="container">
+            <div class="promo-grid-2">
+                <!-- Banner 1 -->
+                <div class="promo-card" style="background-image: url('https://images.unsplash.com/photo-1550508126-78e0eaae69e1?q=80&w=800&auto=format&fit=crop'); min-height: 250px;">
+                    <div class="promo-overlay"></div>
+                    <div class="promo-badge">
+                        <span>50%</span>
+                        <small>OFF</small>
+                    </div>
+                    <div class="promo-content" style="width: 55%;">
+                        <span class="promo-tag text-red">GIÁ SỐC 28K</span>
+                        <h3 class="promo-title">CÀ PHÊ MUỐI</h3>
+                        <span class="promo-sub text-orange">Ưu Đãi 50% Off</span>
+                        <a href="#" class="btn-promo btn-red">ĐẶT NGAY <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Banner 2 -->
+                <div class="promo-card" style="background-color: #ff7b00; background-image: url('https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?q=80&w=800&auto=format&fit=crop'); min-height: 250px;">
+                    <div class="promo-overlay" style="background: linear-gradient(to right, rgba(255,102,0,0.95) 0%, rgba(255,102,0,0.85) 45%, rgba(255,102,0,0.1) 100%);"></div>
+                    <div class="promo-badge">
+                        <span>50%</span>
+                        <small>OFF</small>
+                    </div>
+                    <div class="promo-content" style="width: 55%;">
+                        <span class="promo-tag" style="color: #fff;">GIÁ SỐC 55K</span>
+                        <h3 class="promo-title">NƯỚC ÉP CAM</h3>
+                        <span class="promo-sub" style="color: #ffe6cc;">Ưu Đãi Hấp Dẫn</span>
+                        <a href="#" class="btn-promo btn-red">ĐẶT NGAY <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" style="padding: 80px 0; background-color: #fff;">
+        <div class="container">
+            <div class="reviews-grid">
+                <!-- Left Content -->
+                <div class="reviews-intro">
+                    <div class="intro-accent-line"></div>
+                    <h2 class="reviews-title">REVIEW VỀ<br>COFFEE HOUSE</h2>
+                    <p class="reviews-desc">Coffee House mong nhận được những góp ý và phản hồi từ các bạn để không ngừng nâng cao chất lượng dịch vụ trong tương lai.</p>
+                    <a href="#" class="btn-review">Xem tất cả</a>
+                    <div class="intro-accent-line"></div>
+                </div>
+
+                <!-- Cards -->
+                <div class="reviews-cards">
+                    <!-- Card 1 -->
+                    <div class="review-card">
+                        <div class="rc-header">
+                            <div class="rc-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-solid fa-quote-right rc-quote-icon"></i>
+                        </div>
+                        <h4 class="rc-title">Tuyệt vời!</h4>
+                        <p class="rc-text">Mình thấy quán có rất nhiều đồ uống ngon. Khách hàng được trải nghiệm trực tiếp không gian mát mẻ, làm việc rất hiệu quả. Nhân viên nhiệt tình và dễ thương. Hi</p>
+                        <div class="rc-author">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=100&auto=format&fit=crop" alt="Mr. Trung">
+                            <div class="rc-author-info">
+                                <strong>Mr. Trung Dũng</strong>
+                                <span>Khách hàng thân thiết</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="review-card">
+                        <div class="rc-header">
+                            <div class="rc-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-solid fa-quote-right rc-quote-icon"></i>
+                        </div>
+                        <h4 class="rc-title">Tuyệt vời!</h4>
+                        <p class="rc-text">Mình thấy quán có rất nhiều đồ uống ngon. Khách hàng được trải nghiệm trực tiếp không gian mát mẻ, làm việc rất hiệu quả. Nhân viên nhiệt tình và dễ thương. Hi</p>
+                        <div class="rc-author">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100&auto=format&fit=crop" alt="Nguyễn Dũng">
+                            <div class="rc-author-info">
+                                <strong>Nguyễn Dũng</strong>
+                                <span>Khách hàng vãng lai</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="review-card">
+                        <div class="rc-header">
+                            <div class="rc-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <i class="fa-solid fa-quote-right rc-quote-icon"></i>
+                        </div>
+                        <h4 class="rc-title">Tuyệt vời!</h4>
+                        <p class="rc-text">Mình thấy quán có rất nhiều đồ uống ngon. Khách hàng được trải nghiệm trực tiếp không gian mát mẻ, làm việc rất hiệu quả. Nhân viên nhiệt tình và dễ thương. Hi</p>
+                        <div class="rc-author">
+                            <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=100&auto=format&fit=crop" alt="Hoàng Mai">
+                            <div class="rc-author-info">
+                                <strong>Hoàng Mai</strong>
+                                <span>Thành viên VIP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-wrapper" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop');">
+                <div class="booking-form-box">
+                    <div class="booking-watermark"><i class="fa-solid fa-mug-hot"></i></div>
+                    <span class="booking-tag">TƯ VẤN & ĐẶT BÀN MIỄN PHÍ</span>
+                    <h2 class="booking-title">Liên Hệ Coffee House Để Được Phục Vụ Tận Tâm</h2>
+                    <p class="booking-desc">Đội ngũ nhân viên của Coffee House luôn sẵn sàng lắng nghe, tư vấn chi tiết và sắp xếp vị trí ngồi phù hợp nhất với nhu cầu của bạn, giúp bạn thư giãn và thưởng thức cà phê một cách trọn vẹn.</p>
+                    
+                    <form action="#" class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Họ và tên" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Điện thoại" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Địa chỉ">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <select required>
+                                    <option value="" disabled selected>Số người</option>
+                                    <option value="1-2">1 - 2 người</option>
+                                    <option value="3-5">3 - 5 người</option>
+                                    <option value="6-10">6 - 10 người</option>
+                                    <option value=">10">Trên 10 người</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down select-arrow"></i>
+                            </div>
+                            <div class="form-group">
+                                <i class="fa-regular fa-calendar input-icon"></i>
+                                <input type="date" required style="padding-left: 25px;">
+                            </div>
+                        </div>
+                        <div class="form-row full-width">
+                            <div class="form-group">
+                                <textarea placeholder="Nội dung" rows="1"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn-submit">Gửi thông tin <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; margin-left: 5px;"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-waves-container">
+            <svg class="footer-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(17, 17, 17, 0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(17, 17, 17, 0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(17, 17, 17, 0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#111" />
+                </g>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: About -->
+                <div class="footer-col">
+                    <h3 class="footer-logo">Coffee House</h3>
+                    <p class="footer-desc">Mang đến trải nghiệm cà phê thượng hạng trong không gian đẳng cấp. Nơi cảm xúc thăng hoa cùng hương vị nguyên bản.</p>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Đường Cà Phê, Quận 1, TP. HCM</li>
+                        <li><i class="fa-solid fa-phone"></i> 0123 456 789</li>
+                        <li><i class="fa-solid fa-envelope"></i> hello@coffeehouse.com</li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Liên Kết Nhanh</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Thực đơn hôm nay</a></li>
+                        <li><a href="#">Khuyến mãi</a></li>
+                        <li><a href="#">Đặt bàn ngay</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Opening Hours -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Giờ Mở Cửa</h4>
+                    <ul class="footer-hours">
+                        <li><span>Thứ 2 - Thứ 6:</span> 07:00 - 22:30</li>
+                        <li><span>Thứ 7 - Chủ Nhật:</span> 08:00 - 23:00</li>
+                        <li><span>Ngày lễ:</span> Theo lịch thông báo</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div class="footer-col">
+                    <h4 class="footer-title">Đăng Ký Nhận Tin</h4>
+                    <p class="footer-desc" style="margin-bottom: 15px;">Nhận ngay ưu đãi giảm 20% cho lần đặt bàn đầu tiên khi đăng ký thành viên.</p>
+                    <form action="#" class="footer-newsletter">
+                        <input type="email" placeholder="Nhập email của bạn..." required>
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                    <div class="footer-socials">
+                        <a href="#" class="social-fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-ins"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-tt"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="social-yt"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Coffee House. All rights reserved. Designed by Thien TECH.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Social Sidebar -->
+    <div class="social-sidebar">
+        <!-- Khuyến mãi -->
+        <a href="#" class="social-item">
+            <div class="social-icon">
+                <i class="fa-solid fa-gift"></i>
+            </div>
+            <span class="social-text">Khuyến<br>mãi</span>
+        </a>
+        
+        <!-- Hotline -->
+        <a href="#" class="social-item">
+            <div class="social-icon">
+                <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <span class="social-text">Hotline</span>
+        </a>
+
+        <!-- Zalo -->
+        <a href="#" class="social-item">
+            <div class="social-icon zalo-icon">
+                <span>Zalo</span>
+            </div>
+            <span class="social-text">Chat zalo</span>
+        </a>
+
+        <!-- Messenger -->
+        <a href="#" class="social-item">
+            <div class="social-icon">
+                <i class="fa-brands fa-facebook-messenger"></i>
+            </div>
+            <span class="social-text">Messenger</span>
+        </a>
+    </div>
+
+    <!-- Interactive Slider Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const bsData = [
+                {
+                    title: "COMBO TRÀ SỮA & BÁNH",
+                    desc: "Combo hoàn hảo cho buổi chiều năng lượng. Trà sữa trân châu đường đen thơm béo kết hợp cùng bánh ngọt Pháp mềm mịn, tạo nên sự giao thoa hương vị tuyệt đỉnh. Không chỉ là thức uống, đây còn là trải nghiệm thư giãn trọn vẹn dành riêng cho bạn sau những giờ làm việc căng thẳng.",
+                    watermark: "COMBO"
+                },
+                {
+                    title: "COMBO CÀ PHÊ & CROISSANT",
+                    desc: "Đánh thức ngày mới với bộ đôi cà phê nguyên bản và bánh sừng bò giòn rụm. Vị đắng đặc trưng của hạt cà phê Robusta rang mộc hoà quyện cùng lớp bơ thượng hạng từ chiếc bánh nướng nóng hổi tạo nên sự bùng nổ vị giác mạnh mẽ.",
+                    watermark: "COFFEE"
+                },
+                {
+                    title: "COMBO TRÀ TRÁI CÂY",
+                    desc: "Sự thanh mát của trà trái cây nhiệt đới đi cùng vẻ ngọt ngào của những chiếc bánh Macaron đầy màu sắc. Phù hợp cho những ai yêu thích sự nhẹ nhàng, thanh tao và tìm kiếm một cảm giác tươi mới xua tan cái nóng oi ả.",
+                    watermark: "TEA"
+                }
+            ];
+
+            let currentIndex = 0;
+            const cards = document.querySelectorAll('.bs-card');
+            const container = document.getElementById('bs-cards-container');
+            const titleEl = document.getElementById('bs-title');
+            const descEl = document.getElementById('bs-desc');
+            const watermarkEl = document.getElementById('bs-watermark');
+            const progressBar = document.getElementById('bs-progress-bar');
+            const totalCards = cards.length;
+
+            function updateSlider(index) {
+                if (index >= totalCards) index = 0;
+                if (index < 0) index = totalCards - 1;
+                currentIndex = index;
+
+                cards.forEach((card, i) => {
+                    card.classList.remove('active');
+                    if (i === currentIndex) {
+                        card.classList.add('active');
+                    }
+                });
+
+                // Card offset + gap = 240 + 20 = 260
+                const offset = currentIndex * 260;
+                container.style.transform = `translateX(-${offset}px)`;
+
+                titleEl.style.opacity = 0;
+                descEl.style.opacity = 0;
+                watermarkEl.style.opacity = 0;
+                
+                setTimeout(() => {
+                    titleEl.innerText = bsData[currentIndex].title;
+                    descEl.innerText = bsData[currentIndex].desc;
+                    watermarkEl.innerText = bsData[currentIndex].watermark;
+                    
+                    titleEl.style.opacity = 1;
+                    descEl.style.opacity = 1;
+                    watermarkEl.style.opacity = 1;
+                }, 300);
+
+                progressBar.style.width = `${((currentIndex + 1) / totalCards) * 100}%`;
+            }
+
+            document.getElementById('bs-prev').addEventListener('click', () => updateSlider(currentIndex - 1));
+            document.getElementById('bs-next').addEventListener('click', () => updateSlider(currentIndex + 1));
+
+            cards.forEach((card, idx) => {
+                card.addEventListener('click', () => updateSlider(idx));
+            });
+        });
+    </script>
+
+</body>
+</html>

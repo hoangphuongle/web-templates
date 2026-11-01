@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Hotel V2 - Premium Resort Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Dancing+Script:wght@600&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="https://hoangphuongle.github.io/web-templates/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        Chốt ngay qua Zalo
+      </a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-flex">
+            <div class="top-left">Chào mừng bạn đến với Green Hotel Luxury!</div>
+            <div class="top-right">
+                <a href="#">Đăng ký</a> <span>/</span> <a href="#">Đăng nhập</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pill Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-pill">
+                <ul class="nav-left">
+                    <li><a href="#" class="active">Trang chủ</a></li>
+                    <li><a href="#">Về Chúng Tôi</a></li>
+                    <li><a href="#">Đặt Phòng</a></li>
+                </ul>
+
+                <div class="logo-center">
+                    <div class="logo-circle">
+                        <div class="logo-text">GREEN</div>
+                        <div class="logo-sub">HOTEL</div>
+                    </div>
+                </div>
+
+                <ul class="nav-right">
+                    <li><a href="#">Tuyển Dụng</a></li>
+                    <li><a href="#">Điểm Đến</a></li>
+                    <li><a href="#">Liên Hệ</a></li>
+                    <li class="nav-icons">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <a href="#" class="cart-icon"><i class="fa-solid fa-bag-shopping"></i><span>0</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Slider Section -->
+    <section class="hero-v2">
+        <div class="container hero-flex">
+            <div class="hero-content">
+                <h1 class="hero-title">Luxury & Nature<br>Green Resort<br>Forest Retreat</h1>
+                <p class="hero-desc">KHÁM PHÁ ƯU ĐÃI NGHỈ DƯỠNG MÙA HÈ 2026 - GIẢM ĐẾN 40%</p>
+
+                <!-- Floating Promotion Card (Stack Layout) -->
+                <div class="hero-promo-title">
+                    <h4>Ưu Đãi Đặc Biệt</h4>
+                    <span>Cập nhật mới nhất</span>
+                </div>
+                <div class="hero-promo-stack" id="heroPromoStack">
+                    <div class="hero-stack-item">
+                        <div class="stack-card-left">
+                            <h3>Giảm 20%</h3>
+                            <p>Phòng Deluxe</p>
+                            <span class="btn-stack-card">Nhận ưu đãi &rarr;</span>
+                        </div>
+                        <div class="stack-card-right">
+                            <img src="https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=300"
+                                alt="Promo 1">
+                        </div>
+                    </div>
+                    <div class="hero-stack-item">
+                        <div class="stack-card-left">
+                            <h3>Free Spa</h3>
+                            <p>Hạng Suite</p>
+                            <span class="btn-stack-card">Nhận ưu đãi &rarr;</span>
+                        </div>
+                        <div class="stack-card-right">
+                            <img src="https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=300"
+                                alt="Promo 2">
+                        </div>
+                    </div>
+                    <div class="hero-stack-item">
+                        <div class="stack-card-left">
+                            <h3>Family</h3>
+                            <p>Tặng kèm ăn sáng</p>
+                            <span class="btn-stack-card">Nhận ưu đãi &rarr;</span>
+                        </div>
+                        <div class="stack-card-right">
+                            <img src="https://images.pexels.com/photos/261394/pexels-photo-261394.jpeg?auto=compress&cs=tinysrgb&w=300"
+                                alt="Promo 3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-btns">
+                    <a href="#khuyen-mai" class="btn-explore">
+                        Xem khuyến mãi
+                        <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Bottom Floating Icons -->
+        <div class="bottom-icons">
+            <div class="icon-btn"><i class="fa-solid fa-bell"></i></div>
+            <div class="icon-btn"><i class="fa-solid fa-circle-dot"></i></div>
+        </div>
+    </section>
+
+    <!-- About Section V2 -->
+    <section class="about-v2">
+        <div class="container about-wrapper">
+            <div class="about-left">
+                <div class="stylized-text">
+                    <span class="word-1">Green</span>
+                    <span class="word-2">Hotel</span>
+                    <p class="sub-quote">Thiên đường xanh giữa lòng thiên nhiên</p>
+                </div>
+            </div>
+
+            <div class="about-right">
+                <!-- Vùng phủ xanh bên phải (Organic Shape) -->
+                <div class="organic-shape"></div>
+
+                <!-- Floating Info Card (Giữ nguyên nội dung) -->
+                <div class="info-card-floating">
+                    <div class="card-inner">
+                        <h3 class="card-title">Về Chúng Tôi <span>🌿</span></h3>
+                        <p class="card-desc">Chào mừng bạn đến với Green Hotel - thiên đường nghỉ dưỡng ẩn mình giữa
+                            thiên nhiên hùng vĩ. Với kiến trúc đương đại hòa quyện cùng nét hoang sơ của núi rừng, chúng
+                            tôi mang đến một không gian yên bình để bạn tái tạo năng lượng và tận hưởng những khoảnh
+                            khắc quý giá bên người thân yêu.</p>
+                        <a href="#gioi-thieu" class="btn-more-v2">Khám phá <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Booking Module V2 -->
+    <section class="booking-v2">
+        <div class="container booking-flex">
+            <!-- Left: Image Gallery -->
+            <div class="booking-gallery">
+                <div class="main-room-img">
+                    <img id="roomMainImage"
+                        src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Main Room View">
+                </div>
+                <div class="room-thumbnails">
+                    <div class="thumb-item active"
+                        data-src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=200">
+                        <img
+                            src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=200">
+                    </div>
+                    <div class="thumb-item"
+                        data-src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=200">
+                        <img
+                            src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=200">
+                    </div>
+                    <div class="thumb-item"
+                        data-src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=200">
+                        <img
+                            src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=200">
+                    </div>
+                    <div class="thumb-item"
+                        data-src="https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=200">
+                        <img
+                            src="https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=200">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Booking Card -->
+            <div class="booking-card">
+                <div class="booking-inner">
+                    <h2 class="booking-title">BOOKING ĐẶT PHÒNG NHANH</h2>
+                    <div class="price-box">
+                        <span id="oldPrice" class="old-price">1.500.000đ</span>
+                        <span id="currentPrice" class="current-price">1.000.000đ</span>
+                        <span class="discount-tag">Tiết kiệm 500k</span>
+                    </div>
+
+                    <ul class="room-amenities">
+                        <li><i class="fa-solid fa-circle-check"></i> Wi-Fi tốc độ cao, điều hòa nhiệt độ hiện đại.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Ban công riêng hướng vườn hoặc hồ bơi.</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Bữa sáng buffet tiêu chuẩn quốc tế miễn phí.</li>
+                    </ul>
+
+                    <div class="booking-desc">
+                        <label>Mô tả phòng:</label>
+                        <p id="roomDesc">Phòng Standard mang lại không gian ấm cúng, đầy đủ tiện nghi cho các cặp đôi
+                            hoặc du khách đi một mình. Diện tích 25m2 với nội thất gỗ tự nhiên sang trọng.</p>
+                    </div>
+
+                    <div class="room-options">
+                        <label>Loại phòng:</label>
+                        <div class="option-btns">
+                            <button class="option-btn active" data-type="standard" data-price="1.000.000đ"
+                                data-old="1.500.000đ"
+                                data-img="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800">Standard</button>
+                            <button class="option-btn" data-type="deluxe" data-price="1.800.000đ" data-old="2.200.000đ"
+                                data-img="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800">Deluxe</button>
+                            <button class="option-btn" data-type="suite" data-price="3.500.000đ" data-old="4.500.000đ"
+                                data-img="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800">Premium
+                                Suite</button>
+                        </div>
+                    </div>
+
+                    <div class="booking-actions">
+                        <div class="qty-selector">
+                            <button class="qty-btn minus">-</button>
+                            <span class="qty-val">1</span>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                        <span class="status-stock">Phòng còn trống</span>
+                    </div>
+
+                    <div class="cta-btns">
+                        <button class="btn-cart-booking">Đặt phòng</button>
+                        <button class="btn-checkout-now">Thanh toán ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotions & Offers V2 -->
+    <section class="offers-v2">
+        <div class="container">
+            <!-- Main Promo Banner -->
+            <div class="promo-banner">
+                <div class="promo-left">
+                    <div class="hotel-logo-small">
+                        <div class="logo-text">GREEN</div>
+                        <div class="logo-sub">HOTEL</div>
+                    </div>
+                    <h2 class="promo-title">ƯU ĐÃI <br><span>THANH TOÁN</span></h2>
+                </div>
+                <div class="promo-right-grid">
+                    <div class="promo-grid-item active">
+                        <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="Sale">
+                        <div class="grid-overlay">
+                            <h3>SALE TỚI 50%</h3>
+                            <p>Ưu đãi đặt phòng sớm</p>
+                        </div>
+                    </div>
+                    <div class="promo-grid-item">
+                        <img src="https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="Combo">
+                        <div class="grid-overlay">
+                            <h3>ĐẶT 3 TẶNG 1</h3>
+                            <p>Áp dụng hạng phòng Suite</p>
+                        </div>
+                    </div>
+                    <div class="promo-grid-item">
+                        <img src="https://images.pexels.com/photos/261394/pexels-photo-261394.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="Buffet">
+                        <div class="grid-overlay">
+                            <h3>BUFFET SÁNG</h3>
+                            <p>Miễn phí cho mọi hạng phòng</p>
+                        </div>
+                    </div>
+                    <div class="promo-grid-item">
+                        <img src="https://images.pexels.com/photos/2082087/pexels-photo-2082087.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="Spa">
+                        <div class="grid-overlay">
+                            <h3>VOUCHER SPA</h3>
+                            <p>Giảm 30% dịch vụ massage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank Vouchers Grid -->
+            <div class="bank-vouchers-grid">
+                <!-- HSBC -->
+                <div class="voucher-card hsbc">
+                    <div class="card-bg-icon"><i class="fa-solid fa-credit-card"></i></div>
+                    <div class="card-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/HSBC_logo_%282018%29.svg"
+                            alt="HSBC" style="filter: brightness(0) invert(1); width: 80px;">
+                    </div>
+                    <h3>Ưu đãi trả góp</h3>
+                    <p>Giảm 800K - Thẻ tín dụng</p>
+                    <a href="#" class="view-link">Xem ngay</a>
+                </div>
+                <!-- Home Credit -->
+                <div class="voucher-card homecredit">
+                    <div class="card-bg-icon"><i class="fa-solid fa-house-user"></i></div>
+                    <div class="card-logo"><span class="text-logo">HOME CREDIT</span></div>
+                    <h3>Ưu đãi thanh toán</h3>
+                    <p>Giảm 400K - Home Credit</p>
+                    <a href="#" class="view-link">Xem ngay</a>
+                </div>
+                <!-- OCB -->
+                <div class="voucher-card ocb">
+                    <div class="card-bg-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="card-logo"><span class="text-logo">OCB</span></div>
+                    <h3>Ưu đãi thanh toán</h3>
+                    <p>Giảm 500K - Qua OCB</p>
+                    <a href="#" class="view-link">Xem ngay</a>
+                </div>
+                <!-- HSBC Alt -->
+                <div class="voucher-card hsbc-alt">
+                    <div class="card-bg-icon"><i class="fa-solid fa-wallet"></i></div>
+                    <div class="card-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/HSBC_logo_%282018%29.svg"
+                            alt="HSBC" style="filter: brightness(0) invert(1); width: 80px;">
+                    </div>
+                    <h3>Ưu đãi thanh toán</h3>
+                    <p>Giảm 500K - Qua HSBC</p>
+                    <a href="#" class="view-link">Xem ngay</a>
+                </div>
+                <!-- Sacombank -->
+                <div class="voucher-card sacom">
+                    <div class="card-bg-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="card-logo"><span class="text-logo">Sacombank</span></div>
+                    <h3>Ưu đãi trả góp</h3>
+                    <p>Giảm 500K - Qua Sacombank</p>
+                    <a href="#" class="view-link">Xem ngay</a>
+                </div>
+                <!-- Apple Pay -->
+                <div class="voucher-card applepay">
+                    <div class="card-bg-icon"><i class="fa-brands fa-apple"></i></div>
+                    <div class="card-logo"><i class="fa-brands fa-apple-pay" style="font-size: 40px; color: #fff;"></i>
+                    </div>
+                    <h3>Trả góp 0%</h3>
+                    <p>Qua Apple Pay / MoMo</p>
+                    <a href="#" class="view-link">Xem ngay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="amenities-neon-section">
+        <div class="container amenities-neon-flex">
+            <div class="neon-left">
+                <h2 class="neon-title">Trải nghiệm dịch vụ tại Green Hotel</h2>
+                <p class="neon-desc">Bên trong nơi nghỉ dưỡng, mọi chi tiết đều được lên kế hoạch và sắp xếp trước để
+                    đảm bảo du khách có được trải nghiệm tốt nhất.</p>
+                <button class="btn-neon-purple" id="nextNeonCardBtn">Xem tiếp dịch vụ &rarr;</button>
+            </div>
+
+            <div class="neon-right">
+                <div class="neon-stack-container" id="neonStack">
+                    <div class="neon-card">
+                        <div class="neon-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+                        <h3>Đưa đón tại sân bay</h3>
+                        <p>Dịch vụ đưa đón tận nơi chuyên nghiệp, đúng giờ, đảm bảo sự thoải mái ngay khi bạn vừa đặt
+                            chân tới.</p>
+                    </div>
+                    <div class="neon-card">
+                        <div class="neon-icon"><i class="fa-solid fa-car"></i></div>
+                        <h3>Chỗ đậu xe miễn phí</h3>
+                        <p>Khu vực đỗ xe rộng rãi, an toàn và hoàn toàn miễn phí dành cho khách lưu trú tại khách sạn.
+                        </p>
+                    </div>
+                    <div class="neon-card">
+                        <div class="neon-icon"><i class="fa-solid fa-wifi"></i></div>
+                        <h3>Wifi tốc độ cao</h3>
+                        <p>Hệ thống internet không dây phủ sóng toàn khuôn viên với tốc độ tối ưu cho mọi nhu cầu công
+                            việc và giải trí.</p>
+                    </div>
+                    <div class="neon-card">
+                        <div class="neon-icon"><i class="fa-solid fa-bed"></i></div>
+                        <h3>Dịch vụ phòng</h3>
+                        <p>Phục vụ tận tâm 24/7, đáp ứng mọi yêu cầu về tiện nghi và ẩm thực ngay tại không gian riêng
+                            của bạn.</p>
+                    </div>
+                    <div class="neon-card">
+                        <div class="neon-icon"><i class="fa-solid fa-swimmer"></i></div>
+                        <h3>Hồ bơi vô cực</h3>
+                        <p>Thư giãn tuyệt đối tại hồ bơi tràn viền với tầm nhìn panorama hướng trọn cảnh sắc thiên nhiên
+                            hùng vĩ.</p>
+                    </div>
+                    <div class="neon-card">
+                        <div class="neon-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                        <h3>Ăn sáng</h3>
+                        <p>Khởi đầu ngày mới với thực đơn buffet đa dạng, kết hợp giữa tinh hoa ẩm thực địa phương và
+                            quốc tế.</p>
+                    </div>
+                    <div class="neon-card">
+                        <div class="neon-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                        <h3>Hoạt động</h3>
+                        <p>Đa dạng các hoạt động thể chất, yoga và trekking khám phá rừng nguyên sinh dành cho người yêu
+                            vận động.</p>
+                    </div>
+                    <div class="neon-card">
+                        <div class="neon-icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <h3>Nhân viên thân thiện</h3>
+                        <p>Đội ngũ nhân sự được đào tạo bài bản, luôn sẵn sàng hỗ trợ với nụ cười nồng hậu và lòng hiếu
+                            khách.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stackContainer = document.getElementById('neonStack');
+            const nextBtn = document.getElementById('nextNeonCardBtn');
+            if (stackContainer && nextBtn) {
+                const cards = Array.from(stackContainer.querySelectorAll('.neon-card'));
+
+                function updateStack() {
+                    cards.forEach((card, index) => {
+                        card.className = 'neon-card'; // reset classes
+                        if (index === 0) {
+                            card.classList.add('active');
+                        } else if (index === 1) {
+                            card.classList.add('back-1');
+                        } else if (index === 2) {
+                            card.classList.add('back-2');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                }
+
+                updateStack();
+
+                const rotateCards = () => {
+                    const firstCard = cards.shift();
+                    cards.push(firstCard);
+                    updateStack();
+                };
+
+                nextBtn.addEventListener('click', rotateCards);
+                stackContainer.addEventListener('click', rotateCards);
+            }
+
+
+            // Logic for Hero promo stack
+            const heroPromoStack = document.getElementById('heroPromoStack');
+            if (heroPromoStack) {
+                const hCards = Array.from(heroPromoStack.querySelectorAll('.hero-stack-item'));
+                function updateHeroStack() {
+                    hCards.forEach((card, index) => {
+                        card.className = 'hero-stack-item';
+                        if (index === 0) {
+                            card.classList.add('active');
+                        } else if (index === 1) {
+                            card.classList.add('back-1');
+                        } else if (index === 2) {
+                            card.classList.add('back-2');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                }
+                updateHeroStack();
+                heroPromoStack.addEventListener('click', () => {
+                    const first = hCards.shift();
+                    hCards.push(first);
+                    updateHeroStack();
+                });
+            }
+        });
+    </script>
+
+    <!-- Why Choose Us V2 -->
+    <section class="why-choose-v2">
+        <div class="container why-choose-flex">
+            <div class="why-choose-left">
+                <span class="pill-tag">TẠI SAO CHỌN CHÚNG TÔI</span>
+                <h2 class="why-title">Green Hotel luôn ưu tiên sự <br><span>hài lòng của khách hàng</span></h2>
+                <p class="why-desc">Niềm tin được xây dựng từ sự tận tâm tuyệt đối dành cho kỳ nghỉ và sự an tâm của
+                    bạn. Chúng tôi kết hợp dịch vụ chuyên nghiệp với không gian nghỉ dưỡng được cá nhân hóa cho từng du
+                    khách.</p>
+
+                <div class="why-features">
+                    <div class="why-feature-item">
+                        <div class="feature-icon-circle"><i class="fa-solid fa-tags"></i></div>
+                        <div class="feature-text">
+                            <h4>Giá tốt nhất</h4>
+                            <p>Chúng tôi cam kết mang đến mức giá cạnh tranh nhất cùng nhiều ưu đãi hấp dẫn khi đặt
+                                phòng trực tiếp.</p>
+                        </div>
+                    </div>
+                    <div class="why-feature-item">
+                        <div class="feature-icon-circle"><i class="fa-solid fa-calendar-check"></i></div>
+                        <div class="feature-text">
+                            <h4>Booking dễ dàng</h4>
+                            <p>Hệ thống đặt phòng thông minh, xác nhận nhanh chóng giúp bạn tiết kiệm thời gian tối đa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-choose-right">
+                <div class="arch-image-wrapper">
+                    <img src="https://images.pexels.com/photos/3757110/pexels-photo-3757110.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Customer Service">
+                    <div class="guest-badge">
+                        <div class="badge-inner">
+                            <span class="count">5000+</span>
+                            <span class="label">Khách hàng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combo Banners V2 -->
+    <section class="combo-v2">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="main-title-serif gold-text">ĐỘC QUYỀN TẠI GREEN HOTEL VỚI CÁC GÓI COMBO</h2>
+                <div class="title-line"></div>
+            </div>
+
+            <div class="combo-grid">
+                <!-- Combo 1 -->
+                <div class="combo-card">
+                    <div class="combo-img">
+                        <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Combo 1">
+                        <div class="blur-overlay"></div>
+                    </div>
+                    <div class="combo-content">
+                        <h3>HOTEL COMBO V1</h3>
+                        <p>Combo nhóm với phòng Superior cao cấp, thực đơn tối BBQ, phụ kiện dã ngoại...</p>
+                        <a href="#" class="btn-text-link">Xem thêm <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Combo 2 -->
+                <div class="combo-card">
+                    <div class="combo-img">
+                        <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Combo 2">
+                        <div class="blur-overlay"></div>
+                    </div>
+                    <div class="combo-content">
+                        <h3>HOTEL COMBO V2</h3>
+                        <p>Combo 2 người với phòng Suite cao cấp cùng phụ kiện dã ngoại, trà chiều...</p>
+                        <a href="#" class="btn-text-link">Xem thêm <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="combo-pagination">
+                <span class="page-dot active"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section V2 -->
+    <section class="testimonials-v2">
+        <div class="container">
+            <div class="testimonials-header">
+                <div class="header-left">
+                    <span class="pill-tag-white">PHẢN HỒI TỪ KHÁCH HÀNG</span>
+                    <h2 class="title-white">Khách Hàng Nói Gì?</h2>
+                    <p class="desc-white">Những lời chia sẻ chân thành từ khách hàng là động lực để Green Hotel không
+                        ngừng hoàn thiện và nâng cao chất lượng dịch vụ mỗi ngày.</p>
+                </div>
+                <div class="header-right">
+                    <div class="review-badges">
+                        <div class="badge-item">
+                            <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google">
+                            <div class="badge-info">
+                                <span>Đánh giá google</span>
+                                <div class="stars">5.0 <i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                        </div>
+                        <div class="badge-item">
+                            <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook">
+                            <div class="badge-info">
+                                <span>Đánh giá fanpage</span>
+                                <div class="stars">4.9 <i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                        class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="avatar-stack">
+                        <img src="https://i.pravatar.cc/100?u=1" alt="Guest 1">
+                        <img src="https://i.pravatar.cc/100?u=2" alt="Guest 2">
+                        <img src="https://i.pravatar.cc/100?u=3" alt="Guest 3">
+                        <img src="https://i.pravatar.cc/100?u=4" alt="Guest 4">
+                        <div class="more-guests">+5K</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Card 1 -->
+                <div class="testimonial-card">
+                    <div class="card-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Mình rất hài lòng với dịch vụ nghỉ dưỡng tại Green Hotel. Không gian thư
+                        giãn, nhân viên nhẹ nhàng và tư vấn rất kỹ. Sau kỳ nghỉ mình cảm thấy tràn đầy năng lượng và yêu
+                        đời hơn hẳn."</p>
+                    <div class="guest-info">
+                        <div class="guest-avatar"><img src="https://i.pravatar.cc/100?u=5" alt="Guest 5"></div>
+                        <div class="guest-meta">
+                            <span class="guest-name">Nguyễn Thảo – Hà Nội</span>
+                            <span class="guest-job">Nhân viên văn phòng</span>
+                        </div>
+                        <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="testimonial-card">
+                    <div class="card-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Ban đầu mình hơi ngại đi xa nhưng Green Hotel làm mình rất thoải mái. Kiến
+                        trúc đẹp, không gian xanh mát và yên tĩnh đúng nghĩa sau những giờ làm việc căng thẳng tại thành
+                        phố."</p>
+                    <div class="guest-info">
+                        <div class="guest-avatar"><img src="https://i.pravatar.cc/100?u=6" alt="Guest 6"></div>
+                        <div class="guest-meta">
+                            <span class="guest-name">Minh Tuấn – TP.HCM</span>
+                            <span class="guest-job">Kỹ sư xây dựng</span>
+                        </div>
+                        <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="testimonial-card">
+                    <div class="card-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"Điều mình thích nhất ở Green Hotel là sự tận tâm. Nhân viên nhớ rõ yêu cầu
+                        của mình mỗi lần quay lại. Dịch vụ chất lượng nhưng giá rất hợp lý cho một kỳ nghỉ boutique đẳng
+                        cấp."</p>
+                    <div class="guest-info">
+                        <div class="guest-avatar"><img src="https://i.pravatar.cc/100?u=7" alt="Guest 7"></div>
+                        <div class="guest-meta">
+                            <span class="guest-name">Thu Hà – Đà Nẵng</span>
+                            <span class="guest-job">Kinh doanh tự do</span>
+                        </div>
+                        <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-pagination">
+                <span class="page-dot white active"></span>
+                <span class="page-dot white"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section V2 -->
+    <section class="news-v2">
+        <div class="container">
+            <div class="section-header-center">
+                <h2 class="main-title-serif">Bí quyết nghỉ dưỡng</h2>
+                <div class="news-menu">
+                    <a href="#" class="active">Bí quyết khỏe đẹp</a>
+                    <span class="sep">|</span>
+                    <a href="#">Cách chăm sóc da</a>
+                    <span class="sep">|</span>
+                    <a href="#">Cách trang điểm</a>
+                    <span class="sep">|</span>
+                    <a href="#">Góc review</a>
+                    <span class="sep">|</span>
+                    <a href="#">Tin tức hot deal</a>
+                </div>
+                <div class="news-top-meta">
+                    <div class="nav-arrows">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <a href="#" class="view-all-link">Tất cả bài viết</a>
+                </div>
+            </div>
+
+            <div class="news-grid">
+                <!-- News 1 -->
+                <div class="news-card">
+                    <div class="news-img-wrap">
+                        <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="News 1">
+                        <div class="date-badge">17/09/2026</div>
+                    </div>
+                    <div class="news-body">
+                        <h3>8 lý do việc chuẩn bị cho kỳ nghỉ dưỡng không bao giờ là thừa</h3>
+                        <p class="author">Đăng bởi: <span>Green Hotel</span></p>
+                        <p class="excerpt">Trong quá trình lên kế hoạch nghỉ dưỡng, không ít du khách rơi vào tình trạng
+                            "thiếu trước hụt sau". Dù...</p>
+                        <a href="#" class="read-more-text">Đọc tiếp > ></a>
+                    </div>
+                </div>
+
+                <!-- News 2 -->
+                <div class="news-card">
+                    <div class="news-img-wrap">
+                        <img src="https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="News 2">
+                        <div class="date-badge">15/09/2026</div>
+                    </div>
+                    <div class="news-body">
+                        <h3>Gợi ý các kiểu trang điểm tự nhiên nâng tầm nhan sắc ngày lễ</h3>
+                        <p class="author">Đăng bởi: <span>Green Hotel</span></p>
+                        <p class="excerpt">Kỳ nghỉ là chuỗi ngày bạn sẽ tham gia vào đủ mọi bữa tiệc, từ gia đình cho
+                            tới họ hàng và bạn bè. Hãy đảm bảo...</p>
+                        <a href="#" class="read-more-text">Đọc tiếp > ></a>
+                    </div>
+                </div>
+
+                <!-- News 3 -->
+                <div class="news-card">
+                    <div class="news-img-wrap">
+                        <img src="https://images.pexels.com/photos/261394/pexels-photo-261394.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="News 3">
+                    </div>
+                    <div class="news-body">
+                        <h3>Tránh "thảm họa" khi đi du lịch với 5 lỗi cơ bản thường gặp</h3>
+                        <p class="author">Đăng bởi: <span>Green Hotel</span></p>
+                        <p class="excerpt">Với những bạn mới bắt đầu tập tành đi du lịch bụi, việc mắc phải "sự cố" là
+                            điều không ai tránh khỏi. Dưới đây là...</p>
+                        <a href="#" class="read-more-text">Đọc tiếp > ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section V2 -->
+    <section class="faq-v2">
+        <div class="container faq-flex">
+            <div class="faq-left">
+                <div class="organic-image-wrap">
+                    <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800"
+                        alt="Support">
+                </div>
+            </div>
+            <div class="faq-right">
+                <div class="faq-tag">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>Những câu hỏi thường gặp</span>
+                </div>
+                <h2 class="faq-title">Chúng tôi sẵn sàng trả lời mọi câu hỏi của bạn.</h2>
+                <p class="faq-desc">Chúng tôi luôn sẵn lòng hỗ trợ và giải đáp mọi thắc mắc của bạn. Hãy gửi câu hỏi cho
+                    chúng tôi để được tư vấn nhanh chóng và chính xác nhất!</p>
+
+                <div class="accordion-list">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Làm thế nào để tôi có thể đặt phòng tại Green Hotel?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Bạn có thể đặt phòng trực tiếp qua website này bằng cách sử dụng module "Đặt phòng nhanh"
+                                hoặc liên hệ hotline để được hỗ trợ 24/7.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Khách sạn có cung cấp dịch vụ đưa đón sân bay không?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Có, chúng tôi cung cấp dịch vụ đưa đón sân bay chuyên nghiệp. Vui lòng thông báo cho
+                                chúng tôi ít nhất 24 giờ trước khi đến.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Chính sách hủy phòng của khách sạn như thế nào?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Chính sách hủy phòng linh hoạt tùy thuộc vào hạng phòng bạn chọn. Thông thường, bạn có
+                                thể hủy miễn phí trước 48 giờ.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <span>Thời gian nhận phòng và trả phòng quy định ra sao?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Thời gian nhận phòng là sau 14:00 và trả phòng là trước 12:00 trưa ngày hôm sau.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section V2 -->
+    <section class="contact-v2">
+        <div class="contact-bg-wrap">
+            <img src="https://images.pexels.com/photos/3757110/pexels-photo-3757110.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Contact BG">
+            <div class="container">
+                <div class="contact-form-overlay">
+                    <span class="form-tag">TƯ VẤN & ĐẶT LỊCH MIỄN PHÍ</span>
+                    <h2 class="form-title">Liên Hệ Green Hotel Để Được Chăm Sóc Tận Tâm</h2>
+                    <p class="form-desc">Đội ngũ chuyên viên giàu kinh nghiệm của Green Hotel luôn sẵn lòng lắng nghe,
+                        tư vấn chi tiết và đề xuất giải pháp phù hợp nhất với nhu cầu của bạn.</p>
+
+                    <form class="contact-grid-form">
+                        <div class="input-row">
+                            <input type="text" placeholder="Họ và tên">
+                            <input type="text" placeholder="Điện thoại">
+                        </div>
+                        <div class="input-row">
+                            <input type="email" placeholder="Email">
+                            <input type="text" placeholder="Địa chỉ">
+                        </div>
+                        <div class="input-row">
+                            <select>
+                                <option>Chọn dịch vụ</option>
+                                <option>Đặt phòng Deluxe</option>
+                                <option>Dịch vụ Spa & Massage</option>
+                                <option>Tổ chức sự kiện</option>
+                            </select>
+                            <div class="date-input">
+                                <i class="fa-regular fa-calendar"></i>
+                                <input type="text" value="2026-05-07">
+                            </div>
+                        </div>
+                        <textarea placeholder="Nội dung"></textarea>
+                        <button type="submit" class="btn-submit">Gửi thông tin <i
+                                class="fa-solid fa-arrow-right-long"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section V2 -->
+    <footer class="footer-v2">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-col info-col">
+                    <h3 class="footer-brand">Green Hotel</h3>
+                    <p class="brand-desc">Khách sạn Green Hotel tự hào mang đến không gian nghỉ dưỡng xanh, hiện đại và
+                        đẳng cấp. Chúng tôi cam kết phục vụ chuyên nghiệp tận tâm.</p>
+                    <div class="contact-links">
+                        <a href="#"><i class="fa-solid fa-envelope"></i> support@greenhotel.vn</a>
+                        <p><i class="fa-solid fa-location-dot"></i> 123 Đường Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+                        <a href="tel:19006750" class="hotline-big">1900 6750</a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="footer-col">
+                    <h4 class="col-title">Về chúng tôi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Hệ thống phòng</a></li>
+                        <li><a href="#">Dịch vụ tiện ích</a></li>
+                        <li><a href="#">Tin tức & Sự kiện</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="footer-col">
+                    <h4 class="col-title">Chính sách</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Quy định khách sạn</a></li>
+                        <li><a href="#">Chính sách hủy phòng</a></li>
+                        <li><a href="#">Chính sách bồi thường</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="footer-col">
+                    <h4 class="col-title">Hỗ trợ khách hàng</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Hướng dẫn đặt phòng</a></li>
+                        <li><a href="#">Khách hàng thân thiết</a></li>
+                        <li><a href="#">Liên hệ hợp tác</a></li>
+                    </ul>
+                    <div class="working-hours-mini">
+                        <span class="hours-tag">Thời gian làm việc</span>
+                        <p><i class="fa-regular fa-calendar-days"></i> Thứ 2 - Thứ 7 (Nghỉ CN)</p>
+                        <p><i class="fa-regular fa-clock"></i> 08h00 - 22h00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <div class="social-links-footer">
+                    <span>Kết nối với chúng tôi</span>
+                    <div class="social-icons-row">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="payment-methods">
+                    <span>Phương thức thanh toán</span>
+                    <div class="payment-icons">
+                        <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
+                        <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard">
+                        <img src="https://img.icons8.com/color/48/jcb.png" alt="JCB">
+                        <img src="https://img.icons8.com/color/48/apple-pay.png" alt="Apple Pay">
+                    </div>
+                </div>
+                <div class="qr-download">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=GreenHotel" alt="QR Code">
+                    <div class="qr-text">
+                        <span>Zalo Mini App</span>
+                        <p>Quét mã để đặt phòng nhanh chóng</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bản quyền thuộc về <strong>Green Hotel</strong>. Cung cấp bởi Thien TECH.</p>
+                <div class="footer-badges">
+                    <img src="https://web.archive.org/web/20210515155106im_/http://online.gov.vn/PublicImages/28008c03-964c-4a88-81ee-6c84b513364f.png"
+                        alt="Bo Cong Thuong" class="bct-badge">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Social Sidebar V2 -->
+    <div class="social-sidebar-v2">
+        <a href="#" class="social-item"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="social-item"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="social-item"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-item tiktok"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

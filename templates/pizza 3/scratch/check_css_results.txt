@@ -1,0 +1,322 @@
+CSS Length: 117516
+Keyword 'testimonial' count in CSS: 35
+--- Occurrence of 'testimonial':
+=====================================================================
+   PHẢN HỒI ĐÁNH GIÁ (PREMIUM TESTIMONIALS SLIDER SECTION)
+   ========================================================================== */
+.testimonials-section {
+    background-color: #ffffff;
+    padding: 85px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0
+
+--- Occurrence of 'testimonial':
+S SLIDER SECTION)
+   ========================================================================== */
+.testimonials-section {
+    background-color: #ffffff;
+    padding: 85px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    alig
+
+--- Occurrence of 'testimonial':
+on {
+    background-color: #ffffff;
+    padding: 85px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+}
+
+/* Left Column: Testimonials static mockup image */
+.testimonials-left-col
+
+--- Occurrence of 'testimonial':
+n;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+}
+
+/* Left Column: Testimonials static mockup image */
+.testimonials-left-col {
+    width: 100%;
+}
+
+.testimonials-image-wrapper {
+    position: relative;
+    border-radiu
+
+--- Occurrence of 'testimonial':
+umns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+}
+
+/* Left Column: Testimonials static mockup image */
+.testimonials-left-col {
+    width: 100%;
+}
+
+.testimonials-image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
+    background-color: #faf9f7;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2
+
+Keyword 'danh-gia' count in CSS: 0
+Keyword 'review' count in CSS: 0
+Keyword 'client' count in CSS: 4
+--- Occurrence of 'client':
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+    pointer-events: auto;
+}
+
+.client-name {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #2c2623;
+    margin: 0 0 4px 0;
+}
+
+.client-role {
+    font-size: 0.8rem;
+    color: #746c68;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.client-comment {
+    font-size: 0.98rem;
+    color: #555555;
+    line-h
+
+--- Occurrence of 'client':
+name {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #2c2623;
+    margin: 0 0 4px 0;
+}
+
+.client-role {
+    font-size: 0.8rem;
+    color: #746c68;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.client-comment {
+    font-size: 0.98rem;
+    color: #555555;
+    line-height: 1.65;
+    font-style: italic;
+    margin: 0 0 15px 0;
+}
+
+.client-rating {
+    display: flex;
+    gap
+
+--- Occurrence of 'client':
+ 0.8rem;
+    color: #746c68;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.client-comment {
+    font-size: 0.98rem;
+    color: #555555;
+    line-height: 1.65;
+    font-style: italic;
+    margin: 0 0 15px 0;
+}
+
+.client-rating {
+    display: flex;
+    gap: 4px;
+    color: #ffb300; /* Gold stars */
+    font-size: 0.9rem;
+}
+
+/* Slide controls with horizontal line cutter */
+.testimon
+
+--- Occurrence of 'client':
+rem;
+    color: #555555;
+    line-height: 1.65;
+    font-style: italic;
+    margin: 0 0 15px 0;
+}
+
+.client-rating {
+    display: flex;
+    gap: 4px;
+    color: #ffb300; /* Gold stars */
+    font-size: 0.9rem;
+}
+
+/* Slide controls with horizontal line cutter */
+.testimonials-controls-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30p
+
+Keyword 'slider' count in CSS: 19
+--- Occurrence of 'slider':
+=============================== */
+/* ================= ================= =================
+   HERO SLIDER BANNER SECTION (Premium Glassmorphic 3D Flip)
+   ========================================================= */
+.hero-slider-section {
+    height: 100vh;
+    min-height: 780px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+}
+
+
+
+/* Background slides (smooth crossf
+
+--- Occurrence of 'slider':
+Premium Glassmorphic 3D Flip)
+   ========================================================= */
+.hero-slider-section {
+    height: 100vh;
+    min-height: 780px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-dark);
+}
+
+
+
+/* Background slides (smooth crossfade animation) */
+.hero-slides-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+
+--- Occurrence of 'slider':
+index: 2;
+}
+
+/* Foreground container grid (Flexbox alignment to left matching Dola Bakery) */
+.hero-slider-container {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    pointer-events: none; /* Let clicks pass through empty spaces to background elements */
+}
+
+/* Glassmorphic 3D Text Card */
+.hero-text-card-wrapper {
+
+--- Occurrence of 'slider':
+);
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+/* Right side Floating Pizza decoration */
+.hero-slider-pizza-deco {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+    animation: fadeZoomIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.deco-circle-ring {
+    position: absolute;
+    width: 90%;
+    padding-bottom: 90%;
+    border: 2p
+
+--- Occurrence of 'slider':
+r-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 3px;
+    text-align: center;
+}
+
+/* Slider bottom navigation controllers */
+.slider-controls-wrapper {
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+}
+
+.slider-play-indi

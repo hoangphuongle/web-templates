@@ -1,0 +1,72 @@
+1516:         <div class="footer-dark-main">
+1517:             <div class="container footer-grid">
+1518:                 
+1519:                 <!-- Footer Column 1: Pizza King Info -->
+1520:                 <div class="footer-col footer-info">
+1521:                     <div class="footer-logo">
+1522:                         <span class="logo-gold-letter">P</span>
+1523:                         <div class="logo-gold-text">
+1524:                             <span class="logo-gold-title">Pizza King</span>
+1525:                             <span class="logo-gold-subtitle">VUA PIZZA Ý</span>
+1526:                         </div>
+1527:                     </div>
+1528:                     <div class="footer-contact-details">
+1529:                         <p><i class="fa-solid fa-location-dot"></i> Trụ sở chính: 235 Nguyễn Trãi, Quận 1, TP. HCM</p>
+1530:                         <p><i class="fa-solid fa-phone"></i> Hotline: <a href="tel:19006750"><strong>1900 6750</strong></a></p>
+1531:                         <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:support@pizzaking.vn">support@pizzaking.vn</a></p>
+1532:                     </div>
+1533:                 </div>
+1534: 
+1535:                 <!-- Footer Column 2: Tìm hiểu thêm -->
+1536:                 <div class="footer-col">
+1537:                     <h3>TÌM HIỂU THÊM</h3>
+1538:                     <ul class="footer-links">
+1539:                         <li><a href="#trang-chu"><i class="fa-solid fa-caret-right"></i> Trang chủ</a></li>
+1540:                         <li><a href="#gioi-thieu"><i class="fa-solid fa-caret-right"></i> Giới thiệu</a></li>
+1541:                         <li><a href="#thuc-don"><i class="fa-solid fa-caret-right"></i> Sản phẩm</a></li>
+1542:                         <li><a href="#tin-tuc"><i class="fa-solid fa-caret-right"></i> Tin tức</a></li>
+1543:                         <li><a href="#lien-he"><i class="fa-solid fa-caret-right"></i> Liên hệ</a></li>
+1544:                     </ul>
+1545:                 </div>
+1546: 
+1547:                 <!-- Footer Column 3: Hỗ trợ khách hàng -->
+1548:                 <div class="footer-col">
+1549:                     <h3>HỖ TRỢ KHÁCH HÀNG</h3>
+1550:                     <ul class="footer-links">
+1551:                         <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Chính sách giao hàng 30 phút</a></li>
+1552:                         <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Chính sách bảo mật thông tin</a></li>
+1553:                         <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Quy định sử dụng và Cookies</a></li>
+1554:                         <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Chính sách hoàn tiền 100%</a></li>
+1555:                         <li><a href="#chinh-sach"><i class="fa-solid fa-caret-right"></i> Tuyển dụng Shipper</a></li>
+1556:                     </ul>
+1557:                 </div>
+1558: 
+1559:                 <!-- Footer Column 4: Theo dõi & Thanh toán -->
+1560:                 <div class="footer-col footer-newsletter">
+1561:                     <h3>THEO DÕI CHÚNG TÔI</h3>
+1562:                     <div class="social-links">
+1563:                         <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+1564:                         <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+1565:                         <a href="#" class="social-icon" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+1566:                         <a href="#" class="social-icon" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+1567:                     </div>
+1568:                     
+1569:                     <h3 class="payment-title" style="margin-top: 20px;">PHƯƠNG THỨC THANH TOÁN</h3>
+1570:                     <div class="payment-methods-grid">
+1571:                         <span class="pay-badge badge-acb">ACB</span>
+1572:                         <span class="pay-badge badge-msb">MSB</span>
+1573:                         <i class="fa-brands fa-cc-visa" title="Visa Card"></i>
+1574:                         <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+1575:                         <i class="fa-solid fa-money-bill-1-wave" title="Thanh toán COD"></i>
+1576:                     </div>
+1577:                 </div>
+1578: 
+1579:             </div>
+1580:             
+1581:             <div class="footer-bottom">
+1582:                 <div class="container footer-bottom-flex">
+1583:                     <p>&copy; 2026 Pizza King. Bản quyền giao diện thuộc về Pizza King Việt Nam. Thiết kế tinh tế chuẩn 5 sao.</p>
+1584:                 </div>
+1585:             </div>
+1586:         </div>
+1587:     </footer>

@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashtag Tea - Thưởng thức hương vị tuyệt hảo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Outfit:wght@400;700;800&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="https://hoangphuongle.github.io/web-templates/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        Chốt ngay qua Zalo
+      </a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-flex">
+            <div class="top-marquee">
+                <marquee behavior="scroll" direction="left">
+                    Chào mừng bạn đến với Hashtag Tea! Giảm ngay 20% cho hóa đơn đầu tiên khi đặt bàn online. Khám phá
+                    menu trà sữa và nước ép tươi sạch mỗi ngày!
+                </marquee>
+            </div>
+            <div class="top-info">
+                <span><i class="fa-regular fa-clock"></i> Thời gian làm việc: Từ 8h00 đến 22h00 các ngày</span>
+                <span class="sep">|</span>
+                <span><i class="fa-solid fa-phone"></i> Hotline: <strong>1900 6750</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="hash">#</span>
+                <span class="text">hashtag tea</span>
+            </a>
+
+            <!-- Menu Trigger -->
+            <div class="menu-dropdown">
+                <button class="btn-menu">
+                    <i class="fa-solid fa-table-cells-large"></i> Thực đơn
+                </button>
+                <!-- Mega Menu -->
+                <div class="mega-menu">
+                    <div class="mega-grid">
+                        <div class="mega-col">
+                            <h4>COFFEE</h4>
+                            <ul>
+                                <li><a href="#">Espresso</a></li>
+                                <li><a href="#">Cappuccino</a></li>
+                                <li><a href="#">Vanilla Latte</a></li>
+                                <li><a href="#">Caramel Machiato</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4>NƯỚC ÉP</h4>
+                            <ul>
+                                <li><a href="#">Dưa hấu</a></li>
+                                <li><a href="#">Cam</a></li>
+                                <li><a href="#">Táo</a></li>
+                                <li><a href="#">Dứa</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4>TRÀ SỮA</h4>
+                            <ul>
+                                <li><a href="#">Kiwi</a></li>
+                                <li><a href="#">Bạc hà</a></li>
+                                <li><a href="#">Khoai môn</a></li>
+                                <li><a href="#">Dâu tây</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-col">
+                            <h4>COCKTAIL</h4>
+                            <ul>
+                                <li><a href="#">Cocktail Bloody Mary</a></li>
+                                <li><a href="#">Cocktail Mojito</a></li>
+                                <li><a href="#">Cocktail B-52</a></li>
+                                <li><a href="#">Cocktail Bacardi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mega-images">
+                        <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Menu Image 1">
+                        <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Menu Image 2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Tìm kiếm đồ uống yêu thích...">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="javascript:void(0)" class="action-item" id="openBooking">
+                    <span class="label">Đặt bàn</span>
+                </a>
+                <a href="#" class="action-item">
+                    <i class="fa-solid fa-store"></i>
+                    <span class="label">Hệ thống cửa hàng</span>
+                </a>
+                <div class="auth-btns">
+                    <a href="#" class="btn-login">Đăng nhập</a>
+                    <a href="#" class="btn-register">Đăng ký</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Main Banner Section -->
+    <section class="main-banner-section">
+        <div class="container">
+            <div class="top-banner-styled">
+                <div class="banner-content">
+                    <h2>GIẢI KHÁT MÙA HÈ</h2>
+                    <h3>TƯƠI MÁT SẢNG KHOÁI</h3>
+                    <a href="#" class="btn-buy-now">MUA NGAY <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="feature-grid">
+                <!-- Card 1: Trà Trái Cây -->
+                <div class="feature-card bg-peach">
+                    <div class="card-content">
+                        <h4>Trà trái cây</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> Trà đào cam sả</li>
+                            <li><i class="fa-solid fa-circle"></i> Trà vải nhiệt đới</li>
+                            <li><i class="fa-solid fa-circle"></i> Trà dâu tằm</li>
+                            <li><i class="fa-solid fa-circle"></i> Trà mãng cầu</li>
+                            <li><i class="fa-solid fa-circle"></i> Trà thanh long</li>
+                        </ul>
+                        <a href="#" class="btn-shop-now">Mua sắm ngay</a>
+                    </div>
+                    <img src="fruit_tea_bg_removed.png" alt="Fruit Tea" class="card-img">
+                </div>
+
+                <!-- Card 2: Trà Sữa -->
+                <div class="feature-card bg-blue-light">
+                    <div class="card-content">
+                        <h4>Trà sữa</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> Trà sữa truyền thống</li>
+                            <li><i class="fa-solid fa-circle"></i> Trà sữa nướng</li>
+                            <li><i class="fa-solid fa-circle"></i> Khoai môn lệ phố</li>
+                            <li><i class="fa-solid fa-circle"></i> Matcha Latte</li>
+                            <li><i class="fa-solid fa-circle"></i> Trà sữa dâu</li>
+                        </ul>
+                        <a href="#" class="btn-shop-now">Mua sắm ngay</a>
+                    </div>
+                    <img src="milk_tea_bg_removed.png" alt="Milk Tea" class="card-img">
+                </div>
+
+                <!-- Card 3: Cà phê -->
+                <div class="feature-card bg-pink-light">
+                    <div class="card-content">
+                        <h4>Coffee</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> Cà phê đen đá</li>
+                            <li><i class="fa-solid fa-circle"></i> Cà phê sữa Sài Gòn</li>
+                            <li><i class="fa-solid fa-circle"></i> Bạc xỉu cốt dừa</li>
+                            <li><i class="fa-solid fa-circle"></i> Latte Caramel</li>
+                            <li><i class="fa-solid fa-circle"></i> Cappuccino</li>
+                        </ul>
+                        <a href="#" class="btn-shop-now">Mua sắm ngay</a>
+                    </div>
+                    <img src="coffee_bg_removed.png" alt="Coffee" class="card-img">
+                </div>
+
+                <!-- Card 4: Đồ uống khác -->
+                <div class="feature-card bg-green-light">
+                    <div class="card-content">
+                        <h4>Nước đóng chai</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-circle"></i> Nước ép cam tươi</li>
+                            <li><i class="fa-solid fa-circle"></i> Nước ép dưa hấu</li>
+                            <li><i class="fa-solid fa-circle"></i> Nước ép chanh dây</li>
+                            <li><i class="fa-solid fa-circle"></i> Nước khoáng có ga</li>
+                            <li><i class="fa-solid fa-circle"></i> Nước dừa xiêm</li>
+                        </ul>
+                        <a href="#" class="btn-shop-now">Mua sắm ngay</a>
+                    </div>
+                    <img src="bottled_drink_bg_removed.png" alt="Bottled Drinks" class="card-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotion Section (khuyến mãi) -->
+    <section class="promo-section">
+        <div class="container">
+            <div class="promo-box">
+                <div class="promo-header">
+                    <div class="header-left-info">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                        <div class="title-wrap">
+                            <h2>COMBO DEAL HỜI DÀNH CHO KHÁCH QUEN</h2>
+                            <p>Sản phẩm khuyến mãi mỗi ngày</p>
+                        </div>
+                    </div>
+                    <div class="header-right-link">
+                        <a href="#" class="view-all">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="promo-grid">
+                    <!-- Product 1 -->
+                    <div class="promo-card">
+                        <div class="card-top">
+                            <span class="discount-badge">-18%</span>
+                            <img src="https://images.pexels.com/photos/6412953/pexels-photo-6412953.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="Drink 1">
+                        </div>
+                        <div class="card-info">
+                            <h4 class="brand">Hashtag Tea</h4>
+                            <p class="name">Trà Sữa Khoai Môn Lệ Phố</p>
+                            <div class="tags">
+                                <span>Size M</span><span>Sữa tươi</span><span>+1</span>
+                            </div>
+                            <div class="price">
+                                <span class="current">45.000đ</span>
+                                <span class="old">55.000đ</span>
+                            </div>
+                            <div class="card-btns">
+                                <button class="btn-option">Tùy chọn</button>
+                                <button class="btn-quickview"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="promo-card">
+                        <div class="card-top">
+                            <span class="discount-badge">-27%</span>
+                            <img src="https://images.pexels.com/photos/8473335/pexels-photo-8473335.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="Drink 2">
+                        </div>
+                        <div class="card-info">
+                            <h4 class="brand">Tropical Fruit</h4>
+                            <p class="name">Trà Đào Cam Sả Đặc Biệt</p>
+                            <div class="tags">
+                                <span>Size L</span><span>Ít đường</span><span>+3</span>
+                            </div>
+                            <div class="price">
+                                <span class="current">49.000đ</span>
+                                <span class="old">68.000đ</span>
+                            </div>
+                            <div class="card-btns">
+                                <button class="btn-option">Tùy chọn</button>
+                                <button class="btn-quickview"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="promo-card">
+                        <div class="card-top">
+                            <span class="discount-badge">-15%</span>
+                            <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="Drink 3">
+                        </div>
+                        <div class="card-info">
+                            <h4 class="brand">Pure Brew</h4>
+                            <p class="name">Cà Phê Sữa Sài Gòn</p>
+                            <div class="tags">
+                                <span>Truyền thống</span><span>Ghiền</span>
+                            </div>
+                            <div class="price">
+                                <span class="current">29.000đ</span>
+                                <span class="old">35.000đ</span>
+                            </div>
+                            <div class="card-btns">
+                                <button class="btn-option">Tùy chọn</button>
+                                <button class="btn-quickview"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="promo-card">
+                        <div class="card-top">
+                            <span class="discount-badge">-23%</span>
+                            <img src="https://images.pexels.com/photos/4051607/pexels-photo-4051607.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="Drink 4">
+                        </div>
+                        <div class="card-info">
+                            <h4 class="brand">Hashtag Tea</h4>
+                            <p class="name">Sữa Tươi Trân Châu Đường Đen</p>
+                            <div class="tags">
+                                <span>Size M</span><span>Trân châu</span>
+                            </div>
+                            <div class="price">
+                                <span class="current">52.000đ</span>
+                                <span class="old">68.000đ</span>
+                            </div>
+                            <div class="card-btns">
+                                <button class="btn-option">Tùy chọn</button>
+                                <button class="btn-quickview"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="promo-card">
+                        <div class="card-top">
+                            <span class="discount-badge">-21%</span>
+                            <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=400"
+                                alt="Drink 5">
+                        </div>
+                        <div class="card-info">
+                            <h4 class="brand">Hashtag Tea</h4>
+                            <p class="name">Trà Vải Nhiệt Đới</p>
+                            <div class="tags">
+                                <span>Size L</span><span>Sen lạnh</span>
+                            </div>
+                            <div class="price">
+                                <span class="current">48.000đ</span>
+                                <span class="old">62.000đ</span>
+                            </div>
+                            <div class="card-btns">
+                                <button class="btn-option">Tùy chọn</button>
+                                <button class="btn-quickview"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Feature Grid & Menu Today (sản phẩm) -->
+    <section class="products-section">
+
+
+        <!-- Menu Today Section -->
+        <section class="menu-today">
+            <div class="container">
+                <div class="menu-header-wrap">
+                    <h2 class="menu-main-title">MENU HÔM NAY</h2>
+                    <p class="menu-sub-title">Xem menu hôm nay</p>
+                </div>
+
+                <div class="menu-tabs">
+                    <button class="tab-btn active">Cà phê thế giới</button>
+                    <button class="tab-btn">Cà phê pha Việt</button>
+                    <button class="tab-btn">Cà phê cảm hứng</button>
+                    <button class="tab-btn">Đồ uống</button>
+                </div>
+
+                <div class="menu-list-grid">
+                    <!-- Column 1 -->
+                    <div class="menu-column">
+                        <div class="menu-item">
+                            <div class="item-img">
+                                <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=100"
+                                    alt="Cà phê trứng">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-top">
+                                    <span class="item-name">Cà phê Trứng</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">50.000đ</span>
+                                </div>
+                                <p class="item-desc">Cà phê Trứng được chọn lọc kỹ lưỡng từ vùng...</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-img">
+                                <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=100"
+                                    alt="Cà phê mocha">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-top">
+                                    <span class="item-name">Cà phê mocha</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">66.000đ</span>
+                                </div>
+                                <p class="item-desc">Cà phê mocha được chọn lọc kỹ lưỡng từ vùng...</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-img">
+                                <img src="https://images.pexels.com/photos/849403/pexels-photo-849403.jpeg?auto=compress&cs=tinysrgb&w=100"
+                                    alt="Cà phê Cappuccino">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-top">
+                                    <span class="item-name">Cà phê Cappuccino</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">300.000đ</span>
+                                </div>
+                                <p class="item-desc">Cà phê Cappuccino được chọn lọc kỹ lưỡng từ...</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-img">
+                                <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=100"
+                                    alt="Cà phê Espresso">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-top">
+                                    <span class="item-name">Cà phê Espresso</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">200.000đ</span>
+                                </div>
+                                <p class="item-desc">Cà phê Espresso được chọn lọc kỹ lưỡng từ...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="menu-column">
+                        <div class="menu-item">
+                            <div class="item-img">
+                                <img src="https://images.pexels.com/photos/1234914/pexels-photo-1234914.jpeg?auto=compress&cs=tinysrgb&w=100"
+                                    alt="The Caipirinha">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-top">
+                                    <span class="item-name">Cà phê The Caipirinha</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">50.000đ</span>
+                                </div>
+                                <p class="item-desc">Cà phê The Caipirinha được chọn lọc kỹ lướ...</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-img">
+                                <img src="https://images.pexels.com/photos/2396220/pexels-photo-2396220.jpeg?auto=compress&cs=tinysrgb&w=100"
+                                    alt="Cà phê Latte">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-top">
+                                    <span class="item-name">Cà phê Latte</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">130.000đ</span>
+                                </div>
+                                <p class="item-desc">Cà phê Latte được chọn lọc kỹ lưỡng từ vùng...</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-img">
+                                <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=100"
+                                    alt="Cà phê Espresso con panda">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-top">
+                                    <span class="item-name">Cà phê Espresso con panda</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">120.000đ</span>
+                                </div>
+                                <p class="item-desc">Cà phê Espresso con panda được chọn lọc kỹ...</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-img">
+                                <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=100"
+                                    alt="Cà phê Americano">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-top">
+                                    <span class="item-name">Cà phê Americano</span>
+                                    <span class="item-dots"></span>
+                                    <span class="item-price">150.000đ</span>
+                                </div>
+                                <p class="item-desc">Cà phê Americano được chọn lọc kỹ lưỡng từ...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-footer">
+                    <a href="#" class="btn-view-more">Xem thêm <i class="fa-solid fa-caret-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- News Section (banner tin tức) -->
+    <section class="news-section">
+        <!-- News Banner Section -->
+        <section class="news-banner">
+            <div class="container news-banner-flex">
+                <div class="banner-intro">
+                    <h2 class="banner-title">Chuyên mục <br> vào bếp</h2>
+                    <p class="banner-desc">Vào bếp cùng chuyên gia với nhiều công thức nấu ăn ngon mỗi ngày đơn giản dễ
+                        làm, hướng dẫn làm bánh, món mặn, món chay, món ăn theo các dịp lễ.</p>
+                    <a href="#" class="btn-banner-more">Xem Thêm</a>
+                </div>
+                <div class="banner-cards-row">
+                    <div class="small-news-card">
+                        <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="News 1">
+                        <p>4 lý do nên ăn "khoai lang" thường xuyên</p>
+                    </div>
+                    <div class="small-news-card">
+                        <img src="https://images.pexels.com/photos/1194030/pexels-photo-1194030.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="News 2">
+                        <p>Sai lầm thường gặp khi ngâm chanh đào với mật ong</p>
+                    </div>
+                    <div class="small-news-card">
+                        <img src="https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=400"
+                            alt="News 3">
+                        <p>Dùng thực phẩm chiên thế nào để không ảnh hưởng sức khỏe</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main News Grid Section -->
+        <section class="main-news-section">
+            <div class="container">
+                <div class="main-news-grid">
+                    <!-- News Card 1 -->
+                    <div class="main-news-card">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="Cooking 1">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Hướng dẫn cách pha trà trái cây thanh mát giải nhiệt mùa hè</h4>
+                            <p class="card-excerpt">Trà trái cây là lựa chọn tuyệt vời để giải nhiệt. Hãy cùng tìm hiểu
+                                những bí quyết để có một ly trà chuẩn vị...</p>
+                            <div class="card-bottom">
+                                <span class="card-date"><i class="fa-regular fa-calendar"></i> 23/04/2024</span>
+                                <a href="#" class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 2 -->
+                    <div class="main-news-card">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/2664443/pexels-photo-2664443.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="Cooking 2">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Bí quyết làm trân châu đường đen dai ngon tại nhà</h4>
+                            <p class="card-excerpt">Bạn hoàn toàn có thể tự tay làm trân châu đường đen ngon như ngoài
+                                tiệm với những nguyên liệu đơn giản...</p>
+                            <div class="card-bottom">
+                                <span class="card-date"><i class="fa-regular fa-calendar"></i> 23/04/2024</span>
+                                <a href="#" class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Card 3 -->
+                    <div class="main-news-card">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                alt="Cooking 3">
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Cà phê muối - Xu hướng đồ uống độc đáo năm 2024</h4>
+                            <p class="card-excerpt">Sự kết hợp giữa vị mặn của muối và vị đắng của cà phê tạo nên một
+                                hương vị khó quên mà bạn nhất định phải thử...</p>
+                            <div class="card-bottom">
+                                <span class="card-date"><i class="fa-regular fa-calendar"></i> 23/04/2024</span>
+                                <a href="#" class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Section (social) -->
+        <section class="social-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="main-title">KẾT NỐI VỚI CHÚNG TÔI</h2>
+                    <p class="sub-title">Theo dõi Hashtag Tea trên mạng xã hội để cập nhật tin tức mới nhất</p>
+                </div>
+                <div class="social-grid">
+                    <div class="social-item logo-item">
+                        <img src="https://img.icons8.com/color/144/facebook-new.png" alt="Facebook">
+                        <div class="overlay"><i class="fa-brands fa-facebook-f"></i></div>
+                    </div>
+                    <div class="social-item logo-item">
+                        <img src="https://img.icons8.com/color/144/instagram-new.png" alt="Instagram">
+                        <div class="overlay"><i class="fa-brands fa-instagram"></i></div>
+                    </div>
+                    <div class="social-item logo-item">
+                        <img src="https://img.icons8.com/color/144/tiktok.png" alt="TikTok">
+                        <div class="overlay"><i class="fa-brands fa-tiktok"></i></div>
+                    </div>
+                    <div class="social-item logo-item">
+                        <img src="https://img.icons8.com/color/144/youtube-play.png" alt="YouTube">
+                        <div class="overlay"><i class="fa-brands fa-youtube"></i></div>
+                    </div>
+                    <div class="social-item logo-item">
+                        <img src="https://img.icons8.com/color/144/shopee.png" alt="Shopee">
+                        <div class="overlay"><i class="fa-solid fa-cart-shopping"></i></div>
+                    </div>
+                    <div class="social-item logo-item">
+                        <img src="https://img.icons8.com/color/144/zalo.png" alt="Zalo">
+                        <div class="overlay"><i class="fa-solid fa-comment-dots"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Time Section (thời gian hoạt động) -->
+        <section class="time-section">
+            <div class="container">
+                <div class="time-wrapper">
+                    <div class="time-header">
+                        <span class="sub-brand">Master Coffee</span>
+                        <h2 class="main-title">THỜI GIAN HOẠT ĐỘNG</h2>
+                        <div class="divider">
+                            <span class="diamond"></span>
+                        </div>
+                    </div>
+                    <p class="time-desc">Master Coffee là quán cà phê với những hương vị cà phê thơm ngon đặc trưng kết hợp với không gian tuyệt đẹp, âm nhạc phong phú tạo nên phong cách sang trọng, lịch sự, gần gũi. Phong cách riêng biệt chỉ Master mới có.</p>
+                    
+                    <div class="time-columns">
+                        <div class="time-col">
+                            <h3>Thứ 2 - Thứ 6 hàng tuần</h3>
+                            <p>7am - 11am</p>
+                            <p>11am - 10pm</p>
+                        </div>
+                        <div class="time-col">
+                            <h3>Thứ 7 - Chủ nhật hàng tuần</h3>
+                            <p>8am - 11 am</p>
+                            <p>11am - 9pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="time-footer">
+                        <div class="hotline-box">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png" alt="Delivery" class="delivery-icon">
+                            <div class="hotline-text">
+                                <span>Hotline đặt hàng</span>
+                                <strong>19006750</strong>
+                            </div>
+                        </div>
+                        <button class="btn-order-now">ĐẶT HÀNG NGAY</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Connect Section -->
+        <section class="social-connect-section">
+            <div class="social-carousel">
+                <!-- Youtube -->
+                <div class="social-item text-item yt-bg">
+                    <i class="fa-solid fa-quote-left bg-quote"></i>
+                    <div class="text-content">
+                        <h3>Kết Nối Youtube</h3>
+                        <p>Khám phá hành trình cùng Hashtag Tea</p>
+                    </div>
+                </div>
+                <div class="social-item img-item">
+                    <div class="bg-img" style="background-image: url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <i class="fa-brands fa-youtube social-icon"></i>
+                        <h4>Youtube</h4>
+                        <p>@hashtagtea</p>
+                        <a href="#" class="btn-explore yt-btn">
+                            <span class="btn-text">KHÁM PHÁ</span>
+                            <span class="btn-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tiktok -->
+                <div class="social-item text-item tt-bg">
+                    <i class="fa-solid fa-quote-left bg-quote"></i>
+                    <div class="text-content">
+                        <h3>Kết Nối Tiktok</h3>
+                        <p>Cùng chúng tôi hòa nhịp xu hướng Tiktok</p>
+                    </div>
+                </div>
+                <div class="social-item img-item">
+                    <div class="bg-img" style="background-image: url('https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <i class="fa-brands fa-tiktok social-icon"></i>
+                        <h4>Tiktok</h4>
+                        <p>@hashtagtea</p>
+                        <a href="#" class="btn-explore tt-btn">
+                            <span class="btn-text">KHÁM PHÁ</span>
+                            <span class="btn-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Facebook -->
+                <div class="social-item text-item fb-bg">
+                    <i class="fa-solid fa-quote-left bg-quote"></i>
+                    <div class="text-content">
+                        <h3>Kết Nối Facebook</h3>
+                        <p>Cập nhật tin tức mới nhất từ chúng tôi</p>
+                    </div>
+                </div>
+                <div class="social-item img-item">
+                    <div class="bg-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <i class="fa-brands fa-facebook-f social-icon"></i>
+                        <h4>Facebook</h4>
+                        <p>@hashtagtea</p>
+                        <a href="#" class="btn-explore fb-btn">
+                            <span class="btn-text">KHÁM PHÁ</span>
+                            <span class="btn-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <div class="social-item text-item ins-bg">
+                    <i class="fa-solid fa-quote-left bg-quote"></i>
+                    <div class="text-content">
+                        <h3>Kết Nối Instagram</h3>
+                        <p>Khám phá không gian cực chill và đẹp mắt</p>
+                    </div>
+                </div>
+                <div class="social-item img-item">
+                    <div class="bg-img" style="background-image: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <i class="fa-brands fa-instagram social-icon"></i>
+                        <h4>Instagram</h4>
+                        <p>@hashtagtea</p>
+                        <a href="#" class="btn-explore ins-btn">
+                            <span class="btn-text">KHÁM PHÁ</span>
+                            <span class="btn-icon"><i class="fa-solid fa-chevron-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Section (phản hồi đánh giá) -->
+        <section class="feedback-section">
+            <div class="container">
+                <div class="feedback-wrapper">
+                    <div class="feedback-header">
+                        <div class="feedback-header-left">
+                            <span class="feedback-badge">PHẢN HỒI TỪ KHÁCH HÀNG</span>
+                            <h2 class="main-title">Khách Hàng Nói Gì?</h2>
+                            <p class="sub-title">Những lời chia sẻ chân thành từ khách hàng là động lực để Hashtag Tea không ngừng hoàn thiện và nâng cao chất lượng dịch vụ mỗi ngày.</p>
+                        </div>
+                        <div class="feedback-header-right">
+                            <div class="rating-block">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google" class="social-icon">
+                                <div class="rating-info">
+                                    <div class="rating-title">Đánh giá google</div>
+                                    <div class="rating-stars">
+                                        5.0 
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="rating-avatars">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="User">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="User">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="User">
+                                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop" alt="User">
+                                    <span class="badge">+5K</span>
+                                </div>
+                            </div>
+                            <div class="rating-block">
+                                <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" class="social-icon">
+                                <div class="rating-info">
+                                    <div class="rating-title">Đánh giá facebook</div>
+                                    <div class="rating-stars">
+                                        5.0 
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="rating-avatars">
+                                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=100&fit=crop" alt="User">
+                                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop" alt="User">
+                                    <img src="https://images.unsplash.com/photo-1488161628813-04466f87258a?w=100&h=100&fit=crop" alt="User">
+                                    <img src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?w=100&h=100&fit=crop" alt="User">
+                                    <span class="badge">+5K</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback-grid">
+                        <div class="feedback-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="content">"Mình rất hài lòng với dịch vụ chăm sóc tại Hashtag Tea. Không gian thư giãn, nhân viên nhẹ nhàng và tư vấn rất kỹ. Đồ uống ngon, chất lượng đảm bảo."</p>
+                            <div class="card-bottom">
+                                <div class="user">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" alt="User">
+                                    <div class="info">
+                                        <strong>Nguyễn Thảo - Hà Nội</strong>
+                                        <span>Nhân viên văn phòng</span>
+                                    </div>
+                                </div>
+                                <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                            </div>
+                        </div>
+                        <div class="feedback-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="content">"Ban đầu mình hơi ngại nhưng Hashtag Tea làm mình rất thoải mái. Thức uống ngon, không gian sạch sẽ, thư giãn đúng nghĩa sau giờ làm việc mệt mỏi."</p>
+                            <div class="card-bottom">
+                                <div class="user">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="User">
+                                    <div class="info">
+                                        <strong>Minh Tuấn - TP.HCM</strong>
+                                        <span>Kỹ sư</span>
+                                    </div>
+                                </div>
+                                <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                            </div>
+                        </div>
+                        <div class="feedback-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="content">"Điều mình thích nhất ở Hashtag Tea là sự tận tâm. Nhân viên nhớ rõ sở thích của mình mỗi lần quay lại. Dịch vụ chất lượng nhưng giá rất hợp lý."</p>
+                            <div class="card-bottom">
+                                <div class="user">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="User">
+                                    <div class="info">
+                                        <strong>Thu Hà - Đà Nẵng</strong>
+                                        <span>Kinh doanh</span>
+                                    </div>
+                                </div>
+                                <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feedback-pagination">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (câu hỏi thường gặp) -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-wrapper">
+                    <div class="faq-content">
+                        <span class="faq-badge">CÂU HỎI THƯỜNG GẶP</span>
+                        <h2 class="faq-main-title">Giải Đáp Thắc Mắc Cùng <br> <span>Hashtag Tea</span></h2>
+                        <p class="faq-desc">Nếu bạn không tìm thấy câu trả lời phù hợp, đừng ngần ngại liên hệ với chúng
+                            tôi qua hotline, email, hoặc fanpage để được hỗ trợ tốt nhất!</p>
+
+                        <div class="faq-list">
+                            <div class="faq-item active">
+                                <div class="faq-question">Hashtag Tea có dịch vụ giao hàng tận nơi không? <span
+                                        class="faq-icon"><i class="fa-solid fa-minus"></i></span></div>
+                                <div class="faq-answer" style="display: block;">Có, Hashtag Tea hợp tác với các đơn vị
+                                    vận chuyển như GrabFood, ShopeeFood và cũng có đội ngũ giao hàng riêng trong bán
+                                    kính 3km. Sản phẩm luôn được đóng gói cẩn thận để giữ trọn hương vị.</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Làm sao để đặt bàn cho nhóm đông người? <span
+                                        class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+                                <div class="faq-answer">Bạn có thể đặt bàn trực tiếp qua website này hoặc liên hệ
+                                    hotline 1900 6750 để chúng tôi sắp xếp không gian tốt nhất cho bạn. Chúng tôi có các
+                                    khu vực riêng tư cho nhóm từ 10-20 người.</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">Sản phẩm của quán có sử dụng nguyên liệu tự nhiên không? <span
+                                        class="faq-icon"><i class="fa-solid fa-plus"></i></span></div>
+                                <div class="faq-answer">Chúng tôi cam kết sử dụng 100% nguyên liệu tươi sạch, trà được ủ
+                                    mới mỗi ngày và trái cây tươi được nhập từ các nhà vườn uy tín, không sử dụng chất
+                                    bảo quản hay hương liệu nhân tạo.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-image">
+                        <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Hashtag Tea FAQ">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pre-Footer Service Section (Dịch vụ của chúng tôi) -->
+        <section class="pre-footer-services">
+            <div class="container">
+                <div class="services-wrapper">
+                    <div class="services-list">
+                        <h3 class="services-title">DỊCH VỤ CỦA CHÚNG TÔI</h3>
+                        <div class="service-item">
+                            <img src="https://img.icons8.com/color/48/delivery--v1.png" alt="Shipping">
+                            <div class="text">
+                                <strong>SHIP HÀNG NHANH CHÓNG</strong>
+                                <span>Giao hàng free nội thành Hà Nội và HCM</span>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="https://img.icons8.com/color/48/return-purchase.png" alt="Quality">
+                            <div class="text">
+                                <strong>CHẤT LƯỢNG MÓN ĂN HÀNG ĐẦU</strong>
+                                <span>Hỗ trợ trả hàng cho khách khi sản phẩm có lỗi</span>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="https://img.icons8.com/color/48/checked-truck.png" alt="Service">
+                            <div class="text">
+                                <strong>DỊCH VỤ CHĂM SÓC KHÁCH HÀNG TẬN TÂM</strong>
+                                <span>Khách hàng kiểm tra hàng trước khi nhận</span>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="https://img.icons8.com/color/48/trust.png" alt="Promo">
+                            <div class="text">
+                                <strong>ƯU ĐÃI KHUYẾN MÃI HẤP DẪN</strong>
+                                <span>Hỗ trợ khách hàng nhiều chương trình ưu đãi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services-visual">
+                        <img src="barista_transparent.png"
+                            alt="Barista" class="delivery-man">
+                        <div class="animated-bg">
+                            <div class="city-sketch"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Overlap -->
+                <div class="newsletter-overlap">
+                    <div class="newsletter-inner">
+                        <h3>Đăng ký email để nhận được ưu đãi mới nhất của chúng tôi</h3>
+                        <p>Rất hân hạnh được phục vụ bạn. Chúc bạn có trải nghiệm tuyệt vời với dịch vụ của Hashtag Tea
+                        </p>
+                        <form class="newsletter-input-group">
+                            <input type="email" placeholder="Nhập email của bạn tại đây...">
+                            <button type="submit">ĐĂNG KÝ NGAY</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-main-content">
+                    <div class="footer-col about">
+                        <a href="#" class="footer-logo">HASHTAG TEA</a>
+                        <p class="footer-desc">Hashtag Tea là điểm đến lý tưởng của bạn để thưởng thức trà sữa, cà phê
+                            và các loại đồ uống cao cấp với mức giá cạnh tranh nhất.</p>
+                        <ul class="footer-contact">
+                            <li><i class="fa-regular fa-envelope"></i> support@hashtagtea.vn</li>
+                            <li><i class="fa-solid fa-location-dot"></i> 70 Lữ Gia, Phường 15, Quận 11, TP. Hồ Chí Minh
+                            </li>
+                            <li><i class="fa-solid fa-phone"></i> 1900 6750</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Chăm sóc khách hàng</h4>
+                        <ul>
+                            <li><a href="#">Câu hỏi thường gặp</a></li>
+                            <li><a href="#">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#">Hình thức thanh toán</a></li>
+                            <li><a href="#">Bán hàng doanh nghiệp</a></li>
+                            <li><a href="#">Tra cứu bảo hành</a></li>
+                            <li><a href="#">Hướng dẫn sử dụng</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Chính sách bán hàng</h4>
+                        <ul>
+                            <li><a href="#">Chính sách bảo hành</a></li>
+                            <li><a href="#">Chính sách đổi trả</a></li>
+                            <li><a href="#">Chính sách bảo mật</a></li>
+                            <li><a href="#">Chính sách trả góp</a></li>
+                            <li><a href="#">Chính sách giao hàng</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Dịch vụ và thông tin khác</h4>
+                        <ul>
+                            <li><a href="#">Giới thiệu về Hashtag Tea</a></li>
+                            <li><a href="#">Liên hệ với chúng tôi</a></li>
+                            <li><a href="#">Hệ thống cửa hàng</a></li>
+                            <li><a href="#">Tra cứu đơn hàng</a></li>
+                            <li><a href="#">Hoá đơn điện tử</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom-widgets">
+                    <div class="widget-item hotline">
+                        <h4>Hotline hỗ trợ</h4>
+                        <div class="hotline-line">
+                            <p>Tư vấn đặt bàn (Miễn phí)</p>
+                            <span class="phone-link">1900 6750 (Nhánh 1)</span>
+                        </div>
+                        <div class="hotline-line">
+                            <p>Góp ý, khiếu nại</p>
+                            <span class="phone-link">1900 6750 (8h00 - 22h00)</span>
+                        </div>
+                    </div>
+                    <div class="widget-item social">
+                        <h4>Kết nối với Hashtag Tea</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-icon fb"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon ins"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="social-icon shopee"><i class="fa-solid fa-cart-shopping"></i></a>
+                            <a href="#" class="social-icon tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="widget-item payments">
+                        <h4>Phương thức thanh toán</h4>
+                        <div class="payment-icons">
+                            <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
+                            <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard">
+                            <img src="https://img.icons8.com/color/48/paypal.png" alt="Paypal">
+                            <img src="https://img.icons8.com/color/48/google-pay.png" alt="GPay">
+                            <img src="https://img.icons8.com/color/48/apple-pay.png" alt="ApplePay">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-copyright">
+                    <p>&copy; Bản quyền thuộc về Thien TECH</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Booking Modal -->
+        <div class="modal-overlay" id="bookingModal">
+            <div class="booking-modal">
+                <button class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+                <h3>Đăng ký đặt bàn</h3>
+                <p>Vui lòng để lại thông tin, chúng tôi sẽ liên hệ xác nhận ngay!</p>
+                <form class="booking-form">
+                    <input type="text" placeholder="Họ và tên" required>
+                    <input type="text" placeholder="Số điện thoại" required>
+                    <div class="form-row">
+                        <input type="date" required>
+                        <input type="time" required>
+                    </div>
+                    <select>
+                        <option>Số lượng người</option>
+                        <option>1-2 người</option>
+                        <option>3-5 người</option>
+                        <option>Trên 5 người</option>
+                    </select>
+                    <textarea placeholder="Ghi chú thêm..."></textarea>
+                    <button type="submit" class="btn-confirm">Xác nhận đặt bàn</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Floating Social Widget -->
+        <div class="social-widget" id="socialWidget">
+            <div class="widget-menu">
+                <a href="#" class="widget-btn btn-facebook" title="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span class="btn-label">Facebook</span>
+                </a>
+                <a href="https://zalo.me/0901234567" class="widget-btn btn-zalo" title="Zalo">
+                    <img src="https://img.icons8.com/color/48/zalo.png" alt="Zalo">
+                    <span class="btn-label">Zalo</span>
+                </a>
+                <a href="tel:19006750" class="widget-btn btn-tel" title="Hotline">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="btn-label">Gọi ngay</span>
+                </a>
+                <a href="javascript:void(0)" class="widget-btn btn-booking" id="widgetBooking" title="Đặt bàn">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span class="btn-label">Đặt bàn</span>
+                </a>
+            </div>
+            <button class="widget-trigger" id="widgetTrigger">
+                <i class="fa-solid fa-comments"></i>
+            </button>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>

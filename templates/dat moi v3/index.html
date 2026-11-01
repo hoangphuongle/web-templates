@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Đất Mới – Dịch vụ xe bus đưa đón sân bay Cam Ranh Nha Trang</title>
+    <meta name="description" content="Bus Đất Mới chuyên dịch vụ xe bus, limousine đưa đón sân bay Cam Ranh – Nha Trang. An toàn, đúng giờ, giá chỉ từ 60.000đ. Đặt vé ngay!">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Outfit:wght@400;600;700;900&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="https://hoangphuongle.github.io/web-templates/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        Chốt ngay qua Zalo
+      </a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
+
+
+    <!-- ============ HEADER ============ -->
+    <header class="site-header">
+
+        <!-- Layer 1: Top Marquee Banner -->
+        <div class="header-marquee">
+            <div class="marquee-track">
+                <span class="marquee-content">
+                    <i class="fa-solid fa-bus"></i> Bus Đất Mới – Đồng hành trên mọi hành trình! &nbsp;&bull;&nbsp;
+                    Hotline đặt vé: <strong>0966 282 388</strong> &nbsp;&bull;&nbsp;
+                    Giá chỉ từ <strong>60.000đ</strong> &nbsp;&bull;&nbsp;
+                    An toàn – Đúng giờ – Tiện lợi &nbsp;&bull;&nbsp;
+                    <i class="fa-solid fa-bus"></i> Bus Đất Mới – Đồng hành trên mọi hành trình! &nbsp;&bull;&nbsp;
+                    Hotline đặt vé: <strong>0966 282 388</strong> &nbsp;&bull;&nbsp;
+                    Giá chỉ từ <strong>60.000đ</strong> &nbsp;&bull;&nbsp;
+                    An toàn – Đúng giờ – Tiện lợi &nbsp;&bull;&nbsp;
+                </span>
+            </div>
+        </div>
+
+        <!-- Layer 2: Main Header Bar -->
+        <div class="header-main">
+            <div class="container header-main-inner">
+
+                <!-- Mobile Hamburger -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Left: Navigation Menu -->
+                <nav class="main-nav-v3">
+                    <a href="#" class="nav-link active">Trang chủ</a>
+                    <a href="#" class="nav-link">Về chúng tôi</a>
+                    <a href="#" class="nav-link has-dropdown">Dịch vụ <i class="fa-solid fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link">Tin tức</a>
+                    <a href="#" class="nav-link">Liên hệ</a>
+                </nav>
+
+                <!-- Center: Logo -->
+                <a href="#" class="logo-v3">
+                    <div class="logo-icon-wrap">
+                        <i class="fa-solid fa-bus-simple"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-brand">Đất Mới</span>
+                        <span class="logo-tagline">AIRPORT BUS</span>
+                    </div>
+                </a>
+
+                <!-- Right: Search + Utility Icons -->
+                <div class="header-right">
+                    <div class="header-search">
+                        <input type="text" placeholder="Bạn cần tìm gì?">
+                        <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                    <div class="header-icons">
+                        <a href="#" class="icon-btn" title="Lịch sử đặt vé">
+                            <i class="fa-solid fa-heart"></i>
+                            <span class="icon-badge">0</span>
+                        </a>
+                        <a href="#" class="icon-btn" title="Đặt vé">
+                            <i class="fa-solid fa-ticket"></i>
+                            <span class="icon-badge">0</span>
+                        </a>
+                        <a href="#" class="icon-btn" title="Tài khoản">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+    <!-- ============ HERO SLIDER ============ -->
+    <section class="hero-slider" id="heroSlider">
+        <div class="slider-wrapper">
+            <!-- Slides -->
+            <div class="slides-container" id="slidesContainer">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1200&auto=format&fit=crop" alt="Bus Đất Mới - Đưa đón sân bay">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <span class="slide-badge">Dịch vụ xe bus sân bay</span>
+                        <h2>Cam Ranh – Nha Trang</h2>
+                        <p>An toàn, đúng giờ, giá chỉ từ 60.000đ</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=1200&auto=format&fit=crop" alt="Limousine Đất Mới">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <span class="slide-badge">Limousine cao cấp</span>
+                        <h2>Thoải mái trên mọi hành trình</h2>
+                        <p>Ghế massage, wifi, nước uống miễn phí</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1200&auto=format&fit=crop" alt="Xe hợp đồng Đất Mới">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <span class="slide-badge">Xe hợp đồng du lịch</span>
+                        <h2>Đặt xe theo nhóm, giá ưu đãi</h2>
+                        <p>Phục vụ từ 7 – 45 chỗ, linh hoạt lộ trình</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Arrow Controls -->
+            <button class="slider-arrow arrow-left" onclick="changeSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-arrow arrow-right" onclick="changeSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+
+            <!-- Dots -->
+            <div class="slider-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+                <span class="dot" onclick="goToSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BOOKING BAR ============ -->
+    <section class="booking-bar">
+        <div class="container">
+            <!-- Top Row: Price + Ticket Type | Total | Social -->
+            <div class="booking-top">
+                <div class="booking-price-area">
+                    <div class="price-display">60.000đ<span>/lượt</span></div>
+                    <div class="ticket-type">
+                        <label class="radio-label">
+                            <input type="radio" name="ticketType" value="one-way" checked>
+                            <span class="radio-custom"></span>
+                            Vé 1 chiều
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="ticketType" value="round-trip">
+                            <span class="radio-custom"></span>
+                            Vé khứ hồi
+                        </label>
+                    </div>
+                </div>
+                <div class="booking-total">
+                    Tổng tiền : <strong>60.000đ</strong>
+                </div>
+                <div class="booking-social">
+                    <a href="#" title="Zalo"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="social-icon-img"></a>
+                    <span class="social-sep">|</span>
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                    <span class="social-sep">|</span>
+                    <a href="mailto:busdatmoi@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i> Email</a>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Form Fields -->
+            <div class="booking-form">
+                <div class="form-field">
+                    <label>Gói dịch vụ</label>
+                    <div class="field-input">
+                        <select>
+                            <option>Xe bus sân bay</option>
+                            <option>Limousine VIP</option>
+                            <option>Xe hợp đồng</option>
+                            <option>Du lịch theo nhóm</option>
+                        </select>
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label>Ngày đi</label>
+                    <div class="field-input">
+                        <input type="date">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label>Số người</label>
+                    <div class="field-input">
+                        <select>
+                            <option>1 người</option>
+                            <option>2 người</option>
+                            <option>3 người</option>
+                            <option>4 người</option>
+                            <option>5+ người</option>
+                        </select>
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label>Số điện thoại</label>
+                    <div class="field-input">
+                        <input type="tel" placeholder="Nhập SĐT của bạn">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                </div>
+                <button class="booking-submit" type="button">
+                    Gửi yêu cầu đặt vé
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ POLICY STRIP ============ -->
+    <section class="policy-strip">
+        <div class="container">
+            <div class="policy-grid">
+                <div class="policy-item">
+                    <div class="policy-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="policy-text">
+                        <strong>10.000+ khách hàng hài lòng</strong>
+                        <span>Tin tưởng & đồng hành</span>
+                    </div>
+                </div>
+                <div class="policy-item">
+                    <div class="policy-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="policy-text">
+                        <strong>98% đánh giá tích cực</strong>
+                        <span>Chất lượng được kiểm chứng</span>
+                    </div>
+                </div>
+                <div class="policy-item">
+                    <div class="policy-icon">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <div class="policy-text">
+                        <strong>Thanh toán đa dạng</strong>
+                        <span>Tiền mặt, chuyển khoản, ví điện tử</span>
+                    </div>
+                </div>
+                <div class="policy-item">
+                    <div class="policy-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div class="policy-text">
+                        <strong>Hỗ trợ 24/7</strong>
+                        <span>Luôn sẵn sàng phục vụ bạn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ABOUT / INTRO ============ -->
+    <section class="about-section">
+        <div class="about-deco-leaf top-left">
+            <i class="fa-solid fa-road"></i>
+        </div>
+        <div class="about-deco-leaf bottom-right">
+            <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="container">
+            <div class="about-grid">
+                <!-- Left: Image -->
+                <div class="about-image">
+                    <div class="about-img-frame">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=600&auto=format&fit=crop" alt="Đội xe Bus Đất Mới">
+                        <div class="about-img-border"></div>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="about-content">
+                    <span class="about-subtitle">Về Chúng Tôi</span>
+                    <h2 class="about-title-v2">Bus Đất Mới</h2>
+                    <p class="about-desc">
+                        <strong>Bus Đất Mới</strong> tự hào là đơn vị cung cấp dịch vụ vận chuyển hành khách chất lượng cao tại Khánh Hòa. Với đội ngũ tài xế giàu kinh nghiệm và hệ thống xe đời mới, Bus Đất Mới khẳng định là đơn vị cung cấp giải pháp di chuyển an toàn và tiện lợi hàng đầu đến thời điểm hiện tại.
+                    </p>
+
+                    <!-- Accordion -->
+                    <div class="about-accordion">
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Tầm Nhìn</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>Trở thành thương hiệu vận tải hành khách số 1 tại khu vực miền Trung, kết nối mọi nẻo đường với dịch vụ chuẩn quốc tế.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Sứ Mệnh</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>Mang đến cho khách hàng những chuyến đi an toàn, thoải mái và đúng giờ nhất, đóng góp vào sự phát triển du lịch địa phương.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Triết Lý Kinh Doanh</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>Khách hàng là trung tâm của mọi hoạt động. Sự hài lòng của hành khách là thước đo thành công của Bus Đất Mới.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Lời Cam kết</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <p>Cam kết khởi hành đúng giờ, không bắt khách dọc đường, giá vé niêm yết minh bạch và phục vụ tận tâm trong suốt hành trình.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICES SECTION ============ -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title-wrap">
+                <h2 class="section-title">DỊCH VỤ</h2>
+            </div>
+        </div>
+
+        <div class="services-wrapper">
+            <!-- Service 1: Text Left, Image Right -->
+            <div class="service-row row-light">
+                <div class="service-content text-left">
+                    <h3>Dịch vụ xe bus đưa đón sân bay</h3>
+                    <p>
+                        Khi chưa có đường hàng không hay đường sắt thì mọi hoạt động di chuyển đều dựa vào đường bộ. Ngày nay, khi nhiều loại hình giao thông phát triển thì đường bộ vẫn luôn là tuyến giao thông chủ chốt, huyết mạch.
+                    </p>
+                    <p>
+                        Trong vận chuyển hành khách cũng vậy. Dù có rất nhiều phương thức nhưng xe bus luôn chiếm vị trí, vai trò quan trọng. Đặc biệt là trong tuyến đường cố định sân bay Cam Ranh về trung tâm Nha Trang và ngược lại.
+                    </p>
+                </div>
+                <div class="service-icon-center point-right">
+                    <div class="diamond-icon">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+                </div>
+                <div class="service-image img-right">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop" alt="Xe bus sân bay">
+                </div>
+            </div>
+
+            <!-- Service 2: Image Left, Text Right -->
+            <div class="service-row row-primary">
+                <div class="service-image img-left">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop" alt="Xe limousine">
+                </div>
+                <div class="service-icon-center point-left">
+                    <div class="diamond-icon">
+                        <i class="fa-solid fa-van-shuttle"></i>
+                    </div>
+                </div>
+                <div class="service-content text-right text-white">
+                    <h3>Dịch vụ xe limousine đưa đón sân bay</h3>
+                    <p>
+                        Dịch vụ di chuyển bằng limousine là cách gọi quen thuộc của vận chuyển hành khách bằng xe VIP. Nói một cách khác chính là vận chuyển khách hàng bằng dòng xe cao cấp tiện nghi.
+                    </p>
+                    <p>
+                        Dịch vụ di chuyển limousine hiện nay được mở rộng với khá nhiều danh mục tuyến đường. Ngoài ra, vận chuyển bằng xe VIP sẽ nhanh hơn, mang tính riêng tư cao. Vì vậy, đây chính là một phương thức được rất nhiều khách hàng ưa chuộng.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Service 3: Text Left, Image Right -->
+            <div class="service-row row-light">
+                <div class="service-content text-left">
+                    <h3>Dịch vụ xe đưa đón tham quan các điểm du lịch</h3>
+                    <p>
+                        Việc khai thác thêm hình thức vận tải này nhằm đáp ứng các nhu cầu di chuyển tham quan của du khách khi đến Nha Trang, giúp khách hàng có thêm nhiều lựa chọn cho hành trình của mình và đảm bảo hiệu quả trải nghiệm tốt nhất.
+                    </p>
+                    <p>
+                        Ngày nay, với sự tiến bộ của công nghệ, dịch vụ thuê xe du lịch trở thành ngành vận tải dịch vụ hiện đại, chiếm một nhân tố quan trọng trong hoạt động trải nghiệm văn hóa địa phương.
+                    </p>
+                </div>
+                <div class="service-icon-center point-right">
+                    <div class="diamond-icon">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                </div>
+                <div class="service-image img-right">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop" alt="Tham quan du lịch">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROMO / COMBO SECTION ============ -->
+    <section class="promo-section">
+        <div class="container">
+            <div class="promo-header">
+                <h2 class="promo-title">ƯU ĐÃI ĐỘC QUYỀN TỪ BUS ĐẤT MỚI</h2>
+            </div>
+            
+            <div class="promo-grid">
+                <!-- Card 1 -->
+                <div class="promo-card">
+                    <div class="promo-bg" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="promo-content">
+                        <h3>COMBO SÂN BAY</h3>
+                        <p>Vé khứ hồi sân bay Cam Ranh giảm ngay 20% khi đặt trước qua website hoặc Hotline.</p>
+                        <a href="#" class="promo-link">Xem thêm <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="promo-card">
+                    <div class="promo-bg" style="background-image: url('https://images.unsplash.com/photo-1503220317375-aaad61436b1b?q=80&w=600&auto=format&fit=crop');"></div>
+                    <div class="promo-content">
+                        <h3>COMBO DU LỊCH</h3>
+                        <p>Thuế xe tham quan nguyên ngày giá ưu đãi, tặng kèm nước suối và khăn lạnh cao cấp.</p>
+                        <a href="#" class="promo-link">Xem thêm <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ REVIEWS SECTION ============ -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-wrapper">
+                
+                <!-- Reviews Header -->
+                <div class="reviews-header">
+                    <div class="rh-left">
+                        <span class="rh-pill">PHẢN HỒI TỪ KHÁCH HÀNG</span>
+                        <h2>Khách Hàng Nói Gì?</h2>
+                        <p>Những lời chia sẻ chân thành từ hành khách là động lực để Bus Đất Mới không ngừng hoàn thiện và nâng cao chất lượng dịch vụ mỗi ngày.</p>
+                    </div>
+                    
+                    <div class="rh-right">
+                        <!-- Facebook Widget -->
+                        <div class="social-widget widget-fb">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg" alt="Facebook" class="widget-logo">
+                            <div class="widget-info">
+                                <span class="w-title">Theo dõi fanpage</span>
+                                <div class="w-stars">
+                                    <span class="w-score">5.0</span>
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="widget-avatars">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="User">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" alt="User">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" alt="User">
+                                <div class="avatar-count">+10K</div>
+                            </div>
+                        </div>
+
+                        <!-- Google Widget -->
+                        <div class="social-widget widget-gg">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="widget-logo">
+                            <div class="widget-info">
+                                <span class="w-title">Đánh giá google</span>
+                                <div class="w-stars">
+                                    <span class="w-score">4.9</span>
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Cards -->
+                <div class="reviews-grid">
+                    <!-- Card 1 -->
+                    <div class="review-card">
+                        <div class="rc-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="rc-text">
+                            "Mình rất hài lòng với dịch vụ xe đưa đón sân bay của Bus Đất Mới. Xe mới, không gian sạch sẽ, tài xế lái xe an toàn và tư vấn nhiệt tình. Giá cả cực kỳ hợp lý so với chất lượng."
+                        </p>
+                        <div class="rc-user">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Nguyễn Thảo">
+                            <div class="rc-user-info">
+                                <h4>Nguyễn Thảo – Hà Nội</h4>
+                                <span>Nhân viên văn phòng</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-quote-right rc-quote"></i>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="review-card">
+                        <div class="rc-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="rc-text">
+                            "Ban đầu mình hơi ngại đi xe khách nhưng Bus Đất Mới làm mình rất thoải mái. Đón khách đúng giờ, không bắt khách dọc đường, có điều hòa mát mẻ đúng nghĩa thư giãn sau chuyến bay dài."
+                        </p>
+                        <div class="rc-user">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" alt="Minh Tuấn">
+                            <div class="rc-user-info">
+                                <h4>Minh Tuấn – TP.HCM</h4>
+                                <span>Kỹ sư</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-quote-right rc-quote"></i>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="review-card">
+                        <div class="rc-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="rc-text">
+                            "Điều mình thích nhất ở Bus Đất Mới là sự tận tâm. Nhân viên trực tổng đài hỗ trợ đổi vé cực nhanh. Xe đi êm ái, dịch vụ chất lượng vượt mức mong đợi so với các nhà xe khác."
+                        </p>
+                        <div class="rc-user">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop" alt="Thu Hà">
+                            <div class="rc-user-info">
+                                <h4>Thu Hà – Đà Nẵng</h4>
+                                <span>Kinh doanh tự do</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-quote-right rc-quote"></i>
+                    </div>
+                </div>
+
+                <!-- Slider Dots -->
+                <div class="reviews-dots">
+                    <span class="rd-dot active"></span>
+                    <span class="rd-dot"></span>
+                    <span class="rd-dot"></span>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT / BOOKING SECTION ============ -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-box">
+                    <span class="cb-pill">TƯ VẤN & ĐẶT VÉ MIỄN PHÍ</span>
+                    <h2>Liên Hệ Bus Đất Mới Để Được Phục Vụ Tận Tâm</h2>
+                    <p>Đội ngũ tư vấn viên của Bus Đất Mới luôn sẵn sàng lắng nghe, tư vấn lịch trình chi tiết và đề xuất dòng xe phù hợp nhất với nhu cầu của bạn, giúp bạn có chuyến đi an toàn và thoải mái trọn vẹn.</p>
+                    
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Họ và tên" class="cb-input">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Điện thoại" class="cb-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" class="cb-input">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Địa chỉ / Điểm đón" class="cb-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <select class="cb-input cb-select">
+                                    <option value="" disabled selected hidden>Chọn dịch vụ</option>
+                                    <option value="bus">Xe bus sân bay</option>
+                                    <option value="limo">Xe Limousine VIP</option>
+                                    <option value="tour">Thuê xe tham quan</option>
+                                </select>
+                            </div>
+                            <div class="form-group has-icon">
+                                <input type="date" class="cb-input">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <textarea placeholder="Nội dung" class="cb-input cb-textarea" rows="2"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="cb-submit">Gửi thông tin <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ SECTION ============ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-wrapper">
+                <!-- Left Image -->
+                <div class="faq-image">
+                    <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?q=80&w=800&auto=format&fit=crop" alt="Nhân viên tổng đài đang nghe điện thoại">
+                </div>
+
+                <!-- Right Content -->
+                <div class="faq-content">
+                    <div class="faq-pill">
+                        <i class="fa-solid fa-circle-question"></i> Những câu hỏi thường gặp
+                    </div>
+                    <h2>Chúng tôi sẵn sàng trả lời mọi câu hỏi của bạn.</h2>
+                    <p class="faq-desc">Chúng tôi luôn sẵn lòng hỗ trợ và giải đáp mọi thắc mắc của bạn. Hãy liên hệ cho chúng tôi để được tư vấn nhanh chóng và chính xác nhất!</p>
+
+                    <div class="faq-accordion">
+                        <!-- Item 1 -->
+                        <div class="accordion-item active">
+                            <div class="accordion-header">
+                                <h3>Làm thế nào để đặt vé xe bus sân bay?</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="accordion-content">
+                                    Bạn có thể đặt vé trực tiếp trên website qua biểu mẫu đặt vé, hoặc gọi vào Hotline 0966 282 388. Đội ngũ nhân viên sẽ nhanh chóng xác nhận và giữ chỗ cho bạn.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3>Tuyến xe bus sân bay chạy những khung giờ nào?</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="accordion-content">
+                                    Xe bus sân bay Cam Ranh - Nha Trang hoạt động từ 05:00 sáng đến 21:00 tối mỗi ngày, tần suất 30 - 45 phút/chuyến để đảm bảo phục vụ tốt nhất các chuyến bay.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3>Tôi có thể thay đổi hoặc hủy vé đã đặt không?</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="accordion-content">
+                                    Hoàn toàn có thể. Vui lòng liên hệ với tổng đài trước ít nhất 2 giờ so với giờ khởi hành để được hỗ trợ thay đổi lịch trình hoặc hủy vé miễn phí.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <h3>Công ty có dịch vụ thuê xe riêng tham quan không?</h3>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="accordion-content">
+                                    Có, Bus Đất Mới cung cấp dịch vụ thuê xe riêng 4 - 45 chỗ trọn gói tham quan Nha Trang, Đà Lạt, Phan Thiết với tài xế kinh nghiệm và xe đời mới.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="container">
+            <!-- Newsletter Banner -->
+            <div class="footer-newsletter">
+                <div class="fn-content">
+                    <h3>ĐĂNG KÝ NHẬN TIN</h3>
+                    <p>Đăng ký email để không bỏ lỡ các khuyến mãi hấp dẫn và cập nhật dịch vụ mới nhất từ chúng tôi!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Nhập địa chỉ email..." required>
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+                <div class="fn-image">
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=600&auto=format&fit=crop" alt="Tổng đài viên">
+                </div>
+            </div>
+
+            <!-- Footer Columns -->
+            <div class="footer-grid">
+                <!-- Column 1: Info -->
+                <div class="footer-col footer-col-main">
+                    <a href="#" class="footer-logo">
+                        <i class="fa-solid fa-bus-simple" style="font-size: 32px; margin-right: 10px;"></i>
+                        <span>Bus Đất Mới</span>
+                    </a>
+                    <p class="footer-desc">Bus Đất Mới - Dịch vụ xe đưa đón sân bay Cam Ranh - Nha Trang chất lượng cao, an toàn và tiện lợi.</p>
+                    <p class="footer-highlight">Giá siêu tốt - Phục vụ siêu tốc.</p>
+                    <ul class="footer-info">
+                        <li><strong>Địa chỉ:</strong> 10 Yersin, Phường Vạn Thắng, TP. Nha Trang</li>
+                        <li><strong>Điện thoại:</strong> 0966 282 388</li>
+                        <li><strong>Email:</strong> busdatmoi@gmail.com</li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Policy -->
+                <div class="footer-col">
+                    <h4>CHÍNH SÁCH</h4>
+                    <ul>
+                        <li><a href="#">Chính sách thành viên</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Chính sách đổi/hủy vé</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách bồi thường</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Guide -->
+                <div class="footer-col">
+                    <h4>HƯỚNG DẪN</h4>
+                    <ul>
+                        <li><a href="#">Hướng dẫn đặt vé</a></li>
+                        <li><a href="#">Quy định hành lý</a></li>
+                        <li><a href="#">Hướng dẫn thanh toán</a></li>
+                        <li><a href="#">Chương trình đối tác</a></li>
+                        <li><a href="#">Tìm kiếm chuyến đi</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Connect & Payment -->
+                <div class="footer-col">
+                    <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+                    <div class="fb-social new-social">
+                        <a href="#" class="social-fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-ig"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-yt"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="social-tt"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+
+                    <h4 class="mt-30">HÌNH THỨC THANH TOÁN</h4>
+                    <div class="payment-icons new-payment">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                </div>
+            <!-- Copyright -->
+            <div class="footer-copyright" style="text-align: center; padding-top: 30px; font-size: 14px; color: #777; border-top: 1px solid #e0e0e0; margin-top: 20px;">
+                &copy; 2026 Bus Đất Mới. Tất cả các quyền được bảo lưu.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle (hidden on desktop) -->
+    <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-title">Menu</span>
+            <button class="mobile-menu-close" onclick="toggleMobileMenu()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#" class="active">Trang chủ</a>
+            <a href="#">Về chúng tôi</a>
+            <a href="#">Dịch vụ</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+        <div class="mobile-menu-footer">
+            <p><i class="fa-solid fa-phone"></i> 0966 282 388</p>
+            <p><i class="fa-solid fa-envelope"></i> busdatmoi@gmail.com</p>
+        </div>
+    </div>
+
+    <!-- ============ FLOATING SOCIAL HUB ============ -->
+    <div class="floating-social-hub" id="floatingHub">
+        <!-- Sub Items (Hidden by default) -->
+        <div class="hub-items">
+            <a href="#" class="hub-item item-booking">
+                <span class="hub-tooltip">Đặt vé</span>
+                <div class="hub-icon"><i class="fa-solid fa-ticket"></i></div>
+            </a>
+            <a href="#" class="hub-item item-zalo">
+                <span class="hub-tooltip">Zalo</span>
+                <div class="hub-icon"><i class="fa-solid fa-comment-dots"></i></div>
+            </a>
+            <a href="#" class="hub-item item-tel">
+                <span class="hub-tooltip">Gọi điện</span>
+                <div class="hub-icon"><i class="fa-solid fa-phone"></i></div>
+            </a>
+            <a href="#" class="hub-item item-email">
+                <span class="hub-tooltip">Email</span>
+                <div class="hub-icon"><i class="fa-solid fa-envelope"></i></div>
+            </a>
+            <a href="#" class="hub-item item-fb">
+                <span class="hub-tooltip">Facebook</span>
+                <div class="hub-icon"><i class="fa-brands fa-facebook-f"></i></div>
+            </a>
+        </div>
+        
+        <!-- Main Toggle Button -->
+        <button class="hub-toggle" onclick="toggleSocialHub()">
+            <i class="fa-solid fa-headset icon-main"></i>
+            <i class="fa-solid fa-xmark icon-close"></i>
+        </button>
+    </div>
+
+    <script>
+    // Mobile Menu
+    function toggleMobileMenu() {
+        document.getElementById('mobileMenu').classList.toggle('open');
+        document.getElementById('mobileOverlay').classList.toggle('open');
+        document.body.classList.toggle('menu-open');
+    }
+
+    // Hero Slider
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const totalSlides = slides.length;
+    let autoSlideTimer;
+
+    function goToSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.remove('active');
+        
+        currentSlide = (index + totalSlides) % totalSlides;
+        
+        slides[currentSlide].classList.add('active');
+        if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+        
+        updateSliderPosition();
+        resetAutoSlide();
+    }
+
+    function updateSliderPosition() {
+        if(!slides[0]) return;
+        const containerWidth = document.querySelector('.slider-wrapper').offsetWidth;
+        const slideWidth = slides[0].offsetWidth;
+        const style = window.getComputedStyle(slides[0]);
+        const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+        
+        // Căn giữa slide đang active
+        const offset = (containerWidth - slideWidth) / 2 - parseFloat(style.marginLeft);
+        const translateX = offset - (currentSlide * (slideWidth + margin));
+        
+        document.getElementById('slidesContainer').style.transform = `translateX(${translateX}px)`;
+    }
+
+    function changeSlide(dir) {
+        goToSlide(currentSlide + dir);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = setInterval(() => changeSlide(1), 5000);
+    }
+
+    window.addEventListener('resize', updateSliderPosition);
+    setTimeout(updateSliderPosition, 100);
+
+    // Start auto-slide
+    resetAutoSlide();
+
+    // Ticket type price update
+    document.querySelectorAll('input[name="ticketType"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const priceDisplay = document.querySelector('.price-display');
+            const totalDisplay = document.querySelector('.booking-total strong');
+            if (this.value === 'round-trip') {
+                priceDisplay.innerHTML = '120.000đ<span>/khứ hồi</span>';
+                totalDisplay.textContent = '120.000đ';
+            } else {
+                priceDisplay.innerHTML = '60.000đ<span>/lượt</span>';
+                totalDisplay.textContent = '60.000đ';
+            }
+        });
+    });
+
+    // Accordion Logic
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const currentItem = header.parentElement;
+            const currentBody = currentItem.querySelector('.accordion-body');
+            
+            // Close all others
+            document.querySelectorAll('.accordion-item').forEach(item => {
+                if(item !== currentItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.accordion-body').style.maxHeight = null;
+                }
+            });
+
+            // Toggle current
+            currentItem.classList.toggle('active');
+            if (currentItem.classList.contains('active')) {
+                currentBody.style.maxHeight = currentBody.scrollHeight + "px";
+            } else {
+                currentBody.style.maxHeight = null;
+            }
+        });
+    });
+
+    // Open first accordion by default
+    if(accordionHeaders.length > 0) {
+        accordionHeaders[0].click();
+    }
+
+    // Social Hub Toggle
+    function toggleSocialHub() {
+        document.getElementById('floatingHub').classList.toggle('active');
+    }
+    </script>
+
+</body>
+</html>
