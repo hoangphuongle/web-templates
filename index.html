@@ -613,9 +613,50 @@ img { max-width:100%; display:block }
 /* svc icon svg */
 .svc-icon svg { width:26px; height:26px; display:block }
 
-/* ── REVEAL ── */
-.rv { opacity:0; transform:translateY(30px); transition:1s cubic-bezier(.2,.7,.2,1) }
+
+/* ── SCROLL REVEAL SYSTEM ── */
+:root { --ease-out: cubic-bezier(.16,1,.3,1) }
+
+/* Base: fade up */
+.rv {
+  opacity:0;
+  transform:translateY(36px);
+  transition: opacity .75s var(--ease-out), transform .75s var(--ease-out);
+  transition-delay: var(--d, 0s);
+}
 .rv.show { opacity:1; transform:none }
+
+/* From left */
+.rv-l {
+  opacity:0; transform:translateX(-40px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+  transition-delay: var(--d, 0s);
+}
+.rv-l.show { opacity:1; transform:none }
+
+/* From right */
+.rv-r {
+  opacity:0; transform:translateX(40px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+  transition-delay: var(--d, 0s);
+}
+.rv-r.show { opacity:1; transform:none }
+
+/* Scale up */
+.rv-s {
+  opacity:0; transform:scale(.93) translateY(20px);
+  transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
+  transition-delay: var(--d, 0s);
+}
+.rv-s.show { opacity:1; transform:none }
+
+/* Fade only (no movement) */
+.rv-f {
+  opacity:0;
+  transition: opacity 1s ease;
+  transition-delay: var(--d, 0s);
+}
+.rv-f.show { opacity:1 }
 
 /* ── HERO CARD FLOAT ANIMATION ── */
 @keyframes floatA { 0%,100%{transform:translateY(0) rotate(var(--r))} 50%{transform:translateY(-10px) rotate(var(--r))} }
@@ -854,7 +895,7 @@ img { max-width:100%; display:block }
   <div class="tpl-list" id="tplList">
 
     <!-- 1: Spa -->
-    <div class="tpl-row rv" data-cat="spa">
+    <div class="tpl-row rv-l" data-cat="spa">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag">Spa & Wellness</span>
         <div class="tpl-browser">
@@ -917,7 +958,7 @@ img { max-width:100%; display:block }
     <div class="tpl-divider"></div>
 
     <!-- 3: Nail -->
-    <div class="tpl-row rv" data-cat="nail">
+    <div class="tpl-row rv-r" data-cat="nail">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#b8382a">Nail · Phố cổ</span>
         <div class="tpl-browser">
@@ -979,7 +1020,7 @@ img { max-width:100%; display:block }
     <div class="tpl-divider"></div>
 
     <!-- 5: Education -->
-    <div class="tpl-row rv" data-cat="edu">
+    <div class="tpl-row rv-l" data-cat="edu">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#1e3a5f">Giáo dục · Khóa học</span>
         <div class="tpl-browser">
@@ -1043,7 +1084,7 @@ img { max-width:100%; display:block }
     <div class="tpl-divider"></div>
 
     <!-- 7: Bus V2 -->
-    <div class="tpl-row rv" data-cat="transport">
+    <div class="tpl-row rv-r" data-cat="transport">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#15803d">Xe &amp; Vận tải</span>
         <div class="tpl-browser">
@@ -1103,7 +1144,7 @@ img { max-width:100%; display:block }
     <div class="tpl-divider"></div>
 
     <!-- 9: Green Hotel 1 -->
-    <div class="tpl-row rv" data-cat="hotel">
+    <div class="tpl-row rv-l" data-cat="hotel">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#065f46">Khách sạn &amp; Resort</span>
         <div class="tpl-browser">
@@ -1164,7 +1205,7 @@ img { max-width:100%; display:block }
     <div class="tpl-divider"></div>
 
     <!-- 11: Hashtag Tea -->
-    <div class="tpl-row rv" data-cat="drink">
+    <div class="tpl-row rv-r" data-cat="drink">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#0f172a;color:#06b6d4">Đồ uống &amp; Trà sữa</span>
         <div class="tpl-browser">
@@ -1225,7 +1266,7 @@ img { max-width:100%; display:block }
     <div class="tpl-divider"></div>
 
     <!-- 13: Pizza Lab -->
-    <div class="tpl-row rv" data-cat="restaurant">
+    <div class="tpl-row rv-l" data-cat="restaurant">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#dc2626">Nhà hàng &amp; Pizza</span>
         <div class="tpl-browser">
@@ -1286,7 +1327,7 @@ img { max-width:100%; display:block }
     <div class="tpl-divider"></div>
 
     <!-- 15: Pizza King -->
-    <div class="tpl-row rv" data-cat="restaurant">
+    <div class="tpl-row rv-r" data-cat="restaurant">
       <div class="tpl-mockup">
         <span class="tpl-mockup-tag" style="background:#7c1010;color:#fca5a5">Nhà hàng &amp; Pizza</span>
         <div class="tpl-browser">
@@ -1366,7 +1407,7 @@ img { max-width:100%; display:block }
     <div class="sec-label rv">Dịch vụ</div>
     <h2 class="sec-h2 rv">Làm được gì cho bạn?</h2>
     <div class="svc-grid">
-      <div class="svc-card rv">
+      <div class="svc-card rv-s">
         <div class="svc-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#0d0d0d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
@@ -1377,7 +1418,7 @@ img { max-width:100%; display:block }
         <p>Chọn mẫu ưng, mình thay thông tin, logo, màu sắc, hình ảnh của bạn. Nhanh, đẹp, tiết kiệm nhất.</p>
         <div class="svc-price">1.500.000đ <small>/ website</small></div>
       </div>
-      <div class="svc-card rv">
+      <div class="svc-card rv-s">
         <div class="svc-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#0d0d0d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 20h9"/>
@@ -1388,7 +1429,7 @@ img { max-width:100%; display:block }
         <p>Thiết kế mới hoàn toàn theo thương hiệu bạn. Độc quyền, không trùng ai, đậm bản sắc riêng.</p>
         <div class="svc-price">3.000.000đ <small>/ website</small></div>
       </div>
-      <div class="svc-card rv">
+      <div class="svc-card rv-s">
         <div class="svc-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="#0d0d0d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
@@ -1475,7 +1516,7 @@ img { max-width:100%; display:block }
     <h2 class="sec-h2 rv">Họ đã có web đẹp</h2>
   </div>
   <div class="tst-grid">
-    <div class="tst-card rv">
+    <div class="tst-card rv-s">
       <div class="tst-stars">★★★★★</div>
       <p class="tst-text">Sau 4 ngày là có web chạy luôn. Khách lút vào Facebook thấy link là bấm vào người ta chạm tiệm. Nhận rất nhiều lịch hơn trước.</p>
       <div class="tst-author">
@@ -1483,7 +1524,7 @@ img { max-width:100%; display:block }
         <div><div class="tst-name">Chị Lan</div><div class="tst-role">Chủ tiệm nail · TP.HCM</div></div>
       </div>
     </div>
-    <div class="tst-card rv">
+    <div class="tst-card rv-s">
       <div class="tst-stars">★★★★★</div>
       <p class="tst-text">Mình đưa link cho khách quốc tế xem, họ khen website rất professional. Giá cả hợp lý, tác phong nhanh, hướng dẫn tận tình.</p>
       <div class="tst-author">
@@ -1491,7 +1532,7 @@ img { max-width:100%; display:block }
         <div><div class="tst-name">Chị Hương</div><div class="tst-role">Chủ spa · Hội An</div></div>
       </div>
     </div>
-    <div class="tst-card rv">
+    <div class="tst-card rv-s">
       <div class="tst-stars">★★★★★</div>
       <p class="tst-text">Mình không biết gì về công nghệ mà vẫn có website đẹp. Chỉ cần gửi ảnh, bảng giá là xong. Rất dễ cho chủ tiệm bận rộn.</p>
       <div class="tst-author">
@@ -1504,7 +1545,7 @@ img { max-width:100%; display:block }
 
 <!-- CTA -->
 <section class="cta-section" id="lien-he">
-  <div class="cta-box rv">
+  <div class="cta-box rv-s">
     <h2>Sẵn sàng có<br>website đẹp?</h2>
     <p>Nhắn Zalo, mình tư vấn miễn phí trong 30 phút. Không cần biết gì về kỹ thuật.</p>
     <div class="cta-btns">
@@ -1574,14 +1615,29 @@ img { max-width:100%; display:block }
 </div>
 
 <script>
+// ── SCROLL REVEAL – multi-variant smooth system ──
 (()=>{
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target) }
-  }), { threshold:.08 });
-  document.querySelectorAll('.rv').forEach((el,i) => {
-    el.style.transitionDelay = (i % 5) * .08 + 's';
-    io.observe(el);
+  const QUERY = '.rv, .rv-l, .rv-r, .rv-s, .rv-f';
+
+  // ── Auto-stagger cards within grid parents ──
+  const GRIDS = '.svc-grid, .tst-grid, .pf-grid, .prc-grid, .filter-bar, .faq-list, .tpl-list';
+  document.querySelectorAll(GRIDS).forEach(grid => {
+    const children = grid.querySelectorAll(':scope > .rv, :scope > .rv-s, :scope > .rv-l, :scope > .rv-r, :scope > .rv-f, :scope > .faq-item, :scope > .svc-card, :scope > .tst-card, :scope > .prc-step, :scope > .pf-card');
+    children.forEach((el, i) => {
+      el.style.setProperty('--d', (i * 0.1) + 's');
+    });
   });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('show');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll(QUERY).forEach(el => io.observe(el));
 })();
 </script>
 
