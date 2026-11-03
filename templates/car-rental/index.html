@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carent. – Dịch Vụ Cho Thuê Xe Tự Lái & Du Lịch Cao Cấp</title>
+<meta name="description" content="Carent. – Nền tảng cho thuê xe tự lái và xe du lịch đời mới. Đa dạng phân khúc Sedan, SUV, Sport, Xe điện. Thủ tục 5 phút, giao xe tận nơi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
+html { scroll-behavior:smooth }
+body {
+  font-family:'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background:#f8fafc;
+  color:#0f172a;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+a { text-decoration:none; color:inherit }
+img { max-width:100%; display:block }
+button, input, select { font-family:inherit }
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #eff6ff;
+  --dark-bg: #090e1a;
+  --dark-card: #111827;
+  --dark-border: rgba(255,255,255,0.08);
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-light: #e2e8f0;
+  --radius-lg: 24px;
+  --radius-md: 14px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 10px 30px rgba(0,0,0,0.06);
+  --shadow-lg: 0 20px 40px rgba(15,23,42,0.08);
+}
+
+.container {
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* ── NAVBAR ── */
+.nav-wrap {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(226,232,240,0.8);
+  transition:all .3s ease;
+}
+.nav-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  height:76px;
+}
+.brand-logo {
+  font-size:1.55rem; font-weight:900; letter-spacing:-0.03em;
+  color:#0f172a; display:flex; align-items:center; gap:2px;
+}
+.brand-logo span { color:var(--primary) }
+
+.nav-links {
+  display:flex; align-items:center; gap:32px; list-style:none;
+}
+.nav-links a {
+  font-size:0.92rem; font-weight:600; color:#475569;
+  transition:color .2s;
+}
+.nav-links a:hover { color:var(--primary) }
+
+.nav-cta {
+  background:#0f172a; color:#fff;
+  padding:11px 22px; border-radius:var(--radius-full);
+  font-size:0.88rem; font-weight:700;
+  display:inline-flex; align-items:center; gap:6px;
+  transition:all .25s ease;
+}
+.nav-cta:hover { background:var(--primary); transform:translateY(-1px) }
+.nav-toggle {
+  display:none; background:none; border:none;
+  font-size:1.5rem; cursor:pointer; color:#0f172a;
+}
+
+/* ── HERO SECTION ── */
+.hero {
+  padding:140px 0 60px;
+  position:relative;
+  background:linear-gradient(180deg, #f1f5f9 0%, #f8fafc 100%);
+  overflow:hidden;
+}
+.hero-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(37,99,235,0.08); color:var(--primary);
+  padding:6px 16px; border-radius:var(--radius-full);
+  font-size:0.82rem; font-weight:700; letter-spacing:0.04em;
+  text-transform:uppercase; margin-bottom:16px;
+}
+.hero-tag-dot { width:8px; height:8px; border-radius:50%; background:var(--primary) }
+
+.hero-title-box {
+  position:relative; text-align:center; margin-bottom:20px;
+}
+.hero-watermark {
+  font-size:clamp(4.2rem, 14vw, 11rem);
+  font-weight:900;
+  letter-spacing:-0.05em;
+  color:#0f172a;
+  line-height:0.9;
+  margin-bottom:-40px;
+  user-select:none;
+}
+.hero-car-wrapper {
+  position:relative;
+  max-width:860px;
+  margin:0 auto;
+  z-index:2;
+}
+.hero-car-img {
+  width:100%; height:auto;
+  filter:drop-shadow(0 25px 35px rgba(15,23,42,0.18));
+  border-radius:24px;
+}
+
+/* Quick Search Widget */
+.search-widget {
+  background:#fff;
+  border-radius:20px;
+  padding:20px 28px;
+  box-shadow:var(--shadow-lg);
+  border:1px solid #e2e8f0;
+  max-width:960px;
+  margin:-40px auto 0;
+  position:relative;
+  z-index:10;
+  display:grid;
+  grid-template-columns:repeat(4, 1fr) auto;
+  gap:16px;
+  align-items:center;
+}
+.search-field {
+  display:flex; flex-direction:column; gap:4px;
+}
+.search-field label {
+  font-size:0.75rem; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.04em;
+}
+.search-field input, .search-field select {
+  border:none; outline:none; font-size:0.95rem; font-weight:700; color:#0f172a;
+  background:transparent; cursor:pointer;
+}
+.search-divider { width:1px; height:36px; background:#e2e8f0 }
+.search-btn {
+  background:var(--primary); color:#fff;
+  border:none; outline:none;
+  padding:14px 26px; border-radius:var(--radius-md);
+  font-weight:700; font-size:0.92rem;
+  cursor:pointer; transition:all .2s;
+  display:flex; align-items:center; gap:8px;
+  white-space:nowrap;
+}
+.search-btn:hover { background:var(--primary-hover); transform:scale(1.02) }
+
+/* Brand logos ticker */
+.brands-row {
+  display:flex; align-items:center; justify-content:center;
+  gap:40px; flex-wrap:wrap; margin-top:50px; opacity:0.65;
+}
+.brand-item {
+  font-size:1.15rem; font-weight:800; color:#64748b; letter-spacing:0.06em;
+  text-transform:uppercase; display:flex; align-items:center; gap:8px;
+}
+
+/* ── OUR SERVICES (DARK CONTAINER) ── */
+.services-section {
+  padding:50px 0;
+}
+.services-box {
+  background:var(--dark-bg);
+  border-radius:32px;
+  padding:64px 50px;
+  color:#fff;
+  box-shadow:0 25px 50px rgba(0,0,0,0.25);
+  position:relative;
+  overflow:hidden;
+}
+.services-box::before {
+  content:''; position:absolute; top:-50%; right:-20%; width:500px; height:500px;
+  background:radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+  pointer-events:none;
+}
+.services-header {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:40px; align-items:flex-end;
+  margin-bottom:48px;
+}
+.sec-tag-blue {
+  color:#60a5fa; font-size:0.82rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
+  display:inline-block; margin-bottom:10px;
+}
+.services-header h2 {
+  font-size:clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight:800; line-height:1.2; letter-spacing:-0.02em;
+}
+.services-header p {
+  color:#94a3b8; font-size:0.95rem; line-height:1.7;
+}
+
+.services-grid {
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;
+}
+.service-card {
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:32px 28px;
+  transition:all .3s ease;
+}
+.service-card:hover {
+  background:rgba(255,255,255,0.07);
+  transform:translateY(-4px);
+  border-color:rgba(96,165,250,0.3);
+}
+.service-icon {
+  width:52px; height:52px; border-radius:14px;
+  background:rgba(37,99,235,0.18); color:#60a5fa;
+  display:grid; place-items:center; font-size:1.4rem;
+  margin-bottom:20px;
+}
+.service-card h3 {
+  font-size:1.2rem; font-weight:700; margin-bottom:12px; color:#fff;
+}
+.service-card p {
+  color:#94a3b8; font-size:0.88rem; line-height:1.65;
+}
+
+/* ── HOW IT WORKS ── */
+.how-section {
+  padding:90px 0;
+}
+.how-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+}
+.how-left h2 {
+  font-size:clamp(1.9rem, 3.5vw, 2.6rem);
+  font-weight:800; line-height:1.2; letter-spacing:-0.02em;
+  margin:10px 0 36px;
+}
+.steps-list {
+  display:flex; flex-direction:column; gap:20px;
+}
+.step-item {
+  display:flex; gap:18px; align-items:flex-start;
+  padding:16px 20px; border-radius:16px;
+  transition:all .25s ease;
+  cursor:pointer;
+}
+.step-item.active, .step-item:hover {
+  background:#fff; box-shadow:var(--shadow-sm); border:1px solid #e2e8f0;
+}
+.step-num {
+  width:36px; height:36px; border-radius:50%;
+  background:#0f172a; color:#fff;
+  display:grid; place-items:center;
+  font-size:0.85rem; font-weight:800; flex-shrink:0;
+}
+.step-item.active .step-num { background:var(--primary) }
+.step-content h4 {
+  font-size:1.05rem; font-weight:700; margin-bottom:4px; color:#0f172a;
+}
+.step-content p {
+  font-size:0.86rem; color:#64748b; line-height:1.55;
+}
+
+/* How right preview mockup */
+.how-preview-card {
+  background:#fff;
+  border-radius:28px;
+  padding:32px;
+  box-shadow:var(--shadow-lg);
+  border:1px solid #e2e8f0;
+  position:relative;
+}
+.preview-badge-row {
+  display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;
+}
+.preview-title { font-size:0.9rem; font-weight:800; color:#0f172a; text-transform:uppercase; letter-spacing:0.04em }
+.preview-badge {
+  background:#0f172a; color:#fff; font-size:0.75rem; font-weight:800;
+  padding:4px 12px; border-radius:var(--radius-full);
+}
+.car-type-pills {
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin-bottom:28px;
+}
+.type-pill {
+  border-radius:12px; border:1px solid #e2e8f0; padding:10px 8px; text-align:center;
+  font-size:0.78rem; font-weight:700; color:#475569; background:#f8fafc;
+  display:flex; flex-direction:column; align-items:center; gap:4px;
+}
+.type-pill.active {
+  border-color:var(--primary); background:var(--primary-light); color:var(--primary);
+}
+
+.mini-car-list {
+  display:grid; grid-template-columns:1fr 1fr; gap:16px;
+}
+.mini-car-card {
+  border:1px solid #e2e8f0; border-radius:16px; padding:14px; background:#fff;
+}
+.mini-car-card img {
+  width:100%; height:85px; object-fit:contain; margin-bottom:10px;
+}
+.mini-car-name { font-size:0.88rem; font-weight:700; color:#0f172a }
+.mini-car-price { font-size:0.82rem; font-weight:800; color:var(--primary); margin-top:2px }
+.mini-car-meta { font-size:0.72rem; color:#94a3b8; display:flex; justify-content:space-between; margin-top:6px }
+
+/* ── CAR COLLECTION ── */
+.collection-section {
+  padding:80px 0 100px;
+  background:#fff;
+}
+.collection-header {
+  text-align:center; max-width:600px; margin:0 auto 36px;
+}
+.collection-header h2 {
+  font-size:clamp(1.9rem, 3.5vw, 2.6rem);
+  font-weight:800; letter-spacing:-0.02em; margin-top:8px;
+}
+
+.collection-filters {
+  display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:44px;
+}
+.c-filter-btn {
+  padding:10px 22px; border-radius:var(--radius-full);
+  border:1px solid #e2e8f0; background:#fff; color:#475569;
+  font-size:0.85rem; font-weight:700; cursor:pointer;
+  transition:all .2s ease;
+}
+.c-filter-btn:hover { border-color:#0f172a; color:#0f172a }
+.c-filter-btn.active { background:#0f172a; color:#fff; border-color:#0f172a }
+
+.cars-grid {
+  display:grid; grid-template-columns:repeat(3, 1fr); gap:26px;
+}
+.car-card {
+  background:#fff;
+  border-radius:20px;
+  border:1px solid #e2e8f0;
+  overflow:hidden;
+  transition:all .3s ease;
+  display:flex; flex-direction:column;
+}
+.car-card:hover {
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-md);
+  border-color:#cbd5e1;
+}
+.car-card-img-wrap {
+  position:relative;
+  background:#f1f5f9;
+  padding:28px 20px 20px;
+  text-align:center;
+  display:flex; align-items:center; justify-content:center;
+  min-height:190px;
+}
+.car-card-img-wrap img {
+  width:100%; max-height:140px; object-fit:contain;
+  transition:transform .3s ease;
+}
+.car-card:hover .car-card-img-wrap img {
+  transform:scale(1.05);
+}
+.car-badge {
+  position:absolute; top:14px; left:14px;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(6px);
+  padding:4px 10px; border-radius:var(--radius-full);
+  font-size:0.72rem; font-weight:800; color:#0f172a;
+  border:1px solid #e2e8f0;
+}
+.car-card-body {
+  padding:22px; display:flex; flex-direction:column; flex:1; justify-content:space-between;
+}
+.car-card-top {
+  display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;
+}
+.car-title { font-size:1.15rem; font-weight:800; color:#0f172a }
+.car-rating {
+  font-size:0.8rem; font-weight:700; color:#f59e0b; display:flex; align-items:center; gap:3px;
+}
+.car-specs {
+  display:flex; gap:12px; margin-bottom:16px; flex-wrap:wrap;
+}
+.car-spec-tag {
+  font-size:0.75rem; color:#64748b; background:#f8fafc;
+  padding:4px 10px; border-radius:6px; border:1px solid #e2e8f0;
+}
+.car-card-footer {
+  display:flex; justify-content:space-between; align-items:center;
+  padding-top:16px; border-top:1px solid #f1f5f9;
+}
+.car-price-box { display:flex; flex-direction:column }
+.car-price { font-size:1.25rem; font-weight:900; color:#0f172a }
+.car-price span { font-size:0.8rem; font-weight:600; color:#64748b }
+.car-book-btn {
+  background:var(--primary); color:#fff;
+  padding:10px 18px; border-radius:var(--radius-md);
+  font-size:0.84rem; font-weight:700;
+  transition:all .2s; border:none; cursor:pointer;
+}
+.car-book-btn:hover { background:var(--primary-hover) }
+
+/* ── GET THE APP / CTA SECTION ── */
+.app-section {
+  padding:60px 0 90px;
+  background:#f8fafc;
+}
+.app-card {
+  background:linear-gradient(135deg, #090e1a 0%, #1e293b 100%);
+  border-radius:32px;
+  padding:60px 50px;
+  color:#fff;
+  display:grid; grid-template-columns:1.2fr 0.8fr;
+  align-items:center; gap:50px;
+  position:relative; overflow:hidden;
+}
+.app-content h2 {
+  font-size:clamp(1.9rem, 3.5vw, 2.7rem);
+  font-weight:900; line-height:1.2; letter-spacing:-0.02em;
+  margin-bottom:18px;
+}
+.app-content p {
+  color:#94a3b8; font-size:0.96rem; line-height:1.7; margin-bottom:32px; max-width:500px;
+}
+.app-badges {
+  display:flex; gap:14px; flex-wrap:wrap;
+}
+.store-btn {
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15);
+  color:#fff; padding:12px 24px; border-radius:14px;
+  display:flex; align-items:center; gap:12px;
+  font-size:0.85rem; font-weight:700;
+  transition:all .25s ease;
+}
+.store-btn:hover {
+  background:#fff; color:#0f172a; transform:translateY(-2px);
+}
+.app-visual {
+  text-align:center; position:relative;
+}
+.app-visual img {
+  max-width:320px; margin:0 auto;
+  filter:drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
+
+/* ── FOOTER ── */
+.footer {
+  background:#090e1a;
+  color:#fff;
+  padding:70px 0 30px;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.footer-newsletter {
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:24px;
+  padding:36px 40px;
+  display:flex; justify-content:space-between; align-items:center;
+  gap:30px; margin-bottom:60px;
+}
+.fn-text h3 { font-size:1.35rem; font-weight:800; margin-bottom:4px }
+.fn-text p { color:#94a3b8; font-size:0.88rem }
+.fn-form {
+  display:flex; gap:10px; width:100%; max-width:440px;
+}
+.fn-form input {
+  flex:1; background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:14px 20px; border-radius:var(--radius-full);
+  color:#fff; font-size:0.88rem; outline:none;
+}
+.fn-form button {
+  background:var(--primary); color:#fff; border:none;
+  padding:14px 24px; border-radius:var(--radius-full);
+  font-weight:700; font-size:0.88rem; cursor:pointer;
+  transition:background .2s;
+}
+.fn-form button:hover { background:var(--primary-hover) }
+
+.footer-grid {
+  display:grid; grid-template-columns:1.5fr repeat(3, 1fr);
+  gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.fg-brand p { color:#94a3b8; font-size:0.88rem; margin-top:14px; max-width:300px }
+.fg-col h4 { font-size:0.95rem; font-weight:800; margin-bottom:18px; color:#fff }
+.fg-col ul { list-style:none; display:flex; flex-direction:column; gap:10px }
+.fg-col a { color:#94a3b8; font-size:0.86rem; transition:color .2s }
+.fg-col a:hover { color:#fff }
+
+.footer-bottom {
+  padding-top:24px; display:flex; justify-content:space-between; align-items:center;
+  font-size:0.82rem; color:#64748b;
+}
+
+/* ── BOOKING MODAL ── */
+.modal-overlay {
+  position:fixed; inset:0; z-index:200;
+  background:rgba(15,23,42,0.6);
+  backdrop-filter:blur(6px);
+  display:none; place-items:center; padding:20px;
+}
+.modal-overlay.open { display:grid }
+.modal-box {
+  background:#fff; border-radius:24px; max-width:500px; width:100%;
+  padding:32px; box-shadow:0 25px 60px rgba(0,0,0,0.3);
+  position:relative; animation:modalPop .25s ease;
+}
+@keyframes modalPop {
+  from { opacity:0; transform:scale(0.95) }
+  to { opacity:1; transform:scale(1) }
+}
+.modal-close {
+  position:absolute; top:20px; right:20px;
+  background:#f1f5f9; border:none; width:34px; height:34px; border-radius:50%;
+  cursor:pointer; font-size:1.1rem; display:grid; place-items:center;
+}
+.modal-title { font-size:1.4rem; font-weight:800; margin-bottom:6px }
+.modal-desc { font-size:0.88rem; color:#64748b; margin-bottom:20px }
+.form-group { margin-bottom:16px }
+.form-group label { display:block; font-size:0.8rem; font-weight:700; margin-bottom:6px; color:#334155 }
+.form-group input, .form-group select {
+  width:100%; padding:12px 16px; border-radius:12px; border:1px solid #cbd5e1;
+  font-size:0.92rem; outline:none; transition:border-color .2s;
+}
+.form-group input:focus, .form-group select:focus { border-color:var(--primary) }
+.modal-submit {
+  width:100%; background:var(--primary); color:#fff;
+  border:none; padding:14px; border-radius:var(--radius-md);
+  font-weight:700; font-size:0.95rem; cursor:pointer; margin-top:10px;
+  transition:background .2s;
+}
+.modal-submit:hover { background:var(--primary-hover) }
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .search-widget { grid-template-columns:1fr 1fr; gap:20px }
+  .search-divider { display:none }
+  .services-grid { grid-template-columns:1fr }
+  .how-grid { grid-template-columns:1fr; gap:40px }
+  .cars-grid { grid-template-columns:repeat(2, 1fr) }
+  .footer-grid { grid-template-columns:1fr 1fr; gap:30px }
+}
+@media(max-width:768px){
+  .nav-links { display:none }
+  .nav-toggle { display:block }
+  .hero { padding:110px 0 40px }
+  .hero-watermark { font-size:3.6rem; margin-bottom:-20px }
+  .services-header { grid-template-columns:1fr; gap:16px }
+  .services-box { padding:40px 24px }
+  .cars-grid { grid-template-columns:1fr }
+  .app-card { grid-template-columns:1fr; padding:40px 24px; text-align:center }
+  .app-badges { justify-content:center }
+  .footer-newsletter { flex-direction:column; text-align:center; padding:28px 20px }
+  .fn-form { max-width:100% }
+  .footer-grid { grid-template-columns:1fr }
+  .search-widget { grid-template-columns:1fr; padding:20px }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="nav-wrap">
+  <div class="container nav-inner">
+    <a href="#" class="brand-logo">Carent<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#hero">Trang chủ</a></li>
+      <li><a href="#services">Dịch vụ</a></li>
+      <li><a href="#how">Quy trình</a></li>
+      <li><a href="#collection">Bảng giá xe</a></li>
+      <li><a href="#app">Tải ứng dụng</a></li>
+    </ul>
+    <a href="https://zalo.me/0974100372" target="_blank" class="nav-cta">
+      Đặt xe ngay ↗
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span> Cho thuê xe tự lái &amp; du lịch đời mới
+      </div>
+      <div class="hero-title-box">
+        <div class="hero-watermark">Car Rental</div>
+        <div class="hero-car-wrapper">
+          <img src="img/hero.png" alt="Carent Car Rental Hero Car" class="hero-car-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Search Widget -->
+    <div class="search-widget">
+      <div class="search-field">
+        <label>Địa điểm nhận xe</label>
+        <select id="srchLocation">
+          <option>Hà Nội (Sân bay Nội Bài)</option>
+          <option>TP. Hồ Chí Minh (Tân Sơn Nhất)</option>
+          <option>Đà Nẵng (Sân bay Đà Nẵng)</option>
+          <option>Nha Trang / Đà Lạt</option>
+        </select>
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <label>Ngày nhận xe</label>
+        <input type="date" value="2026-11-05">
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <label>Ngày trả xe</label>
+        <input type="date" value="2026-11-08">
+      </div>
+      <div class="search-divider"></div>
+      <div class="search-field">
+        <label>Phân khúc</label>
+        <select id="srchType">
+          <option value="all">Tất cả các dòng xe</option>
+          <option value="sedan">Sedan 4-5 chỗ</option>
+          <option value="suv">SUV / Crossover 7 chỗ</option>
+          <option value="sport">Xe thể thao cao cấp</option>
+          <option value="electric">Xe điện thông minh</option>
+        </select>
+      </div>
+      <button class="search-btn" onclick="openBooking('Tìm xe theo yêu cầu')">
+        Tìm xe ngay →
+      </button>
+    </div>
+
+    <!-- Brand Ticker -->
+    <div class="brands-row">
+      <div class="brand-item">TOYOTA</div>
+      <div class="brand-item">MERCEDES</div>
+      <div class="brand-item">BMW</div>
+      <div class="brand-item">AUDI</div>
+      <div class="brand-item">HYUNDAI</div>
+      <div class="brand-item">MAZDA</div>
+      <div class="brand-item">VINFAST</div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="services-box">
+      <div class="services-header">
+        <div>
+          <span class="sec-tag-blue">Our Services</span>
+          <h2>Dịch vụ cho thuê xe hàng đầu cho mọi chuyến đi</h2>
+        </div>
+        <p>Chúng tôi tự hào cung cấp các giải pháp di chuyển toàn diện, cam kết xe đời mới, bảo dưỡng định kỳ và dịch vụ hỗ trợ chu đáo nhất.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚗</div>
+          <h3>Xe bảo dưỡng định kỳ</h3>
+          <p>100% dàn xe được kiểm định an toàn nghiêm ngặt trước mỗi chuyến đi. Vệ sinh nội ngoại thất sạch sẽ, giao xe thơm tho đầy bình xăng.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛡️</div>
+          <h3>Thanh toán an toàn &amp; Rõ ràng</h3>
+          <p>Hợp đồng minh bạch, không phát sinh chi phí phụ vô lý. Thủ tục đặt cọc đơn giản và hoàn cọc siêu tốc sau khi kết thúc hành trình.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📞</div>
+          <h3>Hỗ trợ cứu hộ 24/7</h3>
+          <p>Đội ngũ kỹ thuật và CSKH luôn trực chiến 24/7 để hỗ trợ xử lý mọi tình huống cứu hộ trên mọi cung đường toàn quốc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="container">
+    <div class="how-grid">
+      <div class="how-left">
+        <span class="hero-tag"><span class="hero-tag-dot"></span> Quy trình đơn giản</span>
+        <h2>Quy trình 4 bước thuê xe nhanh chóng</h2>
+        <div class="steps-list">
+          <div class="step-item active">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h4>Chọn dòng xe bạn ưng ý</h4>
+              <p>Khám phá bộ sưu tập 200+ xe từ Sedan tiết kiệm xăng, SUV gia đình 7 chỗ đến xe thể thao mui trần.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h4>Đặt lịch và chọn ngày giờ</h4>
+              <p>Chọn địa điểm giao xe tận nhà, khách sạn hoặc sân bay cùng thời gian nhận và trả xe linh động.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h4>Xác nhận &amp; Đặt cọc an toàn</h4>
+              <p>Hệ thống hỗ trợ thanh toán cọc bảo đảm qua chuyển khoản hoặc thẻ, ký hợp đồng điện tử tiện lợi.</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h4>Nhận xe và tận hưởng chuyến đi</h4>
+              <p>Nhận chìa khóa xe tận nơi sau khi kiểm tra biên bản bàn giao, khởi hành hành trình tự do.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Mockup Card on Right -->
+      <div class="how-preview-card">
+        <div class="preview-badge-row">
+          <span class="preview-title">Phân khúc xe</span>
+          <span class="preview-badge">200+ Xe sẵn sàng</span>
+        </div>
+        <div class="car-type-pills">
+          <div class="type-pill active">
+            <span>🚗</span>
+            <span>Sedan</span>
+          </div>
+          <div class="type-pill">
+            <span>🚙</span>
+            <span>SUV</span>
+          </div>
+          <div class="type-pill">
+            <span>🏎️</span>
+            <span>Sport</span>
+          </div>
+          <div class="type-pill">
+            <span>⚡</span>
+            <span>Electric</span>
+          </div>
+        </div>
+        <div class="mini-car-list">
+          <div class="mini-car-card">
+            <img src="img/hero.png" alt="Toyota Corolla">
+            <div class="mini-car-name">Toyota Corolla</div>
+            <div class="mini-car-price">850.000đ / ngày</div>
+            <div class="mini-car-meta">
+              <span>Hà Nội</span>
+              <span style="color:#f59e0b">★ 4.9</span>
+            </div>
+          </div>
+          <div class="mini-car-card">
+            <img src="img/hero.png" alt="Toyota Yaris GR">
+            <div class="mini-car-name">Toyota Yaris GR</div>
+            <div class="mini-car-price">950.000đ / ngày</div>
+            <div class="mini-car-meta">
+              <span>TP.HCM</span>
+              <span style="color:#f59e0b">★ 4.8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTION -->
+<section class="collection-section" id="collection">
+  <div class="container">
+    <div class="collection-header">
+      <span class="hero-tag"><span class="hero-tag-dot"></span> Bảng giá cho thuê</span>
+      <h2>Bộ Sưu Tập Xe Đời Mới</h2>
+      <p style="color:#64748b;font-size:0.95rem;margin-top:8px">Đa dạng lựa chọn theo nhu cầu du lịch gia đình, công tác hoặc trải nghiệm xe sang.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="collection-filters">
+      <button class="c-filter-btn active" data-type="all">Tất cả</button>
+      <button class="c-filter-btn" data-type="sedan">Sedan</button>
+      <button class="c-filter-btn" data-type="suv">SUV &amp; 7 Chỗ</button>
+      <button class="c-filter-btn" data-type="sport">Xe Thể Thao</button>
+      <button class="c-filter-btn" data-type="electric">Xe Điện</button>
+    </div>
+
+    <!-- Cars Grid -->
+    <div class="cars-grid" id="carsGrid">
+
+      <!-- 1: Camry -->
+      <div class="car-card" data-cat="sedan">
+        <div class="car-card-img-wrap">
+          <span class="car-badge">Sedan Hạng D</span>
+          <img src="img/hero.png" alt="Toyota Camry">
+        </div>
+        <div class="car-card-body">
+          <div>
+            <div class="car-card-top">
+              <div class="car-title">Toyota Camry 2.5Q</div>
+              <div class="car-rating">★ 4.9 (128)</div>
+            </div>
+            <div class="car-specs">
+              <span class="car-spec-tag">5 Chỗ</span>
+              <span class="car-spec-tag">Số tự động</span>
+              <span class="car-spec-tag">Xăng cao cấp</span>
+            </div>
+          </div>
+          <div class="car-card-footer">
+            <div class="car-price-box">
+              <div class="car-price">1.200.000đ <span>/ngày</span></div>
+            </div>
+            <button class="car-book-btn" onclick="openBooking('Toyota Camry 2.5Q')">Đặt xe</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2: Mazda CX-5 -->
+      <div class="car-card" data-cat="suv">
+        <div class="car-card-img-wrap">
+          <span class="car-badge">SUV Gầm Cao</span>
+          <img src="img/hero.png" alt="Mazda CX-5">
+        </div>
+        <div class="car-card-body">
+          <div>
+            <div class="car-card-top">
+              <div class="car-title">Mazda CX-5 Premium</div>
+              <div class="car-rating">★ 4.8 (94)</div>
+            </div>
+            <div class="car-specs">
+              <span class="car-spec-tag">5 Chỗ</span>
+              <span class="car-spec-tag">Gầm cao</span>
+              <span class="car-spec-tag">Cửa sổ trời</span>
+            </div>
+          </div>
+          <div class="car-card-footer">
+            <div class="car-price-box">
+              <div class="car-price">1.100.000đ <span>/ngày</span></div>
+            </div>
+            <button class="car-book-btn" onclick="openBooking('Mazda CX-5 Premium')">Đặt xe</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3: Mercedes C300 -->
+      <div class="car-card" data-cat="sport">
+        <div class="car-card-img-wrap">
+          <span class="car-badge">Xe Sang / Thể Thao</span>
+          <img src="img/hero.png" alt="Mercedes C300 AMG">
+        </div>
+        <div class="car-card-body">
+          <div>
+            <div class="car-card-top">
+              <div class="car-title">Mercedes C300 AMG</div>
+              <div class="car-rating">★ 5.0 (76)</div>
+            </div>
+            <div class="car-specs">
+              <span class="car-spec-tag">5 Chỗ</span>
+              <span class="car-spec-tag">258 HP Turbo</span>
+              <span class="car-spec-tag">Nội thất da</span>
+            </div>
+          </div>
+          <div class="car-card-footer">
+            <div class="car-price-box">
+              <div class="car-price">2.200.000đ <span>/ngày</span></div>
+            </div>
+            <button class="car-book-btn" onclick="openBooking('Mercedes C300 AMG')">Đặt xe</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4: Hyundai SantaFe -->
+      <div class="car-card" data-cat="suv">
+        <div class="car-card-img-wrap">
+          <span class="car-badge">SUV 7 Chỗ</span>
+          <img src="img/hero.png" alt="Hyundai SantaFe">
+        </div>
+        <div class="car-card-body">
+          <div>
+            <div class="car-card-top">
+              <div class="car-title">Hyundai SantaFe HTRAC</div>
+              <div class="car-rating">★ 4.9 (142)</div>
+            </div>
+            <div class="car-specs">
+              <span class="car-spec-tag">7 Chỗ</span>
+              <span class="car-spec-tag">Máy dầu êm</span>
+              <span class="car-spec-tag">Dẫn động 4 bánh</span>
+            </div>
+          </div>
+          <div class="car-card-footer">
+            <div class="car-price-box">
+              <div class="car-price">1.400.000đ <span>/ngày</span></div>
+            </div>
+            <button class="car-book-btn" onclick="openBooking('Hyundai SantaFe HTRAC')">Đặt xe</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5: VinFast VF8 -->
+      <div class="car-card" data-cat="electric">
+        <div class="car-card-img-wrap">
+          <span class="car-badge">Xe Điện Thông Minh</span>
+          <img src="img/hero.png" alt="VinFast VF8 Plus">
+        </div>
+        <div class="car-card-body">
+          <div>
+            <div class="car-card-top">
+              <div class="car-title">VinFast VF8 Plus</div>
+              <div class="car-rating">★ 4.9 (88)</div>
+            </div>
+            <div class="car-specs">
+              <span class="car-spec-tag">5 Chỗ</span>
+              <span class="car-spec-tag">Pin 400km</span>
+              <span class="car-spec-tag">Hỗ trợ lái ADAS</span>
+            </div>
+          </div>
+          <div class="car-card-footer">
+            <div class="car-price-box">
+              <div class="car-price">1.300.000đ <span>/ngày</span></div>
+            </div>
+            <button class="car-book-btn" onclick="openBooking('VinFast VF8 Plus')">Đặt xe</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6: Honda Civic -->
+      <div class="car-card" data-cat="sedan">
+        <div class="car-card-img-wrap">
+          <span class="car-badge">Sedan Thể Thao</span>
+          <img src="img/hero.png" alt="Honda Civic RS">
+        </div>
+        <div class="car-card-body">
+          <div>
+            <div class="car-card-top">
+              <div class="car-title">Honda Civic RS Turbo</div>
+              <div class="car-rating">★ 4.8 (65)</div>
+            </div>
+            <div class="car-specs">
+              <span class="car-spec-tag">5 Chỗ</span>
+              <span class="car-spec-tag">VTEC Turbo</span>
+              <span class="car-spec-tag">Cảm giác lái hay</span>
+            </div>
+          </div>
+          <div class="car-card-footer">
+            <div class="car-price-box">
+              <div class="car-price">1.000.000đ <span>/ngày</span></div>
+            </div>
+            <button class="car-book-btn" onclick="openBooking('Honda Civic RS Turbo')">Đặt xe</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GET THE APP / MOBILE EXPERIENCE -->
+<section class="app-section" id="app">
+  <div class="container">
+    <div class="app-card">
+      <div class="app-content">
+        <span class="sec-tag-blue">Get the App!</span>
+        <h2>Trải nghiệm thuê xe dễ dàng ngay trong tầm tay</h2>
+        <p>Tải ứng dụng Carent. để tra cứu xe trống theo thời gian thực qua định vị GPS, nhận mã ưu đãi giảm 15% cho chuyến đi đầu tiên và mở cửa xe thông minh.</p>
+        <div class="app-badges">
+          <a href="https://zalo.me/0974100372" target="_blank" class="store-btn">
+            <span>📲</span>
+            <div>
+              <div style="font-size:0.68rem;opacity:0.8">Tư vấn nhanh qua</div>
+              <div style="font-size:0.95rem">Zalo: 0974 100 372</div>
+            </div>
+          </a>
+          <a href="tel:0974100372" class="store-btn">
+            <span>📞</span>
+            <div>
+              <div style="font-size:0.68rem;opacity:0.8">Hotline cứu hộ</div>
+              <div style="font-size:0.95rem">0974 100 372</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="app-visual">
+        <img src="img/hero.png" alt="Mobile App Experience">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-newsletter">
+      <div class="fn-text">
+        <h3>Nhận ưu đãi thuê xe cuối tuần</h3>
+        <p>Đăng ký nhận mã giảm giá lên đến 20% mỗi thứ Năm hàng tuần.</p>
+      </div>
+      <form class="fn-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký nhận ưu đãi!')">
+        <input type="email" placeholder="Nhập email của bạn..." required>
+        <button type="submit">Đăng ký</button>
+      </form>
+    </div>
+
+    <div class="footer-grid">
+      <div class="fg-brand">
+        <div class="brand-logo" style="color:#fff">Carent<span>.</span></div>
+        <p>Nền tảng cho thuê xe tự lái và xe du lịch hàng đầu, mang đến những chuyến hành trình an tâm và đẳng cấp.</p>
+      </div>
+      <div class="fg-col">
+        <h4>Dịch Vụ</h4>
+        <ul>
+          <li><a href="#collection">Thuê xe tự lái</a></li>
+          <li><a href="#collection">Thuê xe có tài xế</a></li>
+          <li><a href="#collection">Đưa đón sân bay</a></li>
+          <li><a href="#collection">Thuê xe tháng doanh nghiệp</a></li>
+        </ul>
+      </div>
+      <div class="fg-col">
+        <h4>Về Carent</h4>
+        <ul>
+          <li><a href="#how">Quy trình thuê xe</a></li>
+          <li><a href="#services">Chính sách bảo hiểm</a></li>
+          <li><a href="#services">Hỗ trợ khẩn cấp</a></li>
+          <li><a href="#services">Câu hỏi thường gặp</a></li>
+        </ul>
+      </div>
+      <div class="fg-col">
+        <h4>Liên Hệ</h4>
+        <ul>
+          <li><a href="tel:0974100372">Hotline: 0974 100 372</a></li>
+          <li><a href="https://zalo.me/0974100372" target="_blank">Zalo tư vấn 24/7</a></li>
+          <li><a href="#">Hà Nội · Đà Nẵng · TP.HCM</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Carent. All rights reserved. Demo template by Hoang Phuong.</div>
+      <div>Bảo mật thông tin · Điều khoản sử dụng</div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL BOOKING POPUP -->
+<div class="modal-overlay" id="bookingModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeBooking()">✕</button>
+    <div class="modal-title">Đặt Thuê Xe Nhanh</div>
+    <div class="modal-desc" id="modalCarName">Vui lòng để lại thông tin để nhân viên liên hệ xác nhận xe.</div>
+    <form onsubmit="handleBooking(event)">
+      <div class="form-group">
+        <label>Họ và tên</label>
+        <input type="text" id="bmName" placeholder="Nguyễn Văn A" required>
+      </div>
+      <div class="form-group">
+        <label>Số điện thoại / Zalo</label>
+        <input type="tel" id="bmPhone" placeholder="09xx xxx xxx" required>
+      </div>
+      <div class="form-group">
+        <label>Địa điểm &amp; Ngày nhận xe</label>
+        <input type="text" id="bmNote" placeholder="Ví dụ: Nhận xe tại Sân bay Nội Bài ngày mai">
+      </div>
+      <button type="submit" class="modal-submit">Gửi yêu cầu qua Zalo →</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// Filter collection cars
+document.querySelectorAll('.c-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.c-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.type;
+    document.querySelectorAll('.car-card').forEach(card => {
+      const cat = card.dataset.cat;
+      card.style.display = (filter === 'all' || cat === filter) ? 'flex' : 'none';
+    });
+  });
+});
+
+// Steps click active
+document.querySelectorAll('.step-item').forEach(step => {
+  step.addEventListener('click', () => {
+    document.querySelectorAll('.step-item').forEach(s => s.classList.remove('active'));
+    step.classList.add('active');
+  });
+});
+
+// Modal booking logic
+let selectedCar = '';
+function openBooking(carName) {
+  selectedCar = carName;
+  document.getElementById('modalCarName').innerText = 'Bạn đang chọn: ' + carName + '. Điền thông tin để nhận báo giá nhanh nhất.';
+  document.getElementById('bookingModal').classList.add('open');
+}
+function closeBooking() {
+  document.getElementById('bookingModal').classList.remove('open');
+}
+document.getElementById('bookingModal').addEventListener('click', (e) => {
+  if (e.target.id === 'bookingModal') closeBooking();
+});
+function handleBooking(e) {
+  e.preventDefault();
+  const name = document.getElementById('bmName').value;
+  const phone = document.getElementById('bmPhone').value;
+  const note = document.getElementById('bmNote').value;
+  const msg = encodeURIComponent(`Chào bạn, tôi muốn thuê xe: ${selectedCar}\nTên: ${name}\nSĐT: ${phone}\nGhi chú: ${note}`);
+  window.open(`https://zalo.me/0974100372`, '_blank');
+  closeBooking();
+}
+</script>
+
+</body>
+</html>
