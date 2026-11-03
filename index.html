@@ -403,10 +403,6 @@ img { max-width:100%; display:block }
 
   /* Footer */
   .ft-grid { grid-template-columns:1fr }
-
-  /* Sticky bar */
-  .sticky-bar { padding:10px 4% }
-  .sticky-bar p { display:none }
 }
 
 /* ── RESPONSIVE: 360px (Tiny phone) ── */
@@ -668,29 +664,6 @@ img { max-width:100%; display:block }
 .sc-card:nth-child(5) { animation:floatA 5.8s ease-in-out infinite }
 .sc-card:nth-child(6) { animation:floatB 6.4s ease-in-out infinite }
 .sc-card:hover { animation:none }
-
-/* ── STICKY BOTTOM BAR ── */
-.sticky-bar {
-  position:fixed; bottom:0; left:0; right:0; z-index:50;
-  background:rgba(13,13,13,.97); backdrop-filter:blur(14px);
-  border-top:1px solid rgba(255,255,255,.08);
-  padding:14px 5%;
-  display:flex; align-items:center; justify-content:space-between; gap:16px;
-  transform:translateY(100%); transition:.4s cubic-bezier(.2,.8,.2,1);
-  box-shadow:0 -8px 40px rgba(0,0,0,.25);
-}
-.sticky-bar.show { transform:none }
-.sticky-bar p { color:#aaa; font-size:.85rem; margin:0 }
-.sticky-bar p b { color:#fff }
-.sticky-bar-btns { display:flex; gap:8px; flex-shrink:0 }
-.sticky-bar a {
-  padding:9px 20px; border-radius:999px;
-  font-size:.82rem; font-weight:700;
-  white-space:nowrap;
-}
-.sticky-bar .sb-main { background:#0068ff; color:#fff }
-.sticky-bar .sb-ghost { border:1.5px solid rgba(255,255,255,.15); color:#aaa }
-@media(max-width:600px){ .sticky-bar p { display:none } }
 
 /* ── FILTER TABS ── */
 .filter-bar {
@@ -1621,15 +1594,6 @@ img { max-width:100%; display:block }
   </div>
   <div class="ft-copy">© 2026 Hoang Phuong | Thiết kế Website</div>
 </footer>
-
-<!-- STICKY BOTTOM BAR -->
-<div class="sticky-bar" id="stickyBar">
-  <p><b>Thích mẫu nào?</b> Nhắn Zalo — tư vấn miễn phí, bàn giao 7 ngày.</p>
-  <div class="sticky-bar-btns">
-    <a href="#templates" class="sb-ghost" id="sb-view">Xem mẫu</a>
-    <a href="https://zalo.me/0974100372" target="_blank" class="sb-main" id="sb-zalo">Nhắn Zalo ngay</a>
-  </div>
-</div>
 
 <!-- FLOATS -->
 <div class="floats">
