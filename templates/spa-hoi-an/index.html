@@ -14,53 +14,9 @@
 ║  MẪU SPA – "HOÀI SPA" (Phong cách Hội An)                         ║
 ║  Dịch vụ: Foot massage · Body massage · Da mặt · Gội đầu          ║
 ║  - BASE (bên dưới) → BẮT BUỘC.                                   ║
-║  - Mỗi SECTION = 1 khối độc lập (<style> + HTML + <script>).     ║
-║    Copy từ "BẮT ĐẦU" đến "KẾT THÚC" để dán sang trang khác.       ║
-║  - BASE SCRIPT ở cuối trang → BẮT BUỘC.                          ║
-╚══════════════════════════════════════════════════════════════════╝
--->
-
-<!-- ═══════════════ BASE: BẮT ĐẦU (bắt buộc) ═══════════════ -->
-<style>
-:root{
-  /* ĐỔI MÀU THƯƠNG HIỆU TẠI ĐÂY */
-  --ochre:#e3a93b; --ochre-l:#f4d488; --wall:#f3e3b8;
-  --red:#b8382a; --red-d:#8c2419;
-  --wood:#3d2417; --wood-l:#6b4329;
-  --jade:#3f6b55; --jade-d:#2c4f3e; --paper:#fbf4e4;
-  --ink:#2f1f16; --muted:#7a6250;
-  --radius:12px;
-  --font-body:'Be Vietnam Pro',sans-serif;
-  --font-head:'Lora',serif;
-  --font-script:'Dancing Script',cursive;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.7;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.35;background-image:radial-gradient(rgba(120,80,40,.08) 1px,transparent 1px);background-size:4px 4px}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
-.container{width:min(1160px,92%);margin:auto}
-.section{padding:110px 0}
-.sec-head{text-align:center;max-width:640px;margin:0 auto 56px}
-.sec-head h2{font-size:clamp(2rem,4.2vw,3rem)}
-.sec-head p{color:var(--muted);margin-top:12px}
-.script{font-family:var(--font-script);color:var(--red);font-size:1.6rem;display:block;margin-bottom:4px}
-.divider{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--ochre);margin:14px auto 0}
-.divider::before,.divider::after{content:'';width:60px;height:1px;background:currentColor}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:999px;font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:.35s}
-.btn-red{background:var(--red);color:#fff;box-shadow:0 12px 30px -12px rgba(184,56,42,.7)}
-.btn-red:hover{background:var(--red-d);transform:translateY(-3px)}
-.btn-light{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.6);backdrop-filter:blur(6px)}
-.btn-light:hover{background:#fff;color:var(--wood)}
-.btn-outline{border:2px solid var(--wood);color:var(--wood)}
-.btn-outline:hover{background:var(--wood);color:var(--paper)}
-.reveal{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.7,.2,1)}
-.reveal.show{opacity:1;transform:none}
-@media(max-width:700px){.section{padding:75px 0}}
-</style>
+║  - Mỗi SECTION = 1 khối độc lập (
 <!-- ═══════════════ BASE: KẾT THÚC ═══════════════ -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- HP Showcase Bar v2 -->
@@ -76,8 +32,9 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
     <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
       <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
       <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
       <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
-        Chốt ngay qua Zalo
+        Nhắn tin Zalo
       </a>
     </span>
   </div>
@@ -129,24 +86,17 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
     </div>
   </div>
 </header>
-<script>
-(()=>{
-  const h=document.getElementById('sh'),m=document.getElementById('shMenu');
-  addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>40));
-  document.getElementById('shToggle').onclick=()=>m.classList.toggle('open');
-  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
-})();
-</script>
+
 <!-- ═══════════════ SECTION: HEADER TRONG SUỐT – KẾT THÚC ═══════════════ -->
 
 
 <main>
 
 <!-- ═══════════════ SECTION: HERO ẢNH TOÀN MÀN HÌNH – BẮT ĐẦU ═══════════════ -->
-<!-- Đổi ảnh: sửa url(images/hero.png) trong .sx-bg -->
+<!-- Đổi ảnh: sửa url(img/hero.png) trong .sx-bg -->
 <style>
 .sx{position:relative;min-height:100vh;display:flex;align-items:center;color:#fff;overflow:hidden}
-.sx-bg{position:absolute;inset:0;background:url(images/hero.png) center 40%/cover;animation:sxZoom 18s ease-out forwards}
+.sx-bg{position:absolute;inset:0;background:url(img/hero.png) center 40%/cover;animation:sxZoom 18s ease-out forwards}
 .sx::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(40,22,12,.88) 15%,rgba(40,22,12,.45) 55%,rgba(40,22,12,.15)),linear-gradient(0deg,rgba(40,22,12,.6),transparent 40%)}
 .sx-in{position:relative;z-index:1;max-width:620px;padding-top:70px}
 .sx .script{color:var(--ochre-l);font-size:1.9rem}
@@ -210,7 +160,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 
 <!-- ═══════════════ SECTION: DỊCH VỤ CÓ TAB + ĐỔI VND/USD – BẮT ĐẦU ═══════════════ -->
 <!-- Mỗi thẻ: data-vnd và data-usd là giá theo thời lượng (cách nhau bằng dấu |), data-time là thời lượng -->
-<!-- Ảnh dịch vụ nằm trong images/dich-vu/ – thay file cùng tên là xong (tỉ lệ ngang ~ 3:2) -->
+<!-- Ảnh dịch vụ nằm trong img/dich-vu/ – thay file cùng tên là xong (tỉ lệ ngang ~ 3:2) -->
 <style>
 .sm-tools{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:40px}
 .sm-tabs{display:flex;gap:8px;flex-wrap:wrap}
@@ -260,57 +210,33 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
     </div>
     <div class="sm-grid">
       <div class="sm-card reveal" data-cat="foot" data-time="60|90" data-vnd="250000|350000" data-usd="10|14">
-        <div class="sm-top"><em>BÁN CHẠY</em><img src="images/dich-vu/massage-chan-thao-duoc.png" alt="Massage chân thảo dược" loading="lazy"></div>
+        <div class="sm-top"><em>BÁN CHẠY</em><img src="img/dich-vu/massage-chan-thao-duoc.png" alt="Massage chân thảo dược" loading="lazy"></div>
         <div class="sm-body"><h3>Massage chân thảo dược</h3><div class="en">Herbal Foot Massage</div><p>Ngâm chân nước ngải cứu – gừng nóng, bấm huyệt bàn chân, massage bắp chân giảm mỏi khi dạo phố.</p><div class="sm-times"></div><div class="sm-foot"><span class="sm-price"></span><a href="#dat-lich">Đặt lịch →</a></div></div>
       </div>
       <div class="sm-card reveal" data-cat="foot" data-time="60|90" data-vnd="300000|420000" data-usd="12|17">
-        <div class="sm-top"><img src="images/dich-vu/foot-shoulder.png" alt="Massage chân và cổ vai gáy" loading="lazy"></div>
+        <div class="sm-top"><img src="img/dich-vu/foot-shoulder.png" alt="Massage chân và cổ vai gáy" loading="lazy"></div>
         <div class="sm-body"><h3>Foot & Shoulder</h3><div class="en">Foot, Neck & Shoulder</div><p>Kết hợp massage chân với cổ vai gáy, giải toả căng cứng cho người ngồi nhiều, đi nhiều.</p><div class="sm-times"></div><div class="sm-foot"><span class="sm-price"></span><a href="#dat-lich">Đặt lịch →</a></div></div>
       </div>
       <div class="sm-card reveal" data-cat="body" data-time="60|90" data-vnd="350000|480000" data-usd="14|19">
-        <div class="sm-top"><img src="images/dich-vu/massage-body.png" alt="Massage body truyền thống" loading="lazy"></div>
+        <div class="sm-top"><img src="img/dich-vu/massage-body.png" alt="Massage body truyền thống" loading="lazy"></div>
         <div class="sm-body"><h3>Massage body truyền thống</h3><div class="en">Vietnamese Traditional Massage</div><p>Kỹ thuật day ấn, miết dọc kinh lạc với tinh dầu sả chanh, giúp lưu thông khí huyết.</p><div class="sm-times"></div><div class="sm-foot"><span class="sm-price"></span><a href="#dat-lich">Đặt lịch →</a></div></div>
       </div>
       <div class="sm-card reveal" data-cat="body" data-time="75|105" data-vnd="450000|600000" data-usd="18|24">
-        <div class="sm-top"><em style="background:var(--ochre)">ĐẶC BIỆT</em><img src="images/dich-vu/massage-da-nong.png" alt="Massage đá nóng" loading="lazy"></div>
+        <div class="sm-top"><em style="background:var(--ochre)">ĐẶC BIỆT</em><img src="img/dich-vu/massage-da-nong.png" alt="Massage đá nóng" loading="lazy"></div>
         <div class="sm-body"><h3>Massage đá nóng</h3><div class="en">Hot Stone Therapy</div><p>Đá bazan làm ấm đặt dọc cột sống, kết hợp tinh dầu quế – gừng, xua tan mệt mỏi sâu.</p><div class="sm-times"></div><div class="sm-foot"><span class="sm-price"></span><a href="#dat-lich">Đặt lịch →</a></div></div>
       </div>
       <div class="sm-card reveal" data-cat="face" data-time="60|90" data-vnd="380000|520000" data-usd="15|21">
-        <div class="sm-top"><img src="images/dich-vu/cham-soc-da-mat.png" alt="Chăm sóc da mặt nghệ mật ong" loading="lazy"></div>
+        <div class="sm-top"><img src="img/dich-vu/cham-soc-da-mat.png" alt="Chăm sóc da mặt nghệ mật ong" loading="lazy"></div>
         <div class="sm-body"><h3>Chăm sóc da mặt nghệ</h3><div class="en">Turmeric & Honey Facial</div><p>Làm sạch, tẩy tế bào chết, đắp mặt nạ nghệ tươi – mật ong rừng cho làn da rạng rỡ.</p><div class="sm-times"></div><div class="sm-foot"><span class="sm-price"></span><a href="#dat-lich">Đặt lịch →</a></div></div>
       </div>
       <div class="sm-card reveal" data-cat="hair" data-time="45|70" data-vnd="180000|260000" data-usd="7|11">
-        <div class="sm-top"><img src="images/dich-vu/goi-dau-duong-sinh.png" alt="Gội đầu dưỡng sinh" loading="lazy"></div>
+        <div class="sm-top"><img src="img/dich-vu/goi-dau-duong-sinh.png" alt="Gội đầu dưỡng sinh" loading="lazy"></div>
         <div class="sm-body"><h3>Gội đầu dưỡng sinh</h3><div class="en">Herbal Hair Wash</div><p>Gội bồ kết – vỏ bưởi, massage đầu bấm huyệt, xông hơi mặt và cổ vai gáy nhẹ nhàng.</p><div class="sm-times"></div><div class="sm-foot"><span class="sm-price"></span><a href="#dat-lich">Đặt lịch →</a></div></div>
       </div>
     </div>
   </div>
 </section>
-<script>
-(()=>{
-  let cur='vnd';
-  const fmt=(v)=>cur==='vnd'?(+v).toLocaleString('vi-VN')+'đ':'$'+v;
-  const cards=[...document.querySelectorAll('.sm-card')];
-  cards.forEach(c=>{
-    const times=c.dataset.time.split('|'),box=c.querySelector('.sm-times');
-    c._i=0;
-    times.forEach((t,i)=>{const b=document.createElement('button');b.textContent=t+' phút';b.onclick=()=>{c._i=i;render(c)};box.appendChild(b)});
-    render(c);
-  });
-  function render(c){
-    c.querySelectorAll('.sm-times button').forEach((b,i)=>b.classList.toggle('active',i===c._i));
-    c.querySelector('.sm-price').textContent=fmt(c.dataset[cur].split('|')[c._i]);
-  }
-  document.querySelectorAll('.sm-tab').forEach(t=>t.onclick=()=>{
-    document.querySelectorAll('.sm-tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');
-    cards.forEach(c=>c.classList.toggle('hide',t.dataset.cat!=='all'&&c.dataset.cat!==t.dataset.cat));
-  });
-  document.querySelectorAll('.sm-cur button').forEach(b=>b.onclick=()=>{
-    document.querySelectorAll('.sm-cur button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
-    cur=b.dataset.cur;cards.forEach(render);
-  });
-})();
-</script>
+
 <!-- ═══════════════ SECTION: DỊCH VỤ CÓ TAB + ĐỔI VND/USD – KẾT THÚC ═══════════════ -->
 
 
@@ -390,7 +316,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 </style>
 <section class="section">
   <div class="container sp-in">
-    <div class="sp-img reveal"><img src="images/hero.png" alt="Chậu gỗ ngâm chân với cánh sen tại Hoài Spa"></div>
+    <div class="sp-img reveal"><img src="img/hero.png" alt="Chậu gỗ ngâm chân với cánh sen tại Hoài Spa"></div>
     <div class="reveal">
       <span class="script">Nghi thức Hoài Spa</span>
       <h2 style="font-size:clamp(2rem,4vw,2.7rem)">Một liệu trình, năm khoảnh khắc</h2>
@@ -408,7 +334,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 
 
 <!-- ═══════════════ SECTION: KHÔNG GIAN (LƯỚI ẢNH) – BẮT ĐẦU ═══════════════ -->
-<!-- Ảnh không gian nằm trong images/khong-gian/ – thay file cùng tên là xong -->
+<!-- Ảnh không gian nằm trong img/khong-gian/ – thay file cùng tên là xong -->
 <style>
 .sg{background:var(--wall)}
 .sg-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:16px}
@@ -429,11 +355,11 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
       <div class="divider">✿</div>
     </div>
     <div class="sg-grid reveal">
-      <div class="sg-item" style="background-image:url(images/hero.png)"><span>Phòng trị liệu chính<small>Gỗ lim · đèn lồng lụa</small></span></div>
-      <div class="sg-item" style="background-image:url(images/khong-gian/phong-xong.png)"><span>Phòng xông thảo mộc<small>Sả · bưởi · ngải cứu</small></span></div>
-      <div class="sg-item" style="background-image:url(images/khong-gian/phong-doi.png)"><span>Phòng đôi<small>Riêng tư cho cặp đôi</small></span></div>
-      <div class="sg-item" style="background-image:url(images/khong-gian/san-tra.png)"><span>Sân trà hoa giấy<small>Nghỉ ngơi sau liệu trình</small></span></div>
-      <div class="sg-item" style="background-image:url(images/khong-gian/khu-ngam-chan.png)"><span>Khu ngâm chân<small>8 ghế gỗ êm ái</small></span></div>
+      <div class="sg-item" style="background-image:url(img/hero.png)"><span>Phòng trị liệu chính<small>Gỗ lim · đèn lồng lụa</small></span></div>
+      <div class="sg-item" style="background-image:url(img/khong-gian/phong-xong.png)"><span>Phòng xông thảo mộc<small>Sả · bưởi · ngải cứu</small></span></div>
+      <div class="sg-item" style="background-image:url(img/khong-gian/phong-doi.png)"><span>Phòng đôi<small>Riêng tư cho cặp đôi</small></span></div>
+      <div class="sg-item" style="background-image:url(img/khong-gian/san-tra.png)"><span>Sân trà hoa giấy<small>Nghỉ ngơi sau liệu trình</small></span></div>
+      <div class="sg-item" style="background-image:url(img/khong-gian/khu-ngam-chan.png)"><span>Khu ngâm chân<small>8 ghế gỗ êm ái</small></span></div>
     </div>
   </div>
 </section>
@@ -480,71 +406,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 
 
 <!-- ═══════════════ SECTION: ĐẶT LỊCH (NỀN GỖ) – BẮT ĐẦU ═══════════════ -->
-<!-- Form demo: chưa gửi dữ liệu. Muốn nhận thật trên Netlify: thêm data-netlify="true" name="dat-lich" vào <form> và xoá <script> bên dưới -->
-<style>
-.sd{background:var(--wood);color:var(--wall);position:relative}
-.sd::before{content:'';position:absolute;top:0;left:0;right:0;height:14px;background:radial-gradient(circle at 14px 0,var(--paper) 13px,transparent 14px) 0 0/28px 14px repeat-x}
-.sd-in{display:grid;grid-template-columns:1fr 1.15fr;gap:70px;align-items:center}
-.sd h2{font-size:clamp(2rem,4vw,2.8rem);color:#fff}
-.sd .script{color:var(--ochre-l)}
-.sd-info{display:grid;gap:18px;margin-top:30px}
-.sd-info div{display:flex;gap:14px}
-.sd-info span{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px dashed var(--ochre)}
-.sd-info b{display:block;color:#fff}
-.sd-info small{opacity:.75}
-.sd-form{background:var(--paper);color:var(--ink);border-radius:22px;padding:44px 40px;display:grid;gap:16px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
-.sd-form h3{font-size:1.6rem;color:var(--wood)}
-.sd-form label{font-size:.85rem;font-weight:600;color:var(--wood)}
-.sd-form input,.sd-form select{width:100%;margin-top:6px;padding:13px 16px;border-radius:10px;border:1.5px solid rgba(61,36,23,.18);background:#fff;font:inherit;transition:.3s}
-.sd-form input:focus,.sd-form select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(184,56,42,.12)}
-.sd-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.sd-msg{display:none;padding:14px;border-radius:10px;background:#e7f1eb;color:var(--jade);font-weight:600;text-align:center}
-@media(max-width:900px){.sd-in{grid-template-columns:1fr;gap:44px}}
-@media(max-width:560px){.sd-form{padding:34px 22px}.sd-row{grid-template-columns:1fr}}
-</style>
-<section class="section sd" id="dat-lich">
-  <div class="container sd-in">
-    <div class="reveal">
-      <span class="script">Hẹn gặp bạn</span>
-      <h2>Đặt lịch – giữ phòng trước</h2>
-      <p style="opacity:.8;margin-top:14px">Buổi tối thường kín lịch, bạn nên đặt trước 2–3 tiếng. Đặt online giảm ngay 10%.</p>
-      <div class="sd-info">
-        <div><span>📍</span><div><b>Địa chỉ</b><small>22 Trần Phú, Minh An, Hội An</small></div></div>
-        <div><span>📞</span><div><b>Hotline / Zalo</b><small>0905 456 789</small></div></div>
-        <div><span>💳</span><div><b>Thanh toán</b><small>Tiền mặt · Chuyển khoản · Thẻ Visa</small></div></div>
-      </div>
-    </div>
-    <form class="sd-form reveal" id="sdForm">
-      <h3>Phiếu đặt lịch</h3>
-      <div class="sd-row">
-        <label>Họ tên<input name="ho-ten" required placeholder="Nguyễn Văn A"></label>
-        <label>SĐT / Zalo<input name="sdt" type="tel" required placeholder="09xx xxx xxx"></label>
-      </div>
-      <div class="sd-row">
-        <label>Dịch vụ
-          <select name="dich-vu"><option>Massage chân thảo dược</option><option>Foot & Shoulder</option><option>Massage body truyền thống</option><option>Massage đá nóng</option><option>Chăm sóc da mặt</option><option>Gội đầu dưỡng sinh</option><option>Combo Hoài Signature</option><option>Combo cặp đôi</option></select>
-        </label>
-        <label>Số khách
-          <select name="so-khach"><option>1 người</option><option>2 người</option><option>3 người</option><option>4+ người</option></select>
-        </label>
-      </div>
-      <div class="sd-row">
-        <label>Ngày<input name="ngay" type="date" required></label>
-        <label>Giờ<input name="gio" type="time" required></label>
-      </div>
-      <label>Khách sạn (nếu cần đón)<input name="khach-san" placeholder="Tên khách sạn / homestay"></label>
-      <button class="btn btn-red" type="submit">🏮 Xác nhận đặt lịch</button>
-      <div class="sd-msg" id="sdMsg">Cảm ơn bạn! Hoài Spa sẽ liên hệ xác nhận qua Zalo trong ít phút 🌿</div>
-    </form>
-  </div>
-</section>
-<script>
-document.getElementById('sdForm').onsubmit=e=>{
-  e.preventDefault();
-  document.getElementById('sdMsg').style.display='block';
-  e.target.reset();
-};
-</script>
+<!-- Form demo: chưa gửi dữ liệu. Muốn nhận thật trên Netlify: thêm data-netlify="true" name="dat-lich" vào <form> và xoá 
 <!-- ═══════════════ SECTION: ĐẶT LỊCH (NỀN GỖ) – KẾT THÚC ═══════════════ -->
 
 </main>
@@ -570,7 +432,7 @@ document.getElementById('sdForm').onsubmit=e=>{
       <div><h4>Dịch vụ</h4><ul><li><a href="#dich-vu">Massage chân</a></li><li><a href="#dich-vu">Massage body</a></li><li><a href="#dich-vu">Chăm sóc da mặt</a></li><li><a href="#combo">Combo</a></li></ul></div>
       <div><h4>Kết nối</h4><ul><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li><li><a href="#">Tripadvisor</a></li><li><a href="#">Zalo</a></li></ul></div>
     </div>
-    <div class="sf-copy">© 2026 Hoài Spa Hội An · Mẫu giao diện demo</div>
+    <div class="sf-copy">Copyright © 2026 Hoang Phuong. All rights reserved.</div>
   </div>
 </footer>
 <!-- ═══════════════ SECTION: FOOTER – KẾT THÚC ═══════════════ -->
@@ -597,11 +459,8 @@ document.getElementById('sdForm').onsubmit=e=>{
 
 
 <!-- ═══════════════ BASE SCRIPT: HIỆU ỨNG HIỆN DẦN (bắt buộc, để cuối trang) ═══════════════ -->
-<script>
-(()=>{
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
-  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.1+'s';io.observe(el)});
-})();
-</script>
+
+<script src="script.js"></script>
+<script src="../../lang-switcher.js"></script>
 </body>
 </html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOODIE – Good Food Delivered to Your Doorstep | Mẫu Website Giao Đồ Ăn</title>
+<meta name="description" content="FOODIE – Fresh ingredients, delicious meals and your favorite restaurants all in one place. Mẫu website giao đồ ăn, nhà hàng hiện đại.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HP Showcase Bar v2 -->
+<div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+  <a href="../../index.html" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+    <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+  </a>
+  <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo FOODIE · Thích mẫu này?</span>
+  <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+    <a href="../../index.html" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+    <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+    <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+    <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Nhắn tin Zalo</a>
+  </span>
+</div>
+<div style="height:52px"></div>
+<style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}@media(max-width:479px){#hp-back{display:none!important}#hp-bar{padding:0 10px!important;gap:6px!important}}</style>
+
+<!-- ── HERO SECTION ── -->
+<section class="hero-sec" id="home">
+  <div class="container">
+    <div class="hero-card">
+
+      <!-- Navbar -->
+      <header class="hero-nav">
+        <a href="#home" class="brand-logo">
+          <span class="brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </span>
+          FOODIE
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#categories">Menu</a></li>
+          <li><a href="#popular">Restaurants</a></li>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#footer">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="nav-icon-btn" aria-label="Search" onclick="document.getElementById('locationInput').focus()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+          <button class="nav-icon-btn" aria-label="Cart" onclick="openOrderModal('Your Food Basket', 'Fast Doorstep Delivery')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+            <span class="cart-dot" id="cartCount">2</span>
+          </button>
+          <button class="btn-signin" onclick="openOrderModal('Sign In / Quick Order', 'Get 50% OFF on your first order')">Sign In</button>
+        </div>
+      </header>
+
+      <!-- Hero Main Body -->
+      <div class="hero-body">
+        <div class="hero-left">
+          <div class="hero-tag">GOOD FOOD <span>•</span> BRIGHTER DAYS</div>
+          <div class="hero-sublead">Delivered to<br>Your Doorstep</div>
+
+          <h1 class="hero-giant-title">
+            <span class="word-good">GOOD</span>
+            <span class="word-food">FOOD</span>
+          </h1>
+
+          <p class="hero-desc">
+            Fresh ingredients, delicious meals and your favorite restaurants — all in one place.
+          </p>
+
+          <!-- Search Bar -->
+          <form class="hero-search-bar" onsubmit="event.preventDefault(); document.getElementById('popular').scrollIntoView({behavior:'smooth'});">
+            <svg class="loc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <input type="text" id="locationInput" placeholder="Enter your delivery location">
+            <button type="submit" class="btn-find-food">Find Food →</button>
+          </form>
+
+          <!-- 3 Feature Badges -->
+          <div class="hero-features">
+            <div class="hero-feat-item">
+              <div class="hero-feat-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="hero-feat-txt">
+                <strong>Fast Delivery</strong>
+                <span>On-time, every time</span>
+              </div>
+            </div>
+
+            <div class="hero-feat-item">
+              <div class="hero-feat-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                </svg>
+              </div>
+              <div class="hero-feat-txt">
+                <strong>Fresh Ingredients</strong>
+                <span>Quality you can taste</span>
+              </div>
+            </div>
+
+            <div class="hero-feat-item">
+              <div class="hero-feat-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <div class="hero-feat-txt">
+                <strong>Wide Variety</strong>
+                <span>From local to global</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual -->
+        <div class="hero-visual">
+          <div class="hero-bowl-wrap">
+            <img src="img/cat_salad.png" alt="Fresh Healthy Bowl" class="hero-bowl-img">
+
+            <!-- Health Food Stamp -->
+            <div class="health-stamp">
+              <span>Health</span>
+              <span>Food</span>
+              <div class="health-mini-pill">
+                <b>★</b>
+                <span>Healthy</span>
+                <span>Tasty</span>
+                <span>Happier</span>
+              </div>
+            </div>
+
+            <!-- 500+ Delicious Dishes Pill -->
+            <div class="dishes-pill" onclick="document.getElementById('popular').scrollIntoView({behavior:'smooth'})">
+              <div class="dishes-thumbs">
+                <img src="img/cat_com.png" alt="Dish 1">
+                <img src="img/cat_pizza.png" alt="Dish 2">
+              </div>
+              <div class="dishes-txt">
+                <strong>500+</strong>
+                <span>Delicious Dishes</span>
+              </div>
+              <div class="dishes-arrow">›</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CATEGORY CAROUSEL ── -->
+<section class="categories-sec" id="categories">
+  <div class="container">
+    <div class="categories-wrap">
+      <button class="cat-nav-btn prev" aria-label="Previous" onclick="filterDishes('all')">‹</button>
+
+      <div class="categories-track">
+        <div class="cat-item active" data-cat="rice" onclick="filterDishes('rice', this)">
+          <div class="cat-thumb"><img src="img/cat_com.png" alt="Biryani"></div>
+          <span class="cat-name">Biryani</span>
+        </div>
+        <div class="cat-item" data-cat="pizza" onclick="filterDishes('pizza', this)">
+          <div class="cat-thumb"><img src="img/cat_pizza.png" alt="Pizza"></div>
+          <span class="cat-name">Pizza</span>
+        </div>
+        <div class="cat-item" data-cat="burger" onclick="filterDishes('burger', this)">
+          <div class="cat-thumb"><img src="img/chicken_burger_combo.png" alt="Burgers"></div>
+          <span class="cat-name">Burgers</span>
+        </div>
+        <div class="cat-item" data-cat="chicken" onclick="filterDishes('chicken', this)">
+          <div class="cat-thumb"><img src="img/cat_garan.png" alt="Indian"></div>
+          <span class="cat-name">Indian</span>
+        </div>
+        <div class="cat-item" data-cat="pasta" onclick="filterDishes('pasta', this)">
+          <div class="cat-thumb"><img src="img/cat_miy.png" alt="Chinese"></div>
+          <span class="cat-name">Chinese</span>
+        </div>
+        <div class="cat-item" data-cat="dessert" onclick="filterDishes('dessert', this)">
+          <div class="cat-thumb"><img src="img/cat_banh.png" alt="Desserts"></div>
+          <span class="cat-name">Desserts</span>
+        </div>
+        <div class="cat-item" data-cat="salad" onclick="filterDishes('salad', this)">
+          <div class="cat-thumb"><img src="img/cat_salad.png" alt="Salads"></div>
+          <span class="cat-name">Salads</span>
+        </div>
+        <div class="cat-item" data-cat="drink" onclick="filterDishes('drink', this)">
+          <div class="cat-thumb"><img src="img/news_lemon_honey.png" alt="Beverages"></div>
+          <span class="cat-name">Beverages</span>
+        </div>
+      </div>
+
+      <button class="cat-nav-btn next" aria-label="Next" onclick="filterDishes('all')">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── SPECIAL OFFER BANNER ── -->
+<section class="offer-sec" id="offers">
+  <div class="container">
+    <div class="offer-banner">
+      <div class="offer-content">
+        <div class="offer-tag">SPECIAL OFFER</div>
+        <h2 class="offer-title">Flat 50% OFF</h2>
+        <p class="offer-sub">On Your First Order</p>
+        <button class="btn-offer" onclick="openOrderModal('Flat 50% OFF First Order', 'Promo Code: FOODIE50')">Order Now</button>
+      </div>
+      <div class="offer-visual">
+        <img src="img/hero_pizza.png" alt="Wood Fired Pizza Special Offer">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MOST ORDERED DISHES ── -->
+<section class="popular-sec" id="popular">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">POPULAR</div>
+        <h2 class="sec-title">Most Ordered Dishes</h2>
+      </div>
+      <span class="view-all-link" onclick="filterDishes('all')">View All →</span>
+    </div>
+
+    <div class="dishes-grid" id="dishesGrid">
+
+      <!-- Dish 1 -->
+      <article class="dish-card" data-cat="pasta">
+        <div class="dish-img-wrap">
+          <img src="img/cat_miy.png" alt="Creamy Alfredo Pasta">
+          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-title">Creamy Alfredo Pasta</h3>
+          <div class="dish-meta">The Pasta Place • 25 mins</div>
+          <div class="dish-rating">
+            <span class="star">★</span> 4.8 <span class="count">(2.1K)</span>
+          </div>
+          <div class="dish-foot">
+            <span class="dish-price">₹249</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Creamy Alfredo Pasta', '₹249')">+</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 2 -->
+      <article class="dish-card" data-cat="burger">
+        <div class="dish-img-wrap">
+          <img src="img/chicken_burger_combo.png" alt="Classic Chicken Burger">
+          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-title">Classic Chicken Burger</h3>
+          <div class="dish-meta">Burger House • 20 mins</div>
+          <div class="dish-rating">
+            <span class="star">★</span> 4.6 <span class="count">(3.2K)</span>
+          </div>
+          <div class="dish-foot">
+            <span class="dish-price">₹189</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Classic Chicken Burger', '₹189')">+</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 3 -->
+      <article class="dish-card" data-cat="rice">
+        <div class="dish-img-wrap">
+          <img src="img/cat_com.png" alt="Hyderabadi Chicken Biryani">
+          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-title">Hyderabadi Chicken Biryani</h3>
+          <div class="dish-meta">Biryani Central • 30 mins</div>
+          <div class="dish-rating">
+            <span class="star">★</span> 4.7 <span class="count">(4.1K)</span>
+          </div>
+          <div class="dish-foot">
+            <span class="dish-price">₹299</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Hyderabadi Chicken Biryani', '₹299')">+</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 4 -->
+      <article class="dish-card" data-cat="dessert">
+        <div class="dish-img-wrap">
+          <img src="img/cat_banh.png" alt="Chocolate Lava Cake">
+          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-title">Chocolate Lava Cake</h3>
+          <div class="dish-meta">Sweet Cravings • 25 mins</div>
+          <div class="dish-rating">
+            <span class="star">★</span> 4.9 <span class="count">(1.8K)</span>
+          </div>
+          <div class="dish-foot">
+            <span class="dish-price">₹199</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Chocolate Lava Cake', '₹199')">+</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 5 -->
+      <article class="dish-card" data-cat="pizza">
+        <div class="dish-img-wrap">
+          <img src="img/pizza_bbq.png" alt="Smoky BBQ Beef Pizza">
+          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-title">Smoky BBQ Beef Pizza</h3>
+          <div class="dish-meta">Artisan Slice • 25 mins</div>
+          <div class="dish-rating">
+            <span class="star">★</span> 4.9 <span class="count">(2.9K)</span>
+          </div>
+          <div class="dish-foot">
+            <span class="dish-price">₹329</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Smoky BBQ Beef Pizza', '₹329')">+</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 6 -->
+      <article class="dish-card" data-cat="chicken">
+        <div class="dish-img-wrap">
+          <img src="img/cat_garan.png" alt="Crispy Golden Fried Chicken">
+          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-title">Crispy Golden Chicken</h3>
+          <div class="dish-meta">Spice Kitchen • 20 mins</div>
+          <div class="dish-rating">
+            <span class="star">★</span> 4.8 <span class="count">(3.5K)</span>
+          </div>
+          <div class="dish-foot">
+            <span class="dish-price">₹219</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Crispy Golden Chicken', '₹219')">+</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 7 -->
+      <article class="dish-card" data-cat="salad">
+        <div class="dish-img-wrap">
+          <img src="img/cat_salad.png" alt="Mediterranean Feta Salad">
+          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-title">Mediterranean Feta Salad</h3>
+          <div class="dish-meta">Green Bowl • 15 mins</div>
+          <div class="dish-rating">
+            <span class="star">★</span> 4.9 <span class="count">(1.4K)</span>
+          </div>
+          <div class="dish-foot">
+            <span class="dish-price">₹179</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Mediterranean Feta Salad', '₹179')">+</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Dish 8 -->
+      <article class="dish-card" data-cat="drink">
+        <div class="dish-img-wrap">
+          <img src="img/news_lemon_honey.png" alt="Fresh Honey Lime Detox">
+          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dish-body">
+          <h3 class="dish-title">Fresh Honey Lime Detox</h3>
+          <div class="dish-meta">Fresh Bar • 15 mins</div>
+          <div class="dish-rating">
+            <span class="star">★</span> 4.8 <span class="count">(1.9K)</span>
+          </div>
+          <div class="dish-foot">
+            <span class="dish-price">₹129</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Fresh Honey Lime Detox', '₹129')">+</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="brand-logo">
+          <span class="brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a7 7 0 0 1 7 7c0 5.25-7 13-7 13S5 14.25 5 9a7 7 0 0 1 7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </span>
+          FOODIE
+        </a>
+        <p>
+          Delivering mouth-watering goodness straight from your favorite local kitchens right to your door with love and speed.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="#home">About Us</a></li>
+          <li><a href="#popular">Careers</a></li>
+          <li><a href="#offers">Partner with Us</a></li>
+          <li><a href="#categories">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>SUPPORT</h4>
+        <ul>
+          <li><a href="#footer">Help Center</a></li>
+          <li><a href="#footer">Safety Guidelines</a></li>
+          <li><a href="#footer">Terms of Service</a></li>
+          <li><a href="#footer">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>STAY HUNGRY</h4>
+        <p class="footer-nl-desc">
+          Get weekly coupons and curated meal suggestions directly in your inbox.
+        </p>
+        <form class="footer-nl-form" onsubmit="event.preventDefault(); alert('Subscribed! Check your inbox for 50% OFF coupon.'); this.reset();">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Copyright © 2026 Hoang Phuong. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="#footer">Instagram</a>
+        <a href="#footer">Twitter</a>
+        <a href="#footer">Facebook</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── ORDER MODAL ── -->
+<div class="modal-backdrop" id="orderModal" onclick="if(event.target===this)closeOrderModal()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeOrderModal()">✕</button>
+    <h3 id="modalDishName">Order Dish</h3>
+    <p id="modalDishPrice">Fast doorstep delivery in 20–30 mins</p>
+    <form onsubmit="event.preventDefault(); window.open('https://zalo.me/0974100372','_blank');">
+      <div class="modal-field">
+        <label>Your Name</label>
+        <input type="text" placeholder="Enter full name" required>
+      </div>
+      <div class="modal-field">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="09xx xxx xxx" required>
+      </div>
+      <div class="modal-field">
+        <label>Delivery Address</label>
+        <input type="text" placeholder="Street, Ward, District" required>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" class="modal-btn zalo">Order via Zalo →</button>
+        <a href="https://t.me/lhoangphuong" target="_blank" class="modal-btn tg">Via Telegram →</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="../../lang-switcher.js"></script>
+</body>
+</html>

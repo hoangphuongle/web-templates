@@ -14,53 +14,9 @@
 ║  MẪU NAIL – PHIÊN BẢN 3: "PHỐ HỘI" (Hoài cổ Hội An)              ║
 ║  Màu: vàng tường cổ · đỏ son đèn lồng · nâu gỗ · xanh ngọc       ║
 ║  - BASE (bên dưới) → BẮT BUỘC.                                   ║
-║  - Mỗi SECTION = 1 khối độc lập (<style> + HTML + <script>).     ║
-║    Copy từ "BẮT ĐẦU" đến "KẾT THÚC" để dán sang trang khác.       ║
-║  - BASE SCRIPT ở cuối trang → BẮT BUỘC.                          ║
-╚══════════════════════════════════════════════════════════════════╝
--->
-
-<!-- ═══════════════ BASE: BẮT ĐẦU (bắt buộc) ═══════════════ -->
-<style>
-:root{
-  /* ĐỔI MÀU THƯƠNG HIỆU TẠI ĐÂY */
-  --ochre:#e3a93b; --ochre-l:#f4d488; --wall:#f3e3b8;
-  --red:#b8382a; --red-d:#8c2419;
-  --wood:#3d2417; --wood-l:#6b4329;
-  --jade:#3f6b55; --paper:#fbf4e4;
-  --ink:#2f1f16; --muted:#7a6250;
-  --radius:10px;
-  --font-body:'Be Vietnam Pro',sans-serif;
-  --font-head:'Lora',serif;
-  --font-script:'Dancing Script',cursive;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--ink);background:var(--paper);line-height:1.7;overflow-x:hidden}
-/* Vân giấy dó nhẹ */
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.35;background-image:radial-gradient(rgba(120,80,40,.08) 1px,transparent 1px);background-size:4px 4px}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
-.container{width:min(1160px,92%);margin:auto}
-.section{padding:110px 0}
-.sec-head{text-align:center;max-width:620px;margin:0 auto 60px}
-.sec-head h2{font-size:clamp(2rem,4.2vw,3rem)}
-.sec-head p{color:var(--muted);margin-top:12px}
-.script{font-family:var(--font-script);color:var(--red);font-size:1.6rem;display:block;margin-bottom:4px}
-/* Hoạ tiết hoa văn chia đoạn */
-.divider{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--ochre);margin:14px auto 0}
-.divider::before,.divider::after{content:'';width:60px;height:1px;background:currentColor}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:999px;font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:.35s}
-.btn-red{background:var(--red);color:#fff;box-shadow:0 12px 30px -12px rgba(184,56,42,.7)}
-.btn-red:hover{background:var(--red-d);transform:translateY(-3px)}
-.btn-outline{border:2px solid var(--wood);color:var(--wood)}
-.btn-outline:hover{background:var(--wood);color:var(--paper)}
-.reveal{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.7,.2,1)}
-.reveal.show{opacity:1;transform:none}
-@media(max-width:700px){.section{padding:75px 0}}
-</style>
+║  - Mỗi SECTION = 1 khối độc lập (
 <!-- ═══════════════ BASE: KẾT THÚC ═══════════════ -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- HP Showcase Bar v2 -->
@@ -76,8 +32,9 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
     <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
       <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
       <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
       <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
-        Chốt ngay qua Zalo
+        Nhắn tin Zalo
       </a>
     </span>
   </div>
@@ -132,14 +89,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
     </div>
   </div>
 </header>
-<script>
-(()=>{
-  const h=document.getElementById('ha'),m=document.getElementById('haMenu');
-  addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>40));
-  document.getElementById('haToggle').onclick=()=>m.classList.toggle('open');
-  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
-})();
-</script>
+
 <!-- ═══════════════ SECTION: HEADER MÁI NGÓI – KẾT THÚC ═══════════════ -->
 
 
@@ -198,7 +148,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
       <div class="hl-tags"><span>🪷 Vẽ tay thủ công</span><span>🍵 Trà sen miễn phí</span><span>✨ Tiệt trùng 100%</span></div>
     </div>
     <div class="hl-photo reveal">
-      <img src="images/hero.png" alt="Bộ móng vẽ hoa sen phong cách Hội An">
+      <img src="img/hero.png" alt="Bộ móng vẽ hoa sen phong cách Hội An">
       <div class="hl-stamp"><div><b>4.9★</b>Google<br>2.000+ đánh giá</div></div>
     </div>
   </div>
@@ -336,7 +286,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 
 
 <!-- ═══════════════ SECTION: MẪU NAIL KIỂU ẢNH POLAROID – BẮT ĐẦU ═══════════════ -->
-<!-- Thay ảnh thật: thêm style="background-image:url(images/xxx.jpg)" vào .pl-art -->
+<!-- Thay ảnh thật: thêm style="background-image:url(img/xxx.jpg)" vào .pl-art -->
 <style>
 .pl-wall{display:flex;flex-wrap:wrap;justify-content:center;gap:34px 30px;padding-top:20px}
 .pl-card{--r:-3deg;width:230px;background:#fff;padding:12px 12px 18px;box-shadow:0 18px 30px -16px rgba(61,36,23,.5);transform:rotate(var(--r));transition:.45s;position:relative}
@@ -358,7 +308,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
       <div class="divider">✿</div>
     </div>
     <div class="pl-wall reveal">
-      <div class="pl-card" style="--r:-4deg"><div class="pl-art" style="background-image:url(images/hero.png)"></div><p>Chiều phố Hội</p></div>
+      <div class="pl-card" style="--r:-4deg"><div class="pl-art" style="background-image:url(img/hero.png)"></div><p>Chiều phố Hội</p></div>
       <div class="pl-card" style="--r:3deg"><div class="pl-art" style="background:linear-gradient(160deg,#f3e3b8,#e3a93b)"><div class="pl-nails lotus"><i style="background:#3f6b55"></i><i style="background:#2f5543"></i><i style="background:#3f6b55"></i><i style="background:#2f5543"></i></div></div><p>Sen trên lá ngọc</p></div>
       <div class="pl-card" style="--r:-2deg"><div class="pl-art" style="background:linear-gradient(160deg,#3d2417,#6b4329)"><div class="pl-nails"><i style="background:radial-gradient(circle at 50% 45%,#ffd28a,#b8382a 60%)"></i><i style="background:radial-gradient(circle at 50% 45%,#ffe5a8,#e3a93b 60%)"></i><i style="background:radial-gradient(circle at 50% 45%,#ffd28a,#b8382a 60%)"></i><i style="background:radial-gradient(circle at 50% 45%,#ffe5a8,#e3a93b 60%)"></i></div></div><p>Đêm rằm đèn lồng</p></div>
       <div class="pl-card" style="--r:4deg"><div class="pl-art" style="background:linear-gradient(160deg,#eef2f6,#c9d6e6)"><div class="pl-nails"><i style="background:repeating-linear-gradient(45deg,#fff 0 6px,#2b4c8c 6px 8px)"></i><i style="background:radial-gradient(circle,#2b4c8c 25%,#fff 27%)"></i><i style="background:repeating-linear-gradient(-45deg,#fff 0 6px,#2b4c8c 6px 8px)"></i><i style="background:radial-gradient(circle,#2b4c8c 25%,#fff 27%)"></i></div></div><p>Men lam gốm cổ</p></div>
@@ -431,62 +381,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 
 
 <!-- ═══════════════ SECTION: ĐẶT LỊCH + BẢN ĐỒ – BẮT ĐẦU ═══════════════ -->
-<!-- Form demo: chưa gửi dữ liệu. Muốn nhận thật trên Netlify: thêm data-netlify="true" name="dat-lich" vào <form> và xoá <script> bên dưới -->
-<!-- Đổi bản đồ: Google Maps → Chia sẻ → Nhúng bản đồ → copy link src -->
-<style>
-.bh{background:var(--wall)}
-.bh-box{display:grid;grid-template-columns:1fr 1fr;background:#fffaf0;border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(61,36,23,.5);border:2px solid var(--wood)}
-.bh-form{padding:54px 48px;display:grid;gap:16px}
-.bh-form h2{font-size:2.2rem;color:var(--wood)}
-.bh-form label{font-size:.85rem;font-weight:600;color:var(--wood)}
-.bh-form input,.bh-form select{width:100%;margin-top:6px;padding:13px 16px;border-radius:10px;border:1.5px solid rgba(61,36,23,.2);background:#fff;font:inherit;transition:.3s}
-.bh-form input:focus,.bh-form select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(184,56,42,.12)}
-.bh-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.bh-msg{display:none;padding:14px;border-radius:10px;background:#e7f1eb;color:var(--jade);font-weight:600;text-align:center}
-.bh-side{display:flex;flex-direction:column}
-.bh-side iframe{flex:1;min-height:300px;border:0;filter:sepia(.35) saturate(1.1)}
-.bh-info{background:var(--wood);color:var(--wall);padding:30px 34px;display:grid;gap:10px;font-size:.95rem}
-@media(max-width:900px){.bh-box{grid-template-columns:1fr}}
-@media(max-width:560px){.bh-form{padding:38px 24px}.bh-row{grid-template-columns:1fr}}
-</style>
-<section class="section bh" id="dat-lich">
-  <div class="container">
-    <div class="bh-box reveal">
-      <form class="bh-form" id="bhForm">
-        <span class="script">Hẹn gặp bạn</span>
-        <h2>Đặt lịch làm nail</h2>
-        <div class="bh-row">
-          <label>Họ tên<input name="ho-ten" required placeholder="Nguyễn Thị Hoa"></label>
-          <label>Số điện thoại<input name="sdt" type="tel" required placeholder="09xx xxx xxx"></label>
-        </div>
-        <label>Dịch vụ
-          <select name="dich-vu"><option>Sơn gel tông cổ</option><option>Vẽ sen thủ công</option><option>Combo Rằm</option><option>Combo Áo dài</option><option>Combo Cô dâu phố cổ</option></select>
-        </label>
-        <div class="bh-row">
-          <label>Ngày<input name="ngay" type="date" required></label>
-          <label>Giờ<input name="gio" type="time" required></label>
-        </div>
-        <button class="btn btn-red" type="submit">🏮 Xác nhận đặt lịch</button>
-        <div class="bh-msg" id="bhMsg">Cảm ơn bạn! Phố Hội Nail sẽ gọi xác nhận trong ít phút 🌸</div>
-      </form>
-      <div class="bh-side">
-        <iframe title="Bản đồ Phố Hội Nail" loading="lazy" src="https://www.google.com/maps?q=Nguyen+Thai+Hoc+Hoi+An&output=embed"></iframe>
-        <div class="bh-info">
-          <div>📍 45 Nguyễn Thái Học, Minh An, Hội An</div>
-          <div>⏰ 9:00 – 22:00 mỗi ngày</div>
-          <div>📞 0905 123 789 (Zalo)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-document.getElementById('bhForm').onsubmit=e=>{
-  e.preventDefault();
-  document.getElementById('bhMsg').style.display='block';
-  e.target.reset();
-};
-</script>
+<!-- Form demo: chưa gửi dữ liệu. Muốn nhận thật trên Netlify: thêm data-netlify="true" name="dat-lich" vào <form> và xoá 
 <!-- ═══════════════ SECTION: ĐẶT LỊCH + BẢN ĐỒ – KẾT THÚC ═══════════════ -->
 
 </main>
@@ -509,7 +404,7 @@ document.getElementById('bhForm').onsubmit=e=>{
     <div class="hf-logo">Phố Hội <span>Nail</span></div>
     <p>Nét đẹp xưa trên đôi tay nay</p>
     <div class="hf-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Zalo</a></div>
-    <small>© 2026 Phố Hội Nail · Mẫu giao diện demo</small>
+    <small>Copyright © 2026 Hoang Phuong. All rights reserved.</small>
   </div>
 </footer>
 <!-- ═══════════════ SECTION: FOOTER – KẾT THÚC ═══════════════ -->
@@ -534,11 +429,8 @@ document.getElementById('bhForm').onsubmit=e=>{
 
 
 <!-- ═══════════════ BASE SCRIPT: HIỆU ỨNG HIỆN DẦN (bắt buộc, để cuối trang) ═══════════════ -->
-<script>
-(()=>{
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
-  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.1+'s';io.observe(el)});
-})();
-</script>
+
+<script src="script.js"></script>
+<script src="../../lang-switcher.js"></script>
 </body>
 </html>

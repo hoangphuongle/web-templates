@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REBEL RIDE – Super Rider | Fixed Gear & Track Bikes</title>
+<meta name="description" content="REBEL RIDE – Power, Precision, Presence. Ultra-lightweight Fixed Gear & Track bikes built for street dominance and skid control.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HP Showcase Bar v2 -->
+<div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+  <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+    <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+  </a>
+  <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo REBEL RIDE · Thích mẫu này?</span>
+  <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+    <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+    <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+    <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+    <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Nhắn tin Zalo</a>
+  </span>
+</div>
+<div style="height:52px"></div>
+<style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}@media(max-width:479px){#hp-back{display:none!important}#hp-bar{padding:0 10px!important;gap:6px!important}}</style>
+
+<!-- ── NAVBAR ── -->
+<header class="site-header" id="home">
+  <div class="container nav-inner">
+    <a href="#home" class="brand-logo">REBEL RIDE</a>
+
+    <ul class="nav-menu">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#brands">BRANDS</a></li>
+      <li><a href="#ebikes">FIXED GEAR</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <button class="btn-test-ride" onclick="openRideModal('Book a Fixed Gear Test Ride', 'Experience pure fixed-cog street riding')">TEST RIDE</button>
+      <button class="nav-icon" aria-label="Search" onclick="document.getElementById('ebikes').scrollIntoView({behavior:'smooth'})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+      <button class="nav-icon" aria-label="Cart" onclick="openRideModal('Your Fixed Gear Build', 'Free Nationwide Delivery Included')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-badge" id="rideCartCount">1</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── HERO SECTION ── -->
+<section class="hero-sec">
+  <div class="container">
+    <div class="hero-kicker">POWER, PRECISION, PRESENCE</div>
+
+    <div class="hero-stage">
+      <div class="giant-stencil-wrap">
+        <h1 class="giant-stencil-text">SUPER RIDER</h1>
+      </div>
+
+      <div class="hero-bottom-grid">
+        <div class="hero-copy">
+          <p>
+            Ultra-lightweight, Pure Direct Drive, Built for Street Skids &amp; Urban Riders. One gear, zero distractions — discover the raw soul of Fixed Gear cycling.
+          </p>
+          <div class="hero-btns">
+            <a href="#ebikes" class="btn-purple">Shop Fixed Gear</a>
+            <button class="btn-outline" onclick="openRideModal('Custom Fixed Gear Builder', 'Choose frame, deep-V wheelset, bullhorn/drop bar & gear ratio')">Build Your Fixie</button>
+          </div>
+        </div>
+
+        <div class="hero-bike-box">
+          <img src="img/hero-bike.png" alt="Rebel Ride Super Rider Fixed Gear Track Bike">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OFFICIAL FIXED GEAR BRANDS STRIP ── -->
+<section class="fixie-brands-sec" id="brands">
+  <div class="container">
+    <div class="brands-kicker">AUTHORIZED DEALER · TOP WORLDWIDE FIXED GEAR BRANDS</div>
+    <div class="brands-strip">
+      <div class="brand-badge" onclick="filterByBrand('tsunami')">
+        <strong>TSUNAMI</strong>
+        <span>SNM100 · SNM4130 · Chromoly &amp; Alloy</span>
+      </div>
+      <div class="brand-badge" onclick="filterByBrand('cinelli')">
+        <strong>CINELLI</strong>
+        <span>Vigorelli · Tutto Plus · Milano Italy</span>
+      </div>
+      <div class="brand-badge" onclick="filterByBrand('engine11')">
+        <strong>ENGINE 11</strong>
+        <span>Crit-D · Vortex · Los Angeles Track</span>
+      </div>
+      <div class="brand-badge" onclick="filterByBrand('leader')">
+        <strong>LEADER BIKES</strong>
+        <span>735TR · 725TR · Aero Street Frame</span>
+      </div>
+      <div class="brand-badge" onclick="filterByBrand('aventon')">
+        <strong>AVENTON</strong>
+        <span>Cordoba · Mataro · Track Geometry</span>
+      </div>
+      <div class="brand-badge" onclick="filterByBrand('state')">
+        <strong>STATE BICYCLE</strong>
+        <span>6061 Black Label · Undefeated Track</span>
+      </div>
+      <div class="brand-badge" onclick="filterByBrand('skream')">
+        <strong>SKREAM</strong>
+        <span>Magnum22 · Anodiz · Crit Frameset</span>
+      </div>
+      <div class="brand-badge" onclick="filterByBrand('dosnoventa')">
+        <strong>DOSNOVENTA</strong>
+        <span>Los Angeles · Detroit · Carbon Track</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WE'VE GOT YOU COVERED ── -->
+<section class="covered-sec" id="services">
+  <div class="container">
+    <h2 class="sec-heading">WE’VE GOT YOU COVERED</h2>
+
+    <div class="zigzag-list">
+      <!-- Row 1 -->
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h3>FREE NATIONWIDE<br>DELIVERY</h3>
+          <p>Get your ride delivered to your doorstep with no extra cost.</p>
+        </div>
+        <div class="zigzag-img">
+          <img src="img/service-1.png" alt="Free Nationwide Delivery">
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="zigzag-row reverse-mobile">
+        <div class="zigzag-img">
+          <img src="img/service-2.png" alt="Lifetime Frame Warranty">
+        </div>
+        <div class="zigzag-text">
+          <h3>LIFETIME FRAME<br>WARRANTY</h3>
+          <p>Confidence that lasts. We back our frames for life.</p>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="zigzag-row">
+        <div class="zigzag-text">
+          <h3>ON-DEMAND REPAIR<br>ASSISTANCE</h3>
+          <p>Access local partner mechanics for quick servicing.</p>
+        </div>
+        <div class="zigzag-img">
+          <img src="img/service-3.png" alt="On-Demand Repair Assistance">
+        </div>
+      </div>
+    </div>
+
+    <div class="covered-cta">
+      <button class="btn-purple" onclick="openRideModal('All Rebel Ride Services', 'Nationwide Delivery • Lifetime Warranty • 24/7 Mechanics')">See All Services</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── ANATOMY / TECH SPECS ── -->
+<section class="anatomy-sec">
+  <div class="container">
+    <div class="anatomy-wrap">
+      <div class="anatomy-img-box">
+        <img src="img/anatomy-bike.png" alt="Fixed Gear Track Geometry & Specs">
+      </div>
+      <div class="anatomy-specs">
+        <div class="spec-callout">
+          <span class="spec-dot"></span>
+          <span><b>Weight:</b> 7.8 kg (6061 Alloy / Carbon Fork)</span>
+        </div>
+        <div class="spec-callout">
+          <span class="spec-dot"></span>
+          <span><b>Ratio:</b> 48T×17T Flip-Flop Hub · 700x25c</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRECISION IN MOTION (PRODUCTS) ── -->
+<section class="products-sec" id="ebikes">
+  <div class="container">
+    <div class="products-head">
+      <h2>PRECISION IN MOTION</h2>
+      <p>Discover our top-tier Fixed Gear &amp; Track models from the world’s most iconic fixie brands.</p>
+      <div class="brand-filter-tabs">
+        <button class="bf-tab active" data-brand="all" onclick="filterByBrand('all', this)">All Brands</button>
+        <button class="bf-tab" data-brand="tsunami" onclick="filterByBrand('tsunami', this)">Tsunami</button>
+        <button class="bf-tab" data-brand="cinelli" onclick="filterByBrand('cinelli', this)">Cinelli</button>
+        <button class="bf-tab" data-brand="engine11" onclick="filterByBrand('engine11', this)">Engine 11</button>
+        <button class="bf-tab" data-brand="leader" onclick="filterByBrand('leader', this)">Leader</button>
+        <button class="bf-tab" data-brand="aventon" onclick="filterByBrand('aventon', this)">Aventon</button>
+        <button class="bf-tab" data-brand="state" onclick="filterByBrand('state', this)">State Bicycle</button>
+      </div>
+    </div>
+
+    <div class="bikes-grid">
+      <!-- Bike 1: Tsunami -->
+      <article class="bike-card" data-brand="tsunami">
+        <div class="bike-brand-pill">TSUNAMI · SINGAPORE</div>
+        <div class="bike-thumb">
+          <img src="img/bike-1.png" alt="Tsunami SNM100 Custom">
+        </div>
+        <div class="bike-meta">
+          <span class="bike-name">Tsunami SNM100</span>
+          <span class="bike-cat">Street Fixie · 48T/17T</span>
+        </div>
+        <button class="btn-order-bike" onclick="orderBike('Tsunami SNM100 – Street Fixie', '$650')">Order Now $650</button>
+      </article>
+
+      <!-- Bike 2: Aventon -->
+      <article class="bike-card" data-brand="aventon">
+        <div class="bike-brand-pill">AVENTON · USA</div>
+        <div class="bike-thumb">
+          <img src="img/bike-2.png" alt="Aventon Cordoba Track">
+        </div>
+        <div class="bike-meta">
+          <span class="bike-name">Aventon Cordoba</span>
+          <span class="bike-cat">Track Fixed · Tapered</span>
+        </div>
+        <button class="btn-order-bike" onclick="orderBike('Aventon Cordoba – Track Fixed', '$780')">Order Now $780</button>
+      </article>
+
+      <!-- Bike 3: Cinelli -->
+      <article class="bike-card" data-brand="cinelli">
+        <div class="bike-brand-pill">CINELLI · ITALY</div>
+        <div class="bike-thumb">
+          <img src="img/bike-3.png" alt="Cinelli Vigorelli Pro">
+        </div>
+        <div class="bike-meta">
+          <span class="bike-name">Cinelli Vigorelli</span>
+          <span class="bike-cat">Pro Velodrome · Columbus</span>
+        </div>
+        <button class="btn-order-bike" onclick="orderBike('Cinelli Vigorelli – Pro Velodrome', '$1250')">Order Now $1250</button>
+      </article>
+
+      <!-- Bike 4: Engine 11 -->
+      <article class="bike-card" data-brand="engine11">
+        <div class="bike-brand-pill">ENGINE 11 · LOS ANGELES</div>
+        <div class="bike-thumb">
+          <img src="img/bike-4.png" alt="Engine 11 Crit-D">
+        </div>
+        <div class="bike-meta">
+          <span class="bike-name">Engine 11 Crit-D</span>
+          <span class="bike-cat">Crit Racing · Triple Butted</span>
+        </div>
+        <button class="btn-order-bike" onclick="orderBike('Engine 11 Crit-D – Crit Racing', '$990')">Order Now $990</button>
+      </article>
+
+      <!-- Bike 5: State Bicycle -->
+      <article class="bike-card" data-brand="state">
+        <div class="bike-brand-pill">STATE BICYCLE · ARIZONA</div>
+        <div class="bike-thumb">
+          <img src="img/bike-5.png" alt="State Black Label V3">
+        </div>
+        <div class="bike-meta">
+          <span class="bike-name">State Black Label V3</span>
+          <span class="bike-cat">6061 Alloy · Carbon Fork</span>
+        </div>
+        <button class="btn-order-bike" onclick="orderBike('State Black Label V3 – Street Fixie', '$720')">Order Now $720</button>
+      </article>
+
+      <!-- Bike 6: Leader Bikes -->
+      <article class="bike-card" data-brand="leader">
+        <div class="bike-brand-pill">LEADER BIKES · SAN DIEGO</div>
+        <div class="bike-thumb">
+          <img src="img/bike-6.png" alt="Leader 735TR Aero">
+        </div>
+        <div class="bike-meta">
+          <span class="bike-name">Leader 735TR Aero</span>
+          <span class="bike-cat">Aero Teardrop Track</span>
+        </div>
+        <button class="btn-order-bike" onclick="orderBike('Leader 735TR Aero – Aero Track', '$1150')">Order Now $1150</button>
+      </article>
+    </div>
+
+    <div class="products-cta">
+      <button class="btn-purple" onclick="filterByBrand('all'); openRideModal('Full Fixed Gear Brand Catalog', 'Tsunami • Cinelli • Engine 11 • Leader • Aventon • State • Skream • Dosnoventa')">View All Fixed Gear</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── ENGINEERED FOR THE RIDE ── -->
+<section class="engineered-sec" id="about">
+  <div class="container">
+    <div class="engineered-banner">
+      <div class="engineered-content">
+        <h2>ENGINEERED FOR<br>THE RIDE.</h2>
+        <p>
+          Whether you’re conquering the city streets or making a statement at every turn, our bikes deliver an unmatched riding experience. This isn’t just cycling — it’s riding reimagined.
+        </p>
+        <button class="btn-dark-outline" onclick="openRideModal('About Rebel Ride', 'Engineered in Los Angeles, CA')">About Us</button>
+      </div>
+      <div class="engineered-visual">
+        <img src="img/banner-engineered.png" alt="Engineered Mountain Bike Tire">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOLLOW ON INSTAGRAM ── -->
+<section class="insta-sec">
+  <div class="container">
+    <h2 class="insta-head">FOLLOW ON INSTAGRAM</h2>
+
+    <div class="insta-grid">
+      <div class="insta-item" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+        <img src="img/insta-1.png" alt="Instagram 1">
+        <div class="insta-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </div>
+      </div>
+
+      <div class="insta-item" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+        <img src="img/insta-2.png" alt="Instagram 2">
+        <div class="insta-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </div>
+      </div>
+
+      <div class="insta-item center-featured" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+        <img src="img/insta-3.png" alt="Instagram 3">
+        <div class="insta-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </div>
+      </div>
+
+      <div class="insta-item" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+        <img src="img/insta-4.png" alt="Instagram 4">
+        <div class="insta-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </div>
+      </div>
+
+      <div class="insta-item" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+        <img src="img/insta-5.png" alt="Instagram 5">
+        <div class="insta-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>ABOUT</h4>
+        <ul>
+          <li><a href="#about">Partnership</a></li>
+          <li><a href="#services">Terms of Use</a></li>
+          <li><a href="#contact">Privacy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>FIXIE BRANDS</h4>
+        <ul>
+          <li><a href="#ebikes" onclick="filterByBrand('tsunami')">Tsunami &amp; Weapon</a></li>
+          <li><a href="#ebikes" onclick="filterByBrand('cinelli')">Cinelli &amp; Dosnoventa</a></li>
+          <li><a href="#ebikes" onclick="filterByBrand('engine11')">Engine 11 &amp; Skream</a></li>
+          <li><a href="#ebikes" onclick="filterByBrand('leader')">Leader &amp; Aventon</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>RESOURCES</h4>
+        <ul>
+          <li><a href="#about">Career</a></li>
+          <li><a href="#ebikes">Blog</a></li>
+          <li><a href="#contact">Legal</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <ul>
+          <li><a href="mailto:info@rebelride.com">info@rebelride.com</a></li>
+          <li><a href="tel:0974100372">+1 564-644-5965</a></li>
+          <li>Los Angeles, CA</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:#888;">
+      <span>Designed by Hoang Phuong</span>
+      <span>Copyright © 2026 Hoang Phuong. All rights reserved.</span>
+    </div>
+    <div class="footer-giant-wrap">
+      <div class="footer-giant-brand">REBEL RIDE</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── ORDER / TEST RIDE MODAL ── -->
+<div class="modal-backdrop" id="rideModal" onclick="if(event.target===this)closeRideModal()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeRideModal()">✕</button>
+    <h3 id="modalTitle">Order Rebel Ride</h3>
+    <p id="modalSub">Free Nationwide Delivery • Lifetime Frame Warranty</p>
+    <form onsubmit="event.preventDefault(); window.open('https://zalo.me/0974100372','_blank');">
+      <div class="modal-field">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
+      </div>
+      <div class="modal-field">
+        <label>Phone / Zalo / Telegram</label>
+        <input type="tel" placeholder="09xx xxx xxx" required>
+      </div>
+      <div class="modal-field">
+        <label>Delivery Address / City</label>
+        <input type="text" placeholder="Enter your address" required>
+      </div>
+      <div class="modal-actions">
+        <button type="submit" class="modal-btn zalo">Order via Zalo →</button>
+        <a href="https://t.me/lhoangphuong" target="_blank" class="modal-btn tg">Via Telegram →</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="../../lang-switcher.js"></script>
+</body>
+</html>

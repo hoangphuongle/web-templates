@@ -4564,7 +4564,7 @@ a.contact-val:hover {
     border-radius: 24px;
     overflow: hidden;
     height: 540px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9)), url('assets/booking_banner_bg.png') no-repeat center center / cover;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.9)), url('img/booking_banner_bg.png') no-repeat center center / cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -4665,11 +4665,11 @@ a.contact-val:hover {
 }
 
 .card-bg-1 {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('assets/news_sweet_potato.png') no-repeat center center / cover;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('img/news_sweet_potato.png') no-repeat center center / cover;
 }
 
 .card-bg-2 {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('assets/news_lemon_honey.png') no-repeat center center / cover;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.85)), url('img/news_lemon_honey.png') no-repeat center center / cover;
 }
 
 .about-small-card h3 {

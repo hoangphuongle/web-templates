@@ -13,46 +13,9 @@
 ╔══════════════════════════════════════════════════════════════════╗
 ║  MẪU NAIL – PHIÊN BẢN 2: "NOIR" (Đen & Vàng sang trọng)          ║
 ║  - BASE (bên dưới): màu, font, nút, hiệu ứng chung → BẮT BUỘC.   ║
-║  - Mỗi SECTION = 1 khối độc lập (<style> + HTML + <script>).     ║
-║    Copy từ "BẮT ĐẦU" đến "KẾT THÚC" để dán sang trang khác.       ║
-║  - BASE SCRIPT ở cuối trang → BẮT BUỘC.                          ║
-╚══════════════════════════════════════════════════════════════════╝
--->
-
-<!-- ═══════════════ BASE: BẮT ĐẦU (bắt buộc) ═══════════════ -->
-<style>
-:root{
-  /* ĐỔI MÀU THƯƠNG HIỆU TẠI ĐÂY */
-  --bg:#0e0c0b; --bg-2:#171412; --bg-3:#211c19;
-  --gold:#d4af6a; --gold-2:#f3dca4; --gold-d:#9c7a3c;
-  --text:#ece6dd; --muted:#9d948a; --line:rgba(212,175,106,.18);
-  --radius:4px;
-  --font-body:'Be Vietnam Pro',sans-serif;
-  --font-head:'Cormorant Garamond',serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);font-weight:300;color:var(--text);background:var(--bg);line-height:1.7;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
-.container{width:min(1200px,90%);margin:auto}
-.section{padding:120px 0}
-.label{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:20px}
-.label::before{content:'';width:40px;height:1px;background:var(--gold)}
-.title{font-size:clamp(2.4rem,5vw,3.8rem)}
-.title em{font-style:italic;color:var(--gold)}
-.gold-text{background:linear-gradient(120deg,var(--gold-d),var(--gold-2),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:16px 34px;font:inherit;font-size:.8rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border:none;transition:.4s;position:relative;overflow:hidden}
-.btn-gold{background:linear-gradient(120deg,var(--gold-d),var(--gold),var(--gold-2));background-size:200%;color:#16120e}
-.btn-gold:hover{background-position:100%;box-shadow:0 10px 40px -10px rgba(212,175,106,.6)}
-.btn-line{border:1px solid var(--gold);color:var(--gold);background:none}
-.btn-line:hover{background:var(--gold);color:#16120e}
-.reveal{opacity:0;transform:translateY(50px);transition:1.1s cubic-bezier(.2,.7,.2,1)}
-.reveal.show{opacity:1;transform:none}
-@media(max-width:700px){.section{padding:80px 0}}
-</style>
+║  - Mỗi SECTION = 1 khối độc lập (
 <!-- ═══════════════ BASE: KẾT THÚC ═══════════════ -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- HP Showcase Bar v2 -->
@@ -68,8 +31,9 @@ h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
     <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
       <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
       <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
       <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
-        Chốt ngay qua Zalo
+        Nhắn tin Zalo
       </a>
     </span>
   </div>
@@ -114,24 +78,17 @@ h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
     <button class="nh-toggle" id="nhToggle" aria-label="Mở menu">☰</button>
   </div>
 </header>
-<script>
-(()=>{
-  const h=document.getElementById('nh'),m=document.getElementById('nhMenu');
-  addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>40));
-  document.getElementById('nhToggle').onclick=()=>m.classList.toggle('open');
-  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
-})();
-</script>
+
 <!-- ═══════════════ SECTION: HEADER / MENU – KẾT THÚC ═══════════════ -->
 
 
 <main>
 
 <!-- ═══════════════ SECTION: HERO TOÀN MÀN HÌNH – BẮT ĐẦU ═══════════════ -->
-<!-- Đổi ảnh nền: sửa url(images/hero.png) trong .fh-bg -->
+<!-- Đổi ảnh nền: sửa url(img/hero.png) trong .fh-bg -->
 <style>
 .fh{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-.fh-bg{position:absolute;inset:0;background:url(images/hero.png) 70% center/cover;transform:scale(1.1);animation:fhZoom 20s ease-out forwards}
+.fh-bg{position:absolute;inset:0;background:url(img/hero.png) 70% center/cover;transform:scale(1.1);animation:fhZoom 20s ease-out forwards}
 .fh::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 25%,rgba(14,12,11,.55) 60%,rgba(14,12,11,.2)),linear-gradient(0deg,var(--bg),transparent 30%)}
 .fh-in{position:relative;z-index:1;max-width:640px;padding-top:80px}
 .fh h1{font-size:clamp(3rem,7vw,5.8rem);margin-bottom:26px}
@@ -209,22 +166,12 @@ h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
       </div>
     </div>
     <div class="ab-img reveal">
-      <img src="images/hero.png" alt="Bộ móng chrome vàng tại NOIR">
+      <img src="img/hero.png" alt="Bộ móng chrome vàng tại NOIR">
       <div class="ab-sign">Mỗi bộ móng là một tác phẩm<small>— FOUNDER, NOIR</small></div>
     </div>
   </div>
 </section>
-<script>
-(()=>{
-  const io=new IntersectionObserver(es=>es.forEach(e=>{
-    if(!e.isIntersecting)return;
-    const el=e.target,end=+el.dataset.count;let n=0;
-    const t=setInterval(()=>{n++;el.textContent=n+(n===end?'+':'');if(n>=end)clearInterval(t)},60);
-    io.unobserve(el);
-  }));
-  document.querySelectorAll('[data-count]').forEach(el=>io.observe(el));
-})();
-</script>
+
 <!-- ═══════════════ SECTION: GIỚI THIỆU + CON SỐ – KẾT THÚC ═══════════════ -->
 
 
@@ -309,7 +256,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
 
 
 <!-- ═══════════════ SECTION: BỘ SƯU TẬP CUỘN NGANG – BẮT ĐẦU ═══════════════ -->
-<!-- Thay ảnh thật: thêm style="background-image:url(images/xxx.jpg)" vào .hs-art -->
+<!-- Thay ảnh thật: thêm style="background-image:url(img/xxx.jpg)" vào .hs-art -->
 <style>
 .hs{background:var(--bg-2);overflow:hidden}
 .hs-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;gap:20px;flex-wrap:wrap}
@@ -334,7 +281,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
     <div class="hs-nav"><button id="hsPrev" aria-label="Trước">←</button><button id="hsNext" aria-label="Sau">→</button></div>
   </div>
   <div class="hs-track reveal" id="hsTrack">
-    <div class="hs-item"><div class="hs-art" style="background-image:url(images/hero.png)"></div><h4>Noir & Gold</h4><small>Chrome · Coffin</small></div>
+    <div class="hs-item"><div class="hs-art" style="background-image:url(img/hero.png)"></div><h4>Noir & Gold</h4><small>Chrome · Coffin</small></div>
     <div class="hs-item"><div class="hs-art" style="background:radial-gradient(circle at 30% 20%,#3a2a1c,#120e0b)"><div class="hs-nails"><i style="background:linear-gradient(135deg,#f3dca4,#9c7a3c,#f3dca4)"></i><i style="background:linear-gradient(135deg,#9c7a3c,#f3dca4,#9c7a3c)"></i><i style="background:linear-gradient(135deg,#f3dca4,#9c7a3c,#f3dca4)"></i><i style="background:linear-gradient(135deg,#9c7a3c,#f3dca4,#9c7a3c)"></i></div></div><h4>Liquid Gold</h4><small>Tráng gương</small></div>
     <div class="hs-item"><div class="hs-art" style="background:radial-gradient(circle at 70% 30%,#3b1219,#110709)"><div class="hs-nails"><i style="background:linear-gradient(#8e1c2c,#3a0a12)"></i><i style="background:linear-gradient(#b02a3d,#4d0d18)"></i><i style="background:linear-gradient(#8e1c2c,#3a0a12)"></i><i style="background:linear-gradient(#b02a3d,#4d0d18)"></i></div></div><h4>Bordeaux</h4><small>Đỏ rượu vang</small></div>
     <div class="hs-item"><div class="hs-art" style="background:radial-gradient(circle at 40% 30%,#1d2340,#0a0c16)"><div class="hs-nails"><i style="background:radial-gradient(circle at 50% 35%,#c9d6ff,#2b3a8f 60%,#0d1440)"></i><i style="background:radial-gradient(circle at 50% 35%,#e0d0ff,#4a2b8f 60%,#160d40)"></i><i style="background:radial-gradient(circle at 50% 35%,#c9d6ff,#2b3a8f 60%,#0d1440)"></i></div></div><h4>Midnight Galaxy</h4><small>Mắt mèo 9D</small></div>
@@ -342,13 +289,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
     <div class="hs-item"><div class="hs-art" style="background:radial-gradient(circle at 50% 30%,#2e2925,#100d0b)"><div class="hs-nails"><i style="background:#1a1715"></i><i style="background:#2a2522"></i><i style="background:#1a1715"></i><i style="background:#2a2522"></i></div></div><h4>Velvet Black</h4><small>Đen nhung lì</small></div>
   </div>
 </section>
-<script>
-(()=>{
-  const t=document.getElementById('hsTrack');
-  document.getElementById('hsPrev').onclick=()=>t.scrollBy({left:-324,behavior:'smooth'});
-  document.getElementById('hsNext').onclick=()=>t.scrollBy({left:324,behavior:'smooth'});
-})();
-</script>
+
 <!-- ═══════════════ SECTION: BỘ SƯU TẬP CUỘN NGANG – KẾT THÚC ═══════════════ -->
 
 
@@ -379,15 +320,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
     <div class="ts-dots" id="tsDots"></div>
   </div>
 </section>
-<script>
-(()=>{
-  const s=[...document.querySelectorAll('.ts-slide')],d=document.getElementById('tsDots');let i=0,timer;
-  s.forEach((_,k)=>{const b=document.createElement('button');b.setAttribute('aria-label','Đánh giá '+(k+1));b.onclick=()=>go(k);d.appendChild(b)});
-  const dots=[...d.children];
-  function go(k){s[i].classList.remove('active');dots[i].classList.remove('active');i=k;s[i].classList.add('active');dots[i].classList.add('active');clearInterval(timer);timer=setInterval(()=>go((i+1)%s.length),5000)}
-  go(0);
-})();
-</script>
+
 <!-- ═══════════════ SECTION: ĐÁNH GIÁ DẠNG SLIDER – KẾT THÚC ═══════════════ -->
 
 
@@ -415,75 +348,12 @@ h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1}
     </div>
   </div>
 </section>
-<script>
-document.querySelectorAll('.fq-q').forEach(q=>q.onclick=()=>{
-  const it=q.parentElement,a=q.nextElementSibling,open=it.classList.toggle('open');
-  a.style.maxHeight=open?a.scrollHeight+'px':0;
-});
-</script>
+
 <!-- ═══════════════ SECTION: HỎI ĐÁP (FAQ) – KẾT THÚC ═══════════════ -->
 
 
 <!-- ═══════════════ SECTION: LIÊN HỆ + ĐẶT LỊCH QUA ZALO – BẮT ĐẦU ═══════════════ -->
-<!-- Form này mở Zalo kèm nội dung đặt lịch. Đổi số Zalo ở biến ZALO trong <script> -->
-<style>
-.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
-.ct-info{display:grid;gap:30px;margin-top:40px}
-.ct-info small{display:block;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-.ct-info div{font-size:1.05rem}
-.ct-form{display:grid;gap:26px;border:1px solid var(--line);padding:50px;background:var(--bg-2)}
-.ct-form h3{font-size:2rem}
-.ct-field{position:relative}
-.ct-field input,.ct-field select{width:100%;background:none;border:none;border-bottom:1px solid var(--line);color:var(--text);font:inherit;padding:14px 0;transition:.3s}
-.ct-field select option{background:var(--bg)}
-.ct-field input:focus,.ct-field select:focus{outline:none;border-color:var(--gold)}
-.ct-field label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.ct-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.ct-note{font-size:.8rem;color:var(--muted);text-align:center}
-@media(max-width:900px){.ct-grid{grid-template-columns:1fr;gap:50px}}
-@media(max-width:600px){.ct-form{padding:34px 24px}.ct-row{grid-template-columns:1fr}}
-</style>
-<section class="section" id="lien-he">
-  <div class="container ct-grid">
-    <div class="reveal">
-      <span class="label">Liên hệ</span>
-      <h2 class="title">Hẹn gặp bạn tại <em>NOIR</em></h2>
-      <div class="ct-info">
-        <div><small>Địa chỉ</small>88 Lê Thánh Tôn, Quận 1, TP.HCM</div>
-        <div><small>Giờ mở cửa</small>9:30 – 21:30 · Tất cả các ngày</div>
-        <div><small>Hotline / Zalo</small>0909 888 999</div>
-        <div><small>Ưu đãi</small><span class="gold-text">Giảm 15% cho khách đặt lịch online lần đầu</span></div>
-      </div>
-    </div>
-    <form class="ct-form reveal" id="ctForm">
-      <h3>Đặt lịch hẹn</h3>
-      <div class="ct-row">
-        <div class="ct-field"><label>Họ tên</label><input name="ten" required></div>
-        <div class="ct-field"><label>Số điện thoại</label><input name="sdt" type="tel" required></div>
-      </div>
-      <div class="ct-field"><label>Gói dịch vụ</label><select name="goi"><option>Essential – 290K</option><option>Signature – 590K</option><option>Bridal – 1.290K</option><option>Khác / cần tư vấn</option></select></div>
-      <div class="ct-row">
-        <div class="ct-field"><label>Ngày</label><input name="ngay" type="date" required></div>
-        <div class="ct-field"><label>Giờ</label><input name="gio" type="time" required></div>
-      </div>
-      <button class="btn btn-gold" type="submit">Gửi qua Zalo ✦</button>
-      <p class="ct-note">Nội dung đặt lịch sẽ được sao chép, bạn chỉ cần dán vào Zalo.</p>
-    </form>
-  </div>
-</section>
-<script>
-(()=>{
-  const ZALO='0909888999'; // ← ĐỔI SỐ ZALO
-  document.getElementById('ctForm').onsubmit=e=>{
-    e.preventDefault();
-    const f=new FormData(e.target);
-    const msg=`Đặt lịch NOIR\nTên: ${f.get('ten')}\nSĐT: ${f.get('sdt')}\nGói: ${f.get('goi')}\nThời gian: ${f.get('gio')} ngày ${f.get('ngay')}`;
-    navigator.clipboard?.writeText(msg).catch(()=>{});
-    alert('Đã sao chép nội dung đặt lịch. Zalo sẽ mở ra – bạn dán (Ctrl/Cmd+V) và gửi nhé!');
-    window.open('https://zalo.me/'+ZALO,'_blank');
-  };
-})();
-</script>
+<!-- Form này mở Zalo kèm nội dung đặt lịch. Đổi số Zalo ở biến ZALO trong 
 <!-- ═══════════════ SECTION: LIÊN HỆ + ĐẶT LỊCH QUA ZALO – KẾT THÚC ═══════════════ -->
 
 </main>
@@ -502,7 +372,7 @@ document.querySelectorAll('.fq-q').forEach(q=>q.onclick=()=>{
   <div class="container">
     <div class="nf-logo gold-text">NOIR</div>
     <div class="nf-social"><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Zalo</a></div>
-    <small>© 2026 NOIR Nail Lounge · Mẫu giao diện demo</small>
+    <small>Copyright © 2026 Hoang Phuong. All rights reserved.</small>
   </div>
 </footer>
 <!-- ═══════════════ SECTION: FOOTER – KẾT THÚC ═══════════════ -->
@@ -527,11 +397,8 @@ document.querySelectorAll('.fq-q').forEach(q=>q.onclick=()=>{
 
 
 <!-- ═══════════════ BASE SCRIPT: HIỆU ỨNG HIỆN DẦN (bắt buộc, để cuối trang) ═══════════════ -->
-<script>
-(()=>{
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
-  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.12+'s';io.observe(el)});
-})();
-</script>
+
+<script src="script.js"></script>
+<script src="../../lang-switcher.js"></script>
 </body>
 </html>

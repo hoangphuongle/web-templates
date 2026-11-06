@@ -445,7 +445,7 @@ body {
     bottom: -80px;
     width: 350px;
     height: 350px;
-    background: url('fruit_tea_bg_removed.png') center/contain no-repeat;
+    background: url('img/fruit_tea_bg_removed.png') center/contain no-repeat;
     opacity: 0.9;
     z-index: 1;
     transform: rotate(15deg);

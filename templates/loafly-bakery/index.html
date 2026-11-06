@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loafly — Where Crumbs Become Art | Artisan Bakery & Patisserie</title>
+  <meta name="description" content="Loafly Artisan Bakery — Handcrafted sourdough breads, French pastries, cakes, and cookies baked fresh every morning.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Nhắn tin Zalo</a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}@media(max-width:479px){#hp-back{display:none!important}#hp-bar{padding:0 10px!important;gap:6px!important}}</style>
+
+  <!-- HERO SECTION -->
+  <header class="hero" id="home">
+    <!-- Overhead Artisan Pastries Banner -->
+    <div class="hero-top-art">
+      <img src="img/hero-pastries.png" alt="Loafly Artisan Breads, Cinnamon Rolls and Pastries" class="hero-top-img">
+      <div class="hero-top-fade"></div>
+    </div>
+
+    <!-- Floating Pill Navigation -->
+    <div class="container nav-wrap">
+      <nav class="navbar" id="navbar">
+        <a href="#home" class="brand-logo">
+          <span class="logo-bracket">(</span>
+          <span class="logo-text">Loafly</span>
+          <span class="logo-bracket">)</span>
+        </a>
+
+        <ul class="nav-pill" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#category">Category</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#bakers">Bakers</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+
+        <div class="nav-right">
+          <button class="cart-btn" id="cartBtn" aria-label="Shopping Cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Hero Headline & CTA -->
+    <div class="container hero-content">
+      <div class="hero-kicker">
+        <span>🌾 100% Organic Stone-Milled Flour</span>
+        <span class="dot-sep">•</span>
+        <span>⏳ 36-Hour Wild Levain Fermentation</span>
+        <span class="dot-sep">•</span>
+        <span>🔥 Baked Fresh at 4:00 AM</span>
+      </div>
+
+      <h1 class="hero-title">
+        WHERE CRUMBS<br>BECOME ART
+      </h1>
+
+      <p class="hero-sub">
+        Every loaf is shaped by hand, naturally leavened with our 18-year-old heirloom sourdough starter, and baked on hearth stone for an unmistakable crackle and airy crumb.
+      </p>
+
+      <div class="hero-cta-wrap">
+        <a href="#shop" class="btn-amber">Explore Our Items</a>
+        <a href="#contact" class="btn-outline-cream">Reserve a Table</a>
+      </div>
+
+      <!-- Artisan Bakery Stats Strip -->
+      <div class="hero-stats">
+        <div class="h-stat">
+          <strong>36h</strong>
+          <span>Cold Fermentation</span>
+        </div>
+        <div class="h-stat">
+          <strong>100%</strong>
+          <span>Organic French Butter</span>
+        </div>
+        <div class="h-stat">
+          <strong>48+</strong>
+          <span>Daily Artisan Pastries</span>
+        </div>
+        <div class="h-stat">
+          <strong>4.9 ★</strong>
+          <span>2,400+ Local Reviews</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATEGORY & FRESH PICKS SECTION -->
+  <section class="section-cream" id="category">
+    <div class="container">
+      <div class="section-head">
+        <span class="tilted-badge">CATEGORY</span>
+        <h2 class="section-title">FRESH PICKS<br>OF THE SEASON</h2>
+        <p class="section-desc">Small-batch loaves and laminated pastries fresh from our stone deck oven. Click any item to view ingredients &amp; baking notes.</p>
+      </div>
+
+      <!-- Category Slider / Tabs -->
+      <div class="category-bar">
+        <button class="cat-arrow" id="catPrev" aria-label="Previous Category">‹</button>
+
+        <div class="cat-tabs" id="catTabs">
+          <button class="cat-tab active" data-cat="breads">
+            <div class="cat-thumb">
+              <img src="img/cat-breads.png" alt="Breads">
+            </div>
+            <span class="cat-pill">Breads</span>
+          </button>
+
+          <button class="cat-tab" data-cat="pastries">
+            <div class="cat-thumb">
+              <img src="img/cat-pastries.png" alt="Pastries">
+            </div>
+            <span class="cat-pill">PASTRIES</span>
+          </button>
+
+          <button class="cat-tab" data-cat="cakes">
+            <div class="cat-thumb">
+              <img src="img/cat-cakes.png" alt="Cakes">
+            </div>
+            <span class="cat-pill">Cakes</span>
+          </button>
+
+          <button class="cat-tab" data-cat="cookies">
+            <div class="cat-thumb">
+              <img src="img/cat-cookies.png" alt="Cookies">
+            </div>
+            <span class="cat-pill">Cookies</span>
+          </button>
+        </div>
+
+        <button class="cat-arrow" id="catNext" aria-label="Next Category">›</button>
+      </div>
+
+      <!-- 3 Tall Artisan Product Cards (Per Category) -->
+      <div class="product-grid" id="shop">
+        <!-- BREADS (Default Active) -->
+        <!-- Card 1: Sourdough (Cocoa Brown) -->
+        <article class="loaf-card card-cocoa" data-cat="breads" data-name="Sourdough" data-price="24.90" data-weight="850g Loaf" data-ferment="36h Wild Levain" data-desc="Blistered dark crust with a custardy, open crumb. Made strictly with organic stone-ground wheat, filtered water, and sea salt." data-img="img/product-sourdough.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag">36h Ferment</span>
+            <span class="loaf-weight">850g</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/product-sourdough.png" alt="Artisan Country Sourdough Loaf" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">SOURDOUGH</h3>
+            <p class="loaf-sub">Country Heritage Boule · Crispy Crust</p>
+            <p class="loaf-price">$24.90</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-amber-sm" data-item="Sourdough" data-price="24.90" data-img="img/product-sourdough.png">Add to Cart</button>
+              <button class="btn-quick-view" aria-label="Quick View Details">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Baguettes (Golden Amber) -->
+        <article class="loaf-card card-amber" data-cat="breads" data-name="Baguettes" data-price="29.90" data-weight="Set of 3 · 750g" data-ferment="24h Poolish" data-desc="Traditional French T65 flour baguettes with golden shards of crust and honeycombed interior. Best enjoyed warm with salted Normandy butter." data-img="img/product-baguettes.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag tag-dark">Best Seller</span>
+            <span class="loaf-weight">3 Loaves</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/product-baguettes.png" alt="French Tradition Baguettes" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">BAGUETTES</h3>
+            <p class="loaf-sub">French Tradition T65 · Trio Pack</p>
+            <p class="loaf-price">$29.90</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-dark-sm" data-item="Baguettes" data-price="29.90" data-img="img/product-baguettes.png">Add to Cart</button>
+              <button class="btn-quick-view btn-qv-dark" aria-label="Quick View Details">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Multigrain (Dark Espresso) -->
+        <article class="loaf-card card-espresso" data-cat="breads" data-name="Multigrain" data-price="19.90" data-weight="800g Sliced" data-ferment="28h Wholegrain" data-desc="Toasted flax, sunflower, pumpkin, and sesame seeds folded into our hearty whole-rye and spelt sourdough base." data-img="img/product-multigrain.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag">7-Seed Roast</span>
+            <span class="loaf-weight">800g</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/product-multigrain.png" alt="Seeded Multigrain Sliced Loaf" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">MULTIGRAIN</h3>
+            <p class="loaf-sub">Toasted 7-Seed &amp; Whole Rye</p>
+            <p class="loaf-price">$19.90</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-amber-sm" data-item="Multigrain" data-price="19.90" data-img="img/product-multigrain.png">Add to Cart</button>
+              <button class="btn-quick-view" aria-label="Quick View Details">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PASTRIES TAB -->
+        <article class="loaf-card card-cocoa is-hidden" data-cat="pastries" data-name="Cinnamon Roll" data-price="14.50" data-weight="220g Roll" data-ferment="Brioche Dough" data-desc="Swirled with Ceylon cinnamon, brown muscovado butter, and cardamom, glazed warm out of the oven." data-img="img/gallery-3.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag">Warm Batch</span>
+            <span class="loaf-weight">220g</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/gallery-3.png" alt="Spiced Cinnamon Swirl Roll" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">CINNAMON ROLL</h3>
+            <p class="loaf-sub">Ceylon Cinnamon &amp; Brown Butter</p>
+            <p class="loaf-price">$14.50</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-amber-sm" data-item="Cinnamon Roll" data-price="14.50" data-img="img/gallery-3.png">Add to Cart</button>
+              <button class="btn-quick-view">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="loaf-card card-amber is-hidden" data-cat="pastries" data-name="Butter Croissants" data-price="18.90" data-weight="Box of 4" data-ferment="27-Layer Laminated" data-desc="27 delicate layers of AOP Charentes-Poitou butter and organic flour, baked to a shatteringly crisp golden honeycomb." data-img="img/gallery-9.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag tag-dark">AOP Butter</span>
+            <span class="loaf-weight">Box of 4</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/gallery-9.png" alt="Flaky French Butter Croissants" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">CROISSANTS</h3>
+            <p class="loaf-sub">27-Layer French Butter Box</p>
+            <p class="loaf-price">$18.90</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-dark-sm" data-item="Butter Croissants" data-price="18.90" data-img="img/gallery-9.png">Add to Cart</button>
+              <button class="btn-quick-view btn-qv-dark">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="loaf-card card-espresso is-hidden" data-cat="pastries" data-name="Mille-Feuille" data-price="22.00" data-weight="280g Slice" data-ferment="Caramelized Puff" data-desc="Caramelized inverted puff pastry layered with Madagascar Bourbon vanilla bean diplomat cream." data-img="img/gallery-2.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag">Patisserie</span>
+            <span class="loaf-weight">280g</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/gallery-2.png" alt="Vanilla Cream Mille-Feuille" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">MILLE-FEUILLE</h3>
+            <p class="loaf-sub">Madagascar Vanilla Bean Cream</p>
+            <p class="loaf-price">$22.00</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-amber-sm" data-item="Mille-Feuille" data-price="22.00" data-img="img/gallery-2.png">Add to Cart</button>
+              <button class="btn-quick-view">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CAKES TAB -->
+        <article class="loaf-card card-cocoa is-hidden" data-cat="cakes" data-name="Brioche Crown" data-price="34.00" data-weight="Whole 6-Inch" data-ferment="Rich Egg Brioche" data-desc="Featherlight French Brioche Mousseline baked in a tall fluted crown mold with orange blossom glaze." data-img="img/gallery-7.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag">Signature</span>
+            <span class="loaf-weight">6-Inch</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/gallery-7.png" alt="Golden Brioche Cake" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">BRIOCHE CAKE</h3>
+            <p class="loaf-sub">Orange Blossom Mousseline Crown</p>
+            <p class="loaf-price">$34.00</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-amber-sm" data-item="Brioche Cake" data-price="34.00" data-img="img/gallery-7.png">Add to Cart</button>
+              <button class="btn-quick-view">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="loaf-card card-amber is-hidden" data-cat="cakes" data-name="Lemon Torte" data-price="28.50" data-weight="Slice Duo" data-ferment="Amalfi Curd" data-desc="Zesty Amalfi lemon curd layered with whipped mascarpone and almond sponge." data-img="img/gallery-4.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag tag-dark">Seasonal</span>
+            <span class="loaf-weight">350g</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/gallery-4.png" alt="Lemon Mascarpone Slice" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">LEMON TORTE</h3>
+            <p class="loaf-sub">Amalfi Lemon &amp; Whipped Mascarpone</p>
+            <p class="loaf-price">$28.50</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-dark-sm" data-item="Lemon Torte" data-price="28.50" data-img="img/gallery-4.png">Add to Cart</button>
+              <button class="btn-quick-view btn-qv-dark">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="loaf-card card-espresso is-hidden" data-cat="cakes" data-name="Vanilla Crown" data-price="26.90" data-weight="Box of 4" data-ferment="Swiss Meringue" data-desc="Brown-butter sponge crowned with whipped Tahitian vanilla bean mascarpone frosting." data-img="img/gallery-1.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag">Gift Box</span>
+            <span class="loaf-weight">4 Pieces</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/gallery-1.png" alt="Vanilla Bean Frosting Cake" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">VANILLA CROWN</h3>
+            <p class="loaf-sub">Tahitian Vanilla Mascarpone Swirl</p>
+            <p class="loaf-price">$26.90</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-amber-sm" data-item="Vanilla Crown" data-price="26.90" data-img="img/gallery-1.png">Add to Cart</button>
+              <button class="btn-quick-view">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- COOKIES TAB -->
+        <article class="loaf-card card-cocoa is-hidden" data-cat="cookies" data-name="Choux Trio" data-price="16.90" data-weight="Box of 6" data-ferment="Craquelin Choux" data-desc="Crisp craquelin choux puffs filled with dark Valrhona 70% ganache, pistachio praline, and vanilla cream." data-img="img/gallery-5.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag">Valrhona 70%</span>
+            <span class="loaf-weight">6 Puffs</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/gallery-5.png" alt="Chocolate & Vanilla Glazed Bites" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">CHOUX TRIO</h3>
+            <p class="loaf-sub">Dark Chocolate &amp; Praline Craquelin</p>
+            <p class="loaf-price">$16.90</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-amber-sm" data-item="Choux Trio" data-price="16.90" data-img="img/gallery-5.png">Add to Cart</button>
+              <button class="btn-quick-view">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="loaf-card card-amber is-hidden" data-cat="cookies" data-name="Financier Bar" data-price="15.50" data-weight="Box of 5" data-ferment="Beurre Noisette" data-desc="Classic French golden almond financiers baked with nutty browned butter and wildflower honey." data-img="img/gallery-6.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag tag-dark">Brown Butter</span>
+            <span class="loaf-weight">5 Bars</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/gallery-6.png" alt="Almond Honey Financier Bar" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">FINANCIER BAR</h3>
+            <p class="loaf-sub">Roasted Almond &amp; Wildflower Honey</p>
+            <p class="loaf-price">$15.50</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-dark-sm" data-item="Financier Bar" data-price="15.50" data-img="img/gallery-6.png">Add to Cart</button>
+              <button class="btn-quick-view btn-qv-dark">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="loaf-card card-espresso is-hidden" data-cat="cookies" data-name="Country Loaf" data-price="21.90" data-weight="700g Boule" data-ferment="Stone Deck" data-desc="Crisp rustic sourdough boule scored with our signature wheat-ear pattern." data-img="img/gallery-8.png">
+          <div class="loaf-top-badges">
+            <span class="loaf-tag">Hearth Baked</span>
+            <span class="loaf-weight">700g</span>
+          </div>
+          <div class="loaf-img-wrap">
+            <img src="img/gallery-8.png" alt="Artisan Country Galette" loading="lazy">
+          </div>
+          <div class="loaf-info">
+            <h3 class="loaf-name">COUNTRY LOAF</h3>
+            <p class="loaf-sub">Artisan Stone-Deck Boule</p>
+            <p class="loaf-price">$21.90</p>
+            <div class="loaf-btns">
+              <button class="btn-add-cart btn-amber-sm" data-item="Country Loaf" data-price="21.90" data-img="img/gallery-8.png">Add to Cart</button>
+              <button class="btn-quick-view">Details</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Artisan Craftsmanship Pillars -->
+      <div class="craft-pillars">
+        <div class="pillar-card">
+          <span class="pillar-num">01</span>
+          <h4>Heirloom Wild Starter</h4>
+          <p>Nurtured daily since 2008 for complex aroma, natural digestibility, and zero commercial yeast.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">02</span>
+          <h4>36-Hour Cold Proof</h4>
+          <p>Slow-fermented at 4°C to develop deep caramelized crust blisters and a tender, custardy crumb.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">03</span>
+          <h4>French AOP Butter</h4>
+          <p>Our croissants and brioches are laminated with cultured Charentes-Poitou butter for 27 flaky layers.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-num">04</span>
+          <h4>Hearth Stone Oven</h4>
+          <p>Baked directly on steam-injected stone decks at 250°C every morning starting at 4:00 AM.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIAL SECTION -->
+    <div class="container testimonial-wrap" id="testimonial">
+      <div class="section-head">
+        <span class="tilted-badge">TESTIMONIAL</span>
+        <h2 class="section-title">LOVED BY<br>OUR COMMUNITY</h2>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">“</div>
+        <div class="quote-stars">★★★★★</div>
+        <p class="quote-text" id="quoteText">
+          The sourdough here is unbeatable — perfectly crisp on the outside and soft on the inside. It's become a weekend must-have at our home!
+        </p>
+        <div class="quote-author" id="quoteAuthor">— Clara Jenkins · Local Food Critic (Verified Buyer)</div>
+        <div class="quote-dots" id="quoteDots">
+          <button class="q-dot active" data-index="0" aria-label="Review 1"></button>
+          <button class="q-dot" data-index="1" aria-label="Review 2"></button>
+          <button class="q-dot" data-index="2" aria-label="Review 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTISAN BENTO GALLERY & BAKER KITCHEN SECTION -->
+  <section class="section-gold" id="bakers">
+    <div class="container">
+      <div class="section-head">
+        <span class="tilted-badge" style="background:#190b04;color:#fff8eb">ARTISAN GALLERY</span>
+        <h2 class="section-title">FRESH FROM<br>OUR STONE OVEN</h2>
+        <p class="section-desc" style="color:#4b230e">Click any pastry below to inspect close-up details from our morning bake.</p>
+      </div>
+
+      <!-- 3x3 Masonry / Bento Grid -->
+      <div class="bento-gallery">
+        <div class="bento-item" data-caption="Tahitian Vanilla Bean Crown — Whipped mascarpone & brown-butter sponge">
+          <img src="img/gallery-1.png" alt="Frosted Vanilla Cupcake" loading="lazy">
+          <div class="bento-hover"><span>Vanilla Bean Crown</span></div>
+        </div>
+        <div class="bento-item" data-caption="Mille-Feuille Napoleon — 27-layer caramelized puff & diplomat cream">
+          <img src="img/gallery-2.png" alt="Layered Pastry Slice" loading="lazy">
+          <div class="bento-hover"><span>Mille-Feuille Slice</span></div>
+        </div>
+        <div class="bento-item" data-caption="Ceylon Cinnamon Morning Bun — Cardamom sugar & brown butter glaze">
+          <img src="img/gallery-3.png" alt="Cinnamon Swirl Bun" loading="lazy">
+          <div class="bento-hover"><span>Cinnamon Swirl Roll</span></div>
+        </div>
+        <div class="bento-item" data-caption="Amalfi Lemon Mascarpone Torte — Candied citrus peel & almond sponge">
+          <img src="img/gallery-4.png" alt="Lemon Cream Cake Slice" loading="lazy">
+          <div class="bento-hover"><span>Amalfi Lemon Torte</span></div>
+        </div>
+        <div class="bento-item bento-tall" data-caption="Valrhona 70% Choux Trio — Dark chocolate ganache & hazelnut praline">
+          <img src="img/gallery-5.png" alt="Artisan Chocolate Choux Buns" loading="lazy">
+          <div class="bento-hover"><span>Valrhona Choux Trio</span></div>
+        </div>
+        <div class="bento-item" data-caption="Beurre Noisette Financier — Toasted Marcona almond & wildflower honey">
+          <img src="img/gallery-6.png" alt="Golden Almond Pound Cake" loading="lazy">
+          <div class="bento-hover"><span>Honey Almond Financier</span></div>
+        </div>
+        <div class="bento-item" data-caption="Brioche Mousseline Crown — Rich farm-egg brioche baked in copper mold">
+          <img src="img/gallery-7.png" alt="Brioche Mousseline on Stand" loading="lazy">
+          <div class="bento-hover"><span>Brioche Mousseline</span></div>
+        </div>
+        <div class="bento-item" data-caption="Country Heritage Sourdough — 36-hour cold proofed organic levain boule">
+          <img src="img/gallery-8.png" alt="Warm Country Sourdough" loading="lazy">
+          <div class="bento-hover"><span>Heritage Sourdough</span></div>
+        </div>
+        <div class="bento-item" data-caption="Artisan French Croissants — Laminated with AOP Charentes-Poitou butter">
+          <img src="img/gallery-9.png" alt="Freshly Baked Croissants" loading="lazy">
+          <div class="bento-hover"><span>AOP Butter Croissants</span></div>
+        </div>
+      </div>
+
+      <!-- Wide Baker Feature Video Card -->
+      <div class="baker-video-card" id="bakerVideoCard">
+        <img src="img/baker-video.png" alt="Master Baker Crafting Dough in the Loafly Kitchen" loading="lazy">
+        <div class="baker-overlay">
+          <button class="play-btn" id="playVideoBtn" aria-label="Watch Our Master Bakers">
+            ▶
+          </button>
+          <div class="baker-caption">
+            <span>HANDCRAFTED SINCE 4:00 AM · CLICK TO WATCH</span>
+            <strong>Inside Our Stone-Deck Bakery Kitchen</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING & BLOG SECTION -->
+  <section class="section-cream" id="contact">
+    <div class="container">
+      <!-- BOOK YOUR TABLE -->
+      <div class="section-head">
+        <span class="tilted-badge">BOOKING</span>
+        <h2 class="section-title">TIME TO<br>GET YOUR TREATS!</h2>
+        <p class="section-desc">Reserve a cozy corner table for weekend brunch or pre-order warm loaves for pickup.</p>
+      </div>
+
+      <div class="booking-grid">
+        <!-- Left: Cocoa Brown Booking Form -->
+        <div class="booking-form-card">
+          <h3 class="booking-card-title">BOOK YOUR TABLE</h3>
+          <form id="bookingForm" class="booking-form">
+            <input type="text" id="bookName" placeholder="Your name" required>
+            <input type="email" id="bookEmail" placeholder="Your email" required>
+            <input type="tel" id="bookPhone" placeholder="Phone number" required>
+            <div class="form-row-2">
+              <input type="text" id="bookDate" placeholder="22 / 06 / 26" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
+              <select id="bookTime" aria-label="Select Time">
+                <option value="09:00 AM">Time · 09:00 AM</option>
+                <option value="10:30 AM">10:30 AM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="03:30 PM">03:30 PM</option>
+                <option value="06:00 PM">06:00 PM</option>
+              </select>
+            </div>
+            <div class="booking-actions">
+              <button type="submit" class="btn-amber">Submit</button>
+              <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="btn-quick-chat">💬 Zalo</a>
+              <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="btn-quick-chat">✈️ Telegram</a>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Storefront + Opening Hours Card -->
+        <div class="storefront-card">
+          <div class="storefront-img-wrap">
+            <img src="img/storefront.png" alt="Loafly Bakery Patisserie Storefront" loading="lazy">
+          </div>
+          <div class="opening-hours-box">
+            <h4>OPENING HOURS</h4>
+            <p class="hours-days">Monday – Sunday</p>
+            <p class="hours-time">9:00 AM – 8:00 PM</p>
+            <p class="hours-loc">📍 567 Willow Lane, Brookside · Fresh Loaves at 9 AM &amp; 4 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOG: LATEST FROM OUR KITCHEN -->
+      <div class="blog-wrap" id="blog">
+        <div class="section-head">
+          <span class="tilted-badge">BLOG</span>
+          <h2 class="section-title">LATEST FROM<br>OUR KITCHEN</h2>
+          <p class="section-desc">Baking secrets, sourdough starter care guides, and seasonal pastry announcements.</p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card" data-blog="0">
+            <div class="blog-img">
+              <img src="img/blog-1.png" alt="5 Expert Tips for Baking the Perfect Sourdough at Home" loading="lazy">
+            </div>
+            <div class="blog-body">
+              <h3>5 Expert Tips for Baking the Perfect Sourdough at Home</h3>
+              <button type="button" class="blog-btn" data-blog="0">4 Min Read <span>↗</span></button>
+            </div>
+          </article>
+
+          <article class="blog-card" data-blog="1">
+            <div class="blog-img">
+              <img src="img/blog-2.png" alt="The Story Behind Our Signature Almond Croissant" loading="lazy">
+            </div>
+            <div class="blog-body">
+              <h3>The Story Behind Our Signature Almond Croissant</h3>
+              <button type="button" class="blog-btn" data-blog="1">3 Min Read <span>↗</span></button>
+            </div>
+          </article>
+
+          <article class="blog-card" data-blog="2">
+            <div class="blog-img">
+              <img src="img/blog-3.png" alt="Summer Flavors Are Here: Try Our Berry Tart Collection" loading="lazy">
+            </div>
+            <div class="blog-body">
+              <h3>Summer Flavors Are Here: Try Our Berry Tart Collection</h3>
+              <button type="button" class="blog-btn" data-blog="2">5 Min Read <span>↗</span></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Newsletter Header with Floating Sticker Tags -->
+      <div class="newsletter-box">
+        <div class="newsletter-headline-wrap">
+          <span class="mini-sticker sticker-left">TIPS</span>
+          <span class="mini-sticker sticker-top">RECIPES</span>
+          <span class="mini-sticker sticker-right">OFFERS</span>
+          <h2 class="newsletter-title">
+            BE THE FIRST TO<br>
+            <span>KNOW WHAT'S BAKING</span>
+          </h2>
+        </div>
+        <p class="newsletter-sub">
+          Be the first to hear about fresh bakes, exclusive offers, seasonal specials, behind-the-scenes stories, and so much more.
+        </p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-amber">Subscribe</button>
+        </form>
+      </div>
+
+      <!-- Footer Links Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo">
+            <span class="logo-bracket">(</span>
+            <span class="logo-text">Loafly</span>
+            <span class="logo-bracket">)</span>
+          </a>
+          <p class="footer-addr">
+            567 Willow Lane,<br>
+            Brookside, CA 92708, US
+          </p>
+          <p class="footer-phone">+1 (917) 332-335-6684</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>MAIN PAGE</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#category">Category</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#bakers">Bakers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>OTHER PAGES</h4>
+          <ul>
+            <li><a href="#testimonial">About</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Book a Table</a></li>
+            <li><a href="#contact">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>DIRECT ORDER</h4>
+          <ul>
+            <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">💬 Zalo: 0974.100.372</a></li>
+            <li><a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">✈️ Telegram: @lhoangphuong</a></li>
+            <li><a href="../../index.html#templates">← Kho Giao Diện</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-meta">
+        <span>Designed by Hoang Phuong</span>
+        <span>Copyright © 2026 Hoang Phuong. All rights reserved.</span>
+        <span>Powered by Hoang Phuong Web</span>
+      </div>
+    </div>
+
+    <!-- Bottom Baked Cinnamon Rolls Strip -->
+    <div class="footer-rolls">
+      <img src="img/footer-rolls.png" alt="Freshly Baked Cinnamon Rolls" loading="lazy">
+    </div>
+  </footer>
+
+  <!-- SLIDE-OUT BAKERY CART DRAWER -->
+  <div class="cart-backdrop" id="cartBackdrop">
+    <aside class="cart-drawer" aria-label="Your Bakery Basket">
+      <div class="cart-drawer-head">
+        <div>
+          <h3>🧺 Your Bakery Basket</h3>
+          <small>Freshly baked daily · Free local pickup</small>
+        </div>
+        <button class="modal-close-btn" id="closeCartBtn" aria-label="Close Cart">✕</button>
+      </div>
+      <div class="cart-drawer-body" id="cartItemsList">
+        <p class="cart-empty-msg">Your basket is empty. Add a warm sourdough loaf or pastry!</p>
+      </div>
+      <div class="cart-drawer-foot">
+        <div class="cart-total-row">
+          <span>Total Estimate</span>
+          <strong id="cartTotalPrice">$0.00</strong>
+        </div>
+        <div class="cart-checkout-btns">
+          <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="btn-amber" style="width:100%">💬 Order via Zalo</a>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="btn-outline-cream" style="width:100%;text-align:center">✈️ Order via Telegram</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- PRODUCT QUICK-VIEW & MODAL DIALOG -->
+  <div class="loaf-modal-backdrop" id="infoModalBackdrop">
+    <div class="loaf-modal-card" id="infoModalCard">
+      <button class="modal-close-btn" id="closeInfoModal" aria-label="Close Modal">✕</button>
+      <div id="infoModalContent"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">🥐 Added to your bakery basket!</div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>

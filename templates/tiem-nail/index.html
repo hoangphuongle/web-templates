@@ -28,61 +28,18 @@
     <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
       <a href="https://hoangphuongle.github.io/web-templates/" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
       <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
       <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
-        Chốt ngay qua Zalo
+        Nhắn tin Zalo
       </a>
     </span>
   </div>
   <div style="height:52px"></div>
-  <style>
-    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
-    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
-  </style>
+  
  là 1 khối độc lập gồm:               ║
-║      <style> + HTML + <script> (nếu có)                          ║
-║    → Copy nguyên khối từ dòng "SECTION: ... BẮT ĐẦU"              ║
-║      đến "SECTION: ... KẾT THÚC" là dán sang trang khác được.     ║
-║  - Xoá section không cần: xoá nguyên khối đó.                    ║
-║  - Đổi thứ tự: cắt/dán nguyên khối.                              ║
-╚══════════════════════════════════════════════════════════════════╝
--->
-
-<!-- ═══════════════ BASE: BẮT ĐẦU (bắt buộc) ═══════════════ -->
-<style>
-:root{
-  /* ĐỔI MÀU THƯƠNG HIỆU TẠI ĐÂY */
-  --rose:#d98a94; --rose-d:#b9636f; --blush:#f8e9e7; --cream:#fffaf7;
-  --gold:#c9a36a; --ink:#3b2a2c; --muted:#8a7476; --white:#fff;
-  --radius:22px; --shadow:0 20px 50px -20px rgba(185,99,111,.35);
-  --font-body:'Be Vietnam Pro',sans-serif;
-  --font-head:'Playfair Display',serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.65;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-h1,h2,h3{font-family:var(--font-head);font-weight:700;line-height:1.2}
-.container{width:min(1180px,92%);margin:auto}
-.section{padding:100px 0}
-.section-head{text-align:center;max-width:640px;margin:0 auto 56px}
-.section-head h2{font-size:clamp(2rem,4vw,2.8rem)}
-.section-head p{color:var(--muted);margin-top:12px}
-.eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:999px;font-weight:600;transition:.35s;cursor:pointer;border:none;font:inherit;font-weight:600;font-size:.95rem}
-.btn-primary{background:linear-gradient(135deg,var(--rose),var(--rose-d));color:#fff;box-shadow:var(--shadow)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 25px 50px -15px rgba(185,99,111,.55)}
-.btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:#fff}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-/* Hiệu ứng hiện dần khi cuộn: thêm class "reveal" vào phần tử bất kỳ */
-.reveal{opacity:0;transform:translateY(40px);transition:1s cubic-bezier(.2,.7,.2,1)}
-.reveal.show{opacity:1;transform:none}
-@keyframes float{50%{transform:translateY(-14px)}}
-@media(max-width:960px){.grid-3{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.section{padding:70px 0}.grid-3{grid-template-columns:1fr}}
-</style>
+║      
 <!-- ═══════════════ BASE: KẾT THÚC ═══════════════ -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -120,14 +77,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:700;line-height:1.2}
     <button class="hd-toggle" id="hdToggle" aria-label="Mở menu">☰</button>
   </div>
 </header>
-<script>
-(()=>{
-  const h=document.getElementById('header'),m=document.getElementById('hdMenu');
-  addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>40));
-  document.getElementById('hdToggle').onclick=()=>m.classList.toggle('open');
-  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
-})();
-</script>
+
 <!-- ═══════════════ SECTION: HEADER / MENU – KẾT THÚC ═══════════════ -->
 
 
@@ -174,7 +124,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:700;line-height:1.2}
     </div>
   </div>
   <div class="hero-img reveal">
-    <img src="images/hero.png" alt="Bộ móng nude đính vàng tại Rosé Nails">
+    <img src="img/hero.png" alt="Bộ móng nude đính vàng tại Rosé Nails">
     <div class="hero-badge hero-badge-1"><span class="ic">🧴</span><div><b>Tiệt trùng 100%</b><br><small>Dụng cụ riêng từng khách</small></div></div>
     <div class="hero-badge hero-badge-2"><span class="ic">💅</span><div><b>500+ mẫu</b><br><small>Cập nhật xu hướng</small></div></div>
   </div>
@@ -267,13 +217,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:700;line-height:1.2}
     </div>
   </div>
 </section>
-<script>
-document.querySelectorAll('.pr-tab').forEach(t=>t.onclick=()=>{
-  document.querySelectorAll('.pr-tab,.pr-group').forEach(e=>e.classList.remove('active'));
-  t.classList.add('active');
-  document.getElementById(t.dataset.tab).classList.add('active');
-});
-</script>
+
 <!-- ═══════════════ SECTION: BẢNG GIÁ (CÓ TAB) – KẾT THÚC ═══════════════ -->
 
 
@@ -289,7 +233,7 @@ document.querySelectorAll('.pr-tab').forEach(t=>t.onclick=()=>{
 .gl-item:hover .gl-art{transform:scale(1.08)}
 .gl-item .lbl{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);padding:6px 14px;border-radius:999px;font-size:.8rem;font-weight:600;opacity:0;transform:translateY(10px);transition:.4s}
 .gl-item:hover .lbl{opacity:1;transform:none}
-/* Hình móng vẽ bằng CSS (thay bằng ảnh thật: style="background-image:url(images/xxx.jpg)") */
+/* Hình móng vẽ bằng CSS (thay bằng ảnh thật: style="background-image:url(img/xxx.jpg)") */
 .gl-nails{display:flex;gap:10px;align-items:flex-end}
 .gl-nails i{display:block;width:30px;height:62px;border-radius:15px 15px 8px 8px;box-shadow:inset -4px -6px 10px rgba(0,0,0,.08),inset 4px 4px 8px rgba(255,255,255,.5)}
 .gl-nails i:nth-child(2),.gl-nails i:nth-child(4){height:72px}
@@ -304,7 +248,7 @@ document.querySelectorAll('.pr-tab').forEach(t=>t.onclick=()=>{
       <h2>Mẫu nail hot nhất mùa này</h2>
     </div>
     <div class="gl-grid reveal">
-      <div class="gl-item"><div class="gl-art" style="background-image:url(images/hero.png)"></div><span class="lbl">Nude đính vàng</span></div>
+      <div class="gl-item"><div class="gl-art" style="background-image:url(img/hero.png)"></div><span class="lbl">Nude đính vàng</span></div>
       <div class="gl-item"><div class="gl-art" style="background:linear-gradient(135deg,#fde2e4,#fad2e1)"><div class="gl-nails"><i style="background:#f4a7b9"></i><i style="background:#f7c5d0"></i><i style="background:#f4a7b9"></i><i style="background:#f7c5d0"></i></div></div><span class="lbl">Hồng ombre</span></div>
       <div class="gl-item"><div class="gl-art" style="background:linear-gradient(135deg,#2d1f21,#5a3d42)"><div class="gl-nails"><i style="background:linear-gradient(#7a1f2b,#3d0d14)"></i><i style="background:linear-gradient(#a32a3a,#5a1320)"></i><i style="background:linear-gradient(#7a1f2b,#3d0d14)"></i><i style="background:linear-gradient(#a32a3a,#5a1320)"></i></div></div><span class="lbl">Đỏ rượu vang</span></div>
       <div class="gl-item"><div class="gl-art" style="background:linear-gradient(135deg,#e8f0ee,#f6efe6)"><div class="gl-nails"><i style="background:linear-gradient(160deg,#fff 40%,#e9c9a6)"></i><i style="background:linear-gradient(160deg,#fff 40%,#c9a36a)"></i><i style="background:linear-gradient(160deg,#fff 40%,#e9c9a6)"></i><i style="background:linear-gradient(160deg,#fff 40%,#c9a36a)"></i><i style="background:linear-gradient(160deg,#fff 40%,#e9c9a6)"></i></div></div><span class="lbl">French tip nhũ vàng</span></div>
@@ -330,7 +274,7 @@ document.querySelectorAll('.pr-tab').forEach(t=>t.onclick=()=>{
 </style>
 <section class="section">
   <div class="container why">
-    <div class="why-img reveal"><img src="images/hero.png" alt="Không gian tiệm Rosé Nails"></div>
+    <div class="why-img reveal"><img src="img/hero.png" alt="Không gian tiệm Rosé Nails"></div>
     <div class="reveal">
       <span class="eyebrow">Vì sao chọn chúng tôi</span>
       <h2>Không chỉ làm đẹp, mà là trải nghiệm thư giãn</h2>
@@ -400,32 +344,7 @@ document.querySelectorAll('.pr-tab').forEach(t=>t.onclick=()=>{
         <div class="bk-line"><span>⏰</span><span>9:00 – 21:00 (cả Thứ 7 & Chủ nhật)</span></div>
         <div class="bk-line"><span>📞</span><span>0909 123 456 (Zalo)</span></div>
       </div>
-      <!-- LƯU Ý: form demo, chưa gửi dữ liệu đi đâu. Muốn nhận thật trên Netlify: thêm  data-netlify="true" name="dat-lich"  vào thẻ <form> và name="" cho từng ô, rồi xoá đoạn <script> bên dưới -->
-      <form class="bk-form" id="bkForm">
-        <div class="bk-row">
-          <label>Họ tên<input name="ho-ten" required placeholder="Nguyễn Thị A"></label>
-          <label>Số điện thoại<input name="sdt" required type="tel" placeholder="09xx xxx xxx"></label>
-        </div>
-        <label>Dịch vụ
-          <select name="dich-vu"><option>Sơn gel</option><option>Đắp bột / Úp móng</option><option>Vẽ móng nghệ thuật</option><option>Combo cô dâu</option><option>Spa tay / chân</option></select>
-        </label>
-        <div class="bk-row">
-          <label>Ngày<input name="ngay" type="date" required></label>
-          <label>Giờ<input name="gio" type="time" required></label>
-        </div>
-        <button class="btn btn-primary" type="submit">Xác nhận đặt lịch ✦</button>
-        <div class="bk-msg" id="bkMsg">🎉 Đặt lịch thành công! Rosé Nails sẽ gọi xác nhận trong 5 phút.</div>
-      </form>
-    </div>
-  </div>
-</section>
-<script>
-document.getElementById('bkForm').onsubmit=e=>{
-  e.preventDefault();
-  document.getElementById('bkMsg').style.display='block';
-  e.target.reset();
-};
-</script>
+      <!-- LƯU Ý: form demo, chưa gửi dữ liệu đi đâu. Muốn nhận thật trên Netlify: thêm  data-netlify="true" name="dat-lich"  vào thẻ <form> và name="" cho từng ô, rồi xoá đoạn 
 <!-- ═══════════════ SECTION: FORM ĐẶT LỊCH – KẾT THÚC ═══════════════ -->
 
 </main>
@@ -440,7 +359,7 @@ document.getElementById('bkForm').onsubmit=e=>{
 <footer class="ft">
   <div class="container">
     <div class="ft-logo">Rosé <span>Nails</span></div>
-    <p>© 2026 Rosé Nails & Beauty. Mẫu giao diện demo.</p>
+    <p>Copyright © 2026 Hoang Phuong. All rights reserved.</p>
   </div>
 </footer>
 <!-- ═══════════════ SECTION: FOOTER – KẾT THÚC ═══════════════ -->
@@ -465,11 +384,8 @@ document.getElementById('bkForm').onsubmit=e=>{
 
 
 <!-- ═══════════════ BASE SCRIPT: HIỆU ỨNG HIỆN DẦN (bắt buộc, để cuối trang) ═══════════════ -->
-<script>
-(()=>{
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
-  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.1+'s';io.observe(el)});
-})();
-</script>
+
+<script src="script.js"></script>
+<script src="../../lang-switcher.js"></script>
 </body>
 </html>

@@ -1,636 +1,182 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carent. – Car Rental | Nền Tảng Cho Thuê Xe Tự Lái Cao Cấp</title>
-<meta name="description" content="Carent. – Cho thuê xe tự lái và xe du lịch đời mới. Đầy đủ phân khúc Sedan, SUV, Sport, Electric. Bàn giao xe tận nơi chỉ trong 30 phút.">
+<title>Carent. – Car Rental Platform | Discover Your Perfect Car</title>
+<meta name="description" content="Carent is an innovative solution to meet your car rental needs. Explore 200+ well-maintained Sedan, SUV, Sport, and Electric cars with 24/7 support.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-/* ── RESET & BASE ── */
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
-html { scroll-behavior:smooth }
-body {
-  font-family:'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  background:#f8fafc;
-  color:#0f172a;
-  line-height:1.6;
-  overflow-x:hidden;
-}
-a { text-decoration:none; color:inherit }
-img { max-width:100%; display:block }
-button, input, select { font-family:inherit }
-
-:root {
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --primary-light: #eff6ff;
-  --dark-bg: #090e1a;
-  --dark-card: #0f172a;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --border-light: #e2e8f0;
-  --radius-xl: 28px;
-  --radius-lg: 20px;
-  --radius-md: 12px;
-  --radius-full: 9999px;
-  --shadow-sm: 0 4px 12px rgba(15,23,42,0.04);
-  --shadow-md: 0 12px 28px rgba(15,23,42,0.06);
-  --shadow-lg: 0 20px 40px rgba(15,23,42,0.1);
-}
-
-.container {
-  max-width:1160px;
-  margin:0 auto;
-  padding:0 24px;
-}
-
-/* ── NAVBAR ── */
-.nav-wrap {
-  position:fixed; top:0; left:0; right:0; z-index:100;
-  background:rgba(255,255,255,0.92);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(226,232,240,0.8);
-  transition:all .3s ease;
-}
-.nav-inner {
-  display:flex; align-items:center; justify-content:space-between;
-  height:74px;
-}
-.brand-logo {
-  font-size:1.6rem; font-weight:900; letter-spacing:-0.04em;
-  color:#0f172a; display:flex; align-items:center;
-}
-.brand-logo span { color:var(--primary) }
-
-.nav-links {
-  display:flex; align-items:center; gap:32px; list-style:none;
-}
-.nav-links a {
-  font-size:0.9rem; font-weight:600; color:#475569;
-  transition:color .2s;
-}
-.nav-links a:hover { color:var(--primary) }
-
-.nav-cta {
-  background:#0f172a; color:#fff;
-  padding:10px 22px; border-radius:var(--radius-full);
-  font-size:0.86rem; font-weight:700;
-  display:inline-flex; align-items:center; gap:6px;
-  transition:all .25s ease;
-}
-.nav-cta:hover { background:var(--primary); transform:translateY(-1px) }
-
-/* ── HERO BANNER ── */
-.hero {
-  padding:100px 0 50px;
-}
-.hero-banner {
-  position:relative;
-  width:100%;
-  border-radius:var(--radius-xl);
-  overflow:hidden;
-  box-shadow:var(--shadow-lg);
-  background:#cbd5e1;
-}
-.hero-banner-img {
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:cover;
-}
-
-/* Quick Search Widget */
-.search-widget {
-  background:#fff;
-  border-radius:20px;
-  padding:20px 28px;
-  box-shadow:var(--shadow-lg);
-  border:1px solid #e2e8f0;
-  max-width:960px;
-  margin:-36px auto 0;
-  position:relative;
-  z-index:10;
-  display:grid;
-  grid-template-columns:repeat(4, 1fr) auto;
-  gap:16px;
-  align-items:center;
-}
-.search-field {
-  display:flex; flex-direction:column; gap:4px;
-}
-.search-field label {
-  font-size:0.72rem; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.04em;
-}
-.search-field input, .search-field select {
-  border:none; outline:none; font-size:0.92rem; font-weight:700; color:#0f172a;
-  background:transparent; cursor:pointer;
-}
-.search-divider { width:1px; height:36px; background:#e2e8f0 }
-.search-btn {
-  background:var(--primary); color:#fff;
-  border:none; outline:none;
-  padding:14px 24px; border-radius:var(--radius-md);
-  font-weight:700; font-size:0.9rem;
-  cursor:pointer; transition:all .2s;
-  display:flex; align-items:center; gap:6px;
-  white-space:nowrap;
-}
-.search-btn:hover { background:var(--primary-hover); transform:scale(1.02) }
-
-/* Brand logos ticker */
-.brands-row {
-  display:flex; align-items:center; justify-content:center;
-  gap:44px; flex-wrap:wrap; margin-top:40px; opacity:0.6;
-}
-.brand-item {
-  font-size:1.1rem; font-weight:900; color:#475569; letter-spacing:0.06em;
-  text-transform:uppercase;
-}
-
-/* ── OUR SERVICES (DARK CONTAINER) ── */
-.services-section {
-  padding:40px 0;
-}
-.services-box {
-  background:var(--dark-bg);
-  border-radius:32px;
-  padding:60px 48px;
-  color:#fff;
-  box-shadow:0 25px 50px rgba(0,0,0,0.2);
-  position:relative;
-  overflow:hidden;
-}
-.services-header {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:40px; align-items:flex-end;
-  margin-bottom:44px;
-}
-.sec-tag-blue {
-  color:#60a5fa; font-size:0.82rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
-  display:inline-block; margin-bottom:10px;
-}
-.services-header h2 {
-  font-size:clamp(1.8rem, 3.2vw, 2.4rem);
-  font-weight:800; line-height:1.2; letter-spacing:-0.02em;
-}
-.services-header p {
-  color:#94a3b8; font-size:0.92rem; line-height:1.7;
-}
-
-.services-grid {
-  display:grid; grid-template-columns:repeat(3, 1fr); gap:22px;
-}
-.service-card {
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:20px;
-  padding:32px 26px;
-  transition:all .3s ease;
-}
-.service-card:hover {
-  background:rgba(255,255,255,0.07);
-  transform:translateY(-4px);
-  border-color:rgba(96,165,250,0.3);
-}
-.service-icon {
-  width:50px; height:50px; border-radius:14px;
-  background:rgba(37,99,235,0.18); color:#60a5fa;
-  display:grid; place-items:center; font-size:1.35rem;
-  margin-bottom:18px;
-}
-.service-card h3 {
-  font-size:1.15rem; font-weight:700; margin-bottom:10px; color:#fff;
-}
-.service-card p {
-  color:#94a3b8; font-size:0.86rem; line-height:1.65;
-}
-
-/* ── HOW IT WORKS ── */
-.how-section {
-  padding:80px 0;
-}
-.how-grid {
-  display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;
-}
-.how-left h2 {
-  font-size:clamp(1.8rem, 3.2vw, 2.5rem);
-  font-weight:800; line-height:1.2; letter-spacing:-0.02em;
-  margin:8px 0 32px;
-}
-.steps-list {
-  display:flex; flex-direction:column; gap:16px;
-}
-.step-item {
-  display:flex; gap:18px; align-items:flex-start;
-  padding:16px 20px; border-radius:16px;
-  transition:all .25s ease;
-  cursor:pointer;
-}
-.step-item.active, .step-item:hover {
-  background:#fff; box-shadow:var(--shadow-sm); border:1px solid #e2e8f0;
-}
-.step-num {
-  width:36px; height:36px; border-radius:50%;
-  background:#0f172a; color:#fff;
-  display:grid; place-items:center;
-  font-size:0.84rem; font-weight:800; flex-shrink:0;
-}
-.step-item.active .step-num { background:var(--primary) }
-.step-content h4 {
-  font-size:1.02rem; font-weight:700; margin-bottom:4px; color:#0f172a;
-}
-.step-content p {
-  font-size:0.85rem; color:#64748b; line-height:1.55;
-}
-
-/* How right preview mockup */
-.how-preview-card {
-  background:#fff;
-  border-radius:28px;
-  padding:32px;
-  box-shadow:var(--shadow-lg);
-  border:1px solid #e2e8f0;
-}
-.preview-badge-row {
-  display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;
-}
-.preview-title { font-size:0.88rem; font-weight:800; color:#0f172a; text-transform:uppercase; letter-spacing:0.04em }
-.preview-badge {
-  background:#0f172a; color:#fff; font-size:0.75rem; font-weight:800;
-  padding:4px 12px; border-radius:var(--radius-full);
-}
-.car-type-pills {
-  display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; margin-bottom:24px;
-}
-.type-pill {
-  border-radius:12px; border:1px solid #e2e8f0; padding:10px 6px; text-align:center;
-  font-size:0.76rem; font-weight:700; color:#475569; background:#f8fafc;
-  display:flex; flex-direction:column; align-items:center; gap:4px;
-}
-.type-pill.active {
-  border-color:var(--primary); background:var(--primary-light); color:var(--primary);
-}
-
-.mini-car-list {
-  display:grid; grid-template-columns:1fr 1fr; gap:16px;
-}
-.mini-car-card {
-  border:1px solid #e2e8f0; border-radius:16px; padding:14px; background:#fff;
-}
-.mini-car-card img {
-  width:100%; height:75px; object-fit:cover; border-radius:10px; margin-bottom:10px;
-}
-.mini-car-name { font-size:0.86rem; font-weight:700; color:#0f172a }
-.mini-car-price { font-size:0.82rem; font-weight:800; color:var(--primary); margin-top:2px }
-.mini-car-meta { font-size:0.72rem; color:#94a3b8; display:flex; justify-content:space-between; margin-top:6px }
-
-/* ── CAR COLLECTION ── */
-.collection-section {
-  padding:70px 0 90px;
-  background:#fff;
-}
-.collection-header {
-  text-align:center; max-width:600px; margin:0 auto 32px;
-}
-.collection-header h2 {
-  font-size:clamp(1.9rem, 3.2vw, 2.5rem);
-  font-weight:800; letter-spacing:-0.02em; margin-top:6px;
-}
-
-.collection-filters {
-  display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:40px;
-}
-.c-filter-btn {
-  padding:9px 20px; border-radius:var(--radius-full);
-  border:1px solid #e2e8f0; background:#fff; color:#475569;
-  font-size:0.84rem; font-weight:700; cursor:pointer;
-  transition:all .2s ease;
-}
-.c-filter-btn:hover { border-color:#0f172a; color:#0f172a }
-.c-filter-btn.active { background:#0f172a; color:#fff; border-color:#0f172a }
-
-.cars-grid {
-  display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;
-}
-.car-card {
-  background:#fff;
-  border-radius:20px;
-  border:1px solid #e2e8f0;
-  overflow:hidden;
-  transition:all .3s ease;
-  display:flex; flex-direction:column;
-}
-.car-card:hover {
-  transform:translateY(-5px);
-  box-shadow:var(--shadow-md);
-  border-color:#cbd5e1;
-}
-.car-card-img-wrap {
-  position:relative;
-  background:#f1f5f9;
-  padding:12px;
-  text-align:center;
-}
-.car-card-img-wrap img {
-  width:100%; height:160px; object-fit:cover; border-radius:14px;
-  transition:transform .3s ease;
-}
-.car-card:hover .car-card-img-wrap img {
-  transform:scale(1.02);
-}
-.car-badge {
-  position:absolute; top:22px; left:22px;
-  background:rgba(15,23,42,0.85);
-  backdrop-filter:blur(6px);
-  padding:4px 10px; border-radius:var(--radius-full);
-  font-size:0.7rem; font-weight:800; color:#fff;
-}
-.car-card-body {
-  padding:20px; display:flex; flex-direction:column; flex:1; justify-content:space-between;
-}
-.car-card-top {
-  display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px;
-}
-.car-title { font-size:1.1rem; font-weight:800; color:#0f172a }
-.car-rating {
-  font-size:0.8rem; font-weight:700; color:#f59e0b; display:flex; align-items:center; gap:2px;
-}
-.car-location {
-  font-size:0.78rem; color:#64748b; margin-bottom:14px; display:flex; align-items:center; gap:4px;
-}
-.car-card-footer {
-  display:flex; justify-content:space-between; align-items:center;
-  padding-top:14px; border-top:1px solid #f1f5f9;
-}
-.car-price-box { display:flex; flex-direction:column }
-.car-price { font-size:1.25rem; font-weight:900; color:#0f172a }
-.car-price span { font-size:0.78rem; font-weight:600; color:#64748b }
-.car-book-btn {
-  background:var(--primary); color:#fff;
-  padding:9px 18px; border-radius:var(--radius-md);
-  font-size:0.82rem; font-weight:700;
-  transition:all .2s; border:none; cursor:pointer;
-}
-.car-book-btn:hover { background:var(--primary-hover) }
-
-/* ── GET THE APP / CTA SECTION ── */
-.app-section {
-  padding:50px 0 80px;
-  background:#f8fafc;
-}
-.app-card {
-  background:linear-gradient(135deg, #090e1a 0%, #1e293b 100%);
-  border-radius:32px;
-  padding:54px 50px;
-  color:#fff;
-  display:grid; grid-template-columns:1.2fr 0.8fr;
-  align-items:center; gap:40px;
-  position:relative; overflow:hidden;
-}
-.app-content h2 {
-  font-size:clamp(1.8rem, 3.2vw, 2.6rem);
-  font-weight:900; line-height:1.2; letter-spacing:-0.02em;
-  margin-bottom:16px;
-}
-.app-content p {
-  color:#94a3b8; font-size:0.92rem; line-height:1.7; margin-bottom:28px; max-width:480px;
-}
-.app-badges {
-  display:flex; gap:14px; flex-wrap:wrap;
-}
-.store-btn {
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.15);
-  color:#fff; padding:12px 22px; border-radius:14px;
-  display:flex; align-items:center; gap:10px;
-  font-size:0.84rem; font-weight:700;
-  transition:all .25s ease;
-}
-.store-btn:hover {
-  background:#fff; color:#0f172a; transform:translateY(-2px);
-}
-.app-visual {
-  text-align:center;
-}
-.app-visual img {
-  max-width:280px; margin:0 auto;
-  filter:drop-shadow(0 15px 25px rgba(0,0,0,0.4));
-  border-radius:18px;
-}
-
-/* ── FOOTER ── */
-.footer {
-  background:#090e1a;
-  color:#fff;
-  padding:60px 0 30px;
-  border-top:1px solid rgba(255,255,255,0.06);
-}
-.footer-newsletter {
-  background:rgba(255,255,255,0.03);
-  border:1px solid rgba(255,255,255,0.08);
-  border-radius:20px;
-  padding:32px 36px;
-  display:flex; justify-content:space-between; align-items:center;
-  gap:24px; margin-bottom:50px;
-}
-.fn-text h3 { font-size:1.3rem; font-weight:800; margin-bottom:4px }
-.fn-text p { color:#94a3b8; font-size:0.86rem }
-.fn-form {
-  display:flex; gap:10px; width:100%; max-width:420px;
-}
-.fn-form input {
-  flex:1; background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.15);
-  padding:12px 18px; border-radius:var(--radius-full);
-  color:#fff; font-size:0.86rem; outline:none;
-}
-.fn-form button {
-  background:var(--primary); color:#fff; border:none;
-  padding:12px 22px; border-radius:var(--radius-full);
-  font-weight:700; font-size:0.86rem; cursor:pointer;
-  transition:background .2s;
-}
-.fn-form button:hover { background:var(--primary-hover) }
-
-.footer-grid {
-  display:grid; grid-template-columns:1.5fr repeat(3, 1fr);
-  gap:36px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.08);
-}
-.fg-brand p { color:#94a3b8; font-size:0.86rem; margin-top:12px; max-width:280px }
-.fg-col h4 { font-size:0.92rem; font-weight:800; margin-bottom:16px; color:#fff }
-.fg-col ul { list-style:none; display:flex; flex-direction:column; gap:10px }
-.fg-col a { color:#94a3b8; font-size:0.84rem; transition:color .2s }
-.fg-col a:hover { color:#fff }
-
-.footer-bottom {
-  padding-top:24px; display:flex; justify-content:space-between; align-items:center;
-  font-size:0.8rem; color:#64748b;
-}
-
-/* ── BOOKING MODAL ── */
-.modal-overlay {
-  position:fixed; inset:0; z-index:200;
-  background:rgba(15,23,42,0.6);
-  backdrop-filter:blur(6px);
-  display:none; place-items:center; padding:20px;
-}
-.modal-overlay.open { display:grid }
-.modal-box {
-  background:#fff; border-radius:24px; max-width:480px; width:100%;
-  padding:30px; box-shadow:0 25px 60px rgba(0,0,0,0.3);
-  position:relative; animation:modalPop .25s ease;
-}
-@keyframes modalPop {
-  from { opacity:0; transform:scale(0.96) }
-  to { opacity:1; transform:scale(1) }
-}
-.modal-close {
-  position:absolute; top:18px; right:18px;
-  background:#f1f5f9; border:none; width:32px; height:32px; border-radius:50%;
-  cursor:pointer; font-size:1.1rem; display:grid; place-items:center;
-}
-.modal-title { font-size:1.35rem; font-weight:800; margin-bottom:6px }
-.modal-desc { font-size:0.86rem; color:#64748b; margin-bottom:18px }
-.form-group { margin-bottom:14px }
-.form-group label { display:block; font-size:0.78rem; font-weight:700; margin-bottom:5px; color:#334155 }
-.form-group input, .form-group select {
-  width:100%; padding:11px 14px; border-radius:10px; border:1px solid #cbd5e1;
-  font-size:0.9rem; outline:none; transition:border-color .2s;
-}
-.form-group input:focus, .form-group select:focus { border-color:var(--primary) }
-.modal-submit {
-  width:100%; background:var(--primary); color:#fff;
-  border:none; padding:13px; border-radius:var(--radius-md);
-  font-weight:700; font-size:0.92rem; cursor:pointer; margin-top:8px;
-  transition:background .2s;
-}
-.modal-submit:hover { background:var(--primary-hover) }
-
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .search-widget { grid-template-columns:1fr 1fr; gap:16px }
-  .search-divider { display:none }
-  .services-grid { grid-template-columns:1fr }
-  .how-grid { grid-template-columns:1fr; gap:36px }
-  .cars-grid { grid-template-columns:repeat(2, 1fr) }
-  .footer-grid { grid-template-columns:1fr 1fr; gap:28px }
-}
-@media(max-width:768px){
-  .nav-links { display:none }
-  .hero { padding:85px 0 30px }
-  .services-header { grid-template-columns:1fr; gap:14px }
-  .services-box { padding:36px 20px }
-  .cars-grid { grid-template-columns:1fr }
-  .app-card { grid-template-columns:1fr; padding:36px 20px; text-align:center }
-  .app-badges { justify-content:center }
-  .footer-newsletter { flex-direction:column; text-align:center; padding:24px 18px }
-  .fn-form { max-width:100% }
-  .footer-grid { grid-template-columns:1fr }
-  .search-widget { grid-template-columns:1fr; padding:18px }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header class="nav-wrap">
-  <div class="container nav-inner">
-    <a href="#" class="brand-logo">Carent<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#hero">Trang chủ</a></li>
-      <li><a href="#services">Dịch vụ</a></li>
-      <li><a href="#how">Quy trình</a></li>
-      <li><a href="#collection">Bảng giá xe</a></li>
-      <li><a href="#app">Tải ứng dụng</a></li>
-    </ul>
-    <a href="https://zalo.me/0974100372" target="_blank" class="nav-cta">
-      Đặt xe ngay ↗
-    </a>
-  </div>
-</header>
+<!-- HP Showcase Bar v2 -->
+<div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+  <a href="../../index.html" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+    <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+    <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+  </a>
+  <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo Carent. · Thích mẫu này?</span>
+  <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+    <a href="../../index.html" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+    <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+    <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Nhắn tin Zalo</a>
+  </span>
+</div>
+<div style="height:52px"></div>
+<style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}@media(max-width:479px){#hp-back{display:none!important}#hp-bar{padding:0 10px!important;gap:6px!important}}</style>
 
-<!-- HERO BANNER -->
-<section class="hero" id="hero">
+<!-- ── HERO SECTION ── -->
+<section class="hero-section" id="home">
   <div class="container">
-    <div class="hero-banner">
-      <img src="img/hero-car.png" alt="Carent Car Rental" class="hero-banner-img">
-    </div>
+    <div class="hero-card">
+      <!-- Overlay Header inside Hero -->
+      <nav class="hero-nav">
+        <a href="#home" class="hero-logo">Carent.</a>
+        <ul class="hero-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how-it-works">How it Works</a></li>
+          <li><a href="#collection">Blog</a></li>
+          <li><a href="#footer">FAQs</a></li>
+        </ul>
+      </nav>
 
-    <!-- Quick Search Widget -->
-    <div class="search-widget">
-      <div class="search-field">
-        <label>Địa điểm nhận xe</label>
-        <select id="srchLocation">
-          <option>Hà Nội (Sân bay Nội Bài)</option>
-          <option>TP. Hồ Chí Minh (Tân Sơn Nhất)</option>
-          <option>Đà Nẵng (Sân bay Đà Nẵng)</option>
-          <option>Nha Trang / Đà Lạt</option>
-        </select>
+      <!-- Top-Right Inverted Corner Notch Button -->
+      <div class="hero-notch">
+        <a href="#get-app" class="btn-get-app">
+          Get the app <span>↗</span>
+        </a>
       </div>
-      <div class="search-divider"></div>
-      <div class="search-field">
-        <label>Ngày nhận xe</label>
-        <input type="date" value="2026-11-05">
-      </div>
-      <div class="search-divider"></div>
-      <div class="search-field">
-        <label>Ngày trả xe</label>
-        <input type="date" value="2026-11-08">
-      </div>
-      <div class="search-divider"></div>
-      <div class="search-field">
-        <label>Phân khúc</label>
-        <select id="srchType">
-          <option value="all">Tất cả các dòng xe</option>
-          <option value="sedan">Sedan</option>
-          <option value="suv">SUV &amp; Crossover</option>
-          <option value="sport">Xe Thể Thao</option>
-        </select>
-      </div>
-      <button class="search-btn" onclick="openBooking('Tìm xe theo yêu cầu')">
-        Tìm xe ngay →
-      </button>
-    </div>
 
-    <!-- Brand Ticker -->
-    <div class="brands-row">
-      <div class="brand-item">JEEP</div>
-      <div class="brand-item">AUDI</div>
-      <div class="brand-item">BMW</div>
-      <div class="brand-item">TOYOTA</div>
-      <div class="brand-item">MERCEDES</div>
-      <div class="brand-item">HYUNDAI</div>
+      <!-- Hero Photo with Blue Car & Giant Car Rental Headline -->
+      <img src="img/hero-clean.png" alt="Carent Car Rental Fiat 500" class="hero-img">
     </div>
   </div>
 </section>
 
-<!-- OUR SERVICES -->
+<!-- ── CAR BRAND LOGOS ── -->
+<section class="brands-section" aria-label="Partner Car Brands">
+  <div class="container">
+    <div class="brands-row">
+      <!-- Mazda -->
+      <div class="brand-logo-item" title="Mazda">
+        <svg viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="3.2">
+          <ellipse cx="50" cy="30" rx="28" ry="20"/>
+          <path d="M25 26 C35 26, 44 36, 50 42 C56 36, 65 26, 75 26" stroke-linecap="round"/>
+          <path d="M28 22 C38 28, 45 33, 50 38 C55 33, 62 28, 72 22" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <!-- Jeep -->
+      <div class="brand-logo-item" title="Jeep">
+        <svg viewBox="0 0 110 44" fill="currentColor">
+          <text x="8" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="30" letter-spacing="-0.5">Jeep</text>
+        </svg>
+      </div>
+      <!-- BMW -->
+      <div class="brand-logo-item" title="BMW">
+        <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3">
+          <circle cx="30" cy="30" r="22"/>
+          <circle cx="30" cy="30" r="13"/>
+          <line x1="30" y1="17" x2="30" y2="43"/>
+          <line x1="17" y1="30" x2="43" y2="30"/>
+        </svg>
+      </div>
+      <!-- Audi -->
+      <div class="brand-logo-item" title="Audi">
+        <svg viewBox="0 0 130 48" fill="none" stroke="currentColor" stroke-width="3.2">
+          <circle cx="29" cy="24" r="13"/>
+          <circle cx="49" cy="24" r="13"/>
+          <circle cx="69" cy="24" r="13"/>
+          <circle cx="89" cy="24" r="13"/>
+        </svg>
+      </div>
+      <!-- Nissan -->
+      <div class="brand-logo-item" title="Nissan">
+        <svg viewBox="0 0 80 60" fill="none" stroke="currentColor" stroke-width="3">
+          <circle cx="40" cy="30" r="18"/>
+          <rect x="14" y="25" width="52" height="10" rx="2" fill="#ffffff" stroke="currentColor" stroke-width="2.5"/>
+          <text x="40" y="33" text-anchor="middle" fill="currentColor" stroke="none" font-size="7.5" font-weight="800" letter-spacing="1.2">NISSAN</text>
+        </svg>
+      </div>
+      <!-- Mahindra -->
+      <div class="brand-logo-item" title="Mahindra">
+        <svg viewBox="0 0 110 56" fill="none" stroke="currentColor" stroke-width="2.6">
+          <ellipse cx="55" cy="22" rx="22" ry="12"/>
+          <path d="M43 30 L55 13 L67 30"/>
+          <text x="55" y="48" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="700" letter-spacing="0.5">Mahindra</text>
+        </svg>
+      </div>
+      <!-- Volkswagen -->
+      <div class="brand-logo-item" title="Volkswagen">
+        <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="3">
+          <circle cx="30" cy="30" r="21"/>
+          <path d="M20 14 L30 34 L40 14"/>
+          <path d="M15 22 L25 44 L30 34 L35 44 L45 22"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── OUR SERVICES (DARK ROUNDED CONTAINER) ── -->
 <section class="services-section" id="services">
   <div class="container">
     <div class="services-box">
+      <!-- Subtle background wave vector lines -->
+      <svg class="services-bg-waves" viewBox="0 0 500 400" fill="none" stroke="#ffffff" stroke-width="1">
+        <path d="M120 -20 C190 120, 80 260, 210 420"/>
+        <path d="M160 -20 C230 120, 120 260, 250 420"/>
+        <path d="M200 -20 C270 120, 160 260, 290 420"/>
+        <path d="M240 -20 C310 120, 200 260, 330 420"/>
+      </svg>
+
       <div class="services-header">
         <div>
-          <span class="sec-tag-blue">Our Services</span>
-          <h2>Our Premier services for your car rental needs</h2>
+          <span class="section-eyebrow">Our Services</span>
+          <h2>Our Premier services for<br>your car rental needs</h2>
         </div>
-        <p>We take pride in providing top-notch solutions! Our premier services ensure a seamless &amp; simple car rental experience, offering cars that suit your preferences.</p>
+        <p>
+          We take pride in providing top-notch solutions! Our premier services ensure a seamless &amp; simple car rental experience, offering cars that suit your preferences
+        </p>
       </div>
+
       <div class="services-grid">
+        <!-- Card 1 -->
         <div class="service-card">
-          <div class="service-icon">🚗</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/>
+              <circle cx="6.5" cy="16.5" r="2.5"/>
+              <circle cx="16.5" cy="16.5" r="2.5"/>
+            </svg>
+          </div>
           <h3>Well-Maintained Car</h3>
-          <p>Enjoy your trip in peace and comfort with our car rental which offers a well-maintained fleet, prioritizing the health and safety of our vehicles.</p>
+          <p>Enjoy your trip in peace and comfort with our car rental which offers a well-maintained fleet, prioritize the health and safety of our vehicles.</p>
         </div>
+
+        <!-- Card 2 -->
         <div class="service-card">
-          <div class="service-icon">🛡️</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
           <h3>Secure Payments</h3>
           <p>With a safe and reliable payment system, you can continue your journey with peace of mind, without worrying about transaction security.</p>
         </div>
+
+        <!-- Card 3 -->
         <div class="service-card">
-          <div class="service-icon">📞</div>
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
           <h3>24/7 Support</h3>
           <p>We understand that the journey doesn't always run smoothly. Therefore, our customer support team is ready to help you 24/7.</p>
         </div>
@@ -639,87 +185,123 @@ button, input, select { font-family:inherit }
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="how-section" id="how">
+<!-- ── HOW IT WORKS SECTION ── -->
+<section class="how-section" id="how-it-works">
   <div class="container">
     <div class="how-grid">
+      <!-- Left Column: 4 Steps -->
       <div class="how-left">
-        <span class="sec-tag-blue" style="color:var(--primary)">How it works</span>
-        <h2>Step by step to rent a car on our platform</h2>
-        <div class="steps-list">
-          <div class="step-item active">
-            <div class="step-num">01</div>
-            <div class="step-content">
+        <span class="section-eyebrow">How it works</span>
+        <h2>Step by step to rent<br>a car on our platform</h2>
+
+        <div class="steps-list" id="stepsList">
+          <div class="step-item active" data-step="01">
+            <div class="step-badge">01</div>
+            <div class="step-body">
               <h4>Discover Your Perfect Car</h4>
-              <p>Explore our car collection and choose a vehicle that suits your trip needs; choose a car that will be your perfect trip.</p>
+              <p class="step-desc">Explore our car collection and choose a vehicle that suit your trip needs, choose a car that will be your perfect trip.</p>
             </div>
           </div>
-          <div class="step-item">
-            <div class="step-num">02</div>
-            <div class="step-content">
+
+          <div class="step-item" data-step="02">
+            <div class="step-badge">02</div>
+            <div class="step-body">
               <h4>Secure Your Rental Booking</h4>
-              <p>Select your pickup date, time and location with complete flexibility and clear transparent conditions.</p>
+              <p class="step-desc">Select your pickup date, return date, and preferred location to lock in your reservation in seconds.</p>
             </div>
           </div>
-          <div class="step-item">
-            <div class="step-num">03</div>
-            <div class="step-content">
+
+          <div class="step-item" data-step="03">
+            <div class="step-badge">03</div>
+            <div class="step-body">
               <h4>Complete Your Booking Payment</h4>
-              <p>Confirm your booking with instant safe payment or deposit guarantee.</p>
+              <p class="step-desc">Pay effortlessly with our encrypted payment gateway supporting cards, e-wallets, and bank transfers.</p>
             </div>
           </div>
-          <div class="step-item">
-            <div class="step-num">04</div>
-            <div class="step-content">
+
+          <div class="step-item" data-step="04">
+            <div class="step-badge">04</div>
+            <div class="step-body">
               <h4>Your Booking is Confirmed</h4>
-              <p>Pick up your keys at your door or designated airport station and enjoy the road.</p>
+              <p class="step-desc">Receive instant confirmation and get your well-maintained vehicle delivered or ready for pickup.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Preview Mockup Card on Right -->
-      <div class="how-preview-card">
-        <div class="preview-badge-row">
-          <span class="preview-title">Car Type</span>
-          <span class="preview-badge">01</span>
+      <!-- Right Column: Platform UI Preview Card with Top-Right Notch -->
+      <div class="how-card-outer">
+        <div class="how-notch">
+          <div class="how-notch-circle" id="howStepIndicator">01</div>
         </div>
-        <div class="car-type-pills">
-          <div class="type-pill active">
-            <span>🚗</span>
-            <span>Sedan</span>
-          </div>
-          <div class="type-pill">
-            <span>🚙</span>
-            <span>SUV</span>
-          </div>
-          <div class="type-pill">
-            <span>🏎️</span>
-            <span>Sport</span>
-          </div>
-          <div class="type-pill">
-            <span>⚡</span>
-            <span>Electric</span>
-          </div>
-        </div>
-        <div style="font-size:0.84rem;font-weight:800;margin-bottom:12px;color:#0f172a">200+ Car Available</div>
-        <div class="mini-car-list">
-          <div class="mini-car-card">
-            <img src="img/car-1.png" alt="Toyota Camry">
-            <div class="mini-car-name">Toyota Camry</div>
-            <div class="mini-car-price">$72 / Day</div>
-            <div class="mini-car-meta">
-              <span>Hà Nội</span>
-              <span style="color:#f59e0b">★ 4.9</span>
+
+        <!-- White Card 1: Car Type -->
+        <div class="widget-car-type">
+          <div class="widget-title">Car Type</div>
+          <div class="car-type-grid">
+            <div class="car-type-item active" data-type="sedan">
+              <img src="img/type-1.png" alt="Sedan">
+              <span>Sedan</span>
+            </div>
+            <div class="car-type-item" data-type="suv">
+              <img src="img/type-2.png" alt="SUV">
+              <span>SUV</span>
+            </div>
+            <div class="car-type-item" data-type="sport">
+              <img src="img/type-3.png" alt="Sport">
+              <span>Sport</span>
+            </div>
+            <div class="car-type-item" data-type="electric">
+              <img src="img/type-4.png" alt="Electric">
+              <span>Electric</span>
             </div>
           </div>
-          <div class="mini-car-card">
-            <img src="img/car-2.png" alt="Honda Accord">
-            <div class="mini-car-name">Honda Accord</div>
-            <div class="mini-car-price">$80 / Day</div>
-            <div class="mini-car-meta">
-              <span>TP.HCM</span>
-              <span style="color:#f59e0b">★ 4.8</span>
+        </div>
+
+        <!-- White Card 2: 200+ Car Available -->
+        <div class="widget-available">
+          <div class="widget-title">200+ Car Available</div>
+          <div class="avail-grid">
+            <!-- Mini Car 1 -->
+            <div class="avail-card" onclick="openModal('Toyota Corolla', '$72/Day')">
+              <button class="avail-bookmark" aria-label="Bookmark" onclick="event.stopPropagation()">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>
+                </svg>
+              </button>
+              <div class="avail-img-wrap">
+                <img src="img/avail-1.png" alt="Toyota Corolla">
+              </div>
+              <div class="avail-name">Toyota Corolla</div>
+              <div class="avail-price">$72<span>/Day</span></div>
+              <div class="avail-meta">
+                <span class="avail-loc">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Ciawi, Bogor
+                </span>
+                <span class="avail-rating">4.8 <i>★</i></span>
+              </div>
+            </div>
+
+            <!-- Mini Car 2 -->
+            <div class="avail-card" onclick="openModal('Toyota Yaris GR', '$80/Day')">
+              <button class="avail-bookmark" aria-label="Bookmark" onclick="event.stopPropagation()">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/>
+                </svg>
+              </button>
+              <div class="avail-img-wrap">
+                <img src="img/avail-2.png" alt="Toyota Yaris GR">
+              </div>
+              <div class="avail-name">Toyota Yaris GR</div>
+              <div class="avail-price">$80<span>/Day</span></div>
+              <div class="avail-meta">
+                <span class="avail-loc">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Cikaret, Bogor
+                </span>
+                <span class="avail-rating">4.6 <i>★</i></span>
+              </div>
             </div>
           </div>
         </div>
@@ -728,392 +310,357 @@ button, input, select { font-family:inherit }
   </div>
 </section>
 
-<!-- COLLECTION -->
+<!-- ── EXPLORE OUR COLLECTION CARS ── -->
 <section class="collection-section" id="collection">
   <div class="container">
     <div class="collection-header">
-      <span class="sec-tag-blue" style="color:var(--primary)">Collection</span>
+      <span class="section-eyebrow">Collection</span>
       <h2>Explore Our Collection Cars</h2>
+
+      <div class="collection-tabs" id="collectionTabs">
+        <button class="col-tab active" data-filter="all">All Type</button>
+        <button class="col-tab" data-filter="suv">SUV</button>
+        <button class="col-tab" data-filter="sedan">Sedan</button>
+        <button class="col-tab" data-filter="sport">Sport</button>
+        <button class="col-tab" data-filter="electric">Electric</button>
+      </div>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="collection-filters">
-      <button class="c-filter-btn active" data-type="all">All Type</button>
-      <button class="c-filter-btn" data-type="suv">SUV</button>
-      <button class="c-filter-btn" data-type="sedan">Sedan</button>
-      <button class="c-filter-btn" data-type="sport">Sport</button>
-      <button class="c-filter-btn" data-type="electric">Electric</button>
+    <div class="collection-grid" id="carsGrid">
+      <!-- 1: Toyota Camry -->
+      <article class="car-card" data-cat="sedan" onclick="openModal('Toyota Camry', '$72/Day')">
+        <div class="car-thumb-wrap">
+          <img src="img/car-1.png" alt="Toyota Camry" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-row-top">
+            <h3 class="car-title">Toyota Camry</h3>
+            <div class="car-price">$72<small>/Day</small></div>
+          </div>
+          <div class="car-row-bottom">
+            <span class="car-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Ciawi, Bogor
+            </span>
+            <span class="car-rating">4.5 <span>★</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2: Honda Accord -->
+      <article class="car-card" data-cat="sedan" onclick="openModal('Honda Accord', '$80/Day')">
+        <div class="car-thumb-wrap">
+          <img src="img/car-2.png" alt="Honda Accord" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-row-top">
+            <h3 class="car-title">Honda Accord</h3>
+            <div class="car-price">$80<small>/Day</small></div>
+          </div>
+          <div class="car-row-bottom">
+            <span class="car-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Gambir, Jakarta
+            </span>
+            <span class="car-rating">4.4 <span>★</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3: Chevrolet Malibu -->
+      <article class="car-card" data-cat="sedan" onclick="openModal('Chevrolet Malibu', '$69/Day')">
+        <div class="car-thumb-wrap">
+          <img src="img/car-3.png" alt="Chevrolet Malibu" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-row-top">
+            <h3 class="car-title">Chevrolet Malibu</h3>
+            <div class="car-price">$69<small>/Day</small></div>
+          </div>
+          <div class="car-row-bottom">
+            <span class="car-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Lembang, Bandung
+            </span>
+            <span class="car-rating">4.8 <span>★</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4: Subaru Legacy -->
+      <article class="car-card" data-cat="suv" onclick="openModal('Subaru Legacy', '$80/Day')">
+        <div class="car-thumb-wrap">
+          <img src="img/car-4.png" alt="Subaru Legacy" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-row-top">
+            <h3 class="car-title">Subaru Legacy</h3>
+            <div class="car-price">$80<small>/Day</small></div>
+          </div>
+          <div class="car-row-bottom">
+            <span class="car-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Banjarsari, Surakarta
+            </span>
+            <span class="car-rating">4.5 <span>★</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5: Hyundai Sonata -->
+      <article class="car-card" data-cat="sedan" onclick="openModal('Hyundai Sonata', '$59/Day')">
+        <div class="car-thumb-wrap">
+          <img src="img/car-5.png" alt="Hyundai Sonata" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-row-top">
+            <h3 class="car-title">Hyundai Sonata</h3>
+            <div class="car-price">$59<small>/Day</small></div>
+          </div>
+          <div class="car-row-bottom">
+            <span class="car-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Cilawu, Garut
+            </span>
+            <span class="car-rating">4.7 <span>★</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6: Genesis G80 -->
+      <article class="car-card" data-cat="electric" onclick="openModal('Genesis G80', '$76/Day')">
+        <div class="car-thumb-wrap">
+          <img src="img/car-6.png" alt="Genesis G80" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-row-top">
+            <h3 class="car-title">Genesis G80</h3>
+            <div class="car-price">$76<small>/Day</small></div>
+          </div>
+          <div class="car-row-bottom">
+            <span class="car-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Cakung, Jakarta
+            </span>
+            <span class="car-rating">4.8 <span>★</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7: Mazda CX-5 -->
+      <article class="car-card" data-cat="suv" onclick="openModal('Mazda CX-5', '$75/Day')">
+        <div class="car-thumb-wrap">
+          <img src="img/car-7.png" alt="Mazda CX-5" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-row-top">
+            <h3 class="car-title">Mazda CX-5</h3>
+            <div class="car-price">$75<small>/Day</small></div>
+          </div>
+          <div class="car-row-bottom">
+            <span class="car-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Kebon Jeruk, Jakarta
+            </span>
+            <span class="car-rating">4.7 <span>★</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8: Nissan Rogue -->
+      <article class="car-card" data-cat="sport" onclick="openModal('Nissan Rogue', '$92/Day')">
+        <div class="car-thumb-wrap">
+          <img src="img/car-8.png" alt="Nissan Rogue" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-row-top">
+            <h3 class="car-title">Nissan Rogue</h3>
+            <div class="car-price">$92<small>/Day</small></div>
+          </div>
+          <div class="car-row-bottom">
+            <span class="car-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Tanggerang, Banten
+            </span>
+            <span class="car-rating">4.5 <span>★</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9: Volvo XC60 -->
+      <article class="car-card" data-cat="sport" onclick="openModal('Volvo XC60', '$82/Day')">
+        <div class="car-thumb-wrap">
+          <img src="img/car-9.png" alt="Volvo XC60" loading="lazy">
+        </div>
+        <div class="car-card-body">
+          <div class="car-row-top">
+            <h3 class="car-title">Volvo XC60</h3>
+            <div class="car-price">$82<small>/Day</small></div>
+          </div>
+          <div class="car-row-bottom">
+            <span class="car-loc">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Pakal, Surabaya
+            </span>
+            <span class="car-rating">4.6 <span>★</span></span>
+          </div>
+        </div>
+      </article>
     </div>
 
-    <!-- Cars Grid: 9 Cars matching design -->
-    <div class="cars-grid" id="carsGrid">
-
-      <!-- Car 1: Toyota Camry -->
-      <div class="car-card" data-cat="sedan">
-        <div class="car-card-img-wrap">
-          <span class="car-badge">Sedan</span>
-          <img src="img/car-1.png" alt="Toyota Camry">
-        </div>
-        <div class="car-card-body">
-          <div>
-            <div class="car-card-top">
-              <div class="car-title">Toyota Camry</div>
-              <div class="car-rating">★ 4.9</div>
-            </div>
-            <div class="car-location">📍 Hà Nội / Cầu Giấy</div>
-          </div>
-          <div class="car-card-footer">
-            <div class="car-price-box">
-              <div class="car-price">$72 <span>/Day</span></div>
-            </div>
-            <button class="car-book-btn" onclick="openBooking('Toyota Camry ($72/Day)')">Thuê ngay</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Car 2: Honda Accord -->
-      <div class="car-card" data-cat="sedan">
-        <div class="car-card-img-wrap">
-          <span class="car-badge">Sedan</span>
-          <img src="img/car-2.png" alt="Honda Accord">
-        </div>
-        <div class="car-card-body">
-          <div>
-            <div class="car-card-top">
-              <div class="car-title">Honda Accord</div>
-              <div class="car-rating">★ 4.8</div>
-            </div>
-            <div class="car-location">📍 TP.HCM / Quận 1</div>
-          </div>
-          <div class="car-card-footer">
-            <div class="car-price-box">
-              <div class="car-price">$80 <span>/Day</span></div>
-            </div>
-            <button class="car-book-btn" onclick="openBooking('Honda Accord ($80/Day)')">Thuê ngay</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Car 3: Chevrolet Malibu -->
-      <div class="car-card" data-cat="sedan">
-        <div class="car-card-img-wrap">
-          <span class="car-badge">Sedan</span>
-          <img src="img/car-3.png" alt="Chevrolet Malibu">
-        </div>
-        <div class="car-card-body">
-          <div>
-            <div class="car-card-top">
-              <div class="car-title">Chevrolet Malibu</div>
-              <div class="car-rating">★ 4.8</div>
-            </div>
-            <div class="car-location">📍 Đà Nẵng / Hải Châu</div>
-          </div>
-          <div class="car-card-footer">
-            <div class="car-price-box">
-              <div class="car-price">$69 <span>/Day</span></div>
-            </div>
-            <button class="car-book-btn" onclick="openBooking('Chevrolet Malibu ($69/Day)')">Thuê ngay</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Car 4: Subaru Legacy -->
-      <div class="car-card" data-cat="sedan">
-        <div class="car-card-img-wrap">
-          <span class="car-badge">Sedan AWD</span>
-          <img src="img/car-4.png" alt="Subaru Legacy">
-        </div>
-        <div class="car-card-body">
-          <div>
-            <div class="car-card-top">
-              <div class="car-title">Subaru Legacy</div>
-              <div class="car-rating">★ 4.9</div>
-            </div>
-            <div class="car-location">📍 Hà Nội / Tây Hồ</div>
-          </div>
-          <div class="car-card-footer">
-            <div class="car-price-box">
-              <div class="car-price">$80 <span>/Day</span></div>
-            </div>
-            <button class="car-book-btn" onclick="openBooking('Subaru Legacy ($80/Day)')">Thuê ngay</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Car 5: Hyundai Sonata -->
-      <div class="car-card" data-cat="sedan">
-        <div class="car-card-img-wrap">
-          <span class="car-badge">Sedan</span>
-          <img src="img/car-5.png" alt="Hyundai Sonata">
-        </div>
-        <div class="car-card-body">
-          <div>
-            <div class="car-card-top">
-              <div class="car-title">Hyundai Sonata</div>
-              <div class="car-rating">★ 4.7</div>
-            </div>
-            <div class="car-location">📍 Nha Trang / Trần Phú</div>
-          </div>
-          <div class="car-card-footer">
-            <div class="car-price-box">
-              <div class="car-price">$59 <span>/Day</span></div>
-            </div>
-            <button class="car-book-btn" onclick="openBooking('Hyundai Sonata ($59/Day)')">Thuê ngay</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Car 6: Genesis G80 -->
-      <div class="car-card" data-cat="sport">
-        <div class="car-card-img-wrap">
-          <span class="car-badge">Luxury Sport</span>
-          <img src="img/car-6.png" alt="Genesis G80">
-        </div>
-        <div class="car-card-body">
-          <div>
-            <div class="car-card-top">
-              <div class="car-title">Genesis G80</div>
-              <div class="car-rating">★ 5.0</div>
-            </div>
-            <div class="car-location">📍 TP.HCM / Thủ Đức</div>
-          </div>
-          <div class="car-card-footer">
-            <div class="car-price-box">
-              <div class="car-price">$76 <span>/Day</span></div>
-            </div>
-            <button class="car-book-btn" onclick="openBooking('Genesis G80 ($76/Day)')">Thuê ngay</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Car 7: Mazda CX-5 -->
-      <div class="car-card" data-cat="suv">
-        <div class="car-card-img-wrap">
-          <span class="car-badge">SUV</span>
-          <img src="img/car-7.png" alt="Mazda CX-5">
-        </div>
-        <div class="car-card-body">
-          <div>
-            <div class="car-card-top">
-              <div class="car-title">Mazda CX-5</div>
-              <div class="car-rating">★ 4.8</div>
-            </div>
-            <div class="car-location">📍 Hà Nội / Mỹ Đình</div>
-          </div>
-          <div class="car-card-footer">
-            <div class="car-price-box">
-              <div class="car-price">$75 <span>/Day</span></div>
-            </div>
-            <button class="car-book-btn" onclick="openBooking('Mazda CX-5 ($75/Day)')">Thuê ngay</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Car 8: Nissan Rogue -->
-      <div class="car-card" data-cat="suv">
-        <div class="car-card-img-wrap">
-          <span class="car-badge">SUV</span>
-          <img src="img/car-8.png" alt="Nissan Rogue">
-        </div>
-        <div class="car-card-body">
-          <div>
-            <div class="car-card-top">
-              <div class="car-title">Nissan Rogue</div>
-              <div class="car-rating">★ 4.9</div>
-            </div>
-            <div class="car-location">📍 TP.HCM / Tân Bình</div>
-          </div>
-          <div class="car-card-footer">
-            <div class="car-price-box">
-              <div class="car-price">$92 <span>/Day</span></div>
-            </div>
-            <button class="car-book-btn" onclick="openBooking('Nissan Rogue ($92/Day)')">Thuê ngay</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Car 9: Volvo XC60 -->
-      <div class="car-card" data-cat="electric">
-        <div class="car-card-img-wrap">
-          <span class="car-badge">Hybrid / Electric</span>
-          <img src="img/car-9.png" alt="Volvo XC60">
-        </div>
-        <div class="car-card-body">
-          <div>
-            <div class="car-card-top">
-              <div class="car-title">Volvo XC60</div>
-              <div class="car-rating">★ 5.0</div>
-            </div>
-            <div class="car-location">📍 Toàn quốc</div>
-          </div>
-          <div class="car-card-footer">
-            <div class="car-price-box">
-              <div class="car-price">$82 <span>/Day</span></div>
-            </div>
-            <button class="car-book-btn" onclick="openBooking('Volvo XC60 ($82/Day)')">Thuê ngay</button>
-          </div>
-        </div>
-      </div>
-
+    <div class="collection-more">
+      <button class="btn-see-all" id="seeAllBtn">See All Collection</button>
     </div>
   </div>
 </section>
 
-<!-- GET THE APP / MOBILE EXPERIENCE -->
-<section class="app-section" id="app">
+<!-- ── GET THE APP BANNER ── -->
+<section class="app-section" id="get-app">
   <div class="container">
-    <div class="app-card">
-      <div class="app-content">
-        <span class="sec-tag-blue">Get the App!</span>
-        <h2>Enable a Better Vehicle Rental Experience. Carent is Available at Your Hand! Download Now!</h2>
-        <p>Tra cứu xe trống theo thời gian thực qua định vị GPS, nhận mã ưu đãi giảm 15% cho chuyến đi đầu tiên và mở khóa cửa xe thông minh.</p>
-        <div class="app-badges">
-          <a href="https://zalo.me/0974100372" target="_blank" class="store-btn">
-            <span>📲</span>
-            <div>
-              <div style="font-size:0.68rem;opacity:0.8">Tư vấn đặt xe</div>
-              <div style="font-size:0.95rem">Zalo: 0974 100 372</div>
+    <div class="app-grid">
+      <div class="app-left">
+        <span class="section-eyebrow">Get the App!</span>
+        <h2>Enable a Better Vehicle<br>Rental Experience. <em>Carent</em><br>is Available at Your Hand!<br>Download Now!</h2>
+
+        <div class="store-badges">
+          <a href="#get-app" class="store-btn" onclick="openModal('Carent iOS App', 'Free Download')">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.33c.64-.78 1.08-1.86.96-2.94-.93.04-2.06.62-2.72 1.4-.58.68-1.1 1.79-.96 2.84 1.04.08 2.08-.52 2.72-1.3z"/>
+            </svg>
+            <div class="store-txt">
+              <small>Download on the</small>
+              <strong>App Store</strong>
             </div>
           </a>
-          <a href="tel:0974100372" class="store-btn">
-            <span>📞</span>
-            <div>
-              <div style="font-size:0.68rem;opacity:0.8">Hotline 24/7</div>
-              <div style="font-size:0.95rem">0974 100 372</div>
+
+          <a href="#get-app" class="store-btn" onclick="openModal('Carent Android App', 'Free Download')">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3 20.5v-17c0-.83.94-1.3 1.6-.8l14 8.5c.6.37.6 1.23 0 1.6l-14 8.5c-.66.5-1.6.03-1.6-.8z"/>
+            </svg>
+            <div class="store-txt">
+              <small>GET IT ON</small>
+              <strong>Google Play</strong>
             </div>
           </a>
         </div>
       </div>
-      <div class="app-visual">
-        <img src="img/app-phones.png" alt="Carent Mobile App Mockups">
+
+      <div class="app-right">
+        <img src="img/app-phones.png" alt="Carent Mobile App Preview">
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
+<!-- ── FOOTER ── -->
+<footer class="site-footer" id="footer">
   <div class="container">
-    <div class="footer-newsletter">
-      <div class="fn-text">
+    <!-- Top Newsletter Row -->
+    <div class="footer-top">
+      <div class="footer-nl-text">
         <h3>Be the first to know when we update</h3>
-        <p>Stay connected with us to get new update information &amp; weekend deals.</p>
+        <p>Stay connected with us to get new update information.</p>
       </div>
-      <form class="fn-form" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã đăng ký nhận thông tin!')">
-        <input type="email" placeholder="Enter your email address..." required>
+      <form class="footer-nl-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Carent updates!'); this.reset();">
+        <input type="email" placeholder="Enter your email" required>
         <button type="submit">Subscribe</button>
       </form>
     </div>
 
-    <div class="footer-grid">
-      <div class="fg-brand">
-        <div class="brand-logo" style="color:#fff">Carent<span>.</span></div>
-        <p>Carent is an innovative solution to meet all your car rental needs easily and reliably with a high-quality user-friendly app.</p>
+    <!-- Main Footer Columns -->
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#home" class="footer-brand-logo">Carent.</a>
+        <p>Carent is an innovative solution to meet your car rental needs! Easily find the fit with a high-quality car through a simple and user-friendly app.</p>
       </div>
-      <div class="fg-col">
+
+      <div class="footer-col">
         <h4>Product</h4>
         <ul>
-          <li><a href="#collection">Overview</a></li>
-          <li><a href="#collection">Features</a></li>
-          <li><a href="#services">Solutions</a></li>
-          <li><a href="#app">Tutorial</a></li>
+          <li><a href="#home">Overview</a></li>
+          <li><a href="#services">Features</a></li>
+          <li><a href="#how-it-works">Solutions</a></li>
+          <li><a href="#collection">Demo</a></li>
+          <li><a href="#get-app">Releases</a></li>
         </ul>
       </div>
-      <div class="fg-col">
+
+      <div class="footer-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="#how">About Us</a></li>
-          <li><a href="#services">Careers</a></li>
-          <li><a href="#services">News</a></li>
+          <li><a href="#services">About us</a></li>
+          <li><a href="#how-it-works">Careers</a></li>
+          <li><a href="#collection">News</a></li>
+          <li><a href="#footer">Support</a></li>
           <li><a href="https://zalo.me/0974100372" target="_blank">Contact</a></li>
         </ul>
       </div>
-      <div class="fg-col">
-        <h4>Resources</h4>
+
+      <div class="footer-col">
+        <h4>Resource</h4>
         <ul>
-          <li><a href="#app">Download</a></li>
-          <li><a href="#services">Help Center</a></li>
-          <li><a href="#services">Guides</a></li>
-          <li><a href="tel:0974100372">Mechanics</a></li>
+          <li><a href="#get-app">Download</a></li>
+          <li><a href="#footer">Help Center</a></li>
+          <li><a href="#how-it-works">Guides</a></li>
+          <li><a href="#footer">Developers</a></li>
+          <li><a href="#services">Mechanics</a></li>
+          <li><a href="#how-it-works">Tutorial</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="#footer">Twitter/X</a></li>
+          <li><a href="#footer">LinkedIn</a></li>
+          <li><a href="#footer">Facebook</a></li>
+          <li><a href="#footer">Instagram</a></li>
+          <li><a href="#footer">Tiktok</a></li>
         </ul>
       </div>
     </div>
 
+    <!-- Bottom Copyright -->
     <div class="footer-bottom">
-      <div>Copyright © 2026 Carent. All rights reserved. Demo template by Hoang Phuong.</div>
-      <div>User Term &amp; Condition · Privacy Policy</div>
+      <span>Copyright © 2026 Hoang Phuong. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#footer">User Term &amp; Condition</a>
+        <span>|</span>
+        <a href="#footer">Privacy Policy</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- MODAL BOOKING POPUP -->
-<div class="modal-overlay" id="bookingModal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeBooking()">✕</button>
-    <div class="modal-title">Đặt Thuê Xe Nhanh</div>
-    <div class="modal-desc" id="modalCarName">Vui lòng để lại thông tin để nhân viên liên hệ xác nhận xe.</div>
-    <form onsubmit="handleBooking(event)">
-      <div class="form-group">
-        <label>Họ và tên</label>
-        <input type="text" id="bmName" placeholder="Nguyễn Văn A" required>
+<!-- ── BOOKING MODAL ── -->
+<div class="modal-backdrop" id="bookingModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3 id="modalCarName">Book Your Car</h3>
+    <p id="modalCarPrice">Complete the details below to reserve your vehicle.</p>
+    <form onsubmit="submitBooking(event)">
+      <div class="modal-field">
+        <label>Your Full Name</label>
+        <input type="text" placeholder="Enter your name" required>
       </div>
-      <div class="form-group">
-        <label>Số điện thoại / Zalo</label>
-        <input type="tel" id="bmPhone" placeholder="09xx xxx xxx" required>
+      <div class="modal-field">
+        <label>Phone / WhatsApp / Zalo</label>
+        <input type="tel" placeholder="09xx xxx xxx" required>
       </div>
-      <div class="form-group">
-        <label>Địa điểm &amp; Ngày nhận xe</label>
-        <input type="text" id="bmNote" placeholder="Ví dụ: Nhận xe tại Sân bay Nội Bài ngày mai">
+      <div class="modal-field">
+        <label>Pickup Date</label>
+        <input type="date" required>
       </div>
-      <button type="submit" class="modal-submit">Gửi yêu cầu qua Zalo →</button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+        <button type="submit" class="modal-submit" style="margin-top:0;">Via Zalo →</button>
+        <a href="https://t.me/lhoangphuong" target="_blank" class="modal-submit" style="margin-top:0;background:#24A1DE;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;">Via Telegram →</a>
+      </div>
     </form>
   </div>
 </div>
 
-<script>
-// Filter collection cars
-document.querySelectorAll('.c-filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.c-filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.type;
-    document.querySelectorAll('.car-card').forEach(card => {
-      const cat = card.dataset.cat;
-      card.style.display = (filter === 'all' || cat === filter) ? 'flex' : 'none';
-    });
-  });
-});
-
-// Steps click active
-document.querySelectorAll('.step-item').forEach(step => {
-  step.addEventListener('click', () => {
-    document.querySelectorAll('.step-item').forEach(s => s.classList.remove('active'));
-    step.classList.add('active');
-  });
-});
-
-// Modal booking logic
-let selectedCar = '';
-function openBooking(carName) {
-  selectedCar = carName;
-  document.getElementById('modalCarName').innerText = 'Bạn đang chọn: ' + carName + '. Điền thông tin để nhận báo giá nhanh nhất.';
-  document.getElementById('bookingModal').classList.add('open');
-}
-function closeBooking() {
-  document.getElementById('bookingModal').classList.remove('open');
-}
-document.getElementById('bookingModal').addEventListener('click', (e) => {
-  if (e.target.id === 'bookingModal') closeBooking();
-});
-function handleBooking(e) {
-  e.preventDefault();
-  const name = document.getElementById('bmName').value;
-  const phone = document.getElementById('bmPhone').value;
-  const note = document.getElementById('bmNote').value;
-  window.open(`https://zalo.me/0974100372`, '_blank');
-  closeBooking();
-}
-</script>
-
+<script src="script.js"></script>
+<script src="../../lang-switcher.js"></script>
 </body>
 </html>
+

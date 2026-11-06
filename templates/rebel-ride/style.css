@@ -1,0 +1,965 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f5f5f7;
+  --black: #0a0a0c;
+  --text: #18181b;
+  --muted: #52525b;
+  --purple: #5b18c9;
+  --purple-dark: #46109e;
+  --red-tag: #dc2626;
+  --border: #e4e4e7;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-tech: 'Chakra Petch', sans-serif;
+  --font-tall: 'Anton', Impact, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/* ── TOP NAVBAR ── */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+  position: sticky;
+  top: 52px;
+  z-index: 900;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: 20px;
+}
+.brand-logo {
+  font-family: var(--font-tech);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-menu a {
+  font-family: var(--font-tech);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: color 0.2s;
+}
+.nav-menu a:hover {
+  color: var(--purple);
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.btn-test-ride {
+  font-family: var(--font-tech);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 26px;
+  border: 1px solid #d4d4d8;
+  background: #ffffff;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-test-ride:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+.nav-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.nav-icon svg {
+  width: 18px;
+  height: 18px;
+}
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: var(--purple);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 800;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── HERO SECTION ── */
+.hero-sec {
+  padding: 44px 0 64px;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+.hero-kicker {
+  text-align: center;
+  font-family: var(--font-tech);
+  font-size: clamp(0.95rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #27272a;
+  margin-bottom: 12px;
+}
+
+/* Giant Stencil Split Purple Display Title */
+.hero-stage {
+  position: relative;
+  margin-top: 4px;
+}
+.giant-stencil-wrap {
+  position: relative;
+  text-align: center;
+  line-height: 0.86;
+  user-select: none;
+}
+.giant-stencil-text {
+  font-family: var(--font-tall);
+  font-size: clamp(4.8rem, 16.5vw, 14.5rem);
+  text-transform: uppercase;
+  color: var(--purple);
+  letter-spacing: 0.015em;
+  display: inline-block;
+  transform: scaleY(1.32);
+  transform-origin: top center;
+  margin-bottom: 52px;
+  position: relative;
+}
+/* Horizontal white stencil split line across the middle of SUPER RIDER */
+.giant-stencil-text::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  top: 49%;
+  height: clamp(4px, 0.7vw, 10px);
+  background: #ffffff;
+  pointer-events: none;
+}
+
+.hero-bottom-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: end;
+  gap: 32px;
+  position: relative;
+  z-index: 4;
+  margin-top: -40px;
+}
+.hero-copy {
+  max-width: 410px;
+  padding-bottom: 18px;
+}
+.hero-copy p {
+  font-size: 1.05rem;
+  color: #3f3f46;
+  line-height: 1.6;
+  margin-bottom: 26px;
+}
+.hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-purple {
+  background: var(--purple);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 13px 28px;
+  border: 1px solid var(--purple);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-purple:hover {
+  background: var(--purple-dark);
+  transform: translateY(-2px);
+}
+.btn-outline {
+  background: #ffffff;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 13px 28px;
+  border: 1px solid #d4d4d8;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-outline:hover {
+  border-color: var(--black);
+}
+
+.hero-bike-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -190px;
+  position: relative;
+  z-index: 5;
+}
+.hero-bike-box img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.18));
+}
+
+/* ── OFFICIAL FIXED GEAR BRANDS STRIP ── */
+.fixie-brands-sec {
+  padding: 28px 0 36px;
+  background: #0a0a0c;
+  color: #ffffff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.brands-kicker {
+  text-align: center;
+  font-family: var(--font-tech);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #a1a1aa;
+  margin-bottom: 18px;
+}
+.brands-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.brand-badge {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.brand-badge:hover {
+  border-color: var(--purple);
+  background: rgba(91, 24, 201, 0.18);
+  transform: translateY(-2px);
+}
+.brand-badge strong {
+  font-family: var(--font-tech);
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+.brand-badge span {
+  font-size: 0.72rem;
+  color: #a1a1aa;
+}
+
+/* ── BRAND FILTER TABS & PILLS ── */
+.brand-filter-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.bf-tab {
+  font-family: var(--font-tech);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  border: 1px solid #d4d4d8;
+  background: #ffffff;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bf-tab:hover,
+.bf-tab.active {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #ffffff;
+}
+.bike-brand-pill {
+  font-family: var(--font-tech);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--purple);
+  margin-bottom: 6px;
+}
+@media (max-width: 960px) {
+  .brands-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 520px) {
+  .brands-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── WE'VE GOT YOU COVERED (ZIG-ZAG SERVICES) ── */
+.covered-sec {
+  padding: 72px 0 80px;
+  background: #ffffff;
+}
+.sec-heading {
+  text-align: center;
+  font-family: var(--font-tech);
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 56px;
+}
+
+.zigzag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.zigzag-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+.zigzag-text h3 {
+  font-family: var(--font-tech);
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.zigzag-text p {
+  font-size: 0.96rem;
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 340px;
+}
+.zigzag-img {
+  overflow: hidden;
+  background: #f4f4f5;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
+}
+.zigzag-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.zigzag-row:hover .zigzag-img img {
+  transform: scale(1.04);
+}
+.covered-cta {
+  text-align: center;
+  margin-top: 56px;
+}
+
+/* ── ANATOMY / TECH SPECS SHOWCASE ── */
+.anatomy-sec {
+  padding: 64px 0 48px;
+  background: linear-gradient(180deg, #ececef 0%, #f7f7f9 100%);
+  border-top: 1px solid var(--border);
+}
+.anatomy-wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.anatomy-img-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 720px;
+}
+.anatomy-img-box img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.anatomy-specs {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.spec-callout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-tech);
+  font-size: 0.88rem;
+  background: #ffffff;
+  padding: 8px 18px;
+  border: 1px solid #d4d4d8;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+.spec-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 0 0 3px rgba(91, 24, 201, 0.2);
+}
+.spec-callout b {
+  color: var(--purple);
+}
+
+/* ── PRECISION IN MOTION (6 PRODUCTS GRID) ── */
+.products-sec {
+  padding: 56px 0 72px;
+  background: #f7f7f9;
+}
+.products-head {
+  text-align: center;
+  margin-bottom: 42px;
+}
+.products-head h2 {
+  font-family: var(--font-tech);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+.products-head p {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.bikes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.bike-card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.bike-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.07);
+}
+.bike-thumb {
+  background: #f4f4f6;
+  height: 185px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.bike-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.35s ease;
+}
+.bike-card:hover .bike-thumb img {
+  transform: scale(1.06);
+}
+.bike-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.bike-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.bike-cat {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--red-tag);
+}
+.btn-order-bike {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d4d4d8;
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-order-bike:hover {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #ffffff;
+}
+
+.products-cta {
+  text-align: center;
+  margin-top: 38px;
+}
+
+/* ── ENGINEERED FOR THE RIDE BANNER ── */
+.engineered-sec {
+  padding: 20px 0 64px;
+  background: #ffffff;
+}
+.engineered-banner {
+  position: relative;
+  background: #141417;
+  color: #ffffff;
+  min-height: 400px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  overflow: hidden;
+}
+.engineered-content {
+  padding: 56px 60px;
+  position: relative;
+  z-index: 2;
+}
+.engineered-content h2 {
+  font-family: var(--font-tech);
+  font-size: clamp(1.8rem, 3.3vw, 2.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+}
+.engineered-content p {
+  font-size: 0.94rem;
+  color: #a1a1aa;
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 28px;
+}
+.btn-dark-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 32px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-size: 0.84rem;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-dark-outline:hover {
+  background: #ffffff;
+  color: #000000;
+}
+.engineered-visual {
+  height: 100%;
+  min-height: 400px;
+  position: relative;
+}
+.engineered-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+.engineered-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #141417 0%, rgba(20, 20, 23, 0.2) 55%, transparent 100%);
+  z-index: 1;
+}
+
+/* ── FOLLOW ON INSTAGRAM ── */
+.insta-sec {
+  padding: 16px 0 76px;
+  background: #ffffff;
+}
+.insta-head {
+  text-align: center;
+  font-family: var(--font-tech);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+.insta-item {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #18181b;
+  cursor: pointer;
+}
+.insta-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.insta-item:hover img {
+  transform: scale(1.07);
+}
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.insta-item.center-featured .insta-overlay,
+.insta-item:hover .insta-overlay {
+  opacity: 1;
+}
+.insta-overlay svg {
+  width: 44px;
+  height: 44px;
+  color: #ffffff;
+}
+
+/* ── BLACK FOOTER WITH GIANT STENCIL REBEL RIDE ── */
+.site-footer {
+  background: #070709;
+  color: #ffffff;
+  padding: 64px 0 0;
+  overflow: hidden;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.footer-col {
+  padding: 36px 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+.footer-col:first-child {
+  padding-left: 0;
+}
+.footer-col:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+.footer-col h4 {
+  font-family: var(--font-tech);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 18px;
+}
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer-col a,
+.footer-col li {
+  font-size: 0.82rem;
+  color: #a1a1aa;
+  transition: color 0.2s;
+}
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+.footer-giant-wrap {
+  text-align: center;
+  padding: 40px 0 24px;
+  line-height: 0.86;
+  user-select: none;
+}
+.footer-giant-brand {
+  font-family: var(--font-tall);
+  font-size: clamp(4.2rem, 16vw, 13.8rem);
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  transform: scaleY(1.28);
+  transform-origin: bottom center;
+  position: relative;
+}
+.footer-giant-brand::after {
+  content: "";
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  top: 50%;
+  height: clamp(4px, 0.65vw, 9px);
+  background: #070709;
+}
+
+/* ── ORDER MODAL ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 10, 12, 0.72);
+  backdrop-filter: blur(6px);
+  display: none;
+  place-items: center;
+  padding: 20px;
+}
+.modal-backdrop.open {
+  display: grid;
+}
+.modal-card {
+  background: #ffffff;
+  max-width: 430px;
+  width: 100%;
+  padding: 28px;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #f4f4f5;
+  cursor: pointer;
+  font-weight: 700;
+}
+.modal-card h3 {
+  font-family: var(--font-tech);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.modal-card p {
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+.modal-field {
+  margin-bottom: 12px;
+}
+.modal-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.modal-field input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d4d4d8;
+  font-family: inherit;
+  font-size: 0.86rem;
+}
+.modal-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+.modal-btn {
+  padding: 12px;
+  border: none;
+  font-family: var(--font-tech);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+}
+.modal-btn.zalo {
+  background: var(--purple);
+}
+.modal-btn.tg {
+  background: #24A1DE;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .nav-menu {
+    display: none;
+  }
+  .hero-bottom-grid {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+  .hero-bike-box {
+    margin-top: 10px;
+    justify-content: center;
+  }
+  .bikes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .engineered-banner {
+    grid-template-columns: 1fr;
+  }
+  .engineered-content {
+    padding: 36px 28px;
+  }
+  .engineered-visual {
+    min-height: 260px;
+  }
+  .insta-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-col {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+@media (max-width: 640px) {
+  .btn-test-ride {
+    padding: 7px 14px;
+    font-size: 0.72rem;
+  }
+  .giant-stencil-text {
+    transform: scaleY(1.18);
+    margin-bottom: 20px;
+  }
+  .zigzag-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .zigzag-row.reverse-mobile .zigzag-img {
+    order: 2;
+  }
+  .anatomy-specs {
+    gap: 14px;
+  }
+  .bikes-grid {
+    grid-template-columns: 1fr;
+  }
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-cols {
+    grid-template-columns: 1fr;
+  }
+  .footer-col {
+    padding: 24px 0;
+    border-right: none;
+  }
+  .modal-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+  .hero-btns {
+    flex-direction: column;
+  }
+  .hero-btns .btn-purple,
+  .hero-btns .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+  .brands-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .insta-grid {
+    grid-template-columns: 1fr;
+  }
+}
