@@ -229,13 +229,72 @@ img { max-width:100%; display:block }
 
 /* ── STATS BAR ── */
 .stats-bar {
-  background:#fff; border-top:1px solid rgba(0,0,0,.07); border-bottom:1px solid rgba(0,0,0,.07);
+  background:#fff;
+  border-top:1px solid rgba(0,0,0,.07);
+  border-bottom:1px solid rgba(0,0,0,.07);
   padding:28px 5%;
-  display:flex; align-items:center; justify-content:center; gap:60px; flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(4, minmax(140px, 220px));
+  justify-content:center;
+  align-items:center;
+  gap:24px;
 }
-.stats-bar div { text-align:center }
-.stats-bar b { display:block; font-size:2rem; font-weight:800; letter-spacing:-.04em; color:#0d0d0d }
-.stats-bar small { font-size:.75rem; color:#888; text-transform:uppercase; letter-spacing:.1em }
+.stats-bar div {
+  text-align:center;
+  position:relative;
+  padding:6px 12px;
+}
+.stats-bar div:not(:last-child)::after {
+  content:'';
+  position:absolute;
+  right:-12px;
+  top:18%;
+  height:64%;
+  width:1px;
+  background:rgba(0,0,0,.08);
+}
+.stats-bar b {
+  display:block;
+  font-size:clamp(1.45rem, 2.4vw, 2rem);
+  font-weight:800;
+  letter-spacing:-.04em;
+  color:#0d0d0d;
+  line-height:1.15;
+  margin-bottom:4px;
+}
+.stats-bar small {
+  display:block;
+  font-size:.72rem;
+  font-weight:600;
+  color:#777;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+@media(max-width:768px){
+  .stats-bar {
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+    padding:16px 4%;
+    background:#f8f9fc;
+  }
+  .stats-bar div {
+    background:#fff;
+    border:1px solid rgba(0,0,0,.06);
+    border-radius:14px;
+    padding:14px 10px;
+    box-shadow:0 2px 8px rgba(0,0,0,.03);
+  }
+  .stats-bar div::after {
+    display:none !important;
+  }
+  .stats-bar b {
+    font-size:1.35rem;
+  }
+  .stats-bar small {
+    font-size:.66rem;
+    letter-spacing:.06em;
+  }
+}
 
 /* ── SECTION TEMPLATES ── */
 .section { padding:100px 5% }
@@ -394,6 +453,10 @@ img { max-width:100%; display:block }
   .section { padding:56px 4% }
   .svc-grid { grid-template-columns:1fr }
   .svc-card { padding:26px 22px }
+  .tpl-list { gap:52px; margin-top:42px }
+  .tpl-mockup-tag { right:12px; top:-12px }
+  .cta-section { padding:56px 4% }
+  .cta-box { padding:44px 22px; border-radius:22px }
 
   /* Misc */
   .sec-h2 { font-size:clamp(1.9rem,7vw,2.6rem) }
@@ -409,6 +472,8 @@ img { max-width:100%; display:block }
   .hero-sub { font-size:.88rem }
   .hero-btns { flex-direction:column; align-items:center }
   .btn-primary, .btn-secondary { width:100%; justify-content:center; padding:14px }
+  .cta-btns { flex-direction:column }
+  .btn-cta-main, .btn-cta-ghost { width:100%; justify-content:center; padding:14px 20px }
 
   .sc-card { width:120px }
   .cards-stage { height:260px }
@@ -866,10 +931,9 @@ img { max-width:100%; display:block }
 <!-- STATS -->
 <div class="stats-bar">
   <div><b>20+</b><small>Mẫu có sẵn</small></div>
-  <div><b>Trọn đời</b><small>Bảo hành</small></div>
   <div><b>7 ngày</b><small>Bàn giao</small></div>
   <div><b>100%</b><small>Mobile ready</small></div>
-  <div><b>Miễn phí</b><small>Tư vấn</small></div>
+  <div><b>Trọn đời</b><small>Bảo hành</small></div>
 </div>
 
 <!-- TEMPLATES LIST -->
