@@ -437,56 +437,125 @@
       display: none !important;
     }
 
-    /* Language Switcher Pill */
-    .hp-lang-switcher {
+    /* Floating Bottom-Left Language Switcher Pop-up */
+    #hp-lang-float {
+      position: fixed;
+      left: 20px;
+      bottom: 24px;
+      z-index: 999998;
+      font-family: -apple-system, BlinkMacSystemFont, 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
+      user-select: none;
+    }
+    .hp-lang-trigger {
       display: inline-flex;
       align-items: center;
-      gap: 2px;
-      background: rgba(255, 255, 255, 0.09);
+      gap: 8px;
+      background: rgba(15, 18, 24, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      color: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 999px;
-      padding: 2px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Be Vietnam Pro', 'Plus Jakarta Sans', sans-serif;
-      flex-shrink: 0;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+      transition: all 0.22s ease;
+      line-height: 1;
     }
-    .hp-lang-switcher.light-theme {
-      background: #f1f5f9;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+    .hp-lang-trigger:hover {
+      transform: translateY(-2px);
+      border-color: rgba(34, 197, 94, 0.55);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.36);
+    }
+    .hp-lang-trigger .hp-trig-flag {
+      font-size: 16px;
+      line-height: 1;
+    }
+    .hp-lang-trigger .hp-trig-caret {
+      font-size: 10px;
+      opacity: 0.75;
+      transition: transform 0.25s ease;
+      margin-left: 2px;
+    }
+    #hp-lang-float.open .hp-lang-trigger {
+      border-color: #22c55e;
+      background: rgba(15, 18, 24, 0.98);
+    }
+    #hp-lang-float.open .hp-trig-caret {
+      transform: rotate(180deg);
+    }
+    .hp-lang-menu {
+      position: absolute;
+      left: 0;
+      bottom: calc(100% + 10px);
+      min-width: 176px;
+      background: rgba(15, 18, 24, 0.96);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 6px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.38);
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px) scale(0.96);
+      transform-origin: bottom left;
+      transition: all 0.22s cubic-bezier(0.2, 0.85, 0.25, 1);
+      pointer-events: none;
+    }
+    #hp-lang-float.open .hp-lang-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
     }
     .hp-lang-btn {
       border: none;
       background: transparent;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 7px;
-      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 12px;
+      border-radius: 11px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.18s ease;
+      text-align: left;
+      width: 100%;
+    }
+    .hp-lang-btn-left {
       display: inline-flex;
       align-items: center;
-      gap: 3px;
-      transition: all 0.2s ease;
-      line-height: 1;
-      letter-spacing: 0.02em;
-    }
-    .hp-lang-switcher.light-theme .hp-lang-btn {
-      color: #475569;
+      gap: 9px;
     }
     .hp-lang-btn:hover {
       color: #ffffff;
-      background: rgba(255, 255, 255, 0.12);
-    }
-    .hp-lang-switcher.light-theme .hp-lang-btn:hover {
-      color: #0f172a;
-      background: rgba(0, 0, 0, 0.06);
+      background: rgba(255, 255, 255, 0.1);
     }
     .hp-lang-btn.active {
-      background: #22c55e;
-      color: #ffffff !important;
-      box-shadow: 0 2px 8px rgba(34, 197, 94, 0.35);
+      background: rgba(34, 197, 94, 0.18);
+      color: #4ade80 !important;
+      font-weight: 700;
+    }
+    .hp-lang-check {
+      font-size: 12px;
+      opacity: 0;
+      color: #22c55e;
+      font-weight: 800;
+    }
+    .hp-lang-btn.active .hp-lang-check {
+      opacity: 1;
     }
     .hp-lang-flag {
-      font-size: 12px;
+      font-size: 16px;
       line-height: 1;
     }
     @media (max-width: 1200px) {
@@ -510,12 +579,13 @@
       }
     }
     @media (max-width: 640px) {
-      .hp-lang-flag {
-        display: none;
+      #hp-lang-float {
+        left: 14px;
+        bottom: 18px;
       }
-      .hp-lang-btn {
-        padding: 4px 6px;
-        font-size: 10px;
+      .hp-lang-trigger {
+        padding: 9px 13px;
+        font-size: 12px;
       }
       .hp-vp-switcher {
         display: none !important;
@@ -531,10 +601,6 @@
       }
     }
     @media (max-width: 390px) {
-      .hp-lang-btn {
-        padding: 3px 4px;
-        font-size: 9.5px;
-      }
       #hp-bar a[href*="t.me"],
       #hp-bar a[href*="zalo.me"] {
         padding: 5px 8px !important;
@@ -685,9 +751,19 @@
 
         function setLanguage(lang, userClicked) {
           saveLang(lang);
+          const activeObj = LANGS.find(item => item.code === lang) || LANGS[0];
+
           document.querySelectorAll('.hp-lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.lang === lang);
           });
+
+          const trigFlag = document.querySelector('#hp-lang-float .hp-trig-flag');
+          const trigLabel = document.querySelector('#hp-lang-float .hp-trig-label');
+          if (trigFlag) trigFlag.textContent = activeObj.flag;
+          if (trigLabel) trigLabel.textContent = activeObj.name;
+
+          const floatWrap = document.getElementById('hp-lang-float');
+          if (floatWrap) floatWrap.classList.remove('open');
 
           applyInstantDict(lang);
           triggerGoogleTranslate(lang);
@@ -699,23 +775,69 @@
           }
         }
 
-        function createSwitcher(isLight) {
+        function createFloatingSwitcher() {
           const wrap = document.createElement('div');
-          wrap.className = 'hp-lang-switcher notranslate' + (isLight ? ' light-theme' : '');
+          wrap.id = 'hp-lang-float';
+          wrap.className = 'hp-lang-switcher notranslate';
           wrap.setAttribute('translate', 'no');
 
           const current = getSavedLang();
+          const activeObj = LANGS.find(item => item.code === current) || LANGS[0];
+
+          // Pop-up menu (expands upward)
+          const menu = document.createElement('div');
+          menu.className = 'hp-lang-menu';
+
           LANGS.forEach(item => {
             const btn = document.createElement('button');
             btn.type = 'button';
             btn.className = 'hp-lang-btn notranslate' + (item.code === current ? ' active' : '');
             btn.dataset.lang = item.code;
             btn.title = item.name;
-            btn.innerHTML = `<span class="hp-lang-flag">${item.flag}</span><span>${item.label}</span>`;
-            btn.addEventListener('click', () => setLanguage(item.code, true));
-            wrap.appendChild(btn);
+            btn.innerHTML = `
+              <span class="hp-lang-btn-left">
+                <span class="hp-lang-flag">${item.flag}</span>
+                <span>${item.name}</span>
+              </span>
+              <span class="hp-lang-check">✓</span>
+            `;
+            btn.addEventListener('click', (e) => {
+              e.stopPropagation();
+              setLanguage(item.code, true);
+            });
+            menu.appendChild(btn);
           });
 
+          // Bottom-left trigger pill
+          const trigger = document.createElement('button');
+          trigger.type = 'button';
+          trigger.className = 'hp-lang-trigger notranslate';
+          trigger.setAttribute('aria-label', 'Chọn ngôn ngữ');
+          trigger.innerHTML = `
+            <span class="hp-trig-flag">${activeObj.flag}</span>
+            <span class="hp-trig-label">${activeObj.name}</span>
+            <span class="hp-trig-caret">▴</span>
+          `;
+
+          trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            wrap.classList.toggle('open');
+          });
+
+          document.addEventListener('click', (e) => {
+            if (!wrap.contains(e.target)) {
+              wrap.classList.remove('open');
+            }
+          });
+
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+              wrap.classList.remove('open');
+            }
+          });
+
+          wrap.appendChild(menu);
+          wrap.appendChild(trigger);
           return wrap;
         }
 
@@ -784,9 +906,9 @@
             return;
           }
 
-          // 1. Mount inside #hp-bar on all template pages
+          // 1. Mount Desktop/Mobile viewport switcher inside #hp-bar on template pages
           const hpBar = document.getElementById('hp-bar');
-          if (hpBar && !hpBar.querySelector('.hp-lang-switcher')) {
+          if (hpBar && !hpBar.querySelector('.hp-vp-switcher')) {
             // Fix any legacy GitHub links in #hp-bar back to local ../../index.html#templates
             hpBar.querySelectorAll('a[href*="hoangphuongle.github.io"]').forEach(a => {
               a.setAttribute('href', '../../index.html#templates');
@@ -794,18 +916,15 @@
 
             const rightSpan = hpBar.lastElementChild;
             if (rightSpan && rightSpan.tagName === 'SPAN') {
-              rightSpan.insertBefore(createSwitcher(false), rightSpan.firstChild);
               rightSpan.insertBefore(createViewportSwitcher(), rightSpan.firstChild);
             } else {
               hpBar.appendChild(createViewportSwitcher());
-              hpBar.appendChild(createSwitcher(false));
             }
           }
 
-          // 2. Mount inside main portfolio .nav-right on index.html
-          const navRight = document.querySelector('.nav .nav-right');
-          if (navRight && !navRight.querySelector('.hp-lang-switcher')) {
-            navRight.insertBefore(createSwitcher(true), navRight.firstChild);
+          // 2. Mount Floating Bottom-Left Language Switcher Pop-up on all pages
+          if (!document.getElementById('hp-lang-float')) {
+            document.body.appendChild(createFloatingSwitcher());
           }
 
           // Create hidden Google Translate container for full-page translation
