@@ -410,8 +410,8 @@ img { max-width:100%; display:block }
 
 /* ── RESPONSIVE: 1024px (Tablet landscape) ── */
 @media(max-width:1024px){
-  .cards-stage { height:420px }
-  .sc-card { width:220px }
+  .cards-stage { width:820px; height:400px }
+  .sc-card { width:210px }
 }
 
 /* ── RESPONSIVE: 860px (Tablet portrait) ── */
@@ -420,8 +420,28 @@ img { max-width:100%; display:block }
   .tpl-row.reverse { direction:ltr }
   .hero-tag { display:none }
   .sc-card:nth-child(n+4){ display:block }
-  .sc-card { width:170px }
-  .cards-stage { height:380px }
+  .cards-stage { width:720px; height:340px }
+  .sc-card { width:175px }
+  .sc-card:nth-child(1) { left:0%;  top:24px }
+  .sc-card:nth-child(2) { left:15%; top:10px }
+  .sc-card:nth-child(3) { left:30%; top:18px }
+  .sc-card:nth-child(4) { left:46%; top:8px }
+  .sc-card:nth-child(5) { left:61%; top:20px }
+  .sc-card:nth-child(6) { left:75%; top:28px }
+  .sc-label {
+    padding:10px 12px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:2px;
+  }
+  .sc-label span {
+    font-size:.76rem;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width:100%;
+  }
+  .sc-label small { font-size:.68rem; white-space:nowrap }
   .section { padding:70px 5% }
   .svc-grid { grid-template-columns:1fr 1fr }
   .sec-h2 { font-size:clamp(2rem,5vw,3rem) }
@@ -430,70 +450,126 @@ img { max-width:100%; display:block }
 /* ── RESPONSIVE: 640px (Mobile large) ── */
 @media(max-width:640px){
   /* Nav — hide ghost btn */
+  .nav { padding:14px 4% }
+  .nav.scrolled { padding:10px 4% }
+  .nav-right { gap:8px }
   .btn-nav-ghost { display:none }
   .btn-nav-zalo, .btn-nav-tg { padding:8px 13px; font-size:.76rem }
 
   /* Hero */
-  .hero { padding:110px 4% 60px }
-  .hero h1 { font-size:clamp(2.4rem,9vw,3.5rem); margin-bottom:16px }
-  .hero-sub { font-size:.95rem; margin-bottom:32px }
-  .hero-btns { gap:10px; margin-bottom:60px }
-  .btn-primary, .btn-secondary { padding:13px 24px; font-size:.85rem }
+  .hero { min-height:auto; padding:98px 4% 40px }
+  .hero-pill { margin-bottom:20px; font-size:.74rem; padding:6px 14px }
+  .hero h1 { font-size:clamp(2.2rem,8.5vw,3.2rem); margin-bottom:14px; line-height:1.08 }
+  .hero-sub { font-size:.92rem; margin-bottom:24px }
+  .hero-btns {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    width:100%;
+    max-width:360px;
+    margin:0 auto 36px;
+  }
+  .hero-btns .btn-primary {
+    grid-column:1 / -1;
+    width:100%;
+    justify-content:center;
+    padding:14px 20px;
+    font-size:.88rem;
+  }
+  .hero-btns .btn-secondary {
+    width:100%;
+    justify-content:center;
+    padding:12px 14px;
+    font-size:.84rem;
+  }
 
   /* Hide floating badges on mobile (they overlap content) */
   [style*="position:absolute"][style*="animation:floatA"],
   [style*="position:absolute"][style*="animation:floatB"] { display:none !important }
 
-  /* Cards — smaller */
-  .sc-card { width:140px }
-  .cards-stage { height:300px }
+  /* Cards — properly scaled stage so cards never clip or squish */
+  .cards-stage { width:620px; height:290px }
+  .sc-card { width:152px; border-radius:14px; border-width:2px }
+  .sc-card:nth-child(1) { left:0%;  top:20px }
+  .sc-card:nth-child(2) { left:15%; top:8px }
+  .sc-card:nth-child(3) { left:30%; top:16px }
+  .sc-card:nth-child(4) { left:46%; top:8px }
+  .sc-card:nth-child(5) { left:61%; top:18px }
+  .sc-card:nth-child(6) { left:75%; top:24px }
+  .sc-label { padding:8px 10px; gap:2px }
+  .sc-label span { font-size:.73rem }
+  .sc-label small { font-size:.65rem }
   .cards-wrap { cursor:grab }
 
   /* Sections */
-  .section { padding:56px 4% }
+  .section { padding:52px 4% }
   .svc-grid { grid-template-columns:1fr }
   .svc-card { padding:26px 22px }
-  .tpl-list { gap:52px; margin-top:42px }
-  .tpl-mockup-tag { right:12px; top:-12px }
-  .cta-section { padding:56px 4% }
-  .cta-box { padding:44px 22px; border-radius:22px }
+  .tpl-list { gap:48px; margin-top:36px }
+  .tpl-mockup-tag { right:12px; top:-12px; font-size:.66rem; padding:6px 13px }
+  .tpl-btns {
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:8px;
+  }
+  .btn-view, .btn-order, .btn-tg {
+    padding:11px 10px;
+    font-size:.8rem;
+    justify-content:center;
+    white-space:nowrap;
+  }
+  .cta-section { padding:52px 4% }
+  .cta-box { padding:40px 20px; border-radius:22px }
+
+  /* Compact floating action buttons on mobile */
+  .floats { right:10px; bottom:14px; gap:8px }
+  .floats a { width:42px; height:42px }
+  .floats a svg { width:19px; height:19px }
+  .ft { padding-bottom:76px }
 
   /* Misc */
-  .sec-h2 { font-size:clamp(1.9rem,7vw,2.6rem) }
+  .sec-h2 { font-size:clamp(1.85rem,7vw,2.5rem) }
   .sec-p { font-size:.9rem }
-  .filter-bar { gap:6px }
-  .f-tab { padding:7px 14px; font-size:.78rem }
+  .filter-bar {
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    gap:7px;
+    margin:24px -4% 0;
+    padding:2px 4% 8px;
+  }
+  .filter-bar::-webkit-scrollbar { display:none }
+  .f-tab { padding:8px 15px; font-size:.78rem; flex-shrink:0; white-space:nowrap }
 }
 
 /* ── RESPONSIVE: 480px (Mobile small) ── */
 @media(max-width:480px){
-  .hero { padding:100px 4% 50px }
-  .hero h1 { font-size:2.2rem; letter-spacing:-.02em }
-  .hero-sub { font-size:.88rem }
-  .hero-btns { flex-direction:column; align-items:center }
-  .btn-primary, .btn-secondary { width:100%; justify-content:center; padding:14px }
+  .hero { padding:92px 4% 34px }
+  .hero h1 { font-size:2.05rem; letter-spacing:-.02em }
+  .hero-sub { font-size:.86rem; margin-bottom:20px }
   .cta-btns { flex-direction:column }
   .btn-cta-main, .btn-cta-ghost { width:100%; justify-content:center; padding:14px 20px }
 
-  .sc-card { width:120px }
-  .cards-stage { height:260px }
+  .cards-stage { width:560px; height:268px }
+  .sc-card { width:138px }
 
-  .section { padding:48px 4% }
+  .section { padding:46px 4% }
   .pf-grid { grid-template-columns:1fr }
   .prc-grid { grid-template-columns:1fr !important }
 
   /* Footer */
-  .ft-grid { grid-template-columns:1fr }
+  .ft-grid { grid-template-columns:1fr; gap:32px }
 }
 
 /* ── RESPONSIVE: 360px (Tiny phone) ── */
 @media(max-width:360px){
-  .hero h1 { font-size:1.9rem }
-  .nav { padding:14px 4% }
-  .nav-logo { font-size:1rem }
-  .btn-nav-zalo, .btn-nav-tg { padding:7px 10px; font-size:.72rem }
-  .sc-card { width:105px }
-  .cards-stage { height:240px }
+  .hero h1 { font-size:1.85rem }
+  .nav { padding:12px 4% }
+  .nav-logo { font-size:.98rem }
+  .btn-nav-zalo, .btn-nav-tg { padding:6px 10px; font-size:.72rem }
+  .cards-stage { width:510px; height:250px }
+  .sc-card { width:126px }
 }
 
 /* ── SERVICES ── */

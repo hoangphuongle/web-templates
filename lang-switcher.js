@@ -580,12 +580,16 @@
     }
     @media (max-width: 640px) {
       #hp-lang-float {
-        left: 14px;
-        bottom: 18px;
+        left: 10px;
+        bottom: 14px;
       }
       .hp-lang-trigger {
-        padding: 9px 13px;
-        font-size: 12px;
+        padding: 7px 11px;
+        font-size: 11.5px;
+        gap: 6px;
+      }
+      .hp-lang-trigger .hp-trig-flag {
+        font-size: 14px;
       }
       .hp-vp-switcher {
         display: none !important;
