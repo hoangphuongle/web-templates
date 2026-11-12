@@ -1,7 +1,7 @@
 /**
  * HP Portfolio & Templates Multi-Language Switcher (VI, EN, RU, KO)
- * Works seamlessly across index.html and all 18 templates/*/index.html
-  * Zero Google Translate top banner, instant translation + full - page auto - translation support.
+ * Works seamlessly across index.html and all 22 template pages.
+ * Zero Google Translate top banner, instant translation + full-page auto-translation support.
  */
       (function () {
         const LANGS = [
@@ -784,16 +784,16 @@
             return;
           }
 
-          // 1. Mount inside #hp-bar on all 18 template pages
+          // 1. Mount inside #hp-bar on all template pages
           const hpBar = document.getElementById('hp-bar');
-          if (hpBar) {
+          if (hpBar && !hpBar.querySelector('.hp-lang-switcher')) {
             // Fix any legacy GitHub links in #hp-bar back to local ../../index.html#templates
             hpBar.querySelectorAll('a[href*="hoangphuongle.github.io"]').forEach(a => {
               a.setAttribute('href', '../../index.html#templates');
             });
 
-            const rightSpan = hpBar.querySelector('span:last-of-type');
-            if (rightSpan) {
+            const rightSpan = hpBar.lastElementChild;
+            if (rightSpan && rightSpan.tagName === 'SPAN') {
               rightSpan.insertBefore(createSwitcher(false), rightSpan.firstChild);
               rightSpan.insertBefore(createViewportSwitcher(), rightSpan.firstChild);
             } else {
@@ -804,7 +804,7 @@
 
           // 2. Mount inside main portfolio .nav-right on index.html
           const navRight = document.querySelector('.nav .nav-right');
-          if (navRight) {
+          if (navRight && !navRight.querySelector('.hp-lang-switcher')) {
             navRight.insertBefore(createSwitcher(true), navRight.firstChild);
           }
 
