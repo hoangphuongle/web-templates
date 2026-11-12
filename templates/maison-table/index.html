@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAISON TABLE – Nhà Hàng Âu &amp; Fine Dining Hiện Đại | Đặt Bàn Trực Tuyến</title>
+  <meta name="description" content="MAISON TABLE – Không gian ẩm thực Âu đương đại (Contemporary Bistro & Fine Dining). Thực đơn theo mùa tinh tuyển, nguyên liệu hữu cơ tươi mới và trải nghiệm đặt bàn sang trọng.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Be Vietnam Pro',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <!-- LEFT: brand -->
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <!-- MIDDLE: cta -->
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <!-- RIGHT: actions -->
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#666;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;transition:.2s" onmouseover="this.style.borderColor='rgba(255,255,255,.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">
+        Zalo
+      </a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>
+    @keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}
+    @media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+  </style>
+
+  <!-- ═══════════════ HEADER / NAVBAR ═══════════════ -->
+  <header class="mt-header" id="mtHeader">
+    <div class="mt-container mt-nav">
+      <a href="#" class="mt-logo" aria-label="MAISON TABLE">
+        <span>MAISON</span>
+        <span>TABLE</span>
+      </a>
+      <ul class="mt-menu" id="mtMenu">
+        <li><a href="#thuc-don">Thực đơn</a></li>
+        <li><a href="#cau-chuyen">Câu chuyện</a></li>
+        <li><a href="#trai-nghiem">Trải nghiệm</a></li>
+        <li><a href="#dat-ban">Đặt bàn</a></li>
+        <li><a href="#lien-he">Liên hệ</a></li>
+      </ul>
+      <button type="button" class="mt-menu-toggle" id="mtMenuToggle" aria-label="Mở menu">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══════════════ SECTION 1: HERO BANNER ═══════════════ -->
+    <section class="mt-hero-wrap">
+      <div class="mt-container">
+        <div class="mt-hero-card">
+          <img src="img/hero.png" alt="Maison Table Signature Pan-Seared Halibut" class="mt-hero-bg">
+          <div class="mt-hero-overlay"></div>
+          <div class="mt-hero-content mt-reveal">
+            <span class="mt-eyebrow">A NEW WAY TO EXPERIENCE DINING</span>
+            <h1 class="mt-hero-title">Good Food.<br>Better Moments.</h1>
+            <p class="mt-hero-sub">
+              Những món ăn được chế biến tỉ mỉ từ nguyên liệu hữu cơ theo mùa, mang lại trải nghiệm ẩm thực Âu tinh tế và đáng nhớ bên từng bàn tiệc.
+            </p>
+            <div class="mt-hero-actions">
+              <button type="button" class="btn-lime" data-open-reserve>
+                <span>Đặt bàn ngay</span>
+                <span aria-hidden="true">→</span>
+              </button>
+              <a href="#thuc-don" class="btn-glass">Khám phá thực đơn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SECTION 2: OUR PHILOSOPHY ═══════════════ -->
+    <section class="mt-philosophy" id="cau-chuyen">
+      <div class="mt-container">
+        <div class="mt-phil-grid">
+          <div class="mt-phil-text mt-reveal">
+            <div>
+              <span class="mt-sec-eyebrow">OUR PHILOSOPHY</span>
+              <h2 class="mt-sec-title">Every Plate<br>Tells a Story.</h2>
+              <p class="mt-sec-desc">
+                Chúng tôi kết hợp nguồn nguyên liệu tươi tuyển chọn mỗi sáng, kỹ thuật nấu nướng chuẩn Pháp – Địa Trung Hải và cảm hứng sáng tạo đương đại để mỗi bữa ăn đều trở thành một kỷ niệm trọn vẹn.
+              </p>
+            </div>
+            <div>
+              <a href="#trai-nghiem" class="btn-circle-arrow" aria-label="Tìm hiểu nghệ thuật ẩm thực">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-phil-media mt-reveal">
+            <img src="img/philosophy-dish.png" alt="Món khai vị thảo mộc tươi theo mùa" loading="lazy">
+          </div>
+
+          <div class="mt-phil-media mt-reveal">
+            <img src="img/philosophy-interior.png" alt="Không gian phòng ăn ngập ánh nắng tự nhiên" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SECTION 3: SIGNATURE DISHES + STATS ═══════════════ -->
+    <section class="mt-dishes" id="thuc-don">
+      <div class="mt-container">
+        <div class="mt-dishes-head mt-reveal">
+          <span class="mt-sec-eyebrow" style="margin-bottom:0">SIGNATURE DISHES</span>
+          <button type="button" class="mt-link-more" id="btnOpenMenuModal">
+            <span>XEM TOÀN BỘ THỰC ĐƠN</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <div class="mt-dishes-grid">
+          <!-- Card 01: Signature -->
+          <article class="mt-dish-card featured mt-reveal">
+            <div class="mt-dish-img-wrap">
+              <span class="mt-dish-tag">01 / SIGNATURE</span>
+              <img src="img/dish-1.png" alt="The Signature Plate - Sườn cừu nướng thảo mộc" loading="lazy">
+            </div>
+            <div class="mt-dish-meta">
+              <h3 class="mt-dish-title">The Signature Plate</h3>
+              <span class="mt-dish-price">680.000đ</span>
+            </div>
+            <p class="mt-dish-desc">
+              Sườn cừu Úc áp chảo thảo mộc dùng kèm sốt kem củ cải vàng nghiền mịn và rau mầm theo mùa.
+            </p>
+          </article>
+
+          <!-- Card 02: Seasonal -->
+          <article class="mt-dish-card mt-reveal">
+            <div class="mt-dish-img-wrap">
+              <span class="mt-dish-tag">02 / SEASONAL</span>
+              <img src="img/dish-2.png" alt="Seasonal Selection - Mì Ý tươi sốt pesto & măng tây" loading="lazy">
+            </div>
+            <div class="mt-dish-meta">
+              <h3 class="mt-dish-title">Seasonal Selection</h3>
+              <span class="mt-dish-price">420.000đ</span>
+            </div>
+            <p class="mt-dish-desc">
+              Mì Tagliatelle thủ công trộn sốt húng quế tươi, măng tây nướng than củi và phô mai Parmigiano ủ 24 tháng.
+            </p>
+          </article>
+
+          <!-- Card 03: Dessert -->
+          <article class="mt-dish-card mt-reveal">
+            <div class="mt-dish-img-wrap">
+              <span class="mt-dish-tag">03 / DESSERT</span>
+              <img src="img/dish-3.png" alt="The Sweet Finish - Bánh Mousse Mascarpone & Việt quất" loading="lazy">
+            </div>
+            <div class="mt-dish-meta">
+              <h3 class="mt-dish-title">The Sweet Finish</h3>
+              <span class="mt-dish-price">240.000đ</span>
+            </div>
+            <p class="mt-dish-desc">
+              Bánh mousse phô mai Mascarpone đế hạt dẻ cười giòn, điểm xuyết việt quất tươi và sốt phúc bồn tử.
+            </p>
+          </article>
+        </div>
+
+        <!-- Stats Pill Bar -->
+        <div class="mt-stats-bar mt-reveal">
+          <div class="mt-stat-item">
+            <span class="mt-stat-num">100+</span>
+            <span class="mt-stat-label">Seasonal Dishes · Món ăn theo mùa</span>
+          </div>
+          <div class="mt-stat-item">
+            <span class="mt-stat-num">14+</span>
+            <span class="mt-stat-label">Culinary Experts · Đầu bếp tài hoa</span>
+          </div>
+          <div class="mt-stat-item">
+            <span class="mt-stat-num">5★</span>
+            <span class="mt-stat-label">Dining Experience · Trải nghiệm ẩm thực</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SECTION 4: EXPERIENCE BANNER ═══════════════ -->
+    <section class="mt-exp-section">
+      <div class="mt-container">
+        <div class="mt-exp-banner mt-reveal">
+          <div class="mt-exp-content">
+            <h2 class="mt-exp-title">Made for<br>Moments<br>Worth Sharing.</h2>
+            <p class="mt-exp-desc">
+              Từ bữa tối lãng mạn bên ánh nến đến những buổi tiệc sum họp ấm cúng, hãy khám phá không gian ẩm thực giao hòa giữa thiên nhiên và lòng hiếu khách tận tâm.
+            </p>
+            <button type="button" class="btn-lime" data-open-reserve>
+              <span>Đặt bàn trải nghiệm</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <div class="mt-exp-photo-wrap">
+            <img src="img/experience-banner.png" alt="Không gian bàn tiệc sofa nhung xanh bên khung cửa sổ ngập nắng" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SECTION 5: THE ART OF DINING (DARK) ═══════════════ -->
+    <section class="mt-art-section" id="trai-nghiem">
+      <div class="mt-container">
+        <div class="mt-art-head mt-reveal">
+          <h2 class="mt-art-title">THE ART<br>OF DINING.</h2>
+          <p class="mt-art-sub">
+            Sự tỉ mỉ trong từng công đoạn — từ khâu tuyển chọn nông sản hữu cơ buổi sớm đến khoảnh khắc món ăn được trình bày trên bàn tiệc.
+          </p>
+        </div>
+
+        <div class="mt-art-list">
+          <!-- Row 1: Culinary Craft -->
+          <div class="mt-art-row mt-reveal">
+            <div class="mt-art-info">
+              <span class="mt-art-num">01 / CULINARY CRAFT</span>
+              <h3>Chef's Table &amp; Passion</h3>
+              <p>
+                Mỗi món ăn được hoàn thiện thủ công bởi đội ngũ Bếp trưởng giàu kinh nghiệm, giữ trọn hương vị nguyên bản và kết cấu tinh tế.
+              </p>
+            </div>
+            <div class="mt-art-img">
+              <img src="img/art-chef.png" alt="Bếp trưởng chăm chút trình bày món ăn" loading="lazy">
+            </div>
+            <button type="button" class="btn-circle-arrow dark-mode" data-open-reserve aria-label="Đặt bàn Chef's Table">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Row 2: The Dining Room -->
+          <div class="mt-art-row mt-reveal">
+            <div class="mt-art-info">
+              <span class="mt-art-num">02 / AMBIENCE</span>
+              <h3>The Dining Room</h3>
+              <p>
+                Không gian kiến trúc mở ngập tràn cây xanh, ghế sofa nhung xanh êm ái và ánh đèn vàng ấm áp lý tưởng cho những buổi hẹn hò hay tiếp khách.
+              </p>
+            </div>
+            <div class="mt-art-img">
+              <img src="img/art-diningroom.png" alt="Không gian phòng ăn chính sang trọng" loading="lazy">
+            </div>
+            <button type="button" class="btn-circle-arrow dark-mode" data-open-reserve aria-label="Đặt không gian phòng ăn">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Row 3: Seasonal Ingredients -->
+          <div class="mt-art-row mt-reveal">
+            <div class="mt-art-info">
+              <span class="mt-art-num">03 / FARM TO TABLE</span>
+              <h3>Seasonal Ingredients</h3>
+              <p>
+                100% rau củ hữu cơ, măng tây tươi, thảo mộc địa phương và hải sản đánh bắt trong ngày từ các nông trại đối tác bền vững.
+              </p>
+            </div>
+            <div class="mt-art-img">
+              <img src="img/art-ingredients.png" alt="Nguyên liệu hữu cơ tươi theo mùa" loading="lazy">
+            </div>
+            <button type="button" class="btn-circle-arrow dark-mode" id="btnArtMenu" aria-label="Xem thực đơn theo mùa">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ SECTION 6: RESERVATIONS & CONTACT ═══════════════ -->
+    <section class="mt-reserve-section" id="dat-ban">
+      <div class="mt-container">
+        <div class="mt-reserve-grid" id="lien-he">
+          <div class="mt-reserve-left mt-reveal">
+            <span class="mt-sec-eyebrow">RESERVATIONS</span>
+            <h2 class="mt-sec-title">Your Table<br>Is Waiting.</h2>
+            <p>
+              Hãy để chúng tôi chuẩn bị sẵn vị trí đẹp nhất cho bạn. Đặt bàn trực tuyến chỉ trong 30 giây hoặc nhắn trực tiếp qua Zalo / Telegram để được tư vấn thực đơn tiệc riêng.
+            </p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+              <button type="button" class="btn-lime" data-open-reserve>
+                <span>Reserve a Table · Đặt bàn</span>
+                <span aria-hidden="true">→</span>
+              </button>
+              <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="btn-circle-arrow" title="Chat Zalo đặt bàn">
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-contact-list mt-reveal">
+            <div class="mt-contact-item">
+              <span class="mt-contact-icon">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </span>
+              <div class="mt-contact-body">
+                <h4>Opening Hours · Giờ mở cửa</h4>
+                <p>Thứ Hai – Chủ Nhật</p>
+                <p>12:00 PM – 11:00 PM</p>
+              </div>
+            </div>
+
+            <div class="mt-contact-item">
+              <span class="mt-contact-icon">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <div class="mt-contact-body">
+                <h4>Location · Địa chỉ</h4>
+                <p>123 Riverside Avenue, Quận 1,</p>
+                <p>TP. Hồ Chí Minh, Việt Nam</p>
+              </div>
+            </div>
+
+            <div class="mt-contact-item">
+              <span class="mt-contact-icon">
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </span>
+              <div class="mt-contact-body">
+                <h4>Contact · Liên hệ đặt bàn</h4>
+                <a href="tel:0974100372">Hotline / Zalo: 0974 100 372</a>
+                <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram: @lhoangphuong</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-footer-banner mt-reveal">
+          <img src="img/footer-booth.png" alt="Bàn tiệc Maison Table sẵn sàng đón khách" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="mt-footer">
+    <div class="mt-container mt-footer-in">
+      <div>© 2026 <strong>MAISON TABLE</strong> · Thiết kế bởi <strong>Hoang Phuong</strong> (0974 100 372).</div>
+      <div class="mt-footer-links">
+        <a href="#thuc-don">Thực đơn</a>
+        <a href="#cau-chuyen">Câu chuyện</a>
+        <a href="#trai-nghiem">Trải nghiệm</a>
+        <a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Zalo</a>
+        <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════ RESERVATION MODAL ═══════════════ -->
+  <div class="mt-modal-backdrop" id="mtReserveModal" aria-hidden="true">
+    <div class="mt-modal" role="dialog" aria-labelledby="mtReserveTitle">
+      <button type="button" class="mt-modal-close" id="mtCloseReserve" aria-label="Đóng">✕</button>
+      <span class="mt-sec-eyebrow">RESERVE A TABLE</span>
+      <h3 id="mtReserveTitle">Đặt Bàn Tại Maison Table</h3>
+      <p class="mt-modal-sub">Điền thông tin bên dưới, lễ tân sẽ xác nhận vị trí bàn ngay lập tức qua Zalo hoặc SĐT của bạn.</p>
+      <form id="mtReserveForm">
+        <div class="mt-form-grid">
+          <div class="mt-field">
+            <label for="mtName">Họ và tên *</label>
+            <input type="text" id="mtName" required placeholder="Nguyễn Văn A">
+          </div>
+          <div class="mt-field">
+            <label for="mtPhone">Số điện thoại / Zalo *</label>
+            <input type="tel" id="mtPhone" required placeholder="09xx xxx xxx">
+          </div>
+          <div class="mt-field">
+            <label for="mtDate">Ngày dùng bữa *</label>
+            <input type="date" id="mtDate" required>
+          </div>
+          <div class="mt-field">
+            <label for="mtTime">Khung giờ *</label>
+            <select id="mtTime">
+              <option value="12:00 - Bữa trưa">12:00 PM (Bữa trưa)</option>
+              <option value="18:00 - Bữa tối sớm">06:00 PM (Bữa tối sớm)</option>
+              <option value="19:30 - Bữa tối chính" selected>07:30 PM (Bữa tối chính)</option>
+              <option value="20:30 - Bữa tối muộn">08:30 PM (Bữa tối muộn)</option>
+            </select>
+          </div>
+          <div class="mt-field">
+            <label for="mtGuests">Số lượng khách</label>
+            <select id="mtGuests">
+              <option value="2 khách (Bàn đôi)">2 khách (Bàn đôi)</option>
+              <option value="4 khách (Sofa nhung xanh)" selected>4 khách (Sofa nhung xanh)</option>
+              <option value="6 - 8 khách (Bàn gia đình)">6 – 8 khách (Bàn gia đình)</option>
+              <option value="10+ khách (Tiệc riêng VIP)">10+ khách (Tiệc riêng VIP)</option>
+            </select>
+          </div>
+          <div class="mt-field">
+            <label for="mtArea">Khu vực ưu tiên</label>
+            <select id="mtArea">
+              <option value="Cửa sổ nhìn ra vườn cây">Cửa sổ nhìn ra vườn cây</option>
+              <option value="The Dining Room (Sofa xanh)">The Dining Room (Sofa xanh)</option>
+              <option value="Chef's Table (Quầy Bếp trưởng)">Chef's Table (Quầy Bếp trưởng)</option>
+            </select>
+          </div>
+          <div class="mt-field full">
+            <label for="mtNote">Ghi chú đặc biệt (Sinh nhật, kỷ niệm, dị ứng thực phẩm...)</label>
+            <textarea id="mtNote" rows="2" placeholder="Ví dụ: Trang trí hoa bàn kỷ niệm, không ăn hành..."></textarea>
+          </div>
+        </div>
+        <div class="mt-form-actions">
+          <button type="submit" class="btn-lime">Xác nhận đặt bàn qua Zalo →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ═══════════════ FULL MENU MODAL ═══════════════ -->
+  <div class="mt-modal-backdrop" id="mtMenuModal" aria-hidden="true">
+    <div class="mt-modal" role="dialog" aria-labelledby="mtMenuModalTitle">
+      <button type="button" class="mt-modal-close" id="mtCloseMenu" aria-label="Đóng">✕</button>
+      <span class="mt-sec-eyebrow">SEASONAL TASTING MENU</span>
+      <h3 id="mtMenuModalTitle">Thực Đơn Maison Table</h3>
+      <p class="mt-modal-sub">Thực đơn chọn lọc theo mùa được chế biến mới mỗi ngày.</p>
+      <div style="display:grid;gap:14px;margin-bottom:22px">
+        <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)">
+          <div>
+            <strong style="font-size:.95rem">Pan-Seared Atlantic Halibut</strong>
+            <div style="font-size:.82rem;color:var(--muted)">Cá bơn áp chảo, hạt diêm mạch thảo mộc, sốt đậu Hà Lan</div>
+          </div>
+          <strong style="color:var(--blue-deep);white-space:nowrap">560.000đ</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)">
+          <div>
+            <strong style="font-size:.95rem">The Signature Herb-Crusted Lamb</strong>
+            <div style="font-size:.82rem;color:var(--muted)">Sườn cừu Úc nướng thảo mộc, sốt củ cải vàng nghiền mịn</div>
+          </div>
+          <strong style="color:var(--blue-deep);white-space:nowrap">680.000đ</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)">
+          <div>
+            <strong style="font-size:.95rem">Handmade Spinach Tagliatelle</strong>
+            <div style="font-size:.82rem;color:var(--muted)">Mì tươi cải bó xôi, măng tây nướng, phô mai Parmigiano 24 tháng</div>
+          </div>
+          <strong style="color:var(--blue-deep);white-space:nowrap">420.000đ</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)">
+          <div>
+            <strong style="font-size:.95rem">Burrata &amp; Heirloom Garden Salad</strong>
+            <div style="font-size:.82rem;color:var(--muted)">Phô mai Burrata tươi, rau mầm hữu cơ, dầu ô liu ép lạnh</div>
+          </div>
+          <strong style="color:var(--blue-deep);white-space:nowrap">310.000đ</strong>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:12px">
+          <div>
+            <strong style="font-size:.95rem">The Sweet Finish Berry Mousse</strong>
+            <div style="font-size:.82rem;color:var(--muted)">Bánh mousse Mascarpone, đế hạt dẻ cười, việt quất tươi</div>
+          </div>
+          <strong style="color:var(--blue-deep);white-space:nowrap">240.000đ</strong>
+        </div>
+      </div>
+      <button type="button" class="btn-lime" style="width:100%" id="btnBookFromMenu">Đặt bàn thưởng thức thực đơn này →</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>
+

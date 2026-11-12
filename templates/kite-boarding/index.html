@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AEROKITE — Học Viện Lướt Ván Diều & Kiteboarding Quốc Tế</title>
+  <meta name="description" content="AEROKITE — Trung tâm huấn luyện Kiteboarding chuẩn IKO Quốc tế, thuê thiết bị diều ván cao cấp và tổ chức tour Downwind & Big Air tại Mũi Né, Mỹ Hòa, Nha Trang." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HP SHOWCASE BAR v2 -->
+  <style>
+  #hp-bar{position:fixed;top:0;left:0;right:0;z-index:99999;height:46px;background:rgba(8,10,16,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI', sans-serif;font-size:12px;color:rgba(255,255,255,.75);gap:12px;box-sizing:border-box}
+  #hp-bar *{box-sizing:border-box;margin:0;padding:0}
+  .hpb-left{display:flex;align-items:center;gap:12px;flex-shrink:0}
+  .hpb-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;font-size:12px;padding:5px 12px;border-radius:100px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);transition:all .15s;white-space:nowrap}
+  .hpb-back:hover{background:rgba(255,255,255,.15);color:#fff}
+  .hpb-sep{width:1px;height:18px;background:rgba(255,255,255,.12);flex-shrink:0}
+  .hpb-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+  .hpb-center{display:flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(255,255,255,.5);white-space:nowrap}
+  .hpb-dot{width:6px;height:6px;border-radius:50%;background:#10b981;box-shadow:0 0 6px #10b981;flex-shrink:0;animation:hpbpulse 2s infinite}
+  @keyframes hpbpulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .hpb-right{display:flex;align-items:center;gap:7px;flex-shrink:0}
+  .hpb-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:100px;font-size:11.5px;font-weight:700;text-decoration:none;transition:all .15s;white-space:nowrap;border:none;cursor:pointer}
+  .hpb-zalo{background:#0068ff;color:#fff}.hpb-zalo:hover{background:#0057d9;transform:translateY(-1px)}
+  .hpb-tele{background:#229ed9;color:#fff}.hpb-tele:hover{background:#1a8bbf;transform:translateY(-1px)}
+  .hpb-call{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.16)}.hpb-call:hover{background:rgba(255,255,255,.18)}
+  @media(max-width:680px){.hpb-center,.hpb-title,.hpb-sep,.hpb-tele{display:none}}
+  body{padding-top:46px!important}
+  </style>
+  <div id="hp-bar">
+    <div class="hpb-left">
+      <a href="../../index.html" class="hpb-back">← Quay lại danh mục</a>
+      <div class="hpb-sep"></div>
+      <span class="hpb-title">Mẫu diện web · Hoàng Phương</span>
+    </div>
+    <div class="hpb-center">
+      <span class="hpb-dot"></span>
+      <span>Muốn làm web như mẫu này? Liên hệ ngay:</span>
+    </div>
+    <div class="hpb-right">
+      <a href="tel:0974100372" class="hpb-btn hpb-call">📞 0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="hpb-btn hpb-tele">✈ Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="hpb-btn hpb-zalo">💬 Zalo ngay</a>
+    </div>
+  </div>
+
+  <!-- PAGE SHELL -->
+  <div class="ak-page-shell">
+
+    <!-- ============================================================
+         SECTION 1: HERO & FLOATING PILL NAVBAR + OVERLAPPING ORANGE CARD
+         ============================================================ -->
+    <section class="ak-hero-wrap" id="top">
+      <div class="ak-hero-stage">
+        <!-- FLOATING PILL NAVBAR -->
+        <header class="ak-navbar" id="akNavbar">
+          <a href="#top" class="ak-brand" aria-label="AEROKITE Trang chủ">
+            <span class="ak-brand-icon" aria-hidden="true">
+              <svg width="26" height="16" viewBox="0 0 28 16" fill="none">
+                <path d="M7.5 2.5C4.46 2.5 2 4.96 2 8C2 11.04 4.46 13.5 7.5 13.5C11 13.5 13.5 8 14 8C14.5 8 17 2.5 20.5 2.5C23.54 2.5 26 4.96 26 8C26 11.04 23.54 13.5 20.5 13.5C17 13.5 14.5 8 14 8" stroke="#FF5500" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="ak-brand-text">AEROKITE</span>
+          </a>
+
+          <nav class="ak-nav-links" id="akNavLinks">
+            <a href="#spots" class="ak-nav-link">Kite Spots · Bãi lướt</a>
+            <div class="ak-nav-item-has-mega" id="akNavKitsWrap">
+              <a href="#kits" class="ak-nav-link ak-nav-link-kits" id="akNavKitsBtn">
+                <span>Kite Kits · Bộ Thiết Bị</span>
+                <span class="ak-nav-badge-hot">4 BỘ KIT</span>
+                <svg class="ak-caret" width="11" height="11" viewBox="0 0 12 12" fill="none">
+                  <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+
+              <!-- MEGA DROPDOWN: 4 REFERENCE KITEBOARDING KITS -->
+              <div class="ak-kits-mega" id="akKitsMega" aria-label="Danh sách bộ Kit Kiteboarding tham khảo">
+                <div class="ak-mega-head">
+                  <div>
+                    <span class="ak-mega-eyebrow">COMPLETE GEAR PACKAGES · COMBO ĐỒNG BỘ</span>
+                    <h4>Chọn Bộ Kit Theo Trình Độ &amp; Sức Gió (Knots)</h4>
+                  </div>
+                  <a href="#kits" class="ak-mega-viewall">Xem bảng thông số đầy đủ →</a>
+                </div>
+
+                <div class="ak-mega-grid">
+                  <a href="#kits" class="ak-mega-item" data-kit-jump="freeride">
+                    <div class="ak-mega-thumb">
+                      <img src="img/kit-freeride.png" alt="Freeride All-Round Starter Kit" loading="lazy" />
+                      <span class="ak-mega-wind">14–22 kts</span>
+                    </div>
+                    <div class="ak-mega-info">
+                      <span class="ak-mega-tag">Beginner · All-Round</span>
+                      <h5>01. Aero Evo Freeride Kit</h5>
+                      <p>Diều 3-Strut dễ điều khiển + Ván Twin-Tip 138cm + Bar + Đai lưng</p>
+                      <strong>Thuê 950k/ngày · Mua 34.5tr</strong>
+                    </div>
+                  </a>
+
+                  <a href="#kits" class="ak-mega-item" data-kit-jump="bigair">
+                    <div class="ak-mega-thumb">
+                      <img src="img/kit-bigair.png" alt="Orbit Pro Big Air Kit" loading="lazy" />
+                      <span class="ak-mega-wind">20–34 kts</span>
+                    </div>
+                    <div class="ak-mega-info">
+                      <span class="ak-mega-tag ak-tag-orange">Big Air · Mũi Né</span>
+                      <h5>02. Orbit Pro Big Air Kit</h5>
+                      <p>Diều 5-Strut bay cao giữ gió mạnh + Ván Carbon + Click Bar</p>
+                      <strong>Thuê 1.250k/ngày · Mua 44.9tr</strong>
+                    </div>
+                  </a>
+
+                  <a href="#kits" class="ak-mega-item" data-kit-jump="freestyle">
+                    <div class="ak-mega-thumb">
+                      <img src="img/kit-freestyle.png" alt="Lagoon Freestyle Wakestyle Kit" loading="lazy" />
+                      <span class="ak-mega-wind">16–26 kts</span>
+                    </div>
+                    <div class="ak-mega-info">
+                      <span class="ak-mega-tag ak-tag-lime">Freestyle · Mỹ Hòa</span>
+                      <h5>03. Vegas Lagoon Wakestyle Kit</h5>
+                      <p>Diều C-Hybrid Slack-line + Ván Rocker + Giày Boots cố định</p>
+                      <strong>Thuê 1.150k/ngày · Mua 41.0tr</strong>
+                    </div>
+                  </a>
+
+                  <a href="#kits" class="ak-mega-item" data-kit-jump="hydrofoil">
+                    <div class="ak-mega-thumb">
+                      <img src="img/kit-hydrofoil.png" alt="Lightwind Hydrofoil Carbon Kit" loading="lazy" />
+                      <span class="ak-mega-wind">8–16 kts</span>
+                    </div>
+                    <div class="ak-mega-info">
+                      <span class="ak-mega-tag">Lightwind · Foil</span>
+                      <h5>04. Pace Carbon Hydrofoil Kit</h5>
+                      <p>Diều siêu nhẹ 1-Strut + Ván cánh ngầm Carbon Mast 85cm</p>
+                      <strong>Thuê 1.350k/ngày · Mua 48.5tr</strong>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a href="#coaching" class="ak-nav-link">Lessons &amp; Training · Khóa học IKO</a>
+            <a href="#events" class="ak-nav-link">Events &amp; Tours · Sự kiện</a>
+          </nav>
+
+          <div class="ak-nav-actions">
+            <button type="button" class="ak-lang-badge" id="akLangNotice" title="Ngôn ngữ song ngữ Việt - Anh">
+              <span class="ak-flag-dot"></span>
+              <span>VN / ENG</span>
+            </button>
+            <button type="button" class="ak-book-pill" data-open-modal="Khóa học Kiteboarding IKO">
+              <span>Book Now</span>
+              <span class="ak-chev">&raquo;</span>
+            </button>
+            <button type="button" class="ak-burger" id="akBurger" aria-label="Mở menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+
+        <!-- HERO MAIN CONTENT -->
+        <div class="ak-hero-grid">
+          <div class="ak-hero-copy">
+            <h1 class="ak-hero-title">
+              <span>TURN</span>
+              <span>WIND</span>
+              <span>INTO</span>
+              <span>THRILL</span>
+            </h1>
+            <p class="ak-hero-sub">
+              Hệ thống cánh diều &amp; ván lướt chuẩn IKO quốc tế mang lại khả năng kiểm soát chuẩn xác, tốc độ bứt phá và cảm giác bay bổng trên mặt biển Mũi Né – Mỹ Hòa.
+            </p>
+            <div class="ak-hero-cta-row">
+              <button type="button" class="ak-btn-orange" data-open-modal="Khóa Học Thử & Trải Nghiệm Kiteboarding">
+                <span>Get Started</span>
+                <span class="ak-chev">&raquo;</span>
+              </button>
+              <a href="#coaching" class="ak-hero-sec-link">Khám phá lộ trình IKO →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- OVERLAPPING VERTICAL ORANGE CARD (Bridges Section 1 & Section 2) -->
+        <aside class="ak-coach-card" id="coaching" aria-label="Kite Coaching Excellence">
+          <div class="ak-coach-top">
+            <span class="ak-coach-loop" aria-hidden="true">
+              <svg width="34" height="20" viewBox="0 0 28 16" fill="none">
+                <path d="M7.5 2.5C4.46 2.5 2 4.96 2 8C2 11.04 4.46 13.5 7.5 13.5C11 13.5 13.5 8 14 8C14.5 8 17 2.5 20.5 2.5C23.54 2.5 26 4.96 26 8C26 11.04 23.54 13.5 20.5 13.5C17 13.5 14.5 8 14 8" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <h2 class="ak-coach-heading">
+              KITE COACHING<br />EXCELLENCE
+            </h2>
+          </div>
+
+          <div class="ak-coach-photo-box">
+            <img src="img/coach-portrait.png" alt="Huấn luyện viên Kiteboarding chuẩn IKO Quốc tế" loading="eager" />
+          </div>
+
+          <p class="ak-coach-quote">
+            Precision. Every gust counts. · Chuẩn xác trong từng cơn gió biển.
+          </p>
+
+          <button type="button" class="ak-coach-explore" data-open-modal="Đăng ký HLV 1-kèm-1 (Kite Coaching Excellence)">
+            <span>EXPLORE</span>
+            <span class="ak-arrow-ne">↗</span>
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: DARK BLOCK — "KITE RUSH" KNOCKOUT + 2 PROGRESSION CARDS
+         ============================================================ -->
+    <section class="ak-rush-section">
+      <div class="ak-rush-top-row">
+        <div class="ak-rush-wordmark-wrap">
+          <h2 class="ak-rush-wordmark" aria-label="KITE RUSH">
+            <span>KITE</span>
+            <span>RUSH</span>
+          </h2>
+        </div>
+        <!-- Right column space reserved for the overlapping orange card on desktop -->
+        <div class="ak-rush-spacer" aria-hidden="true"></div>
+      </div>
+
+      <div class="ak-prog-grid">
+        <!-- PROGRESSION CARD 1 -->
+        <article class="ak-prog-card">
+          <div class="ak-prog-text">
+            <span class="ak-prog-eyebrow">GUIDED KITE PROGRESSION · LỘ TRÌNH IKO 1-3</span>
+            <h3 class="ak-prog-title">
+              FOCUSED GUIDANCE TO REFINE YOUR WATERSTART, EDGING, AND CONTROL.
+            </h3>
+            <p class="ak-prog-desc">
+              Huấn luyện 1-kèm-1 cùng bộ đàm gắn mũ bảo hiểm giúp bạn điều khiển diều, xuất phát trên mặt nước và cắt sóng ngược gió chỉ sau 9 giờ học.
+            </p>
+            <button type="button" class="ak-prog-link" data-open-modal="Khóa Guided Kite Progression (IKO Level 1-3)">
+              Đăng ký lộ trình cơ bản →
+            </button>
+          </div>
+          <div class="ak-prog-media">
+            <img src="img/prog-1.png" alt="Kiteboarder cắt sóng tốc độ cao" loading="lazy" />
+          </div>
+        </article>
+
+        <!-- PROGRESSION CARD 2 -->
+        <article class="ak-prog-card">
+          <div class="ak-prog-text">
+            <span class="ak-prog-eyebrow">SKILL ASSESSMENT · NÂNG CAO &amp; BIG AIR</span>
+            <h3 class="ak-prog-title">
+              EVALUATE YOUR KITE SKILLS TO IDENTIFY STRENGTHS AND MASTER BIG AIR.
+            </h3>
+            <p class="ak-prog-desc">
+              Phân tích video thực chiến để tối ưu kỹ thuật bật nhảy Big Air, xoay Backroll, Kiteloop và tiếp nước êm ái trong điều kiện gió mạnh 20–30 knots.
+            </p>
+            <button type="button" class="ak-prog-link" data-open-modal="Khóa Skill Assessment & Big Air Coaching">
+              Đánh giá kỹ thuật ngay →
+            </button>
+          </div>
+          <div class="ak-prog-media">
+            <img src="img/prog-2.png" alt="Vận động viên Kiteboarding kiểm tra thiết bị" loading="lazy" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2.5: PRO KITE KITS SHOWCASE (BỘ KIT THAM KHẢO)
+         ============================================================ -->
+    <section class="ak-kits-section" id="kits">
+      <div class="ak-kits-header">
+        <div class="ak-kits-title-wrap">
+          <span class="ak-kits-eyebrow">COMPLETE KITEBOARDING PACKAGES · BỘ KIT TIÊU CHUẨN IKO</span>
+          <h2 class="ak-kits-heading">PRO KITE KITS</h2>
+          <p class="ak-kits-sub">
+            Tham khảo 4 cấu hình bộ Kit đồng bộ (<strong>Cánh diều + Thanh điều khiển Bar + Ván lướt + Đai lưng Harness</strong>) được tinh chỉnh theo từng mức gió (Knots) và trình độ người chơi. Có sẵn dịch vụ cho thuê theo ngày tại bãi hoặc đặt mua trọn bộ mới 100%.
+          </p>
+        </div>
+
+        <div class="ak-kits-controls">
+          <!-- Rental vs Buy Switch -->
+          <div class="ak-price-mode-switch" role="tablist" aria-label="Chế độ xem giá">
+            <button type="button" class="ak-mode-btn is-active" data-price-mode="rent">
+              Thuê trọn bộ / ngày
+            </button>
+            <button type="button" class="ak-mode-btn" data-price-mode="buy">
+              Mua bộ Kit mới (-15%)
+            </button>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="ak-kit-filters" id="akKitFilters">
+            <button type="button" class="ak-kit-filter is-active" data-kit-filter="all">Tất cả (04)</button>
+            <button type="button" class="ak-kit-filter" data-kit-filter="freeride">Người mới · Freeride</button>
+            <button type="button" class="ak-kit-filter" data-kit-filter="bigair">Big Air · Gió mạnh</button>
+            <button type="button" class="ak-kit-filter" data-kit-filter="freestyle">Lagoon Freestyle</button>
+            <button type="button" class="ak-kit-filter" data-kit-filter="hydrofoil">Gió nhẹ · Hydrofoil</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ak-kits-grid" id="akKitsGrid">
+        <!-- KIT 01: FREERIDE STARTER -->
+        <article class="ak-kit-card" data-kit-cat="freeride">
+          <div class="ak-kit-media">
+            <span class="ak-kit-badge">PHỔ BIẾN NHẤT · BEGINNER</span>
+            <span class="ak-kit-wind-pill" data-wind-display>💨 Gió: 14–22 knots</span>
+            <img src="img/kit-freeride.png" alt="Bộ Kit 01: Aero Evo Freeride All-Round" loading="lazy" />
+          </div>
+
+          <div class="ak-kit-body">
+            <div class="ak-kit-top-meta">
+              <span class="ak-kit-code">KIT #01 · ALL-ROUND FREERIDE</span>
+              <span class="ak-kit-level">Trình độ: IKO Level 1–3</span>
+            </div>
+            <h3 class="ak-kit-name">Aero Evo Freeride Starter Kit</h3>
+            <p class="ak-kit-desc">
+              Bộ Kit chuẩn mực dành cho người mới hoàn thành khóa học hoặc muốn lướt đa địa hình. Diều 3-Strut tự động tái khởi động trên mặt nước (Auto-Relaunch) cực nhanh và ván êm chân.
+            </p>
+
+            <!-- Interactive Size Selector -->
+            <div class="ak-kit-sizes">
+              <span class="ak-size-label">Chọn size diều theo cân nặng &amp; gió:</span>
+              <div class="ak-size-pills">
+                <button type="button" class="ak-size-pill" data-wind="18–26 knots" data-weight="48–68 kg">9m²</button>
+                <button type="button" class="ak-size-pill is-active" data-wind="14–22 knots" data-weight="65–82 kg">12m²</button>
+                <button type="button" class="ak-size-pill" data-wind="11–18 knots" data-weight="78–95 kg">14m²</button>
+              </div>
+              <span class="ak-size-hint" data-weight-display>Cân nặng gợi ý: 65–82 kg</span>
+            </div>
+
+            <!-- Included Items -->
+            <ul class="ak-kit-includes">
+              <li><span>✓</span> Diều Aero Evo 3-Strut (Chống rách Ripstop D2)</li>
+              <li><span>✓</span> Thanh điều khiển Trust Bar 4 dây + Safety Leash</li>
+              <li><span>✓</span> Ván Twin-Tip Gonzales 138×41cm + Đệm chân</li>
+              <li><span>✓</span> Đai lưng Waist Harness êm cột sống + Bơm tay</li>
+            </ul>
+
+            <div class="ak-kit-footer">
+              <div class="ak-kit-price-box">
+                <span class="ak-price-label" data-price-caption>Giá thuê trọn bộ</span>
+                <strong class="ak-price-val" data-rent="950.000đ / ngày" data-buy="34.500.000đ / bộ">950.000đ / ngày</strong>
+              </div>
+              <button type="button" class="ak-btn-orange ak-kit-cta" data-open-modal="Đặt giữ / Báo giá Bộ Kit #01: Aero Evo Freeride Starter Kit">
+                <span>Giữ bộ Kit</span>
+                <span>&raquo;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- KIT 02: BIG AIR PRO -->
+        <article class="ak-kit-card" data-kit-cat="bigair">
+          <div class="ak-kit-media">
+            <span class="ak-kit-badge ak-badge-orange">CHUYÊN BAY CAO · BIG AIR</span>
+            <span class="ak-kit-wind-pill" data-wind-display>💨 Gió: 20–32 knots</span>
+            <img src="img/kit-bigair.png" alt="Bộ Kit 02: Orbit Pro Big Air" loading="lazy" />
+          </div>
+
+          <div class="ak-kit-body">
+            <div class="ak-kit-top-meta">
+              <span class="ak-kit-code">KIT #02 · HIGH BOOST &amp; HANGTIME</span>
+              <span class="ak-kit-level">Trình độ: Trung cấp – Pro</span>
+            </div>
+            <h3 class="ak-kit-name">Orbit Pro 5-Strut Big Air Kit</h3>
+            <p class="ak-kit-desc">
+              Thiết kế khung 5-Strut siêu cứng dành riêng cho mùa gió chướng Mũi Né. Cho lực bốc thẳng đứng (Vertical Lift) tới 15–20m, giữ thăng bằng trên không lâu và tiếp nước cực êm.
+            </p>
+
+            <div class="ak-kit-sizes">
+              <span class="ak-size-label">Chọn size diều theo cân nặng &amp; gió:</span>
+              <div class="ak-size-pills">
+                <button type="button" class="ak-size-pill" data-wind="24–36 knots" data-weight="55–75 kg">8m²</button>
+                <button type="button" class="ak-size-pill is-active" data-wind="20–32 knots" data-weight="65–85 kg">9m²</button>
+                <button type="button" class="ak-size-pill" data-wind="17–27 knots" data-weight="75–95 kg">11m²</button>
+              </div>
+              <span class="ak-size-hint" data-weight-display>Cân nặng gợi ý: 65–85 kg</span>
+            </div>
+
+            <ul class="ak-kit-includes">
+              <li><span>✓</span> Diều Orbit Pro 5-Strut (Khung Dacron Aluula nhẹ)</li>
+              <li><span>✓</span> Thanh điều khiển Click Bar Carbon 22m–24m</li>
+              <li><span>✓</span> Ván Atmos Carbon 136×40cm (Độ bật Pop cực đại)</li>
+              <li><span>✓</span> Đai lưng Hardshell Carbon + Áo phao va đập</li>
+            </ul>
+
+            <div class="ak-kit-footer">
+              <div class="ak-kit-price-box">
+                <span class="ak-price-label" data-price-caption>Giá thuê trọn bộ</span>
+                <strong class="ak-price-val" data-rent="1.250.000đ / ngày" data-buy="44.900.000đ / bộ">1.250.000đ / ngày</strong>
+              </div>
+              <button type="button" class="ak-btn-orange ak-kit-cta" data-open-modal="Đặt giữ / Báo giá Bộ Kit #02: Orbit Pro 5-Strut Big Air Kit">
+                <span>Giữ bộ Kit</span>
+                <span>&raquo;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- KIT 03: LAGOON FREESTYLE -->
+        <article class="ak-kit-card" data-kit-cat="freestyle">
+          <div class="ak-kit-media">
+            <span class="ak-kit-badge ak-badge-lime">ĐẦM NƯỚC PHẲNG · MỸ HÒA</span>
+            <span class="ak-kit-wind-pill" data-wind-display>💨 Gió: 16–26 knots</span>
+            <img src="img/kit-freestyle.png" alt="Bộ Kit 03: Vegas Lagoon Freestyle" loading="lazy" />
+          </div>
+
+          <div class="ak-kit-body">
+            <div class="ak-kit-top-meta">
+              <span class="ak-kit-code">KIT #03 · FREESTYLE &amp; WAKESTYLE</span>
+              <span class="ak-kit-level">Trình độ: Freestyle / Unhooked</span>
+            </div>
+            <h3 class="ak-kit-name">Vegas Lagoon Wakestyle Kit</h3>
+            <p class="ak-kit-desc">
+              Cấu hình chuyên trị mặt nước phẳng tại Đầm Mỹ Hòa. Cánh diều C-Hybrid tạo độ chùng dây (Line Slack) hoàn hảo để thực hiện các động tác Handle-pass, Raley và Backroll.
+            </p>
+
+            <div class="ak-kit-sizes">
+              <span class="ak-size-label">Chọn size diều theo cân nặng &amp; gió:</span>
+              <div class="ak-size-pills">
+                <button type="button" class="ak-size-pill" data-wind="20–29 knots" data-weight="55–72 kg">9m²</button>
+                <button type="button" class="ak-size-pill is-active" data-wind="16–26 knots" data-weight="65–84 kg">10m²</button>
+                <button type="button" class="ak-size-pill" data-wind="13–21 knots" data-weight="75–92 kg">12m²</button>
+              </div>
+              <span class="ak-size-hint" data-weight-display>Cân nặng gợi ý: 65–84 kg</span>
+            </div>
+
+            <ul class="ak-kit-includes">
+              <li><span>✓</span> Diều Vegas C-Shape 5-Line / Hadlow Setup</li>
+              <li><span>✓</span> Wakestyle Bar (Vòng Chicken Loop lớn cho Unhook)</li>
+              <li><span>✓</span> Ván Gambler Rocker cao + Giày Boots cố định cổ chân</li>
+              <li><span>✓</span> Đai lưng Freestyle + Dây Leash dài chuyên dụng</li>
+            </ul>
+
+            <div class="ak-kit-footer">
+              <div class="ak-kit-price-box">
+                <span class="ak-price-label" data-price-caption>Giá thuê trọn bộ</span>
+                <strong class="ak-price-val" data-rent="1.150.000đ / ngày" data-buy="41.000.000đ / bộ">1.150.000đ / ngày</strong>
+              </div>
+              <button type="button" class="ak-btn-orange ak-kit-cta" data-open-modal="Đặt giữ / Báo giá Bộ Kit #03: Vegas Lagoon Wakestyle Kit">
+                <span>Giữ bộ Kit</span>
+                <span>&raquo;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- KIT 04: HYDROFOIL LIGHTWIND -->
+        <article class="ak-kit-card" data-kit-cat="hydrofoil">
+          <div class="ak-kit-media">
+            <span class="ak-kit-badge ak-badge-dark">GIÓ NHẸ 8 KNOTS · HYDROFOIL</span>
+            <span class="ak-kit-wind-pill" data-wind-display>💨 Gió: 8–16 knots</span>
+            <img src="img/kit-hydrofoil.png" alt="Bộ Kit 04: Pace Carbon Hydrofoil Lightwind" loading="lazy" />
+          </div>
+
+          <div class="ak-kit-body">
+            <div class="ak-kit-top-meta">
+              <span class="ak-kit-code">KIT #04 · LIGHTWIND &amp; OCEAN FOIL</span>
+              <span class="ak-kit-level">Trình độ: Foil / Cruising</span>
+            </div>
+            <h3 class="ak-kit-name">Pace Carbon Hydrofoil Kit</h3>
+            <p class="ak-kit-desc">
+              Giải pháp tối thượng cho những ngày gió nhẹ tại Nha Trang &amp; Phú Quốc. Hệ thống cánh ngầm Carbon nâng ván bay cách mặt nước 80cm, lướt êm ru không tiếng động chỉ với 8 knots gió.
+            </p>
+
+            <div class="ak-kit-sizes">
+              <span class="ak-size-label">Chọn size diều theo cân nặng &amp; gió:</span>
+              <div class="ak-size-pills">
+                <button type="button" class="ak-size-pill" data-wind="12–19 knots" data-weight="55–75 kg">10m²</button>
+                <button type="button" class="ak-size-pill is-active" data-wind="8–16 knots" data-weight="65–85 kg">13m²</button>
+                <button type="button" class="ak-size-pill" data-wind="6–13 knots" data-weight="75–98 kg">15m²</button>
+              </div>
+              <span class="ak-size-hint" data-weight-display>Cân nặng gợi ý: 65–85 kg</span>
+            </div>
+
+            <ul class="ak-kit-includes">
+              <li><span>✓</span> Diều Mono 1-Strut siêu nhẹ (Không rơi khi hụt gió)</li>
+              <li><span>✓</span> Thanh điều khiển Foil Bar dây mảnh giảm cản gió</li>
+              <li><span>✓</span> Ván Foil Freeride + Trục Carbon Mast 85cm &amp; Cánh trước</li>
+              <li><span>✓</span> Mũ bảo hiểm, Áo phao &amp; Đai lưng nhẹ</li>
+            </ul>
+
+            <div class="ak-kit-footer">
+              <div class="ak-kit-price-box">
+                <span class="ak-price-label" data-price-caption>Giá thuê trọn bộ</span>
+                <strong class="ak-price-val" data-rent="1.350.000đ / ngày" data-buy="48.500.000đ / bộ">1.350.000đ / ngày</strong>
+              </div>
+              <button type="button" class="ak-btn-orange ak-kit-cta" data-open-modal="Đặt giữ / Báo giá Bộ Kit #04: Pace Carbon Hydrofoil Kit">
+                <span>Giữ bộ Kit</span>
+                <span>&raquo;</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: BIG AIR EVENTS BANNER + INVERTED CORNER CUTOUT CARD
+         ============================================================ -->
+    <section class="ak-events-section" id="events">
+      <div class="ak-events-backdrop">
+        <img src="img/events-bg.png" alt="Kiteboarder biểu diễn Big Air trên biển" class="ak-events-bg-img" loading="lazy" />
+        <div class="ak-events-overlay"></div>
+
+        <!-- RIGHT WHITE CARD WITH TOP-RIGHT INVERTED NOTCH + VOLT LIME BUTTON -->
+        <div class="ak-events-card-wrap">
+          <button
+            type="button"
+            class="ak-lime-fab"
+            data-open-modal="Đăng ký tham gia Sự kiện & Giải đấu Kiteboarding"
+            aria-label="Đăng ký tham gia sự kiện Kiteboarding"
+            title="Đăng ký tham gia sự kiện"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="ak-events-card">
+            <div class="ak-events-header">
+              <h2 class="ak-events-title">
+                This Month’s Best<br />Kite Events
+              </h2>
+              <p class="ak-events-sub">
+                From thrilling ocean downwinders to Big Air freestyle challenges — experience the wind excitement on every wave! · Lịch sự kiện &amp; giải đấu lướt ván diều nổi bật trong tháng.
+              </p>
+            </div>
+
+            <div class="ak-events-grid">
+              <!-- EVENT 1 -->
+              <div class="ak-event-item" data-open-modal="Sự kiện: Vietnam Big Air Challenge — Mũi Né (Oct 04)">
+                <div class="ak-event-date">
+                  <span class="ak-m">Oct</span>
+                  <strong class="ak-d">04</strong>
+                </div>
+                <div class="ak-event-info">
+                  <h3>Mũi Né, Phan Thiết</h3>
+                  <p>Vietnam Big Air Challenge</p>
+                  <span>Sat 9:00 AM · Gió 22–28 kts</span>
+                </div>
+              </div>
+
+              <!-- EVENT 2 -->
+              <div class="ak-event-item" data-open-modal="Sự kiện: Lagoon Freestyle Kite Cup — Mỹ Hòa (Oct 14)">
+                <div class="ak-event-date">
+                  <span class="ak-m">Oct</span>
+                  <strong class="ak-d">14</strong>
+                </div>
+                <div class="ak-event-info">
+                  <h3>Mỹ Hòa, Ninh Thuận</h3>
+                  <p>Lagoon Freestyle Kite Cup</p>
+                  <span>Fri 8:30 AM · Đầm nước phẳng</span>
+                </div>
+              </div>
+
+              <!-- EVENT 3 -->
+              <div class="ak-event-item" data-open-modal="Sự kiện: Ocean Downwinder Invitational — Nha Trang (Oct 16)">
+                <div class="ak-event-date">
+                  <span class="ak-m">Oct</span>
+                  <strong class="ak-d">16</strong>
+                </div>
+                <div class="ak-event-info">
+                  <h3>Nha Trang, Khánh Hòa</h3>
+                  <p>Ocean Downwinder Fest</p>
+                  <span>Sat 7:00 AM · Cung đường 25km</span>
+                </div>
+              </div>
+
+              <!-- EVENT 4 -->
+              <div class="ak-event-item" data-open-modal="Sự kiện: Sunset Hydrofoil & Kite Jam — Phú Quốc (Oct 20)">
+                <div class="ak-event-date">
+                  <span class="ak-m">Oct</span>
+                  <strong class="ak-d">20</strong>
+                </div>
+                <div class="ak-event-info">
+                  <h3>Phú Quốc, Kiên Giang</h3>
+                  <p>Sunset Foil &amp; Kite Jam</p>
+                  <span>Thu 09:30 AM · Bãi Kem</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ak-events-footer">
+              <button type="button" class="ak-view-all-events" data-open-modal="Nhận lịch toàn bộ giải đấu & Downwind Tour 2026">
+                <span>View all upcoming kite events</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: 3-COLUMN PROMO STRIP (SPOTS / GEAR / SEASON DEALS)
+         ============================================================ -->
+    <section class="ak-promo-strip" id="spots">
+      <div class="ak-promo-grid">
+        <!-- PROMO 1 -->
+        <article class="ak-promo-card" data-open-modal="Tư vấn Bãi lướt & Tour Lagoon (Mũi Né - Mỹ Hòa)">
+          <div class="ak-promo-img-wrap">
+            <img src="img/promo-spots.png" alt="Bãi lướt ván diều nước nông xanh trong" loading="lazy" />
+          </div>
+          <div class="ak-promo-body">
+            <div>
+              <h3 class="ak-promo-title">Explore The<br />Lagoons</h3>
+              <p class="ak-promo-note">Bản đồ gió &amp; đầm nước phẳng đẹp nhất Mũi Né, Mỹ Hòa.</p>
+            </div>
+            <span class="ak-promo-more">
+              <span>Learn More</span>
+              <i>↗</i>
+            </span>
+          </div>
+        </article>
+
+        <!-- PROMO 2 -->
+        <article class="ak-promo-card" data-open-modal="Thuê & Mua thiết bị Kiteboarding 2026">
+          <div class="ak-promo-img-wrap">
+            <img src="img/promo-gear.png" alt="Trang thiết bị bảo hộ và kính phân cực Kiteboarding" loading="lazy" />
+          </div>
+          <div class="ak-promo-body">
+            <div>
+              <h3 class="ak-promo-title">Gear Up For<br />Wind</h3>
+              <p class="ak-promo-note">Thuê trọn bộ diều Duotone, Core, Cabrinha &amp; ván Carbon.</p>
+            </div>
+            <span class="ak-promo-more">
+              <span>Learn More</span>
+              <i>↗</i>
+            </span>
+          </div>
+        </article>
+
+        <!-- PROMO 3 -->
+        <article class="ak-promo-card" id="deals" data-open-modal="Nhận Ưu Đãi Đầu Mùa Gió (-30% Khóa IKO & Thuê Đồ)">
+          <div class="ak-promo-img-wrap ak-promo-percent-wrap">
+            <img src="img/promo-deals.png" alt="Ưu đãi mùa gió Kiteboarding giảm tới 30%" loading="lazy" />
+            <span class="ak-percent-badge" aria-hidden="true">%</span>
+          </div>
+          <div class="ak-promo-body">
+            <div>
+              <h3 class="ak-promo-title">Season Deals<br />Now On</h3>
+              <p class="ak-promo-note">Ưu đãi tới 30% combo khóa học IKO + lưu trú resort biển.</p>
+            </div>
+            <span class="ak-promo-more">
+              <span>Learn More</span>
+              <i>↗</i>
+            </span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: NEWSLETTER BANNER — "Join the Wind Insider Club"
+         ============================================================ -->
+    <section class="ak-club-section">
+      <div class="ak-club-banner">
+        <img src="img/club-bg.png" alt="Toàn cảnh bờ biển lộng gió cho Kiteboarding" class="ak-club-bg-img" loading="lazy" />
+        <div class="ak-club-overlay"></div>
+
+        <div class="ak-club-content">
+          <h2 class="ak-club-title">
+            Join the Wind<br />Insider Club
+          </h2>
+          <p class="ak-club-sub">
+            Receive weekly wind forecasts (knots), lagoon tide alerts, and exclusive IKO course discounts every Friday. · Nhận bản tin dự báo gió đẹp và ưu đãi hàng tuần.
+          </p>
+
+          <form class="ak-club-form" id="akClubForm">
+            <input
+              type="text"
+              id="akClubInput"
+              class="ak-club-input"
+              placeholder="Enter your email address or Zalo phone number..."
+              required
+            />
+            <button type="submit" class="ak-btn-orange ak-club-submit">
+              <span>Subscribe</span>
+              <span>→</span>
+            </button>
+          </form>
+          <p class="ak-club-feedback" id="akClubFeedback" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: 5-COLUMN MINIMAL FOOTER
+         ============================================================ -->
+    <footer class="ak-footer">
+      <div class="ak-footer-grid">
+        <div class="ak-footer-col">
+          <h4>Experiences</h4>
+          <ul>
+            <li><a href="#coaching" data-open-modal="Khóa học Kite Lessons (IKO 1-3)">Kite Lessons</a></li>
+            <li><a href="#events" data-open-modal="Tour Downwind Mũi Né - Phan Rí">Downwind Tours</a></li>
+            <li><a href="#spots" data-open-modal="Thuê thiết bị Kite & Hydrofoil">Equipment Rental</a></li>
+            <li><a href="#deals" data-open-modal="Gói Season Packages Trọn Mùa Gió">Seasonal Packages</a></li>
+            <li><a href="#spots" data-open-modal="Vé bãi & Cứu hộ Lagoon Pass">Lagoon Passes</a></li>
+            <li><a href="#spots">All Kite Spots</a></li>
+          </ul>
+        </div>
+
+        <div class="ak-footer-col">
+          <h4>For Kiters</h4>
+          <ul>
+            <li><a href="#coaching">How to Start Kiting</a></li>
+            <li><a href="#coaching">Wind &amp; Safety Tips</a></li>
+            <li><a href="#spots">Kite Size &amp; Gear Guide</a></li>
+            <li><a href="#coaching">Big Air Improvement</a></li>
+            <li><a href="#events">Event Schedule</a></li>
+            <li><a href="#coaching" data-open-modal="Đặt lịch HLV IKO 1-kèm-1">Book a Coach</a></li>
+          </ul>
+        </div>
+
+        <div class="ak-footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Booking &amp; Payment</a></li>
+            <li><a href="#top" data-open-modal="Chính sách bảo lưu ngày không có gió">Wind Guarantee Policy</a></li>
+            <li><a href="#top" data-open-modal="Bảo hiểm & Cano cứu hộ trực chiến">Rescue Boat &amp; Safety</a></li>
+            <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Track Your Reservation</a></li>
+            <li><a href="#deals" data-open-modal="Mua Gift Card Tặng Khóa Học Kite">Gift Cards</a></li>
+            <li><a href="tel:0974100372">FAQs · 0974 100 372</a></li>
+          </ul>
+        </div>
+
+        <div class="ak-footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="#top">Our Story</a></li>
+            <li><a href="#spots">Ocean Sustainability</a></li>
+            <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Join as IKO Coach</a></li>
+            <li><a href="tel:0974100372">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="ak-footer-col ak-footer-social-col">
+          <h4>Social Media</h4>
+          <div class="ak-social-row">
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+            <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" aria-label="Telegram">tg</a>
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" aria-label="Zalo">zl</a>
+          </div>
+          <div class="ak-footer-direct">
+            <p><strong>Hotline / Zalo:</strong> <a href="tel:0974100372">0974 100 372</a></p>
+            <p><strong>Telegram:</strong> <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">@lhoangphuong</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ak-footer-bottom">
+        <p class="ak-footer-addr">
+          AeroKite Hub, 128 Nguyễn Đình Chiểu, Mũi Né, Phan Thiết &amp; Đầm Mỹ Hòa, Ninh Thuận
+        </p>
+        <div class="ak-footer-legal">
+          <a href="#top">Privacy Policy</a>
+          <a href="#top">Term of service</a>
+          <span>All right reserved © AeroKite 2026</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- INTERACTIVE BOOKING MODAL -->
+  <div class="ak-modal-backdrop" id="akModal" aria-hidden="true">
+    <div class="ak-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="akModalTitle">
+      <button type="button" class="ak-modal-close" id="akModalClose" aria-label="Đóng">✕</button>
+      <span class="ak-modal-badge">AEROKITE · IKO CENTER VIETNAM</span>
+      <h3 id="akModalTitle">Đặt Lịch Học &amp; Trải Nghiệm Kiteboarding</h3>
+      <p class="ak-modal-desc">
+        Điền thông tin bên dưới để nhận tư vấn lộ trình IKO, báo giá thuê diều ván và dự báo sức gió tốt nhất qua Zalo <strong>0974 100 372</strong>.
+      </p>
+
+      <form id="akBookingForm" class="ak-modal-form">
+        <div class="ak-field">
+          <label for="akServiceInput">Dịch vụ / Khóa học quan tâm</label>
+          <input type="text" id="akServiceInput" name="service" value="Khóa học Kiteboarding IKO" required />
+        </div>
+        <div class="ak-field-row">
+          <div class="ak-field">
+            <label for="akNameInput">Họ và tên</label>
+            <input type="text" id="akNameInput" name="name" placeholder="Nguyễn Văn A" required />
+          </div>
+          <div class="ak-field">
+            <label for="akPhoneInput">Số điện thoại / Zalo</label>
+            <input type="tel" id="akPhoneInput" name="phone" placeholder="09xx xxx xxx" required />
+          </div>
+        </div>
+        <div class="ak-field-row">
+          <div class="ak-field">
+            <label for="akSpotSelect">Bãi lướt ưu tiên</label>
+            <select id="akSpotSelect" name="spot">
+              <option value="Mũi Né, Phan Thiết">Mũi Né, Phan Thiết (Sóng &amp; Big Air)</option>
+              <option value="Đầm Mỹ Hòa, Ninh Thuận">Đầm Mỹ Hòa, Ninh Thuận (Nước phẳng dễ học)</option>
+              <option value="Nha Trang, Khánh Hòa">Nha Trang, Khánh Hòa (Downwind Tour)</option>
+              <option value="Phú Quốc, Kiên Giang">Phú Quốc, Kiên Giang (Foil &amp; Sunset)</option>
+            </select>
+          </div>
+          <div class="ak-field">
+            <label for="akLevelSelect">Trình độ hiện tại</label>
+            <select id="akLevelSelect" name="level">
+              <option value="Người mới bắt đầu (Beginner)">Người mới bắt đầu (Chưa từng lướt)</option>
+              <option value="Đã biết điều khiển diều (IKO L2)">Đã biết điều khiển diều &amp; Waterstart</option>
+              <option value="Nâng cao / Big Air & Freestyle">Lướt thành thạo · Muốn học Big Air</option>
+              <option value="Chỉ thuê thiết bị (Gear Rental)">Chỉ thuê bộ diều &amp; ván lướt</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ak-modal-actions">
+          <button type="submit" class="ak-btn-orange ak-modal-submit">
+            <span>Gửi yêu cầu qua Zalo ngay</span>
+            <span>&raquo;</span>
+          </button>
+          <a href="tel:0974100372" class="ak-modal-call">📞 Gọi trực tiếp: 0974 100 372</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>
+

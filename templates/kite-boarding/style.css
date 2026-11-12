@@ -1,0 +1,1905 @@
+/* ==========================================================================
+   AEROKITE — KITEBOARDING & IKO ACADEMY TEMPLATE (Mẫu 24)
+   Adapted 1:1 from the FROSTSKI high-contrast editorial sports layout
+   ========================================================================== */
+
+:root {
+  --ak-bg-outer: #E4E9EF;
+  --ak-surface: #F2F6FA;
+  --ak-white: #FFFFFF;
+  --ak-dark: #101216;
+  --ak-dark-card: #1A1D23;
+  --ak-dark-border: rgba(255, 255, 255, 0.08);
+  --ak-text: #0E1116;
+  --ak-text-muted: #5F6876;
+  --ak-orange: #FF5500;
+  --ak-orange-hover: #E64A00;
+  --ak-lime: #B9F21B;
+  --ak-lime-hover: #A6DC12;
+  --ak-font-display: 'Archivo Black', Impact, 'Plus Jakarta Sans', sans-serif;
+  --ak-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--ak-bg-outer);
+  color: var(--ak-text);
+  font-family: var(--ak-font-sans);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+/* ==========================================================================
+   PAGE CONTAINER (Editorial Framed Sheet)
+   ========================================================================== */
+.ak-page-shell {
+  max-width: 1280px;
+  margin: 18px auto 48px;
+  background: var(--ak-white);
+  border-radius: 24px;
+  box-shadow: 0 28px 80px rgba(12, 18, 28, 0.12);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   SECTION 1: HERO + FLOATING NAVBAR + OVERLAPPING ORANGE CARD
+   ========================================================================== */
+.ak-hero-wrap {
+  position: relative;
+  background: var(--ak-surface);
+}
+
+.ak-hero-stage {
+  position: relative;
+  min-height: 690px;
+  padding: 20px 28px 72px;
+  background-image:
+    linear-gradient(90deg, rgba(242, 246, 250, 0.94) 0%, rgba(242, 246, 250, 0.76) 38%, rgba(242, 246, 250, 0.08) 68%, rgba(242, 246, 250, 0) 100%),
+    url('img/hero.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Floating Pill Navbar */
+.ak-navbar {
+  position: relative;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 999px;
+  padding: 10px 16px 10px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.ak-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--ak-text);
+}
+
+.ak-brand-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ak-brand-text {
+  font-family: var(--ak-font-display);
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  color: #12151B;
+}
+
+.ak-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.ak-nav-link {
+  text-decoration: none;
+  color: #262C36;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.18s ease;
+}
+
+.ak-nav-link:hover {
+  color: var(--ak-orange);
+}
+
+/* Mega-Menu Trigger & Dropdown for Kite Kits */
+.ak-nav-item-has-mega {
+  position: relative;
+}
+
+.ak-nav-link-kits {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 85, 0, 0.08);
+  color: #12151B;
+}
+
+.ak-nav-badge-hot {
+  background: var(--ak-orange);
+  color: var(--ak-white);
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.ak-caret {
+  transition: transform 0.2s ease;
+}
+
+.ak-nav-item-has-mega:hover .ak-caret,
+.ak-nav-item-has-mega.is-open .ak-caret {
+  transform: rotate(180deg);
+}
+
+.ak-kits-mega {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-46%) translateY(8px);
+  width: 780px;
+  background: var(--ak-white);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 28px 70px rgba(10, 16, 28, 0.24);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  z-index: 90;
+}
+
+.ak-kits-mega::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
+
+.ak-nav-item-has-mega:hover .ak-kits-mega,
+.ak-nav-item-has-mega.is-open .ak-kits-mega {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-46%) translateY(0);
+}
+
+.ak-mega-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #EDF1F6;
+}
+
+.ak-mega-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ak-orange);
+  margin-bottom: 3px;
+}
+
+.ak-mega-head h4 {
+  font-family: var(--ak-font-display);
+  font-size: 16px;
+  color: #11141A;
+}
+
+.ak-mega-viewall {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ak-orange);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ak-mega-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.ak-mega-item {
+  display: grid;
+  grid-template-columns: 104px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 14px;
+  background: #F6F9FC;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.ak-mega-item:hover {
+  background: #FFFFFF;
+  border-color: rgba(255, 85, 0, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+.ak-mega-thumb {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #E8EEF5;
+}
+
+.ak-mega-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ak-mega-wind {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background: rgba(16, 18, 22, 0.86);
+  color: #FFFFFF;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.ak-mega-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  color: #4A5568;
+  background: #E4EBF3;
+  padding: 2px 7px;
+  border-radius: 999px;
+  margin-bottom: 4px;
+}
+
+.ak-mega-tag.ak-tag-orange {
+  background: rgba(255, 85, 0, 0.14);
+  color: var(--ak-orange);
+}
+
+.ak-mega-tag.ak-tag-lime {
+  background: var(--ak-lime);
+  color: #11141A;
+}
+
+.ak-mega-info h5 {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #11141A;
+  margin-bottom: 2px;
+}
+
+.ak-mega-info p {
+  font-size: 11.5px;
+  color: #5D6674;
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.ak-mega-info strong {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--ak-orange);
+}
+
+.ak-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ak-lang-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: #262C36;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.ak-flag-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #FFCD00 0 28%, #DA251D 30% 100%);
+  display: inline-block;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+.ak-book-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--ak-white);
+  color: var(--ak-text);
+  border: 1.5px solid #1C2026;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.ak-book-pill:hover {
+  background: var(--ak-text);
+  color: var(--ak-white);
+}
+
+.ak-burger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.ak-burger span {
+  width: 16px;
+  height: 2px;
+  background: #12151B;
+  border-radius: 2px;
+}
+
+/* Hero Copy Block */
+.ak-hero-grid {
+  position: relative;
+  z-index: 10;
+  padding: 48px 18px 20px;
+  max-width: 540px;
+}
+
+.ak-hero-title {
+  font-family: var(--ak-font-display);
+  font-size: clamp(54px, 7vw, 88px);
+  line-height: 0.93;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #111318;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.ak-hero-sub {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #46505E;
+  max-width: 340px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.ak-hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ak-btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--ak-orange);
+  color: var(--ak-white);
+  border: none;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 10px 24px rgba(255, 85, 0, 0.28);
+}
+
+.ak-btn-orange:hover {
+  background: var(--ak-orange-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(255, 85, 0, 0.36);
+}
+
+.ak-hero-sec-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1D232C;
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(29, 35, 44, 0.35);
+  padding-bottom: 2px;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.ak-hero-sec-link:hover {
+  color: var(--ak-orange);
+  border-color: var(--ak-orange);
+}
+
+/* ==========================================================================
+   OVERLAPPING VERTICAL ORANGE CARD (KITE COACHING EXCELLENCE)
+   Straddles bottom-right of Hero & top-right of Dark KITE RUSH section
+   ========================================================================== */
+.ak-coach-card {
+  position: absolute;
+  right: 36px;
+  bottom: -245px;
+  z-index: 25;
+  width: 345px;
+  background: var(--ak-orange);
+  border-radius: 20px;
+  padding: 26px 24px 22px;
+  color: #111318;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.34);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ak-coach-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ak-coach-loop {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.ak-coach-heading {
+  font-family: var(--ak-font-display);
+  font-size: 20px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #111318;
+  text-align: right;
+}
+
+.ak-coach-photo-box {
+  background: var(--ak-white);
+  border-radius: 14px;
+  height: 220px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.ak-coach-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  transition: transform 0.35s ease;
+}
+
+.ak-coach-card:hover .ak-coach-photo-box img {
+  transform: scale(1.04);
+}
+
+.ak-coach-quote {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #191C21;
+  line-height: 1.4;
+}
+
+.ak-coach-explore {
+  margin-top: 8px;
+  padding-top: 12px;
+  border: none;
+  border-top: 1px solid rgba(17, 19, 24, 0.16);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--ak-font-display);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #111318;
+  cursor: pointer;
+  transition: transform 0.18s ease;
+}
+
+.ak-coach-explore:hover {
+  transform: translateX(3px);
+}
+
+.ak-arrow-ne {
+  font-family: var(--ak-font-sans);
+  font-size: 16px;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   SECTION 2: DARK BLOCK — "KITE RUSH" KNOCKOUT + 2 PROGRESSION CARDS
+   ========================================================================== */
+.ak-rush-section {
+  position: relative;
+  z-index: 15;
+  background: var(--ak-dark);
+  border-radius: 24px 24px 0 0;
+  margin-top: -18px;
+  padding: 46px 36px 44px;
+  color: var(--ak-white);
+}
+
+.ak-rush-top-row {
+  display: grid;
+  grid-template-columns: 1fr 365px;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 34px;
+  min-height: 235px;
+}
+
+.ak-rush-wordmark {
+  font-family: var(--ak-font-display);
+  font-size: clamp(72px, 11.2vw, 152px);
+  line-height: 0.86;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  /* Knockout photo-clipped text effect matching SNOW RUSH */
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(210, 232, 248, 0.15) 100%),
+    url('img/hero.png');
+  background-size: cover;
+  background-position: center 35%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.35));
+}
+
+/* 2 Dark Progression Cards */
+.ak-prog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.ak-prog-card {
+  background: var(--ak-dark-card);
+  border: 1px solid var(--ak-dark-border);
+  border-radius: 18px;
+  padding: 20px 20px 20px 26px;
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  align-items: end;
+  gap: 18px;
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.ak-prog-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 85, 0, 0.45);
+}
+
+.ak-prog-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 4px;
+}
+
+.ak-prog-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7D8796;
+  margin-bottom: 10px;
+}
+
+.ak-prog-title {
+  font-family: var(--ak-font-sans);
+  font-size: 15.5px;
+  font-weight: 800;
+  line-height: 1.24;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #F4F7FA;
+  margin-bottom: 10px;
+}
+
+.ak-prog-desc {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #9BA5B4;
+  margin-bottom: 14px;
+}
+
+.ak-prog-link {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: var(--ak-orange);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.ak-prog-link:hover {
+  color: #FF7B38;
+  transform: translateX(3px);
+}
+
+.ak-prog-media {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3.4;
+  background: #252A33;
+}
+
+.ak-prog-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.ak-prog-card:hover .ak-prog-media img {
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   SECTION 2.5: PRO KITE KITS SHOWCASE (BỘ KIT THAM KHẢO)
+   ========================================================================== */
+.ak-kits-section {
+  background: var(--ak-surface);
+  padding: 52px 36px 56px;
+  border-top: 1px solid #E2E8F0;
+}
+
+.ak-kits-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.ak-kits-title-wrap {
+  max-width: 580px;
+}
+
+.ak-kits-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ak-orange);
+  margin-bottom: 8px;
+}
+
+.ak-kits-heading {
+  font-family: var(--ak-font-display);
+  font-size: clamp(34px, 4.4vw, 52px);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: #101318;
+  margin-bottom: 12px;
+}
+
+.ak-kits-sub {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #4E5866;
+}
+
+.ak-kits-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.ak-price-mode-switch {
+  display: inline-flex;
+  background: #E2E8F0;
+  padding: 4px;
+  border-radius: 999px;
+}
+
+.ak-mode-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #4A5568;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.ak-mode-btn.is-active {
+  background: #101216;
+  color: var(--ak-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+.ak-kit-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ak-kit-filter {
+  border: 1px solid #D3DCE6;
+  background: var(--ak-white);
+  color: #2B333E;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.ak-kit-filter:hover {
+  border-color: #101216;
+}
+
+.ak-kit-filter.is-active {
+  background: var(--ak-orange);
+  border-color: var(--ak-orange);
+  color: var(--ak-white);
+}
+
+.ak-kits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.ak-kit-card {
+  background: var(--ak-white);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #E3E9F0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.ak-kit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.12);
+  border-color: rgba(255, 85, 0, 0.4);
+}
+
+.ak-kit-card.is-hidden {
+  display: none;
+}
+
+.ak-kit-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: #EDF2F7;
+  overflow: hidden;
+}
+
+.ak-kit-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ak-kit-card:hover .ak-kit-media img {
+  transform: scale(1.04);
+}
+
+.ak-kit-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  background: #101216;
+  color: var(--ak-white);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 5px 11px;
+  border-radius: 999px;
+}
+
+.ak-kit-badge.ak-badge-orange {
+  background: var(--ak-orange);
+}
+
+.ak-kit-badge.ak-badge-lime {
+  background: var(--ak-lime);
+  color: #101216;
+}
+
+.ak-kit-badge.ak-badge-dark {
+  background: #0D3B5E;
+}
+
+.ak-kit-wind-pill {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 2;
+  background: rgba(16, 18, 22, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--ak-white);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.ak-kit-body {
+  padding: 24px 26px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.ak-kit-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.ak-kit-code {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--ak-orange);
+}
+
+.ak-kit-level {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #647080;
+}
+
+.ak-kit-name {
+  font-family: var(--ak-font-display);
+  font-size: 21px;
+  line-height: 1.18;
+  color: #11141A;
+  margin-bottom: 8px;
+}
+
+.ak-kit-desc {
+  font-size: 13px;
+  line-height: 1.52;
+  color: #545F6E;
+  margin-bottom: 16px;
+}
+
+/* Interactive Size Selector */
+.ak-kit-sizes {
+  background: #F4F7FA;
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ak-size-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #29313D;
+}
+
+.ak-size-pills {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.ak-size-pill {
+  border: 1.5px solid #CFD8E3;
+  background: var(--ak-white);
+  color: #1A202C;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 11px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.ak-size-pill.is-active {
+  background: #101216;
+  border-color: #101216;
+  color: var(--ak-white);
+}
+
+.ak-size-hint {
+  width: 100%;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #596575;
+}
+
+/* Included Items Checklist */
+.ak-kit-includes {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px 14px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #EDF1F6;
+}
+
+.ak-kit-includes li {
+  font-size: 12px;
+  color: #2D3643;
+  font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.ak-kit-includes li span {
+  color: var(--ak-orange);
+  font-weight: 800;
+}
+
+.ak-kit-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.ak-kit-price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.ak-price-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6B7686;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.ak-price-val {
+  font-family: var(--ak-font-display);
+  font-size: 20px;
+  color: #101318;
+}
+
+/* ==========================================================================
+   SECTION 3: BIG AIR EVENTS BANNER + INVERTED CORNER CUTOUT CARD
+   ========================================================================== */
+.ak-events-section {
+  position: relative;
+  background: #0B2D48;
+  margin-top: 6px;
+}
+
+.ak-events-backdrop {
+  position: relative;
+  min-height: 610px;
+  padding: 56px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.ak-events-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+
+.ak-events-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 25, 43, 0.08) 0%,
+    rgba(7, 25, 43, 0.22) 45%,
+    rgba(7, 25, 43, 0.55) 100%
+  );
+}
+
+/* White Card Wrapper with Top-Right Inverted Notch */
+.ak-events-card-wrap {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 590px;
+}
+
+/* Volt Lime Circular Action Button inside the top-right cutout */
+.ak-lime-fab {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  z-index: 20;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: var(--ak-lime);
+  border: 6px solid #123756;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.22s ease, background 0.22s ease;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+}
+
+.ak-lime-fab:hover {
+  background: var(--ak-lime-hover);
+  transform: scale(1.06) rotate(6deg);
+}
+
+.ak-events-card {
+  background: var(--ak-white);
+  border-radius: 22px;
+  padding: 34px 34px 28px;
+  color: var(--ak-text);
+  box-shadow: 0 26px 64px rgba(5, 16, 30, 0.35);
+  position: relative;
+}
+
+.ak-events-header {
+  padding-right: 64px;
+  margin-bottom: 26px;
+}
+
+.ak-events-title {
+  font-family: var(--ak-font-display);
+  font-size: clamp(24px, 2.7vw, 31px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #101318;
+  margin-bottom: 10px;
+}
+
+.ak-events-sub {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #5E6773;
+}
+
+.ak-events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 22px;
+  margin-bottom: 24px;
+}
+
+.ak-event-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.ak-event-item:hover {
+  background: #F3F6FA;
+  transform: translateY(-2px);
+}
+
+.ak-event-date {
+  width: 54px;
+  height: 58px;
+  border-radius: 12px;
+  background: #14171D;
+  color: var(--ak-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ak-event-date .ak-m {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.ak-event-date .ak-d {
+  font-family: var(--ak-font-display);
+  font-size: 19px;
+  line-height: 1;
+}
+
+.ak-event-info h3 {
+  font-size: 14px;
+  font-weight: 800;
+  color: #12161D;
+  margin-bottom: 2px;
+}
+
+.ak-event-info p {
+  font-size: 12px;
+  color: #5C6572;
+  margin-bottom: 2px;
+}
+
+.ak-event-info span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #7D8694;
+}
+
+.ak-events-footer {
+  padding-top: 12px;
+  border-top: 1px solid #ECEFF4;
+}
+
+.ak-view-all-events {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  font-weight: 800;
+  color: #12161D;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.18s ease, gap 0.18s ease;
+}
+
+.ak-view-all-events:hover {
+  color: var(--ak-orange);
+  gap: 12px;
+}
+
+/* ==========================================================================
+   SECTION 4: 3-COLUMN PROMO STRIP (SPOTS / GEAR / SEASON DEALS)
+   ========================================================================== */
+.ak-promo-strip {
+  background: var(--ak-white);
+  padding: 36px 36px 26px;
+}
+
+.ak-promo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ak-promo-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 16px;
+  align-items: stretch;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 18px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ak-promo-card:hover {
+  background: #F5F8FB;
+  transform: translateY(-3px);
+}
+
+.ak-promo-img-wrap {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: #DCE5EE;
+}
+
+.ak-promo-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.ak-promo-card:hover .ak-promo-img-wrap img {
+  transform: scale(1.06);
+}
+
+.ak-promo-percent-wrap {
+  background: #B9F21B;
+}
+
+.ak-promo-percent-wrap img {
+  mix-blend-mode: multiply;
+  opacity: 0.72;
+  filter: contrast(1.15) saturate(0.8);
+}
+
+.ak-percent-badge {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ak-font-sans);
+  font-size: 112px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.96);
+  line-height: 1;
+  text-shadow: 0 8px 28px rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+}
+
+.ak-promo-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6px 2px;
+}
+
+.ak-promo-title {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.22;
+  color: #12161D;
+  margin-bottom: 8px;
+}
+
+.ak-promo-note {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #626C7A;
+}
+
+.ak-promo-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #12161D;
+  padding-top: 8px;
+}
+
+.ak-promo-more i {
+  font-style: normal;
+  transition: transform 0.18s ease;
+}
+
+.ak-promo-card:hover .ak-promo-more {
+  color: var(--ak-orange);
+}
+
+.ak-promo-card:hover .ak-promo-more i {
+  transform: translate(2px, -2px);
+}
+
+/* ==========================================================================
+   SECTION 5: NEWSLETTER BANNER — "Join the Wind Insider Club"
+   ========================================================================== */
+.ak-club-section {
+  padding: 12px 36px 36px;
+  background: var(--ak-white);
+}
+
+.ak-club-banner {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 300px;
+  padding: 44px 44px;
+  display: flex;
+  align-items: center;
+  background: #1B5A87;
+}
+
+.ak-club-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ak-club-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 43, 72, 0.78) 0%,
+    rgba(11, 43, 72, 0.48) 52%,
+    rgba(11, 43, 72, 0.12) 100%
+  );
+}
+
+.ak-club-content {
+  position: relative;
+  z-index: 10;
+  max-width: 430px;
+  color: var(--ak-white);
+}
+
+.ak-club-title {
+  font-family: var(--ak-font-display);
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.ak-club-sub {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.86);
+  margin-bottom: 18px;
+}
+
+.ak-club-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ak-club-input {
+  width: 100%;
+  max-width: 340px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
+  color: #12161D;
+  font-size: 13px;
+  outline: none;
+}
+
+.ak-club-input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.35);
+}
+
+.ak-club-feedback {
+  margin-top: 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ak-lime);
+}
+
+/* ==========================================================================
+   SECTION 6: 5-COLUMN MINIMAL FOOTER
+   ========================================================================== */
+.ak-footer {
+  background: #F6F8FB;
+  padding: 44px 36px 28px;
+  border-top: 1px solid #E8EDF3;
+}
+
+.ak-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #E3E8F0;
+}
+
+.ak-footer-col h4 {
+  font-size: 13px;
+  font-weight: 800;
+  color: #12161D;
+  margin-bottom: 14px;
+}
+
+.ak-footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.ak-footer-col a {
+  text-decoration: none;
+  font-size: 12.5px;
+  color: #545E6D;
+  transition: color 0.16s ease;
+}
+
+.ak-footer-col a:hover {
+  color: var(--ak-orange);
+}
+
+.ak-social-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ak-social-row a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #E8EEF5;
+  color: #141820;
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.ak-social-row a:hover {
+  background: var(--ak-orange);
+  color: var(--ak-white);
+}
+
+.ak-footer-direct {
+  font-size: 12px;
+  color: #545E6D;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ak-footer-direct a {
+  font-weight: 700;
+  color: #12161D;
+}
+
+.ak-footer-bottom {
+  padding-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #5E6877;
+}
+
+.ak-footer-addr {
+  font-weight: 600;
+  color: #2A313C;
+}
+
+.ak-footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ak-footer-legal a {
+  color: #4E5866;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.ak-footer-legal a:hover {
+  color: var(--ak-orange);
+}
+
+/* ==========================================================================
+   BOOKING MODAL
+   ========================================================================== */
+.ak-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99990;
+  background: rgba(10, 14, 22, 0.72);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.ak-modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ak-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: var(--ak-white);
+  border-radius: 22px;
+  padding: 32px 28px 26px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.4);
+  transform: translateY(14px);
+  transition: transform 0.22s ease;
+}
+
+.ak-modal-backdrop.is-open .ak-modal-dialog {
+  transform: translateY(0);
+}
+
+.ak-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #F0F4F8;
+  color: #1A202C;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ak-modal-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--ak-orange);
+  margin-bottom: 6px;
+}
+
+.ak-modal-dialog h3 {
+  font-family: var(--ak-font-display);
+  font-size: 22px;
+  line-height: 1.2;
+  color: #11141A;
+  margin-bottom: 8px;
+}
+
+.ak-modal-desc {
+  font-size: 13px;
+  color: #5B6472;
+  margin-bottom: 18px;
+}
+
+.ak-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ak-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ak-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #252C37;
+}
+
+.ak-field input,
+.ak-field select {
+  padding: 10px 13px;
+  border-radius: 10px;
+  border: 1.5px solid #DCE3EC;
+  font-size: 13.5px;
+  color: #12161D;
+  outline: none;
+}
+
+.ak-field input:focus,
+.ak-field select:focus {
+  border-color: var(--ak-orange);
+}
+
+.ak-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ak-modal-actions {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ak-modal-submit {
+  flex: 1;
+  justify-content: center;
+  padding: 13px 20px;
+}
+
+.ak-modal-call {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #141820;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 1060px) {
+  .ak-page-shell {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .ak-coach-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 420px;
+    margin-top: 28px;
+  }
+
+  .ak-rush-top-row {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .ak-rush-spacer {
+    display: none;
+  }
+
+  .ak-prog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ak-kits-mega {
+    width: 640px;
+    left: 0;
+    transform: translateX(-18%) translateY(8px);
+  }
+
+  .ak-nav-item-has-mega:hover .ak-kits-mega,
+  .ak-nav-item-has-mega.is-open .ak-kits-mega {
+    transform: translateX(-18%) translateY(0);
+  }
+
+  .ak-kits-controls {
+    align-items: flex-start;
+  }
+
+  .ak-kits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ak-promo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ak-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ak-hero-stage {
+    padding: 14px 16px 40px;
+    min-height: auto;
+    background-position: 68% top;
+  }
+
+  .ak-navbar {
+    padding: 9px 14px;
+  }
+
+  .ak-nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 18px;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+  }
+
+  .ak-nav-links.is-open {
+    display: flex;
+  }
+
+  .ak-lang-badge {
+    display: none;
+  }
+
+  .ak-burger {
+    display: inline-flex;
+  }
+
+  .ak-hero-grid {
+    padding: 32px 4px 10px;
+  }
+
+  .ak-rush-section {
+    padding: 34px 18px 32px;
+  }
+
+  .ak-prog-card {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .ak-kits-mega {
+    position: static;
+    width: 100%;
+    transform: none !important;
+    box-shadow: none;
+    padding: 12px 4px 4px;
+    border: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .ak-nav-item-has-mega.is-open .ak-kits-mega {
+    display: block;
+  }
+
+  .ak-mega-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ak-kits-section {
+    padding: 36px 18px 40px;
+  }
+
+  .ak-kit-body {
+    padding: 20px 18px;
+  }
+
+  .ak-kit-includes {
+    grid-template-columns: 1fr;
+  }
+
+  .ak-kit-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ak-kit-cta {
+    justify-content: center;
+  }
+
+  .ak-events-backdrop {
+    padding: 36px 16px;
+  }
+
+  .ak-events-card {
+    padding: 26px 20px 22px;
+  }
+
+  .ak-events-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ak-promo-strip {
+    padding: 28px 18px 20px;
+  }
+
+  .ak-promo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ak-club-section {
+    padding: 10px 18px 28px;
+  }
+
+  .ak-club-banner {
+    padding: 30px 22px;
+  }
+
+  .ak-footer {
+    padding: 32px 18px 24px;
+  }
+
+  .ak-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .ak-field-row {
+    grid-template-columns: 1fr;
+  }
+}
+

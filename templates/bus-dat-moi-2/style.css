@@ -1,3 +1,4 @@
+html, body { overflow-x: hidden; max-width: 100%; }
 :root {
     --primary: #ff5a00; /* Màu cam nổi bật giống mẫu Avex */
     --dark-blue: #091225; /* Màu nền header trên cùng */

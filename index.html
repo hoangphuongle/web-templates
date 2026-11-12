@@ -22,12 +22,13 @@
 <style>
 /* ── RESET ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
-html { scroll-behavior:smooth }
+html { scroll-behavior:smooth; overflow-x:hidden; overflow-x:clip }
 body {
   font-family:'Be Vietnam Pro', sans-serif;
   background:#fff;
   color:#0d0d0d;
   overflow-x:hidden;
+  overflow-x:clip;
   line-height:1.6;
 }
 a { text-decoration:none; color:inherit }
@@ -157,58 +158,171 @@ img { max-width:100%; display:block }
 }
 .btn-secondary:hover { border-color:#0d0d0d; transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.08) }
 
-/* ── SCATTERED CARDS (HERO) ── */
+/* ── PLAYING CARD FAN DECK (HERO) ── */
 .cards-wrap {
-  width:100%; overflow:hidden;
-  cursor:grab; user-select:none;
-  display:flex; justify-content:center;
+  width:100%; max-width:1060px;
+  margin:0 auto;
+  overflow:visible;
+  user-select:none;
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
 }
-.cards-wrap.is-grabbing { cursor:grabbing }
 .cards-stage {
-  width:960px; flex-shrink:0;
-  height:480px; position:relative;
-  will-change:transform;
-  transition:transform .08s linear;
+  --card-w: 240px;
+  --spread-1: 150px;
+  --spread-2: 285px;
+  width:100%;
+  height:425px;
+  position:relative;
+  overflow:visible;
 }
 .sc-card {
   position:absolute;
-  width:260px;
+  width:var(--card-w);
+  left:50%;
+  top:20px;
+  margin-left:calc(var(--card-w) / -2);
   background:#fff;
   border-radius:18px;
   overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.08);
+  box-shadow:0 18px 45px rgba(0,0,0,.13), 0 4px 12px rgba(0,0,0,.07);
   border:3px solid #fff;
-  transition:transform .4s ease, box-shadow .4s ease;
+  transform-origin:50% 92%;
+  transition:
+    transform .52s cubic-bezier(.22, 1, .36, 1),
+    box-shadow .45s ease,
+    opacity .4s ease,
+    filter .4s ease;
   cursor:pointer;
+  will-change:transform;
 }
-.sc-card:hover {
-  transform:translateY(-12px) rotate(0deg) !important;
-  box-shadow:0 40px 80px rgba(0,0,0,.18);
-  z-index:10 !important;
+/* Active center card (Lá bài đang chọn ở chính giữa) */
+.sc-card[data-pos="0"] {
+  transform:translate3d(0, -10px, 0) rotate(0deg) scale(1.03);
+  z-index:30;
+  opacity:1;
+  box-shadow:0 30px 70px rgba(0,0,0,.22), 0 8px 22px rgba(0,0,0,.1);
+  filter:brightness(1);
 }
-.sc-card img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:top; display:block }
+.sc-card[data-pos="0"]:hover {
+  transform:translate3d(0, -16px, 0) rotate(0deg) scale(1.05);
+  box-shadow:0 36px 80px rgba(0,0,0,.26);
+}
+/* Immediate left & right cards */
+.sc-card[data-pos="-1"] {
+  transform:translate3d(calc(var(--spread-1) * -1), 4px, 0) rotate(-6deg) scale(.94);
+  z-index:20;
+  opacity:1;
+  filter:brightness(.97);
+}
+.sc-card[data-pos="1"] {
+  transform:translate3d(var(--spread-1), 4px, 0) rotate(6deg) scale(.94);
+  z-index:20;
+  opacity:1;
+  filter:brightness(.97);
+}
+/* Outer left & right cards */
+.sc-card[data-pos="-2"] {
+  transform:translate3d(calc(var(--spread-2) * -1), 14px, 0) rotate(-12deg) scale(.86);
+  z-index:12;
+  opacity:1;
+  filter:brightness(.93);
+}
+.sc-card[data-pos="2"] {
+  transform:translate3d(var(--spread-2), 14px, 0) rotate(12deg) scale(.86);
+  z-index:12;
+  opacity:1;
+  filter:brightness(.93);
+}
+/* 6th card tucked behind center deck so the 5 visible cards stay 100% symmetrical */
+.sc-card[data-pos="3"] {
+  transform:translate3d(0, 10px, 0) rotate(0deg) scale(.78);
+  z-index:2;
+  opacity:0;
+  pointer-events:none;
+}
+/* Subtle hover lift on side cards to hint they can be picked */
+.sc-card:not([data-pos="0"]):hover {
+  filter:brightness(1.02);
+}
+.sc-card img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:top; display:block; pointer-events:none }
 .sc-label {
   padding:12px 14px;
   display:flex; align-items:center; justify-content:space-between;
+  gap:6px;
+  background:#fff;
 }
-.sc-label span { font-size:.78rem; font-weight:700; color:#0d0d0d }
-.sc-label small { font-size:.68rem; color:#999 }
+.sc-label span {
+  font-size:.8rem; font-weight:700; color:#0d0d0d;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.sc-label small {
+  font-size:.7rem; color:#666; font-weight:600;
+  white-space:nowrap; flex-shrink:0;
+}
+.sc-card[data-pos="0"] .sc-label small { color:#0d0d0d }
 .sc-arrow {
   position:absolute; top:12px; right:12px;
   width:32px; height:32px; border-radius:50%;
-  background:rgba(255,255,255,.9);
+  background:rgba(255,255,255,.92);
   display:grid; place-items:center;
-  font-size:.75rem; opacity:0; transition:.3s;
+  font-size:.78rem; opacity:0; transition:.3s;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
 }
+.sc-card[data-pos="0"] .sc-arrow,
 .sc-card:hover .sc-arrow { opacity:1 }
 
-/* Card positions — tags moved OUT of cards-stage, so nth-child counts correctly */
-.sc-card:nth-child(1) { left:-2%;  top:40px; rotate:-10deg; z-index:2 }
-.sc-card:nth-child(2) { left:16%;  top:15px; rotate:-5deg;  z-index:3 }
-.sc-card:nth-child(3) { left:34%;  top:28px; rotate: 1deg;  z-index:5 }
-.sc-card:nth-child(4) { left:53%;  top:12px; rotate: 5deg;  z-index:3 }
-.sc-card:nth-child(5) { left:71%;  top:30px; rotate: 9deg;  z-index:2 }
-.sc-card:nth-child(6) { left:87%;  top:50px; rotate:13deg;  z-index:1 }
+/* 2 Left/Right Navigation Buttons */
+.card-nav-btn {
+  position:absolute;
+  top:46%;
+  transform:translateY(-50%);
+  z-index:45;
+  width:48px; height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1.5px solid rgba(0,0,0,.1);
+  box-shadow:0 10px 28px rgba(0,0,0,.15);
+  color:#0d0d0d;
+  display:grid; place-items:center;
+  cursor:pointer;
+  transition:transform .22s ease, background .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.card-nav-btn:hover {
+  background:#0d0d0d;
+  color:#fff;
+  border-color:#0d0d0d;
+  transform:translateY(-50%) scale(1.08);
+  box-shadow:0 14px 32px rgba(0,0,0,.24);
+}
+.card-nav-btn:active {
+  transform:translateY(-50%) scale(.95);
+}
+.card-nav-btn svg {
+  width:20px; height:20px;
+  stroke:currentColor; stroke-width:2.4;
+  fill:none; stroke-linecap:round; stroke-linejoin:round;
+}
+.card-nav-prev { left:12px }
+.card-nav-next { right:12px }
+
+/* Dots indicator under the card fan */
+.cards-dots {
+  display:flex; align-items:center; justify-content:center;
+  gap:7px; margin-top:14px;
+}
+.cards-dot {
+  width:7px; height:7px; border-radius:999px;
+  background:rgba(0,0,0,.16);
+  border:none; padding:0; cursor:pointer;
+  transition:all .3s ease;
+}
+.cards-dot.active {
+  width:24px;
+  background:#0d0d0d;
+}
 
 /* floating label tags — relative to .hero (position:relative) */
 .hero-tag {
@@ -410,8 +524,14 @@ img { max-width:100%; display:block }
 
 /* ── RESPONSIVE: 1024px (Tablet landscape) ── */
 @media(max-width:1024px){
-  .cards-stage { width:820px; height:400px }
-  .sc-card { width:210px }
+  [style*="position:absolute"][style*="animation:floatA"],
+  [style*="position:absolute"][style*="animation:floatB"] { display:none !important }
+  .cards-stage {
+    --card-w: 210px;
+    --spread-1: 128px;
+    --spread-2: 238px;
+    height:380px;
+  }
 }
 
 /* ── RESPONSIVE: 860px (Tablet portrait) ── */
@@ -419,29 +539,12 @@ img { max-width:100%; display:block }
   .tpl-row { grid-template-columns:1fr; gap:36px }
   .tpl-row.reverse { direction:ltr }
   .hero-tag { display:none }
-  .sc-card:nth-child(n+4){ display:block }
-  .cards-stage { width:720px; height:340px }
-  .sc-card { width:175px }
-  .sc-card:nth-child(1) { left:0%;  top:24px }
-  .sc-card:nth-child(2) { left:15%; top:10px }
-  .sc-card:nth-child(3) { left:30%; top:18px }
-  .sc-card:nth-child(4) { left:46%; top:8px }
-  .sc-card:nth-child(5) { left:61%; top:20px }
-  .sc-card:nth-child(6) { left:75%; top:28px }
-  .sc-label {
-    padding:10px 12px;
-    flex-direction:column;
-    align-items:flex-start;
-    gap:2px;
+  .cards-stage {
+    --card-w: 190px;
+    --spread-1: 108px;
+    --spread-2: 198px;
+    height:350px;
   }
-  .sc-label span {
-    font-size:.76rem;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    width:100%;
-  }
-  .sc-label small { font-size:.68rem; white-space:nowrap }
   .section { padding:70px 5% }
   .svc-grid { grid-template-columns:1fr 1fr }
   .sec-h2 { font-size:clamp(2rem,5vw,3rem) }
@@ -487,19 +590,31 @@ img { max-width:100%; display:block }
   [style*="position:absolute"][style*="animation:floatA"],
   [style*="position:absolute"][style*="animation:floatB"] { display:none !important }
 
-  /* Cards — properly scaled stage so cards never clip or squish */
-  .cards-stage { width:620px; height:290px }
-  .sc-card { width:152px; border-radius:14px; border-width:2px }
-  .sc-card:nth-child(1) { left:0%;  top:20px }
-  .sc-card:nth-child(2) { left:15%; top:8px }
-  .sc-card:nth-child(3) { left:30%; top:16px }
-  .sc-card:nth-child(4) { left:46%; top:8px }
-  .sc-card:nth-child(5) { left:61%; top:18px }
-  .sc-card:nth-child(6) { left:75%; top:24px }
-  .sc-label { padding:8px 10px; gap:2px }
-  .sc-label span { font-size:.73rem }
-  .sc-label small { font-size:.65rem }
-  .cards-wrap { cursor:grab }
+  /* Playing Card Fan on Mobile */
+  .cards-stage {
+    --card-w: 176px;
+    --spread-1: 78px;
+    --spread-2: 138px;
+    height:340px;
+  }
+  .sc-card { border-radius:16px; border-width:2.5px; top:16px }
+  .sc-label {
+    padding:9px 11px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:2px;
+  }
+  .sc-label span { font-size:.78rem; width:100% }
+  .sc-label small { font-size:.67rem }
+  .card-nav-btn { width:40px; height:40px }
+  .card-nav-btn svg { width:18px; height:18px }
+  .card-nav-prev { left:2px }
+  .card-nav-next { right:2px }
+  #btnToggleMoreTpl {
+    max-width:100%;
+    padding:13px 22px !important;
+    font-size:.84rem !important;
+  }
 
   /* Sections */
   .section { padding:52px 4% }
@@ -551,8 +666,12 @@ img { max-width:100%; display:block }
   .cta-btns { flex-direction:column }
   .btn-cta-main, .btn-cta-ghost { width:100%; justify-content:center; padding:14px 20px }
 
-  .cards-stage { width:560px; height:268px }
-  .sc-card { width:138px }
+  .cards-stage {
+    --card-w: 162px;
+    --spread-1: 68px;
+    --spread-2: 120px;
+    height:318px;
+  }
 
   .section { padding:46px 4% }
   .pf-grid { grid-template-columns:1fr }
@@ -568,8 +687,12 @@ img { max-width:100%; display:block }
   .nav { padding:12px 4% }
   .nav-logo { font-size:.98rem }
   .btn-nav-zalo, .btn-nav-tg { padding:6px 10px; font-size:.72rem }
-  .cards-stage { width:510px; height:250px }
-  .sc-card { width:126px }
+  .cards-stage {
+    --card-w: 146px;
+    --spread-1: 58px;
+    --spread-2: 102px;
+    height:292px;
+  }
 }
 
 /* ── SERVICES ── */
@@ -813,16 +936,9 @@ img { max-width:100%; display:block }
 }
 .rv-f.show { opacity:1 }
 
-/* ── HERO CARD FLOAT ANIMATION ── */
-@keyframes floatA { 0%,100%{transform:translateY(0) rotate(var(--r))} 50%{transform:translateY(-10px) rotate(var(--r))} }
-@keyframes floatB { 0%,100%{transform:translateY(-6px) rotate(var(--r))} 50%{transform:translateY(4px) rotate(var(--r))} }
-.sc-card:nth-child(1) { animation:floatA 5.5s ease-in-out infinite }
-.sc-card:nth-child(2) { animation:floatB 6.2s ease-in-out infinite }
-.sc-card:nth-child(3) { animation:floatA 5s ease-in-out infinite }
-.sc-card:nth-child(4) { animation:floatB 6.8s ease-in-out infinite }
-.sc-card:nth-child(5) { animation:floatA 5.8s ease-in-out infinite }
-.sc-card:nth-child(6) { animation:floatB 6.4s ease-in-out infinite }
-.sc-card:hover { animation:none }
+/* ── HERO FLOATING BADGE ANIMATION ── */
+@keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes floatB { 0%,100%{transform:translateY(-6px)} 50%{transform:translateY(4px)} }
 
 /* ── FILTER TABS ── */
 .filter-bar {
@@ -962,30 +1078,33 @@ img { max-width:100%; display:block }
   <div class="hero-tag tag-2">✦ NOIR Nail</div>
   <div class="hero-tag tag-3">🏮 Tattoos by Thu</div>
 
-  <!-- Scattered cards — drag pan to explore -->
+  <!-- Playing Card Fan Deck — click arrows or swipe to flip card-by-card -->
   <div class="cards-wrap" id="cardsWrap">
+    <button type="button" class="card-nav-btn card-nav-prev" id="cardPrevBtn" aria-label="Mẫu trước">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
     <div class="cards-stage rv" id="cardsStage">
-      <a href="templates/spa-hoi-an/index.html" target="_blank" class="sc-card" id="card-spa">
+      <a href="templates/spa-hoi-an/index.html" target="_blank" class="sc-card" id="card-spa" data-pos="-2">
         <img src="templates/spa-hoi-an/img/hero.png" alt="Spa Hội An">
         <div class="sc-label"><span>Spa Hội An</span><small>Xem demo →</small></div>
         <span class="sc-arrow">↗</span>
       </a>
-      <a href="templates/foodie-delivery/index.html" target="_blank" class="sc-card" id="card-foodie">
+      <a href="templates/foodie-delivery/index.html" target="_blank" class="sc-card" id="card-foodie" data-pos="-1">
         <img src="templates/foodie-delivery/img/thumbnail.png" alt="FOODIE Giao Đồ Ăn">
         <div class="sc-label"><span>FOODIE Delivery</span><small>Xem demo →</small></div>
         <span class="sc-arrow">↗</span>
       </a>
-      <a href="templates/car-rental/index.html" target="_blank" class="sc-card" id="card-carent">
+      <a href="templates/car-rental/index.html" target="_blank" class="sc-card" id="card-carent" data-pos="0">
         <img src="templates/car-rental/img/thumbnail.png" alt="Carent Thuê Xe">
         <div class="sc-label"><span>Carent. Thuê Xe</span><small>Xem demo →</small></div>
         <span class="sc-arrow">↗</span>
       </a>
-      <a href="templates/tiem-nail-2/index.html" target="_blank" class="sc-card" id="card-noir">
+      <a href="templates/tiem-nail-2/index.html" target="_blank" class="sc-card" id="card-noir" data-pos="1">
         <img src="templates/tiem-nail-2/img/hero.png" alt="NOIR Nail">
         <div class="sc-label"><span>NOIR Nail</span><small>Xem demo →</small></div>
         <span class="sc-arrow">↗</span>
       </a>
-      <a href="https://tattoosbythu.com" target="_blank" rel="noopener" class="sc-card" id="card-tattoo">
+      <a href="https://tattoosbythu.com" target="_blank" rel="noopener" class="sc-card" id="card-tattoo" data-pos="2">
         <img src="https://tattoosbythu.com/wp-content/uploads/2026/06/tattoo-artist-thu-vo-le-hygienic-tattooing-process-usa.webp" alt="Tattoos by Thu" loading="lazy">
         <div class="sc-label">
           <span>Tattoos by Thu</span>
@@ -993,20 +1112,24 @@ img { max-width:100%; display:block }
         </div>
         <span class="sc-arrow">↗</span>
       </a>
-      <a href="templates/gym-fitness/index.html" target="_blank" class="sc-card" id="card-gym">
+      <a href="templates/gym-fitness/index.html" target="_blank" class="sc-card" id="card-gym" data-pos="3">
         <img src="templates/gym-fitness/img/hero.png" alt="IRON GYM" loading="lazy">
         <div class="sc-label"><span>IRON GYM</span><small>Xem demo →</small></div>
         <span class="sc-arrow">↗</span>
       </a>
     </div>
+    <button type="button" class="card-nav-btn card-nav-next" id="cardNextBtn" aria-label="Mẫu tiếp theo">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
   </div>
-  <!-- drag hint -->
-  <p style="font-size:.72rem;color:#aaa;margin-top:12px;letter-spacing:.04em">← Kéo để xem thêm mẫu →</p>
+  <div class="cards-dots" id="cardsDots"></div>
+  <!-- fan hint -->
+  <p style="font-size:.72rem;color:#aaa;margin-top:8px;letter-spacing:.04em">← Bấm nút 2 bên hoặc vuốt để lật từng mẫu →</p>
 </section>
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div><b>22+</b><small>Mẫu có sẵn</small></div>
+  <div><b>25+</b><small>Mẫu có sẵn</small></div>
   <div><b>7 ngày</b><small>Bàn giao</small></div>
   <div><b>100%</b><small>Mobile ready</small></div>
   <div><b>Trọn đời</b><small>Bảo hành</small></div>
@@ -1265,6 +1388,105 @@ img { max-width:100%; display:block }
     </div>
     <div class="tpl-divider"></div>
 
+    <!-- 23: MAISON TABLE - Fine Dining & Contemporary Bistro -->
+    <div class="tpl-row reverse rv" data-cat="restaurant">
+      <div class="tpl-mockup">
+        <span class="tpl-mockup-tag" style="background:#121518;color:#c6f82a">Fine Dining · Nhà Hàng Âu</span>
+        <div class="tpl-browser">
+          <div class="tpl-bar">
+            <div class="tpl-dots"><i></i><i></i><i></i></div>
+            <div class="tpl-url-bar">maisontable-demo.netlify.app</div>
+          </div>
+          <img src="templates/maison-table/img/thumbnail.png" alt="MAISON TABLE Fine Dining preview" class="tpl-screen-img" loading="lazy">
+        </div>
+      </div>
+      <div class="tpl-info">
+        <div class="tpl-num">Mẫu 08</div>
+        <h3>MAISON TABLE<br>– Nhà Hàng Âu &amp; Fine Dining</h3>
+        <p>Giao diện nhà hàng Âu &amp; Bistro đương đại phong cách Editorial tối giản. Kết hợp sắc Xanh Địa Trung Hải (#4481A3), Đen Than Chì (#121518) và nút điểm nhấn Xanh Lime (#C6F82A). Có lưới món ăn đặc trưng lệch tầng, phân khu The Art of Dining và Modal đặt bàn trực tuyến kết nối Zalo.</p>
+        <div class="tpl-chips">
+          <span>Fine Dining · Bistro</span>
+          <span>Đặt bàn trực tuyến</span>
+          <span>Thực đơn theo mùa</span>
+          <span>The Art of Dining</span>
+          <span>Nhà hàng · Lounge</span>
+        </div>
+        <div class="tpl-btns">
+          <a href="templates/maison-table/index.html" target="_blank" class="btn-view" id="view-maisontable">Xem demo</a>
+          <a href="https://zalo.me/0974100372" target="_blank" class="btn-order" id="order-maisontable">Zalo →</a>
+          <a href="https://t.me/lhoangphuong?text=Ch%C3%A0o%20Ph%C6%B0%C6%A1ng%2C%20m%C3%ACnh%20quan%20t%C3%A2m%20MAISON%20TABLE%20%E2%80%93%20Nh%C3%A0%20H%C3%A0ng%20%C3%82u%20%26%20Fine%20Dining.%20T%C6%B0%20v%E1%BA%A5n%20gi%C3%BAp%20m%C3%ACnh%20nh%C3%A9%21" target="_blank" class="btn-tg">Telegram →</a>
+        </div>
+        <p style="font-size:.78rem;color:#888;margin-top:10px">Từ <b style="color:#0d0d0d">2.000.000đ</b> · Bàn giao 7 ngày</p>
+      </div>
+    </div>
+    <div class="tpl-divider"></div>
+
+    <!-- 24: AEROKITE - Kiteboarding & Watersports Academy -->
+    <div class="tpl-row rv-l" data-cat="fitness">
+      <div class="tpl-mockup">
+        <span class="tpl-mockup-tag" style="background:#FF5500;color:#ffffff">Kiteboarding · Thể Thao Biển</span>
+        <div class="tpl-browser">
+          <div class="tpl-bar">
+            <div class="tpl-dots"><i></i><i></i><i></i></div>
+            <div class="tpl-url-bar">aerokite-demo.netlify.app</div>
+          </div>
+          <img src="templates/kite-boarding/img/thumbnail.png" alt="AEROKITE Kiteboarding Academy preview" class="tpl-screen-img" loading="lazy">
+        </div>
+      </div>
+      <div class="tpl-info">
+        <div class="tpl-num">Mẫu 09</div>
+        <h3>AEROKITE<br>– Học Viện Lướt Ván Diều &amp; Kiteboarding</h3>
+        <p>Giao diện thể thao biển mạo hiểm &amp; học viện huấn luyện Kiteboarding chuẩn IKO Quốc tế. Nổi bật với bố cục bất đối xứng mạnh mẽ, thẻ cam #FF5500 đè lớp liên kết 2 phân khu, chữ cắt ảnh KITE RUSH trên nền tối #101216, thẻ lịch sự kiện Big Air khoét góc (Inverted Notch) kèm nút tròn Volt Lime #B9F21B.</p>
+        <div class="tpl-chips">
+          <span>Kiteboarding · IKO</span>
+          <span>Knockout Typography</span>
+          <span>Inverted Corner Card</span>
+          <span>Lịch sự kiện Big Air</span>
+          <span>Thể thao biển · Tour</span>
+        </div>
+        <div class="tpl-btns">
+          <a href="templates/kite-boarding/index.html" target="_blank" class="btn-view" id="view-kiteboarding">Xem demo</a>
+          <a href="https://zalo.me/0974100372" target="_blank" class="btn-order" id="order-kiteboarding">Zalo →</a>
+          <a href="https://t.me/lhoangphuong?text=Ch%C3%A0o%20Ph%C6%B0%C6%A1ng%2C%20m%C3%ACnh%20quan%20t%C3%A2m%20AEROKITE%20%E2%80%93%20H%E1%BB%8Dc%20Vi%E1%BB%87n%20L%C6%B0%E1%BB%9Bt%20V%C3%A1n%20Di%E1%BB%81u%20%26%20Kiteboarding.%20T%C6%B0%20v%E1%BA%A5n%20gi%C3%BAp%20m%C3%ACnh%20nh%C3%A9%21" target="_blank" class="btn-tg">Telegram →</a>
+        </div>
+        <p style="font-size:.78rem;color:#888;margin-top:10px">Từ <b style="color:#0d0d0d">2.000.000đ</b> · Bàn giao 7 ngày</p>
+      </div>
+    </div>
+    <div class="tpl-divider"></div>
+
+    <!-- 25: RUNOVA - Badminton Club, Court Booking & Pro Shop -->
+    <div class="tpl-row reverse rv" data-cat="fitness">
+      <div class="tpl-mockup">
+        <span class="tpl-mockup-tag" style="background:#1A6B54;color:#98E616">Cầu Lông · Đặt Sân Online</span>
+        <div class="tpl-browser">
+          <div class="tpl-bar">
+            <div class="tpl-dots"><i></i><i></i><i></i></div>
+            <div class="tpl-url-bar">runova-demo.netlify.app</div>
+          </div>
+          <img src="templates/runova-badminton/img/thumbnail.png" alt="RUNOVA Badminton Club & Court Booking preview" class="tpl-screen-img" loading="lazy">
+        </div>
+      </div>
+      <div class="tpl-info">
+        <div class="tpl-num">Mẫu 10</div>
+        <h3>RUNOVA<br>– CLB Cầu Lông, Đặt Sân &amp; Pro Shop</h3>
+        <p>Giao diện CLB Cầu Lông &amp; Trung tâm thể thao vợt hiện đại. Nổi bật với tông Xanh Thảm Sân BWF (#1A6B54), kiểu chữ Dual-Tone Đen – Xám Bạc sang trọng, sơ đồ đặt sân trực tuyến 08 sân theo khung giờ tự động tính tiền, cửa hàng vợt Pro Shop và Accordion giới thiệu tiện ích sân.</p>
+        <div class="tpl-chips">
+          <span>Sơ đồ đặt sân 08 sân</span>
+          <span>Chọn ca giờ tự động</span>
+          <span>Pro Shop Vợt Cầu Lông</span>
+          <span>Dual-Tone Typography</span>
+          <span>Thể thao · CLB Cầu lông</span>
+        </div>
+        <div class="tpl-btns">
+          <a href="templates/runova-badminton/index.html" target="_blank" class="btn-view" id="view-runova">Xem demo</a>
+          <a href="https://zalo.me/0974100372" target="_blank" class="btn-order" id="order-runova">Zalo →</a>
+          <a href="https://t.me/lhoangphuong?text=Ch%C3%A0o%20Ph%C6%B0%C6%A1ng%2C%20m%C3%ACnh%20quan%20t%C3%A2m%20RUNOVA%20%E2%80%93%20CLB%20C%E1%BA%A7u%20L%C3%B4ng%2C%20%C4%90%E1%BA%B7t%20S%C3%A2n%20%26%20Pro%20Shop.%20T%C6%B0%20v%E1%BA%A5n%20gi%C3%BAp%20m%C3%ACnh%20nh%C3%A9%21" target="_blank" class="btn-tg">Telegram →</a>
+        </div>
+        <p style="font-size:.78rem;color:#888;margin-top:10px">Từ <b style="color:#0d0d0d">2.000.000đ</b> · Bàn giao 7 ngày</p>
+      </div>
+    </div>
+    <div class="tpl-divider"></div>
+
     <!-- 2: Nail -->
     <div class="tpl-row reverse rv" data-cat="nail">
       <div class="tpl-mockup">
@@ -1278,7 +1500,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 08</div>
+        <div class="tpl-num">Mẫu 11</div>
         <h3>NOIR<br>Nail Lounge</h3>
         <p>Phong cách đen vàng tối giản, sang trọng cao cấp. Dành cho nail lounge, beauty studio muốn gây ấn tượng mạnh với khách hàng hiện đại, sành điệu.</p>
         <div class="tpl-chips">
@@ -1310,7 +1532,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 09</div>
+        <div class="tpl-num">Mẫu 12</div>
         <h3>IRON GYM<br>– Thể Hình &amp; Fitness</h3>
         <p>Website phòng tập gym chuyên nghiệp với phong cách thể thao mạnh mẽ, tông màu đỏ đen nhiệt huyết. Giới thiệu khóa học, bảng giá gói tập, lịch tập và form đăng ký tập thử 7 ngày.</p>
         <div class="tpl-chips">
@@ -1342,7 +1564,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 10</div>
+        <div class="tpl-num">Mẫu 13</div>
         <h3>Green Hotel<br>V2 – Premium Resort</h3>
         <p>Phiên bản cao cấp hơn với tone xanh đen và vàng gold sang trọng. Phù hợp cho khách sạn 4-5 sao, resort nghỉ dưỡng cao cấp.</p>
         <div class="tpl-chips">
@@ -1373,7 +1595,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 11</div>
+        <div class="tpl-num">Mẫu 14</div>
         <h3>Huy British<br>Accent</h3>
         <p>Website khóa học tiếng Anh giọng Anh cho giáo viên, coach. Có flashcard tương tác, quiz, so sánh giọng Anh-Mỹ, form đăng ký học thử miễn phí. Hiện đại, sang trọng.</p>
         <div class="tpl-chips">
@@ -1406,7 +1628,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 12</div>
+        <div class="tpl-num">Mẫu 15</div>
         <h3>Hashtag Tea<br>– Trà Sữa</h3>
         <p>Website trà sữa phong cách neon đầy màu sắc, trẻ trung, hiện đại. Có menu đồ uống, ảnh sản phẩm đẹp, không khí phố đêm năng động. Phù hợp quán trà sữa, bubble tea.</p>
         <div class="tpl-chips">
@@ -1438,7 +1660,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 13</div>
+        <div class="tpl-num">Mẫu 16</div>
         <h3>Phố Hội<br>Nail</h3>
         <p>Phong cách hoài cổ Hội An độc đáo. Đèn lồng animation CSS, bảng giá kiểu thực đơn xưa, ảnh Polaroid nghiêng nghiêng. Rất dễ nhớ và dễ viral.</p>
         <div class="tpl-chips">
@@ -1470,7 +1692,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 14</div>
+        <div class="tpl-num">Mẫu 17</div>
         <h3>Tiệm Nail<br>Hiện Đại</h3>
         <p>Phong cách hiện đại năng động, tươi tắn. Phù hợp tiệm nail trẻ, đông khách, cần giao diện dễ dùng và bắt mắt để thu hút khách đặt lịch online.</p>
         <div class="tpl-chips">
@@ -1502,7 +1724,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 15</div>
+        <div class="tpl-num">Mẫu 18</div>
         <h3>Bus Đất Mới<br>V1 – Đặt Vé Xe</h3>
         <p>Website đặt vé xe bus đưa đón sân bay Cam Ranh – Nha Trang. Có form đặt vé, lịch chạy, bảng giá rõ ràng. Giao diện xanh lá chuyên nghiệp, tin cậy.</p>
         <div class="tpl-chips">
@@ -1534,7 +1756,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 16</div>
+        <div class="tpl-num">Mẫu 19</div>
         <h3>Bus Đất Mới<br>V2 – Slider Hiện Đại</h3>
         <p>Phiên bản nâng cấp với slider ảnh chuyên nghiệp, thiết kế hiện đại hơn. Phù hợp cho các công ty vận tải muốn website uy tín, dễ đặt vé.</p>
         <div class="tpl-chips">
@@ -1565,7 +1787,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 17</div>
+        <div class="tpl-num">Mẫu 20</div>
         <h3>Bus Đất Mới<br>V3 – Tối Giản</h3>
         <p>Phiên bản thiết kế tối giản, tập trung vào thông tin chạy xe và đặt vé. Load nhanh, dễ dùng trên điện thoại.</p>
         <div class="tpl-chips">
@@ -1596,7 +1818,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 18</div>
+        <div class="tpl-num">Mẫu 21</div>
         <h3>Green Hotel<br>V1 – Du Lịch</h3>
         <p>Website khách sạn cao cấp phong cách nghỉ dưỡng. Gam xanh đặc trưng, animation đẹp, phù hợp cho resort, boutique hotel.</p>
         <div class="tpl-chips">
@@ -1628,7 +1850,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 19</div>
+        <div class="tpl-num">Mẫu 22</div>
         <h3>Coffee House<br>– Quán Cà Phê</h3>
         <p>Website quán cà phê premium tone nâu ấm cúng. Có menu đồ uống, combo khuyến mãi, hình ảnh chất lượng cao. Phù hợp cà phê, juice bar.</p>
         <div class="tpl-chips">
@@ -1659,7 +1881,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 20</div>
+        <div class="tpl-num">Mẫu 23</div>
         <h3>Pizza Lab<br>– Giao Hàng Nhanh</h3>
         <p>Website order pizza online với giao diện đỏ động lực, menu phàn loại rõ, hệ thống giỏ hàng, ảnh pizza bắt mắt. Phù hợp nhà hàng, pizza, f&b.</p>
         <div class="tpl-chips">
@@ -1691,7 +1913,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 21</div>
+        <div class="tpl-num">Mẫu 24</div>
         <h3>Pizza Lab V2<br>– Phiên Bản Mới</h3>
         <p>Phiên bản nâng cấp của Pizza Lab với layout mới, section khác nhau, phù hợp cho cóc cửa hàng muốn phong cách khậc biệt hơn.</p>
         <div class="tpl-chips">
@@ -1722,7 +1944,7 @@ img { max-width:100%; display:block }
         </div>
       </div>
       <div class="tpl-info">
-        <div class="tpl-num">Mẫu 22</div>
+        <div class="tpl-num">Mẫu 25</div>
         <h3>Pizza King<br>– Vua Pizza</h3>
         <p>Website nhà hàng pizza phong cách Ý truyền thống. Thiết kế để truyền tải đẳng cấp, hương vị chính thống. Gallery, reviews, hệ thống đặt bàn.</p>
         <div class="tpl-chips">
@@ -1745,7 +1967,7 @@ img { max-width:100%; display:block }
   <!-- Show More / Collapse Button -->
   <div id="tplMoreWrap" style="text-align:center;margin-top:48px">
     <button type="button" id="btnToggleMoreTpl" style="display:inline-flex;align-items:center;gap:10px;background:#0d0d0d;color:#fff;border:none;padding:15px 34px;border-radius:999px;font-family:inherit;font-size:.92rem;font-weight:700;cursor:pointer;box-shadow:0 12px 32px rgba(0,0,0,.15);transition:.25s">
-      <span>Xem toàn bộ 22 mẫu website</span>
+      <span>Xem toàn bộ 25 mẫu website</span>
       <span style="font-size:1.1rem">↓</span>
     </button>
   </div>
@@ -1979,6 +2201,9 @@ img { max-width:100%; display:block }
         <li><a href="templates/loafly-bakery/index.html" target="_blank">Loafly Artisan Bakery</a></li>
         <li><a href="templates/formo-pickleball/index.html" target="_blank">FORMO Pickleball Academy</a></li>
         <li><a href="templates/fresh-fruit/index.html" target="_blank">FRESH. Trái Cây Nhập Khẩu</a></li>
+        <li><a href="templates/maison-table/index.html" target="_blank">MAISON TABLE Fine Dining</a></li>
+        <li><a href="templates/kite-boarding/index.html" target="_blank">AEROKITE Kiteboarding</a></li>
+        <li><a href="templates/runova-badminton/index.html" target="_blank">RUNOVA CLB Cầu Lông</a></li>
       </ul>
     </div>
     <div>
@@ -2042,9 +2267,9 @@ img { max-width:100%; display:block }
 </script>
 
 <script>
-// ── FILTER TABS + SHOW MORE (6 INITIAL IN 'ALL') ──
+// ── FILTER TABS + SHOW MORE (8 INITIAL IN 'ALL') ──
 (function(){
-  const INITIAL_SHOW = 6;
+  const INITIAL_SHOW = 8;
   let expandedAll = false;
   const rows = Array.from(document.querySelectorAll('.tpl-row'));
   const divs = Array.from(document.querySelectorAll('.tpl-divider'));
@@ -2117,73 +2342,113 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 
-// ── DRAG PAN – cards stage (keeps scattered layout) ──
+// ── PLAYING CARD FAN DECK – flip card-by-card via buttons, click, or swipe ──
 (function(){
-  const wrap  = document.getElementById('cardsWrap');
-  const stage = document.getElementById('cardsStage');
+  const wrap    = document.getElementById('cardsWrap');
+  const stage   = document.getElementById('cardsStage');
+  const prevBtn = document.getElementById('cardPrevBtn');
+  const nextBtn = document.getElementById('cardNextBtn');
+  const dotsBox = document.getElementById('cardsDots');
   if(!wrap || !stage) return;
 
-  let panX = 0, startX = 0, startPan = 0;
-  let isDragging = false, moved = false;
+  const cards = Array.from(stage.querySelectorAll('.sc-card'));
+  const total = cards.length;
+  if(!total) return;
 
-  function getBounds(){
-    const overflow = stage.offsetWidth - wrap.clientWidth;
-    if(overflow <= 0) return {min:0, max:0}; // all cards visible
-    // Stage is CSS-centered, so allow pan in both directions
-    const half = Math.ceil(overflow / 2);
-    return {min:-half, max:half}; // pan left OR right from center
-  }
-  function clamp(v){
-    const b = getBounds();
-    return Math.max(b.min, Math.min(b.max, v));
-  }
-  function apply(x, instant){
-    panX = clamp(x);
-    stage.style.transition = instant ? 'none' : 'transform .25s ease';
-    stage.style.transform  = panX === 0 ? '' : `translateX(${panX}px)`;
-  }
+  // Start with index 2 ("Carent. Thuê Xe") in the center active slot (data-pos="0")
+  let activeIndex = 2;
 
-  // ── MOUSE ──
-  wrap.addEventListener('mousedown', e=>{
-    isDragging = true; moved = false;
-    startX   = e.clientX;
-    startPan = panX;
-    wrap.classList.add('is-grabbing');
-    stage.style.transition = 'none';
-  });
-  window.addEventListener('mousemove', e=>{
-    if(!isDragging) return;
-    const dx = e.clientX - startX;
-    if(Math.abs(dx) > 3) moved = true;
-    apply(startPan + dx, true);
-  });
-  window.addEventListener('mouseup', ()=>{
-    if(!isDragging) return;
-    isDragging = false;
-    wrap.classList.remove('is-grabbing');
-  });
-  // Block card click if dragged
-  stage.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click', e=>{ if(moved){ e.preventDefault(); moved=false; } });
+  // Build indicator dots
+  const dots = cards.map((_, idx) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'cards-dot' + (idx === activeIndex ? ' active' : '');
+    dot.setAttribute('aria-label', 'Mẫu ' + (idx + 1));
+    dot.addEventListener('click', () => goTo(idx));
+    if(dotsBox) dotsBox.appendChild(dot);
+    return dot;
   });
 
-  // ── TOUCH ──
-  wrap.addEventListener('touchstart', e=>{
-    startX   = e.touches[0].clientX;
-    startPan = panX;
-    stage.style.transition = 'none';
+  function updateDeck(){
+    cards.forEach((card, idx) => {
+      // Relative circular offset in [-2, -1, 0, 1, 2, 3]
+      let rel = (idx - activeIndex) % total;
+      if(rel > 3) rel -= total;
+      if(rel < -2) rel += total;
+      card.setAttribute('data-pos', String(rel));
+    });
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === activeIndex);
+    });
+  }
+
+  function goTo(idx){
+    activeIndex = ((idx % total) + total) % total;
+    updateDeck();
+  }
+
+  function nextCard(){ goTo(activeIndex + 1); }
+  function prevCard(){ goTo(activeIndex - 1); }
+
+  if(prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevCard(); });
+  if(nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextCard(); });
+
+  // Clicking a side card brings it to the front; clicking the center card opens the demo link
+  let pointerMoved = false;
+  cards.forEach((card, idx) => {
+    card.addEventListener('click', (e) => {
+      if(pointerMoved){
+        e.preventDefault();
+        pointerMoved = false;
+        return;
+      }
+      if(idx !== activeIndex){
+        e.preventDefault();
+        goTo(idx);
+      }
+    });
+  });
+
+  // Swipe / flick left or right to flip 1 card at a time
+  let startX = 0, startY = 0, tracking = false;
+  stage.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    tracking = true;
+    pointerMoved = false;
   }, {passive:true});
-  wrap.addEventListener('touchmove', e=>{
-    const dx = e.touches[0].clientX - startX;
-    apply(startPan + dx, true);
+
+  stage.addEventListener('touchend', (e) => {
+    if(!tracking) return;
+    tracking = false;
+    const dx = e.changedTouches[0].clientX - startX;
+    const dy = e.changedTouches[0].clientY - startY;
+    if(Math.abs(dx) > 32 && Math.abs(dx) > Math.abs(dy)){
+      pointerMoved = true;
+      if(dx < 0) nextCard();
+      else prevCard();
+    }
   }, {passive:true});
-  wrap.addEventListener('touchend', ()=>{
-    // snap back if over-panned
-    apply(panX, false);
+
+  // Mouse drag flick on desktop
+  let mouseDown = false, mStartX = 0;
+  stage.addEventListener('mousedown', (e) => {
+    mouseDown = true;
+    mStartX = e.clientX;
+    pointerMoved = false;
+  });
+  window.addEventListener('mouseup', (e) => {
+    if(!mouseDown) return;
+    mouseDown = false;
+    const dx = e.clientX - mStartX;
+    if(Math.abs(dx) > 40){
+      pointerMoved = true;
+      if(dx < 0) nextCard();
+      else prevCard();
+    }
   });
 
-  // Re-clamp on resize
-  window.addEventListener('resize', ()=> apply(panX, true));
+  updateDeck();
 })();
 </script>
 <script src="lang-switcher.js"></script>

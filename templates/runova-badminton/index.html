@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RUNOVA — CLB Cầu Lông Chuẩn BWF, Đặt Sân Online & Pro Shop</title>
+  <meta name="description" content="RUNOVA Badminton & Sports Center — Hệ thống 8 sân cầu lông thảm chuẩn BWF quốc tế, đặt sân trực tuyến theo giờ, huấn luyện AI thông minh và cửa hàng vợt cầu lông chính hãng." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HP SHOWCASE BAR v2 -->
+  <style>
+  #hp-bar{position:fixed;top:0;left:0;right:0;z-index:99999;height:46px;background:rgba(8,10,16,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI', sans-serif;font-size:12px;color:rgba(255,255,255,.75);gap:12px;box-sizing:border-box}
+  #hp-bar *{box-sizing:border-box;margin:0;padding:0}
+  .hpb-left{display:flex;align-items:center;gap:12px;flex-shrink:0}
+  .hpb-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;font-size:12px;padding:5px 12px;border-radius:100px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);transition:all .15s;white-space:nowrap}
+  .hpb-back:hover{background:rgba(255,255,255,.15);color:#fff}
+  .hpb-sep{width:1px;height:18px;background:rgba(255,255,255,.12);flex-shrink:0}
+  .hpb-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
+  .hpb-center{display:flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(255,255,255,.5);white-space:nowrap}
+  .hpb-dot{width:6px;height:6px;border-radius:50%;background:#10b981;box-shadow:0 0 6px #10b981;flex-shrink:0;animation:hpbpulse 2s infinite}
+  @keyframes hpbpulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .hpb-right{display:flex;align-items:center;gap:7px;flex-shrink:0}
+  .hpb-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:100px;font-size:11.5px;font-weight:700;text-decoration:none;transition:all .15s;white-space:nowrap;border:none;cursor:pointer}
+  .hpb-zalo{background:#0068ff;color:#fff}.hpb-zalo:hover{background:#0057d9;transform:translateY(-1px)}
+  .hpb-tele{background:#229ed9;color:#fff}.hpb-tele:hover{background:#1a8bbf;transform:translateY(-1px)}
+  .hpb-call{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.16)}.hpb-call:hover{background:rgba(255,255,255,.18)}
+  @media(max-width:680px){.hpb-center,.hpb-title,.hpb-sep,.hpb-tele{display:none}}
+  body{padding-top:46px!important}
+  </style>
+  <div id="hp-bar">
+    <div class="hpb-left">
+      <a href="../../index.html" class="hpb-back">← Quay lại danh mục</a>
+      <div class="hpb-sep"></div>
+      <span class="hpb-title">Mẫu diện web · Hoàng Phương</span>
+    </div>
+    <div class="hpb-center">
+      <span class="hpb-dot"></span>
+      <span>Muốn làm web như mẫu này? Liên hệ ngay:</span>
+    </div>
+    <div class="hpb-right">
+      <a href="tel:0974100372" class="hpb-btn hpb-call">📞 0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="hpb-btn hpb-tele">✈ Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="hpb-btn hpb-zalo">💬 Zalo ngay</a>
+    </div>
+  </div>
+
+  <!-- MAIN EDITORIAL PAGE CONTAINER -->
+  <div class="rn-page-shell" id="top">
+
+    <!-- ============================================================
+         SECTION 1: HERO BANNER ("SPORTS PASSION") + DARK-GLASS PILL NAVBAR
+         ============================================================ -->
+    <section class="rn-hero">
+      <img src="img/hero.png" alt="Vợt cầu lông và quả cầu lông vũ trên mặt thảm sân xanh" class="rn-hero-bg" loading="eager" />
+      <div class="rn-hero-gradient"></div>
+
+      <!-- FLOATING DARK-GLASS PILL NAVBAR -->
+      <header class="rn-navbar">
+        <a href="#top" class="rn-logo">RUNOVA</a>
+
+        <nav class="rn-nav-links" id="rnNavLinks">
+          <a href="#top" class="rn-nav-link">Home</a>
+          <a href="#about" class="rn-nav-link">About</a>
+          <a href="#booking" class="rn-nav-link rn-nav-highlight">Đặt Sân · Book Court</a>
+          <a href="#facilities" class="rn-nav-link">Facilities</a>
+          <a href="#products" class="rn-nav-link">Pro Shop</a>
+          <a href="#contact" class="rn-nav-link">Contact</a>
+        </nav>
+
+        <div class="rn-nav-actions">
+          <a href="#booking" class="rn-search-btn" aria-label="Tìm sân trống" title="Kiểm tra sân trống">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/>
+              <path d="M20 20L16.5 16.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a href="#booking" class="rn-join-pill">
+            <span>Đặt Sân Ngay</span>
+            <i>↗</i>
+          </a>
+          <button type="button" class="rn-burger" id="rnBurger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- HERO MIDDLE ROW: LEFT AVATAR PROOF + RIGHT FLOATING "LIMITED SLOTS" CARD -->
+      <div class="rn-hero-mid">
+        <div class="rn-hero-proof">
+          <div class="rn-avatar-stack">
+            <img src="img/community-girl.png" alt="Hội viên CLB Runova 1" />
+            <img src="img/about-player.png" alt="Hội viên CLB Runova 2" />
+            <img src="img/fac-shoes.png" alt="Hội viên CLB Runova 3" />
+          </div>
+          <p class="rn-proof-text">
+            Hệ thống sân cầu lông thảm chuẩn BWF quốc tế, đặt lịch giữ sân theo giờ tự động và cộng đồng hơn 2.500 lông thủ đam mê giao lưu mỗi ngày.
+          </p>
+        </div>
+
+        <!-- FLOATING TOP-RIGHT WHITE CARD: LIMITED SLOTS AVAILABLE -->
+        <aside class="rn-slot-card">
+          <div class="rn-slot-thumb">
+            <img src="img/fac-shoes.png" alt="Sân cầu lông tiêu chuẩn BWF" />
+          </div>
+          <div class="rn-slot-info">
+            <span class="rn-slot-live"><i></i> ĐANG CÒN 3 SÂN TRỐNG TỐI NAY</span>
+            <h3>LIMITED SLOTS<br />AVAILABLE</h3>
+            <p>Khung giờ vàng 18:00 – 22:00 thường kín sớm. Giữ sân online chỉ trong 30 giây.</p>
+            <a href="#booking" class="rn-slot-link">Chọn sân &amp; khung giờ →</a>
+          </div>
+        </aside>
+      </div>
+
+      <!-- HERO BOTTOM HEADLINE -->
+      <div class="rn-hero-bottom">
+        <h1 class="rn-hero-title">
+          <span>SPORTS</span>
+          <span>PASSION</span>
+        </h1>
+        <div class="rn-hero-quick-badges">
+          <span>🏸 08 Sân Thảm Yonex BWF</span>
+          <span>❄️ Trần Cao 11m · Chống Chói LED</span>
+          <span>⚡ Đặt Sân Theo Giờ Realtime</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: INTRO STATEMENT & ASYMMETRIC ABOUT BENTO
+         ============================================================ -->
+    <section class="rn-about-section" id="about">
+      <!-- TOP STATEMENT ROW -->
+      <div class="rn-statement-row">
+        <div class="rn-statement-thumb">
+          <img src="img/prod-1.png" alt="Cận cảnh mặt lưới và vợt cầu lông" loading="lazy" />
+        </div>
+        <h2 class="rn-statement-text">
+          <strong>Tại Runova, chúng tôi nâng tầm trải nghiệm cầu lông &amp; thể thao vợt chuyên nghiệp.</strong>
+          <span>Từ mặt thảm giảm chấn chuẩn thi đấu quốc tế, đặt sân trực tuyến tức thì đến phân tích kỹ thuật bằng AI.</span>
+        </h2>
+      </div>
+
+      <!-- BOTTOM ASYMMETRIC 3-COLUMN ABOUT GRID -->
+      <div class="rn-about-grid">
+        <div class="rn-about-col-left">
+          <span class="rn-pill-tag">About Runova</span>
+          <div class="rn-about-left-bottom">
+            <p>
+              Dù bạn mới cầm vợt buổi đầu, đánh vãng lai cùng hội bạn hay luyện tập cho giải đấu phong trào, Runova luôn giữ trọn cảm hứng trên từng đường cầu.
+            </p>
+            <a href="#booking" class="rn-btn-dark">
+              <span>Get In Touch</span>
+              <i>↗</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="rn-about-col-center">
+          <div class="rn-about-main-photo">
+            <img src="img/about-player.png" alt="Vận động viên chuẩn bị đỡ cầu trên sân" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="rn-about-col-right">
+          <p class="rn-about-right-note">
+            Tham gia các giải đấu giao hữu hàng tháng, lớp học kỹ thuật đập cầu (Smash) &amp; bộ pháp di chuyển cùng kiện tướng quốc gia.
+          </p>
+          <div class="rn-about-sub-photo-wrap">
+            <button type="button" class="rn-plus-fab" data-open-modal="Đăng ký tham gia CLB & Lớp học Cầu lông Runova" aria-label="Xem thêm">+</button>
+            <div class="rn-about-sub-photo">
+              <img src="img/about-racket.png" alt="Vợt cầu lông trên vạch sân tiêu chuẩn" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2.5: INTERACTIVE COURT BOOKING (ĐẶT SÂN TRỰC TUYẾN)
+         ============================================================ -->
+    <section class="rn-booking-section" id="booking">
+      <div class="rn-booking-head">
+        <div>
+          <span class="rn-pill-tag">Online Court Reservation · Đặt Sân Tự Động</span>
+          <h2 class="rn-dual-heading">
+            <span class="rn-muted">BOOK YOUR</span> COURT NOW
+          </h2>
+        </div>
+        <p class="rn-booking-head-sub">
+          Chọn trực tiếp <strong>Sân số 01 – 08</strong> trên sơ đồ mặt sân bên dưới, chọn ca giờ tập và dịch vụ đi kèm để giữ sân ngay qua Zalo <strong>0974 100 372</strong>.
+        </p>
+      </div>
+
+      <div class="rn-booking-layout">
+        <!-- LEFT: INTERACTIVE 8-COURT VISUAL MAP -->
+        <div class="rn-court-map-panel">
+          <div class="rn-map-top-bar">
+            <div class="rn-zone-tabs" id="rnZoneTabs">
+              <button type="button" class="rn-zone-tab is-active" data-zone="all">Tất cả 08 Sân</button>
+              <button type="button" class="rn-zone-tab" data-zone="standard">Khu A · Sân Tiêu Chuẩn (01–06)</button>
+              <button type="button" class="rn-zone-tab" data-zone="vip">Khu B · Sân VIP Máy Lạnh &amp; AI (07–08)</button>
+            </div>
+            <div class="rn-map-legend">
+              <span><i class="lg-free"></i> Còn trống</span>
+              <span><i class="lg-selected"></i> Đang chọn</span>
+              <span><i class="lg-busy"></i> Đã đặt</span>
+            </div>
+          </div>
+
+          <!-- 8 BADMINTON COURTS GRID -->
+          <div class="rn-courts-grid" id="rnCourtsGrid">
+            <!-- COURT 01 -->
+            <button type="button" class="rn-court-unit is-selected" data-court="Sân 01 (Thảm BWF)" data-rate="110000" data-zone="standard">
+              <div class="rn-court-lines">
+                <span class="rn-net-line"></span>
+                <span class="rn-court-num">SÂN 01</span>
+                <span class="rn-court-type">Thảm Yonex BWF</span>
+                <strong class="rn-court-price">110k/h</strong>
+              </div>
+              <span class="rn-court-status">Đang chọn ✓</span>
+            </button>
+
+            <!-- COURT 02 -->
+            <button type="button" class="rn-court-unit" data-court="Sân 02 (Thảm BWF)" data-rate="110000" data-zone="standard">
+              <div class="rn-court-lines">
+                <span class="rn-net-line"></span>
+                <span class="rn-court-num">SÂN 02</span>
+                <span class="rn-court-type">Thảm Yonex BWF</span>
+                <strong class="rn-court-price">110k/h</strong>
+              </div>
+              <span class="rn-court-status">Còn trống</span>
+            </button>
+
+            <!-- COURT 03 (BOOKED) -->
+            <button type="button" class="rn-court-unit is-busy" data-court="Sân 03" data-rate="110000" data-zone="standard" disabled>
+              <div class="rn-court-lines">
+                <span class="rn-net-line"></span>
+                <span class="rn-court-num">SÂN 03</span>
+                <span class="rn-court-type">Cố định tháng</span>
+                <strong class="rn-court-price">Đã kín</strong>
+              </div>
+              <span class="rn-court-status">Đã đặt</span>
+            </button>
+
+            <!-- COURT 04 -->
+            <button type="button" class="rn-court-unit" data-court="Sân 04 (Thảm BWF)" data-rate="110000" data-zone="standard">
+              <div class="rn-court-lines">
+                <span class="rn-net-line"></span>
+                <span class="rn-court-num">SÂN 04</span>
+                <span class="rn-court-type">Thảm Yonex BWF</span>
+                <strong class="rn-court-price">110k/h</strong>
+              </div>
+              <span class="rn-court-status">Còn trống</span>
+            </button>
+
+            <!-- COURT 05 (BOOKED) -->
+            <button type="button" class="rn-court-unit is-busy" data-court="Sân 05" data-rate="110000" data-zone="standard" disabled>
+              <div class="rn-court-lines">
+                <span class="rn-net-line"></span>
+                <span class="rn-court-num">SÂN 05</span>
+                <span class="rn-court-type">CLB Giao lưu</span>
+                <strong class="rn-court-price">Đã kín</strong>
+              </div>
+              <span class="rn-court-status">Đã đặt</span>
+            </button>
+
+            <!-- COURT 06 -->
+            <button type="button" class="rn-court-unit" data-court="Sân 06 (Thảm BWF)" data-rate="110000" data-zone="standard">
+              <div class="rn-court-lines">
+                <span class="rn-net-line"></span>
+                <span class="rn-court-num">SÂN 06</span>
+                <span class="rn-court-type">Thảm Yonex BWF</span>
+                <strong class="rn-court-price">110k/h</strong>
+              </div>
+              <span class="rn-court-status">Còn trống</span>
+            </button>
+
+            <!-- COURT 07 (VIP) -->
+            <button type="button" class="rn-court-unit rn-court-vip" data-court="Sân VIP 07 (Máy lạnh + AI Cam)" data-rate="160000" data-zone="vip">
+              <div class="rn-court-lines">
+                <span class="rn-net-line"></span>
+                <span class="rn-court-num">VIP 07</span>
+                <span class="rn-court-type">Máy lạnh · AI Cam</span>
+                <strong class="rn-court-price">160k/h</strong>
+              </div>
+              <span class="rn-court-status">Còn trống</span>
+            </button>
+
+            <!-- COURT 08 (VIP) -->
+            <button type="button" class="rn-court-unit rn-court-vip" data-court="Sân VIP 08 (Máy lạnh + Khán đài)" data-rate="160000" data-zone="vip">
+              <div class="rn-court-lines">
+                <span class="rn-net-line"></span>
+                <span class="rn-court-num">VIP 08</span>
+                <span class="rn-court-type">Máy lạnh · Giải đấu</span>
+                <strong class="rn-court-price">160k/h</strong>
+              </div>
+              <span class="rn-court-status">Còn trống</span>
+            </button>
+          </div>
+
+          <!-- TIME SLOT PICKER -->
+          <div class="rn-slots-block">
+            <div class="rn-slots-label-row">
+              <strong>Chọn khung giờ đánh (2 giờ / ca):</strong>
+              <span>Bấm chọn 1 hoặc nhiều ca liên tiếp</span>
+            </div>
+            <div class="rn-timeslot-grid" id="rnTimeSlots">
+              <button type="button" class="rn-slot-btn" data-slot="05:30 - 07:30">05:30 – 07:30</button>
+              <button type="button" class="rn-slot-btn" data-slot="07:30 - 09:30">07:30 – 09:30</button>
+              <button type="button" class="rn-slot-btn" data-slot="14:00 - 16:00">14:00 – 16:00</button>
+              <button type="button" class="rn-slot-btn" data-slot="16:00 - 18:00">16:00 – 18:00</button>
+              <button type="button" class="rn-slot-btn is-active" data-slot="18:00 - 20:00 (Giờ vàng)">18:00 – 20:00 🔥</button>
+              <button type="button" class="rn-slot-btn" data-slot="20:00 - 22:00 (Giờ vàng)">20:00 – 22:00 🔥</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: LIVE BOOKING SUMMARY & ZALO CHECKOUT FORM -->
+        <form class="rn-booking-Receipt" id="rnCourtBookingForm">
+          <div class="rn-receipt-head">
+            <span class="rn-receipt-badge">PHIẾU GIỮ SÂN TRỰC TUYẾN</span>
+            <h3>Xác Nhận Thông Tin Đặt Sân</h3>
+          </div>
+
+          <div class="rn-summary-rows">
+            <div class="rn-sum-item">
+              <span>Sân đang chọn:</span>
+              <strong id="rnSumCourt">Sân 01 (Thảm BWF)</strong>
+            </div>
+            <div class="rn-sum-item">
+              <span>Khung giờ:</span>
+              <strong id="rnSumSlot">18:00 - 20:00 (Giờ vàng) (2 giờ)</strong>
+            </div>
+          </div>
+
+          <div class="rn-form-group">
+            <label for="rnBookDate">Ngày đánh</label>
+            <input type="date" id="rnBookDate" required />
+          </div>
+
+          <div class="rn-form-row-2">
+            <div class="rn-form-group">
+              <label for="rnBookName">Họ tên người đặt</label>
+              <input type="text" id="rnBookName" placeholder="Nguyễn Văn A" required />
+            </div>
+            <div class="rn-form-group">
+              <label for="rnBookPhone">Số điện thoại / Zalo</label>
+              <input type="tel" id="rnBookPhone" placeholder="09xx xxx xxx" required />
+            </div>
+          </div>
+
+          <!-- Add-on Services -->
+          <div class="rn-addons-box">
+            <span class="rn-addons-title">Dịch vụ cộng thêm tại sân (Tùy chọn):</span>
+            <label class="rn-addon-check">
+              <input type="checkbox" value="Thuê 2 vợt Carbon Yonex" data-addon-price="80000" />
+              <span>Thuê 02 vợt Carbon Yonex (+80.000đ)</span>
+            </label>
+            <label class="rn-addon-check">
+              <input type="checkbox" value="01 Ống cầu lông vũ Hải Yến S90" data-addon-price="240000" />
+              <span>01 Ống cầu lông vũ thi đấu (+240.000đ)</span>
+            </label>
+            <label class="rn-addon-check">
+              <input type="checkbox" value="HLV hướng dẫn kỹ thuật 1 kèm 1" data-addon-price="300000" />
+              <span>HLV chỉnh động tác &amp; bộ pháp (+300.000đ)</span>
+            </label>
+          </div>
+
+          <div class="rn-total-bar">
+            <div>
+              <span>Tổng tạm tính:</span>
+              <small>Thanh toán tại sân hoặc chuyển khoản</small>
+            </div>
+            <strong id="rnSumTotal">220.000đ</strong>
+          </div>
+
+          <button type="submit" class="rn-btn-submit-court">
+            <span>Xác Nhận Đặt Sân Qua Zalo</span>
+            <i>↗</i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: EXPLORE FACILITIES (4 ASYMMETRIC GALLERY CARDS)
+         ============================================================ -->
+    <section class="rn-explore-section" id="facilities">
+      <div class="rn-section-header">
+        <h2 class="rn-dual-heading">
+          <span class="rn-muted">EXPLORE</span> FACILITIES
+        </h2>
+        <p class="rn-header-sub">
+          Whether you're training for your first friendly match or your next championship, Runova keeps you motivated with world-class court infrastructure.
+        </p>
+      </div>
+
+      <div class="rn-explore-grid">
+        <!-- CARD 1 -->
+        <article class="rn-fac-card">
+          <img src="img/about-player.png" alt="Khu khởi động & giãn cơ ngoài trời" loading="lazy" />
+          <div class="rn-fac-overlay">
+            <p>Strengthen and stretch outdoors · Khu khởi động &amp; ép dẻo</p>
+          </div>
+        </article>
+
+        <!-- CARD 2 (WIDE FEATURED) -->
+        <article class="rn-fac-card rn-fac-wide">
+          <img src="img/fac-shoes.png" alt="Sàn gỗ & Thảm tiêu chuẩn BWF chống chấn thương cổ chân" loading="lazy" />
+          <div class="rn-fac-overlay rn-fac-overlay-featured">
+            <div>
+              <span class="rn-fac-glass-tag">BWF Pro Court Mat</span>
+              <p>Hệ thống đệm giảm chấn 4 lớp bảo vệ khớp gối và cổ chân trong từng pha bật nhảy đập cầu.</p>
+            </div>
+            <a href="#booking" class="rn-circle-white" aria-label="Đặt sân ngay">↗</a>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="rn-fac-card">
+          <img src="img/about-racket.png" alt="Khu tập thể lực chuyên biệt" loading="lazy" />
+          <div class="rn-fac-overlay">
+            <p>Agility &amp; Footwork Zone · Khu tập bộ pháp di chuyển</p>
+          </div>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="rn-fac-card">
+          <img src="img/prod-2.png" alt="Khu căng vợt điện tử lấy ngay" loading="lazy" />
+          <div class="rn-fac-overlay">
+            <p>Pro Electronic Stringing · Căng cước điện tử chuẩn số kg</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: PRO SHOP ("AT SPORTVERSE, AI POWERS SMARTER TRAINING")
+         ============================================================ -->
+    <section class="rn-products-section" id="products">
+      <div class="rn-products-header">
+        <div class="rn-prod-meta">
+          <span class="rn-pill-tag">Our Products</span>
+          <p>Tuyển chọn các dòng vợt cầu lông Carbon cao cấp trợ lực công thủ toàn diện, đan sẵn cước theo lực cổ tay của bạn.</p>
+        </div>
+
+        <h2 class="rn-dual-heading rn-prod-heading">
+          AT SPORTVERSE, <span class="rn-muted">AI<br />POWERS SMARTER</span><br />TRAINING
+        </h2>
+      </div>
+
+      <div class="rn-products-grid">
+        <!-- PRODUCT 1 -->
+        <article class="rn-prod-card">
+          <div class="rn-prod-media">
+            <img src="img/prod-1.png" alt="Vợt cầu lông Sportverse Velocity X1 Pro" loading="lazy" />
+            <button type="button" class="rn-bag-btn" data-open-modal="Mua vợt: Sportverse Velocity X1 (2.850.000đ)" aria-label="Đặt mua">
+              🛍️
+            </button>
+          </div>
+          <div class="rn-prod-info">
+            <h3>Sportverse Velocity X1 · 4U</h3>
+            <span>2.850.000đ ($120 USD) · Thiên công</span>
+          </div>
+        </article>
+
+        <!-- PRODUCT 2 -->
+        <article class="rn-prod-card">
+          <div class="rn-prod-media">
+            <img src="img/prod-2.png" alt="Vợt cầu lông Runova AeroBlade 100ZZ" loading="lazy" />
+            <button type="button" class="rn-bag-btn" data-open-modal="Mua vợt: Runova AeroBlade 100ZZ (3.250.000đ)" aria-label="Đặt mua">
+              🛍️
+            </button>
+          </div>
+          <div class="rn-prod-info">
+            <h3>Runova AeroBlade 100ZZ</h3>
+            <span>3.250.000đ ($135 USD) · Đập cầu uy lực</span>
+          </div>
+        </article>
+
+        <!-- PRODUCT 3 -->
+        <article class="rn-prod-card">
+          <div class="rn-prod-media">
+            <img src="img/prod-3.png" alt="Vợt cầu lông Sportverse NanoSpeed Control" loading="lazy" />
+            <button type="button" class="rn-bag-btn" data-open-modal="Mua vợt: Sportverse NanoSpeed Control (2.650.000đ)" aria-label="Đặt mua">
+              🛍️
+            </button>
+          </div>
+          <div class="rn-prod-info">
+            <h3>Sportverse NanoSpeed Control</h3>
+            <span>2.650.000đ ($110 USD) · Công thủ toàn diện</span>
+          </div>
+        </article>
+
+        <!-- PRODUCT 4 -->
+        <article class="rn-prod-card">
+          <div class="rn-prod-media">
+            <img src="img/about-racket.png" alt="Vợt cầu lông Runova Carbon Lite 5U" loading="lazy" />
+            <button type="button" class="rn-bag-btn" data-open-modal="Mua vợt: Runova Carbon Lite 5U (2.450.000đ)" aria-label="Đặt mua">
+              🛍️
+            </button>
+          </div>
+          <div class="rn-prod-info">
+            <h3>Runova Carbon Lite · 5U</h3>
+            <span>2.450.000đ ($105 USD) · Siêu nhẹ phản tạt</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: TESTIMONIAL SLIDER ("OVER A YEAR AT RUNOVA...")
+         ============================================================ -->
+    <section class="rn-testimonial-section">
+      <div class="rn-testi-top-corner">
+        <img src="img/community-girl.png" alt="Hội viên CLB Cầu lông Runova" loading="lazy" />
+      </div>
+
+      <div class="rn-testi-body">
+        <span class="rn-quote-mark" aria-hidden="true">“</span>
+        <blockquote class="rn-dual-heading rn-testi-quote" id="rnTestiQuote">
+          "OVER A YEAR AT<br />
+          RUNOVA <span class="rn-muted">THE BEST<br />
+          SPORTS CENTER</span> FOR<br />
+          BADMINTON AND FUN!"
+        </blockquote>
+        <p class="rn-testi-vi" id="rnTestiVi">
+          "Hơn 1 năm gắn bó cùng CLB Runova — Mặt thảm sân cực bám chân, trần cao thoáng không bị chói đèn và đặt lịch giữ sân online siêu tiện lợi!"
+        </p>
+      </div>
+
+      <div class="rn-testi-footer">
+        <span class="rn-pill-tag">Testimonial</span>
+
+        <div class="rn-testi-author">
+          <img src="img/about-player.png" alt="Noah Carter" id="rnTestiAvatar" />
+          <div>
+            <strong id="rnTestiName">Minh Khôi · Noah Carter</strong>
+            <span id="rnTestiRole">Đội trưởng CLB Cầu Lông Quận 7 · Hội viên Vàng</span>
+          </div>
+        </div>
+
+        <div class="rn-testi-nav">
+          <button type="button" class="rn-nav-circle rn-nav-prev" id="rnTestiPrev" aria-label="Trước">←</button>
+          <button type="button" class="rn-nav-circle rn-nav-next" id="rnTestiNext" aria-label="Tiếp">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6: TAKE A LOOK AT FACILITIES (INTERACTIVE ACCORDION)
+         ============================================================ -->
+    <section class="rn-look-section">
+      <div class="rn-look-left">
+        <h2 class="rn-dual-heading">
+          <span class="rn-muted">TAKE A LOOK AT</span><br />FACILITIES
+        </h2>
+        <p class="rn-look-desc">
+          Whether you're training for your first friendly match or your next championship, Runova keeps you motivated with world-class facilities designed to help you move smarter, faster, and stronger.
+        </p>
+        <div class="rn-look-photo">
+          <img src="img/fac-shoes.png" alt="Giày cầu lông, vợt và cầu lông vũ trên sàn gỗ" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="rn-look-right">
+        <div class="rn-acc-list" id="rnAccList">
+          <!-- ITEM 1 (ACTIVE) -->
+          <div class="rn-acc-item is-open">
+            <div class="rn-acc-head">
+              <h3>Indoor Training Arena (08 Sân Thảm Chuẩn BWF)</h3>
+              <button type="button" class="rn-acc-toggle" aria-label="Xem chi tiết">↗</button>
+            </div>
+            <div class="rn-acc-content">
+              <div class="rn-acc-text">
+                <p>
+                  Không gian thi đấu trong nhà khép kín với 08 sân thảm PVC 5.0mm chống trơn trượt, hệ thống đèn LED chống lóa mắt hai bên biên và camera AI ghi lại toàn bộ pha cầu đẹp.
+                </p>
+                <a href="#booking" class="rn-btn-outline-sm">
+                  <span>Đặt sân ngay</span>
+                  <i>↗</i>
+                </a>
+              </div>
+              <div class="rn-acc-thumb">
+                <img src="img/about-player.png" alt="Sân tập cầu lông trong nhà" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 2 -->
+          <div class="rn-acc-item">
+            <div class="rn-acc-head">
+              <h3>Electronic Stringing &amp; Pro Shop (Căng Vợt Điện Tử)</h3>
+              <button type="button" class="rn-acc-toggle" aria-label="Xem chi tiết">↗</button>
+            </div>
+            <div class="rn-acc-content">
+              <div class="rn-acc-text">
+                <p>
+                  Máy căng cước điện tử Yonex chính xác từng 0.5 LBS, đầy đủ các dòng cước BG65 Ti, BG80 Power, Exbolt 63/65 lấy ngay trong 20 phút.
+                </p>
+                <a href="#products" class="rn-btn-outline-sm">
+                  <span>Xem các dòng vợt</span>
+                  <i>↗</i>
+                </a>
+              </div>
+              <div class="rn-acc-thumb">
+                <img src="img/prod-1.png" alt="Khu đan vợt điện tử" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 3 -->
+          <div class="rn-acc-item">
+            <div class="rn-acc-head">
+              <h3>Strength &amp; Footwork Conditioning Zone</h3>
+              <button type="button" class="rn-acc-toggle" aria-label="Xem chi tiết">↗</button>
+            </div>
+            <div class="rn-acc-content">
+              <div class="rn-acc-text">
+                <p>
+                  Khu tập luyện cổ tay, sức bật bắp chân và thang dây luyện bộ pháp di chuyển 6 góc sân dành riêng cho học viên và vận động viên bán chuyên.
+                </p>
+                <a href="#booking" class="rn-btn-outline-sm">
+                  <span>Đăng ký tập luyện</span>
+                  <i>↗</i>
+                </a>
+              </div>
+              <div class="rn-acc-thumb">
+                <img src="img/about-racket.png" alt="Khu tập thể lực cầu lông" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 4 -->
+          <div class="rn-acc-item">
+            <div class="rn-acc-head">
+              <h3>Recovery Lounge, Locker &amp; Cold Refreshments</h3>
+              <button type="button" class="rn-acc-toggle" aria-label="Xem chi tiết">↗</button>
+            </div>
+            <div class="rn-acc-content">
+              <div class="rn-acc-text">
+                <p>
+                  Phòng tắm nước nóng - lạnh sạch sẽ, tủ Locker khóa từ an toàn, quầy nước điện giải &amp; khu vực ghế nghỉ ngơi nhìn thẳng ra toàn bộ 8 sân đấu.
+                </p>
+                <a href="#booking" class="rn-btn-outline-sm">
+                  <span>Trải nghiệm CLB</span>
+                  <i>↗</i>
+                </a>
+              </div>
+              <div class="rn-acc-thumb">
+                <img src="img/community-girl.png" alt="Khu vực thư giãn và giao lưu" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rn-look-cta-row">
+          <a href="#booking" class="rn-btn-dark">
+            <span>Get In Touch · Đặt Sân</span>
+            <i>↗</i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7: COMMUNITY BANNER ("RUNOVA INVITES YOU JOIN COMMUNITY")
+         ============================================================ -->
+    <section class="rn-community-section" id="contact">
+      <div class="rn-comm-left">
+        <span class="rn-pill-tag">Contact Us</span>
+        <h2 class="rn-dual-heading rn-comm-heading">
+          <span class="rn-muted">RUNOVA INVITES YOU</span><br />
+          JOIN COMMUNITY
+        </h2>
+        <p class="rn-comm-sub">
+          Để lại số điện thoại Zalo hoặc Email để tham gia nhóm ghép kèo vãng lai tối thứ 2–4–6 và nhận ưu đãi giảm 20% giờ sân khung giờ sáng.
+        </p>
+
+        <form class="rn-comm-form" id="rnCommForm">
+          <input type="text" id="rnCommInput" placeholder="Nhập SĐT Zalo hoặc Email của bạn..." required />
+          <button type="submit" aria-label="Gửi đăng ký">→</button>
+        </form>
+        <p class="rn-comm-msg" id="rnCommMsg" hidden></p>
+      </div>
+
+      <div class="rn-comm-right">
+        <img src="img/community-girl.png" alt="Nữ vận động viên cầu lông CLB Runova" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8: DARK FOOTER ("LET'S GO!")
+         ============================================================ -->
+    <footer class="rn-footer">
+      <div class="rn-footer-cta">
+        <p>Ready to host your next tournament or book a court?</p>
+        <a href="#booking" class="rn-lets-go">LET’S GO!</a>
+      </div>
+
+      <div class="rn-footer-main">
+        <div class="rn-footer-brand">
+          <div class="rn-footer-logo">RUNOVA</div>
+          <p>
+            Hệ thống sân cầu lông tiêu chuẩn quốc tế BWF, học viện đào tạo cầu lông &amp; Pro Shop chính hãng. Hotline / Zalo đặt sân: <strong>0974 100 372</strong>.
+          </p>
+        </div>
+
+        <div class="rn-footer-links">
+          <div class="rn-fcol">
+            <a href="#top">Home</a>
+            <a href="#about">About</a>
+            <a href="#booking">Đặt Sân Online</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#products">Pro Shop</a>
+          </div>
+          <div class="rn-fcol">
+            <a href="#booking">Bảng Giá Giờ Sân</a>
+            <a href="#booking">Đặt Sân Cố Định Tháng</a>
+            <a href="#products">Dịch Vụ Đan Vợt</a>
+            <a href="tel:0974100372">Hotline: 0974 100 372</a>
+          </div>
+          <div class="rn-fcol">
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Zalo Đặt Sân</a>
+            <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram @lhoangphuong</a>
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Facebook CLB</a>
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rn-footer-bottom">
+        <span>Copyright 2026 Runova Badminton Club</span>
+        <span>All right reserved © 2026 Runova.com · Thiết kế bởi Hoàng Phương</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- QUICK MODAL FOR PRO SHOP & CLASS REGISTRATION -->
+  <div class="rn-modal-backdrop" id="rnModal" aria-hidden="true">
+    <div class="rn-modal-box" role="dialog" aria-modal="true">
+      <button type="button" class="rn-modal-close" id="rnModalClose" aria-label="Đóng">✕</button>
+      <span class="rn-pill-tag">RUNOVA PRO SHOP &amp; ACADEMY</span>
+      <h3 id="rnModalTitle">Đặt Mua Vợt &amp; Đăng Ký Dịch Vụ</h3>
+      <form id="rnQuickForm" class="rn-modal-form">
+        <label>Sản phẩm / Dịch vụ đã chọn</label>
+        <input type="text" id="rnModalItem" required />
+        <label>Họ và tên</label>
+        <input type="text" id="rnModalName" placeholder="Nhập họ tên..." required />
+        <label>Số điện thoại / Zalo</label>
+        <input type="tel" id="rnModalPhone" placeholder="09xx xxx xxx" required />
+        <label>Ghi chú (Số kg đan cước / Khung giờ tập)</label>
+        <input type="text" id="rnModalNote" placeholder="VD: Đan cước Exbolt 65 mức 10.5kg..." />
+        <button type="submit" class="rn-btn-submit-court">
+          <span>Gửi Yêu Cầu Qua Zalo Ngay</span>
+          <i>↗</i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>
+
