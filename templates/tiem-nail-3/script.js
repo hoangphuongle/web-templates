@@ -48,7 +48,7 @@ bên dưới -->
         <div class="bh-info">
           <div>📍 45 Nguyễn Thái Học, Minh An, Hội An</div>
           <div>⏰ 9:00 – 22:00 mỗi ngày</div>
-          <div>📞 0905 123 789 (Zalo)</div>
+          <div>📞 0974 100 372 (Zalo)</div>
         </div>
       </div>
     </div>

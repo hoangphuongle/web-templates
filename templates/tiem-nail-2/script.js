@@ -60,7 +60,7 @@ document.querySelectorAll('.fq-q').forEach(q=>q.onclick=()=>{
       <div class="ct-info">
         <div><small>Địa chỉ</small>88 Lê Thánh Tôn, Quận 1, TP.HCM</div>
         <div><small>Giờ mở cửa</small>9:30 – 21:30 · Tất cả các ngày</div>
-        <div><small>Hotline / Zalo</small>0909 888 999</div>
+        <div><small>Hotline / Zalo</small>0974 100 372</div>
         <div><small>Ưu đãi</small><span class="gold-text">Giảm 15% cho khách đặt lịch online lần đầu</span></div>
       </div>
     </div>
@@ -82,7 +82,7 @@ document.querySelectorAll('.fq-q').forEach(q=>q.onclick=()=>{
 </section>
 <script>
 (()=>{
-  const ZALO='0909888999'; // ← ĐỔI SỐ ZALO
+  const ZALO='0974100372'; // ← ĐỔI SỐ ZALO
   document.getElementById('ctForm').onsubmit=e=>{
     e.preventDefault();
     const f=new FormData(e.target);

@@ -45,7 +45,7 @@ if (seeAllBtn) {
 // ── Booking Modal ──
 function openModal(name, price) {
   document.getElementById('modalCarName').textContent = name;
-  document.getElementById('modalCarPrice').textContent = 'Rental Rate: ' + price + ' · Instant Confirmation';
+  document.getElementById('modalCarPrice').textContent = 'Giá thuê: ' + price + ' · Xác nhận giữ xe ngay';
   document.getElementById('bookingModal').classList.add('open');
 }
 function closeModal() {

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REBEL RIDE – Super Rider | Fixed Gear & Track Bikes</title>
-<meta name="description" content="REBEL RIDE – Power, Precision, Presence. Ultra-lightweight Fixed Gear & Track bikes built for street dominance and skid control.">
+<title>REBEL RIDE – Super Rider | Cửa Hàng Xe Đạp Fixed Gear &amp; Track Bikes</title>
+<meta name="description" content="REBEL RIDE – Power, Precision, Presence. Hệ thống phân phối và Custom xe đạp Fixed Gear & Track Bike chính hãng: Tsunami, Cinelli, Engine 11, Leader.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Chakra+Petch:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,21 +35,21 @@
     <a href="#home" class="brand-logo">REBEL RIDE</a>
 
     <ul class="nav-menu">
-      <li><a href="#home">HOME</a></li>
-      <li><a href="#brands">BRANDS</a></li>
+      <li><a href="#home">TRANG CHỦ</a></li>
+      <li><a href="#brands">THƯƠNG HIỆU</a></li>
       <li><a href="#ebikes">FIXED GEAR</a></li>
-      <li><a href="#about">ABOUT</a></li>
-      <li><a href="#contact">CONTACT</a></li>
+      <li><a href="#about">GIỚI THIỆU</a></li>
+      <li><a href="#contact">LIÊN HỆ</a></li>
     </ul>
 
     <div class="nav-right">
-      <button class="btn-test-ride" onclick="openRideModal('Book a Fixed Gear Test Ride', 'Experience pure fixed-cog street riding')">TEST RIDE</button>
-      <button class="nav-icon" aria-label="Search" onclick="document.getElementById('ebikes').scrollIntoView({behavior:'smooth'})">
+      <button class="btn-test-ride" onclick="openRideModal('Đăng Ký Chạy Thử Fixed Gear', 'Trải nghiệm cảm giác Skid &amp; Track thực thụ tại Showroom')">CHẠY THỬ</button>
+      <button class="nav-icon" aria-label="Tìm kiếm" onclick="document.getElementById('ebikes').scrollIntoView({behavior:'smooth'})">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
         </svg>
       </button>
-      <button class="nav-icon" aria-label="Cart" onclick="openRideModal('Your Fixed Gear Build', 'Free Nationwide Delivery Included')">
+      <button class="nav-icon" aria-label="Giỏ hàng" onclick="openRideModal('Cấu Hình Xe Fixed Gear Của Bạn', 'Miễn phí giao xe toàn quốc · Bảo hành khung trọn đời')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
           <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
@@ -73,11 +73,11 @@
       <div class="hero-bottom-grid">
         <div class="hero-copy">
           <p>
-            Ultra-lightweight, Pure Direct Drive, Built for Street Skids &amp; Urban Riders. One gear, zero distractions — discover the raw soul of Fixed Gear cycling.
+            Siêu nhẹ, truyền động trực tiếp chuẩn Track và sinh ra cho những cú Skid đường phố đầy cá tính. Một cấp số, không giới hạn — khám phá chất riêng của văn hóa Fixed Gear.
           </p>
           <div class="hero-btns">
-            <a href="#ebikes" class="btn-purple">Shop Fixed Gear</a>
-            <button class="btn-outline" onclick="openRideModal('Custom Fixed Gear Builder', 'Choose frame, deep-V wheelset, bullhorn/drop bar & gear ratio')">Build Your Fixie</button>
+            <a href="#ebikes" class="btn-purple">Khám Phá Xe Ngay</a>
+            <button class="btn-outline" onclick="openRideModal('Custom Cấu Hình Fixed Gear Theo Ý Muốn', 'Tùy chọn khung sườn, vành đúc 3 đao / 60mm, ghi đông sừng bò / cong và tỷ số truyền')">Tự Build Cấu Hình</button>
           </div>
         </div>
 
@@ -92,15 +92,15 @@
 <!-- ── OFFICIAL FIXED GEAR BRANDS STRIP ── -->
 <section class="fixie-brands-sec" id="brands">
   <div class="container">
-    <div class="brands-kicker">AUTHORIZED DEALER · TOP WORLDWIDE FIXED GEAR BRANDS</div>
+    <div class="brands-kicker">ĐẠI LÝ ỦY QUYỀN · CÁC THƯƠNG HIỆU FIXED GEAR HÀNG ĐẦU THẾ GIỚI</div>
     <div class="brands-strip">
       <div class="brand-badge" onclick="filterByBrand('tsunami')">
         <strong>TSUNAMI</strong>
-        <span>SNM100 · SNM4130 · Chromoly &amp; Alloy</span>
+        <span>SNM100 · SNM4130 · Nhôm 6061 &amp; Thép</span>
       </div>
       <div class="brand-badge" onclick="filterByBrand('cinelli')">
         <strong>CINELLI</strong>
-        <span>Vigorelli · Tutto Plus · Milano Italy</span>
+        <span>Vigorelli · Tutto Plus · Milano Ý</span>
       </div>
       <div class="brand-badge" onclick="filterByBrand('engine11')">
         <strong>ENGINE 11</strong>
@@ -108,11 +108,11 @@
       </div>
       <div class="brand-badge" onclick="filterByBrand('leader')">
         <strong>LEADER BIKES</strong>
-        <span>735TR · 725TR · Aero Street Frame</span>
+        <span>735TR · 725TR · Khung Khí Động Học</span>
       </div>
       <div class="brand-badge" onclick="filterByBrand('aventon')">
         <strong>AVENTON</strong>
-        <span>Cordoba · Mataro · Track Geometry</span>
+        <span>Cordoba · Mataro · Chuẩn Đua Lòng Chảo</span>
       </div>
       <div class="brand-badge" onclick="filterByBrand('state')">
         <strong>STATE BICYCLE</strong>
@@ -120,11 +120,11 @@
       </div>
       <div class="brand-badge" onclick="filterByBrand('skream')">
         <strong>SKREAM</strong>
-        <span>Magnum22 · Anodiz · Crit Frameset</span>
+        <span>Magnum22 · Anodiz · Khung Đua Crit</span>
       </div>
       <div class="brand-badge" onclick="filterByBrand('dosnoventa')">
         <strong>DOSNOVENTA</strong>
-        <span>Los Angeles · Detroit · Carbon Track</span>
+        <span>Los Angeles · Detroit · Carbon Cao Cấp</span>
       </div>
     </div>
   </div>
@@ -139,39 +139,39 @@
       <!-- Row 1 -->
       <div class="zigzag-row">
         <div class="zigzag-text">
-          <h3>FREE NATIONWIDE<br>DELIVERY</h3>
-          <p>Get your ride delivered to your doorstep with no extra cost.</p>
+          <h3>MIỄN PHÍ GIAO XE<br>TOÀN QUỐC</h3>
+          <p>Đóng thùng chống sốc chuyên dụng, căn chỉnh sẵn và giao tận nhà hoàn toàn miễn phí.</p>
         </div>
         <div class="zigzag-img">
-          <img src="img/service-1.png" alt="Free Nationwide Delivery">
+          <img src="img/service-1.png" alt="Miễn phí giao xe toàn quốc">
         </div>
       </div>
 
       <!-- Row 2 -->
       <div class="zigzag-row reverse-mobile">
         <div class="zigzag-img">
-          <img src="img/service-2.png" alt="Lifetime Frame Warranty">
+          <img src="img/service-2.png" alt="Bảo hành khung sườn trọn đời">
         </div>
         <div class="zigzag-text">
-          <h3>LIFETIME FRAME<br>WARRANTY</h3>
-          <p>Confidence that lasts. We back our frames for life.</p>
+          <h3>BẢO HÀNH KHUNG<br>TRỌN ĐỜI</h3>
+          <p>An tâm bứt tốc và thực hiện mọi kỹ thuật Skid. Cam kết bảo hành chính hãng trọn đời cho mọi khung sườn.</p>
         </div>
       </div>
 
       <!-- Row 3 -->
       <div class="zigzag-row">
         <div class="zigzag-text">
-          <h3>ON-DEMAND REPAIR<br>ASSISTANCE</h3>
-          <p>Access local partner mechanics for quick servicing.</p>
+          <h3>BẢO DƯỠNG &amp; CĂN CHỈNH<br>MIỄN PHÍ TẠI XƯỞNG</h3>
+          <p>Đội ngũ kỹ thuật viên chuyên sâu hỗ trợ tăng xích, cân vành, thay líp chết / líp sống nhanh chóng.</p>
         </div>
         <div class="zigzag-img">
-          <img src="img/service-3.png" alt="On-Demand Repair Assistance">
+          <img src="img/service-3.png" alt="Bảo dưỡng và căn chỉnh chuyên nghiệp">
         </div>
       </div>
     </div>
 
     <div class="covered-cta">
-      <button class="btn-purple" onclick="openRideModal('All Rebel Ride Services', 'Nationwide Delivery • Lifetime Warranty • 24/7 Mechanics')">See All Services</button>
+      <button class="btn-purple" onclick="openRideModal('Dịch Vụ Đặc Quyền Tại Rebel Ride', 'Giao Xe Toàn Quốc • Bảo Hành Khung Trọn Đời • Bảo Dưỡng Miễn Phí')">Xem Toàn Bộ Dịch Vụ</button>
     </div>
   </div>
 </section>
@@ -181,16 +181,16 @@
   <div class="container">
     <div class="anatomy-wrap">
       <div class="anatomy-img-box">
-        <img src="img/anatomy-bike.png" alt="Fixed Gear Track Geometry & Specs">
+        <img src="img/anatomy-bike.png" alt="Cấu hình kỹ thuật Fixed Gear">
       </div>
       <div class="anatomy-specs">
         <div class="spec-callout">
           <span class="spec-dot"></span>
-          <span><b>Weight:</b> 7.8 kg (6061 Alloy / Carbon Fork)</span>
+          <span><b>Trọng lượng:</b> 7.8 kg (Khung Nhôm 6061 / Phuộc Carbon)</span>
         </div>
         <div class="spec-callout">
           <span class="spec-dot"></span>
-          <span><b>Ratio:</b> 48T×17T Flip-Flop Hub · 700x25c</span>
+          <span><b>Tỷ số truyền:</b> Đùi 48T × Líp 17T Hub Flip-Flop · Lốp 700x25c</span>
         </div>
       </div>
     </div>
@@ -202,9 +202,9 @@
   <div class="container">
     <div class="products-head">
       <h2>PRECISION IN MOTION</h2>
-      <p>Discover our top-tier Fixed Gear &amp; Track models from the world’s most iconic fixie brands.</p>
+      <p>Khám phá các mẫu xe Fixed Gear &amp; Track Bike nguyên chiếc được săn đón nhất từ những thương hiệu hàng đầu thế giới.</p>
       <div class="brand-filter-tabs">
-        <button class="bf-tab active" data-brand="all" onclick="filterByBrand('all', this)">All Brands</button>
+        <button class="bf-tab active" data-brand="all" onclick="filterByBrand('all', this)">Tất cả hãng</button>
         <button class="bf-tab" data-brand="tsunami" onclick="filterByBrand('tsunami', this)">Tsunami</button>
         <button class="bf-tab" data-brand="cinelli" onclick="filterByBrand('cinelli', this)">Cinelli</button>
         <button class="bf-tab" data-brand="engine11" onclick="filterByBrand('engine11', this)">Engine 11</button>
@@ -225,7 +225,7 @@
           <span class="bike-name">Tsunami SNM100</span>
           <span class="bike-cat">Street Fixie · 48T/17T</span>
         </div>
-        <button class="btn-order-bike" onclick="orderBike('Tsunami SNM100 – Street Fixie', '$650')">Order Now $650</button>
+        <button class="btn-order-bike" onclick="orderBike('Tsunami SNM100 – Street Fixie', '8.900.000đ')">Đặt Mua · 8.900.000đ</button>
       </article>
 
       <!-- Bike 2: Aventon -->
@@ -236,9 +236,9 @@
         </div>
         <div class="bike-meta">
           <span class="bike-name">Aventon Cordoba</span>
-          <span class="bike-cat">Track Fixed · Tapered</span>
+          <span class="bike-cat">Track Fixed · Phuộc Carbon</span>
         </div>
-        <button class="btn-order-bike" onclick="orderBike('Aventon Cordoba – Track Fixed', '$780')">Order Now $780</button>
+        <button class="btn-order-bike" onclick="orderBike('Aventon Cordoba – Track Fixed', '14.500.000đ')">Đặt Mua · 14.500.000đ</button>
       </article>
 
       <!-- Bike 3: Cinelli -->
@@ -251,7 +251,7 @@
           <span class="bike-name">Cinelli Vigorelli</span>
           <span class="bike-cat">Pro Velodrome · Columbus</span>
         </div>
-        <button class="btn-order-bike" onclick="orderBike('Cinelli Vigorelli – Pro Velodrome', '$1250')">Order Now $1250</button>
+        <button class="btn-order-bike" onclick="orderBike('Cinelli Vigorelli – Pro Velodrome', '26.500.000đ')">Đặt Mua · 26.500.000đ</button>
       </article>
 
       <!-- Bike 4: Engine 11 -->
@@ -264,7 +264,7 @@
           <span class="bike-name">Engine 11 Crit-D</span>
           <span class="bike-cat">Crit Racing · Triple Butted</span>
         </div>
-        <button class="btn-order-bike" onclick="orderBike('Engine 11 Crit-D – Crit Racing', '$990')">Order Now $990</button>
+        <button class="btn-order-bike" onclick="orderBike('Engine 11 Crit-D – Crit Racing', '21.900.000đ')">Đặt Mua · 21.900.000đ</button>
       </article>
 
       <!-- Bike 5: State Bicycle -->
@@ -275,9 +275,9 @@
         </div>
         <div class="bike-meta">
           <span class="bike-name">State Black Label V3</span>
-          <span class="bike-cat">6061 Alloy · Carbon Fork</span>
+          <span class="bike-cat">Nhôm 6061 · Phuộc Carbon</span>
         </div>
-        <button class="btn-order-bike" onclick="orderBike('State Black Label V3 – Street Fixie', '$720')">Order Now $720</button>
+        <button class="btn-order-bike" onclick="orderBike('State Black Label V3 – Street Fixie', '15.900.000đ')">Đặt Mua · 15.900.000đ</button>
       </article>
 
       <!-- Bike 6: Leader Bikes -->
@@ -288,14 +288,14 @@
         </div>
         <div class="bike-meta">
           <span class="bike-name">Leader 735TR Aero</span>
-          <span class="bike-cat">Aero Teardrop Track</span>
+          <span class="bike-cat">Khung Bản Dẹt Aero Track</span>
         </div>
-        <button class="btn-order-bike" onclick="orderBike('Leader 735TR Aero – Aero Track', '$1150')">Order Now $1150</button>
+        <button class="btn-order-bike" onclick="orderBike('Leader 735TR Aero – Aero Track', '24.500.000đ')">Đặt Mua · 24.500.000đ</button>
       </article>
     </div>
 
     <div class="products-cta">
-      <button class="btn-purple" onclick="filterByBrand('all'); openRideModal('Full Fixed Gear Brand Catalog', 'Tsunami • Cinelli • Engine 11 • Leader • Aventon • State • Skream • Dosnoventa')">View All Fixed Gear</button>
+      <button class="btn-purple" onclick="filterByBrand('all'); openRideModal('Nhận Báo Giá Toàn Bộ Dòng Xe Fixed Gear', 'Tsunami • Cinelli • Engine 11 • Leader • Aventon • State • Skream • Dosnoventa')">Xem Toàn Bộ Bảng Giá</button>
     </div>
   </div>
 </section>
@@ -307,9 +307,9 @@
       <div class="engineered-content">
         <h2>ENGINEERED FOR<br>THE RIDE.</h2>
         <p>
-          Whether you’re conquering the city streets or making a statement at every turn, our bikes deliver an unmatched riding experience. This isn’t just cycling — it’s riding reimagined.
+          Dù bạn đang lướt nhanh qua những con phố đêm hay chinh phục đường đua Crit tốc độ, mỗi chiếc xe tại Rebel Ride đều được lắp ráp tỉ mỉ để mang lại cảm giác kết nối thuần khiết nhất giữa người lái và mặt đường.
         </p>
-        <button class="btn-dark-outline" onclick="openRideModal('About Rebel Ride', 'Engineered in Los Angeles, CA')">About Us</button>
+        <button class="btn-dark-outline" onclick="openRideModal('Về Cửa Hàng Rebel Ride', 'Showroom Fixed Gear &amp; Custom Track Bike Chính Hãng')">Tìm Hiểu Thêm</button>
       </div>
       <div class="engineered-visual">
         <img src="img/banner-engineered.png" alt="Engineered Mountain Bike Tire">
@@ -324,35 +324,35 @@
     <h2 class="insta-head">FOLLOW ON INSTAGRAM</h2>
 
     <div class="insta-grid">
-      <div class="insta-item" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+      <div class="insta-item" onclick="openRideModal('Cộng Đồng Rebel Ride', '@rebelride.vietnam')">
         <img src="img/insta-1.png" alt="Instagram 1">
         <div class="insta-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </div>
       </div>
 
-      <div class="insta-item" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+      <div class="insta-item" onclick="openRideModal('Cộng Đồng Rebel Ride', '@rebelride.vietnam')">
         <img src="img/insta-2.png" alt="Instagram 2">
         <div class="insta-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </div>
       </div>
 
-      <div class="insta-item center-featured" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+      <div class="insta-item center-featured" onclick="openRideModal('Cộng Đồng Rebel Ride', '@rebelride.vietnam')">
         <img src="img/insta-3.png" alt="Instagram 3">
         <div class="insta-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </div>
       </div>
 
-      <div class="insta-item" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+      <div class="insta-item" onclick="openRideModal('Cộng Đồng Rebel Ride', '@rebelride.vietnam')">
         <img src="img/insta-4.png" alt="Instagram 4">
         <div class="insta-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </div>
       </div>
 
-      <div class="insta-item" onclick="openRideModal('Rebel Ride Instagram', '@rebelride.official')">
+      <div class="insta-item" onclick="openRideModal('Cộng Đồng Rebel Ride', '@rebelride.vietnam')">
         <img src="img/insta-5.png" alt="Instagram 5">
         <div class="insta-overlay">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
@@ -367,16 +367,16 @@
   <div class="container">
     <div class="footer-cols">
       <div class="footer-col">
-        <h4>ABOUT</h4>
+        <h4>GIỚI THIỆU</h4>
         <ul>
-          <li><a href="#about">Partnership</a></li>
-          <li><a href="#services">Terms of Use</a></li>
-          <li><a href="#contact">Privacy</a></li>
+          <li><a href="#about">Về Rebel Ride</a></li>
+          <li><a href="#services">Chính sách bảo hành</a></li>
+          <li><a href="#contact">Hướng dẫn chọn size khung</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>FIXIE BRANDS</h4>
+        <h4>THƯƠNG HIỆU FIXIE</h4>
         <ul>
           <li><a href="#ebikes" onclick="filterByBrand('tsunami')">Tsunami &amp; Weapon</a></li>
           <li><a href="#ebikes" onclick="filterByBrand('cinelli')">Cinelli &amp; Dosnoventa</a></li>
@@ -386,26 +386,26 @@
       </div>
 
       <div class="footer-col">
-        <h4>RESOURCES</h4>
+        <h4>HỖ TRỢ KHÁCH HÀNG</h4>
         <ul>
-          <li><a href="#about">Career</a></li>
-          <li><a href="#ebikes">Blog</a></li>
-          <li><a href="#contact">Legal</a></li>
+          <li><a href="#services">Giao hàng toàn quốc</a></li>
+          <li><a href="#ebikes">Custom cấu hình xe</a></li>
+          <li><a href="../../index.html#templates">← Kho Giao Diện</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>CONTACT</h4>
+        <h4>LIÊN HỆ</h4>
         <ul>
-          <li><a href="mailto:info@rebelride.com">info@rebelride.com</a></li>
-          <li><a href="tel:0974100372">+1 564-644-5965</a></li>
-          <li>Los Angeles, CA</li>
+          <li><a href="https://zalo.me/0974100372" target="_blank">Zalo: 0974 100 372</a></li>
+          <li><a href="https://t.me/lhoangphuong" target="_blank">Telegram: @lhoangphuong</a></li>
+          <li>TP. Hồ Chí Minh, Việt Nam</li>
         </ul>
       </div>
     </div>
 
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:#888;">
-      <span>Designed by Hoang Phuong</span>
+      <span>Thiết kế bởi Hoang Phuong</span>
       <span>Copyright © 2026 Hoang Phuong. All rights reserved.</span>
     </div>
     <div class="footer-giant-wrap">
@@ -418,24 +418,24 @@
 <div class="modal-backdrop" id="rideModal" onclick="if(event.target===this)closeRideModal()">
   <div class="modal-card">
     <button class="modal-close" onclick="closeRideModal()">✕</button>
-    <h3 id="modalTitle">Order Rebel Ride</h3>
-    <p id="modalSub">Free Nationwide Delivery • Lifetime Frame Warranty</p>
+    <h3 id="modalTitle">Đặt Xe Tại Rebel Ride</h3>
+    <p id="modalSub">Miễn Phí Giao Xe Toàn Quốc • Bảo Hành Khung Sườn Trọn Đời</p>
     <form onsubmit="event.preventDefault(); window.open('https://zalo.me/0974100372','_blank');">
       <div class="modal-field">
-        <label>Full Name</label>
-        <input type="text" placeholder="Enter your name" required>
+        <label>Họ và tên</label>
+        <input type="text" placeholder="Nhập họ tên của bạn" required>
       </div>
       <div class="modal-field">
-        <label>Phone / Zalo / Telegram</label>
+        <label>Số điện thoại / Zalo</label>
         <input type="tel" placeholder="09xx xxx xxx" required>
       </div>
       <div class="modal-field">
-        <label>Delivery Address / City</label>
-        <input type="text" placeholder="Enter your address" required>
+        <label>Chiều cao (để tư vấn size khung S / M / L) &amp; Địa chỉ</label>
+        <input type="text" placeholder="VD: 1m72 — Quận 1, TP.HCM" required>
       </div>
       <div class="modal-actions">
-        <button type="submit" class="modal-btn zalo">Order via Zalo →</button>
-        <a href="https://t.me/lhoangphuong" target="_blank" class="modal-btn tg">Via Telegram →</a>
+        <button type="submit" class="modal-btn zalo">Đặt Qua Zalo →</button>
+        <a href="https://t.me/lhoangphuong" target="_blank" class="modal-btn tg">Qua Telegram →</a>
       </div>
     </form>
   </div>

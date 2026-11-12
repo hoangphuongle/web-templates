@@ -3,7 +3,7 @@ let rideCart = 1;
 function orderBike(name, price) {
   rideCart++;
   document.getElementById('rideCartCount').textContent = rideCart;
-  openRideModal(name, 'Price: ' + price + ' • Free Nationwide Delivery');
+  openRideModal(name, 'Giá ưu đãi: ' + price + ' • Miễn phí giao xe toàn quốc');
 }
 
 function filterByBrand(brand, btnEl) {

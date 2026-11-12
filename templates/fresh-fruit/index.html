@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRESH. — Trái Cây Tươi Nhập Khẩu &amp; Nông Sản Hữu Cơ Giao Nhanh 2H</title>
+  <meta name="description" content="FRESH. — Cửa hàng trái cây nhập khẩu, trái cây đặc sản nội địa và giỏ quà sức khỏe Organic. Tuyển chọn trực tiếp từ nông trại, giao tươi tận cửa mỗi ngày.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Zalo</a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}@media(max-width:479px){#hp-back{display:none!important}#hp-bar{padding:0 10px!important;gap:6px!important}}</style>
+
+  <!-- 1. HERO SECTION (DEEP FOREST GREEN + 3D ORANGE CENTERPIECE) -->
+  <section class="hero-sec" id="home">
+    <div class="hero-grid-overlay"></div>
+
+    <div class="container">
+      <!-- 3-Part Floating Header -->
+      <header class="fresh-header">
+        <!-- Left Brand & Lang -->
+        <div class="header-left">
+          <a href="#home" class="fresh-logo">FRESH<span>.</span></a>
+          <span class="lang-pill">🌐 VN ▾</span>
+        </div>
+
+        <!-- Center White Pill Menu -->
+        <nav class="header-center-pill" id="navMenu">
+          <a href="#home" class="nav-link active">Trang chủ</a>
+          <a href="#products" class="nav-link">Trái cây tươi</a>
+          <a href="#promise" class="nav-link">Giỏ quà DN</a>
+          <a href="#testimonials" class="nav-link">Đánh giá</a>
+          <button type="button" class="btn-contact-pill" onclick="openQuickModal('Liên Hệ Đặt Giỏ Quà &amp; Sỉ Lẻ Trái Cây', 'Giao nhanh 2H nội thành · Cam kết tươi ngọt 100%')">
+            Liên Hệ <span>↗</span>
+          </button>
+        </nav>
+
+        <!-- Right White Pill Cart & User Actions -->
+        <div class="header-right-pill">
+          <button type="button" class="btn-cart-lime" id="cartToggleBtn">
+            <span>🛍</span>
+            <span>Giỏ hàng (<b id="cartCount">1</b>)</span>
+          </button>
+          <button type="button" class="icon-circle-btn" aria-label="Yêu thích" onclick="showToast('💚 Đã lưu vào danh sách trái cây yêu thích!')">♡</button>
+          <button type="button" class="icon-circle-btn" aria-label="Tài khoản" onclick="openQuickModal('Thành Viên FRESH. Club', 'Tích điểm đổi quà &amp; giảm 10% cho mọi đơn hàng trái cây tươi')">👤</button>
+          <button type="button" class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Menu">☰</button>
+        </div>
+      </header>
+
+      <!-- Mobile Nav Drawer -->
+      <div class="mobile-drawer" id="mobileDrawer">
+        <a href="#home">Trang chủ</a>
+        <a href="#products">Trái cây tươi</a>
+        <a href="#testimonials">Khách hàng đánh giá</a>
+        <a href="#farm-story">Nông trại Organic</a>
+        <a href="#promise">Cam kết chất lượng</a>
+        <button type="button" class="btn-orange-sm" onclick="openQuickModal('Đặt Trái Cây Tươi Giao Nhanh 2H', 'Miễn phí giao hàng cho đơn từ 300.000đ')">Đặt Hàng Ngay ↗</button>
+      </div>
+
+      <!-- Hero Main Stage -->
+      <div class="hero-stage">
+        <!-- Center 3D Sliced Orange Artwork (with original script & leaves) -->
+        <div class="hero-orange-wrap">
+          <img src="img/hero-orange.png" alt="Cam Vàng Mọng Nước FRESH." class="hero-orange-img">
+        </div>
+
+        <!-- Bottom Left Description & Learn More -->
+        <div class="hero-blurb">
+          <p>
+            Thưởng thức vị tươi ngọt thuần khiết từ những vườn trái cây hữu cơ tuyển chọn, thu hoạch mỗi sáng và giao tận cửa nhà bạn.
+          </p>
+          <a href="#products" class="learn-more-link">Khám phá ngay <span>↳</span></a>
+        </div>
+
+        <!-- Right Vertical Scroll Indicator Pill -->
+        <div class="hero-scroll-pill" title="Cuộn xuống để khám phá">
+          <span class="scroll-bar-fill"></span>
+        </div>
+      </div>
+
+      <!-- Bottom Center Dual CTA Buttons Overlapping Soft Mist Fade -->
+      <div class="hero-bottom-ctas">
+        <a href="#products" class="btn-hero-lime">
+          <span>Mua ngay</span>
+          <i>🛍</i>
+        </a>
+        <a href="#promise" class="btn-hero-white">
+          <span>Xem tất cả</span>
+          <i>↓</i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Soft White Mist Bottom Fade -->
+    <div class="hero-bottom-fade"></div>
+  </section>
+
+  <!-- 2. MODERN BODY 🍓 IMMUNE FORMULATION & 3-COLUMN PRODUCT SHOWCASE -->
+  <section class="showcase-sec" id="products">
+    <div class="container">
+      <!-- Symbolic Headline Row with Center Strawberry -->
+      <div class="immune-header">
+        <h2 class="immune-word left">Modern Body</h2>
+        <div class="strawberry-center">
+          <img src="img/strawberry.png" alt="Dâu tây tươi mọng">
+          <strong>Dâu tây chín mọng</strong>
+          <span>Hái tươi từ nông trại hữu cơ</span>
+        </div>
+        <h2 class="immune-word right">Immune Formulation</h2>
+      </div>
+
+      <!-- Giant Dark Green Watermark Behind Card -->
+      <div class="fresh-watermark-wrap">
+        <div class="fresh-giant-watermark" aria-hidden="true">FRESH</div>
+
+        <!-- White Rounded 3-Column Product Showcase Card -->
+        <div class="product-showcase-box">
+          <!-- Category Filter Bar inside Showcase -->
+          <div class="showcase-filter-bar">
+            <span class="sf-label">🍊 Tuyển chọn hôm nay:</span>
+            <div class="sf-tabs">
+              <button type="button" class="sf-tab active" data-filter="all">Tất cả (6)</button>
+              <button type="button" class="sf-tab" data-filter="imported">Trái cây nhập khẩu</button>
+              <button type="button" class="sf-tab" data-filter="local">Đặc sản nội địa</button>
+            </div>
+          </div>
+
+          <div class="product-3col-grid" id="productGrid">
+            <!-- Product 1: Harum Manis Mango -->
+            <article class="fruit-card" data-cat="local">
+              <div class="fruit-img-box">
+                <span class="origin-tag">Trái cây nội địa</span>
+                <img src="img/fruit-mango.png" alt="Xoài Cát Harum Manis" loading="lazy">
+              </div>
+              <div class="fruit-body">
+                <h3>Xoài Cát Harum Manis</h3>
+                <div class="fruit-price">85.000đ <small>/kg</small></div>
+                <p class="fruit-desc">
+                  Thịt xoài dày, dẻo mịn không xơ với hương thơm nồng nàn và vị ngọt đậm tự nhiên khi chín cây.
+                </p>
+                <div class="nutrient-chips">
+                  <span>Vitamin C</span>
+                  <span>Chống oxy hóa</span>
+                  <span>Giàu chất xơ</span>
+                </div>
+                <div class="fruit-actions">
+                  <button type="button" class="btn-shop-orange" onclick="openQuickModal('Đặt Mua: Xoài Cát Harum Manis', 'Giá: 85.000đ /kg · Tuyển chọn trái chín cây loại 1')">
+                    Mua ngay <span>↗</span>
+                  </button>
+                  <button type="button" class="btn-add-gray" onclick="addToCart('Xoài Cát Harum Manis', 85000, 'img/fruit-mango.png')">
+                    Thêm giỏ hàng <span>↗</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 2: Muscat Grapes -->
+            <article class="fruit-card" data-cat="imported">
+              <div class="fruit-img-box">
+                <span class="origin-tag">Trái cây nhập khẩu</span>
+                <span class="popular-tag">Bán chạy</span>
+                <img src="img/fruit-grapes.png" alt="Nho Mẫu Đơn Muscat" loading="lazy">
+              </div>
+              <div class="fruit-body">
+                <h3>Nho Mẫu Đơn Muscat</h3>
+                <div class="fruit-price">210.000đ <small>/kg</small></div>
+                <p class="fruit-desc">
+                  Chùm nho căng mọng, vỏ mỏng giòn tan, vị ngọt thanh thơm mùi sữa đặc trưng và hoàn toàn không hạt.
+                </p>
+                <div class="nutrient-chips">
+                  <span>Resveratrol</span>
+                  <span>Không hạt</span>
+                  <span>Giòn ngọt</span>
+                </div>
+                <div class="fruit-actions">
+                  <button type="button" class="btn-shop-orange" onclick="openQuickModal('Đặt Mua: Nho Mẫu Đơn Muscat', 'Giá: 210.000đ /kg · Nhập khẩu đường bay tươi cuống xanh')">
+                    Mua ngay <span>↗</span>
+                  </button>
+                  <button type="button" class="btn-add-gray" onclick="addToCart('Nho Mẫu Đơn Muscat', 210000, 'img/fruit-grapes.png')">
+                    Thêm giỏ hàng <span>↗</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 3: Sweet Banana -->
+            <article class="fruit-card" data-cat="local">
+              <div class="fruit-img-box">
+                <span class="origin-tag">Đặc sản Đà Lạt</span>
+                <span class="popular-tag">Bán chạy</span>
+                <img src="img/fruit-banana.png" alt="Chuối Laba Hữu Cơ" loading="lazy">
+              </div>
+              <div class="fruit-body">
+                <h3>Chuối Laba Chín Cây</h3>
+                <div class="fruit-price">65.000đ <small>/kg</small></div>
+                <p class="fruit-desc">
+                  Ruột vàng ươm dẻo thơm, giàu năng lượng và khoáng chất tự nhiên, tuyệt hảo cho bữa sáng lành mạnh.
+                </p>
+                <div class="nutrient-chips">
+                  <span>Vitamin B6</span>
+                  <span>Điện giải</span>
+                  <span>Giàu Kali</span>
+                </div>
+                <div class="fruit-actions">
+                  <button type="button" class="btn-shop-orange" onclick="openQuickModal('Đặt Mua: Chuối Laba Chín Cây', 'Giá: 65.000đ /kg · Chuối hữu cơ Đà Lạt đạt chuẩn VietGAP')">
+                    Mua ngay <span>↗</span>
+                  </button>
+                  <button type="button" class="btn-add-gray" onclick="addToCart('Chuối Laba Chín Cây', 65000, 'img/fruit-banana.png')">
+                    Thêm giỏ hàng <span>↗</span>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PICKED FRESH JUICY — TESTIMONIAL & LOYAL CUSTOMER BENTO -->
+  <section class="editorial-sec" id="testimonials">
+    <div class="container">
+      <!-- Editorial Header Row -->
+      <div class="ed-header-row">
+        <div class="ed-pill-col">
+          <span class="sec-dot-pill"><i></i> Trái cây tươi sạch</span>
+        </div>
+        <div class="ed-title-col">
+          <h2 class="ed-inline-title">
+            Tuyển chọn tươi
+            <span class="inline-fruit-pill">
+              <img src="img/fruit-mango.png" alt="Xoài">
+              <img src="img/strawberry.png" alt="Dâu">
+              <img src="img/fruit-kiwi.png" alt="Kiwi">
+              <small>Trái cây tươi cho cuộc sống khỏe</small>
+            </span>
+            mọng nước,<br>
+            trọn vẹn hương vị tự nhiên
+          </h2>
+        </div>
+      </div>
+
+      <!-- 2-Column Bento: Left Review Card + Right Watermelon Lady with Loyalty Card -->
+      <div class="testi-bento-grid">
+        <!-- Left White Review Card -->
+        <div class="testi-left-card">
+          <div class="mini-dot-label"><i></i> Khách hàng nói gì về FRESH.</div>
+
+          <!-- 4 Interactive Filter Tabs -->
+          <div class="testi-topic-tabs" id="testiTabs">
+            <button type="button" class="t-tab active" data-topic="0">Gia đình</button>
+            <button type="button" class="t-tab" data-topic="1">Sức khỏe</button>
+            <button type="button" class="t-tab" data-topic="2">Giá cả</button>
+            <button type="button" class="t-tab" data-topic="3">Chất lượng</button>
+          </div>
+
+          <!-- Quote Text -->
+          <blockquote class="testi-quote" id="testiQuote">
+            “ Từ ngày đặt lịch giao trái cây định kỳ tại FRESH., tủ lạnh gia đình mình lúc nào cũng đầy ắp cam vàng, nho mẫu đơn và táo đỏ tươi giòn cho hai bé mang đi học mỗi ngày. ”
+          </blockquote>
+
+          <!-- Bottom Reviewer Row + Mini Portrait -->
+          <div class="testi-bottom-row">
+            <div class="testi-author-info">
+              <strong id="testiName">Chị Lan Anh – Khách hàng thân thiết</strong>
+              <p id="testiSub">“ Cả khu phố mình đều gọi FRESH. là tiệm trái cây quốc dân vì quả nào giao tới cũng tươi rói như vừa hái. ”</p>
+
+              <div class="testi-arrows">
+                <button type="button" class="arr-circle-btn" id="prevTestiBtn" aria-label="Trước">‹</button>
+                <button type="button" class="arr-circle-btn orange" id="nextTestiBtn" aria-label="Tiếp">›</button>
+              </div>
+            </div>
+
+            <div class="testi-mini-photo">
+              <img src="img/review-man.png" alt="Khách hàng FRESH." loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Watermelon Photo + Floating Loyal Customer Program Card -->
+        <div class="testi-right-visual">
+          <img src="img/watermelon-lady.png" alt="Dưa hấu hữu cơ tươi mọng" class="watermelon-img" loading="lazy">
+
+          <div class="loyalty-float-card" onclick="openQuickModal('Chương Trình Khách Hàng Thân Thiết FRESH.', 'Tích lũy 5% điểm thưởng cho mọi đơn hàng &amp; tặng giỏ trái cây sinh nhật trị giá 300.000đ')">
+            <div class="loyalty-top">
+              <span class="loyalty-brand">🍊 Fresh</span>
+              <span class="loyalty-year">● 2026</span>
+            </div>
+            <h4>Loyal Customer Program</h4>
+            <p>Tích điểm thưởng trên từng đơn hàng và nhận ưu đãi giảm đến 15% dành riêng cho hội viên thân thiết.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FARM STORY BANNER (NOT YOUR ORDINARY FRUIT) -->
+  <section class="editorial-sec" id="farm-story">
+    <div class="container">
+      <div class="ed-header-row">
+        <div class="ed-pill-col">
+          <span class="sec-dot-pill"><i></i> Nông sản đặc tuyển</span>
+        </div>
+        <div class="ed-title-col">
+          <h2 class="ed-inline-title">
+            Không chỉ là
+            <span class="inline-fruit-pill">
+              <img src="img/fruit-apple.png" alt="Táo">
+              <img src="img/fruit-papaya.png" alt="Đu đủ">
+              <img src="img/fruit-banana.png" alt="Chuối">
+              <small>Trái cây tươi cho cuộc sống khỏe</small>
+            </span>
+            trái cây thông thường,<br>
+            đây là món quà từ thiên nhiên
+          </h2>
+        </div>
+      </div>
+
+      <!-- Wide Rounded Guava Hands Banner -->
+      <div class="guava-banner-card">
+        <div class="guava-img-wrap">
+          <img src="img/guava-banner.png" alt="Ổi hồng hữu cơ hái tại vườn" loading="lazy">
+        </div>
+
+        <!-- Bottom Feature Tags Bar -->
+        <div class="guava-tags-bar">
+          <strong class="guava-brand-label">Dinh Dưỡng Xanh</strong>
+          <div class="guava-badges">
+            <span>🔸 Tươi sạch từ vườn</span>
+            <span>🌱 100% Organic</span>
+            <span>🍋 Giàu Vitamin tự nhiên</span>
+            <span>🏷 Kiểm định chất lượng</span>
+            <span>🔥 Tăng cường đề kháng</span>
+          </div>
+          <button type="button" class="guava-arrow-btn" onclick="openQuickModal('Tiêu Chuẩn Nông Trại Hữu Cơ FRESH.', 'Thu hoạch lúc 5:00 sáng · Bảo quản lạnh 4–8°C xuyên suốt tới tay khách hàng')" aria-label="Xem chi tiết">↗</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. OUR PROMISE — ALTERNATING 3-COLUMN BENTO GRID (PRODUCT 01 / 02 / 03) -->
+  <section class="editorial-sec" id="promise">
+    <div class="container">
+      <div class="ed-header-row">
+        <div class="ed-pill-col">
+          <span class="sec-dot-pill"><i></i> Cam kết của FRESH.</span>
+        </div>
+        <div class="ed-title-col">
+          <h2 class="ed-inline-title">
+            Hơn cả một
+            <span class="inline-fruit-pill">
+              <img src="img/strawberry.png" alt="Dâu">
+              <img src="img/fruit-grapes.png" alt="Nho">
+              <img src="img/fruit-kiwi.png" alt="Kiwi">
+              <small>Trái cây tươi cho cuộc sống khỏe</small>
+            </span>
+            trái cây tươi ngon,<br>
+            đó là chất lượng thượng hạng
+          </h2>
+        </div>
+      </div>
+
+      <!-- Delivery & Order Tracking Utility Strip -->
+      <div class="delivery-strip">
+        <div class="deliv-left">
+          <span class="deliv-item"><i>🚚</i> Giao hàng nhanh 2H &amp; Toàn quốc</span>
+          <span class="deliv-item"><i>📍</i> Theo dõi đơn hàng trực tiếp (Real-time)</span>
+        </div>
+        <div class="deliv-right">
+          <button type="button" class="btn-track-white" onclick="openQuickModal('Tra Cứu Đơn Hàng Trực Tuyến', 'Nhập số điện thoại đặt hàng để kiểm tra lộ trình shipper giao trái cây')">
+            Tra cứu đơn <span>↗</span>
+          </button>
+          <button type="button" class="btn-shop-orange" onclick="openQuickModal('Đặt Giỏ Trái Cây Tươi Theo Yêu Cầu', 'Tư vấn miễn phí qua Zalo / Telegram trong 3 phút')">
+            Đặt mua ngay <span>↗</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Alternating 3-Column Bento Grid (Text-Top / Image-Top / Text-Top) -->
+      <div class="bento-3col-promise">
+        <!-- Col 1: Product 01 (Text Top, Image Bottom) -->
+        <article class="promise-col">
+          <div class="p-card p-text-card">
+            <div class="p-card-top">
+              <span class="p-badge">🍎🍊 Product 01</span>
+              <button type="button" class="p-arr" onclick="addToCart('Táo Đỏ Envy Thượng Hạng', 165000, 'img/fruit-apple.png')">↗</button>
+            </div>
+            <h3>Táo Đỏ Envy Thượng Hạng</h3>
+            <p>
+              Giòn đanh, mọng nước và thơm lừng hương hoa quả nhiệt đới. Giàu chất chống oxy hóa tự nhiên, được hái chín trực tiếp từ vườn hữu cơ.
+            </p>
+            <div class="p-mini-tags">
+              <span>Không thuốc bảo quản</span>
+              <span>Hái tươi mỗi ngày</span>
+            </div>
+          </div>
+
+          <div class="p-card p-img-card" onclick="addToCart('Táo Đỏ Envy Thượng Hạng', 165000, 'img/fruit-apple.png')">
+            <img src="img/fruit-apple.png" alt="Táo Đỏ Envy Thượng Hạng" loading="lazy">
+            <span class="p-price-float">165.000đ/kg · + Giỏ</span>
+          </div>
+        </article>
+
+        <!-- Col 2: Product 02 (Image Top, Text Bottom — Staggered!) -->
+        <article class="promise-col">
+          <div class="p-card p-img-card" onclick="addToCart('Kiwi Xanh New Zealand', 145000, 'img/fruit-kiwi.png')">
+            <div class="p-card-top" style="width:100%;margin-bottom:10px">
+              <span class="p-badge">🥝🍏 Product 02</span>
+              <button type="button" class="p-arr">↗</button>
+            </div>
+            <img src="img/fruit-kiwi.png" alt="Kiwi Xanh New Zealand" loading="lazy">
+            <span class="p-price-float">145.000đ/kg · + Giỏ</span>
+          </div>
+
+          <div class="p-card p-text-card">
+            <div class="p-mini-tags" style="margin-bottom:10px;margin-top:0">
+              <span>Kiwi Tươi Nhập Khẩu</span>
+              <span>Hàm Lượng Vitamin C Cao</span>
+            </div>
+            <h3>Kiwi Xanh New Zealand</h3>
+            <p>
+              Vị chua ngọt sảng khoái bùng nổ cùng hàm lượng Vitamin C gấp đôi cam tươi và giàu chất xơ tốt cho hệ tiêu hóa. Tuyệt vời để ăn trực tiếp hoặc làm sinh tố.
+            </p>
+          </div>
+        </article>
+
+        <!-- Col 3: Product 03 (Text Top, Image Bottom) -->
+        <article class="promise-col">
+          <div class="p-card p-text-card">
+            <div class="p-card-top">
+              <span class="p-badge">🥭🍊 Product 03</span>
+              <button type="button" class="p-arr" onclick="addToCart('Đu Đủ Ruột Đỏ Chín Cây', 55000, 'img/fruit-papaya.png')">↗</button>
+            </div>
+            <h3>Đu Đủ Ruột Đỏ Chín Cây</h3>
+            <p>
+              Thịt quả mềm mịn như bơ, ngọt đậm đà tự nhiên khi đạt độ chín vàng. Giàu enzyme Papain hỗ trợ tiêu hóa và nuôi dưỡng làn da sáng khỏe từ bên trong.
+            </p>
+            <div class="p-mini-tags">
+              <span>Ngọt tự nhiên 100%</span>
+              <span>Không chất bảo quản</span>
+            </div>
+          </div>
+
+          <div class="p-card p-img-card" onclick="addToCart('Đu Đủ Ruột Đỏ Chín Cây', 55000, 'img/fruit-papaya.png')">
+            <img src="img/fruit-papaya.png" alt="Đu Đủ Ruột Đỏ Chín Cây" loading="lazy">
+            <span class="p-price-float">55.000đ/kg · + Giỏ</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. DEEP FOREST GREEN FOOTER (FRESH.) -->
+  <footer class="footer-sec" id="footer">
+    <div class="container">
+      <div class="footer-dark-box">
+        <div class="footer-top-grid">
+          <!-- Left Brand & Newsletter -->
+          <div class="ft-brand-col">
+            <a href="#home" class="fresh-logo lime">FRESH<span>.</span></a>
+            <p class="ft-desc">
+              Khám phá nguồn trái cây tươi sạch, giàu vitamin tự nhiên giúp nuôi dưỡng cơ thể khỏe mạnh và tràn đầy năng lượng mỗi ngày.
+            </p>
+
+            <form class="ft-newsletter" id="newsletterForm">
+              <input type="email" placeholder="Nhập địa chỉ email của bạn..." required>
+              <button type="submit" class="btn-shop-orange">Đăng ký <span>↗</span></button>
+            </form>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="ft-links-col">
+            <h4>Liên Kết Nhanh</h4>
+            <ul>
+              <li><a href="#products">Ưu đãi hôm nay</a></li>
+              <li><a href="#products">Trái cây nhập khẩu</a></li>
+              <li><a href="#promise">Giỏ quà doanh nghiệp</a></li>
+              <li><a href="#farm-story">Về nông trại FRESH.</a></li>
+              <li><a href="#testimonials">Khách hàng đánh giá</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact & Support -->
+          <div class="ft-links-col">
+            <h4>Liên Hệ Trực Tiếp</h4>
+            <ul>
+              <li><a href="tel:0974100372">📞 Hotline: 0974 100 372</a></li>
+              <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">💬 Zalo: 0974 100 372</a></li>
+              <li><a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">✈️ Telegram: @lhoangphuong</a></li>
+              <li><a href="#promise">Giao hàng nhanh 2H</a></li>
+              <li><a href="../../index.html#templates">← Kho Giao Diện</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Contact & Center CTA -->
+        <div class="footer-bottom-row">
+          <div class="ft-contact-info">
+            <span class="ft-contact-pill">Liên hệ</span>
+            <strong><a href="tel:0974100372" style="color:inherit;text-decoration:none">0974 100 372</a></strong>
+            <p>Zalo: <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">0974 100 372</a> · Telegram: <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">@lhoangphuong</a></p>
+            <p class="ft-copy">Copyright © 2026 Hoang Phuong. All rights reserved.</p>
+          </div>
+
+          <div class="ft-center-cta">
+            <button type="button" class="btn-order-seconds" onclick="openQuickModal('Đặt Trái Cây Tươi Trong 30 Giây!', 'Liên hệ Zalo 0974 100 372 · Telegram @lhoangphuong')">
+              Đặt Hàng Trong 30 Giây!
+            </button>
+          </div>
+
+          <div class="ft-socials">
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" aria-label="Zalo" title="Zalo: 0974 100 372">Zalo</a>
+            <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram: @lhoangphuong">Telegram</a>
+            <a href="tel:0974100372" aria-label="Gọi điện" title="Gọi: 0974 100 372">0974 100 372</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OUT FRUIT BASKET DRAWER -->
+  <div class="drawer-backdrop" id="cartBackdrop">
+    <aside class="cart-drawer">
+      <div class="cart-drawer-head">
+        <div>
+          <h3>🧺 Giỏ Trái Cây Tươi</h3>
+          <small>Cam kết 100% tươi ngọt · Đổi trả miễn phí trong 24h</small>
+        </div>
+        <button type="button" class="close-btn" id="closeCartBtn">✕</button>
+      </div>
+
+      <div class="cart-drawer-body" id="cartList"></div>
+
+      <div class="cart-drawer-foot">
+        <div class="cart-total-line">
+          <span>Tổng tạm tính:</span>
+          <strong id="cartTotal">210.000đ</strong>
+        </div>
+        <div class="cart-cta-stack">
+          <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="btn-shop-orange" style="justify-content:center;padding:12px">💬 Đặt Giao Ngay Qua Zalo</a>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="btn-add-gray" style="justify-content:center;padding:12px">✈️ Đặt Qua Telegram</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- QUICK ORDER / CONSULTATION MODAL -->
+  <div class="modal-backdrop" id="quickModal">
+    <div class="modal-card">
+      <button type="button" class="close-btn" id="closeModalBtn">✕</button>
+      <span class="modal-tag">🍊 FRESH. ORGANIC STORE</span>
+      <h3 id="modalTitle">Đặt Trái Cây Tươi Giao Nhanh 2H</h3>
+      <p id="modalSub">Tuyển chọn trái loại 1 tươi ngon nhất trong ngày.</p>
+      <form id="quickOrderForm" class="modal-form">
+        <input type="text" placeholder="Họ và tên người nhận" required>
+        <input type="tel" placeholder="Số điện thoại / Zalo" required>
+        <input type="text" placeholder="Địa chỉ nhận hàng (Quận/Huyện, TP)" required>
+        <div class="modal-btns">
+          <button type="submit" class="btn-shop-orange" style="width:100%;justify-content:center;padding:12px">Xác Nhận Đặt Hàng ↗</button>
+          <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="btn-modal-chat">💬 Zalo</a>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="btn-modal-chat">✈️ Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">🍊 Đã thêm vào giỏ trái cây tươi!</div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>
+

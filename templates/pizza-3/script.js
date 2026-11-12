@@ -1195,7 +1195,7 @@ function initFloatingWidget() {
             if (tooltipEl) {
                 const type = nextActive.getAttribute("data-type");
                 if (type === "phone") {
-                    tooltipEl.textContent = "Gọi hotline: 1900 6750";
+                    tooltipEl.textContent = "Gọi hotline: 0974 100 372";
                 } else if (type === "zalo") {
                     tooltipEl.textContent = "Chat Zalo hỗ trợ";
                 } else if (type === "messenger") {

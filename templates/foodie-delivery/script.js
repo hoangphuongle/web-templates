@@ -13,7 +13,7 @@ function filterDishes(cat, el) {
 function addDishToCart(name, price) {
   cartTotal++;
   document.getElementById('cartCount').textContent = cartTotal;
-  openOrderModal(name, 'Price: ' + price + ' • Added to basket');
+  openOrderModal(name, 'Giá: ' + price + ' • Đã thêm vào giỏ món ăn');
 }
 
 function openOrderModal(name, sub) {

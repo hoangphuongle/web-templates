@@ -1,5 +1,5 @@
 // ==========================================================================
-// LOAFLY — ARTISAN BAKERY FULL INTERACTIVE SCRIPT
+// LOAFLY — ARTISAN BAKERY FULL INTERACTIVE SCRIPT (VIETNAMESE EDITION)
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let cart = [];
   let toastTimer = null;
+
+  function formatVND(amount) {
+    return Number(amount || 0).toLocaleString('vi-VN') + 'đ';
+  }
 
   function showToast(msg) {
     if (!toastEl) return;
@@ -79,11 +83,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalAmount = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
 
     if (cartCountEl) cartCountEl.textContent = totalCount;
-    if (cartTotalPrice) cartTotalPrice.textContent = `$${totalAmount.toFixed(2)}`;
+    if (cartTotalPrice) cartTotalPrice.textContent = formatVND(totalAmount);
 
     if (!cartItemsList) return;
     if (cart.length === 0) {
-      cartItemsList.innerHTML = '<p class="cart-empty-msg">Your basket is empty. Add a warm sourdough loaf or pastry!</p>';
+      cartItemsList.innerHTML = '<p class="cart-empty-msg">Giỏ bánh đang trống. Hãy chọn thêm một ổ Sourdough hoặc Croissant nóng hổi nhé!</p>';
       return;
     }
 
@@ -94,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="${item.img}" alt="${item.name}">
           <div class="cart-item-info">
             <h5>${item.name}</h5>
-            <span>$${(item.price * item.qty).toFixed(2)} ($${item.price.toFixed(2)} each)</span>
+            <span>${formatVND(item.price * item.qty)} (${formatVND(item.price)} / phần)</span>
           </div>
           <div class="cart-qty-ctrl">
             <button type="button" data-action="dec" data-idx="${index}">−</button>
@@ -120,16 +124,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function addToCart(name, price, img) {
-    const numPrice = parseFloat(price) || 24.9;
+  function addToCart(name, priceStr, img) {
+    const rawNum = parseInt(String(priceStr).replace(/[^\d]/g, ''), 10) || 125000;
     const existing = cart.find((i) => i.name === name);
     if (existing) {
       existing.qty += 1;
     } else {
-      cart.push({ name, price: numPrice, img: img || 'img/product-sourdough.png', qty: 1 });
+      cart.push({ name, price: rawNum, img: img || 'img/product-sourdough.png', qty: 1 });
     }
     renderCart();
-    showToast(`🥐 Added ${name} ($${numPrice.toFixed(2)}) to your basket!`);
+    showToast(`🥐 Đã thêm ${name} (${formatVND(rawNum)}) vào giỏ bánh!`);
   }
 
   document.querySelectorAll('.btn-add-cart').forEach((btn) => {
@@ -151,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Universal Modal Helper (Product Quick-View, Blog Reader, Bento Lightbox, Baker Video)
+  // 4. Universal Modal Helper
   function openModal(html) {
     if (!infoModalBackdrop || !infoModalContent) return;
     infoModalContent.innerHTML = html;
@@ -184,9 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
               <span>${weight}</span>
             </div>
             <h3 style="font-family:var(--font-display);font-size:28px;color:var(--amber);margin-bottom:6px">${name}</h3>
-            <p style="font-size:20px;font-weight:800;margin-bottom:12px">$${price}</p>
+            <p style="font-size:20px;font-weight:800;margin-bottom:12px">${price}</p>
             <p style="font-size:14px;color:rgba(255,248,235,0.82);line-height:1.6;margin-bottom:20px">${desc}</p>
-            <button type="button" class="btn-amber" id="modalAddCartBtn">Add to Basket — $${price}</button>
+            <button type="button" class="btn-amber" id="modalAddCartBtn">Thêm Vào Giỏ — ${price}</button>
           </div>
         </div>
       `);
@@ -205,11 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.bento-item').forEach((item) => {
     item.addEventListener('click', () => {
       const img = item.querySelector('img')?.getAttribute('src') || 'img/gallery-1.png';
-      const caption = item.dataset.caption || 'Handcrafted daily in our stone-deck oven.';
+      const caption = item.dataset.caption || 'Bánh nướng thủ công mỗi sáng từ lò đá Loafly.';
       openModal(`
         <div style="text-align:center">
           <img src="${img}" alt="${caption}" style="width:100%;max-height:340px;object-fit:cover;border-radius:20px;margin-bottom:18px">
-          <span style="display:inline-block;background:rgba(245,158,11,0.2);color:var(--amber);font-size:11px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:8px">FRESH MORNING BATCH</span>
+          <span style="display:inline-block;background:rgba(245,158,11,0.2);color:var(--amber);font-size:11px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:8px">MẺ BÁNH NƯỚNG SÁNG SỚM</span>
           <h3 style="font-family:var(--font-display);font-size:22px;color:var(--cream)">${caption}</h3>
         </div>
       `);
@@ -223,15 +227,15 @@ document.addEventListener('DOMContentLoaded', () => {
       openModal(`
         <div>
           <img src="img/baker-video.png" alt="Master Bakers" style="width:100%;height:230px;object-fit:cover;border-radius:18px;margin-bottom:18px">
-          <span style="display:inline-block;background:rgba(245,158,11,0.2);color:var(--amber);font-size:11px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:8px">4:00 AM ARTISAN CRAFT</span>
-          <h3 style="font-family:var(--font-display);font-size:26px;color:var(--amber);margin-bottom:10px">Meet Our Master Sourdough Bakers</h3>
+          <span style="display:inline-block;background:rgba(245,158,11,0.2);color:var(--amber);font-size:11px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:8px">NGHỆ THUẬT LÀM BÁNH TỪ 4:00 SÁNG</span>
+          <h3 style="font-family:var(--font-display);font-size:26px;color:var(--amber);margin-bottom:10px">Câu Chuyện Gian Bếp Lò Đá Loafly</h3>
           <p style="font-size:14px;color:rgba(255,248,235,0.82);line-height:1.65;margin-bottom:16px">
-            While the city sleeps, our head baker Julian Moreau and his team shape every boule by hand. We feed our 18-year-old wild levain starter three times a day using stone-ground organic wheat from local family mills.
+            Khi thành phố còn say giấc, bếp trưởng Julian Moreau cùng đội ngũ thợ bánh đã bắt đầu nhào nặn từng khối bột bằng tay. Chúng tôi nuôi dưỡng giống men tự nhiên Sourdough 18 năm tuổi bằng bột mì hữu cơ xay đá, hoàn toàn không phụ gia hay chất bảo quản.
           </p>
           <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;background:rgba(255,248,235,0.06);padding:14px;border-radius:16px">
-            <div><strong style="color:var(--amber);display:block;font-size:18px">250°C</strong><small style="font-size:11px;color:var(--text-muted)">Hearth Deck Temp</small></div>
-            <div><strong style="color:var(--amber);display:block;font-size:18px">36 Hours</strong><small style="font-size:11px;color:var(--text-muted)">Slow Fermentation</small></div>
-            <div><strong style="color:var(--amber);display:block;font-size:18px">0%</strong><small style="font-size:11px;color:var(--text-muted)">Additives or Yeast</small></div>
+            <div><strong style="color:var(--amber);display:block;font-size:18px">250°C</strong><small style="font-size:11px;color:var(--text-muted)">Nhiệt Độ Lò Đá</small></div>
+            <div><strong style="color:var(--amber);display:block;font-size:18px">36 Tiếng</strong><small style="font-size:11px;color:var(--text-muted)">Ủ Lạnh Chậm</small></div>
+            <div><strong style="color:var(--amber);display:block;font-size:18px">0%</strong><small style="font-size:11px;color:var(--text-muted)">Phụ Gia &amp; Men Khô</small></div>
           </div>
         </div>
       `);
@@ -241,22 +245,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Blog Articles Reader Modal
   const blogArticles = [
     {
-      title: '5 Expert Tips for Baking the Perfect Sourdough at Home',
-      read: '4 Min Read · By Head Baker Julian Moreau',
+      title: '5 Bí Quyết Nướng Bánh Mì Sourdough Vỏ Giòn Ruột Mềm Tại Nhà',
+      read: 'Đọc 4 Phút · Bếp Trưởng Julian Moreau',
       img: 'img/blog-1.png',
-      body: '1. Use an active, bubbly levain at peak rise (4–5 hours after feeding). 2. Autolyse your stone-ground flour and water for 45 minutes before adding salt. 3. Perform gentle coil folds every 30 minutes to build airy gluten structure. 4. Cold-proof at 4°C for at least 16–36 hours for blistered crust and complex tang. 5. Bake in a preheated Dutch oven with steam at 250°C!'
+      body: '1. Sử dụng men cái Levain đang ở đỉnh nở (4–5 giờ sau khi cho ăn). 2. Ủ bột cùng nước (Autolyse) 45 phút trước khi thêm muối biển. 3. Gập bột nhẹ nhàng (Coil Fold) mỗi 30 phút để tạo mạng lưới gluten giữ khí. 4. Ủ lạnh ở 4°C từ 16–36 tiếng để vỏ bánh nổi bóng nước giòn rụm. 5. Nướng trong nồi gang tạo hơi nước ở 250°C!'
     },
     {
-      title: 'The Story Behind Our Signature Almond Croissant',
-      read: '3 Min Read · Patisserie Notes',
+      title: 'Câu Chuyện Đằng Sau Chiếc Bánh Croissant Hạnh Nhân Trứ Danh',
+      read: 'Đọc 3 Phút · Nhật Ký Patisserie',
       img: 'img/blog-2.png',
-      body: 'Our twice-baked Almond Croissant starts with a 27-layer AOP Charentes-Poitou butter croissant soaked in a light Madagascar vanilla & dark rum syrup, filled generously with roasted Marcona almond frangipane, and topped with toasted flaked almonds and snow sugar.'
+      body: 'Chiếc bánh Croissant Hạnh Nhân nướng 2 lần của Loafly bắt đầu từ cốt bánh sừng bò 27 lớp bơ Pháp AOP Charentes-Poitou, thấm đẫm si-rô vani Madagascar, phủ kem hạnh nhân Marcona nghiền mịn và hạnh nhân lát nướng vàng giòn.'
     },
     {
-      title: 'Summer Flavors Are Here: Try Our Berry Tart Collection',
-      read: '5 Min Read · Seasonal Menu',
+      title: 'Hương Vị Mùa Hè: Bộ Sưu Tập Bánh Tart Trái Cây Tươi Mới Ra Mắt',
+      read: 'Đọc 5 Phút · Thực Đơn Theo Mùa',
       img: 'img/blog-3.png',
-      body: 'Hand-picked organic raspberries, blackberries, and wild strawberries rest on a crisp pâte sucrée shell filled with Tahitian vanilla bean diplomat cream and a brush of apricot-verbena glaze.'
+      body: 'Sự kết hợp giữa phúc bồn tử, dâu rừng Đà Lạt và việt quất tươi mọng trên đế bánh tart bơ giòn tan, quyện cùng lớp kem trứng hạt vani Tahiti thanh mát.'
     }
   ];
 
@@ -278,16 +282,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Testimonial Slider
   const reviews = [
     {
-      text: "The sourdough here is unbeatable — perfectly crisp on the outside and soft on the inside. It's become a weekend must-have at our home!",
-      author: '— Clara Jenkins · Local Food Critic (Verified Buyer)'
+      text: 'Bánh mì Sourdough ở Loafly thực sự xuất sắc — vỏ ngoài giòn rụm thơm lừng mà bên trong lại mềm ẩm. Cuối tuần nào gia đình mình cũng phải ghé mua!',
+      author: '— Chị Minh Anh · Khách Hàng Thân Thiết'
     },
     {
-      text: 'Walking into Loafly at 8 AM smells like heaven. Their flaky almond croissants and cinnamon rolls rival the best patisseries in Paris!',
-      author: '— Marcus Vance · Espresso & Pastry Lover (Verified Buyer)'
+      text: 'Bước vào tiệm lúc 8 giờ sáng thơm nức mùi bơ Pháp nướng. Bánh Croissant hạnh nhân và Cinnamon Roll ở đây ngon không kém gì các tiệm bánh tại Paris!',
+      author: '— Anh Hoàng Bách · Tín Đồ Cà Phê & Bánh Ngọt'
     },
     {
-      text: 'We ordered their Brioche Crown and Berry Tart collection for our Sunday brunch — every single crumb disappeared in 10 minutes!',
-      author: '— Elena Rostova · Weekend Regular (Verified Buyer)'
+      text: 'Mình đặt bánh Brioche Vương Miện và hộp Su Kem Choux Trio cho buổi tiệc trà chiều ở công ty, ai ăn cũng tấm tắc khen vì vị ngọt thanh không hề ngấy.',
+      author: '— Chị Thanh Trúc · Khách Hàng Đặt Tiệc'
     }
   ];
 
@@ -316,9 +320,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('bookName')?.value || 'Guest';
-      const time = document.getElementById('bookTime')?.value || '09:00 AM';
-      showToast(`✨ Table reserved for ${name} (${time})! See you at Loafly.`);
+      const name = document.getElementById('bookName')?.value || 'Quý khách';
+      const time = document.getElementById('bookTime')?.value || '09:00 Sáng';
+      showToast(`✨ Đã xác nhận giữ bàn cho ${name} (${time})! Hẹn gặp bạn tại Loafly.`);
       bookingForm.reset();
     });
   }
@@ -328,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      showToast('🥖 Welcome to the Loafly Oven Club! Fresh recipes are on the way.');
+      showToast('💌 Cảm ơn bạn đã đăng ký! Loafly sẽ gửi ưu đãi bánh mới mỗi tuần.');
       newsletterForm.reset();
     });
   }

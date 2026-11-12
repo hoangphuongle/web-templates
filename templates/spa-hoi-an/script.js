@@ -59,7 +59,7 @@ bên dưới -->
       <p style="opacity:.8;margin-top:14px">Buổi tối thường kín lịch, bạn nên đặt trước 2–3 tiếng. Đặt online giảm ngay 10%.</p>
       <div class="sd-info">
         <div><span>📍</span><div><b>Địa chỉ</b><small>22 Trần Phú, Minh An, Hội An</small></div></div>
-        <div><span>📞</span><div><b>Hotline / Zalo</b><small>0905 456 789</small></div></div>
+        <div><span>📞</span><div><b>Hotline / Zalo</b><small>0974 100 372</small></div></div>
         <div><span>💳</span><div><b>Thanh toán</b><small>Tiền mặt · Chuyển khoản · Thẻ Visa</small></div></div>
       </div>
     </div>

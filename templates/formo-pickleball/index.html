@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORMO Pickleball Academy — Làm Chủ Sân Đấu | CLB &amp; Học Viện Pickleball Chuẩn DUPR</title>
+  <meta name="description" content="FORMO Pickleball Academy — Làm chủ khu vực Kitchen, hoàn thiện cú Drop bóng số 3 (3rd Shot Drop) và nâng điểm DUPR trên hệ thống 12 sân Pickleball thảm chuẩn quốc tế.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Zalo</a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}@media(max-width:479px){#hp-back{display:none!important}#hp-bar{padding:0 10px!important;gap:6px!important}}</style>
+
+  <!-- 1. HERO SECTION (LÀM CHỦ SÂN ĐẤU) -->
+  <section class="hero-outer" id="home">
+    <div class="container">
+      <div class="hero-frame">
+        <!-- Top Integrated Navbar with Inverted Center Logo Notch -->
+        <nav class="hero-nav">
+          <ul class="nav-side nav-left" id="navLeft">
+            <li><a href="#home" class="nav-pill-active">Trang chủ</a></li>
+            <li><a href="#programs">Khóa học</a></li>
+            <li><a href="#accordion-sec">Giáo trình</a></li>
+          </ul>
+
+          <!-- Center White Notched Brand Tab -->
+          <div class="brand-notch">
+            <a href="#home" class="formo-logo">
+              <div class="logo-main">
+                <span>FORMO</span>
+                <svg class="pickleball-svg" viewBox="0 0 36 36" fill="none">
+                  <circle cx="18" cy="18" r="15" fill="#b8f718" stroke="#0b1911" stroke-width="2.2"/>
+                  <circle cx="13" cy="12" r="2" fill="#0b1911"/>
+                  <circle cx="22" cy="11" r="2" fill="#0b1911"/>
+                  <circle cx="18" cy="18" r="2.2" fill="#0b1911"/>
+                  <circle cx="11" cy="20" r="1.8" fill="#0b1911"/>
+                  <circle cx="24" cy="19" r="1.8" fill="#0b1911"/>
+                  <circle cx="16" cy="25" r="1.9" fill="#0b1911"/>
+                  <circle cx="22" cy="24" r="1.6" fill="#0b1911"/>
+                </svg>
+              </div>
+              <small>PICKLEBALL ACADEMY</small>
+            </a>
+          </div>
+
+          <ul class="nav-side nav-right">
+            <li><a href="#coaches">HLV</a></li>
+            <li><a href="#testimonials">Đánh giá</a></li>
+            <li><button type="button" class="btn-book-trial" onclick="openBookingModal('Đăng Ký Học Thử &amp; Đặt Sân Pickleball')">Đặt Sân Ngay</button></li>
+          </ul>
+
+          <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Mở menu">
+            <span></span><span></span><span></span>
+          </button>
+        </nav>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="mobile-nav-drawer" id="mobileNavDrawer">
+          <a href="#home">Trang chủ</a>
+          <a href="#programs">Khóa học Pickleball</a>
+          <a href="#accordion-sec">Lộ trình DUPR</a>
+          <a href="#coaches">Đội ngũ HLV</a>
+          <a href="#testimonials">Học viên đánh giá</a>
+          <button type="button" class="btn-lime" onclick="openBookingModal('Đăng Ký Học Thử &amp; Đặt Sân Pickleball')">Đặt Sân Ngay</button>
+        </div>
+
+        <!-- Giant Display Headline Behind Athlete -->
+        <div class="hero-Headline-wrap">
+          <h1 class="hero-giant-title" id="heroSlideTitle">
+            <span>OWN THE</span> <em class="lime-txt">COURT</em>
+          </h1>
+        </div>
+
+        <!-- Neon Green Swoosh Curve SVG -->
+        <svg class="hero-swoosh" viewBox="0 0 1200 420" fill="none" preserveAspectRatio="none">
+          <path d="M40 370 C 340 280, 620 120, 1140 60" stroke="url(#limeGrad)" stroke-width="18" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="limeGrad" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0%" stop-color="#b8f718" stop-opacity="0.05"/>
+              <stop offset="50%" stop-color="#b8f718" stop-opacity="0.65"/>
+              <stop offset="100%" stop-color="#b8f718" stop-opacity="0.1"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- Side Carousel Arrows (Exact Mockup Cutouts) -->
+        <button type="button" class="hero-side-arrow left" id="heroPrevBtn" aria-label="Slide trước">‹</button>
+        <button type="button" class="hero-side-arrow right" id="heroNextBtn" aria-label="Slide tiếp">›</button>
+
+        <!-- Main Hero Body Grid -->
+        <div class="hero-body">
+          <!-- Left CTA Column -->
+          <div class="hero-left-col">
+            <p id="heroSlideDesc">
+              Hoàn thiện kỹ thuật Dink sát lưới, làm chủ cú Drop bóng số 3 (3rd Shot Drop) và bứt phá điểm DUPR cùng học viện Pickleball chuyên nghiệp.
+            </p>
+            <a href="#programs" class="btn-lime">Khám Phá Khóa Học</a>
+          </div>
+
+          <!-- Center Athlete Visual -->
+          <div class="hero-center-athlete">
+            <img src="img/hero-court.png" alt="Vận động viên FORMO Pickleball trên sân" class="hero-athlete-img">
+          </div>
+
+          <!-- Right Glassmorphism Badge -->
+          <div class="hero-right-col">
+            <div class="glass-court-badge">
+              <div class="badge-ball-icon">
+                <svg viewBox="0 0 32 32" fill="none">
+                  <circle cx="16" cy="16" r="14" fill="#b8f718"/>
+                  <circle cx="11" cy="11" r="2" fill="#0b1911"/>
+                  <circle cx="20" cy="11" r="2" fill="#0b1911"/>
+                  <circle cx="16" cy="16" r="2.2" fill="#0b1911"/>
+                  <circle cx="11" cy="21" r="2" fill="#0b1911"/>
+                  <circle cx="21" cy="21" r="2" fill="#0b1911"/>
+                </svg>
+              </div>
+              <p>Tập luyện cùng HLV chứng chỉ quốc tế PPR &amp; DUPR, nâng tầm kỹ chiến thuật Pickleball mỗi ngày.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TẬP LUYỆN TẠI FORMO — GIỚI THIỆU & THỐNG KÊ -->
+  <section class="section-white" id="about">
+    <div class="container">
+      <div class="intro-grid">
+        <!-- Left Column: Close-up Image + Copy + Button -->
+        <div class="intro-left">
+          <div class="intro-img-card">
+            <img src="img/ball-detail.png" alt="Tập luyện bộ chân và kiểm soát bóng Pickleball" loading="lazy">
+          </div>
+          <p class="intro-small-p">
+            Từ buổi cầm vợt làm quen vạch Kitchen đầu tiên cho đến tấm huy chương giải đấu DUPR, chương trình đào tạo của FORMO giúp bạn hoàn thiện cảm giác bóng, bộ chân và bản lĩnh thi đấu.
+          </p>
+          <a href="#programs" class="btn-dark-pill">
+            <span>Khám Phá Khóa Học</span>
+            <span class="arr-circle">→</span>
+          </a>
+        </div>
+
+        <!-- Right Column: Badge + Tri-tone Heading + 2 Stats -->
+        <div class="intro-right">
+          <div class="pill-tag">
+            <span class="tag-dot">🎾</span>
+            <span>TẬP LUYỆN TẠI FORMO PICKLEBALL</span>
+          </div>
+
+          <h2 class="tri-heading">
+            Rèn luyện bộ chân, cảm giác bóng và tư duy chiến thuật để <span class="txt-green">chơi thông minh hơn</span> <span class="txt-muted">và làm chủ hoàn toàn khu vực Kitchen.</span>
+          </h2>
+
+          <div class="stats-2col">
+            <div class="stat-box">
+              <strong>100%</strong>
+              <div class="stat-meta">
+                <b>Tăng Điểm Xếp Hạng DUPR</b>
+                <span>Kỹ thuật Drop, Reset bóng và chiến thuật đánh đôi.</span>
+              </div>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-box">
+              <strong>5.000+</strong>
+              <div class="stat-meta">
+                <b>Học Viên &amp; Tay Vợt</b>
+                <span>Đủ mọi cấp độ từ Newbie 2.0 đến Pro 5.5+.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DINK KHÉO LÉO. ĐÁNH MẠNH MẼ. (PHÂN CẤP KHÓA HỌC & JOURNEY CARD) -->
+  <section class="section-white" id="programs">
+    <div class="container">
+      <div class="smarter-grid">
+        <!-- Left Column -->
+        <div class="smarter-left">
+          <div class="avatar-stack">
+            <img src="img/coach-1.png" alt="VĐV 1">
+            <img src="img/coach-3.png" alt="VĐV 2">
+            <img src="img/review-player.png" alt="VĐV 3">
+            <span class="avatar-label">12 Sân Thảm Chuẩn USA · Đối Tác Chính Hãng JOOLA &amp; Franklin X-40</span>
+          </div>
+
+          <h2 class="dual-heading">
+            Dink Khéo Léo.<br>
+            Đánh <span class="txt-green">Mạnh Mẽ.</span>
+          </h2>
+
+          <p class="sec-desc">
+            Nâng cao khả năng điều bóng mềm (Soft Game), phản xạ bắt lưới tốc độ cao tại vạch Non-Volley Zone và tự tin thi đấu qua giáo trình chuẩn quốc tế cho mọi trình độ.
+          </p>
+
+          <a href="#accordion-sec" class="btn-dark-pill">
+            <span>Xem Các Khóa Học</span>
+            <span class="arr-circle">→</span>
+          </a>
+
+          <!-- 2 Side-by-Side Tier Cards -->
+          <div class="tier-cards-row">
+            <!-- Card 1: Light -->
+            <div class="tier-card light">
+              <div class="tier-head">
+                <span class="tier-ico">🎾</span>
+                <h4>Cơ Bản &amp; Giao Lưu</h4>
+              </div>
+              <div class="tier-specs">
+                <span>DUPR 2.0 – 3.5</span>
+                <i>|</i>
+                <span>Kỹ Thuật Nền Tảng</span>
+              </div>
+              <button type="button" class="btn-tier-dark" onclick="openBookingModal('Khóa Cơ Bản &amp; Giao Lưu Open Play (DUPR 2.0 - 3.5)')">Xem Chi Tiết</button>
+            </div>
+
+            <!-- Card 2: Dark Green -->
+            <div class="tier-card dark">
+              <div class="tier-head">
+                <span class="tier-ico">🏆</span>
+                <h4>Lớp Chuyên Sâu Thi Đấu</h4>
+              </div>
+              <div class="tier-specs">
+                <span>DUPR 3.75 – 5.5+</span>
+                <i>|</i>
+                <span>Đấu Giải Chuyên Nghiệp</span>
+              </div>
+              <button type="button" class="btn-tier-light" onclick="openBookingModal('Lớp Chuyên Sâu Thi Đấu DUPR 3.75 – 5.5+')">Xem Chi Tiết</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Large Action Photo with Bottom Olive Overlay -->
+        <div class="smarter-right">
+          <div class="journey-photo-card">
+            <img src="img/action-court.png" alt="Tay vợt Pickleball đang thi đấu" loading="lazy">
+            <div class="journey-overlay-bar">
+              <div class="journey-txt">
+                <h3>Hành trình Pickleball bắt đầu tại đây.</h3>
+                <p>Gia nhập học viện Pickleball hàng đầu — nơi đào tạo những tay vợt có cú Dink chuẩn xác, Drive uy lực và phối hợp đánh đôi ăn ý.</p>
+              </div>
+              <button type="button" class="btn-lime-sm" onclick="openBookingModal('Đăng Ký Kiểm Tra Trình Độ DUPR &amp; Học Thử')">
+                Đăng Ký Học <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CHỌN LỘ TRÌNH CỦA BẠN (ACCORDION TƯƠNG TÁC + PRO SHOP VỢT) -->
+  <section class="section-white" id="accordion-sec">
+    <div class="container">
+      <div class="program-acc-grid">
+        <!-- Left Tall Image -->
+        <div class="program-tall-img">
+          <img src="img/program-vertical.png" alt="Sân tập Pickleball tiêu chuẩn quốc tế" loading="lazy">
+          <div class="court-spec-float">
+            <strong>12 Sân Chuẩn</strong>
+            <span>Mặt sân thảm Cushion chống chấn thương chuẩn USA Pickleball</span>
+          </div>
+        </div>
+
+        <!-- Right Accordion Column -->
+        <div class="program-acc-col">
+          <h2 class="dual-heading">
+            Chọn Lộ Trình Tập Luyện.<br>
+            <span class="txt-green">Tập Luyện. Nâng Trình. Thi Đấu.</span>
+          </h2>
+
+          <div class="acc-list" id="programAccordion">
+            <!-- Item 01 (Open by default) -->
+            <div class="acc-item active">
+              <button type="button" class="acc-header">
+                <span class="acc-num">01</span>
+                <span class="acc-sep">|</span>
+                <span class="acc-title">Làm Chủ Cú Drop Bóng Số 3 &amp; Kiểm Soát Kitchen</span>
+                <span class="acc-icon">−</span>
+              </button>
+              <div class="acc-body">
+                <p>
+                  Huấn luyện chuyên sâu cú 3rd Shot Drop từ cuối sân, kỹ năng Reset bóng ở vùng chuyển tiếp (Transition Zone) và điều bóng Dink chéo sân để hóa giải mọi cú đánh mạnh của đối thủ.
+                </p>
+                <button type="button" class="btn-lime-sm" onclick="openBookingModal('Khóa 01 — Làm Chủ Cú Drop Bóng Số 3 &amp; Kiểm Soát Kitchen')">
+                  Đăng Ký Khóa Này <span>→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 02 -->
+            <div class="acc-item">
+              <button type="button" class="acc-header">
+                <span class="acc-num">02</span>
+                <span class="acc-sep">|</span>
+                <span class="acc-title">Tăng Tốc Bắt Lưới, Phản Đòn &amp; Đấu Tay Đôi (Hand Battles)</span>
+                <span class="acc-icon">+</span>
+              </button>
+              <div class="acc-body">
+                <p>
+                  Các bài tập tốc độ cao sát vạch Kitchen giúp mở vợt gọn, phản xạ Volley xoáy (Topspin Roll), thực hiện cú Erne / ATP và làm chủ những pha đôi công tốc độ cao trên lưới.
+                </p>
+                <button type="button" class="btn-lime-sm" onclick="openBookingModal('Khóa 02 — Tăng Tốc Bắt Lưới &amp; Đấu Tay Đôi')">
+                  Đăng Ký Khóa Này <span>→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 03 -->
+            <div class="acc-item">
+              <button type="button" class="acc-header">
+                <span class="acc-num">03</span>
+                <span class="acc-sep">|</span>
+                <span class="acc-title">Chiến Thuật Đánh Đôi, Xếp Đội Hình (Stacking) &amp; Thi Đấu DUPR</span>
+                <span class="acc-icon">+</span>
+              </button>
+              <div class="acc-body">
+                <p>
+                  Nắm vững cách di chuyển đồng bộ cùng đồng đội, chiến thuật Stacking trái/phải, bắt bài cắt bóng giữa sân (Poaching) và phân tích video thực chiến nâng điểm DUPR.
+                </p>
+                <button type="button" class="btn-lime-sm" onclick="openBookingModal('Khóa 03 — Chiến Thuật Đánh Đôi &amp; Thi Đấu DUPR')">
+                  Đăng Ký Khóa Này <span>→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Item 04 -->
+            <div class="acc-item">
+              <button type="button" class="acc-header">
+                <span class="acc-num">04</span>
+                <span class="acc-sep">|</span>
+                <span class="acc-title">Nhập Môn Pickleball 101: Giao Bóng, Trả Giao &amp; Luật Tính Điểm</span>
+                <span class="acc-icon">+</span>
+              </button>
+              <div class="acc-body">
+                <p>
+                  Dành cho người mới bắt đầu! Làm quen quy tắc 2 lần nảy (Two-Bounce Rule), kỹ thuật giao bóng sâu, bộ chân khu vực Non-Volley Zone và cách tính điểm đánh đôi (Hỗ trợ mượn vợt miễn phí!).
+                </p>
+                <button type="button" class="btn-lime-sm" onclick="openBookingModal('Khóa 04 — Nhập Môn Pickleball 101 Cho Người Mới')">
+                  Đăng Ký Khóa Này <span>→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pro Pickleball Paddle & Gear Shop Strip -->
+      <div class="paddle-brands-bar">
+        <div class="pb-label">PRO SHOP CHÍNH HÃNG — BẤM CHỌN DÒNG VỢT ĐỂ ĐĂNG KÝ ĐÁNH THỬ MIỄN PHÍ TRÊN SÂN:</div>
+        <div class="pb-pills">
+          <span><strong>JOOLA</strong> Perseus 16mm Carbon</span>
+          <span><strong>SELKIRK</strong> LUXX Control Air</span>
+          <span><strong>CRBN¹X</strong> Raw T700 Power</span>
+          <span><strong>SIX ZERO</strong> Double Black Diamond</span>
+          <span><strong>GEARBOX</strong> Pro Power Elongated</span>
+          <span><strong>FRANKLIN</strong> Bóng Thi Đấu X-40</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ĐỘI NGŨ HUẤN LUYỆN VIÊN -->
+  <section class="section-white" id="coaches">
+    <div class="container">
+      <div class="coaches-top-bar">
+        <div class="coaches-top-left">
+          <div class="mini-line-tag">ĐỘI NGŨ HUẤN LUYỆN VIÊN</div>
+          <p>Đội ngũ HLV sở hữu chứng chỉ quốc tế PPR &amp; IPTPA, tận tâm truyền đạt kỹ thuật chuẩn xác, tư duy chiến thuật đánh đôi và phong thái tự tin cho từng học viên.</p>
+        </div>
+        <div class="coaches-top-right">
+          <h2 class="dual-heading">
+            HLV Đẳng Cấp, Kiến Tạo<br>
+            <span class="txt-green">Nhà Vô Địch Tương Lai</span>
+          </h2>
+        </div>
+      </div>
+
+      <!-- 4 Coaches Grid -->
+      <div class="coaches-grid">
+        <!-- Coach 1 -->
+        <article class="coach-card" data-coach="0">
+          <div class="coach-img-box">
+            <img src="img/coach-1.png" alt="HLV Marcus Vance" loading="lazy">
+            <div class="coach-bio-overlay">
+              <span class="bio-ball">🎾</span>
+              <h4>HLV Trưởng PPR<br>DUPR 5.6</h4>
+              <p>Huy chương vàng nội dung Đôi Nam Mở Rộng với hơn 9 năm kinh nghiệm huấn luyện kỹ thuật 3rd Shot Drop và chiến thuật đánh đôi chuyên nghiệp.</p>
+            </div>
+          </div>
+          <div class="coach-info">
+            <h3>HLV Marcus Vance</h3>
+            <span>HLV Trưởng Học Viện (DUPR 5.6)</span>
+          </div>
+        </article>
+
+        <!-- Coach 2 (Active by default matching mockup!) -->
+        <article class="coach-card active" data-coach="1">
+          <div class="coach-img-box">
+            <img src="img/coach-2.png" alt="HLV Minh Quân" loading="lazy">
+            <div class="coach-bio-overlay">
+              <span class="bio-ball">🎾</span>
+              <h4>HLV Chuyên Trách<br>Đào Tạo Trẻ &amp; Đánh Đôi</h4>
+              <p>Chuyên gia chứng chỉ IPTPA với hơn 10 năm kinh nghiệm phát triển phản xạ vạch Kitchen, kỹ năng Reset bóng và dẫn dắt đội tuyển trẻ thi đấu quốc gia.</p>
+            </div>
+          </div>
+          <div class="coach-info">
+            <h3>HLV Trần Minh Quân</h3>
+            <span>Chuyên Gia Đánh Đôi &amp; Kitchen</span>
+          </div>
+        </article>
+
+        <!-- Coach 3 -->
+        <article class="coach-card" data-coach="2">
+          <div class="coach-img-box">
+            <img src="img/coach-3.png" alt="HLV Hoàng Nam" loading="lazy">
+            <div class="coach-bio-overlay">
+              <span class="bio-ball">🎾</span>
+              <h4>Chuyên Gia Kỹ Thuật<br>Drop &amp; Kiểm Soát Bóng</h4>
+              <p>Giúp học viên trình độ 3.0–4.5 khắc phục triệt để lỗi bung bóng cao, làm chủ cú Topspin Drop và điều tiết nhịp độ trận đấu hiệu quả.</p>
+            </div>
+          </div>
+          <div class="coach-info">
+            <h3>HLV Lê Hoàng Nam</h3>
+            <span>HLV Kỹ Chiến Thuật (DUPR 5.2)</span>
+          </div>
+        </article>
+
+        <!-- Coach 4 -->
+        <article class="coach-card" data-coach="3">
+          <div class="coach-img-box">
+            <img src="img/coach-4.png" alt="HLV Alex Mercer" loading="lazy">
+            <div class="coach-bio-overlay">
+              <span class="bio-ball">🎾</span>
+              <h4>Chuyên Gia Thể Lực<br>&amp; Bộ Chân Sân Đấu</h4>
+              <p>Xây dựng bước đệm Split-Step linh hoạt, di chuyển ngang tốc độ cao và phòng ngừa chấn thương khớp gối, cổ chân khi thi đấu cường độ cao.</p>
+            </div>
+          </div>
+          <div class="coach-info">
+            <h3>HLV Alex Mercer</h3>
+            <span>HLV Thể Lực &amp; Phản Xạ Bộ Chân</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CẢM NHẬN HỌC VIÊN (KHẲNG ĐỊNH BẢN LĨNH TRÊN SÂN ĐẤU) -->
+  <section class="section-white" id="testimonials">
+    <div class="container">
+      <div class="coaches-top-bar">
+        <div>
+          <div class="mini-line-tag">CẢM NHẬN HỌC VIÊN</div>
+          <h2 class="dual-heading">
+            Khẳng Định Bản Lĩnh<br>
+            <span class="txt-green">Trên Sân Pickleball</span>
+          </h2>
+        </div>
+        <div class="testi-top-desc">
+          <p>Tham gia các khóa huấn luyện chuyên sâu và giải đấu DUPR hàng tuần để nâng cao kỹ thuật, bứt phá thứ hạng và kết nối cùng cộng đồng hơn 5.000 tay vợt đam mê.</p>
+        </div>
+      </div>
+
+      <!-- 3-Part Bento Testimonial Layout -->
+      <div class="testi-bento">
+        <!-- Left Portrait -->
+        <div class="testi-portrait">
+          <img src="img/review-player.png" alt="Học viên CLB FORMO Pickleball" id="testiImg" loading="lazy">
+        </div>
+
+        <!-- Middle Overlapping Dark Green Quote Box -->
+        <div class="testi-quote-col">
+          <div class="testi-quote-card">
+            <div class="t-quote-mark">“</div>
+            <p id="testiText">
+              Khóa học tại FORMO đã thay đổi hoàn toàn cú Drop bóng số 3 và sự kiên nhẫn của mình ở vạch Kitchen. Điểm DUPR của mình tăng từ 3.25 lên 4.30 chỉ sau 2 tháng và vừa giành HCV đôi nam 4.0!
+            </p>
+            <strong id="testiAuthor">Anh Quốc Bảo · Hội viên CLB (DUPR 4.32)</strong>
+          </div>
+          <div class="testi-nav-btns">
+            <button type="button" class="t-arr" id="testiPrev" aria-label="Đánh giá trước">←</button>
+            <button type="button" class="t-arr active" id="testiNext" aria-label="Đánh giá tiếp">→</button>
+          </div>
+        </div>
+
+        <!-- Right Rating & Mini Action Card -->
+        <div class="testi-rating-col">
+          <div class="rating-big">
+            <strong>4.9</strong><span>/ 5.0</span>
+          </div>
+          <p class="rating-sub">Hơn 25.000+ lượt đặt sân &amp; đánh giá 5 sao từ học viên và các CLB Pickleball trên toàn quốc.</p>
+          <div class="rating-mini-img">
+            <img src="img/review-mini.png" alt="Trận đấu Pickleball buổi tối" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. BANNER KÊU GỌI HÀNH ĐỘNG (ĐÁNH MẠNH HƠN) -->
+  <section class="cta-banner-sec">
+    <div class="container">
+      <div class="cta-banner-frame">
+        <!-- Left Athlete Visual with Giant Text -->
+        <div class="cta-left-visual">
+          <img src="img/cta-player.png" alt="Bứt phá trình độ Pickleball" loading="lazy">
+          <div class="play-stronger-txt">
+            <span>PLAY</span>
+            <em class="lime-txt">STRONGER</em>
+          </div>
+        </div>
+
+        <!-- Right Floating White Card -->
+        <div class="cta-white-card">
+          <h2>Sẵn Sàng Nâng Tầm Trình Độ Pickleball Của Bạn?</h2>
+          <h4><span class="txt-green">Tập luyện bài bản</span> và biến mỗi buổi ra sân thành bước tiến rõ rệt.</h4>
+          <p>
+            Từ những pha bỏ nhỏ Dink chéo sân tinh tế cho tới những cú phản công tốc độ trên lưới, đội ngũ HLV chuẩn quốc tế cùng hệ thống 12 sân thảm có mái che sẽ giúp bạn thi đấu tự tin và sắc bén hơn.
+          </p>
+          <div class="cta-card-actions">
+            <button type="button" class="btn-dark-pill" onclick="openBookingModal('Đặt Sân Hoặc Đăng Ký Buổi Tập Cùng HLV')">
+              <span>Đặt Lịch Tập Ngay</span>
+              <span class="arr-circle">→</span>
+            </button>
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="btn-outline-dark">💬 Zalo</a>
+            <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="btn-outline-dark">✈️ Telegram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FOOTER (FORMO PICKLEBALL) -->
+  <footer class="footer-sec">
+    <div class="container">
+      <div class="footer-frame">
+        <div class="footer-top-grid">
+          <!-- Col 1: Brand & Copyright -->
+          <div class="ft-brand-col">
+            <a href="#home" class="formo-logo ft-logo-light">
+              <div class="logo-main">
+                <span>FORMO</span>
+                <svg class="pickleball-svg" viewBox="0 0 36 36" fill="none">
+                  <circle cx="18" cy="18" r="15" fill="#b8f718"/>
+                  <circle cx="13" cy="12" r="2" fill="#0b1911"/>
+                  <circle cx="22" cy="11" r="2" fill="#0b1911"/>
+                  <circle cx="18" cy="18" r="2.2" fill="#0b1911"/>
+                  <circle cx="12" cy="22" r="2" fill="#0b1911"/>
+                  <circle cx="23" cy="21" r="2" fill="#0b1911"/>
+                </svg>
+              </div>
+              <small>PICKLEBALL ACADEMY</small>
+            </a>
+
+            <p class="ft-tagline">Dink Khéo Léo. <span>Đánh Mạnh Mẽ.</span></p>
+
+            <div class="ft-socials">
+              <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" aria-label="Zalo">Z</a>
+              <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+              <a href="#home" aria-label="YouTube">▶</a>
+              <a href="#home" aria-label="Facebook">f</a>
+            </div>
+
+            <p class="ft-copy">Copyright © 2026 Hoang Phuong. All rights reserved.</p>
+          </div>
+
+          <!-- Col 2: Links -->
+          <div class="ft-links-col">
+            <ul>
+              <li><a href="#programs">Khóa học Pickleball</a></li>
+              <li><a href="#accordion-sec">Lộ trình DUPR</a></li>
+              <li><a href="#coaches">Đội ngũ HLV</a></li>
+              <li><a href="#about">Thuê sân &amp; Giải đấu</a></li>
+              <li><a href="../../index.html#templates">← Kho Giao Diện</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Net Image & Tags -->
+          <div class="ft-card-col">
+            <div class="ft-net-img">
+              <img src="img/footer-net.png" alt="Sân tập và lưới Pickleball FORMO" loading="lazy">
+            </div>
+            <div class="ft-mini-tags">
+              <span>Huấn Luyện</span>
+              <i>|</i>
+              <span>Giao Lưu Open Play</span>
+              <i>|</i>
+              <span>Cộng Đồng DUPR</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Giant Full-Width Bottom Wordmark -->
+        <div class="footer-giant-wordmark">
+          <span>FORMO</span> <em class="lime-txt">PICKLEBALL</em>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL ĐẶT SÂN & ĐĂNG KÝ HỌC THỬ -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="closeModalBtn" aria-label="Đóng">✕</button>
+      <span class="modal-badge">🎾 FORMO PICKLEBALL ACADEMY</span>
+      <h3 id="modalProgramTitle">Đặt Sân Hoặc Đăng Ký Buổi Tập Thử</h3>
+      <p>Hệ thống 12 sân thảm chuẩn quốc tế · Hỗ trợ mượn vợt JOOLA / Selkirk miễn phí cho học viên mới.</p>
+      <form id="pickleballForm" class="modal-form">
+        <input type="text" placeholder="Họ và tên của bạn" required>
+        <input type="tel" placeholder="Số điện thoại / Zalo liên hệ" required>
+        <div class="modal-row-2">
+          <select aria-label="Chọn trình độ DUPR">
+            <option value="Người mới (Newbie 2.0 - 2.5)">Trình độ: Người mới (2.0 – 2.5)</option>
+            <option value="Phong trào (Intermediate 3.0 - 3.5)">Phong trào (DUPR 3.0 – 3.5)</option>
+            <option value="Nâng cao (Advanced 4.0 - 4.5)">Nâng cao (DUPR 4.0 – 4.5)</option>
+            <option value="Đấu giải Pro (5.0+)">Đấu giải Pro (5.0+)</option>
+          </select>
+          <select aria-label="Chọn dịch vụ">
+            <option value="Đặt sân trong nhà có mái che">Sân trong nhà có mái che</option>
+            <option value="Đặt sân ngoài trời tiêu chuẩn">Sân ngoài trời tiêu chuẩn</option>
+            <option value="Học kèm 1-1 cùng HLV PPR">Học kèm 1-1 cùng HLV</option>
+          </select>
+        </div>
+        <div class="modal-btn-group">
+          <button type="submit" class="btn-lime" style="width:100%;justify-content:center">Xác Nhận Đặt Lịch Ngay</button>
+          <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="btn-modal-chat">💬 Zalo</a>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="btn-modal-chat">✈️ Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">🎾 Đã gửi yêu cầu đặt lịch! Điều phối viên CLB sẽ liên hệ xác nhận ngay.</div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>

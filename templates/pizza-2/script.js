@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (storeBtn) {
         storeBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            alert('📍 HỆ THỐNG CỬA HÀNG PIZZA KING:\n\n1. 120 Hai Bà Trưng, Quận 1, TP. HCM\n2. 450 Điện Biên Phủ, Quận Bình Thạnh, TP. HCM\n3. 88 Nguyễn Trãi, Quận 5, TP. HCM\n\nHotline: 1900 6750 (Miễn phí giao hàng bán kính 5km)');
+            alert('📍 HỆ THỐNG CỬA HÀNG PIZZA KING:\n\n1. 120 Hai Bà Trưng, Quận 1, TP. HCM\n2. 450 Điện Biên Phủ, Quận Bình Thạnh, TP. HCM\n3. 88 Nguyễn Trãi, Quận 5, TP. HCM\n\nHotline: 0974 100 372 (Miễn phí giao hàng bán kính 5km)');
         });
     }
 

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FOODIE – Good Food Delivered to Your Doorstep | Mẫu Website Giao Đồ Ăn</title>
-<meta name="description" content="FOODIE – Fresh ingredients, delicious meals and your favorite restaurants all in one place. Mẫu website giao đồ ăn, nhà hàng hiện đại.">
+<title>FOODIE – Good Food | Đặt Món Ngon Giao Tận Nơi Nhanh Chóng</title>
+<meta name="description" content="FOODIE – Nguyên liệu tươi ngon, món ăn nóng hổi từ các nhà hàng yêu thích giao tận cửa chỉ trong 20 phút.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -47,20 +47,20 @@
         </a>
 
         <ul class="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#categories">Menu</a></li>
-          <li><a href="#popular">Restaurants</a></li>
-          <li><a href="#offers">Offers</a></li>
-          <li><a href="#footer">About</a></li>
+          <li><a href="#home" class="active">Trang chủ</a></li>
+          <li><a href="#categories">Thực đơn</a></li>
+          <li><a href="#popular">Nhà hàng</a></li>
+          <li><a href="#offers">Ưu đãi</a></li>
+          <li><a href="#footer">Liên hệ</a></li>
         </ul>
 
         <div class="nav-actions">
-          <button class="nav-icon-btn" aria-label="Search" onclick="document.getElementById('locationInput').focus()">
+          <button class="nav-icon-btn" aria-label="Tìm kiếm" onclick="document.getElementById('locationInput').focus()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
           </button>
-          <button class="nav-icon-btn" aria-label="Cart" onclick="openOrderModal('Your Food Basket', 'Fast Doorstep Delivery')">
+          <button class="nav-icon-btn" aria-label="Giỏ hàng" onclick="openOrderModal('Giỏ Đồ Ăn Của Bạn', 'Giao nóng tận nơi trong 20 phút')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
               <line x1="3" y1="6" x2="21" y2="6"/>
@@ -68,7 +68,7 @@
             </svg>
             <span class="cart-dot" id="cartCount">2</span>
           </button>
-          <button class="btn-signin" onclick="openOrderModal('Sign In / Quick Order', 'Get 50% OFF on your first order')">Sign In</button>
+          <button class="btn-signin" onclick="openOrderModal('Đặt Món Nhanh / Nhận Ưu Đãi', 'Giảm ngay 50% cho đơn hàng đầu tiên')">Đặt Ngay</button>
         </div>
       </header>
 
@@ -76,7 +76,7 @@
       <div class="hero-body">
         <div class="hero-left">
           <div class="hero-tag">GOOD FOOD <span>•</span> BRIGHTER DAYS</div>
-          <div class="hero-sublead">Delivered to<br>Your Doorstep</div>
+          <div class="hero-sublead">Giao Tận Cửa<br>Nóng Hổi Mỗi Ngày</div>
 
           <h1 class="hero-giant-title">
             <span class="word-good">GOOD</span>
@@ -84,7 +84,7 @@
           </h1>
 
           <p class="hero-desc">
-            Fresh ingredients, delicious meals and your favorite restaurants — all in one place.
+            Nguyên liệu tươi sạch, món ăn đậm vị và hàng trăm quán ngon yêu thích — tất cả hội tụ tại một nơi.
           </p>
 
           <!-- Search Bar -->
@@ -93,8 +93,8 @@
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
               <circle cx="12" cy="10" r="3"/>
             </svg>
-            <input type="text" id="locationInput" placeholder="Enter your delivery location">
-            <button type="submit" class="btn-find-food">Find Food →</button>
+            <input type="text" id="locationInput" placeholder="Nhập địa chỉ nhận món của bạn...">
+            <button type="submit" class="btn-find-food">Tìm Món Ngon →</button>
           </form>
 
           <!-- 3 Feature Badges -->
@@ -106,8 +106,8 @@
                 </svg>
               </div>
               <div class="hero-feat-txt">
-                <strong>Fast Delivery</strong>
-                <span>On-time, every time</span>
+                <strong>Giao Siêu Tốc</strong>
+                <span>Đúng hẹn trong 20 phút</span>
               </div>
             </div>
 
@@ -119,8 +119,8 @@
                 </svg>
               </div>
               <div class="hero-feat-txt">
-                <strong>Fresh Ingredients</strong>
-                <span>Quality you can taste</span>
+                <strong>Nguyên Liệu Tươi</strong>
+                <span>Chế biến mới mỗi ngày</span>
               </div>
             </div>
 
@@ -131,8 +131,8 @@
                 </svg>
               </div>
               <div class="hero-feat-txt">
-                <strong>Wide Variety</strong>
-                <span>From local to global</span>
+                <strong>Thực Đơn Đa Dạng</strong>
+                <span>Từ món Á đến món Âu</span>
               </div>
             </div>
           </div>
@@ -163,7 +163,7 @@
               </div>
               <div class="dishes-txt">
                 <strong>500+</strong>
-                <span>Delicious Dishes</span>
+                <span>Món Ngon Mỗi Ngày</span>
               </div>
               <div class="dishes-arrow">›</div>
             </div>
@@ -179,44 +179,44 @@
 <section class="categories-sec" id="categories">
   <div class="container">
     <div class="categories-wrap">
-      <button class="cat-nav-btn prev" aria-label="Previous" onclick="filterDishes('all')">‹</button>
+      <button class="cat-nav-btn prev" aria-label="Trước" onclick="filterDishes('all')">‹</button>
 
       <div class="categories-track">
         <div class="cat-item active" data-cat="rice" onclick="filterDishes('rice', this)">
-          <div class="cat-thumb"><img src="img/cat_com.png" alt="Biryani"></div>
-          <span class="cat-name">Biryani</span>
+          <div class="cat-thumb"><img src="img/cat_com.png" alt="Cơm Thố"></div>
+          <span class="cat-name">Cơm Thố</span>
         </div>
         <div class="cat-item" data-cat="pizza" onclick="filterDishes('pizza', this)">
           <div class="cat-thumb"><img src="img/cat_pizza.png" alt="Pizza"></div>
           <span class="cat-name">Pizza</span>
         </div>
         <div class="cat-item" data-cat="burger" onclick="filterDishes('burger', this)">
-          <div class="cat-thumb"><img src="img/chicken_burger_combo.png" alt="Burgers"></div>
-          <span class="cat-name">Burgers</span>
+          <div class="cat-thumb"><img src="img/chicken_burger_combo.png" alt="Burger"></div>
+          <span class="cat-name">Burger</span>
         </div>
         <div class="cat-item" data-cat="chicken" onclick="filterDishes('chicken', this)">
-          <div class="cat-thumb"><img src="img/cat_garan.png" alt="Indian"></div>
-          <span class="cat-name">Indian</span>
+          <div class="cat-thumb"><img src="img/cat_garan.png" alt="Gà Rán"></div>
+          <span class="cat-name">Gà Rán</span>
         </div>
         <div class="cat-item" data-cat="pasta" onclick="filterDishes('pasta', this)">
-          <div class="cat-thumb"><img src="img/cat_miy.png" alt="Chinese"></div>
-          <span class="cat-name">Chinese</span>
+          <div class="cat-thumb"><img src="img/cat_miy.png" alt="Mì Ý"></div>
+          <span class="cat-name">Mì Ý</span>
         </div>
         <div class="cat-item" data-cat="dessert" onclick="filterDishes('dessert', this)">
-          <div class="cat-thumb"><img src="img/cat_banh.png" alt="Desserts"></div>
-          <span class="cat-name">Desserts</span>
+          <div class="cat-thumb"><img src="img/cat_banh.png" alt="Bánh Ngọt"></div>
+          <span class="cat-name">Bánh Ngọt</span>
         </div>
         <div class="cat-item" data-cat="salad" onclick="filterDishes('salad', this)">
-          <div class="cat-thumb"><img src="img/cat_salad.png" alt="Salads"></div>
-          <span class="cat-name">Salads</span>
+          <div class="cat-thumb"><img src="img/cat_salad.png" alt="Salad"></div>
+          <span class="cat-name">Salad</span>
         </div>
         <div class="cat-item" data-cat="drink" onclick="filterDishes('drink', this)">
-          <div class="cat-thumb"><img src="img/news_lemon_honey.png" alt="Beverages"></div>
-          <span class="cat-name">Beverages</span>
+          <div class="cat-thumb"><img src="img/news_lemon_honey.png" alt="Đồ Uống"></div>
+          <span class="cat-name">Đồ Uống</span>
         </div>
       </div>
 
-      <button class="cat-nav-btn next" aria-label="Next" onclick="filterDishes('all')">›</button>
+      <button class="cat-nav-btn next" aria-label="Tiếp" onclick="filterDishes('all')">›</button>
     </div>
   </div>
 </section>
@@ -228,8 +228,8 @@
       <div class="offer-content">
         <div class="offer-tag">SPECIAL OFFER</div>
         <h2 class="offer-title">Flat 50% OFF</h2>
-        <p class="offer-sub">On Your First Order</p>
-        <button class="btn-offer" onclick="openOrderModal('Flat 50% OFF First Order', 'Promo Code: FOODIE50')">Order Now</button>
+        <p class="offer-sub">Giảm Ngay 50% Cho Đơn Hàng Đầu Tiên</p>
+        <button class="btn-offer" onclick="openOrderModal('Ưu Đãi Giảm 50% Đơn Đầu Tiên', 'Mã khuyến mãi: FOODIE50')">Đặt Món Ngay</button>
       </div>
       <div class="offer-visual">
         <img src="img/hero_pizza.png" alt="Wood Fired Pizza Special Offer">
@@ -243,10 +243,10 @@
   <div class="container">
     <div class="sec-head">
       <div>
-        <div class="sec-kicker">POPULAR</div>
-        <h2 class="sec-title">Most Ordered Dishes</h2>
+        <div class="sec-kicker">BÁN CHẠY NHẤT</div>
+        <h2 class="sec-title">Món Ngon Được Đặt Nhiều</h2>
       </div>
-      <span class="view-all-link" onclick="filterDishes('all')">View All →</span>
+      <span class="view-all-link" onclick="filterDishes('all')">Xem tất cả →</span>
     </div>
 
     <div class="dishes-grid" id="dishesGrid">
@@ -254,22 +254,22 @@
       <!-- Dish 1 -->
       <article class="dish-card" data-cat="pasta">
         <div class="dish-img-wrap">
-          <img src="img/cat_miy.png" alt="Creamy Alfredo Pasta">
-          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+          <img src="img/cat_miy.png" alt="Mì Ý Sốt Kem Nấm Alfredo">
+          <button class="wish-btn" aria-label="Yêu thích" onclick="this.classList.toggle('liked')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </button>
         </div>
         <div class="dish-body">
-          <h3 class="dish-title">Creamy Alfredo Pasta</h3>
-          <div class="dish-meta">The Pasta Place • 25 mins</div>
+          <h3 class="dish-title">Mì Ý Sốt Kem Nấm Alfredo</h3>
+          <div class="dish-meta">The Pasta Place • 25 phút</div>
           <div class="dish-rating">
             <span class="star">★</span> 4.8 <span class="count">(2.1K)</span>
           </div>
           <div class="dish-foot">
-            <span class="dish-price">₹249</span>
-            <button class="btn-add-dish" onclick="addDishToCart('Creamy Alfredo Pasta', '₹249')">+</button>
+            <span class="dish-price">89.000đ</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Mì Ý Sốt Kem Nấm Alfredo', '89.000đ')">+</button>
           </div>
         </div>
       </article>
@@ -277,22 +277,22 @@
       <!-- Dish 2 -->
       <article class="dish-card" data-cat="burger">
         <div class="dish-img-wrap">
-          <img src="img/chicken_burger_combo.png" alt="Classic Chicken Burger">
-          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+          <img src="img/chicken_burger_combo.png" alt="Combo Burger Gà Giòn Phô Mai">
+          <button class="wish-btn" aria-label="Yêu thích" onclick="this.classList.toggle('liked')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </button>
         </div>
         <div class="dish-body">
-          <h3 class="dish-title">Classic Chicken Burger</h3>
-          <div class="dish-meta">Burger House • 20 mins</div>
+          <h3 class="dish-title">Combo Burger Gà Giòn Phô Mai</h3>
+          <div class="dish-meta">Burger House • 20 phút</div>
           <div class="dish-rating">
             <span class="star">★</span> 4.6 <span class="count">(3.2K)</span>
           </div>
           <div class="dish-foot">
-            <span class="dish-price">₹189</span>
-            <button class="btn-add-dish" onclick="addDishToCart('Classic Chicken Burger', '₹189')">+</button>
+            <span class="dish-price">75.000đ</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Combo Burger Gà Giòn Phô Mai', '75.000đ')">+</button>
           </div>
         </div>
       </article>
@@ -300,22 +300,22 @@
       <!-- Dish 3 -->
       <article class="dish-card" data-cat="rice">
         <div class="dish-img-wrap">
-          <img src="img/cat_com.png" alt="Hyderabadi Chicken Biryani">
-          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+          <img src="img/cat_com.png" alt="Cơm Gà Nướng Thảo Mộc">
+          <button class="wish-btn" aria-label="Yêu thích" onclick="this.classList.toggle('liked')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </button>
         </div>
         <div class="dish-body">
-          <h3 class="dish-title">Hyderabadi Chicken Biryani</h3>
-          <div class="dish-meta">Biryani Central • 30 mins</div>
+          <h3 class="dish-title">Cơm Gà Nướng Thảo Mộc</h3>
+          <div class="dish-meta">Bếp Cơm Nhà • 20 phút</div>
           <div class="dish-rating">
             <span class="star">★</span> 4.7 <span class="count">(4.1K)</span>
           </div>
           <div class="dish-foot">
-            <span class="dish-price">₹299</span>
-            <button class="btn-add-dish" onclick="addDishToCart('Hyderabadi Chicken Biryani', '₹299')">+</button>
+            <span class="dish-price">69.000đ</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Cơm Gà Nướng Thảo Mộc', '69.000đ')">+</button>
           </div>
         </div>
       </article>
@@ -323,22 +323,22 @@
       <!-- Dish 4 -->
       <article class="dish-card" data-cat="dessert">
         <div class="dish-img-wrap">
-          <img src="img/cat_banh.png" alt="Chocolate Lava Cake">
-          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+          <img src="img/cat_banh.png" alt="Bánh Chocolate Lava Tan Chảy">
+          <button class="wish-btn" aria-label="Yêu thích" onclick="this.classList.toggle('liked')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </button>
         </div>
         <div class="dish-body">
-          <h3 class="dish-title">Chocolate Lava Cake</h3>
-          <div class="dish-meta">Sweet Cravings • 25 mins</div>
+          <h3 class="dish-title">Bánh Chocolate Lava Tan Chảy</h3>
+          <div class="dish-meta">Sweet Cravings • 25 phút</div>
           <div class="dish-rating">
             <span class="star">★</span> 4.9 <span class="count">(1.8K)</span>
           </div>
           <div class="dish-foot">
-            <span class="dish-price">₹199</span>
-            <button class="btn-add-dish" onclick="addDishToCart('Chocolate Lava Cake', '₹199')">+</button>
+            <span class="dish-price">59.000đ</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Bánh Chocolate Lava Tan Chảy', '59.000đ')">+</button>
           </div>
         </div>
       </article>
@@ -346,22 +346,22 @@
       <!-- Dish 5 -->
       <article class="dish-card" data-cat="pizza">
         <div class="dish-img-wrap">
-          <img src="img/pizza_bbq.png" alt="Smoky BBQ Beef Pizza">
-          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+          <img src="img/pizza_bbq.png" alt="Pizza Bò Nướng Sốt BBQ Khói">
+          <button class="wish-btn" aria-label="Yêu thích" onclick="this.classList.toggle('liked')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </button>
         </div>
         <div class="dish-body">
-          <h3 class="dish-title">Smoky BBQ Beef Pizza</h3>
-          <div class="dish-meta">Artisan Slice • 25 mins</div>
+          <h3 class="dish-title">Pizza Bò Nướng Sốt BBQ Khói</h3>
+          <div class="dish-meta">Artisan Slice • 25 phút</div>
           <div class="dish-rating">
             <span class="star">★</span> 4.9 <span class="count">(2.9K)</span>
           </div>
           <div class="dish-foot">
-            <span class="dish-price">₹329</span>
-            <button class="btn-add-dish" onclick="addDishToCart('Smoky BBQ Beef Pizza', '₹329')">+</button>
+            <span class="dish-price">149.000đ</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Pizza Bò Nướng Sốt BBQ Khói', '149.000đ')">+</button>
           </div>
         </div>
       </article>
@@ -369,22 +369,22 @@
       <!-- Dish 6 -->
       <article class="dish-card" data-cat="chicken">
         <div class="dish-img-wrap">
-          <img src="img/cat_garan.png" alt="Crispy Golden Fried Chicken">
-          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+          <img src="img/cat_garan.png" alt="Gà Rán Giòn Sốt Mật Ong">
+          <button class="wish-btn" aria-label="Yêu thích" onclick="this.classList.toggle('liked')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </button>
         </div>
         <div class="dish-body">
-          <h3 class="dish-title">Crispy Golden Chicken</h3>
-          <div class="dish-meta">Spice Kitchen • 20 mins</div>
+          <h3 class="dish-title">Gà Rán Giòn Sốt Mật Ong</h3>
+          <div class="dish-meta">Spice Kitchen • 20 phút</div>
           <div class="dish-rating">
             <span class="star">★</span> 4.8 <span class="count">(3.5K)</span>
           </div>
           <div class="dish-foot">
-            <span class="dish-price">₹219</span>
-            <button class="btn-add-dish" onclick="addDishToCart('Crispy Golden Chicken', '₹219')">+</button>
+            <span class="dish-price">85.000đ</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Gà Rán Giòn Sốt Mật Ong', '85.000đ')">+</button>
           </div>
         </div>
       </article>
@@ -392,22 +392,22 @@
       <!-- Dish 7 -->
       <article class="dish-card" data-cat="salad">
         <div class="dish-img-wrap">
-          <img src="img/cat_salad.png" alt="Mediterranean Feta Salad">
-          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+          <img src="img/cat_salad.png" alt="Salad Địa Trung Hải Phô Mai Feta">
+          <button class="wish-btn" aria-label="Yêu thích" onclick="this.classList.toggle('liked')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </button>
         </div>
         <div class="dish-body">
-          <h3 class="dish-title">Mediterranean Feta Salad</h3>
-          <div class="dish-meta">Green Bowl • 15 mins</div>
+          <h3 class="dish-title">Salad Địa Trung Hải Phô Mai</h3>
+          <div class="dish-meta">Green Bowl • 15 phút</div>
           <div class="dish-rating">
             <span class="star">★</span> 4.9 <span class="count">(1.4K)</span>
           </div>
           <div class="dish-foot">
-            <span class="dish-price">₹179</span>
-            <button class="btn-add-dish" onclick="addDishToCart('Mediterranean Feta Salad', '₹179')">+</button>
+            <span class="dish-price">65.000đ</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Salad Địa Trung Hải Phô Mai', '65.000đ')">+</button>
           </div>
         </div>
       </article>
@@ -415,22 +415,22 @@
       <!-- Dish 8 -->
       <article class="dish-card" data-cat="drink">
         <div class="dish-img-wrap">
-          <img src="img/news_lemon_honey.png" alt="Fresh Honey Lime Detox">
-          <button class="wish-btn" aria-label="Favorite" onclick="this.classList.toggle('liked')">
+          <img src="img/news_lemon_honey.png" alt="Trà Chanh Vàng Mật Ong Detox">
+          <button class="wish-btn" aria-label="Yêu thích" onclick="this.classList.toggle('liked')">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
             </svg>
           </button>
         </div>
         <div class="dish-body">
-          <h3 class="dish-title">Fresh Honey Lime Detox</h3>
-          <div class="dish-meta">Fresh Bar • 15 mins</div>
+          <h3 class="dish-title">Trà Chanh Vàng Mật Ong Detox</h3>
+          <div class="dish-meta">Fresh Bar • 15 phút</div>
           <div class="dish-rating">
             <span class="star">★</span> 4.8 <span class="count">(1.9K)</span>
           </div>
           <div class="dish-foot">
-            <span class="dish-price">₹129</span>
-            <button class="btn-add-dish" onclick="addDishToCart('Fresh Honey Lime Detox', '₹129')">+</button>
+            <span class="dish-price">45.000đ</span>
+            <button class="btn-add-dish" onclick="addDishToCart('Trà Chanh Vàng Mật Ong Detox', '45.000đ')">+</button>
           </div>
         </div>
       </article>
@@ -454,38 +454,38 @@
           FOODIE
         </a>
         <p>
-          Delivering mouth-watering goodness straight from your favorite local kitchens right to your door with love and speed.
+          Mang những bữa ăn nóng hổi, thơm ngon từ căn bếp địa phương yêu thích đến tận cửa nhà bạn với tốc độ nhanh nhất.
         </p>
       </div>
 
       <div class="footer-col">
-        <h4>COMPANY</h4>
+        <h4>VỀ FOODIE</h4>
         <ul>
-          <li><a href="#home">About Us</a></li>
-          <li><a href="#popular">Careers</a></li>
-          <li><a href="#offers">Partner with Us</a></li>
-          <li><a href="#categories">Blog</a></li>
+          <li><a href="#home">Giới thiệu</a></li>
+          <li><a href="#popular">Nhà hàng đối tác</a></li>
+          <li><a href="#offers">Đăng ký quán</a></li>
+          <li><a href="#categories">Cẩm nang ẩm thực</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>SUPPORT</h4>
+        <h4>HỖ TRỢ</h4>
         <ul>
-          <li><a href="#footer">Help Center</a></li>
-          <li><a href="#footer">Safety Guidelines</a></li>
-          <li><a href="#footer">Terms of Service</a></li>
-          <li><a href="#footer">Privacy Policy</a></li>
+          <li><a href="#footer">Trung tâm trợ giúp</a></li>
+          <li><a href="#footer">Chính sách giao hàng</a></li>
+          <li><a href="#footer">Điều khoản dịch vụ</a></li>
+          <li><a href="../../index.html#templates">← Kho Giao Diện</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>STAY HUNGRY</h4>
+        <h4>NHẬN VOUCHER 50%</h4>
         <p class="footer-nl-desc">
-          Get weekly coupons and curated meal suggestions directly in your inbox.
+          Nhận mã giảm giá hàng tuần và gợi ý món ngon mới nhất qua email.
         </p>
-        <form class="footer-nl-form" onsubmit="event.preventDefault(); alert('Subscribed! Check your inbox for 50% OFF coupon.'); this.reset();">
-          <input type="email" placeholder="Your email" required>
-          <button type="submit">Join</button>
+        <form class="footer-nl-form" onsubmit="event.preventDefault(); alert('Đăng ký thành công! Mã giảm 50% FOODIE50 đã được gửi tới bạn.'); this.reset();">
+          <input type="email" placeholder="Email của bạn" required>
+          <button type="submit">Nhận Mã</button>
         </form>
       </div>
     </div>
@@ -493,8 +493,8 @@
     <div class="footer-bottom">
       <span>Copyright © 2026 Hoang Phuong. All rights reserved.</span>
       <div class="footer-socials">
-        <a href="#footer">Instagram</a>
-        <a href="#footer">Twitter</a>
+        <a href="https://zalo.me/0974100372" target="_blank">Zalo</a>
+        <a href="https://t.me/lhoangphuong" target="_blank">Telegram</a>
         <a href="#footer">Facebook</a>
       </div>
     </div>
@@ -505,24 +505,24 @@
 <div class="modal-backdrop" id="orderModal" onclick="if(event.target===this)closeOrderModal()">
   <div class="modal-card">
     <button class="modal-close" onclick="closeOrderModal()">✕</button>
-    <h3 id="modalDishName">Order Dish</h3>
-    <p id="modalDishPrice">Fast doorstep delivery in 20–30 mins</p>
+    <h3 id="modalDishName">Đặt Món Nhanh</h3>
+    <p id="modalDishPrice">Giao nóng tận nơi trong 20–30 phút</p>
     <form onsubmit="event.preventDefault(); window.open('https://zalo.me/0974100372','_blank');">
       <div class="modal-field">
-        <label>Your Name</label>
-        <input type="text" placeholder="Enter full name" required>
+        <label>Họ và tên</label>
+        <input type="text" placeholder="Nhập tên người nhận" required>
       </div>
       <div class="modal-field">
-        <label>Phone Number</label>
+        <label>Số điện thoại</label>
         <input type="tel" placeholder="09xx xxx xxx" required>
       </div>
       <div class="modal-field">
-        <label>Delivery Address</label>
-        <input type="text" placeholder="Street, Ward, District" required>
+        <label>Địa chỉ giao món</label>
+        <input type="text" placeholder="Số nhà, đường, phường/xã..." required>
       </div>
       <div class="modal-actions">
-        <button type="submit" class="modal-btn zalo">Order via Zalo →</button>
-        <a href="https://t.me/lhoangphuong" target="_blank" class="modal-btn tg">Via Telegram →</a>
+        <button type="submit" class="modal-btn zalo">Đặt Qua Zalo →</button>
+        <a href="https://t.me/lhoangphuong" target="_blank" class="modal-btn tg">Qua Telegram →</a>
       </div>
     </form>
   </div>
