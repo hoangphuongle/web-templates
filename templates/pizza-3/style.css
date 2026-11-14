@@ -1923,7 +1923,7 @@ img {
     bottom: 16px;
     left: 16px;
     background-color: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
     color: var(--text-white);
     font-size: 0.75rem;
     font-weight: 600;
@@ -2404,10 +2404,10 @@ img {
    ========================================================= */
 .cart-drawer {
     position: fixed;
-    top: 0;
+    top: 52px;
     right: -420px; /* Hidden state */
     width: 400px;
-    height: 100%;
+    height: calc(100% - 52px);
     background-color: var(--bg-white);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
     z-index: 120;
@@ -2632,7 +2632,7 @@ img {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition-smooth);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
 }
 
 .cart-overlay.open {
@@ -2650,7 +2650,7 @@ img {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
     z-index: 150;
     display: flex;
     align-items: center;
@@ -2893,7 +2893,7 @@ img {
     width: 100%;
     height: 100%;
     background-color: rgba(18, 18, 18, 0.98);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
     z-index: 200;
     display: flex;
     align-items: center;
@@ -3258,10 +3258,10 @@ img {
 /* ================= MOBILE SIDEBAR (hamburger slide-in) ================= */
 .mobile-sidebar {
     position: fixed;
-    top: 0;
+    top: 52px;
     left: -300px;
     width: 280px;
-    height: 100%;
+    height: calc(100% - 52px);
     background-color: var(--bg-white);
     z-index: 130;
     box-shadow: 10px 0 30px rgba(0,0,0,0.15);
@@ -3406,7 +3406,7 @@ img {
     opacity: 0;
     visibility: hidden;
     transition: var(--transition-smooth);
-    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
 }
 
 .sidebar-overlay.open {
@@ -4112,7 +4112,7 @@ img {
     width: 100%;
     height: 100%;
     background-color: rgba(11, 44, 23, 0.35); /* Basil green tint overlay */
-    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
     opacity: 0;
     transition: var(--transition-smooth);
     display: flex;
@@ -6670,4 +6670,21 @@ html, body {
     .newsletter-leaf-btn {
         width: 100%;
     }
+}
+
+/* Cross-Device Mobile & Safari Compatibility */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+@media (max-width: 1024px), (hover: none) {
+  .time-section, .footer {
+    background-attachment: scroll !important;
+  }
+}
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
 }

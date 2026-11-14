@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const menuDropdown = document.querySelector('.menu-dropdown');
+    const btnMenu = document.querySelector('.btn-menu');
+    if (menuDropdown && btnMenu) {
+        btnMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuDropdown.classList.toggle('open');
+        });
+        document.addEventListener('click', (e) => {
+            if (!menuDropdown.contains(e.target)) {
+                menuDropdown.classList.remove('open');
+            }
+        });
+    }
+
     const openBooking = document.getElementById('openBooking');
     const bookingModal = document.getElementById('bookingModal');
     const closeModal = document.querySelector('.close-modal');

@@ -207,3 +207,20 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 @keyframes hfcPing{to{transform:scale(1.6);opacity:0}}
 html,body{overflow-x:hidden;max-width:100%}
 @media(max-width:480px){.qt-steps,.st-nums{grid-template-columns:1fr}}
+
+/* Cross-Device Mobile & Safari Compatibility */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+@media (max-width: 1024px), (hover: none) {
+  .time-section, .footer {
+    background-attachment: scroll !important;
+  }
+}
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}

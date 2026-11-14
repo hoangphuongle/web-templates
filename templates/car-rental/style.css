@@ -964,7 +964,7 @@ button, input, select {
   inset: 0;
   z-index: 9999;
   background: rgba(11, 17, 30, 0.65);
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   display: none;
   place-items: center;
   padding: 20px;
@@ -1037,8 +1037,28 @@ button, input, select {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 960px) {
+  .hero-nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-right: 160px;
+  }
   .hero-links {
+    display: flex;
+    order: 3;
+    width: 100%;
+    margin-right: 0;
+    gap: 18px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    white-space: nowrap;
+    padding-top: 6px;
+  }
+  .hero-links::-webkit-scrollbar {
     display: none;
+  }
+  .hero-content {
+    padding-top: 120px;
   }
   .services-header,
   .how-grid,
@@ -1100,5 +1120,22 @@ button, input, select {
   }
   .store-badges {
     flex-direction: column;
+  }
+}
+
+/* Cross-Device Mobile & Safari Compatibility */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+@media (max-width: 1024px), (hover: none) {
+  .time-section, .footer {
+    background-attachment: scroll !important;
+  }
+}
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
   }
 }

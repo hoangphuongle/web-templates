@@ -768,7 +768,7 @@ button {
     letter-spacing: 0.5px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: var(--transition-smooth);
-    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
 }
 
 .slide-cta-btn:hover {
@@ -788,7 +788,7 @@ button {
     height: 48px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     color: #ffffff;
     display: flex;
@@ -1073,10 +1073,32 @@ button {
     }
     
     .header-divider,
-    .nav-bar-strip,
     .search-wrapper,
     .cart-info-text {
         display: none !important; /* Hide details on mobile header to save space, standard adaptive practice */
+    }
+
+    .nav-bar-strip-container {
+        height: auto;
+        min-height: 44px;
+        padding: 8px 16px;
+    }
+
+    .horizontal-nav-links {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .horizontal-nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .horizontal-nav-links ul {
+        gap: 20px !important;
+        white-space: nowrap;
+        width: max-content;
     }
     
     .main-header {
@@ -1142,7 +1164,7 @@ button {
     width: 100%;
     height: 100%;
     background-color: rgba(11, 25, 20, 0.85); /* Darker backdrop to emphasize the green modal card */
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
     transition: var(--transition-smooth);
 }
 
@@ -5248,4 +5270,19 @@ html, body {
     }
 }
 
-
+/* Cross-Device Mobile & Safari Compatibility */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+@media (max-width: 1024px), (hover: none) {
+  .time-section, .footer {
+    background-attachment: scroll !important;
+  }
+}
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}

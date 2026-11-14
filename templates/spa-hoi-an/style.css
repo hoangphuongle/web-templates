@@ -28,7 +28,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:999px;font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:.35s}
 .btn-red{background:var(--red);color:#fff;box-shadow:0 12px 30px -12px rgba(184,56,42,.7)}
 .btn-red:hover{background:var(--red-d);transform:translateY(-3px)}
-.btn-light{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.6);backdrop-filter:blur(6px)}
+.btn-light{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.6);-webkit-backdrop-filter: blur(6px); backdrop-filter:blur(6px)}
 .btn-light:hover{background:#fff;color:var(--wood)}
 .btn-outline{border:2px solid var(--wood);color:var(--wood)}
 .btn-outline:hover{background:var(--wood);color:var(--paper)}
@@ -65,7 +65,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 .sx p{font-size:1.08rem;opacity:.88;max-width:500px;margin-bottom:36px}
 .sx-actions{display:flex;gap:14px;flex-wrap:wrap}
 .sx-info{position:absolute;z-index:1;left:0;right:0;bottom:0}
-.sx-info .container{display:grid;grid-template-columns:repeat(3,1fr);background:rgba(251,244,228,.1);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);border-bottom:0;border-radius:18px 18px 0 0}
+.sx-info .container{display:grid;grid-template-columns:repeat(3,1fr);background:rgba(251,244,228,.1);-webkit-backdrop-filter: blur(14px); backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.18);border-bottom:0;border-radius:18px 18px 0 0}
 .sx-info div div{padding:22px 26px;border-right:1px solid rgba(255,255,255,.15)}
 .sx-info div div:last-child{border:0}
 .sx-info b{display:block;font-family:var(--font-head);font-size:1.15rem;color:var(--ochre-l)}
@@ -212,3 +212,20 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 @keyframes szPing{to{transform:scale(1.6);opacity:0}}
 html,body{overflow-x:hidden;max-width:100%}
 @media(max-width:480px){.sg-grid{grid-template-columns:1fr;grid-template-rows:auto}.sg-item:first-child{grid-column:span 1}.sb-grid{grid-template-columns:1fr}}
+
+/* Cross-Device Mobile & Safari Compatibility */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+@media (max-width: 1024px), (hover: none) {
+  .time-section, .footer {
+    background-attachment: scroll !important;
+  }
+}
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}

@@ -353,7 +353,7 @@ img {
   display: flex;
   align-items: center;
   background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   border-radius: 999px;
   padding: 6px 6px 6px 20px;
   max-width: 520px;
@@ -474,7 +474,7 @@ img {
   border-radius: 50%;
   border: 2px dashed rgba(255, 255, 255, 0.55);
   background: rgba(14, 26, 18, 0.72);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -518,7 +518,7 @@ img {
   bottom: 14px;
   right: 0;
   background: rgba(17, 24, 39, 0.88);
-  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 18px;
   padding: 10px 16px;
@@ -841,7 +841,7 @@ img {
   height: 36px;
   border-radius: 50%;
   background: rgba(17, 24, 39, 0.45);
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
   display: flex;
@@ -1047,7 +1047,7 @@ img {
   inset: 0;
   z-index: 9999;
   background: rgba(13, 21, 16, 0.68);
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   display: none;
   place-items: center;
   padding: 20px;
@@ -1130,7 +1130,23 @@ img {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
+  .hero-nav {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
   .nav-links {
+    display: flex;
+    order: 3;
+    width: 100%;
+    gap: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    white-space: nowrap;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .nav-links::-webkit-scrollbar {
     display: none;
   }
   .hero-body {
@@ -1159,7 +1175,7 @@ img {
     padding: 0 16px;
   }
   .nav-links {
-    display: none;
+    gap: 16px;
   }
   .nav-actions {
     gap: 8px;
@@ -1274,5 +1290,22 @@ img {
   .dish-footer {
     flex-wrap: wrap;
     gap: 8px;
+  }
+}
+
+/* Cross-Device Mobile & Safari Compatibility */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+@media (max-width: 1024px), (hover: none) {
+  .time-section, .footer {
+    background-attachment: scroll !important;
+  }
+}
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
   }
 }

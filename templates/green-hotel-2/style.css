@@ -469,10 +469,38 @@ body {
     }
 
     .nav-pill {
-        display: none;
+        height: auto;
+        min-height: 60px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 20px;
+        border-radius: 24px;
+        gap: 12px;
+        max-width: 100%;
     }
 
-    /* Simplified for demo, usually burger menu */
+    .logo-center {
+        order: -1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 0 6px 0;
+    }
+
+    .logo-circle {
+        position: relative;
+        top: 0;
+        width: 72px;
+        height: 72px;
+    }
+
+    .nav-left,
+    .nav-right {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
     .hero-visual {
         width: 100%;
     }
@@ -2238,7 +2266,7 @@ body {
     padding: 60px;
     border-radius: 25px;
     width: 550px;
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
     color: #fff;
 }
 
@@ -2526,4 +2554,21 @@ body {
     .contact-bg-wrap { height: auto; padding: 40px 0; }
     .contact-form-overlay { position: relative; top: 0; transform: none; width: 100%; max-width: 100%; left: 0; padding: 28px 20px; }
     .contact-grid-form .input-row { grid-template-columns: 1fr; }
+}
+
+/* Cross-Device Mobile & Safari Compatibility */
+a, button, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+@media (max-width: 1024px), (hover: none) {
+  .time-section, .footer {
+    background-attachment: scroll !important;
+  }
+}
+@media (max-width: 768px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
 }
