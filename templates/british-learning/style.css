@@ -28,7 +28,7 @@ img{display:block;max-width:100%}
 .btn-sm{padding:10px 22px;font-size:14px}
 
 /* ---------- Nav ---------- */
-.nav{position:fixed;inset:0 0 auto;z-index:50;padding:22px 0;transition:.3s}
+.nav{position:fixed;inset:52px 0 auto;z-index:50;padding:22px 0;transition:.3s}
 .nav.scrolled{background:rgba(247,241,230,.88);backdrop-filter:blur(14px);padding:12px 0;box-shadow:0 1px 0 var(--line)}
 .nav-inner{display:flex;justify-content:space-between;align-items:center}
 .logo{font-family:var(--serif);font-size:24px;font-weight:700}
@@ -319,7 +319,7 @@ html,body{overflow-x:hidden}
 html.lenis,html.lenis body{height:auto}
 .lenis.lenis-smooth{scroll-behavior:auto!important}
 .lenis.lenis-stopped{overflow:hidden}
-.progress-bar{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--red),var(--gold));transform-origin:0 50%;transform:scaleX(0);z-index:100}
+.progress-bar{position:fixed;top:52px;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--red),var(--gold));transform-origin:0 50%;transform:scaleX(0);z-index:100}
 .nav-links a.active:not(.btn){color:var(--red)}
 .nav-links a.active:not(.btn)::after{width:100%}
 
@@ -368,3 +368,5 @@ html.lenis,html.lenis body{height:auto}
 @media(prefers-reduced-motion:reduce){
   .hero-text>*,.hero h1 .line,.arch,.arch img,.hero-visual::before,.hero-visual .phrase-box,.hero-visual .name-tag,.stagger>*,.reveal-img,.about-visual .floating-tag{opacity:1!important;transform:none!important;clip-path:none!important;filter:none!important}
 }
+html,body{overflow-x:hidden;max-width:100%}
+@media(max-width:600px){.hero::before{max-width:90vw}.stats{grid-template-columns:1fr}}

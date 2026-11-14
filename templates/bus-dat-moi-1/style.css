@@ -1445,15 +1445,107 @@ body {
     color: #888;
 }
 
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 @media (max-width: 991px) {
+    .banner-wrapper {
+        width: calc(100% - 20px);
+        height: auto;
+        min-height: 500px;
+        border-radius: 24px;
+        padding-bottom: 40px;
+    }
+    .main-header {
+        padding: 14px 18px;
+        border-radius: 24px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .main-nav {
+        display: block;
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-top: 8px;
+        border-top: 1px solid #f0f0f0;
+    }
+    .main-nav ul {
+        gap: 18px;
+        white-space: nowrap;
+        padding-bottom: 4px;
+    }
+    .contact-map-section {
+        height: auto;
+        min-height: 500px;
+        padding: 50px 0;
+    }
+    .info-ribbon {
+        position: static;
+        transform: none;
+        width: 92%;
+        margin: 0 auto 20px;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        border-radius: 16px;
+        padding: 12px 16px;
+    }
+    .banner-content {
+        padding: 40px 20px 20px;
+    }
+    .banner-content h1 {
+        font-size: clamp(28px, 6vw, 42px);
+    }
+    .about-grid,
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
     .reviews-layout, .news-layout, .contact-box {
         flex-direction: column;
+    }
+    .reviews-intro {
+        flex: none;
+        width: 100%;
     }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
 @media (max-width: 767px) {
+    .about-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .header-actions {
+        gap: 10px;
+    }
+    .btn-book {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    .carousel-slide.active-slide {
+        height: auto;
+        min-height: 320px;
+        padding: 28px 20px;
+    }
+    .active-slide .slide-text {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        max-width: 100%;
+    }
+    .active-slide .slide-text h2 {
+        font-size: 26px;
+    }
+    .active-slide .right-img {
+        opacity: 0.2;
+        width: 100%;
+    }
     .reviews-list {
         flex-direction: column;
     }
@@ -1461,13 +1553,22 @@ body {
         grid-template-columns: 1fr;
     }
     .newsletter-box {
-        border-radius: 40px 0 40px 0;
-        padding: 40px 20px;
+        border-radius: 32px 0 32px 0;
+        padding: 36px 20px;
     }
     .newsletter-form {
         flex-direction: column;
     }
     .newsletter-form .btn-subscribe {
         width: 100%;
+    }
+    .contact-info,
+    .contact-form,
+    .news-column {
+        padding: 24px 18px;
+    }
+    .why-item p {
+        padding-left: 0;
+        margin-top: 6px;
     }
 }

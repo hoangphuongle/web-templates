@@ -1048,7 +1048,9 @@ button, input, select {
   .services-grid {
     grid-template-columns: 1fr;
   }
-  .collection-grid {
+  .collection-grid,
+  .car-type-grid,
+  .avail-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .footer-main {
@@ -1092,6 +1094,9 @@ button, input, select {
   }
   .hero-content h1 {
     font-size: 1.85rem;
+  }
+  .car-type-grid {
+    grid-template-columns: 1fr;
   }
   .store-badges {
     flex-direction: column;

@@ -46,7 +46,7 @@ body.menu-open {
    ============================================ */
 .site-header {
     position: sticky;
-    top: 0;
+    top: 52px;
     z-index: 100;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
@@ -2378,6 +2378,10 @@ input[type="date"]:focus::-webkit-calendar-picker-indicator {
         gap: 10px;
     }
     /* Policy */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
     .policy-grid {
         grid-template-columns: repeat(2, 1fr);
     }

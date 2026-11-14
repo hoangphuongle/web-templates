@@ -72,7 +72,7 @@ button {
     background: #ffffff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     position: sticky;
-    top: 0;
+    top: 52px;
     z-index: 1000;
 }
 
@@ -5172,6 +5172,79 @@ a.contact-val:hover {
     .social-card {
         height: 250px;
         padding: 20px 15px;
+    }
+}
+
+/* Additional Responsive Safeguards */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+@media (max-width: 991px) {
+    .main-header-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .top-bar-info-right,
+    .btn-store-locations,
+    .category-toggle-btn,
+    .btn-link-login {
+        display: none !important;
+    }
+    .slider-container {
+        height: auto;
+        min-height: 360px;
+    }
+    .slide-inner-container {
+        padding: 36px 24px;
+    }
+    .slide-text-col {
+        max-width: 100%;
+    }
+    .slide-title {
+        font-size: clamp(26px, 6.5vw, 38px);
+    }
+    .slide-subtitle {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .slide-badge-row {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    .sub-banner-card {
+        height: auto;
+        min-height: 220px;
+        padding: 24px 20px;
+    }
+    .sub-banner-content {
+        max-width: 62%;
+    }
+    .sub-banner-title {
+        font-size: 22px;
+    }
+    .mega-content,
+    .sub-banners-grid {
+        grid-template-columns: 1fr;
+    }
+    .booking-form-overlay {
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .btn-pill-register {
+        display: none !important;
+    }
+    .sub-banner-content {
+        max-width: 100%;
+    }
+    .sub-banner-img-box {
+        opacity: 0.25;
+        width: 55%;
     }
 }
 

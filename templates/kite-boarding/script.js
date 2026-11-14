@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mobile / Touch toggle for Kite Kits Mega-Dropdown
   if (navKitsBtn && navKitsWrap) {
     navKitsBtn.addEventListener('click', (e) => {
-      if (window.innerWidth <= 960) {
+      if (window.innerWidth <= 1060) {
         e.preventDefault();
         navKitsWrap.classList.toggle('is-open');
       }

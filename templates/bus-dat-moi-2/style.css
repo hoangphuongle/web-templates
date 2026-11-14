@@ -1699,14 +1699,54 @@ body {
     text-decoration: underline;
 }
 
-/* Responsive Footer */
+/* Responsive Footer & Global Safeguards */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 @media (max-width: 991px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
+    .hero-foreground,
+    .why-us-image-wrap {
+        max-width: 100%;
+    }
+    .bottom-inner {
+        height: auto;
+        min-height: 70px;
+        padding: 12px 0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .services-top-bg {
+        padding: 60px 0 80px;
+    }
+    .stats-bottom-bg {
+        padding: 80px 0 60px;
+    }
 }
 
 @media (max-width: 767px) {
+    .s-card {
+        width: min(350px, 100%);
+        max-width: 100%;
+    }
+    .section-title,
+    .stat-number {
+        font-size: clamp(28px, 7vw, 40px);
+    }
+    .why-us-title,
+    .highlight-script,
+    .faq-title,
+    .faq-brand,
+    .blog-section-title {
+        font-size: clamp(24px, 6vw, 32px);
+    }
+    .hotline-box {
+        display: none;
+    }
     .footer-grid {
         grid-template-columns: 1fr;
     }

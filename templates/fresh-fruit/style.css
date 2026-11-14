@@ -1587,5 +1587,10 @@ button, input {
     flex-direction: column;
     align-items: flex-start;
   }
+  .nutrient-chips,
+  .testi-topic-tabs,
+  .modal-btns {
+    grid-template-columns: 1fr;
+  }
 }
 

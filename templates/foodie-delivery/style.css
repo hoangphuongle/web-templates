@@ -1130,6 +1130,9 @@ img {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
   .hero-body {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -1224,6 +1227,7 @@ img {
   }
   .categories-track {
     display: flex;
+    grid-template-columns: none;
     overflow-x: auto;
     gap: 14px;
     padding-bottom: 4px;

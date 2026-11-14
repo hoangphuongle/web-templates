@@ -6632,3 +6632,42 @@ img {
 .logo-googlepay .gpay-pay {
     color: #5f6368; /* dark gray */
 }
+
+/* Additional Responsive Safeguards */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+@media (max-width: 991px) {
+    .megamenu-columns,
+    .services-banner-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-newsletter-leaf {
+        padding: 28px 20px;
+        border-radius: 36px 16px 36px 16px;
+        margin: -24px 16px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .cart-drawer {
+        width: min(400px, 92vw);
+        max-width: 92vw;
+    }
+    .category-cards-container,
+    .featured-products-grid,
+    .widget-posts-grid {
+        grid-template-columns: 1fr;
+    }
+    .newsletter-leaf-form {
+        flex-direction: column;
+        border-radius: 20px;
+        gap: 8px;
+        padding: 10px;
+    }
+    .newsletter-leaf-btn {
+        width: 100%;
+    }
+}

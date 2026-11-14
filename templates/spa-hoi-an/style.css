@@ -36,8 +36,8 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 .reveal.show{opacity:1;transform:none}
 @media(max-width:700px){.section{padding:75px 0}}
 
-.sh{position:fixed;inset:0 0 auto;z-index:50;padding:22px 0;transition:.4s;color:#fff}
-.sh.scrolled{background:rgba(251,244,228,.94);backdrop-filter:blur(12px);padding:12px 0;color:var(--wood);box-shadow:0 6px 24px -14px rgba(61,36,23,.5)}
+.sh{position:fixed;inset:52px 0 auto;z-index:50;padding:22px 0;transition:.4s;color:#fff}
+.sh.scrolled{background:rgba(251,244,228,.96);padding:12px 0;color:var(--wood);box-shadow:0 6px 24px -14px rgba(61,36,23,.5)}
 .sh-in{display:flex;align-items:center;justify-content:space-between}
 .sh-logo{font-family:var(--font-head);font-size:1.5rem;font-weight:700;line-height:1}
 .sh-logo span{font-family:var(--font-script);color:var(--ochre-l);font-size:1.8rem}
@@ -50,7 +50,7 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 .sh-lang{font-size:.8rem;font-weight:600;border:1px solid currentColor;border-radius:999px;padding:5px 12px;opacity:.85}
 .sh-toggle{display:none;background:none;border:none;font-size:1.6rem;color:inherit;cursor:pointer}
 @media(max-width:960px){
-  .sh-menu{position:fixed;inset:0 0 0 25%;background:var(--paper);color:var(--wood);flex-direction:column;padding:110px 40px;transform:translateX(100%);transition:.4s;box-shadow:-20px 0 40px rgba(0,0,0,.2)}
+  .sh-menu{position:fixed;inset:52px 0 0 25%;background:var(--paper);color:var(--wood);flex-direction:column;padding:90px 32px 40px;transform:translateX(100%);transition:.4s;box-shadow:-20px 0 40px rgba(0,0,0,.2);z-index:1}
   .sh-menu.open{transform:none}
   .sh-toggle{display:block;z-index:2}
   .sh-right .btn{display:none}
@@ -210,3 +210,5 @@ h1,h2,h3{font-family:var(--font-head);font-weight:600;line-height:1.2}
 .sz-phone{background:var(--red);font-size:1.25rem!important}
 .sz-phone::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid var(--red);animation:szPing 1.8s infinite}
 @keyframes szPing{to{transform:scale(1.6);opacity:0}}
+html,body{overflow-x:hidden;max-width:100%}
+@media(max-width:480px){.sg-grid{grid-template-columns:1fr;grid-template-rows:auto}.sg-item:first-child{grid-column:span 1}.sb-grid{grid-template-columns:1fr}}
