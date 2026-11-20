@@ -1,0 +1,1596 @@
+/* ==========================================================================
+   TENNISPRO® — TENNIS TRAINING, PERFORMANCE & COURT BOOKING (STYLE.CSS)
+   ========================================================================== */
+
+:root {
+  --tp-blue-deep: #0F3E73;
+  --tp-blue-court: #185FA8;
+  --tp-blue-sky: #2B7CD3;
+  --tp-orange: #F2741F;
+  --tp-orange-hover: #DC5F0C;
+  --tp-ink: #111827;
+  --tp-body: #4B5563;
+  --tp-muted: #8492A6;
+  --tp-bg: #F4F6F9;
+  --tp-white: #FFFFFF;
+  --tp-card-bg: #F3F5F8;
+  --tp-border: rgba(17, 24, 39, 0.08);
+  --tp-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--tp-font);
+  background: #DCE7F3;
+  color: var(--tp-ink);
+  line-height: 1.55;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+.tp-page-shell {
+  max-width: 1280px;
+  margin: 18px auto 36px;
+  background: var(--tp-white);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 32px 90px rgba(13, 38, 76, 0.18);
+}
+
+.tp-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.tp-text-orange {
+  color: var(--tp-orange);
+}
+
+.tp-dot-marker {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tp-ink);
+  margin-bottom: 10px;
+}
+
+.tp-orange-dash {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--tp-orange);
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   1. FLOATING PILL NAVBAR & OUTDOOR TENNIS HERO
+   ========================================================================== */
+
+.tp-hero {
+  position: relative;
+  min-height: 650px;
+  padding: 24px 0 90px;
+  background:
+    linear-gradient(90deg, rgba(14, 59, 112, 0.86) 0%, rgba(21, 86, 158, 0.52) 52%, rgba(21, 86, 158, 0.08) 100%),
+    url('img/hero-tennis.jpg') center top / cover no-repeat;
+  color: var(--tp-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Floating White Pill Navbar */
+.tp-navbar {
+  position: relative;
+  z-index: 40;
+  background: var(--tp-white);
+  color: var(--tp-ink);
+  border-radius: 999px;
+  padding: 10px 12px 10px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 16px 38px rgba(9, 30, 62, 0.22);
+  margin-bottom: 72px;
+}
+
+.tp-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--tp-ink);
+  letter-spacing: -0.02em;
+}
+
+.tp-brand-ball {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--tp-orange);
+  color: var(--tp-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tp-brand-text sup {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tp-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.tp-nav-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  transition: color 0.2s ease;
+}
+
+.tp-nav-link:hover,
+.tp-nav-link.is-active {
+  color: var(--tp-orange);
+}
+
+.tp-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tp-search-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #F3F4F6;
+  color: var(--tp-ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.tp-search-btn:hover {
+  background: #E5E7EB;
+}
+
+.tp-join-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--tp-orange);
+  color: var(--tp-white);
+  border: none;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(242, 116, 31, 0.32);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tp-join-pill:hover {
+  background: var(--tp-orange-hover);
+  transform: translateY(-1px);
+}
+
+.tp-burger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #E5E7EB;
+  background: #F9FAFB;
+  color: var(--tp-ink);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.tp-burger span {
+  width: 15px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+/* Hero Copy Left */
+.tp-hero-content {
+  max-width: 570px;
+  padding: 10px 0 24px;
+}
+
+.tp-eyebrow-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 18px;
+}
+
+.tp-eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--tp-orange);
+}
+
+.tp-hero-title {
+  font-size: clamp(2.35rem, 4.8vw, 3.85rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+
+.tp-hero-desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 450px;
+  margin-bottom: 30px;
+}
+
+.tp-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tp-btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--tp-orange);
+  color: var(--tp-white);
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  box-shadow: 0 12px 26px rgba(242, 116, 31, 0.36);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tp-btn-orange:hover {
+  background: var(--tp-orange-hover);
+  transform: translateY(-2px);
+}
+
+.tp-btn-glass {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--tp-white);
+  padding: 13px 22px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.tp-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+/* ==========================================================================
+   2. EDITORIAL ABOUT & PLAYER DEVELOPMENT HUD (+72%)
+   ========================================================================== */
+
+.tp-about-sec {
+  padding: 72px 0 40px;
+}
+
+.tp-about-top-grid {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 54px;
+}
+
+.tp-mini-thumbs {
+  display: flex;
+  gap: 14px;
+}
+
+.tp-mini-thumb {
+  width: 112px;
+  height: 112px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.1);
+}
+
+.tp-mini-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tp-about-meta-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.tp-breadcrumb-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--tp-muted);
+  letter-spacing: 0.08em;
+}
+
+.tp-bc-tab {
+  background: none;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--tp-muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.tp-bc-tab:hover,
+.tp-bc-tab.is-active {
+  color: var(--tp-ink);
+}
+
+.tp-circle-arrow {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--tp-orange);
+  color: var(--tp-white);
+  font-size: 16px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 8px 18px rgba(242, 116, 31, 0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.tp-circle-arrow:hover {
+  background: var(--tp-orange-hover);
+  transform: scale(1.06);
+}
+
+.tp-about-heading {
+  font-size: clamp(1.85rem, 3.4vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.tp-about-p {
+  font-size: 14px;
+  line-height: 1.68;
+  color: var(--tp-body);
+  max-width: 520px;
+}
+
+/* Bottom Bento Row: Player Development + Training Progress HUD */
+.tp-dev-bento-grid {
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.tp-dev-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.tp-dev-info p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--tp-body);
+  margin-bottom: 18px;
+}
+
+.tp-ntrp-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tp-ntrp-pill {
+  background: var(--tp-card-bg);
+  border: 1px solid var(--tp-border);
+  color: var(--tp-body);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tp-ntrp-pill:hover,
+.tp-ntrp-pill.is-active {
+  background: var(--tp-ink);
+  color: var(--tp-white);
+  border-color: var(--tp-ink);
+}
+
+/* Serve Court Visual Card + HUD */
+.tp-dev-visual-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 320px;
+  background: var(--tp-blue-deep);
+  box-shadow: 0 22px 50px rgba(15, 62, 115, 0.16);
+}
+
+.tp-dev-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tp-hud-card {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  bottom: 22px;
+  width: 235px;
+  background: rgba(14, 34, 62, 0.72);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 20px;
+  padding: 18px 20px;
+  color: var(--tp-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tp-hud-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+.tp-gauge-wrap {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  margin: 4px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tp-gauge-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.tp-gauge-track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.16);
+  stroke-width: 7;
+}
+
+.tp-gauge-fill {
+  fill: none;
+  stroke: var(--tp-orange);
+  stroke-width: 7;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tp-gauge-val {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--tp-white);
+}
+
+.tp-hud-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tp-hud-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.tp-hud-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.tp-hud-row span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.tp-hud-row strong {
+  font-weight: 700;
+  color: var(--tp-white);
+}
+
+/* ==========================================================================
+   3. OUR PROGRAMS — THREE WAYS TO ELEVATE YOUR GAME
+   ========================================================================== */
+
+.tp-programs-sec {
+  padding: 56px 0 48px;
+}
+
+.tp-sec-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.tp-eyebrow-muted {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tp-muted);
+  margin-bottom: 8px;
+}
+
+.tp-sec-title {
+  font-size: clamp(1.85rem, 3.4vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.tp-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 28px;
+}
+
+.tp-prog-card {
+  position: relative;
+  height: 340px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 14px 36px rgba(17, 24, 39, 0.1);
+}
+
+.tp-prog-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.tp-prog-card:hover img {
+  transform: scale(1.05);
+}
+
+.tp-prog-label-box {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 14px 20px;
+  min-width: 165px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+}
+
+.tp-prog-label-box h3 {
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--tp-ink);
+}
+
+.tp-programs-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+}
+
+.tp-motto-line {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--tp-muted);
+}
+
+/* ==========================================================================
+   4. OUR APPROACH — 3 FROSTED GLASS CIRCLES & EQUIPMENT BENTO
+   ========================================================================== */
+
+.tp-approach-sec {
+  padding: 48px 0 64px;
+}
+
+.tp-balls-stage {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  height: 360px;
+  margin-bottom: 24px;
+  box-shadow: 0 20px 50px rgba(15, 62, 115, 0.14);
+}
+
+.tp-balls-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tp-frosted-circles-row {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 20px;
+}
+
+.tp-frosted-circle {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.56);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--tp-ink);
+  box-shadow: 0 14px 34px rgba(13, 38, 76, 0.15);
+  transition: transform 0.25s ease;
+}
+
+.tp-circle-elevated {
+  transform: translateY(-22px);
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.tp-frosted-circle:hover {
+  transform: scale(1.06);
+}
+
+.tp-approach-sub {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto 44px;
+  font-size: 13.5px;
+  color: var(--tp-body);
+}
+
+/* Equipment & Facilities 2-Col Bento */
+.tp-equip-bento {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.tp-racket-card {
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 340px;
+  box-shadow: 0 16px 38px rgba(15, 62, 115, 0.12);
+}
+
+.tp-racket-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tp-equip-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.tp-equip-item {
+  background: var(--tp-card-bg);
+  border-radius: 18px;
+  padding: 12px 18px 12px 12px;
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tp-equip-item:hover {
+  background: #E9EEF5;
+  transform: translateX(4px);
+}
+
+.tp-equip-thumb {
+  width: 84px;
+  height: 84px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.tp-equip-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tp-equip-meta h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tp-ink);
+}
+
+.tp-equip-meta p {
+  font-size: 12px;
+  color: var(--tp-body);
+  margin-top: 6px;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   5. INTERACTIVE TENNIS COURT BOOKING (ĐẶT SÂN TENNIS TRỰC TUYẾN)
+   ========================================================================== */
+
+.tp-booking-sec {
+  padding: 56px 0;
+  background: #F8FAFC;
+  border-top: 1px solid var(--tp-border);
+  border-bottom: 1px solid var(--tp-border);
+}
+
+.tp-booking-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.tp-surface-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tp-surf-tab {
+  background: var(--tp-white);
+  border: 1px solid var(--tp-border);
+  color: var(--tp-body);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tp-surf-tab:hover,
+.tp-surf-tab.is-active {
+  background: var(--tp-blue-court);
+  color: var(--tp-white);
+  border-color: var(--tp-blue-court);
+}
+
+.tp-booking-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.tp-courts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.tp-court-card {
+  background: var(--tp-white);
+  border: 2px solid rgba(24, 95, 168, 0.12);
+  border-radius: 20px;
+  padding: 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.22s ease;
+}
+
+.tp-court-card.is-hidden {
+  display: none;
+}
+
+.tp-court-card:hover,
+.tp-court-card.is-selected {
+  border-color: var(--tp-orange);
+  box-shadow: 0 14px 32px rgba(242, 116, 31, 0.14);
+  transform: translateY(-2px);
+}
+
+.tp-court-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.tp-court-tag {
+  background: #E0F2FE;
+  color: #0369A1;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.tp-tag-clay {
+  background: #FFEDD5;
+  color: #C2410C;
+}
+
+.tp-tag-vip {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.tp-court-status {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #16A34A;
+}
+
+/* Miniature Tennis Court Diagram inside Court Card */
+.tp-court-lines {
+  height: 54px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1E6BB8 0%, #2D82D6 100%);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  position: relative;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tp-lines-clay {
+  background: linear-gradient(135deg, #C85A28 0%, #E06D3B 100%);
+}
+
+.tp-court-lines::before {
+  content: '';
+  position: absolute;
+  inset: 6px 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.72);
+}
+
+.tp-court-lines span {
+  width: 1.5px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.tp-court-card h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tp-ink);
+  margin-bottom: 4px;
+}
+
+.tp-court-card p {
+  font-size: 12px;
+  color: var(--tp-body);
+  margin-bottom: 10px;
+}
+
+.tp-court-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--tp-orange);
+}
+
+.tp-court-price small {
+  font-size: 11.5px;
+  color: var(--tp-muted);
+  font-weight: 600;
+}
+
+/* Right Reservation Summary Panel */
+.tp-booking-panel {
+  background: var(--tp-white);
+  border-radius: 24px;
+  padding: 24px;
+  border: 1px solid var(--tp-border);
+  box-shadow: 0 20px 48px rgba(15, 62, 115, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tp-bp-badge {
+  display: inline-block;
+  background: #FFF3E8;
+  color: var(--tp-orange);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.tp-bp-head h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--tp-ink);
+}
+
+.tp-bp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tp-bp-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--tp-body);
+}
+
+.tp-bp-field input,
+.tp-bp-row-2 input {
+  width: 100%;
+  padding: 10px 13px;
+  border-radius: 10px;
+  border: 1px solid #D1D5DB;
+  font-size: 13px;
+}
+
+.tp-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tp-slot-btn {
+  background: var(--tp-card-bg);
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 8px 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--tp-ink);
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.tp-slot-btn:hover,
+.tp-slot-btn.is-active {
+  background: #FFF3E8;
+  border-color: var(--tp-orange);
+  color: var(--tp-orange);
+}
+
+.tp-addon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tp-addon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--tp-card-bg);
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tp-ink);
+  cursor: pointer;
+}
+
+.tp-addon-btn.is-active {
+  background: #EFF6FF;
+  border-color: var(--tp-blue-court);
+  color: var(--tp-blue-court);
+}
+
+.tp-bp-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.tp-bp-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 1px dashed #D1D5DB;
+  border-bottom: 1px dashed #D1D5DB;
+  font-size: 13px;
+}
+
+.tp-bp-total strong {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--tp-orange);
+}
+
+.tp-bp-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--tp-orange);
+  color: var(--tp-white);
+  border: none;
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(242, 116, 31, 0.3);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.tp-bp-submit:hover {
+  background: var(--tp-orange-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   6. THREE WAYS TO TRAIN SMARTER (SUNSET COURT SHOWCASE)
+   ========================================================================== */
+
+.tp-smarter-sec {
+  padding: 64px 0 48px;
+}
+
+.tp-sunset-banner {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  height: 360px;
+  margin: 32px 0 24px;
+  box-shadow: 0 20px 50px rgba(17, 24, 39, 0.14);
+}
+
+.tp-sunset-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tp-sunset-float-card {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  max-width: 310px;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px 22px;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
+}
+
+.tp-sfc-tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--tp-orange);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tp-sunset-float-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.tp-sunset-float-card p {
+  font-size: 12.5px;
+  color: var(--tp-body);
+  margin-bottom: 14px;
+}
+
+.tp-sfc-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+}
+
+.tp-smarter-bottom-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.tp-smarter-left strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tp-smarter-right {
+  font-size: 13.5px;
+  color: var(--tp-body);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   7. GIANT EDITORIAL FOOTER BANNER (TennisPro®)
+   ========================================================================== */
+
+.tp-footer {
+  padding: 36px 0 32px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #EBF2FA 100%);
+}
+
+.tp-giant-wordmark {
+  font-size: clamp(3.4rem, 11vw, 8.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  color: var(--tp-ink);
+  text-align: center;
+  margin-bottom: 22px;
+  user-select: none;
+}
+
+.tp-giant-wordmark sup {
+  font-size: 0.32em;
+  vertical-align: super;
+}
+
+.tp-footer-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.tp-fn-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.tp-fn-links a {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--tp-ink);
+}
+
+.tp-footer-court-strip {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  height: 220px;
+}
+
+.tp-footer-court-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tp-footer-bottom-meta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(11, 27, 48, 0.88) 100%);
+  color: var(--tp-white);
+  padding: 24px 28px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+
+.tp-fb-contacts {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-weight: 700;
+  color: #FDBA74;
+}
+
+/* ==========================================================================
+   8. MODAL & TOAST
+   ========================================================================== */
+
+.tp-modal-backdrop {
+  position: fixed;
+  inset: 52px 0 0 0;
+  z-index: 99990;
+  background: rgba(11, 25, 46, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.tp-modal-backdrop.is-open {
+  display: flex;
+}
+
+.tp-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background: var(--tp-white);
+  border-radius: 24px;
+  padding: 28px 26px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+}
+
+.tp-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #F3F4F6;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.tp-modal-card h3 {
+  font-size: 21px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.tp-modal-sub {
+  font-size: 12.5px;
+  color: var(--tp-body);
+  margin-bottom: 18px;
+}
+
+.tp-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tp-modal-form input,
+.tp-modal-form select {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #D1D5DB;
+  font-size: 13px;
+}
+
+.tp-modal-btns {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.tp-btn-zalo-modal,
+.tp-btn-tg-modal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--tp-white);
+  border: none;
+  cursor: pointer;
+}
+
+.tp-btn-zalo-modal {
+  background: var(--tp-orange);
+}
+
+.tp-btn-tg-modal {
+  background: #24A1DE;
+}
+
+.tp-toast {
+  position: fixed;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  right: 22px;
+  z-index: 99995;
+  background: var(--tp-ink);
+  color: var(--tp-white);
+  border-left: 4px solid var(--tp-orange);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.tp-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   9. RESPONSIVE MEDIA QUERIES (DESKTOP / TABLET / MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .tp-page-shell {
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .tp-about-top-grid,
+  .tp-dev-bento-grid,
+  .tp-equip-bento,
+  .tp-booking-layout,
+  .tp-smarter-bottom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .tp-container {
+    padding: 0 18px;
+  }
+
+  .tp-navbar {
+    margin-bottom: 42px;
+  }
+
+  .tp-nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: var(--tp-white);
+    border-radius: 20px;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: 0 18px 40px rgba(9, 30, 62, 0.25);
+  }
+
+  .tp-nav-links.is-open {
+    display: flex;
+  }
+
+  .tp-burger {
+    display: inline-flex;
+  }
+
+  .tp-hero {
+    min-height: auto;
+    padding: 18px 0 56px;
+    background-position: 68% top;
+  }
+
+  .tp-dev-visual-card {
+    height: auto;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+  }
+
+  .tp-dev-bg-img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .tp-hud-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+  }
+
+  .tp-programs-grid,
+  .tp-courts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-balls-stage {
+    height: auto;
+    min-height: 300px;
+    padding: 24px 12px;
+  }
+
+  .tp-balls-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .tp-frosted-circles-row {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .tp-frosted-circle {
+    width: 122px;
+    height: 122px;
+    font-size: 12px;
+  }
+
+  .tp-circle-elevated {
+    transform: none;
+  }
+
+  .tp-slot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tp-bp-row-2,
+  .tp-modal-btns {
+    grid-template-columns: 1fr;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .tp-equip-item {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-equip-thumb {
+    width: 100%;
+    height: 140px;
+  }
+
+  .tp-slot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tp-sunset-float-card {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    max-width: none;
+  }
+}
+

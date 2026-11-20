@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshMart® – Groceries Made Simple | Siêu Thị Thực Phẩm Sạch &amp; Đi Chợ Online Giao Nhanh 15 Phút</title>
+  <meta name="description" content="FreshMart® – Đi chợ thực phẩm hữu cơ, rau củ quả tươi sạch từ nông trại giao tận cửa trong 15-30 phút. Liên hệ đặt hàng Zalo: 0974 100 372.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Showcase Contact Bar (#hp-bar) -->
+  <style>
+    #hp-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999999;
+      height: 52px;
+      background: linear-gradient(90deg, #0d0d0d 0%, #1a1a1a 50%, #0d0d0d 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+    }
+    #hp-bar .hp-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    #hp-bar .hp-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+      flex-shrink: 0;
+    }
+    #hp-bar .hp-label {
+      color: rgba(255, 255, 255, .6);
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    #hp-bar .hp-label b {
+      color: #fff;
+      font-weight: 600;
+    }
+    #hp-bar .hp-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    #hp-bar .hp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      transition: transform .2s, box-shadow .2s;
+      white-space: nowrap;
+    }
+    #hp-bar .hp-btn:hover {
+      transform: translateY(-1px);
+    }
+    #hp-bar .hp-zalo {
+      background: #0068ff;
+      box-shadow: 0 4px 12px rgba(0, 104, 255, .35);
+    }
+    #hp-bar .hp-phone {
+      background: #22c55e;
+      box-shadow: 0 4px 12px rgba(34, 197, 94, .35);
+    }
+    #hp-bar .hp-tg {
+      background: #24A1DE;
+      box-shadow: 0 4px 12px rgba(36, 161, 222, .35);
+    }
+    body {
+      padding-top: 52px !important;
+    }
+    @media (max-width: 640px) {
+      #hp-bar {
+        padding: 0 12px;
+      }
+      #hp-bar .hp-label span {
+        display: none;
+      }
+      #hp-bar .hp-btn {
+        padding: 6px 10px;
+        font-size: 11.5px;
+      }
+    }
+    @media (max-width: 520px) {
+      #hp-bar .hp-phone {
+        display: none !important;
+      }
+    }
+    @media (max-width: 360px) {
+      #hp-bar .hp-label {
+        display: none !important;
+      }
+    }
+  </style>
+  <div id="hp-bar">
+    <div class="hp-left">
+      <span class="hp-dot"></span>
+      <span class="hp-label">Mẫu: <b>FreshMart® Grocery</b> <span>— Thiết kế bởi Hoang Phuong</span></span>
+    </div>
+    <div class="hp-right">
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="hp-btn hp-zalo">💬 Đặt mẫu qua Zalo</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="hp-btn hp-tg">✈️ Telegram</a>
+      <a href="tel:0974100372" class="hp-btn hp-phone">📞 0974 100 372</a>
+    </div>
+  </div>
+
+  <div class="fm-page-shell" id="top">
+
+    <!-- ==========================================
+         SECTION 1: FLOATING PILL NAVBAR & ORGANIC CRAFT BAG HERO
+         ========================================== -->
+    <section class="fm-hero">
+      <div class="fm-container">
+
+        <!-- Floating White Pill Navbar -->
+        <header class="fm-navbar" id="fmNavbar">
+          <a href="#top" class="fm-brand" aria-label="FreshMart Trang chủ">
+            <span class="fm-brand-leaf" aria-hidden="true">🌿</span>
+            <span class="fm-brand-text">FreshMart<sup>®</sup></span>
+          </a>
+
+          <nav class="fm-nav-links" id="fmNavLinks">
+            <a href="#why-freshmart" class="fm-nav-link is-active">• Product</a>
+            <a href="#pocket-app" class="fm-nav-link">Features</a>
+            <a href="#pricing" class="fm-nav-link">Pricing</a>
+            <a href="#stories" class="fm-nav-link">About Us</a>
+          </nav>
+
+          <div class="fm-nav-actions">
+            <button type="button" class="fm-btn-dark-pill" data-open-modal="Đặt Giỏ Đi Chợ Tươi Sạch FreshMart®">
+              Get Started
+            </button>
+            <button type="button" class="fm-burger" id="fmBurger" aria-label="Menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Hero Content Grid -->
+        <div class="fm-hero-grid">
+          <!-- Left Copy -->
+          <div class="fm-hero-copy">
+            <span class="fm-dark-tag">• ONLINE GROCERY DELIVERY</span>
+            <h1 class="fm-hero-title">
+              Groceries<br>
+              Made Simple
+            </h1>
+            <p class="fm-hero-desc">
+              Fresh groceries, everyday essentials, and more — delivered to your doorstep in just a few taps.
+            </p>
+            <div class="fm-hero-btns">
+              <button type="button" class="fm-btn-green-pill" data-open-modal="Đặt Combo Rau Củ Hữu Cơ Giao Nhanh 15 Phút">
+                Get Started
+              </button>
+              <a href="#pricing" class="fm-btn-outline-pill">Xem Gói Đi Chợ</a>
+            </div>
+          </div>
+
+          <!-- Right Craft Bag + 2 Frosted Glass HUD Widgets -->
+          <div class="fm-hero-visual">
+            <img src="img/hero-bag.jpg" alt="FreshMart Craft Bag Overflowing with Organic Vegetables and Fruits" class="fm-hero-bag-img">
+
+            <!-- Top-Right Frosted Green HUD Widget: Your Order -->
+            <div class="fm-hud-order">
+              <div class="fm-hud-head">
+                <span>🛒 Your Order</span>
+              </div>
+              <div class="fm-hud-stats">
+                <div>
+                  <small>Items</small>
+                  <strong>12</strong>
+                </div>
+                <div>
+                  <small>Total</small>
+                  <strong>349.000đ</strong>
+                </div>
+              </div>
+              <div class="fm-hud-status">
+                <span>● Out for Delivery</span>
+              </div>
+            </div>
+
+            <!-- Bottom-Left Frosted Warm-Brown HUD Widget: Delivery Time -->
+            <div class="fm-hud-delivery">
+              <div class="fm-hud-head">
+                <span>🚚 Delivery Time</span>
+              </div>
+              <div class="fm-hud-stats">
+                <div>
+                  <small>From</small>
+                  <strong>15 min</strong>
+                </div>
+                <div>
+                  <small>To</small>
+                  <strong>30 min</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: WHY FRESHMART — 3-COLUMN BENTO GRID
+         ========================================== -->
+    <section class="fm-why-sec" id="why-freshmart">
+      <div class="fm-container">
+
+        <div class="fm-sec-header">
+          <span class="fm-dark-tag">• WHY FRESHMART</span>
+          <h2 class="fm-sec-title">
+            Fresh Groceries Daily.<br>
+            <span class="fm-text-brown">Delivered to Your Door.</span>
+          </h2>
+          <p class="fm-sec-sub">
+            Shop fresh produce, pantry essentials, and more with speed, quality, and ease.
+          </p>
+        </div>
+
+        <!-- 3-Column Bento Grid -->
+        <div class="fm-bento-3col">
+          <!-- Left Column: 2 Stacked Stat Cards -->
+          <div class="fm-bento-col">
+            <article class="fm-stat-card">
+              <div class="fm-stat-top">
+                <strong class="fm-stat-num">98%</strong>
+                <span class="fm-stat-ico" aria-hidden="true">🍃</span>
+              </div>
+              <div class="fm-stat-bot">
+                <h3>Freshness Guarantee</h3>
+                <p>Farm-fresh quality, every time. Hoàn tiền 100% nếu rau củ không tươi giòn.</p>
+              </div>
+            </article>
+
+            <article class="fm-stat-card">
+              <div class="fm-stat-top">
+                <strong class="fm-stat-num">72%</strong>
+                <span class="fm-stat-ico" aria-hidden="true">🕒</span>
+              </div>
+              <div class="fm-stat-bot">
+                <h3>More Time for You</h3>
+                <p>Skip the store and get it delivered. Tiết kiệm hàng giờ đi chợ mỗi tuần.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Center Column: Tall Visual Card -->
+          <article class="fm-center-tall-card" data-open-modal="Đặt Túi Đi Chợ Tươi Trong 15 Phút">
+            <img src="img/bag-vertical.jpg" alt="Groceries In Minutes FreshMart Bag">
+            <div class="fm-tall-overlay-top">
+              <h3>Groceries<br>In Minutes.</h3>
+            </div>
+            <div class="fm-tall-overlay-bot">
+              <p>Fresh groceries, everyday essentials, and more.</p>
+            </div>
+          </article>
+
+          <!-- Right Column: 2 Stacked Stat Cards -->
+          <div class="fm-bento-col">
+            <article class="fm-stat-card">
+              <div class="fm-stat-top">
+                <strong class="fm-stat-num">94%</strong>
+                <span class="fm-stat-ico" aria-hidden="true">🚚</span>
+              </div>
+              <div class="fm-stat-bot">
+                <h3>On-Time Delivery</h3>
+                <p>Get your order when you need it. Giao chuẩn giờ hẹn từ 06:00 sáng đến 22:00 tối.</p>
+              </div>
+            </article>
+
+            <article class="fm-stat-card">
+              <div class="fm-stat-top">
+                <strong class="fm-stat-num">68%</strong>
+                <span class="fm-stat-ico" aria-hidden="true">🧺</span>
+              </div>
+              <div class="fm-stat-bot">
+                <h3>Smarter &amp; Bigger Savings</h3>
+                <p>Great deals on your daily essentials. Giá tận vườn không qua trung gian.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: FRESHMART IN YOUR POCKET (APP SHOWCASE)
+         ========================================== -->
+    <section class="fm-pocket-sec" id="pocket-app">
+      <div class="fm-container">
+        <div class="fm-pocket-grid">
+
+          <!-- Left Sidebar Tabs -->
+          <div class="fm-pocket-sidebar">
+            <p class="fm-pocket-lead">
+              Shop your daily groceries with ease, anytime and anywhere.
+            </p>
+
+            <div class="fm-pocket-tabs" role="tablist">
+              <button type="button" class="fm-ptab is-active" data-title="Everything for Your Home" data-desc="Browse, order, and get fresh groceries delivered to your doorstep — all in one place.">
+                Shop Groceries
+              </button>
+              <button type="button" class="fm-ptab" data-title="Real-Time GPS Order Tracking" data-desc="Theo dõi lộ trình shipper bảo quản lạnh từng phút từ nông trại về thẳng gian bếp của bạn.">
+                Track Orders
+              </button>
+              <button type="button" class="fm-ptab" data-title="Member Flash Deals &amp; Cashback" data-desc="Tích điểm đổi rau củ hữu cơ miễn phí và nhận voucher giảm tới 30% mỗi sáng thứ Hai.">
+                Save More
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Main App Showcase -->
+          <div class="fm-pocket-main">
+            <span class="fm-dark-tag">• FRESHMART IN YOUR POCKET</span>
+            <h2 class="fm-sec-title fm-text-left">
+              Groceries for Everyday Life.<br>
+              <span class="fm-text-brown">Delivered, Beautifully Simple.</span>
+            </h2>
+
+            <div class="fm-pocket-banner">
+              <img src="img/app-nature.jpg" alt="FreshMart Mobile App surrounded by fresh produce in nature">
+            </div>
+
+            <div class="fm-pocket-caption-row">
+              <h3 id="fmPocketCapTitle">Everything for Your Home</h3>
+              <p id="fmPocketCapDesc">
+                Browse, order, and get fresh groceries delivered to your doorstep — all in one place.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: MEMBERSHIP PLANS (3 WICKER BASKET PRICING CARDS)
+         ========================================== -->
+    <section class="fm-pricing-sec" id="pricing">
+      <div class="fm-container">
+
+        <div class="fm-sec-header">
+          <span class="fm-dark-tag">• MEMBERSHIP PLANS</span>
+          <h2 class="fm-sec-title">
+            Flexible Plans for<br>
+            <span class="fm-text-brown">Smarter Grocery Shopping.</span>
+          </h2>
+          <p class="fm-sec-sub">
+            Choose the plan that fits your needs and get fresh groceries delivered with more savings and convenience.
+          </p>
+        </div>
+
+        <div class="fm-pricing-grid">
+          <!-- Plan 1: Basic -->
+          <article class="fm-plan-card">
+            <div class="fm-plan-basket">
+              <img src="img/wicker-basket.jpg" alt="Basic Plan Vegetable Basket">
+            </div>
+            <div class="fm-plan-body">
+              <div class="fm-plan-head">
+                <div>
+                  <h3>Basic</h3>
+                  <p>Shop your daily essentials with standard delivery.</p>
+                </div>
+                <div class="fm-plan-price">
+                  <strong>0đ</strong>
+                  <small>/month</small>
+                </div>
+              </div>
+
+              <ul class="fm-plan-list">
+                <li>Browse and order groceries</li>
+                <li>Standard 30-min delivery</li>
+                <li>Access to regular weekly deals</li>
+              </ul>
+
+              <button type="button" class="fm-plan-btn" data-open-modal="Đăng Ký Gói Đi Chợ Basic (0đ/tháng)">
+                Get Started
+              </button>
+            </div>
+          </article>
+
+          <!-- Plan 2: Plus (Elevated Center) -->
+          <article class="fm-plan-card fm-plan-featured">
+            <div class="fm-plan-basket">
+              <img src="img/wicker-basket.jpg" alt="Plus Plan Vegetable Basket">
+            </div>
+            <div class="fm-plan-body">
+              <div class="fm-plan-head">
+                <div>
+                  <h3>Plus</h3>
+                  <p>Save more and enjoy free delivery on every order.</p>
+                </div>
+                <div class="fm-plan-price">
+                  <strong>99.000đ</strong>
+                  <small>/month</small>
+                </div>
+              </div>
+
+              <ul class="fm-plan-list">
+                <li>All Basic features</li>
+                <li>Free delivery on orders 200K+</li>
+                <li>Exclusive member discounts (-10%)</li>
+              </ul>
+
+              <button type="button" class="fm-plan-btn" data-open-modal="Đăng Ký Gói Hội Viên Plus (99.000đ/tháng)">
+                Choose Plus
+              </button>
+            </div>
+          </article>
+
+          <!-- Plan 3: Premium -->
+          <article class="fm-plan-card">
+            <div class="fm-plan-basket">
+              <img src="img/wicker-basket.jpg" alt="Premium Plan Vegetable Basket">
+            </div>
+            <div class="fm-plan-body">
+              <div class="fm-plan-head">
+                <div>
+                  <h3>Premium</h3>
+                  <p>The best value for frequent shoppers and bigger savings.</p>
+                </div>
+                <div class="fm-plan-price">
+                  <strong>179.000đ</strong>
+                  <small>/month</small>
+                </div>
+              </div>
+
+              <ul class="fm-plan-list">
+                <li>All Plus features</li>
+                <li>Free 15-min delivery on all orders</li>
+                <li>Early access to farm harvest offers</li>
+              </ul>
+
+              <button type="button" class="fm-plan-btn" data-open-modal="Đăng Ký Gói Hội Viên Premium VIP (179.000đ/tháng)">
+                Go Premium
+              </button>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: DARK FOREST IMPACT & STATS BANNER
+         ========================================== -->
+    <section class="fm-impact-sec">
+      <div class="fm-container">
+        <div class="fm-impact-banner">
+          <!-- Left Copy + Basket Visual -->
+          <div class="fm-impact-left">
+            <span class="fm-dark-tag fm-tag-glass">• OUR IMPACT</span>
+            <h2>
+              Delivering Fresh Groceries<br>
+              for a Healthier Everyday Life.
+            </h2>
+            <div class="fm-impact-photo">
+              <img src="img/dark-forest-basket.jpg" alt="Wicker Basket of Fresh Produce on Forest Moss">
+            </div>
+          </div>
+
+          <!-- Right 3 Stacked Milestones -->
+          <div class="fm-impact-stats">
+            <div class="fm-imp-item">
+              <strong>125,000+</strong>
+              <p>Happy customers who get fresh groceries delivered to their door.</p>
+            </div>
+            <div class="fm-imp-item">
+              <strong>2.4M+</strong>
+              <p>Fresh grocery orders delivered with speed, care, and reliability.</p>
+            </div>
+            <div class="fm-imp-item">
+              <strong>98%</strong>
+              <p>Customer satisfaction for freshness, quality, and on-time delivery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: CUSTOMER STORIES (3 TESTIMONIAL CARDS)
+         ========================================== -->
+    <section class="fm-stories-sec" id="stories">
+      <div class="fm-container">
+
+        <div class="fm-sec-header">
+          <span class="fm-dark-tag">• CUSTOMER STORIES</span>
+          <h2 class="fm-sec-title">
+            Real Customers.<br>
+            <span class="fm-text-brown">Fresher, Easier Shopping.</span>
+          </h2>
+          <p class="fm-sec-sub">
+            See how FreshMart makes everyday grocery shopping simpler, faster, and more convenient for real people.
+          </p>
+        </div>
+
+        <div class="fm-stories-grid">
+          <!-- Review 1 -->
+          <article class="fm-story-card">
+            <span class="fm-quote-mark" aria-hidden="true">“</span>
+            <p class="fm-story-text">
+              "FreshMart has completely changed the way I shop for groceries. I can get everything I need in one place, and the delivery is always on time and fresh."
+            </p>
+            <div class="fm-story-stars">★★★★★</div>
+            <div class="fm-story-author">
+              <img src="img/wicker-basket.jpg" alt="Ethan Mitchell">
+              <div>
+                <strong>Ethan Mitchell</strong>
+                <small>Working Professional</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 2 (Elevated Center) -->
+          <article class="fm-story-card fm-story-featured">
+            <span class="fm-quote-mark" aria-hidden="true">“</span>
+            <p class="fm-story-text">
+              "I love how easy it is to find fresh produce and daily essentials on FreshMart. The quality is always great, the prices are fair, and it saves me so much time every week."
+            </p>
+            <div class="fm-story-stars">★★★★★</div>
+            <div class="fm-story-author">
+              <img src="img/hero-bag.jpg" alt="Olivia Bennett">
+              <div>
+                <strong>Olivia Bennett</strong>
+                <small>Marketing Designer</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Review 3 -->
+          <article class="fm-story-card">
+            <span class="fm-quote-mark" aria-hidden="true">“</span>
+            <p class="fm-story-text">
+              "FreshMart makes grocery shopping stress-free. I can plan my weekly essentials, track my order in real time, and even get great deals regularly."
+            </p>
+            <div class="fm-story-stars">★★★★★</div>
+            <div class="fm-story-author">
+              <img src="img/app-nature.jpg" alt="James Carter">
+              <div>
+                <strong>James Carter</strong>
+                <small>Freelance Photographer</small>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: GIANT BRAND FOOTER (FreshMart®)
+         ========================================== -->
+    <footer class="fm-footer">
+      <div class="fm-container">
+
+        <div class="fm-footer-top">
+          <!-- Left Brand & Newsletter -->
+          <div class="fm-footer-brand">
+            <a href="#top" class="fm-brand">
+              <span class="fm-brand-leaf">🌿</span>
+              <span class="fm-brand-text">FreshMart<sup>®</sup></span>
+            </a>
+            <p>
+              Fresh groceries, everyday essentials, and more — delivered to your doorstep with speed and care.
+            </p>
+            <form class="fm-newsletter-form" id="fmNewsletterForm">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+
+          <!-- 3 Link Columns -->
+          <div class="fm-footer-col">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#why-freshmart">All Categories</a></li>
+              <li><a href="#why-freshmart">Fresh Produce</a></li>
+              <li><a href="#why-freshmart">Dairy &amp; Eggs</a></li>
+              <li><a href="#why-freshmart">Snacks &amp; Beverages</a></li>
+              <li><a href="#why-freshmart">Household Essentials</a></li>
+            </ul>
+          </div>
+
+          <div class="fm-footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#stories">About Us</a></li>
+              <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Contact Zalo</a></li>
+              <li><a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram</a></li>
+              <li><a href="tel:0974100372">0974 100 372</a></li>
+            </ul>
+          </div>
+
+          <div class="fm-footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#pricing">Membership Plans</a></li>
+              <li><a href="#pocket-app">Shopping Guides</a></li>
+              <li><a href="#pocket-app">Delivery &amp; Returns</a></li>
+              <li><a href="#stories">FAQs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Giant Wordmark + Bottom Wicker Basket -->
+        <div class="fm-footer-giant-stage">
+          <div class="fm-giant-wordmark" aria-label="FreshMart">
+            FreshMart<sup>®</sup>
+          </div>
+          <div class="fm-footer-basket-wrap">
+            <img src="img/wicker-basket.jpg" alt="FreshMart Organic Vegetables Wicker Basket">
+          </div>
+        </div>
+
+        <div class="fm-footer-copy">
+          <span>© 2026 FreshMart® All rights reserved · Thiết kế bởi Hoang Phuong</span>
+          <div class="fm-footer-legal">
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Zalo: 0974 100 372</a>
+            <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram: @lhoangphuong</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================
+       QUICK GROCERY ORDER MODAL
+       ========================================== -->
+  <div class="fm-modal-backdrop" id="fmModal" aria-hidden="true">
+    <div class="fm-modal-card" role="dialog" aria-modal="true" aria-labelledby="fmModalTitle">
+      <button type="button" class="fm-modal-close" id="fmModalClose" aria-label="Đóng">✕</button>
+      <span class="fm-dark-tag">🌿 FRESHMART® EXPRESS</span>
+      <h3 id="fmModalTitle">Đặt Giỏ Đi Chợ Tươi Sạch</h3>
+      <p class="fm-modal-sub">Rau củ hữu cơ thu hoạch trong ngày — Giao tận cửa chỉ từ 15 đến 30 phút.</p>
+
+      <form class="fm-modal-form" id="fmModalForm">
+        <input type="text" id="fmModalName" placeholder="Họ tên của bạn *" required>
+        <input type="tel" id="fmModalPhone" placeholder="Số điện thoại / Zalo *" required>
+        <input type="text" id="fmModalAddr" placeholder="Địa chỉ nhận hàng *" required>
+        <select id="fmModalPackage">
+          <option value="Túi Rau Củ Hữu Cơ Gia Đình (12 Món - 349.000đ)">Túi Rau Củ Hữu Cơ Gia Đình (12 Món - 349.000đ)</option>
+          <option value="Gói Hội Viên Plus (99.000đ/tháng - Freeship)">Gói Hội Viên Plus (99.000đ/tháng - Freeship)</option>
+          <option value="Gói Hội Viên Premium VIP (179.000đ/tháng)">Gói Hội Viên Premium VIP (179.000đ/tháng)</option>
+        </select>
+        <div class="fm-modal-btns">
+          <button type="submit" class="fm-btn-zalo">💬 Gửi Đơn Qua Zalo (0974 100 372)</button>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="fm-btn-tg">✈️ Đặt Qua Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="fm-toast" id="fmToast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

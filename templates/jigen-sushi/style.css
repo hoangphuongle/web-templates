@@ -1,0 +1,1367 @@
+/* ==========================================================================
+   JIGEN SUSHI (次元寿司) — JAPANESE SUSHI & OMAKASE TEMPLATE (STYLE.CSS)
+   ========================================================================== */
+
+:root {
+  --jg-yellow: #F5C324;
+  --jg-yellow-soft: #F9D968;
+  --jg-cream: #FDF6E4;
+  --jg-white: #FFFFFF;
+  --jg-ink: #151517;
+  --jg-body: #5A5A60;
+  --jg-muted: #94949C;
+  --jg-lavender: #D8C5D3;
+  --jg-matcha: #C8D5C4;
+  --jg-apricot: #F0DDC4;
+  --jg-font-serif: 'Cormorant Garamond', Georgia, serif;
+  --jg-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--jg-font-sans);
+  background: #EFECE6;
+  color: var(--jg-ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+.jg-page-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  background: var(--jg-white);
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.08);
+}
+
+.jg-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.jg-sec-title {
+  font-family: var(--jg-font-serif);
+  font-size: clamp(2.1rem, 4.2vw, 3.15rem);
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--jg-ink);
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.jg-text-left {
+  text-align: left;
+}
+
+.jg-btn-dark-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--jg-ink);
+  color: var(--jg-white);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(21, 21, 23, 0.22);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.jg-btn-dark-pill:hover {
+  background: #2C2C30;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   1. MINIMAL NAVBAR & YUZU SEMI-CIRCLE HERO
+   ========================================================================== */
+
+.jg-hero {
+  position: relative;
+  padding: 24px 0 64px;
+  overflow: hidden;
+}
+
+/* Signature Left Yuzu Yellow Semi-Circle */
+.jg-hero-yellow-arc {
+  position: absolute;
+  top: 84px;
+  left: -210px;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: var(--jg-yellow);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.jg-navbar {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 36px;
+}
+
+.jg-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--jg-font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--jg-ink);
+}
+
+.jg-logo-emblem {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--jg-ink);
+  color: var(--jg-white);
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jg-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.jg-nav-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--jg-body);
+  transition: color 0.2s ease;
+}
+
+.jg-nav-link:hover,
+.jg-nav-link.is-active {
+  color: var(--jg-ink);
+  font-weight: 700;
+}
+
+.jg-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jg-btn-contact {
+  background: var(--jg-yellow);
+  color: var(--jg-ink);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 22px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.jg-btn-contact:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.jg-burger {
+  display: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: var(--jg-white);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.jg-burger span {
+  width: 16px;
+  height: 2px;
+  background: var(--jg-ink);
+}
+
+/* Hero Main Grid */
+.jg-hero-grid {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1.05fr 64px 0.95fr;
+  align-items: center;
+  gap: 18px;
+  min-height: 410px;
+}
+
+.jg-hero-title {
+  font-family: var(--jg-font-serif);
+  font-size: clamp(3.3rem, 7vw, 5.6rem);
+  font-weight: 700;
+  line-height: 0.96;
+  color: var(--jg-ink);
+  margin-bottom: 28px;
+}
+
+.jg-title-row-1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.jg-inline-plate {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  border: 3px solid var(--jg-white);
+}
+
+.jg-title-row-2 {
+  display: block;
+}
+
+.jg-hero-sub-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.jg-hero-sub {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #3A3424;
+  font-weight: 600;
+}
+
+/* Vertical Gold Kanji Calligraphy */
+.jg-kanji-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--jg-font-serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: #E2C665;
+  user-select: none;
+  line-height: 1;
+}
+
+.jg-hero-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.jg-chopsticks-img {
+  width: 100%;
+  max-width: 470px;
+  border-radius: 24px;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   2. WHY JIGEN SUSHI ? (3 CIRCULAR FEATURE PILLARS)
+   ========================================================================== */
+
+.jg-why-sec {
+  padding: 46px 0 72px;
+}
+
+.jg-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 44px;
+}
+
+.jg-why-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jg-why-circle {
+  width: 138px;
+  height: 138px;
+  border-radius: 50%;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+.jg-circle-mauve {
+  background: #DFCFD8;
+}
+
+.jg-circle-mint {
+  background: #DCE8DF;
+}
+
+.jg-circle-coral {
+  background: #F2D7D3;
+}
+
+.jg-why-circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.jg-why-card h3 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.jg-why-card p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--jg-body);
+  max-width: 260px;
+}
+
+/* ==========================================================================
+   3. ALL YOU NEED IN ONE APP (PHONE MOCKUP + 3 STATS)
+   ========================================================================== */
+
+.jg-app-sec {
+  background: var(--jg-cream);
+  padding: 72px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.jg-app-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr 0.9fr;
+  align-items: center;
+  gap: 28px;
+}
+
+.jg-app-left {
+  position: relative;
+}
+
+.jg-app-heading {
+  font-family: var(--jg-font-serif);
+  font-size: clamp(2.3rem, 4.4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  margin-bottom: 24px;
+}
+
+.jg-float-dot {
+  display: block;
+  border-radius: 50%;
+  background: #D6D1C4;
+}
+
+.jg-dot-1 {
+  width: 16px;
+  height: 16px;
+  margin-bottom: 28px;
+  margin-left: 42px;
+}
+
+.jg-dot-2 {
+  width: 12px;
+  height: 12px;
+  margin-top: 32px;
+  margin-left: 80px;
+}
+
+/* Center Concentric Yellow Rings + Phone UI */
+.jg-app-center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jg-concentric-rings {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #F5C324 0%,
+    #F5C324 44%,
+    #F8D76A 45%,
+    #F8D76A 58%,
+    #FBE79C 59%,
+    #FBE79C 70%,
+    transparent 71%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.jg-phone-frame {
+  position: relative;
+  z-index: 2;
+  width: 265px;
+  background: var(--jg-white);
+  border: 6px solid var(--jg-ink);
+  border-radius: 36px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.16);
+}
+
+.jg-phone-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.jg-phone-dish-wrap {
+  width: 138px;
+  height: 138px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--jg-ink);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.jg-phone-dish-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jg-phone-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: var(--jg-yellow);
+  width: max-content;
+  margin: 0 auto 14px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.jg-phone-stepper button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jg-phone-title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.jg-phone-title-row h3 {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.jg-phone-price {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.jg-phone-price small {
+  font-size: 10px;
+  color: var(--jg-yellow);
+  margin-right: 2px;
+}
+
+.jg-phone-chips {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--jg-body);
+  margin-bottom: 12px;
+}
+
+.jg-phone-details h4,
+.jg-phone-ingr h4 {
+  font-size: 10.5px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.jg-phone-details p {
+  font-size: 9.5px;
+  line-height: 1.45;
+  color: var(--jg-muted);
+  margin-bottom: 10px;
+}
+
+.jg-ingr-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.jg-ingr-pill {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #F6F5F0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.jg-ingr-add-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--jg-yellow);
+  color: var(--jg-ink);
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(245, 195, 36, 0.45);
+}
+
+/* Right 3 Milestone Stats */
+.jg-app-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-left: 24px;
+}
+
+.jg-stat-item strong {
+  display: block;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--jg-ink);
+}
+
+.jg-stat-item span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--jg-body);
+}
+
+/* ==========================================================================
+   4. ABOUT JIGEN SUSHI
+   ========================================================================== */
+
+.jg-about-sec {
+  padding: 72px 0 48px;
+}
+
+.jg-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.jg-about-photo {
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.1);
+}
+
+.jg-about-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3.4;
+  object-fit: cover;
+}
+
+.jg-about-copy p {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--jg-body);
+  margin-top: 14px;
+}
+
+.jg-chefs-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.jg-chef-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.jg-chef-avatars img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--jg-white);
+  margin-left: -8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.jg-chef-avatars img:first-child {
+  margin-left: 0;
+}
+
+.jg-chef-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 11.5px;
+  line-height: 1.3;
+}
+
+.jg-chef-text span {
+  color: var(--jg-muted);
+}
+
+/* ==========================================================================
+   5. COOL UNIQUE PREMIUM ITEMS (SIDEBAR FILTER + PASTEL CARDS)
+   ========================================================================== */
+
+.jg-menu-sec {
+  padding: 36px 0 64px;
+}
+
+.jg-menu-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.jg-menu-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.jg-arrow-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: var(--jg-white);
+  color: var(--jg-ink);
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jg-arrow-dark {
+  background: var(--jg-ink);
+  color: var(--jg-white);
+  border-color: var(--jg-ink);
+}
+
+.jg-menu-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.jg-cat-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.jg-cat-btn {
+  background: none;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--jg-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.jg-cat-btn:hover,
+.jg-cat-btn.is-active {
+  background: var(--jg-yellow);
+  color: var(--jg-ink);
+  box-shadow: 0 8px 18px rgba(245, 195, 36, 0.35);
+}
+
+.jg-cards-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.jg-item-card {
+  border-radius: 22px;
+  padding: 14px 14px 18px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.jg-item-card.is-hidden {
+  display: none;
+}
+
+.jg-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.1);
+}
+
+.jg-card-lavender {
+  background: var(--jg-lavender);
+}
+
+.jg-card-matcha {
+  background: var(--jg-matcha);
+}
+
+.jg-card-apricot {
+  background: var(--jg-apricot);
+}
+
+.jg-item-photo {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 135px;
+  margin-bottom: 14px;
+}
+
+.jg-item-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jg-item-card h3 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.jg-item-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--jg-body);
+  margin-bottom: 14px;
+}
+
+.jg-item-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.jg-item-metrics small {
+  display: block;
+  font-size: 10px;
+  color: var(--jg-body);
+  margin-bottom: 2px;
+}
+
+.jg-item-metrics strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   6. THE JIGEN EXPERIENCE (01, 02, 03)
+   ========================================================================== */
+
+.jg-exp-sec {
+  padding: 36px 0 72px;
+}
+
+.jg-exp-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.jg-exp-visual {
+  position: relative;
+}
+
+.jg-exp-main-img {
+  width: 88%;
+  border-radius: 26px;
+  aspect-ratio: 4 / 4.3;
+  object-fit: cover;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.1);
+}
+
+.jg-exp-float-thumb {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  width: 110px;
+  height: 110px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 4px solid var(--jg-white);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+.jg-exp-float-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.jg-exp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 26px;
+}
+
+.jg-exp-item {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.jg-exp-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--jg-yellow);
+  color: var(--jg-ink);
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jg-exp-item h3 {
+  font-size: 14.5px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.jg-exp-item p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--jg-body);
+}
+
+/* ==========================================================================
+   7. RESERVE YOUR TABLE NOW
+   ========================================================================== */
+
+.jg-reserve-sec {
+  background: var(--jg-cream);
+  padding: 64px 0;
+}
+
+.jg-reserve-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.jg-reserve-copy p {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--jg-body);
+  margin: 14px 0 20px;
+}
+
+.jg-open-hours {
+  margin-bottom: 24px;
+}
+
+.jg-open-hours h4 {
+  font-size: 12.5px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.jg-hours-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--jg-body);
+}
+
+.jg-reserve-photo {
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.12);
+}
+
+.jg-reserve-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   8. YELLOW DOWNLOAD THE APP BANNER & DARK FOOTER
+   ========================================================================== */
+
+.jg-download-banner {
+  background: var(--jg-yellow);
+  padding: 36px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.jg-dl-inner {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  align-items: center;
+  gap: 20px;
+}
+
+.jg-dl-side-img {
+  width: 140px;
+  height: 100px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.jg-dl-center {
+  text-align: center;
+}
+
+.jg-dl-center h2 {
+  font-family: var(--jg-font-serif);
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.jg-dl-center p {
+  font-size: 12px;
+  color: #3E3514;
+  margin-bottom: 18px;
+}
+
+.jg-store-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.jg-store-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--jg-white);
+  color: var(--jg-ink);
+  border: none;
+  border-radius: 999px;
+  padding: 8px 18px;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.jg-store-pill small {
+  display: block;
+  font-size: 8.5px;
+  color: var(--jg-muted);
+  line-height: 1;
+}
+
+.jg-store-pill strong {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* Dark Footer Bar */
+.jg-footer {
+  background: var(--jg-ink);
+  color: var(--jg-white);
+  padding: 20px 0;
+}
+
+.jg-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.jg-logo-light {
+  color: var(--jg-white);
+}
+
+.jg-logo-light .jg-logo-emblem {
+  background: var(--jg-white);
+  color: var(--jg-ink);
+}
+
+.jg-footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.jg-footer-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.jg-footer-socials a {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--jg-white);
+  color: var(--jg-ink);
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   9. MODAL & TOAST
+   ========================================================================== */
+
+.jg-modal-backdrop {
+  position: fixed;
+  inset: 52px 0 0 0;
+  z-index: 99990;
+  background: rgba(15, 15, 18, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.jg-modal-backdrop.is-open {
+  display: flex;
+}
+
+.jg-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: var(--jg-white);
+  border-radius: 24px;
+  padding: 28px 26px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+}
+
+.jg-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #F4F3EF;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.jg-modal-badge {
+  display: inline-block;
+  background: #FFF6D6;
+  color: #8A6800;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.jg-modal-card h3 {
+  font-family: var(--jg-font-serif);
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.jg-modal-sub {
+  font-size: 12.5px;
+  color: var(--jg-body);
+  margin-bottom: 18px;
+}
+
+.jg-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.jg-modal-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.jg-modal-form input,
+.jg-modal-form select,
+.jg-modal-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #DFDDD5;
+  font-size: 13px;
+}
+
+.jg-modal-actions {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.jg-btn-zalo,
+.jg-btn-tg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--jg-white);
+  border: none;
+  cursor: pointer;
+}
+
+.jg-btn-zalo {
+  background: var(--jg-ink);
+}
+
+.jg-btn-tg {
+  background: #24A1DE;
+}
+
+.jg-toast {
+  position: fixed;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  right: 22px;
+  z-index: 99995;
+  background: var(--jg-ink);
+  color: var(--jg-white);
+  border-left: 4px solid var(--jg-yellow);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.jg-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   10. RESPONSIVE MEDIA QUERIES (DESKTOP / TABLET / MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .jg-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .jg-kanji-col {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .jg-hero-right {
+    justify-content: center;
+  }
+
+  .jg-app-grid,
+  .jg-about-grid,
+  .jg-menu-layout,
+  .jg-exp-grid,
+  .jg-reserve-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jg-cat-sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .jg-cards-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jg-app-stats {
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .jg-dl-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .jg-dl-side-img {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .jg-container {
+    padding: 0 18px;
+  }
+
+  .jg-nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--jg-white);
+    border-radius: 18px;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+  }
+
+  .jg-nav-links.is-open {
+    display: flex;
+  }
+
+  .jg-burger {
+    display: inline-flex;
+  }
+
+  .jg-why-grid,
+  .jg-cards-track,
+  .jg-modal-row-2,
+  .jg-modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .jg-hero-yellow-arc {
+    width: 310px;
+    height: 310px;
+    left: -140px;
+  }
+
+  .jg-inline-plate {
+    width: 52px;
+    height: 52px;
+  }
+
+  .jg-app-stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+

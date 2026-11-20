@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jigen Sushi (次元寿司) – Purest Sushi Experience | Nhà Hàng Sushi &amp; Omakase Nhật Bản</title>
+  <meta name="description" content="Jigen Sushi – Tinh hoa ẩm thực Sushi & Sashimi Nhật Bản tươi sống mỗi ngày. Đặt bàn Omakase hoặc giao nhanh trong 25 phút. Liên hệ Zalo: 0974 100 372.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Showcase Contact Bar (#hp-bar) -->
+  <style>
+    #hp-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999999;
+      height: 52px;
+      background: linear-gradient(90deg, #0d0d0d 0%, #1a1a1a 50%, #0d0d0d 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+    }
+    #hp-bar .hp-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    #hp-bar .hp-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+      flex-shrink: 0;
+    }
+    #hp-bar .hp-label {
+      color: rgba(255, 255, 255, .6);
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    #hp-bar .hp-label b {
+      color: #fff;
+      font-weight: 600;
+    }
+    #hp-bar .hp-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    #hp-bar .hp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      transition: transform .2s, box-shadow .2s;
+      white-space: nowrap;
+    }
+    #hp-bar .hp-btn:hover {
+      transform: translateY(-1px);
+    }
+    #hp-bar .hp-zalo {
+      background: #0068ff;
+      box-shadow: 0 4px 12px rgba(0, 104, 255, .35);
+    }
+    #hp-bar .hp-phone {
+      background: #22c55e;
+      box-shadow: 0 4px 12px rgba(34, 197, 94, .35);
+    }
+    #hp-bar .hp-tg {
+      background: #24A1DE;
+      box-shadow: 0 4px 12px rgba(36, 161, 222, .35);
+    }
+    body {
+      padding-top: 52px !important;
+    }
+    @media (max-width: 640px) {
+      #hp-bar {
+        padding: 0 12px;
+      }
+      #hp-bar .hp-label span {
+        display: none;
+      }
+      #hp-bar .hp-btn {
+        padding: 6px 10px;
+        font-size: 11.5px;
+      }
+    }
+    @media (max-width: 520px) {
+      #hp-bar .hp-phone {
+        display: none !important;
+      }
+    }
+    @media (max-width: 360px) {
+      #hp-bar .hp-label {
+        display: none !important;
+      }
+    }
+  </style>
+  <div id="hp-bar">
+    <div class="hp-left">
+      <span class="hp-dot"></span>
+      <span class="hp-label">Mẫu: <b>Jigen Sushi (次元寿司)</b> <span>— Thiết kế bởi Hoang Phuong</span></span>
+    </div>
+    <div class="hp-right">
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="hp-btn hp-zalo">💬 Đặt mẫu qua Zalo</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="hp-btn hp-tg">✈️ Telegram</a>
+      <a href="tel:0974100372" class="hp-btn hp-phone">📞 0974 100 372</a>
+    </div>
+  </div>
+
+  <div class="jg-page-shell" id="top">
+
+    <!-- ==========================================
+         SECTION 1: MINIMAL NAVBAR & YUZU SEMI-CIRCLE HERO
+         ========================================== -->
+    <section class="jg-hero">
+      <!-- Giant Left Yuzu Yellow Semi-Circle -->
+      <div class="jg-hero-yellow-arc" aria-hidden="true"></div>
+
+      <div class="jg-container">
+        <!-- Navbar -->
+        <header class="jg-navbar" id="jgNavbar">
+          <a href="#top" class="jg-logo" aria-label="Jigen Sushi Trang chủ">
+            <span>Jigen</span>
+            <span class="jg-logo-emblem" aria-hidden="true">次</span>
+            <span>Sushi</span>
+          </a>
+
+          <nav class="jg-nav-links" id="jgNavLinks">
+            <a href="#top" class="jg-nav-link is-active">— Home</a>
+            <a href="#menu" class="jg-nav-link">This month's menu</a>
+            <a href="#about" class="jg-nav-link">About Jigen</a>
+            <a href="#experience" class="jg-nav-link">Experience</a>
+            <a href="#reservation" class="jg-nav-link">Reservation</a>
+          </nav>
+
+          <div class="jg-nav-actions">
+            <button type="button" class="jg-btn-contact" data-open-modal="Đặt Bàn &amp; Tư Vấn Thực Đơn Jigen Sushi">
+              Contact
+            </button>
+            <button type="button" class="jg-burger" id="jgBurger" aria-label="Mở menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Hero Main Grid -->
+        <div class="jg-hero-grid">
+          <!-- Left Copy over Yellow Arc -->
+          <div class="jg-hero-left">
+            <h1 class="jg-hero-title">
+              <span class="jg-title-row-1">
+                <b>Jigen</b>
+                <img src="img/sushi-plate-top.jpg" alt="Jigen Sushi Ceramic Platter" class="jg-inline-plate">
+              </span>
+              <span class="jg-title-row-2">Sushi</span>
+            </h1>
+
+            <div class="jg-hero-sub-row">
+              <p class="jg-hero-sub">
+                Purest Sushi Experience Focusing on<br>
+                Premium Quality Ingredients.
+              </p>
+              <a href="#menu" class="jg-btn-dark-pill">Check Menu</a>
+            </div>
+          </div>
+
+          <!-- Center Vertical Japanese Kanji Calligraphy -->
+          <div class="jg-kanji-col" aria-label="次元寿司 - Jigen Sushi">
+            <span>次</span>
+            <span>元</span>
+            <span>寿</span>
+            <span>司</span>
+          </div>
+
+          <!-- Right Floating Chopsticks Holding 3 Nigiri Pieces -->
+          <div class="jg-hero-right">
+            <img src="img/hero-chopsticks.jpg" alt="Three pieces of Nigiri Sushi held by black chopsticks" class="jg-chopsticks-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: WHY JIGEN SUSHI ? (3 CIRCULAR PILLARS)
+         ========================================== -->
+    <section class="jg-why-sec">
+      <div class="jg-container">
+        <h2 class="jg-sec-title">Why Jigen Sushi ?</h2>
+
+        <div class="jg-why-grid">
+          <!-- Pillar 1 -->
+          <article class="jg-why-card">
+            <div class="jg-why-circle jg-circle-mauve">
+              <img src="img/item-nigiri.jpg" alt="Hot Deals & Offers">
+            </div>
+            <h3>Hot Deals &amp; Offers</h3>
+            <p>
+              We want to show you some YO! love by giving you discount off food in our restaurants &amp; combo Omakase ưu đãi mỗi tuần.
+            </p>
+          </article>
+
+          <!-- Pillar 2 -->
+          <article class="jg-why-card">
+            <div class="jg-why-circle jg-circle-mint">
+              <img src="img/chef-pickup.jpg" alt="Self Pick-Up at Jigen Sushi">
+            </div>
+            <h3>Self Pick-Up</h3>
+            <p>
+              Self Pick-up is a service which allows you to place Self Pick-up orders through our App — nhận ngay hộp Bento tươi nóng không cần chờ.
+            </p>
+          </article>
+
+          <!-- Pillar 3 -->
+          <article class="jg-why-card">
+            <div class="jg-why-circle jg-circle-coral">
+              <img src="img/sushi-plate-top.jpg" alt="Fastest Delivery">
+            </div>
+            <h3>Fastest Delivery</h3>
+            <p>
+              Choose your food we will delivered to you as fast as we can. Giao tận nơi trong 25 phút kèm túi giữ nhiệt đá khô chuẩn Nhật.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: ALL YOU NEED IN ONE APP (PHONE UI + 3 STATS)
+         ========================================== -->
+    <section class="jg-app-sec">
+      <div class="jg-container">
+        <div class="jg-app-grid">
+
+          <!-- Left Title & Download CTA -->
+          <div class="jg-app-left">
+            <span class="jg-float-dot jg-dot-1" aria-hidden="true"></span>
+            <h2 class="jg-app-heading">
+              All You<br>
+              Need in<br>
+              One App
+            </h2>
+            <button type="button" class="jg-btn-dark-pill" data-open-modal="Tải App &amp; Nhận Voucher Giảm 20% Đơn Đầu Tiên">
+              Download
+            </button>
+            <span class="jg-float-dot jg-dot-2" aria-hidden="true"></span>
+          </div>
+
+          <!-- Center Concentric Yellow Rings + Interactive Phone Mockup -->
+          <div class="jg-app-center">
+            <div class="jg-concentric-rings" aria-hidden="true"></div>
+
+            <div class="jg-phone-frame">
+              <div class="jg-phone-top-bar">
+                <span>‹</span>
+                <span>🛍️</span>
+              </div>
+
+              <div class="jg-phone-dish-wrap">
+                <img src="img/sushi-plate-top.jpg" alt="Sesame Salmon Stock Maki Bowl" id="jgPhoneImg">
+              </div>
+
+              <!-- Interactive Quantity Stepper inside Phone -->
+              <div class="jg-phone-stepper">
+                <button type="button" id="jgQtyMinus" aria-label="Giảm số lượng">−</button>
+                <strong id="jgQtyVal">1</strong>
+                <button type="button" id="jgQtyPlus" aria-label="Tăng số lượng">+</button>
+              </div>
+
+              <div class="jg-phone-title-row">
+                <div>
+                  <h3 id="jgPhoneDishName">Sesame Salmon<br>Stock Maki</h3>
+                </div>
+                <div class="jg-phone-price">
+                  <small>đ</small><strong id="jgPhonePrice">299K</strong>
+                </div>
+              </div>
+
+              <div class="jg-phone-chips">
+                <span>⭐ 4.9</span>
+                <span>🔥 65 Calories</span>
+                <span>🕒 20-30 min</span>
+              </div>
+
+              <div class="jg-phone-details">
+                <h4>Details</h4>
+                <p>Cá hồi Na Uy tươi cuộn rong biển Nori, mè rang thơm và cơm trộn giấm Akazu truyền thống.</p>
+              </div>
+
+              <div class="jg-phone-ingr">
+                <h4>Ingredients</h4>
+                <div class="jg-ingr-row">
+                  <span class="jg-ingr-pill">🍣</span>
+                  <span class="jg-ingr-pill">🥑</span>
+                  <button type="button" class="jg-ingr-add-btn" id="jgPhoneOrderBtn" title="Đặt ngay món này">+</button>
+                  <span class="jg-ingr-pill">🍚</span>
+                  <span class="jg-ingr-pill">🥬</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 3 Milestone Stats -->
+          <div class="jg-app-stats">
+            <div class="jg-stat-item">
+              <strong>85+</strong>
+              <span>Sushi Items</span>
+            </div>
+            <div class="jg-stat-item">
+              <strong>1,000+</strong>
+              <span>Daily order</span>
+            </div>
+            <div class="jg-stat-item">
+              <strong>10+</strong>
+              <span>Branches</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: ABOUT JIGEN SUSHI
+         ========================================== -->
+    <section class="jg-about-sec" id="about">
+      <div class="jg-container">
+        <div class="jg-about-grid">
+
+          <!-- Left Celadon Ceramic Plate Photo -->
+          <div class="jg-about-photo">
+            <img src="img/about-plate.jpg" alt="Jigen Sushi Celadon Plate on Bamboo Mat">
+          </div>
+
+          <!-- Right Story & Chef Avatars -->
+          <div class="jg-about-copy">
+            <h2 class="jg-sec-title jg-text-left">
+              About Jigen<br>
+              Sushi
+            </h2>
+            <p>
+              At restaurant Jigen Sushi we offer meals of excellent quality and invite you to try our delicious food. The key to our success is simple: providing quality consistent food that taste great every single time.
+            </p>
+            <p>
+              Eat delicious food. Grab a drink. But most of all, relax! We thank you from the bottom of our hearts for your continued support.
+            </p>
+
+            <div class="jg-chefs-badge">
+              <div class="jg-chef-avatars">
+                <img src="img/chef-pickup.jpg" alt="Itamae Chef Kenji">
+                <img src="img/about-plate.jpg" alt="Chef Takumi">
+                <img src="img/item-nigiri.jpg" alt="Chef Haruto">
+              </div>
+              <div class="jg-chef-text">
+                <strong>Meet with our</strong>
+                <span>Qualified Itamae Chef</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: COOL UNIQUE PREMIUM ITEMS (SIDEBAR + PASTEL CARDS)
+         ========================================== -->
+    <section class="jg-menu-sec" id="menu">
+      <div class="jg-container">
+
+        <div class="jg-menu-header">
+          <h2 class="jg-sec-title jg-text-left">
+            Cool Unique<br>
+            Premium Items.
+          </h2>
+          <div class="jg-menu-arrows">
+            <button type="button" class="jg-arrow-btn" id="jgMenuPrev" aria-label="Món trước">‹</button>
+            <button type="button" class="jg-arrow-btn jg-arrow-dark" id="jgMenuNext" aria-label="Món tiếp">›</button>
+          </div>
+        </div>
+
+        <div class="jg-menu-layout">
+          <!-- Left Vertical Category Filter Sidebar -->
+          <div class="jg-cat-sidebar" role="tablist">
+            <button type="button" class="jg-cat-btn" data-cat="sashimi">Sashimis</button>
+            <button type="button" class="jg-cat-btn is-active" data-cat="all">Family Platter</button>
+            <button type="button" class="jg-cat-btn" data-cat="nigiri">Nigiri</button>
+            <button type="button" class="jg-cat-btn" data-cat="gunkan">Gunkan</button>
+            <button type="button" class="jg-cat-btn" data-cat="rolls">Sushi Rolls</button>
+          </div>
+
+          <!-- Right Pastel Cards Track -->
+          <div class="jg-cards-track" id="jgCardsTrack">
+
+            <!-- Card 1: Jigen Special (Lavender Pastel) -->
+            <article class="jg-item-card jg-card-lavender" data-category="nigiri" data-open-modal="Đặt Món: Jigen Special Platter (13 Pcs - 389.000đ)">
+              <div class="jg-item-photo">
+                <img src="img/item-nigiri.jpg" alt="Jigen Special Nigiri Platter">
+              </div>
+              <h3>Jigen Special</h3>
+              <span class="jg-item-tag">Family platter</span>
+              <div class="jg-item-metrics">
+                <div>
+                  <small>★</small>
+                  <strong>4.9</strong>
+                </div>
+                <div>
+                  <small>VNĐ</small>
+                  <strong>389K</strong>
+                </div>
+                <div>
+                  <small>Pcs</small>
+                  <strong>13</strong>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Samurai Special (Matcha Sage Pastel) -->
+            <article class="jg-item-card jg-card-matcha" data-category="rolls" data-open-modal="Đặt Món: Samurai Special Roll Set (15 Pcs - 429.000đ)">
+              <div class="jg-item-photo">
+                <img src="img/item-maki.jpg" alt="Samurai Special Maki & Nigiri">
+              </div>
+              <h3>Samurai Special</h3>
+              <span class="jg-item-tag">Family platter</span>
+              <div class="jg-item-metrics">
+                <div>
+                  <small>★</small>
+                  <strong>4.9</strong>
+                </div>
+                <div>
+                  <small>VNĐ</small>
+                  <strong>429K</strong>
+                </div>
+                <div>
+                  <small>Pcs</small>
+                  <strong>15</strong>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Omakase Boat (Warm Apricot Pastel) -->
+            <article class="jg-item-card jg-card-apricot" data-category="sashimi" data-open-modal="Đặt Món: Omakase Deluxe Sashimi (21 Pcs - 650.000đ)">
+              <div class="jg-item-photo">
+                <img src="img/about-plate.jpg" alt="Omakase Deluxe Sashimi & Nigiri">
+              </div>
+              <h3>Omakase Deluxe</h3>
+              <span class="jg-item-tag">Family platter</span>
+              <div class="jg-item-metrics">
+                <div>
+                  <small>★</small>
+                  <strong>5.0</strong>
+                </div>
+                <div>
+                  <small>VNĐ</small>
+                  <strong>650K</strong>
+                </div>
+                <div>
+                  <small>Pcs</small>
+                  <strong>21</strong>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Ikura & Uni Gunkan (Soft Rose Pastel) -->
+            <article class="jg-item-card jg-card-lavender" data-category="gunkan" data-open-modal="Đặt Món: Ikura &amp; Uni Gunkan Set (12 Pcs - 490.000đ)">
+              <div class="jg-item-photo">
+                <img src="img/reserve-nigiri.jpg" alt="Ikura & Uni Gunkan Set">
+              </div>
+              <h3>Ikura &amp; Uni Set</h3>
+              <span class="jg-item-tag">Gunkan Special</span>
+              <div class="jg-item-metrics">
+                <div>
+                  <small>★</small>
+                  <strong>5.0</strong>
+                </div>
+                <div>
+                  <small>VNĐ</small>
+                  <strong>490K</strong>
+                </div>
+                <div>
+                  <small>Pcs</small>
+                  <strong>12</strong>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: THE JIGEN EXPERIENCE (01, 02, 03)
+         ========================================== -->
+    <section class="jg-exp-sec" id="experience">
+      <div class="jg-container">
+        <div class="jg-exp-grid">
+
+          <!-- Left Wooden Board Photo + Overlapping Mini Square -->
+          <div class="jg-exp-visual">
+            <img src="img/experience-board.jpg" alt="Wooden Sushi Geta Board with Maki Rolls" class="jg-exp-main-img">
+            <div class="jg-exp-float-thumb">
+              <img src="img/sushi-plate-top.jpg" alt="Handpicked Maki Roll Detail">
+            </div>
+          </div>
+
+          <!-- Right 01, 02, 03 Numbered Pillars -->
+          <div class="jg-exp-copy">
+            <h2 class="jg-sec-title jg-text-left">
+              The Jigen<br>
+              Experience
+            </h2>
+
+            <div class="jg-exp-list">
+              <div class="jg-exp-item">
+                <span class="jg-exp-num">01</span>
+                <div>
+                  <h3>Premium Ingredients</h3>
+                  <p>
+                    Proudly free of artificial sweeteners, seasonings, preservatives and colorings. Cá hồi Na Uy &amp; cá ngừ vây xanh nhập mới mỗi ngày.
+                  </p>
+                </div>
+              </div>
+
+              <div class="jg-exp-item">
+                <span class="jg-exp-num">02</span>
+                <div>
+                  <h3>Authentic Japanese</h3>
+                  <p>
+                    Our dishes adhere to the Japanese virtue of serving natural and healthy meals. We use only fresh premium ingredients for a pure Umami taste.
+                  </p>
+                </div>
+              </div>
+
+              <div class="jg-exp-item">
+                <span class="jg-exp-num">03</span>
+                <div>
+                  <h3>Always Fresh &amp; Omakase-Pon</h3>
+                  <p>
+                    Say goodbye to old food — our chef's table &amp; temperature-controlled rice mastery ensure your Sushi is always fresh and delicious.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: RESERVE YOUR TABLE NOW
+         ========================================== -->
+    <section class="jg-reserve-sec" id="reservation">
+      <div class="jg-container">
+        <div class="jg-reserve-grid">
+
+          <!-- Left Copy, Open Hours & Book CTA -->
+          <div class="jg-reserve-copy">
+            <h2 class="jg-sec-title jg-text-left">
+              Reserve Your<br>
+              Table Now
+            </h2>
+            <p>
+              There's plenty of seating at Jigen Sushi, so make the night stress-free and book a table at our Omakase counter or private tatami room to beat the queue.
+            </p>
+
+            <div class="jg-open-hours">
+              <h4>Open Hours</h4>
+              <div class="jg-hours-row">
+                <span><b>M-F:</b> 10 am - 11 pm</span>
+                <span><b>S-S:</b> 09 am - 11 pm</span>
+              </div>
+            </div>
+
+            <button type="button" class="jg-btn-dark-pill" data-open-modal="Đặt Bàn Omakase &amp; Phòng VIP Tatami – Jigen Sushi">
+              Book a Table
+            </button>
+          </div>
+
+          <!-- Right Glossy Nigiri Platter Photo -->
+          <div class="jg-reserve-photo">
+            <img src="img/reserve-nigiri.jpg" alt="Fresh Salmon, Tuna and Sea Bream Nigiri on White Porcelain">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 8: YELLOW DOWNLOAD THE APP BANNER & DARK FOOTER
+         ========================================== -->
+    <section class="jg-download-banner">
+      <div class="jg-container jg-dl-inner">
+        <img src="img/item-nigiri.jpg" alt="Salmon Nigiri Left" class="jg-dl-side-img jg-dl-left">
+
+        <div class="jg-dl-center">
+          <h2>Download <span>the App</span></h2>
+          <p>Order fresh sushi &amp; sashimi anytime and get your food delivered in 25 minutes.</p>
+          <div class="jg-store-btns">
+            <button type="button" class="jg-store-pill" data-open-modal="Tải Ứng Dụng Jigen Sushi trên App Store (iOS)">
+              <span></span>
+              <div>
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </button>
+            <button type="button" class="jg-store-pill" data-open-modal="Tải Ứng Dụng Jigen Sushi trên Google Play (Android)">
+              <span>▶</span>
+              <div>
+                <small>GET IT ON</small>
+                <strong>Google Play</strong>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <img src="img/reserve-nigiri.jpg" alt="Shrimp Nigiri Right" class="jg-dl-side-img jg-dl-right">
+      </div>
+    </section>
+
+    <!-- Dark Charcoal Footer Bar -->
+    <footer class="jg-footer">
+      <div class="jg-container jg-footer-inner">
+        <a href="#top" class="jg-logo jg-logo-light">
+          <span>Jigen</span>
+          <span class="jg-logo-emblem">次</span>
+          <span>Sushi</span>
+        </a>
+
+        <nav class="jg-footer-links">
+          <a href="#about">About</a>
+          <a href="#menu">Order</a>
+          <a href="#menu">Menu</a>
+          <a href="#experience">Experience</a>
+          <a href="#reservation">Reservation</a>
+        </nav>
+
+        <div class="jg-footer-socials">
+          <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" aria-label="Zalo">Z</a>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" aria-label="Telegram">T</a>
+          <a href="tel:0974100372" aria-label="Hotline">📞</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================
+       TABLE RESERVATION & QUICK ORDER MODAL
+       ========================================== -->
+  <div class="jg-modal-backdrop" id="jgModal" aria-hidden="true">
+    <div class="jg-modal-card" role="dialog" aria-modal="true" aria-labelledby="jgModalTitle">
+      <button type="button" class="jg-modal-close" id="jgModalClose" aria-label="Đóng">✕</button>
+      <span class="jg-modal-badge">🍣 JIGEN SUSHI · 次元寿司</span>
+      <h3 id="jgModalTitle">Đặt Bàn &amp; Gọi Món Jigen Sushi</h3>
+      <p class="jg-modal-sub">Vui lòng để lại thông tin, lễ tân Jigen Sushi sẽ xác nhận bàn Omakase hoặc đơn giao tận nơi ngay qua Zalo.</p>
+
+      <form class="jg-modal-form" id="jgModalForm">
+        <div class="jg-modal-row-2">
+          <input type="text" id="jgModalName" placeholder="Họ tên quý khách *" required>
+          <input type="tel" id="jgModalPhone" placeholder="Số điện thoại / Zalo *" required>
+        </div>
+        <div class="jg-modal-row-2">
+          <input type="date" id="jgModalDate" required>
+          <select id="jgModalGuests">
+            <option value="2 Khách – Bàn Quầy Omakase">2 Khách – Quầy Omakase</option>
+            <option value="4 Khách – Bàn Gia Đình">4 Khách – Bàn Gia Đình</option>
+            <option value="6-8 Khách – Phòng Tatami VIP">6-8 Khách – Phòng Tatami VIP</option>
+            <option value="Đặt Giao Tận Nơi (25 Phút)">Đặt Giao Tận Nơi (25 Phút)</option>
+          </select>
+        </div>
+        <textarea id="jgModalNote" rows="2" placeholder="Ghi chú món yêu thích (VD: Jigen Special Platter, Samurai Special, không ăn cay...)"></textarea>
+
+        <div class="jg-modal-actions">
+          <button type="submit" class="jg-btn-zalo">💬 Xác Nhận Qua Zalo (0974 100 372)</button>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="jg-btn-tg">✈️ Đặt Qua Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="jg-toast" id="jgToast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

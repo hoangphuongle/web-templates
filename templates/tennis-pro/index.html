@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TennisPro® – Play Beyond Limits | Học Viện Huấn Luyện &amp; Đặt Sân Tennis Quốc Tế</title>
+  <meta name="description" content="Học viện huấn luyện Tennis chuyên nghiệp & hệ thống sân cứng US Open / sân đất nện chuẩn ITF. Đặt sân trực tuyến, đăng ký HLV 1-1 qua Zalo: 0974 100 372.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Showcase Contact Bar (#hp-bar) -->
+  <style>
+    #hp-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999999;
+      height: 52px;
+      background: linear-gradient(90deg, #0d0d0d 0%, #1a1a1a 50%, #0d0d0d 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+    }
+    #hp-bar .hp-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    #hp-bar .hp-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+      flex-shrink: 0;
+    }
+    #hp-bar .hp-label {
+      color: rgba(255, 255, 255, .6);
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    #hp-bar .hp-label b {
+      color: #fff;
+      font-weight: 600;
+    }
+    #hp-bar .hp-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    #hp-bar .hp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      transition: transform .2s, box-shadow .2s;
+      white-space: nowrap;
+    }
+    #hp-bar .hp-btn:hover {
+      transform: translateY(-1px);
+    }
+    #hp-bar .hp-zalo {
+      background: #0068ff;
+      box-shadow: 0 4px 12px rgba(0, 104, 255, .35);
+    }
+    #hp-bar .hp-phone {
+      background: #22c55e;
+      box-shadow: 0 4px 12px rgba(34, 197, 94, .35);
+    }
+    #hp-bar .hp-tg {
+      background: #24A1DE;
+      box-shadow: 0 4px 12px rgba(36, 161, 222, .35);
+    }
+    body {
+      padding-top: 52px !important;
+    }
+    @media (max-width: 640px) {
+      #hp-bar {
+        padding: 0 12px;
+      }
+      #hp-bar .hp-label span {
+        display: none;
+      }
+      #hp-bar .hp-btn {
+        padding: 6px 10px;
+        font-size: 11.5px;
+      }
+    }
+    @media (max-width: 520px) {
+      #hp-bar .hp-phone {
+        display: none !important;
+      }
+    }
+    @media (max-width: 360px) {
+      #hp-bar .hp-label {
+        display: none !important;
+      }
+    }
+  </style>
+  <div id="hp-bar">
+    <div class="hp-left">
+      <span class="hp-dot"></span>
+      <span class="hp-label">Mẫu: <b>TennisPro® Academy</b> <span>— Thiết kế bởi Hoang Phuong</span></span>
+    </div>
+    <div class="hp-right">
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="hp-btn hp-zalo">💬 Đặt mẫu qua Zalo</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="hp-btn hp-tg">✈️ Telegram</a>
+      <a href="tel:0974100372" class="hp-btn hp-phone">📞 0974 100 372</a>
+    </div>
+  </div>
+
+  <div class="tp-page-shell" id="top">
+
+    <!-- ==========================================
+         SECTION 1: FLOATING PILL NAVBAR & OUTDOOR TENNIS HERO
+         ========================================== -->
+    <section class="tp-hero">
+      <div class="tp-container">
+
+        <!-- White Pill Navbar -->
+        <header class="tp-navbar" id="tpNavbar">
+          <a href="#top" class="tp-brand" aria-label="TennisPro Trang chủ">
+            <span class="tp-brand-ball" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M6.2 5.3C8.5 7.4 9.8 9.6 9.8 12s-1.3 4.6-3.6 6.7"></path>
+                <path d="M17.8 5.3C15.5 7.4 14.2 9.6 14.2 12s1.3 4.6 3.6 6.7"></path>
+              </svg>
+            </span>
+            <span class="tp-brand-text">TennisPro<sup>®</sup></span>
+          </a>
+
+          <nav class="tp-nav-links" id="tpNavLinks">
+            <a href="#top" class="tp-nav-link is-active">Home</a>
+            <a href="#programs" class="tp-nav-link">Programs</a>
+            <a href="#approach" class="tp-nav-link">Coaching</a>
+            <a href="#booking" class="tp-nav-link">Đặt Sân</a>
+            <a href="#facilities" class="tp-nav-link">Facilities</a>
+            <a href="#about" class="tp-nav-link">About Us</a>
+          </nav>
+
+          <div class="tp-nav-actions">
+            <a href="#booking" class="tp-search-btn" aria-label="Tìm sân trống" title="Tìm sân trống">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </a>
+            <button type="button" class="tp-join-pill" data-open-modal="Đăng Ký Học Thử &amp; Test Trình Độ NTRP">
+              <span>Join Now</span>
+              <span aria-hidden="true">→</span>
+            </button>
+            <button type="button" class="tp-burger" id="tpBurger" aria-label="Menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Hero Content Left -->
+        <div class="tp-hero-content">
+          <div class="tp-eyebrow-light">
+            <span>TENNIS TRAINING &amp; PERFORMANCE</span>
+            <i class="tp-eyebrow-line"></i>
+          </div>
+
+          <h1 class="tp-hero-title">
+            Play Beyond Limits.<br>
+            Train With Purpose.<br>
+            Own Every Game.
+          </h1>
+
+          <p class="tp-hero-desc">
+            Discover professional tennis coaching, world-class US Open hard courts, and personalized training designed to elevate your game.
+          </p>
+
+          <div class="tp-hero-ctas">
+            <a href="#programs" class="tp-btn-orange">
+              <span>Explore Our Programs</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="#booking" class="tp-btn-glass">
+              <span>🎾 Đặt Sân Trực Tuyến</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: EDITORIAL ABOUT & PLAYER DEVELOPMENT HUD (+72%)
+         ========================================== -->
+    <section class="tp-about-sec" id="about">
+      <div class="tp-container">
+
+        <!-- Top 2-Column Editorial Row -->
+        <div class="tp-about-top-grid">
+          <!-- Left: 2 Rounded Square Court Thumbnails -->
+          <div class="tp-mini-thumbs">
+            <div class="tp-mini-thumb">
+              <img src="img/balls-baseline.jpg" alt="Tennis ball on blue hard court baseline">
+            </div>
+            <div class="tp-mini-thumb">
+              <img src="img/ball-net.jpg" alt="Tennis net and ball detail">
+            </div>
+          </div>
+
+          <!-- Right: Breadcrumb Tabs + 3-Line Heading + Orange Circle Button -->
+          <div class="tp-about-copy-col">
+            <div class="tp-about-meta-row">
+              <div>
+                <span class="tp-dot-marker"></span>
+                <div class="tp-breadcrumb-tabs">
+                  <button type="button" class="tp-bc-tab is-active" data-level="72" data-skill="68" data-fit="75" data-match="70">ABOUT US</button>
+                  <span>/</span>
+                  <button type="button" class="tp-bc-tab" data-level="84" data-skill="82" data-fit="86" data-match="85">TRAINING</button>
+                  <span>/</span>
+                  <button type="button" class="tp-bc-tab" data-level="92" data-skill="90" data-fit="94" data-match="91">FACILITIES</button>
+                  <span>/</span>
+                  <button type="button" class="tp-bc-tab" data-level="78" data-skill="76" data-fit="80" data-match="79">COMMUNITY</button>
+                </div>
+              </div>
+              <button type="button" class="tp-circle-arrow" data-open-modal="Tư Vấn Lộ Trình Huấn Luyện TennisPro®" aria-label="Tìm hiểu thêm">
+                →
+              </button>
+            </div>
+
+            <h2 class="tp-about-heading">
+              Better Tennis Habits.<br>
+              Stronger Players.<br>
+              <span class="tp-text-orange">Greater Performance.</span>
+            </h2>
+
+            <p class="tp-about-p">
+              Build your game through expert ATP/ITF coaching, focused biomechanical drills, and a passionate community that inspires you to perform at your best every time you step on court.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom 2-Column Bento Row: Player Development + Training Progress HUD -->
+        <div class="tp-dev-bento-grid">
+          <!-- Left 1/3 Info Column -->
+          <div class="tp-dev-info">
+            <span class="tp-dot-marker"></span>
+            <h3>Player Development<br>That Delivers</h3>
+            <p>
+              Structured programs, video stroke analysis, and real measurable progress on court — from NTRP 2.5 beginners to tournament competitors.
+            </p>
+            <div class="tp-ntrp-pills">
+              <button type="button" class="tp-ntrp-pill is-active" data-level="72" data-skill="68" data-fit="75" data-match="70">NTRP 2.5–3.5</button>
+              <button type="button" class="tp-ntrp-pill" data-level="85" data-skill="84" data-fit="88" data-match="83">NTRP 4.0+</button>
+              <button type="button" class="tp-ntrp-pill" data-level="94" data-skill="93" data-fit="96" data-match="92">Pro Tour</button>
+            </div>
+          </div>
+
+          <!-- Right 2/3 Court Serve Visual + Frosted HUD Card -->
+          <div class="tp-dev-visual-card">
+            <img src="img/serve-court.jpg" alt="Tennis player tossing ball to serve on blue court" class="tp-dev-bg-img">
+
+            <!-- Frosted Dark Glass HUD Analytics Card -->
+            <div class="tp-hud-card">
+              <div class="tp-hud-title">TRAINING PROGRESS</div>
+
+              <!-- Circular Gauge (+72%) -->
+              <div class="tp-gauge-wrap">
+                <svg class="tp-gauge-svg" viewBox="0 0 100 100">
+                  <circle class="tp-gauge-track" cx="50" cy="50" r="40"></circle>
+                  <circle class="tp-gauge-fill" id="tpGaugeCircle" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="70.3"></circle>
+                </svg>
+                <strong class="tp-gauge-val" id="tpGaugeValue">+72%</strong>
+              </div>
+
+              <!-- 3 Metric Rows -->
+              <div class="tp-hud-metrics">
+                <div class="tp-hud-row">
+                  <span>Skill</span>
+                  <strong id="tpMetricSkill">+68%</strong>
+                </div>
+                <div class="tp-hud-row">
+                  <span>Fitness</span>
+                  <strong id="tpMetricFit">+75%</strong>
+                </div>
+                <div class="tp-hud-row">
+                  <span>Match Play</span>
+                  <strong id="tpMetricMatch">+70%</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: OUR PROGRAMS — THREE WAYS TO ELEVATE YOUR GAME
+         ========================================== -->
+    <section class="tp-programs-sec" id="programs">
+      <div class="tp-container">
+
+        <div class="tp-sec-header">
+          <span class="tp-eyebrow-muted">OUR PROGRAMS</span>
+          <h2 class="tp-sec-title">Three Ways to Elevate Your Game</h2>
+        </div>
+
+        <div class="tp-programs-grid">
+          <!-- Card 1: Professional Coaching -->
+          <article class="tp-prog-card" data-open-modal="Khóa Học Professional Coaching (HLV 1-1)">
+            <img src="img/prog-coaching.jpg" alt="Professional Tennis Coaching 1-on-1">
+            <div class="tp-prog-label-box">
+              <h3>Professional<br>Coaching</h3>
+              <span class="tp-orange-dash"></span>
+            </div>
+          </article>
+
+          <!-- Card 2: Performance Training -->
+          <article class="tp-prog-card" data-open-modal="Khóa Học Performance Training (Bộ Chân &amp; Thể Lực)">
+            <img src="img/prog-performance.jpg" alt="Performance Footwork Cones Training">
+            <div class="tp-prog-label-box">
+              <h3>Performance<br>Training</h3>
+              <span class="tp-orange-dash"></span>
+            </div>
+          </article>
+
+          <!-- Card 3: Competitive Play -->
+          <article class="tp-prog-card" data-open-modal="Khóa Học Competitive Play (Thi Đấu Chiến Thuật)">
+            <img src="img/prog-competitive.jpg" alt="Competitive Match Play at the Net">
+            <div class="tp-prog-label-box">
+              <h3>Competitive<br>Play</h3>
+              <span class="tp-orange-dash"></span>
+            </div>
+          </article>
+        </div>
+
+        <div class="tp-programs-foot">
+          <div class="tp-motto-line">
+            <span>— PLAY</span>
+            <span>TRAIN</span>
+            <span>IMPROVE</span>
+            <span>REPEAT —</span>
+          </div>
+          <span class="tp-dot-marker"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: OUR APPROACH — THOUGHTFULLY DESIGNED TRAINING
+         ========================================== -->
+    <section class="tp-approach-sec" id="approach">
+      <div class="tp-container">
+
+        <div class="tp-sec-header">
+          <span class="tp-eyebrow-muted">OUR APPROACH</span>
+          <h2 class="tp-sec-title">Thoughtfully Designed<br>Training</h2>
+        </div>
+
+        <!-- Macro Tennis Balls Banner with 3 Frosted Glass Circles -->
+        <div class="tp-balls-stage">
+          <img src="img/balls-baseline.jpg" alt="Three Tennis Balls on Court Baseline" class="tp-balls-bg">
+          <div class="tp-frosted-circles-row">
+            <div class="tp-frosted-circle">
+              <span>Skill<br>Development</span>
+            </div>
+            <div class="tp-frosted-circle tp-circle-elevated">
+              <span>Physical<br>Conditioning</span>
+            </div>
+            <div class="tp-frosted-circle">
+              <span>Match<br>Readiness</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="tp-approach-sub">
+          A holistic approach to tennis training that builds skill, fitness, and confidence for lasting results.
+        </p>
+
+        <!-- Asymmetric 2-Column Equipment & Facilities Bento -->
+        <div class="tp-equip-bento" id="facilities">
+          <!-- Left Tall Racket Macro Card -->
+          <div class="tp-racket-card">
+            <img src="img/racket-macro.jpg" alt="Pro Carbon Tennis Racket on Blue Hard Court">
+          </div>
+
+          <!-- Right Stack of 3 Horizontal Cards -->
+          <div class="tp-equip-stack">
+            <article class="tp-equip-item" data-open-modal="Trải Nghiệm Pro Equipment &amp; Máy Bắn Bóng Lobster">
+              <div class="tp-equip-thumb">
+                <img src="img/racket-macro.jpg" alt="Pro Equipment">
+              </div>
+              <div class="tp-equip-meta">
+                <h3>Pro Equipment</h3>
+                <span class="tp-orange-dash"></span>
+                <p>Hệ thống máy bắn bóng Lobster Elite, cảm biến đo tốc độ giao bóng &amp; vợt test Wilson/Babolat đời mới.</p>
+              </div>
+            </article>
+
+            <article class="tp-equip-item" data-open-modal="Tham Quan Hệ Thống 06 Sân Chuẩn ITF">
+              <div class="tp-equip-thumb">
+                <img src="img/balls-baseline.jpg" alt="Court Facilities">
+              </div>
+              <div class="tp-equip-meta">
+                <h3>Court Facilities</h3>
+                <span class="tp-orange-dash"></span>
+                <p>04 sân cứng US Open Laykold giảm chấn khớp gối &amp; 02 sân đất nện Roland-Garros có mái che đèn LED chống chói.</p>
+              </div>
+            </article>
+
+            <article class="tp-equip-item" data-open-modal="Đăng Ký Gói Tập &amp; Tiện Ích Training Essentials">
+              <div class="tp-equip-thumb">
+                <img src="img/ball-net.jpg" alt="Training Essentials">
+              </div>
+              <div class="tp-equip-meta">
+                <h3>Training Essentials</h3>
+                <span class="tp-orange-dash"></span>
+                <p>Dịch vụ căng vợt điện tử chuẩn ATP, khu vực Ice Bath phục hồi cơ, nước điện giải và Pro Lounge máy lạnh.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: INTERACTIVE TENNIS COURT BOOKING (ĐẶT SÂN TENNIS)
+         ========================================== -->
+    <section class="tp-booking-sec" id="booking">
+      <div class="tp-container">
+
+        <div class="tp-booking-head">
+          <div>
+            <span class="tp-eyebrow-muted">ONLINE COURT RESERVATION</span>
+            <h2 class="tp-sec-title" style="text-align:left;margin-bottom:0;">Đặt Sân Tennis Trực Tuyến</h2>
+          </div>
+          <div class="tp-surface-tabs" role="tablist">
+            <button type="button" class="tp-surf-tab is-active" data-surface="all">Tất cả (06 Sân)</button>
+            <button type="button" class="tp-surf-tab" data-surface="hard">US Open Hard Court</button>
+            <button type="button" class="tp-surf-tab" data-surface="clay">Roland-Garros Clay</button>
+            <button type="button" class="tp-surf-tab" data-surface="covered">Sân Mái Che VIP</button>
+          </div>
+        </div>
+
+        <div class="tp-booking-layout">
+          <!-- Left: 6 Interactive Courts Grid -->
+          <div class="tp-courts-grid" id="tpCourtsGrid">
+            <button type="button" class="tp-court-card is-selected" data-court="Court 01 – Arthur Ashe (Hard)" data-surface="hard" data-rate="250000">
+              <div class="tp-court-top">
+                <span class="tp-court-tag">US Open Hard</span>
+                <span class="tp-court-status">● Trống</span>
+              </div>
+              <div class="tp-court-lines" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>Court 01 – Arthur Ashe</h3>
+              <p>Mặt sân Laykold xanh · Đèn LED 1000 Lux</p>
+              <strong class="tp-court-price">250.000đ <small>/ giờ</small></strong>
+            </button>
+
+            <button type="button" class="tp-court-card" data-court="Court 02 – Grandstand (Hard)" data-surface="hard" data-rate="250000">
+              <div class="tp-court-top">
+                <span class="tp-court-tag">US Open Hard</span>
+                <span class="tp-court-status">● Trống</span>
+              </div>
+              <div class="tp-court-lines" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>Court 02 – Grandstand</h3>
+              <p>Mặt sân Laykold xanh · Có camera phân tích</p>
+              <strong class="tp-court-price">250.000đ <small>/ giờ</small></strong>
+            </button>
+
+            <button type="button" class="tp-court-card" data-court="Court 03 – Chatrier (Clay)" data-surface="clay" data-rate="280000">
+              <div class="tp-court-top">
+                <span class="tp-court-tag tp-tag-clay">Clay Court</span>
+                <span class="tp-court-status">● Trống</span>
+              </div>
+              <div class="tp-court-lines tp-lines-clay" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>Court 03 – Chatrier Clay</h3>
+              <p>Sân đất nện đỏ chuẩn Pháp · Êm khớp chân</p>
+              <strong class="tp-court-price">280.000đ <small>/ giờ</small></strong>
+            </button>
+
+            <button type="button" class="tp-court-card" data-court="Court 04 – Lenglen (Clay)" data-surface="clay" data-rate="280000">
+              <div class="tp-court-top">
+                <span class="tp-court-tag tp-tag-clay">Clay Court</span>
+                <span class="tp-court-status">● Trống</span>
+              </div>
+              <div class="tp-court-lines tp-lines-clay" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>Court 04 – Lenglen Clay</h3>
+              <p>Sân đất nện đỏ · Khán đài ghế nghỉ riêng</p>
+              <strong class="tp-court-price">280.000đ <small>/ giờ</small></strong>
+            </button>
+
+            <button type="button" class="tp-court-card" data-court="Court 05 – Rod Laver (Mái Che)" data-surface="covered" data-rate="320000">
+              <div class="tp-court-top">
+                <span class="tp-court-tag tp-tag-vip">Covered VIP</span>
+                <span class="tp-court-status">● Trống</span>
+              </div>
+              <div class="tp-court-lines" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>Court 05 – Rod Laver Indoor</h3>
+              <p>Mái che vòm cao 14m · Chơi mọi thời tiết</p>
+              <strong class="tp-court-price">320.000đ <small>/ giờ</small></strong>
+            </button>
+
+            <button type="button" class="tp-court-card" data-court="Court 06 – Pro Arena + Máy Bắn Bóng" data-surface="covered" data-rate="350000">
+              <div class="tp-court-top">
+                <span class="tp-court-tag tp-tag-vip">Ball Machine</span>
+                <span class="tp-court-status">● Trống</span>
+              </div>
+              <div class="tp-court-lines" aria-hidden="true">
+                <span></span>
+              </div>
+              <h3>Court 06 – Pro Coaching Arena</h3>
+              <p>Mái che + Kèm máy bắn bóng Lobster Elite</p>
+              <strong class="tp-court-price">350.000đ <small>/ giờ</small></strong>
+            </button>
+          </div>
+
+          <!-- Right: Reservation Summary Form -->
+          <form class="tp-booking-panel" id="tpBookingForm">
+            <div class="tp-bp-head">
+              <span class="tp-bp-badge">🎾 PHIẾU ĐẶT SÂN NHANH</span>
+              <h3 id="tpSelectedCourtLabel">Court 01 – Arthur Ashe (Hard)</h3>
+            </div>
+
+            <div class="tp-bp-field">
+              <label for="tpBookDate">Chọn ngày chơi</label>
+              <input type="date" id="tpBookDate" required>
+            </div>
+
+            <div class="tp-bp-field">
+              <label>Chọn khung giờ (2 giờ / ca)</label>
+              <div class="tp-slot-grid" id="tpSlotGrid">
+                <button type="button" class="tp-slot-btn" data-slot="06:00 - 08:00">06:00 - 08:00</button>
+                <button type="button" class="tp-slot-btn is-active" data-slot="08:00 - 10:00">08:00 - 10:00</button>
+                <button type="button" class="tp-slot-btn" data-slot="14:00 - 16:00">14:00 - 16:00</button>
+                <button type="button" class="tp-slot-btn" data-slot="16:00 - 18:00">16:00 - 18:00</button>
+                <button type="button" class="tp-slot-btn" data-slot="18:00 - 20:00">18:00 - 20:00</button>
+                <button type="button" class="tp-slot-btn" data-slot="20:00 - 22:00">20:00 - 22:00</button>
+              </div>
+            </div>
+
+            <div class="tp-bp-field">
+              <label>Tiện ích đi kèm (Tùy chọn)</label>
+              <div class="tp-addon-list">
+                <button type="button" class="tp-addon-btn" data-addon="Nhặt bóng &amp; Khăn lạnh" data-cost="80000">
+                  <span>+ Nhân viên nhặt bóng &amp; Khăn lạnh</span>
+                  <b>+80.000đ</b>
+                </button>
+                <button type="button" class="tp-addon-btn" data-addon="HLV đánh cùng 1-1" data-cost="350000">
+                  <span>+ HLV tập cùng / Hitting Partner</span>
+                  <b>+350.000đ</b>
+                </button>
+              </div>
+            </div>
+
+            <div class="tp-bp-row-2">
+              <input type="text" id="tpBookName" placeholder="Họ tên của bạn *" required>
+              <input type="tel" id="tpBookPhone" placeholder="Số điện thoại / Zalo *" required>
+            </div>
+
+            <div class="tp-bp-total">
+              <span>Tổng tạm tính (1 ca 2 giờ):</span>
+              <strong id="tpTotalAmount">500.000đ</strong>
+            </div>
+
+            <button type="submit" class="tp-bp-submit">
+              <span>Xác Nhận Đặt Sân Qua Zalo</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: THREE WAYS TO TRAIN SMARTER (SUNSET COURT)
+         ========================================== -->
+    <section class="tp-smarter-sec">
+      <div class="tp-container">
+
+        <h2 class="tp-sec-title">Three Ways to Train Smarter</h2>
+
+        <div class="tp-sunset-banner">
+          <img src="img/sunset-court.jpg" alt="Sunset over blue outdoor tennis court" class="tp-sunset-img">
+
+          <!-- Floating White Glass Membership Card Left -->
+          <div class="tp-sunset-float-card">
+            <span class="tp-sfc-tag">MEMBERSHIP &amp; COACHING</span>
+            <h3>Flexible Training Plans</h3>
+            <p>Lộ trình cá nhân hóa theo tuần &amp; tháng kèm quyền ưu tiên đặt sân giờ vàng.</p>
+            <div class="tp-sfc-foot">
+              <span>Từ <b>1.800.000đ</b> / month</span>
+              <button type="button" class="tp-circle-arrow" data-open-modal="Đăng Ký Gói Hội Viên Flexible Training Plans" aria-label="Đăng ký gói tập">
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tp-smarter-bottom-row">
+          <div class="tp-smarter-left">
+            <span class="tp-eyebrow-muted">FOR EVERY LEVEL</span>
+            <strong>Built Around the Modern Player</strong>
+          </div>
+          <p class="tp-smarter-right">
+            Whether you're just starting out or competing at a higher tournament level, our programs are designed to help you grow, improve stroke efficiency, and enjoy the game more.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: GIANT EDITORIAL FOOTER BANNER (TennisPro®)
+         ========================================== -->
+    <footer class="tp-footer">
+      <div class="tp-container">
+
+        <div class="tp-footer-hero">
+          <div class="tp-giant-wordmark" aria-label="TennisPro">
+            TennisPro<sup>®</sup>
+          </div>
+
+          <div class="tp-footer-nav-bar">
+            <div class="tp-fn-links">
+              <a href="#facilities">
+                <span>FACILITIES</span>
+                <i class="tp-orange-dash"></i>
+              </a>
+              <a href="#approach">
+                <span>COACHING</span>
+                <i class="tp-orange-dash"></i>
+              </a>
+              <a href="#programs">
+                <span>PROGRAMS</span>
+                <i class="tp-orange-dash"></i>
+              </a>
+              <a href="#booking">
+                <span>COURT BOOKING</span>
+                <i class="tp-orange-dash"></i>
+              </a>
+            </div>
+
+            <button type="button" class="tp-join-pill" data-open-modal="Đăng Ký Hội Viên &amp; Đặt Sân TennisPro®">
+              <span>Join Now</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="tp-footer-court-strip">
+            <img src="img/balls-baseline.jpg" alt="TennisPro Court Footer Banner">
+            <div class="tp-footer-bottom-meta">
+              <span>© 2026 TennisPro® Academy &amp; Club · Thiết kế bởi Hoang Phuong</span>
+              <div class="tp-fb-contacts">
+                <a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Zalo: 0974 100 372</a>
+                <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram: @lhoangphuong</a>
+                <a href="tel:0974100372">Hotline: 0974 100 372</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================
+       COACHING & MEMBERSHIP MODAL
+       ========================================== -->
+  <div class="tp-modal-backdrop" id="tpModal" aria-hidden="true">
+    <div class="tp-modal-card" role="dialog" aria-modal="true" aria-labelledby="tpModalTitle">
+      <button type="button" class="tp-modal-close" id="tpModalClose" aria-label="Đóng">✕</button>
+      <span class="tp-bp-badge">🎾 TENNISPRO® ACADEMY</span>
+      <h3 id="tpModalTitle">Đăng Ký Học Thử &amp; Đặt Sân</h3>
+      <p class="tp-modal-sub">Chuyên gia HLV chuẩn ITF/ATP sẽ liên hệ tư vấn lộ trình &amp; xác nhận lịch sân cho bạn trong 5 phút.</p>
+
+      <form class="tp-modal-form" id="tpModalForm">
+        <input type="text" id="tpModalName" placeholder="Họ tên của bạn *" required>
+        <input type="tel" id="tpModalPhone" placeholder="Số điện thoại / Zalo *" required>
+        <select id="tpModalProgram">
+          <option value="Professional Coaching (HLV 1-1)">Professional Coaching (HLV 1-1)</option>
+          <option value="Performance Training (Bộ chân & Thể lực)">Performance Training (Bộ chân &amp; Thể lực)</option>
+          <option value="Competitive Play (Đấu tập chiến thuật)">Competitive Play (Đấu tập chiến thuật)</option>
+          <option value="Đặt sân Tennis cố định theo tháng">Đặt sân Tennis cố định theo tháng</option>
+        </select>
+        <div class="tp-modal-btns">
+          <button type="submit" class="tp-btn-zalo-modal">💬 Gửi Đăng Ký Qua Zalo</button>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="tp-btn-tg-modal">✈️ Chat Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="tp-toast" id="tpToast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

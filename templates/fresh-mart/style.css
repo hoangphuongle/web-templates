@@ -1,0 +1,1147 @@
+/* ==========================================================================
+   FRESHMART® — GROCERIES MADE SIMPLE (STYLE.CSS)
+   ========================================================================== */
+
+:root {
+  --fm-green-dark: #112209;
+  --fm-green-leaf: #568C1C;
+  --fm-green-lime: #77B82A;
+  --fm-brown: #9E5B36;
+  --fm-sage-bg: #E6F2DC;
+  --fm-sage-card: #F3F7EE;
+  --fm-white: #FFFFFF;
+  --fm-ink: #141B11;
+  --fm-body: #525E4C;
+  --fm-muted: #84917D;
+  --fm-border: rgba(20, 34, 12, 0.08);
+  --fm-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--fm-font);
+  background: #DCE6D5;
+  color: var(--fm-ink);
+  line-height: 1.55;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+.fm-page-shell {
+  max-width: 1260px;
+  margin: 0 auto;
+  background: var(--fm-white);
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(17, 34, 9, 0.12);
+}
+
+.fm-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.fm-dark-tag {
+  display: inline-flex;
+  align-items: center;
+  background: var(--fm-green-dark);
+  color: var(--fm-white);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.fm-text-brown {
+  color: var(--fm-brown);
+}
+
+.fm-sec-header {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 42px;
+}
+
+.fm-sec-title {
+  font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+
+.fm-text-left {
+  text-align: left;
+}
+
+.fm-sec-sub {
+  font-size: 13.5px;
+  color: var(--fm-body);
+}
+
+/* ==========================================================================
+   1. FLOATING PILL NAVBAR & ORGANIC CRAFT BAG HERO
+   ========================================================================== */
+
+.fm-hero {
+  background: linear-gradient(180deg, #DFF0D2 0%, #EFF7E8 65%, #FFFFFF 100%);
+  padding: 22px 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fm-navbar {
+  position: relative;
+  z-index: 40;
+  background: var(--fm-white);
+  border-radius: 999px;
+  padding: 9px 12px 9px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 780px;
+  margin: 0 auto 48px;
+  box-shadow: 0 12px 32px rgba(20, 42, 10, 0.08);
+}
+
+.fm-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--fm-ink);
+  letter-spacing: -0.02em;
+}
+
+.fm-brand-text sup {
+  font-size: 10px;
+}
+
+.fm-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.fm-nav-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--fm-body);
+  transition: color 0.2s ease;
+}
+
+.fm-nav-link:hover,
+.fm-nav-link.is-active {
+  color: var(--fm-ink);
+  font-weight: 700;
+}
+
+.fm-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fm-btn-dark-pill {
+  background: var(--fm-green-dark);
+  color: var(--fm-white);
+  border: none;
+  border-radius: 999px;
+  padding: 9px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.fm-btn-dark-pill:hover {
+  background: #1E3812;
+  transform: translateY(-1px);
+}
+
+.fm-burger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--fm-border);
+  background: #F7FAF4;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.fm-burger span {
+  width: 15px;
+  height: 2px;
+  background: var(--fm-ink);
+}
+
+/* Hero Grid */
+.fm-hero-grid {
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  align-items: center;
+  gap: 28px;
+}
+
+.fm-hero-title {
+  font-size: clamp(2.6rem, 5.4vw, 4.3rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.fm-hero-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--fm-body);
+  max-width: 400px;
+  margin-bottom: 26px;
+}
+
+.fm-hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fm-btn-green-pill {
+  background: linear-gradient(135deg, #78B82A 0%, #4E8216 100%);
+  color: var(--fm-white);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 26px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(86, 140, 28, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.fm-btn-green-pill:hover {
+  transform: translateY(-2px);
+}
+
+.fm-btn-outline-pill {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--fm-border);
+  color: var(--fm-ink);
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Hero Visual & Frosted Glass HUD Widgets */
+.fm-hero-visual {
+  position: relative;
+}
+
+.fm-hero-bag-img {
+  width: 100%;
+  border-radius: 26px;
+  box-shadow: 0 22px 55px rgba(25, 52, 12, 0.14);
+}
+
+.fm-hud-order,
+.fm-hud-delivery {
+  position: absolute;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+  padding: 14px 16px;
+  color: var(--fm-white);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+}
+
+.fm-hud-order {
+  top: 16px;
+  right: 16px;
+  width: 175px;
+  background: rgba(74, 118, 28, 0.78);
+}
+
+.fm-hud-delivery {
+  bottom: 18px;
+  left: -18px;
+  width: 195px;
+  background: rgba(114, 78, 54, 0.78);
+}
+
+.fm-hud-head {
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  opacity: 0.92;
+}
+
+.fm-hud-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.fm-hud-stats small {
+  display: block;
+  font-size: 9.5px;
+  opacity: 0.78;
+}
+
+.fm-hud-stats strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.fm-hud-status {
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ==========================================================================
+   2. WHY FRESHMART — 3-COLUMN BENTO GRID
+   ========================================================================== */
+
+.fm-why-sec {
+  padding: 56px 0 72px;
+}
+
+.fm-bento-3col {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.fm-bento-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fm-stat-card {
+  flex: 1;
+  background: var(--fm-sage-card);
+  border: 1px solid rgba(86, 140, 28, 0.1);
+  border-radius: 22px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 195px;
+}
+
+.fm-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fm-stat-num {
+  font-size: clamp(2rem, 3.5vw, 2.65rem);
+  font-weight: 700;
+  color: var(--fm-green-leaf);
+  letter-spacing: -0.03em;
+}
+
+.fm-stat-ico {
+  font-size: 26px;
+  opacity: 0.55;
+}
+
+.fm-stat-bot h3 {
+  font-size: 15.5px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.fm-stat-bot p {
+  font-size: 12.5px;
+  color: var(--fm-body);
+}
+
+/* Center Tall Card */
+.fm-center-tall-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 410px;
+  cursor: pointer;
+  box-shadow: 0 18px 44px rgba(20, 42, 10, 0.12);
+}
+
+.fm-center-tall-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.fm-center-tall-card:hover img {
+  transform: scale(1.04);
+}
+
+.fm-tall-overlay-top {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+}
+
+.fm-tall-overlay-top h3 {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--fm-ink);
+}
+
+.fm-tall-overlay-bot {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  text-align: right;
+  color: var(--fm-white);
+  font-size: 12px;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+/* ==========================================================================
+   3. FRESHMART IN YOUR POCKET (APP SHOWCASE)
+   ========================================================================== */
+
+.fm-pocket-sec {
+  padding: 24px 0 72px;
+}
+
+.fm-pocket-grid {
+  display: grid;
+  grid-template-columns: 0.42fr 1fr;
+  gap: 42px;
+  align-items: end;
+}
+
+.fm-pocket-lead {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--fm-body);
+  margin-bottom: 36px;
+}
+
+.fm-pocket-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fm-ptab {
+  background: transparent;
+  border: none;
+  border-left: 3px solid #D9E4D0;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--fm-muted);
+  cursor: pointer;
+  border-radius: 0 12px 12px 0;
+  transition: all 0.2s ease;
+}
+
+.fm-ptab:hover,
+.fm-ptab.is-active {
+  background: var(--fm-sage-card);
+  border-left-color: var(--fm-green-leaf);
+  color: var(--fm-ink);
+}
+
+.fm-pocket-banner {
+  border-radius: 24px;
+  overflow: hidden;
+  height: 320px;
+  margin: 22px 0 18px;
+  box-shadow: 0 18px 44px rgba(20, 42, 10, 0.12);
+}
+
+.fm-pocket-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fm-pocket-caption-row {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.fm-pocket-caption-row h3 {
+  font-size: 15.5px;
+  font-weight: 800;
+}
+
+.fm-pocket-caption-row p {
+  font-size: 12.5px;
+  color: var(--fm-body);
+}
+
+/* ==========================================================================
+   4. MEMBERSHIP PLANS (3 WICKER BASKET PRICING CARDS)
+   ========================================================================== */
+
+.fm-pricing-sec {
+  padding: 48px 0 72px;
+}
+
+.fm-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: end;
+  padding-top: 36px;
+}
+
+.fm-plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fm-plan-featured {
+  transform: translateY(-14px);
+}
+
+.fm-plan-basket {
+  width: 155px;
+  height: 115px;
+  margin-bottom: -24px;
+  position: relative;
+  z-index: 3;
+}
+
+.fm-plan-basket img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+.fm-plan-body {
+  width: 100%;
+  background: var(--fm-sage-card);
+  border: 1px solid rgba(86, 140, 28, 0.14);
+  border-radius: 24px;
+  padding: 36px 24px 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.fm-plan-featured .fm-plan-body {
+  background: #EBF5E2;
+  border-color: rgba(86, 140, 28, 0.32);
+  box-shadow: 0 20px 46px rgba(45, 82, 14, 0.1);
+}
+
+.fm-plan-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--fm-border);
+  margin-bottom: 16px;
+}
+
+.fm-plan-head h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.fm-plan-head p {
+  font-size: 11.5px;
+  color: var(--fm-body);
+}
+
+.fm-plan-price {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.fm-plan-price strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--fm-green-leaf);
+}
+
+.fm-plan-price small {
+  font-size: 10px;
+  color: var(--fm-muted);
+}
+
+.fm-plan-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+  font-size: 12px;
+  color: var(--fm-body);
+}
+
+.fm-plan-list li::before {
+  content: '✔';
+  color: var(--fm-green-leaf);
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+.fm-plan-btn {
+  width: 100%;
+  background: var(--fm-green-dark);
+  color: var(--fm-white);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.fm-plan-btn:hover {
+  background: var(--fm-green-leaf);
+}
+
+/* ==========================================================================
+   5. DARK FOREST IMPACT & STATS BANNER
+   ========================================================================== */
+
+.fm-impact-sec {
+  padding: 16px 0 64px;
+}
+
+.fm-impact-banner {
+  background: linear-gradient(135deg, #0D1E07 0%, #17300D 100%);
+  color: var(--fm-white);
+  border-radius: 28px;
+  padding: 44px 44px 36px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fm-tag-glass {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.fm-impact-left h2 {
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.18;
+  margin-bottom: 22px;
+}
+
+.fm-impact-photo {
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: 230px;
+}
+
+.fm-impact-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fm-impact-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fm-imp-item {
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.fm-imp-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.fm-imp-item strong {
+  display: block;
+  font-size: clamp(1.85rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  color: #B4E876;
+  margin-bottom: 4px;
+}
+
+.fm-imp-item p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+/* ==========================================================================
+   6. CUSTOMER STORIES (3 TESTIMONIAL CARDS)
+   ========================================================================== */
+
+.fm-stories-sec {
+  padding: 24px 0 72px;
+}
+
+.fm-stories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.fm-story-card {
+  background: var(--fm-sage-card);
+  border-radius: 22px;
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fm-story-featured {
+  transform: translateY(-10px);
+  background: #EAF4E0;
+}
+
+.fm-quote-mark {
+  font-size: 38px;
+  line-height: 1;
+  font-weight: 800;
+  color: #A6D17B;
+  margin-bottom: 8px;
+}
+
+.fm-story-text {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--fm-ink);
+  margin-bottom: 18px;
+}
+
+.fm-story-stars {
+  color: #E58525;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.fm-story-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fm-story-author img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fm-story-author strong {
+  display: block;
+  font-size: 12.5px;
+}
+
+.fm-story-author small {
+  font-size: 11px;
+  color: var(--fm-muted);
+}
+
+/* ==========================================================================
+   7. GIANT BRAND FOOTER (FreshMart®)
+   ========================================================================== */
+
+.fm-footer {
+  background: linear-gradient(180deg, #E8F4DF 0%, #D6ECC6 100%);
+  padding: 48px 0 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.fm-footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.fm-footer-brand p {
+  font-size: 12px;
+  color: var(--fm-body);
+  max-width: 280px;
+  margin: 10px 0 16px;
+}
+
+.fm-newsletter-form {
+  display: flex;
+  gap: 8px;
+  max-width: 300px;
+}
+
+.fm-newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  background: var(--fm-white);
+  border: 1px solid var(--fm-border);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 12px;
+}
+
+.fm-newsletter-form button {
+  background: var(--fm-brown);
+  color: var(--fm-white);
+  border: none;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.fm-footer-col h4 {
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.fm-footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--fm-body);
+}
+
+.fm-footer-giant-stage {
+  position: relative;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.fm-giant-wordmark {
+  font-size: clamp(3.4rem, 11.5vw, 9rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  color: var(--fm-green-dark);
+  user-select: none;
+}
+
+.fm-giant-wordmark sup {
+  font-size: 0.3em;
+  vertical-align: super;
+}
+
+.fm-footer-basket-wrap {
+  max-width: 560px;
+  margin: -28px auto 12px;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 18px 46px rgba(17, 34, 9, 0.18);
+}
+
+.fm-footer-basket-wrap img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.fm-footer-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid rgba(17, 34, 9, 0.1);
+  font-size: 11.5px;
+  color: var(--fm-body);
+}
+
+.fm-footer-legal {
+  display: flex;
+  gap: 18px;
+  font-weight: 700;
+  color: var(--fm-green-dark);
+}
+
+/* ==========================================================================
+   8. MODAL & TOAST
+   ========================================================================== */
+
+.fm-modal-backdrop {
+  position: fixed;
+  inset: 52px 0 0 0;
+  z-index: 99990;
+  background: rgba(14, 28, 8, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.fm-modal-backdrop.is-open {
+  display: flex;
+}
+
+.fm-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background: var(--fm-white);
+  border-radius: 24px;
+  padding: 28px 26px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+}
+
+.fm-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #EFF5EA;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.fm-modal-card h3 {
+  font-size: 21px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.fm-modal-sub {
+  font-size: 12.5px;
+  color: var(--fm-body);
+  margin-bottom: 18px;
+}
+
+.fm-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fm-modal-form input,
+.fm-modal-form select {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #D3DEC9;
+  font-size: 13px;
+}
+
+.fm-modal-btns {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.fm-btn-zalo,
+.fm-btn-tg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--fm-white);
+  border: none;
+  cursor: pointer;
+}
+
+.fm-btn-zalo {
+  background: var(--fm-green-leaf);
+}
+
+.fm-btn-tg {
+  background: #24A1DE;
+}
+
+.fm-toast {
+  position: fixed;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  right: 22px;
+  z-index: 99995;
+  background: var(--fm-green-dark);
+  color: var(--fm-white);
+  border-left: 4px solid var(--fm-green-lime);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.fm-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   9. RESPONSIVE MEDIA QUERIES (DESKTOP / TABLET / MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .fm-hero-grid,
+  .fm-bento-3col,
+  .fm-pocket-grid,
+  .fm-pricing-grid,
+  .fm-impact-banner,
+  .fm-stories-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fm-hud-delivery {
+    left: 16px;
+  }
+
+  .fm-plan-featured,
+  .fm-story-featured {
+    transform: none;
+  }
+
+  .fm-footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .fm-container {
+    padding: 0 18px;
+  }
+
+  .fm-nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: var(--fm-white);
+    border-radius: 20px;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: 0 18px 40px rgba(17, 34, 9, 0.18);
+  }
+
+  .fm-nav-links.is-open {
+    display: flex;
+  }
+
+  .fm-burger {
+    display: inline-flex;
+  }
+
+  .fm-pocket-caption-row,
+  .fm-footer-top,
+  .fm-modal-btns {
+    grid-template-columns: 1fr;
+  }
+
+  .fm-impact-banner {
+    padding: 28px 20px;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .fm-hud-order,
+  .fm-hud-delivery {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
