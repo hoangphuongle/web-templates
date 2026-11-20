@@ -5256,6 +5256,10 @@ html, body {
         width: 100%;
         max-width: 100%;
     }
+    .news-kitchen-intro h2,
+    .reviews-title-cursive {
+        font-size: clamp(26px, 6.5vw, 36px);
+    }
 }
 @media (max-width: 480px) {
     .btn-pill-register {

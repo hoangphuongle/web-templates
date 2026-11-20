@@ -6649,6 +6649,9 @@ html, body {
         border-radius: 36px 16px 36px 16px;
         margin: -24px 16px 0;
     }
+    .hero-text-card {
+        padding: 28px 20px;
+    }
 }
 
 @media (max-width: 576px) {

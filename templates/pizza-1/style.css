@@ -4405,6 +4405,9 @@ html, body {
         width: 100%;
         max-width: 100%;
     }
+    .news-kitchen-intro h2 {
+        font-size: clamp(26px, 6.5vw, 34px);
+    }
 }
 @media (max-width: 480px) {
     .btn-pill-register {

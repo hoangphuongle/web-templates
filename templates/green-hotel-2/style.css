@@ -2554,6 +2554,9 @@ body {
     .contact-bg-wrap { height: auto; padding: 40px 0; }
     .contact-form-overlay { position: relative; top: 0; transform: none; width: 100%; max-width: 100%; left: 0; padding: 28px 20px; }
     .contact-grid-form .input-row { grid-template-columns: 1fr; }
+    .sub-quote { padding-left: 20px; }
+    .info-card-floating,
+    .testimonial-card { padding: 28px 20px; }
 }
 
 /* Cross-Device Mobile & Safari Compatibility */

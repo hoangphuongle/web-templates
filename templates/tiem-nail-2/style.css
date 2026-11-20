@@ -1121,6 +1121,9 @@ body {
   .ab-stats {
     grid-template-columns: 1fr
   }
+  .pk-card {
+    padding: 32px 22px
+  }
 }
 
 /* Cross-Device Mobile & Safari Compatibility */

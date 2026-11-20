@@ -1914,6 +1914,9 @@ select {
   .ak-footer-grid {
     grid-template-columns: 1fr;
   }
+  .ak-percent-badge {
+    font-size: 78px;
+  }
 }
 
 /* Cross-Device Mobile & Safari Compatibility */

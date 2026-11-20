@@ -440,6 +440,12 @@ img { max-width:100%; display:block }
 /* Screenshot mockup */
 .tpl-mockup {
   position:relative;
+  cursor:pointer;
+}
+.tpl-browser-link {
+  display:block;
+  color:inherit;
+  text-decoration:none;
 }
 .tpl-browser {
   background:#fff;
@@ -447,6 +453,11 @@ img { max-width:100%; display:block }
   box-shadow:0 24px 60px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.06);
   overflow:hidden;
   border:1px solid rgba(0,0,0,.07);
+  transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
+}
+.tpl-mockup:hover .tpl-browser {
+  transform:translateY(-4px);
+  box-shadow:0 30px 70px rgba(0,0,0,.18), 0 6px 16px rgba(0,0,0,.08);
 }
 .tpl-bar {
   background:#f0f0ef; padding:11px 16px;
@@ -467,6 +478,10 @@ img { max-width:100%; display:block }
   width:100%; aspect-ratio:16/10;
   object-fit:cover; object-position:top;
   display:block;
+  transition:transform .5s cubic-bezier(.22,1,.36,1);
+}
+.tpl-mockup:hover .tpl-screen-img {
+  transform:scale(1.02);
 }
 .tpl-mockup-tag {
   position:absolute; top:-16px; right:-16px;
@@ -2332,6 +2347,34 @@ img { max-width:100%; display:block }
   }
 
   updateList();
+
+  // ── CLICKABLE THUMBNAILS / MOCKUPS OPEN DEMO DIRECTLY ──
+  rows.forEach(row => {
+    const mockup = row.querySelector('.tpl-mockup');
+    const browser = row.querySelector('.tpl-browser');
+    const viewBtn = row.querySelector('.btn-view');
+    if (mockup && browser && viewBtn && viewBtn.href) {
+      const link = document.createElement('a');
+      link.href = viewBtn.getAttribute('href');
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.className = 'tpl-browser-link';
+      link.setAttribute('aria-label', (row.querySelector('h3')?.innerText.replace(/\s+/g, ' ') || 'Mẫu website') + ' - Xem demo');
+      browser.parentNode.insertBefore(link, browser);
+      link.appendChild(browser);
+    }
+  });
+
+  document.querySelectorAll('.pf-card').forEach(card => {
+    const visitBtn = card.querySelector('.btn-pf-visit');
+    const screen = card.querySelector('.pf-screen');
+    if (visitBtn && screen) {
+      screen.style.cursor = 'pointer';
+      screen.addEventListener('click', () => {
+        window.open(visitBtn.href, '_blank', 'noopener');
+      });
+    }
+  });
 })();
 
 // ── FAQ ACCORDION ──

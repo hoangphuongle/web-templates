@@ -1698,8 +1698,12 @@ select {
 @media (max-width: 480px) {
   .rn-form-row-2,
   .rn-acc-content,
-  .rn-timeslot-grid {
+  .rn-timeslot-grid,
+  .rn-courts-grid {
     grid-template-columns: 1fr;
+  }
+  .rn-quote-mark {
+    font-size: 56px;
   }
   .rn-comm-right {
     justify-self: stretch;
