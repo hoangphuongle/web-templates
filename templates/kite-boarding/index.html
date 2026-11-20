@@ -12,43 +12,24 @@
 </head>
 <body>
 
-  <!-- HP SHOWCASE BAR v2 -->
-  <style>
-  #hp-bar{position:fixed;top:0;left:0;right:0;z-index:99999;height:46px;background:rgba(8,10,16,.96);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;padding:0 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI', sans-serif;font-size:12px;color:rgba(255,255,255,.75);gap:12px;box-sizing:border-box}
-  #hp-bar *{box-sizing:border-box;margin:0;padding:0}
-  .hpb-left{display:flex;align-items:center;gap:12px;flex-shrink:0}
-  .hpb-back{display:inline-flex;align-items:center;gap:6px;color:rgba(255,255,255,.85);text-decoration:none;font-weight:600;font-size:12px;padding:5px 12px;border-radius:100px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);transition:all .15s;white-space:nowrap}
-  .hpb-back:hover{background:rgba(255,255,255,.15);color:#fff}
-  .hpb-sep{width:1px;height:18px;background:rgba(255,255,255,.12);flex-shrink:0}
-  .hpb-title{font-size:11px;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:220px}
-  .hpb-center{display:flex;align-items:center;gap:6px;font-size:11.5px;color:rgba(255,255,255,.5);white-space:nowrap}
-  .hpb-dot{width:6px;height:6px;border-radius:50%;background:#10b981;box-shadow:0 0 6px #10b981;flex-shrink:0;animation:hpbpulse 2s infinite}
-  @keyframes hpbpulse{0%,100%{opacity:1}50%{opacity:.4}}
-  .hpb-right{display:flex;align-items:center;gap:7px;flex-shrink:0}
-  .hpb-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:100px;font-size:11.5px;font-weight:700;text-decoration:none;transition:all .15s;white-space:nowrap;border:none;cursor:pointer}
-  .hpb-zalo{background:#0068ff;color:#fff}.hpb-zalo:hover{background:#0057d9;transform:translateY(-1px)}
-  .hpb-tele{background:#229ed9;color:#fff}.hpb-tele:hover{background:#1a8bbf;transform:translateY(-1px)}
-  .hpb-call{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.16)}.hpb-call:hover{background:rgba(255,255,255,.18)}
-  @media(max-width:680px){.hpb-center,.hpb-title,.hpb-sep,.hpb-tele{display:none}}
-  @media(max-width:460px){#hp-bar{padding:0 12px}.hpb-call{display:none}.hpb-back,.hpb-btn{padding:5px 10px;font-size:11px}}
-  body{padding-top:46px!important}
-  </style>
-  <div id="hp-bar">
-    <div class="hpb-left">
-      <a href="../../index.html" class="hpb-back">← Quay lại danh mục</a>
-      <div class="hpb-sep"></div>
-      <span class="hpb-title">Mẫu diện web · Hoàng Phương</span>
-    </div>
-    <div class="hpb-center">
-      <span class="hpb-dot"></span>
-      <span>Muốn làm web như mẫu này? Liên hệ ngay:</span>
-    </div>
-    <div class="hpb-right">
-      <a href="tel:0974100372" class="hpb-btn hpb-call">📞 0974 100 372</a>
-      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="hpb-btn hpb-tele">✈ Telegram</a>
-      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="hpb-btn hpb-zalo">💬 Zalo ngay</a>
-    </div>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Zalo</a>
+    </span>
   </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+    @media(max-width:520px){#hp-bar{padding:0 10px!important;gap:6px!important}#hp-bar span:last-child{gap:5px!important}#hp-bar a{font-size:11px!important;padding:5px 9px!important}#hp-bar>a:first-child{padding:0!important;font-size:12px!important}}
+    @media(max-width:360px){#hp-bar>span:last-child>a:first-child{padding:5px 7px!important;font-size:10px!important}}@media(max-width:479px){#hp-back{display:none!important}#hp-bar{padding:0 10px!important;gap:6px!important}}</style>
 
   <!-- PAGE SHELL -->
   <div class="ak-page-shell">

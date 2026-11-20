@@ -12,122 +12,24 @@
 </head>
 <body>
 
-  <!-- Top Showcase Contact Bar (#hp-bar) -->
-  <style>
-    #hp-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 999999;
-      height: 52px;
-      background: linear-gradient(90deg, #0d0d0d 0%, #1a1a1a 50%, #0d0d0d 100%);
-      border-bottom: 1px solid rgba(255, 255, 255, .1);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 13px;
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
-    }
-    #hp-bar .hp-left {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 0;
-    }
-    #hp-bar .hp-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-      box-shadow: 0 0 8px #22c55e;
-      flex-shrink: 0;
-    }
-    #hp-bar .hp-label {
-      color: rgba(255, 255, 255, .6);
-      font-size: 12px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    #hp-bar .hp-label b {
-      color: #fff;
-      font-weight: 600;
-    }
-    #hp-bar .hp-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-    #hp-bar .hp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 12.5px;
-      font-weight: 700;
-      text-decoration: none;
-      color: #fff;
-      transition: transform .2s, box-shadow .2s;
-      white-space: nowrap;
-    }
-    #hp-bar .hp-btn:hover {
-      transform: translateY(-1px);
-    }
-    #hp-bar .hp-zalo {
-      background: #0068ff;
-      box-shadow: 0 4px 12px rgba(0, 104, 255, .35);
-    }
-    #hp-bar .hp-phone {
-      background: #22c55e;
-      box-shadow: 0 4px 12px rgba(34, 197, 94, .35);
-    }
-    #hp-bar .hp-tg {
-      background: #24A1DE;
-      box-shadow: 0 4px 12px rgba(36, 161, 222, .35);
-    }
-    body {
-      padding-top: 52px !important;
-    }
-    @media (max-width: 640px) {
-      #hp-bar {
-        padding: 0 12px;
-      }
-      #hp-bar .hp-label span {
-        display: none;
-      }
-      #hp-bar .hp-btn {
-        padding: 6px 10px;
-        font-size: 11.5px;
-      }
-    }
-    @media (max-width: 520px) {
-      #hp-bar .hp-phone {
-        display: none !important;
-      }
-    }
-    @media (max-width: 360px) {
-      #hp-bar .hp-label {
-        display: none !important;
-      }
-    }
-  </style>
-  <div id="hp-bar">
-    <div class="hp-left">
-      <span class="hp-dot"></span>
-      <span class="hp-label">Mẫu: <b>Jigen Sushi (次元寿司)</b> <span>— Thiết kế bởi Hoang Phuong</span></span>
-    </div>
-    <div class="hp-right">
-      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" class="hp-btn hp-zalo">💬 Đặt mẫu qua Zalo</a>
-      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="hp-btn hp-tg">✈️ Telegram</a>
-      <a href="tel:0974100372" class="hp-btn hp-phone">📞 0974 100 372</a>
-    </div>
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Zalo</a>
+    </span>
   </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+    @media(max-width:520px){#hp-bar{padding:0 10px!important;gap:6px!important}#hp-bar span:last-child{gap:5px!important}#hp-bar a{font-size:11px!important;padding:5px 9px!important}#hp-bar>a:first-child{padding:0!important;font-size:12px!important}}
+    @media(max-width:360px){#hp-bar>span:last-child>a:first-child{padding:5px 7px!important;font-size:10px!important}}@media(max-width:479px){#hp-back{display:none!important}#hp-bar{padding:0 10px!important;gap:6px!important}}</style>
 
   <div class="jg-page-shell" id="top">
 
@@ -148,16 +50,16 @@
           </a>
 
           <nav class="jg-nav-links" id="jgNavLinks">
-            <a href="#top" class="jg-nav-link is-active">— Home</a>
-            <a href="#menu" class="jg-nav-link">This month's menu</a>
-            <a href="#about" class="jg-nav-link">About Jigen</a>
-            <a href="#experience" class="jg-nav-link">Experience</a>
-            <a href="#reservation" class="jg-nav-link">Reservation</a>
+            <a href="#top" class="jg-nav-link is-active">— Trang chủ</a>
+            <a href="#menu" class="jg-nav-link">Thực đơn tháng</a>
+            <a href="#about" class="jg-nav-link">Câu chuyện</a>
+            <a href="#experience" class="jg-nav-link">Trải nghiệm</a>
+            <a href="#reservation" class="jg-nav-link">Đặt bàn</a>
           </nav>
 
           <div class="jg-nav-actions">
             <button type="button" class="jg-btn-contact" data-open-modal="Đặt Bàn &amp; Tư Vấn Thực Đơn Jigen Sushi">
-              Contact
+              Đặt Bàn
             </button>
             <button type="button" class="jg-burger" id="jgBurger" aria-label="Mở menu">
               <span></span><span></span><span></span>
@@ -179,10 +81,10 @@
 
             <div class="jg-hero-sub-row">
               <p class="jg-hero-sub">
-                Purest Sushi Experience Focusing on<br>
-                Premium Quality Ingredients.
+                Trải nghiệm Sushi &amp; Omakase nguyên bản<br>
+                Từ nguồn hải sản tươi sống thượng hạng.
               </p>
-              <a href="#menu" class="jg-btn-dark-pill">Check Menu</a>
+              <a href="#menu" class="jg-btn-dark-pill">Xem Thực Đơn</a>
             </div>
           </div>
 
@@ -706,6 +608,7 @@
   <div class="jg-toast" id="jgToast" role="status" aria-live="polite"></div>
 
   <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
 </body>
 </html>
 
