@@ -1373,6 +1373,15 @@ textarea,
     padding: 0 18px;
   }
 
+  .lm-hero {
+    min-height: 480px;
+    padding: 28px 0 48px;
+  }
+
+  .lm-about-sec {
+    padding: 40px 0 48px;
+  }
+
   .lm-nav-links {
     display: none;
     position: absolute;
@@ -1414,9 +1423,15 @@ textarea,
     display: none;
   }
 
+  .lm-scenic-bay-bg {
+    height: 210px;
+    margin-top: -32px;
+  }
+
   .lm-footer-box {
     margin: -40px 12px 72px;
     padding: 28px 22px 24px;
+    border-radius: 24px;
   }
 
   .lm-footer-bottom {
@@ -1449,8 +1464,31 @@ textarea,
     justify-content: center;
   }
 
+  .lm-telemetry-pill {
+    font-size: 10px;
+    padding: 4px 9px;
+  }
+
+  .lm-tel-solar {
+    left: 14px;
+    top: 22%;
+  }
+
+  .lm-tel-wind {
+    right: 14px;
+    top: 18%;
+  }
+
+  .lm-tel-battery {
+    bottom: 16px;
+  }
+
   .lm-calc-card {
     padding: 24px 18px;
+  }
+
+  .lm-giant-wordmark {
+    font-size: clamp(3.3rem, 16vw, 5.4rem);
   }
 }
 

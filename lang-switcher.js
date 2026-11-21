@@ -558,24 +558,42 @@
       font-size: 16px;
       line-height: 1;
     }
-    @media (max-width: 1200px) {
-      #hp-mid {
+    html body #hp-bar #hp-back,
+    html body #hp-bar a[href*="index.html"]:not(:first-child) {
+      display: inline-flex !important;
+      align-items: center;
+      color: #e5e7eb !important;
+      border-color: rgba(255, 255, 255, 0.22) !important;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    html body #hp-bar #hp-back:hover,
+    html body #hp-bar a[href*="index.html"]:not(:first-child):hover {
+      color: #fff !important;
+      border-color: rgba(255, 255, 255, 0.45) !important;
+      background: rgba(255, 255, 255, 0.12);
+    }
+    @media (max-width: 1220px) {
+      html body #hp-bar #hp-mid {
         display: none !important;
       }
     }
     @media (max-width: 1024px) {
-      #hp-tel,
-      .hp-vp-switcher {
+      html body #hp-bar #hp-tel {
         display: none !important;
       }
     }
     @media (max-width: 768px) {
-      #hp-back {
+      html body #hp-bar .hp-vp-switcher {
         display: none !important;
       }
-      #hp-bar {
+      html body #hp-bar {
         padding: 0 12px !important;
         gap: 8px !important;
+      }
+      html body #hp-bar #hp-back,
+      html body #hp-bar a[href*="index.html"]:not(:first-child) {
+        padding: 5px 10px !important;
+        font-size: 11.5px !important;
       }
     }
     @media (max-width: 640px) {
@@ -591,22 +609,42 @@
       .hp-lang-trigger .hp-trig-flag {
         font-size: 14px;
       }
-      .hp-vp-switcher {
-        display: none !important;
+      html body #hp-bar > a:first-child span:last-child {
+        display: inline !important;
+        font-size: 12.5px !important;
       }
-      /* Only hide the brand text on mobile so Zalo/Telegram fit cleanly */
-      #hp-bar > a:first-child span:last-child {
-        display: none;
+      html body #hp-bar #hp-back,
+      html body #hp-bar a[href*="index.html"]:not(:first-child) {
+        padding: 5px 9px !important;
+        font-size: 11px !important;
       }
-      #hp-bar a[href*="t.me"],
-      #hp-bar a[href*="zalo.me"] {
+      html body #hp-bar a[href*="t.me"],
+      html body #hp-bar a[href*="zalo.me"] {
         padding: 6px 10px !important;
         font-size: 11px !important;
       }
     }
-    @media (max-width: 390px) {
-      #hp-bar a[href*="t.me"],
-      #hp-bar a[href*="zalo.me"] {
+    @media (max-width: 420px) {
+      html body #hp-bar {
+        padding: 0 8px !important;
+        gap: 4px !important;
+      }
+      html body #hp-bar > a:first-child {
+        gap: 5px !important;
+      }
+      html body #hp-bar > a:first-child span:last-child {
+        font-size: 11.5px !important;
+      }
+      html body #hp-bar > span:last-child {
+        gap: 4px !important;
+      }
+      html body #hp-bar #hp-back,
+      html body #hp-bar a[href*="index.html"]:not(:first-child) {
+        padding: 4px 8px !important;
+        font-size: 10.5px !important;
+      }
+      html body #hp-bar a[href*="t.me"],
+      html body #hp-bar a[href*="zalo.me"] {
         padding: 5px 8px !important;
         font-size: 10.5px !important;
       }

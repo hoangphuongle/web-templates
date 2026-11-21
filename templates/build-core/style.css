@@ -1774,6 +1774,37 @@ textarea,
     padding: 0 18px;
   }
 
+  .bc-hero {
+    min-height: auto;
+    padding: 18px 0 32px;
+  }
+
+  .bc-hero-grid {
+    padding: 16px 0 36px;
+    gap: 24px;
+  }
+
+  .bc-hero-hud {
+    max-width: 100%;
+  }
+
+  .bc-bento-tall {
+    min-height: 460px;
+    padding: 20px 18px;
+  }
+
+  .bc-tall-hud {
+    max-width: 100%;
+  }
+
+  .bc-wide-visual {
+    align-items: stretch;
+  }
+
+  .bc-all-services-pill {
+    justify-content: center;
+  }
+
   .bc-nav-links {
     display: none;
     position: absolute;
@@ -1853,7 +1884,11 @@ textarea,
 }
 
 @media (max-width: 480px) {
-  .bc-partners-strip,
+  .bc-partners-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
   .bc-footer-grid {
     grid-template-columns: 1fr;
   }
@@ -1870,6 +1905,11 @@ textarea,
   .bc-btn-outline-pill {
     width: 100%;
     justify-content: center;
+  }
+
+  .bc-plan-top-pill {
+    padding: 6px 10px;
+    font-size: 11px;
   }
 
   .bc-estimator-box {
