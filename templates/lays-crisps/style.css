@@ -1,0 +1,1182 @@
+/* ==========================================================================
+   LAY'S CRISPS — POTATO CHIPS & SNACK BRAND SHOWCASE (STYLE.CSS)
+   ========================================================================== */
+
+:root {
+  --ly-cyan: #25BAEF;
+  --ly-cyan-light: #B9EAFF;
+  --ly-yellow: #FDD25E;
+  --ly-yellow-deep: #F5B811;
+  --ly-red: #E31D2B;
+  --ly-dark: #19212A;
+  --ly-dark-hover: #0F141A;
+  --ly-cream: #FFFDF6;
+  --ly-white: #FFFFFF;
+  --ly-ink: #171E26;
+  --ly-body: #5C6570;
+  --ly-muted: #8E97A2;
+  --ly-border: #E8ECEF;
+  --ly-font-serif: 'Merriweather', Georgia, serif;
+  --ly-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--ly-font-sans);
+  background: #E9EFF4;
+  color: var(--ly-ink);
+  line-height: 1.58;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+.ly-page-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  background: var(--ly-white);
+  overflow: hidden;
+  box-shadow: 0 26px 80px rgba(23, 30, 38, 0.14);
+}
+
+.ly-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Smooth Scroll Reveal */
+.ly-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.ly-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ly-sec-title {
+  font-family: var(--ly-font-serif);
+  font-size: clamp(1.75rem, 3.2vw, 2.45rem);
+  font-weight: 900;
+  line-height: 1.24;
+  color: var(--ly-ink);
+  margin-bottom: 32px;
+}
+
+.ly-text-left {
+  text-align: left;
+}
+
+.ly-text-center {
+  text-align: center;
+}
+
+.ly-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ly-dark);
+  color: var(--ly-white);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 26px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(25, 33, 42, 0.2);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ly-btn-dark:hover {
+  background: var(--ly-dark-hover);
+  transform: translateY(-2px);
+}
+
+.ly-stars {
+  color: #FBBF24;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+/* Pastel Concentric Ripple Backdrops */
+.ly-pastel-pink {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.45) 0,
+      rgba(255, 255, 255, 0.45) 14px,
+      #FCE8F1 15px,
+      #FCE8F1 32px
+    );
+}
+
+.ly-pastel-mint {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.5) 0,
+      rgba(255, 255, 255, 0.5) 14px,
+      #E4F6F0 15px,
+      #E4F6F0 32px
+    );
+}
+
+.ly-pastel-yellow {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.55) 0,
+      rgba(255, 255, 255, 0.55) 14px,
+      #FFF5D4 15px,
+      #FFF5D4 32px
+    );
+}
+
+.ly-pastel-peach {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.5) 0,
+      rgba(255, 255, 255, 0.5) 14px,
+      #FFEAD9 15px,
+      #FFEAD9 32px
+    );
+}
+
+.ly-pastel-blue {
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.48) 0,
+      rgba(255, 255, 255, 0.48) 14px,
+      #E1F4FD 15px,
+      #E1F4FD 32px
+    );
+}
+
+/* ==========================================================================
+   1. TOP WHITE NAVBAR & CONCENTRIC SKY-BLUE HERO
+   ========================================================================== */
+
+.ly-navbar {
+  background: var(--ly-white);
+  padding: 14px 0;
+  position: relative;
+  z-index: 40;
+}
+
+.ly-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* Lay's Emblem Logo */
+.ly-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ly-logo-sun {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #FFE863 0%, #F7B500 100%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(247, 181, 0, 0.35);
+}
+
+.ly-logo-ribbon {
+  background: var(--ly-red);
+  color: var(--ly-white);
+  font-family: var(--ly-font-serif);
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 4px;
+  transform: rotate(-6deg);
+}
+
+.ly-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ly-nav-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ly-body);
+  transition: color 0.2s ease;
+}
+
+.ly-nav-link:hover {
+  color: var(--ly-ink);
+}
+
+.ly-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ly-search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #F6F8FA;
+  border: 1px solid var(--ly-border);
+  border-radius: 8px;
+  padding: 7px 12px;
+  width: 220px;
+}
+
+.ly-search-ico {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.ly-search-box input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 11.5px;
+  color: var(--ly-ink);
+  outline: none;
+}
+
+.ly-user-circle {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--ly-dark);
+  color: var(--ly-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.ly-cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--ly-red);
+  color: var(--ly-white);
+  font-style: normal;
+  font-size: 10px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ly-btn-signup {
+  padding: 9px 16px;
+  font-size: 12px;
+}
+
+.ly-burger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--ly-border);
+  background: var(--ly-white);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.ly-burger span {
+  width: 15px;
+  height: 2px;
+  background: var(--ly-ink);
+}
+
+/* Concentric Sky-Blue Hero */
+.ly-hero {
+  position: relative;
+  background: linear-gradient(180deg, #1EB4EC 0%, #68D3F8 55%, #C9F0FF 100%);
+  padding: 44px 0 56px;
+  overflow: hidden;
+}
+
+.ly-hero-ripples {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-radial-gradient(
+      circle at 72% 50%,
+      rgba(255, 255, 255, 0.14) 0,
+      rgba(255, 255, 255, 0.14) 24px,
+      transparent 25px,
+      transparent 56px
+    );
+  pointer-events: none;
+}
+
+.ly-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.ly-hero-title {
+  font-family: var(--ly-font-serif);
+  font-size: clamp(2.35rem, 4.6vw, 3.55rem);
+  font-weight: 900;
+  line-height: 1.16;
+  color: var(--ly-ink);
+  margin-bottom: 18px;
+}
+
+.ly-dip-bowl {
+  display: inline-block;
+  font-size: 0.82em;
+  vertical-align: middle;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.18));
+}
+
+.ly-hero-desc {
+  font-size: 13.5px;
+  line-height: 1.68;
+  color: #1C3545;
+  max-width: 420px;
+  margin-bottom: 26px;
+}
+
+.ly-concentric-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ly-hero-bag-img {
+  width: 100%;
+  max-width: 410px;
+  border-radius: 26px;
+  box-shadow: 0 24px 55px rgba(11, 74, 108, 0.28);
+  transition: transform 0.35s ease;
+}
+
+.ly-hero-bag-img:hover {
+  transform: scale(1.03) rotate(-2deg);
+}
+
+/* ==========================================================================
+   2. FEATURED PRODUCT SPOTLIGHT ("We Provide the Tasty and best Chips for you!")
+   ========================================================================== */
+
+.ly-spotlight-sec {
+  padding: 64px 0 48px;
+}
+
+.ly-spotlight-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.ly-spot-card {
+  border-radius: 22px;
+  padding: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 390px;
+}
+
+.ly-spot-bag-img {
+  width: 100%;
+  max-width: 310px;
+  border-radius: 18px;
+  filter: drop-shadow(0 20px 36px rgba(84, 18, 52, 0.22));
+}
+
+.ly-loose-chips-wrap {
+  max-width: 240px;
+  margin-bottom: 16px;
+}
+
+.ly-loose-chips-wrap img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.ly-spot-name {
+  font-family: var(--ly-font-serif);
+  font-size: 21px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.ly-price-label {
+  display: block;
+  font-size: 11.5px;
+  color: var(--ly-muted);
+  margin-top: 12px;
+}
+
+.ly-spot-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ly-ink);
+  margin-bottom: 12px;
+}
+
+.ly-spot-price small {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ly-muted);
+}
+
+.ly-spot-desc {
+  font-size: 13px;
+  line-height: 1.68;
+  color: var(--ly-body);
+  margin-bottom: 22px;
+}
+
+.ly-spot-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ly-link-more {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ly-ink);
+}
+
+/* ==========================================================================
+   3. 6-CARD FLAVOR CATALOG ("Find Best Taste Here" — 3x2 GRID)
+   ========================================================================== */
+
+.ly-catalog-sec {
+  padding: 36px 0 64px;
+}
+
+.ly-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 24px;
+}
+
+.ly-prod-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.ly-prod-card.is-hidden {
+  display: none;
+}
+
+.ly-prod-stage {
+  position: relative;
+  border-radius: 18px;
+  padding: 26px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.ly-prod-stage img {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+}
+
+.ly-prod-card:hover .ly-prod-stage img {
+  transform: translateY(-6px) scale(1.04);
+}
+
+.ly-hue-orange {
+  filter: hue-rotate(-18deg) saturate(1.2);
+}
+
+.ly-plus-fab {
+  position: absolute;
+  right: 14px;
+  bottom: -12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid var(--ly-white);
+  background: var(--ly-dark);
+  color: var(--ly-white);
+  font-size: 18px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ly-plus-fab:hover {
+  background: var(--ly-red);
+  transform: scale(1.1);
+}
+
+.ly-p-price {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+
+.ly-p-price small {
+  font-weight: 600;
+  color: var(--ly-muted);
+  font-size: 11.5px;
+}
+
+.ly-p-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ly-body);
+  margin-bottom: 4px;
+}
+
+.ly-viewall-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* ==========================================================================
+   4. 2-COLUMN POPULAR SPOTLIGHT ("Our Popular Crisps")
+   ========================================================================== */
+
+.ly-popular-sec {
+  padding: 20px 0 72px;
+}
+
+.ly-popular-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.ly-pop-heading {
+  margin-bottom: 20px;
+}
+
+.ly-pop-stage {
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 310px;
+  margin-bottom: 14px;
+}
+
+.ly-pop-tall {
+  min-height: 380px;
+}
+
+.ly-pop-stage img {
+  width: 74%;
+  max-width: 260px;
+  border-radius: 16px;
+}
+
+.ly-pop-name {
+  font-family: var(--ly-font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ly-play-link {
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ly-body);
+  cursor: pointer;
+}
+
+.ly-play-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ly-dark);
+  color: var(--ly-white);
+  font-size: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   5. CUSTOMER TESTIMONIAL BANNER ("What's Our Customer Say")
+   ========================================================================== */
+
+.ly-testi-sec {
+  position: relative;
+  background: linear-gradient(135deg, #62CCF5 0%, #86DCFA 100%);
+  padding: 56px 0;
+  overflow: hidden;
+}
+
+.ly-testi-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.ly-testi-copy h2 {
+  font-family: var(--ly-font-serif);
+  font-size: clamp(1.65rem, 2.8vw, 2.15rem);
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.ly-testi-quote {
+  font-family: var(--ly-font-serif);
+  font-style: italic;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: #163040;
+  padding-bottom: 20px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(23, 30, 38, 0.14);
+}
+
+.ly-testi-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ly-testi-author strong {
+  display: block;
+  font-size: 14px;
+}
+
+.ly-testi-author small {
+  font-size: 11.5px;
+  color: #2A4C60;
+}
+
+.ly-testi-arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.ly-arrow-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(23, 30, 38, 0.35);
+  background: transparent;
+  color: var(--ly-ink);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ly-arrow-circle:hover {
+  background: var(--ly-dark);
+  color: var(--ly-white);
+}
+
+.ly-yellow-backdrop {
+  background: var(--ly-yellow);
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 300px;
+  margin: 0 auto;
+  box-shadow: 0 18px 40px rgba(15, 74, 105, 0.18);
+}
+
+.ly-customer-badge-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.ly-thumb-emoji {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ly-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+/* ==========================================================================
+   6. STORE LOCATOR BANNER ("Find a Crisps Store Near You")
+   ========================================================================== */
+
+.ly-store-sec {
+  background: linear-gradient(135deg, #FDD565 0%, #FBC843 100%);
+  padding: 52px 0;
+  text-align: center;
+}
+
+.ly-store-inner {
+  max-width: 520px;
+}
+
+.ly-store-inner h2 {
+  font-family: var(--ly-font-serif);
+  font-size: clamp(1.65rem, 2.8vw, 2.15rem);
+  font-weight: 900;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+
+.ly-store-inner p {
+  font-size: 12.5px;
+  color: #4A390B;
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   7. WARM CREAM FOOTER WITH 3-PACK FAN COLLAGE
+   ========================================================================== */
+
+.ly-footer {
+  background: var(--ly-cream);
+  padding: 48px 0 36px;
+}
+
+.ly-footer-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.ly-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 18px 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ly-body);
+}
+
+.ly-footer-nav a:hover {
+  color: var(--ly-ink);
+}
+
+.ly-follow-block strong {
+  display: block;
+  font-size: 12.5px;
+  margin-bottom: 8px;
+}
+
+.ly-social-dots {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ly-social-dots a {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ly-dark);
+  color: var(--ly-white);
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ly-copyright {
+  font-size: 11.5px;
+  color: var(--ly-muted);
+}
+
+.ly-fan-packs {
+  position: relative;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ly-fan-bag {
+  width: 125px;
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+  transition: transform 0.3s ease;
+}
+
+.ly-fan-left {
+  transform: rotate(-16deg) translateX(22px);
+}
+
+.ly-fan-mid {
+  position: relative;
+  z-index: 2;
+  width: 138px;
+  transform: translateY(-8px);
+}
+
+.ly-fan-right {
+  transform: rotate(16deg) translateX(-22px);
+}
+
+/* ==========================================================================
+   8. MODAL & TOAST
+   ========================================================================== */
+
+.ly-modal-backdrop {
+  position: fixed;
+  inset: 52px 0 0 0;
+  z-index: 99990;
+  background: rgba(15, 22, 30, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.ly-modal-backdrop.is-open {
+  display: flex;
+}
+
+.ly-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  background: var(--ly-white);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+}
+
+.ly-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #F1F5F9;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.ly-modal-badge {
+  display: inline-block;
+  background: #FFF5D4;
+  color: #9A6B00;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.ly-modal-card h3 {
+  font-family: var(--ly-font-serif);
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.ly-cart-list {
+  max-height: 190px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.ly-cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #F8FAFC;
+  padding: 9px 12px;
+  border-radius: 10px;
+}
+
+.ly-cart-row-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ly-cart-row-left img {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.ly-cart-row-left h4 {
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+.ly-cart-row-left small {
+  font-size: 11px;
+  color: var(--ly-muted);
+}
+
+.ly-cart-rm {
+  background: none;
+  border: none;
+  color: var(--ly-red);
+  font-size: 11.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ly-cart-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 14px;
+  border-top: 1px solid var(--ly-border);
+  border-bottom: 1px solid var(--ly-border);
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.ly-cart-total-row strong {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.ly-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ly-modal-form input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--ly-border);
+  font-size: 13px;
+}
+
+.ly-modal-actions {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.ly-btn-tg-modal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #24A1DE;
+  color: var(--ly-white);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 11px 14px;
+}
+
+.ly-toast {
+  position: fixed;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  right: 22px;
+  z-index: 99995;
+  background: var(--ly-dark);
+  color: var(--ly-white);
+  border-left: 4px solid var(--ly-yellow);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.ly-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   9. RESPONSIVE MEDIA QUERIES (DESKTOP / TABLET / MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .ly-hero-grid,
+  .ly-spotlight-grid,
+  .ly-popular-grid,
+  .ly-testi-grid,
+  .ly-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ly-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ly-search-box {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .ly-container {
+    padding: 0 18px;
+  }
+
+  .ly-nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 18px;
+    right: 18px;
+    background: var(--ly-white);
+    border: 1px solid var(--ly-border);
+    border-radius: 16px;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+    z-index: 60;
+  }
+
+  .ly-nav-links.is-open {
+    display: flex;
+  }
+
+  .ly-burger {
+    display: inline-flex;
+  }
+
+  .ly-footer {
+    padding-bottom: 72px;
+  }
+
+  .ly-modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ly-catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ly-btn-signup {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

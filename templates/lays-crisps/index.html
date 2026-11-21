@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lay's Crisps – Khoai Tây Chiên Giòn Tươi &amp; Cửa Hàng Snack Chính Hãng</title>
+  <meta name="description" content="Lay's Crisps – Thưởng thức hương vị khoai tây tự nhiên giòn rụm với hơn 12 vị độc đáo: Salt & Vinegar, BLT Limited, Wavy Original, Sour Cream & Onion. Đặt combo snack giao nhanh.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Zalo</a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+    @media(max-width:520px){#hp-bar{padding:0 10px!important;gap:6px!important}#hp-bar span:last-child{gap:5px!important}#hp-bar a{font-size:11px!important;padding:5px 9px!important}#hp-bar>a:first-child{padding:0!important;font-size:12px!important}}
+    @media(max-width:360px){#hp-bar>span:last-child>a:first-child{padding:5px 7px!important;font-size:10px!important}}@media(max-width:479px){#hp-back{padding:5px 8px!important;font-size:10.5px!important}#hp-bar{padding:0 8px!important;gap:5px!important}}</style>
+
+  <!-- MAIN PAGE SHELL -->
+  <div class="ly-page-shell" id="top">
+
+    <!-- ==========================================
+         SECTION 1: TOP WHITE NAVBAR & CONCENTRIC SKY-BLUE HERO
+         ========================================== -->
+    <header class="ly-navbar">
+      <div class="ly-container ly-navbar-inner">
+        <a href="#top" class="ly-logo">
+          <span class="ly-logo-sun">
+            <span class="ly-logo-ribbon">Lay's</span>
+          </span>
+        </a>
+
+        <nav class="ly-nav-links" id="lyNavLinks">
+          <a href="#catalog" class="ly-nav-link">Products</a>
+          <a href="#spotlight" class="ly-nav-link">About Us</a>
+          <a href="#popular" class="ly-nav-link">Videos</a>
+          <a href="#reviews" class="ly-nav-link">Recipes</a>
+          <a href="#stores" class="ly-nav-link">Where to Buy</a>
+        </nav>
+
+        <div class="ly-nav-right">
+          <div class="ly-search-box">
+            <span class="ly-search-ico" aria-hidden="true">🔍</span>
+            <input type="search" id="lySearchInput" placeholder="Search collection, item or user">
+          </div>
+
+          <button type="button" class="ly-user-circle" id="lyCartBtn" aria-label="Giỏ hàng">
+            <span>🛍️</span>
+            <i class="ly-cart-badge" id="lyCartCount">2</i>
+          </button>
+
+          <button type="button" class="ly-btn-dark ly-btn-signup" id="lyOpenCartBtn">
+            Sign Up · Giỏ Hàng
+          </button>
+
+          <button type="button" class="ly-burger" id="lyBurger" aria-label="Mở menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Concentric Ripple Sky-Blue Hero -->
+    <section class="ly-hero">
+      <div class="ly-hero-ripples" aria-hidden="true"></div>
+
+      <div class="ly-container ly-hero-grid">
+        <div class="ly-hero-copy">
+          <h1 class="ly-hero-title">
+            Feel the Best<br>
+            Taste With Lays<br>
+            Crisps <span class="ly-dip-bowl" aria-hidden="true">🥣</span>
+          </h1>
+
+          <p class="ly-hero-desc">
+            Feel the best and awesome taste with Lays Crisps. Những lát khoai tây nông trại tươi ngon được thái mỏng, chiên vàng giòn rụm cùng gia vị đậm đà đánh thức mọi giác quan của bạn.
+          </p>
+
+          <a href="#catalog" class="ly-btn-dark ly-btn-hero">
+            Shop now
+          </a>
+        </div>
+
+        <div class="ly-hero-visual">
+          <div class="ly-concentric-stage">
+            <img src="img/hero-blue-bag.jpg" alt="Lay's Salt & Vinegar Potato Chips Blue Bag" class="ly-hero-bag-img" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: FEATURED PRODUCT SPOTLIGHT ("We Provide the Tasty and best Chips for you!")
+         ========================================== -->
+    <section class="ly-spotlight-sec" id="spotlight">
+      <div class="ly-container">
+        <h2 class="ly-sec-title ly-text-left">
+          We Provide the Tasty and<br>
+          best Chips for you!
+        </h2>
+
+        <div class="ly-spotlight-grid">
+          <!-- Left Pink Concentric Backdrop + Purple BLT Bag -->
+          <div class="ly-spot-card ly-pastel-pink">
+            <img src="img/blt-purple-bag.jpg" alt="LAY'S BLT Flavored Limited Edition Potato Chips" class="ly-spot-bag-img" loading="lazy">
+          </div>
+
+          <!-- Right Loose Chips Pile + Product Info -->
+          <div class="ly-spot-info">
+            <div class="ly-loose-chips-wrap">
+              <img src="img/loose-chips.jpg" alt="Những lát khoai tây chiên vàng giòn rụm" loading="lazy">
+            </div>
+
+            <h3 class="ly-spot-name">LAY'S BLT Flavored</h3>
+            <div class="ly-stars" aria-label="5 sao">★★★★★</div>
+
+            <span class="ly-price-label">Price</span>
+            <div class="ly-spot-price">25.000đ <small>($3.93)</small></div>
+
+            <p class="ly-spot-desc">
+              Mọi thứ bắt đầu từ những củ khoai tây nông trại tuyển chọn, thái lát và chế biến hoàn hảo. Hòa quyện cùng vị ngọt dịu của mật ong, thịt xông khói giòn và chút cay nồng của sốt BBQ — mang lại niềm vui giòn tan trong từng miếng cắn.
+            </p>
+
+            <div class="ly-spot-actions">
+              <button type="button" class="ly-btn-dark" data-add-snack="LAY'S BLT Flavored (Limited Edition)" data-add-price="25000" data-add-img="img/blt-purple-bag.jpg">
+                Buy Now
+              </button>
+              <a href="#catalog" class="ly-link-more">See More ›</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: 6-CARD FLAVOR CATALOG ("Find Best Taste Here" — 3x2 GRID)
+         ========================================== -->
+    <section class="ly-catalog-sec" id="catalog">
+      <div class="ly-container">
+        <h2 class="ly-sec-title ly-text-center">Find Best Taste Here</h2>
+
+        <div class="ly-catalog-grid" id="lyCatalogGrid">
+
+          <!-- Item 1: Yogurt & Herb (Green) -->
+          <article class="ly-prod-card" data-name="LAY'S Yogurt & Herb">
+            <div class="ly-prod-stage ly-pastel-mint">
+              <img src="img/green-herb-bag.jpg" alt="LAY'S Yogurt & Herb" loading="lazy">
+              <button type="button" class="ly-plus-fab" data-add-snack="LAY'S Yogurt &amp; Herb" data-add-price="22000" data-add-img="img/green-herb-bag.jpg" aria-label="Thêm vào giỏ">+</button>
+            </div>
+            <div class="ly-prod-meta">
+              <strong class="ly-p-price">22.000đ <small>($3.93)</small></strong>
+              <h3 class="ly-p-title">LAY'S® Yogurt &amp; Herb Flavored</h3>
+              <div class="ly-stars">★★★★★</div>
+            </div>
+          </article>
+
+          <!-- Item 2: Wavy Original (Red) -->
+          <article class="ly-prod-card" data-name="LAY'S Wavy Original">
+            <div class="ly-prod-stage ly-pastel-pink">
+              <img src="img/red-wavy-bag.jpg" alt="LAY'S Wavy Original" loading="lazy">
+              <button type="button" class="ly-plus-fab" data-add-snack="LAY'S Wavy Original" data-add-price="22000" data-add-img="img/red-wavy-bag.jpg" aria-label="Thêm vào giỏ">+</button>
+            </div>
+            <div class="ly-prod-meta">
+              <strong class="ly-p-price">22.000đ <small>($3.93)</small></strong>
+              <h3 class="ly-p-title">LAY'S® Wavy Original Potato Chips</h3>
+              <div class="ly-stars">★★★★★</div>
+            </div>
+          </article>
+
+          <!-- Item 3: Classic Salted (Yellow) -->
+          <article class="ly-prod-card" data-name="LAY'S Classic Salted">
+            <div class="ly-prod-stage ly-pastel-yellow">
+              <img src="img/yellow-classic-bag.jpg" alt="LAY'S Classic Salted" loading="lazy">
+              <button type="button" class="ly-plus-fab" data-add-snack="LAY'S Classic Salted" data-add-price="20000" data-add-img="img/yellow-classic-bag.jpg" aria-label="Thêm vào giỏ">+</button>
+            </div>
+            <div class="ly-prod-meta">
+              <strong class="ly-p-price">20.000đ <small>($3.93)</small></strong>
+              <h3 class="ly-p-title">LAY'S® Classic Potato Chips</h3>
+              <div class="ly-stars">★★★★★</div>
+            </div>
+          </article>
+
+          <!-- Item 4: Cheddar & Sour Cream (Orange) -->
+          <article class="ly-prod-card" data-name="LAY'S Cheddar & Sour Cream">
+            <div class="ly-prod-stage ly-pastel-peach">
+              <img src="img/yellow-classic-bag.jpg" alt="LAY'S Cheddar & Sour Cream" class="ly-hue-orange" loading="lazy">
+              <button type="button" class="ly-plus-fab" data-add-snack="LAY'S Cheddar &amp; Sour Cream" data-add-price="24000" data-add-img="img/yellow-classic-bag.jpg" aria-label="Thêm vào giỏ">+</button>
+            </div>
+            <div class="ly-prod-meta">
+              <strong class="ly-p-price">24.000đ <small>($3.93)</small></strong>
+              <h3 class="ly-p-title">LAY'S® Cheddar &amp; Sour Cream</h3>
+              <div class="ly-stars">★★★★★</div>
+            </div>
+          </article>
+
+          <!-- Item 5: Salt & Vinegar (Blue) -->
+          <article class="ly-prod-card" data-name="LAY'S Salt & Vinegar">
+            <div class="ly-prod-stage ly-pastel-blue">
+              <img src="img/hero-blue-bag.jpg" alt="LAY'S Salt & Vinegar" loading="lazy">
+              <button type="button" class="ly-plus-fab" data-add-snack="LAY'S Salt &amp; Vinegar" data-add-price="22000" data-add-img="img/hero-blue-bag.jpg" aria-label="Thêm vào giỏ">+</button>
+            </div>
+            <div class="ly-prod-meta">
+              <strong class="ly-p-price">22.000đ <small>($3.93)</small></strong>
+              <h3 class="ly-p-title">LAY'S® Salt &amp; Vinegar Flavored</h3>
+              <div class="ly-stars">★★★★★</div>
+            </div>
+          </article>
+
+          <!-- Item 6: Sour Cream & Onion (Deep Green) -->
+          <article class="ly-prod-card" data-name="LAY'S Sour Cream & Onion">
+            <div class="ly-prod-stage ly-pastel-mint">
+              <img src="img/green-herb-bag.jpg" alt="LAY'S Sour Cream & Onion" loading="lazy">
+              <button type="button" class="ly-plus-fab" data-add-snack="LAY'S Sour Cream &amp; Onion" data-add-price="24000" data-add-img="img/green-herb-bag.jpg" aria-label="Thêm vào giỏ">+</button>
+            </div>
+            <div class="ly-prod-meta">
+              <strong class="ly-p-price">24.000đ <small>($3.93)</small></strong>
+              <h3 class="ly-p-title">LAY'S® Sour Cream &amp; Onion</h3>
+              <div class="ly-stars">★★★★★</div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="ly-viewall-wrap">
+          <button type="button" class="ly-btn-dark" data-add-snack="Thùng Mix 12 Gói Lay's Đủ Vị" data-add-price="235000" data-add-img="img/hero-blue-bag.jpg">
+            View All · Đặt Thùng Mix 12 Vị
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: 2-COLUMN POPULAR SPOTLIGHT ("Our Popular Crisps")
+         ========================================== -->
+    <section class="ly-popular-sec" id="popular">
+      <div class="ly-container">
+        <div class="ly-popular-grid">
+          <!-- Left Tall Popular Card -->
+          <div class="ly-pop-col">
+            <div class="ly-pop-stage ly-pastel-mint ly-pop-tall">
+              <img src="img/green-herb-bag.jpg" alt="LAY'S Wavy Ondulées Salt & Vinegar" loading="lazy">
+            </div>
+            <h3 class="ly-pop-name">LAY'S® Wavy Ondulées Salt &amp; Vinegar</h3>
+            <button type="button" class="ly-play-link" data-add-snack="LAY'S Wavy Ondulées Salt &amp; Vinegar" data-add-price="28000" data-add-img="img/green-herb-bag.jpg">
+              <span class="ly-play-dot">▶</span>
+              <span>Play Video &amp; Đặt Mua Ngay</span>
+            </button>
+          </div>
+
+          <!-- Right Heading + Popular Card -->
+          <div class="ly-pop-col">
+            <h2 class="ly-sec-title ly-pop-heading">Our Popular Crisps</h2>
+            <div class="ly-pop-stage ly-pastel-pink">
+              <img src="img/red-wavy-bag.jpg" alt="LAY'S Sweet & Spicy Honey" loading="lazy">
+            </div>
+            <h3 class="ly-pop-name">LAY'S® Roasted Honey &amp; BBQ</h3>
+            <button type="button" class="ly-play-link" data-add-snack="LAY'S Roasted Honey &amp; BBQ" data-add-price="28000" data-add-img="img/red-wavy-bag.jpg">
+              <span class="ly-play-dot">▶</span>
+              <span>Play Video &amp; Đặt Mua Ngay</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: CUSTOMER TESTIMONIAL BANNER ("What's Our Customer Say")
+         ========================================== -->
+    <section class="ly-testi-sec" id="reviews">
+      <div class="ly-hero-ripples" aria-hidden="true"></div>
+      <div class="ly-container ly-testi-grid">
+        <div class="ly-testi-copy">
+          <h2>What's Our Customer Say</h2>
+
+          <blockquote class="ly-testi-quote" id="lyTestiQuote">
+            “Lát khoai tây Lay's mỏng giòn tan tự nhiên, vị muối giấm Salt &amp; Vinegar và vị sườn nướng BBQ đậm đà cực kỳ cuốn. Mỗi lần tụ tập xem phim cuối tuần cùng bạn bè đều phải đặt nguyên thùng 12 gói mới đủ!”
+          </blockquote>
+
+          <div class="ly-testi-footer">
+            <div class="ly-testi-author">
+              <strong id="lyTestiName">Annara Veirmont · Minh Khôi</strong>
+              <small id="lyTestiAge">23 years of Age · Food Reviewer</small>
+            </div>
+
+            <div class="ly-testi-arrows">
+              <button type="button" class="ly-arrow-circle" id="lyTestiPrev" aria-label="Đánh giá trước">←</button>
+              <button type="button" class="ly-arrow-circle" id="lyTestiNext" aria-label="Đánh giá tiếp theo">→</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="ly-testi-photo-wrap">
+          <div class="ly-yellow-backdrop">
+            <div class="ly-customer-badge-card">
+              <span class="ly-thumb-emoji" aria-hidden="true">👍</span>
+              <img src="img/yellow-classic-bag.jpg" alt="Khách hàng yêu thích Lay's Crisps" id="lyTestiImg" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: STORE LOCATOR BANNER ("Find a Crisps Store Near You")
+         ========================================== -->
+    <section class="ly-store-sec" id="stores">
+      <div class="ly-container ly-store-inner">
+        <h2>Find a Crisps Store<br>Near You</h2>
+        <p>
+          Trải nghiệm trọn bộ hương vị Lay's Crisps chính hãng tại hệ thống siêu thị, cửa hàng tiện lợi gần bạn nhất hoặc đặt giao tận nhà chỉ trong 30 phút.
+        </p>
+        <button type="button" class="ly-btn-dark" id="lyFindStoreBtn">
+          Find Store
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: WARM CREAM FOOTER WITH 3-PACK FAN COLLAGE
+         ========================================== -->
+    <footer class="ly-footer">
+      <div class="ly-container">
+        <div class="ly-footer-grid">
+          <div class="ly-footer-left">
+            <a href="#top" class="ly-logo">
+              <span class="ly-logo-sun">
+                <span class="ly-logo-ribbon">Lay's</span>
+              </span>
+            </a>
+
+            <nav class="ly-footer-nav">
+              <a href="#catalog">Products</a>
+              <a href="#spotlight">About Us</a>
+              <a href="#popular">Videos</a>
+              <a href="#reviews">Recipes</a>
+              <a href="#stores">Where to Buy</a>
+              <a href="../../index.html#templates">← Kho Giao Diện</a>
+            </nav>
+
+            <div class="ly-follow-block">
+              <strong>Follow us</strong>
+              <div class="ly-social-dots">
+                <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" aria-label="Zalo">Z</a>
+                <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" aria-label="Telegram">T</a>
+                <a href="tel:0974100372" aria-label="Hotline">📞</a>
+              </div>
+            </div>
+
+            <p class="ly-copyright">
+              © 2026 Lay's Crisps Showcase. All rights reserved · Crafted by Hoang Phuong
+            </p>
+          </div>
+
+          <!-- Right 3-Bag Fan Stage -->
+          <div class="ly-footer-collage">
+            <div class="ly-fan-packs">
+              <img src="img/green-herb-bag.jpg" alt="Lay's Herb Green" class="ly-fan-bag ly-fan-left" loading="lazy">
+              <img src="img/hero-blue-bag.jpg" alt="Lay's Salt & Vinegar Blue" class="ly-fan-bag ly-fan-mid" loading="lazy">
+              <img src="img/red-wavy-bag.jpg" alt="Lay's Wavy Red" class="ly-fan-bag ly-fan-right" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================
+       SNACK CART & QUICK ORDER MODAL
+       ========================================== -->
+  <div class="ly-modal-backdrop" id="lyCartModal" aria-hidden="true">
+    <div class="ly-modal-card" role="dialog" aria-modal="true" aria-labelledby="lyModalTitle">
+      <button type="button" class="ly-modal-close" id="lyModalClose" aria-label="Đóng">✕</button>
+      <span class="ly-modal-badge">🥔 LAY'S CRISPS · GIAO NHANH 30 PHÚT</span>
+      <h3 id="lyModalTitle">Giỏ Hàng Snack Lay's</h3>
+
+      <div class="ly-cart-list" id="lyCartList"></div>
+
+      <div class="ly-cart-total-row">
+        <span>Tổng thanh toán:</span>
+        <strong id="lyCartTotal">47.000đ</strong>
+      </div>
+
+      <form id="lyOrderForm" class="ly-modal-form">
+        <input type="text" id="lyCustName" placeholder="Họ và tên người nhận *" required>
+        <input type="tel" id="lyCustPhone" placeholder="Số điện thoại Zalo *" required>
+        <input type="text" id="lyCustAddr" placeholder="Địa chỉ nhận hàng *" required>
+
+        <div class="ly-modal-actions">
+          <button type="submit" class="ly-btn-dark">Đặt Hàng Qua Zalo ↗</button>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="ly-btn-tg-modal">Chat Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="ly-toast" id="lyToast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>
+

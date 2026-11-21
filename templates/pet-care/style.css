@@ -1,0 +1,1129 @@
+/* ==========================================================================
+   PET.CARE — PET SITTING, GROOMING & VETERINARY CLINIC TEMPLATE (STYLE.CSS)
+   ========================================================================== */
+
+:root {
+  --pc-bg: #FFFBF7;
+  --pc-cream-card: #FCF3E9;
+  --pc-navy: #16213E;
+  --pc-body: #646D7A;
+  --pc-muted: #98A0AB;
+  --pc-coral: #F06339;
+  --pc-coral-hover: #DC5027;
+  --pc-peach: #F79C79;
+  --pc-pink: #F7B6C8;
+  --pc-blush: #F8D1DD;
+  --pc-blue: #BFE2F8;
+  --pc-teal: #7AD3DC;
+  --pc-sunny: #F8DC4B;
+  --pc-white: #FFFFFF;
+  --pc-border: rgba(22, 33, 62, 0.1);
+  --pc-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--pc-font);
+  background: #F9D7CF;
+  color: var(--pc-navy);
+  line-height: 1.65;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+.pc-page-shell {
+  max-width: 1220px;
+  margin: 0 auto;
+  background: var(--pc-bg);
+  overflow: hidden;
+  box-shadow: 0 26px 80px rgba(22, 33, 62, 0.12);
+}
+
+.pc-container {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.pc-coral {
+  color: var(--pc-coral);
+}
+
+/* Pastel Oval Background Colors */
+.pc-bg-peach { background: var(--pc-peach); }
+.pc-bg-pink { background: var(--pc-pink); }
+.pc-bg-blush { background: var(--pc-blush); }
+.pc-bg-blue { background: var(--pc-blue); }
+.pc-bg-teal { background: var(--pc-teal); }
+.pc-bg-sunny { background: var(--pc-sunny); }
+.pc-bg-yellow { background: #F8C941; }
+
+/* Smooth Scroll Reveal */
+.pc-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.pc-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pc-sec-title {
+  font-size: clamp(1.85rem, 3.3vw, 2.55rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--pc-navy);
+  margin-bottom: 18px;
+}
+
+.pc-btn-coral {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--pc-coral);
+  color: var(--pc-white);
+  border: none;
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(240, 99, 57, 0.3);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pc-btn-coral:hover {
+  background: var(--pc-coral-hover);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   1. MINIMAL LINE NAVBAR & DUAL-OVAL CAT HERO
+   ========================================================================== */
+
+.pc-header {
+  padding-top: 18px;
+}
+
+.pc-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(22, 33, 62, 0.18);
+  position: relative;
+}
+
+.pc-logo {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--pc-navy);
+}
+
+.pc-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.pc-nav-link {
+  position: relative;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--pc-body);
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.pc-nav-link:hover,
+.pc-nav-link.is-active {
+  color: var(--pc-navy);
+  font-weight: 700;
+}
+
+.pc-nav-link.is-active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -17px;
+  width: 24px;
+  height: 2px;
+  background: var(--pc-navy);
+  transform: translateX(-50%);
+}
+
+.pc-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pc-signup-btn {
+  background: none;
+  border: none;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: var(--pc-navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.pc-burger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--pc-border);
+  background: var(--pc-white);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.pc-burger span {
+  width: 15px;
+  height: 2px;
+  background: var(--pc-navy);
+}
+
+/* Hero Section */
+.pc-hero {
+  padding: 48px 0 56px;
+}
+
+.pc-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: center;
+  gap: 36px;
+}
+
+.pc-hero-title {
+  font-size: clamp(2.6rem, 5vw, 4.1rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.pc-hero-desc {
+  font-size: 13.5px;
+  color: var(--pc-body);
+  max-width: 380px;
+  margin-bottom: 28px;
+}
+
+.pc-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pc-btn-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pc-navy);
+}
+
+/* Dual Vertical Oval Capsules */
+.pc-hero-ovals {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.pc-oval-main {
+  border-radius: 999px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4.2;
+  border: 6px solid var(--pc-white);
+  box-shadow: 0 24px 55px rgba(240, 99, 57, 0.16);
+}
+
+.pc-oval-main img,
+.pc-oval-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.pc-oval-side-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.pc-oval-side {
+  width: 100%;
+  border-radius: 999px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  border: 5px solid var(--pc-white);
+  box-shadow: 0 18px 40px rgba(22, 33, 62, 0.1);
+}
+
+.pc-next-btn {
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--pc-navy);
+  cursor: pointer;
+}
+
+.pc-next-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--pc-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   2. "HOW CAN WE HELP" STRIP
+   ========================================================================== */
+
+.pc-help-strip {
+  padding: 12px 0 48px;
+}
+
+.pc-help-inner {
+  border-top: 1px solid var(--pc-border);
+  border-bottom: 1px solid var(--pc-border);
+  padding: 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.pc-help-left {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.pc-puppy-circle {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.pc-puppy-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pc-play-fab {
+  position: absolute;
+  top: 4px;
+  right: -6px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pc-white);
+  color: var(--pc-navy);
+  font-size: 11px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+}
+
+.pc-help-center {
+  text-align: center;
+  max-width: 420px;
+}
+
+.pc-spaced-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--pc-muted);
+  margin-bottom: 8px;
+}
+
+.pc-help-center h2 {
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.pc-help-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.pc-story-circle {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--pc-bg);
+  position: relative;
+}
+
+.pc-story-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pc-story-dark {
+  margin-left: -22px;
+  cursor: pointer;
+  padding: 0;
+  background: var(--pc-navy);
+}
+
+.pc-story-dark img {
+  opacity: 0.48;
+}
+
+.pc-story-dark span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pc-white);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   3. HOW TO TAKE CARE OF YOUR PETS (SOFT CREAM CARD)
+   ========================================================================== */
+
+.pc-takecare-sec {
+  padding: 20px 0 56px;
+}
+
+.pc-takecare-card {
+  background: var(--pc-cream-card);
+  border-radius: 32px;
+  padding: 44px 48px;
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.pc-tc-oval {
+  width: 100%;
+  max-width: 245px;
+  margin: 0 auto;
+  border-radius: 999px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4.1;
+  border: 6px solid var(--pc-white);
+  box-shadow: 0 18px 40px rgba(22, 33, 62, 0.08);
+}
+
+.pc-tc-oval img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pc-title-line {
+  display: inline-block;
+  width: 56px;
+  height: 3px;
+  background: var(--pc-navy);
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.pc-tc-copy p {
+  font-size: 13px;
+  color: var(--pc-body);
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   4. OUR SERVICES & 4 VERTICAL PILL STATS (85+, 96K, 60+, 99%)
+   ========================================================================== */
+
+.pc-services-sec {
+  padding: 20px 0 56px;
+}
+
+.pc-services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.pc-srv-intro {
+  font-size: 13px;
+  color: var(--pc-body);
+  margin-bottom: 18px;
+}
+
+.pc-srv-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pc-srv-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pc-body);
+}
+
+.pc-check-ico {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #E8F3EE;
+  color: #2B8A62;
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pc-vet-pill {
+  position: relative;
+  border-radius: 999px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  box-shadow: 0 18px 40px rgba(22, 33, 62, 0.08);
+}
+
+.pc-vet-pill img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pc-pill-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.pc-pill-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.pc-pill-dots i.is-active {
+  background: var(--pc-white);
+}
+
+/* 4 Vertical Capsule Stats */
+.pc-stats-card {
+  background: var(--pc-cream-card);
+  border-radius: 28px;
+  padding: 32px 36px;
+}
+
+.pc-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.pc-stat-pill {
+  background: var(--pc-white);
+  border-radius: 999px;
+  padding: 24px 16px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(22, 33, 62, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.pc-stat-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.pc-sc-blue { background: #CCE6FA; }
+.pc-sc-coral { background: #FAD0C3; }
+.pc-sc-yellow { background: #FCE8A6; }
+.pc-sc-teal { background: #C2EEF2; }
+
+.pc-stat-pill strong {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--pc-navy);
+}
+
+.pc-stat-pill small {
+  font-size: 11.5px;
+  color: var(--pc-muted);
+}
+
+/* ==========================================================================
+   5. "YOUR FURRY FRIEND IS IN SAFE HANDS"
+   ========================================================================== */
+
+.pc-safehands-sec {
+  padding: 24px 0 64px;
+}
+
+.pc-safehands-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.pc-sh-oval {
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  border-radius: 999px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4.1;
+  border: 6px solid var(--pc-white);
+  box-shadow: 0 18px 42px rgba(22, 33, 62, 0.1);
+}
+
+.pc-sh-oval img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pc-sh-copy p {
+  font-size: 13px;
+  color: var(--pc-body);
+  max-width: 440px;
+  margin-bottom: 16px;
+}
+
+.pc-readmore-link {
+  background: none;
+  border: none;
+  color: var(--pc-coral);
+  font-size: 13px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   6. TESTIMONIAL CARD ("This is my favourite Pet care agency.")
+   ========================================================================== */
+
+.pc-testi-sec {
+  padding: 12px 0 64px;
+}
+
+.pc-testi-card {
+  background: var(--pc-cream-card);
+  border-radius: 32px;
+  padding: 42px 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.pc-testi-quote {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--pc-body);
+  margin-bottom: 22px;
+}
+
+.pc-testi-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.pc-arrow-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--pc-border);
+  background: var(--pc-white);
+  color: var(--pc-navy);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pc-testi-oval {
+  width: 100%;
+  max-width: 230px;
+  margin: 0 auto;
+  border-radius: 999px;
+  overflow: hidden;
+  padding-top: 24px;
+  text-align: center;
+  border: 6px solid var(--pc-white);
+  box-shadow: 0 18px 40px rgba(22, 33, 62, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pc-testi-person {
+  padding: 0 14px 12px;
+}
+
+.pc-testi-person strong {
+  display: block;
+  font-size: 14px;
+}
+
+.pc-testi-person small {
+  font-size: 11px;
+  color: var(--pc-body);
+}
+
+.pc-testi-oval img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   7. NEWSLETTER & 4-COLUMN FOOTER
+   ========================================================================== */
+
+.pc-newsletter-sec {
+  padding: 12px 0 36px;
+}
+
+.pc-newsletter-box {
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 56px;
+}
+
+.pc-newsletter-box h2 {
+  font-size: clamp(1.45rem, 2.5vw, 1.95rem);
+  font-weight: 800;
+  line-height: 1.28;
+  margin-bottom: 22px;
+}
+
+.pc-nl-form {
+  display: flex;
+  align-items: center;
+  background: var(--pc-white);
+  border-radius: 999px;
+  padding: 6px 6px 6px 20px;
+  box-shadow: 0 12px 32px rgba(22, 33, 62, 0.07);
+}
+
+.pc-nl-form input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-size: 12.5px;
+  color: var(--pc-navy);
+  outline: none;
+}
+
+/* Footer */
+.pc-footer {
+  padding-top: 32px;
+  border-top: 1px solid var(--pc-border);
+}
+
+.pc-footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 0.9fr 0.9fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.pc-footer-brand h4,
+.pc-footer-col h4 {
+  font-size: 12.5px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.pc-footer-brand h4 {
+  margin-top: 12px;
+}
+
+.pc-footer-brand p {
+  font-size: 11.5px;
+  color: var(--pc-muted);
+  margin-bottom: 14px;
+}
+
+.pc-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.pc-socials a {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--pc-white);
+  border: 1px solid var(--pc-border);
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pc-footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--pc-body);
+}
+
+.pc-footer-col a:hover {
+  color: var(--pc-coral);
+}
+
+.pc-footer-copy {
+  text-align: center;
+  padding-top: 18px;
+  border-top: 1px solid var(--pc-border);
+  font-size: 11.5px;
+  color: var(--pc-muted);
+}
+
+/* ==========================================================================
+   8. MODAL & TOAST
+   ========================================================================== */
+
+.pc-modal-backdrop {
+  position: fixed;
+  inset: 52px 0 0 0;
+  z-index: 99990;
+  background: rgba(22, 33, 62, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pc-modal-backdrop.is-open {
+  display: flex;
+}
+
+.pc-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  background: var(--pc-white);
+  border-radius: 26px;
+  padding: 28px 26px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+}
+
+.pc-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pc-cream-card);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pc-modal-badge {
+  display: inline-block;
+  background: #FDEAE3;
+  color: var(--pc-coral);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.pc-modal-card h3 {
+  font-size: 21px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.pc-modal-sub {
+  font-size: 12.5px;
+  color: var(--pc-body);
+  margin-bottom: 16px;
+}
+
+.pc-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pc-modal-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.pc-modal-form input,
+.pc-modal-form select,
+.pc-modal-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid #DFDCD8;
+  font-size: 13px;
+}
+
+.pc-modal-actions {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.pc-btn-tg-modal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #24A1DE;
+  color: var(--pc-white);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 14px;
+}
+
+.pc-toast {
+  position: fixed;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  right: 22px;
+  z-index: 99995;
+  background: var(--pc-navy);
+  color: var(--pc-white);
+  border-left: 4px solid var(--pc-coral);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.pc-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   9. RESPONSIVE MEDIA QUERIES (DESKTOP / TABLET / MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .pc-hero-grid,
+  .pc-takecare-card,
+  .pc-services-grid,
+  .pc-safehands-grid,
+  .pc-testi-card {
+    grid-template-columns: 1fr;
+  }
+
+  .pc-help-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pc-stats-grid,
+  .pc-footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pc-container {
+    padding: 0 18px;
+  }
+
+  .pc-nav-links {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 18px;
+    right: 18px;
+    background: var(--pc-white);
+    border: 1px solid var(--pc-border);
+    border-radius: 16px;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: 0 18px 40px rgba(22, 33, 62, 0.14);
+    z-index: 60;
+  }
+
+  .pc-nav-links.is-open {
+    display: flex;
+  }
+
+  .pc-nav-link.is-active::after {
+    display: none;
+  }
+
+  .pc-burger {
+    display: inline-flex;
+  }
+
+  .pc-takecare-card,
+  .pc-testi-card {
+    padding: 28px 22px;
+  }
+
+  .pc-newsletter-sec {
+    padding-bottom: 72px;
+  }
+
+  .pc-modal-row-2,
+  .pc-modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pc-hero-ovals,
+  .pc-stats-grid,
+  .pc-footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pc-nl-form {
+    flex-direction: column;
+    border-radius: 18px;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .pc-nl-form .pc-btn-coral {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

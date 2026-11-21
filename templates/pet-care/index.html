@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet.care – Dịch Vụ Chăm Sóc Thú Cưng, Khách Sạn Chó Mèo &amp; Phòng Khám Thú Y</title>
+  <meta name="description" content="Pet.care – Dịch vụ trông giữ thú cưng tại nhà, spa grooming, huấn luyện và phòng khám thú y chuyên nghiệp. Đặt lịch hẹn chăm sóc bé cưng dễ dàng.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Zalo</a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+    @media(max-width:520px){#hp-bar{padding:0 10px!important;gap:6px!important}#hp-bar span:last-child{gap:5px!important}#hp-bar a{font-size:11px!important;padding:5px 9px!important}#hp-bar>a:first-child{padding:0!important;font-size:12px!important}}
+    @media(max-width:360px){#hp-bar>span:last-child>a:first-child{padding:5px 7px!important;font-size:10px!important}}@media(max-width:479px){#hp-back{padding:5px 8px!important;font-size:10.5px!important}#hp-bar{padding:0 8px!important;gap:5px!important}}</style>
+
+  <!-- MAIN PAGE SHELL -->
+  <div class="pc-page-shell" id="top">
+
+    <!-- ==========================================
+         SECTION 1: MINIMAL LINE NAVBAR & DUAL-OVAL CAT HERO
+         ========================================== -->
+    <header class="pc-header">
+      <div class="pc-container pc-navbar">
+        <a href="#top" class="pc-logo">Pet<span class="pc-coral">.</span>care</a>
+
+        <nav class="pc-nav-links" id="pcNavLinks">
+          <a href="#top" class="pc-nav-link is-active">Home</a>
+          <a href="#services" class="pc-nav-link">Services</a>
+          <a href="#take-care" class="pc-nav-link">Training</a>
+          <a href="#safe-hands" class="pc-nav-link">Medi-care</a>
+        </nav>
+
+        <div class="pc-nav-actions">
+          <button type="button" class="pc-signup-btn" data-open-modal="Đăng Ký Hội Viên &amp; Đặt Lịch Chăm Sóc Thú Cưng">
+            <span>Sign up</span>
+            <span class="pc-signup-ico" aria-hidden="true">→]</span>
+          </button>
+          <button type="button" class="pc-burger" id="pcBurger" aria-label="Mở menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="pc-hero">
+      <div class="pc-container pc-hero-grid">
+        <!-- Left Copy -->
+        <div class="pc-hero-copy">
+          <h1 class="pc-hero-title">
+            Care of your<br>
+            Little pets.
+          </h1>
+
+          <p class="pc-hero-desc">
+            Chúng tôi tin rằng việc tìm một người trông giữ &amp; bác sĩ thú y đáng tin cậy phải thật dễ dàng. Pet.care chăm sóc từng bé cưng chu đáo như chính thành viên trong gia đình bạn.
+          </p>
+
+          <div class="pc-hero-ctas">
+            <button type="button" class="pc-btn-coral" data-open-modal="Đặt Lịch Dịch Vụ Spa, Trông Giữ &amp; Khám Thú Y">
+              <span>Our Service</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+            <a href="tel:0974100372" class="pc-btn-call">
+              <span aria-hidden="true">📞</span>
+              <span>Schedule a call</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Dual Vertical Oval Cat Portraits -->
+        <div class="pc-hero-ovals">
+          <div class="pc-oval-main pc-bg-peach">
+            <img src="img/cat-peach.jpg" alt="Mèo trắng lông xù trên nền cam đào" id="pcHeroMainImg" loading="eager">
+          </div>
+
+          <div class="pc-oval-side-col">
+            <div class="pc-oval-side pc-bg-pink">
+              <img src="img/cat-play-pink.jpg" alt="Mèo con vờn đồ chơi lông vũ hồng" id="pcHeroSideImg" loading="eager">
+            </div>
+
+            <button type="button" class="pc-next-btn" id="pcHeroNextBtn">
+              <span>Next</span>
+              <span class="pc-next-circle">↗</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: "HOW CAN WE HELP" STRIP
+         ("While you are on vacation or at work can be stressful.")
+         ========================================== -->
+    <section class="pc-help-strip">
+      <div class="pc-container">
+        <div class="pc-help-inner">
+          <!-- Left Puppy Circle with Play Badge -->
+          <div class="pc-help-left">
+            <div class="pc-puppy-circle pc-bg-yellow">
+              <img src="img/dog-teal.jpg" alt="Chó cưng đáng yêu" loading="lazy">
+            </div>
+            <button type="button" class="pc-play-fab" data-open-modal="Xem Video Trực Tiếp Khu Lưu Trú &amp; Vui Chơi Pet.care" aria-label="Xem video">▶</button>
+          </div>
+
+          <!-- Center Statement -->
+          <div class="pc-help-center">
+            <span class="pc-spaced-label">How can we help</span>
+            <h2>
+              While you are on vacation or<br>
+              at work can be stressful.
+            </h2>
+          </div>
+
+          <!-- Right Overlapping Story Circles -->
+          <div class="pc-help-right">
+            <div class="pc-story-circle pc-bg-pink">
+              <img src="img/cat-peach.jpg" alt="Mèo cưng" loading="lazy">
+            </div>
+            <button type="button" class="pc-story-circle pc-story-dark" data-open-modal="Khám Phá Câu Chuyện Khách Hàng Tại Pet.care">
+              <img src="img/dog-teal.jpg" alt="See Stories" loading="lazy">
+              <span>See Stories</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: HOW TO TAKE CARE OF YOUR PETS (SOFT CREAM CARD)
+         ========================================== -->
+    <section class="pc-takecare-sec" id="take-care">
+      <div class="pc-container">
+        <div class="pc-takecare-card">
+          <div class="pc-tc-oval pc-bg-blue">
+            <img src="img/cat-blue.jpg" alt="Chân dung mèo trắng mắt vàng trên nền xanh baby" loading="lazy">
+          </div>
+
+          <div class="pc-tc-copy">
+            <h2 class="pc-sec-title">
+              How to take care<br>
+              <span class="pc-title-line"></span> of your pets
+            </h2>
+
+            <p>
+              Là người nuôi thú cưng, việc phải để bé ở nhà một mình khi đi công tác, du lịch hay bận làm việc cả ngày tại văn phòng luôn khiến bạn lo lắng.
+            </p>
+            <p>
+              Tìm một người trông giữ chó mèo có vẻ đơn giản, nhưng nếu bé cưng của bạn cần chế độ dinh dưỡng riêng, uống thuốc đúng giờ hoặc dạo bộ theo khung giờ cố định? Đội ngũ bác sĩ và chuyên viên Pet.care luôn sẵn sàng chăm sóc theo đúng thói quen của từng bé.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: OUR SERVICES & 4 VERTICAL PILL STATS (85+, 96K, 60+, 99%)
+         ========================================== -->
+    <section class="pc-services-sec" id="services">
+      <div class="pc-container">
+        <div class="pc-services-grid">
+          <div class="pc-srv-copy">
+            <h2 class="pc-sec-title">Our Services</h2>
+            <p class="pc-srv-intro">
+              Với đội ngũ bác sĩ thú y và chuyên viên giàu kinh nghiệm, chúng tôi thấu hiểu thể trạng và tính cách của từng bé thú cưng.
+            </p>
+
+            <ul class="pc-srv-list">
+              <li>
+                <span class="pc-check-ico">✓</span>
+                <span>Treatment for heart related diseases · Khám &amp; siêu âm tim mạch thú y.</span>
+              </li>
+              <li>
+                <span class="pc-check-ico">✓</span>
+                <span>Medical treatment for disorders · Điều trị chuyên sâu tiêu hóa &amp; dinh dưỡng.</span>
+              </li>
+              <li>
+                <span class="pc-check-ico">✓</span>
+                <span>Broken bone treatment · Cấp cứu, phẫu thuật xương khớp &amp; phục hồi chức năng.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pc-srv-visual">
+            <div class="pc-vet-pill pc-bg-blush">
+              <img src="img/vet-tabby-pink.jpg" alt="Bác sĩ thú y kiểm tra sức khỏe cho mèo mướp" loading="lazy">
+              <div class="pc-pill-dots" aria-hidden="true">
+                <i class="is-active"></i><i></i><i></i><i></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Vertical Capsule Stats Row -->
+        <div class="pc-stats-card">
+          <div class="pc-stats-grid">
+            <div class="pc-stat-pill">
+              <span class="pc-stat-circle pc-sc-blue" aria-hidden="true">🏅</span>
+              <strong>85+</strong>
+              <small>Award</small>
+            </div>
+
+            <div class="pc-stat-pill">
+              <span class="pc-stat-circle pc-sc-coral" aria-hidden="true">🛡️</span>
+              <strong>96K</strong>
+              <small>Clients</small>
+            </div>
+
+            <div class="pc-stat-pill">
+              <span class="pc-stat-circle pc-sc-yellow" aria-hidden="true">🐾</span>
+              <strong>60+</strong>
+              <small>Employees</small>
+            </div>
+
+            <div class="pc-stat-pill">
+              <span class="pc-stat-circle pc-sc-teal" aria-hidden="true">➕</span>
+              <strong>99%</strong>
+              <small>Protection</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: "YOUR FURRY FRIEND IS IN SAFE HANDS"
+         ========================================== -->
+    <section class="pc-safehands-sec" id="safe-hands">
+      <div class="pc-container pc-safehands-grid">
+        <div class="pc-sh-oval pc-bg-teal">
+          <img src="img/dog-teal.jpg" alt="Chó Poodle trắng xù đáng yêu trên nền xanh ngọc" loading="lazy">
+        </div>
+
+        <div class="pc-sh-copy">
+          <h2 class="pc-sec-title">
+            Your furry friend is<br>
+            In Safe Hands
+          </h2>
+          <p>
+            Mỗi bé cưng khi lưu trú tại khách sạn thú cưng Pet.care đều có lịch trình dạo bộ 1-kèm-1 riêng biệt, phòng nghỉ khử khuẩn chuẩn y khoa và camera trực tuyến 24/7 để chủ nuôi theo dõi mọi lúc mọi nơi.
+          </p>
+          <button type="button" class="pc-readmore-link" data-open-modal="Tư Vấn Gói Lưu Trú Khách Sạn Thú Cưng &amp; Camera 24/7">
+            <span>Read More</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: TESTIMONIAL CARD ("This is my favourite Pet care agency.")
+         ========================================== -->
+    <section class="pc-testi-sec">
+      <div class="pc-container">
+        <div class="pc-testi-card">
+          <div class="pc-testi-copy">
+            <h2 class="pc-sec-title">
+              This is my favourite<br>
+              Pet care agency.
+            </h2>
+
+            <blockquote class="pc-testi-quote" id="pcTestiQuote">
+              “Nơi duy nhất tôi hoàn toàn yên tâm gửi bé cưng mỗi khi đi công tác xa. Điều duy nhất khiến tôi 'đau đầu' là bé vui đến mức chẳng muốn về nhà! Các bạn nhân viên cực kỳ nhẹ nhàng và luôn gửi hình ảnh, video bé chơi đùa mỗi buổi chiều.”
+            </blockquote>
+
+            <div class="pc-testi-arrows">
+              <button type="button" class="pc-arrow-btn" id="pcTestiPrev" aria-label="Đánh giá trước">←</button>
+              <button type="button" class="pc-arrow-btn" id="pcTestiNext" aria-label="Đánh giá tiếp theo">→</button>
+            </div>
+          </div>
+
+          <div class="pc-testi-oval pc-bg-sunny">
+            <div class="pc-testi-person">
+              <strong id="pcTestiName">Christina Klein · Minh Thảo</strong>
+              <small id="pcTestiRole">CEO – Designtech</small>
+            </div>
+            <img src="img/cat-peach.jpg" alt="Khách hàng Pet.care" id="pcTestiImg" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: NEWSLETTER & 4-COLUMN FOOTER
+         ========================================== -->
+    <section class="pc-newsletter-sec">
+      <div class="pc-container">
+        <div class="pc-newsletter-box">
+          <h2>
+            Subscribe Newsletter &amp; get<br>
+            Pet.care News
+          </h2>
+
+          <form class="pc-nl-form" id="pcNewsletterForm">
+            <input type="email" placeholder="Enter your E-mail address" required aria-label="Email của bạn">
+            <button type="submit" class="pc-btn-coral">Subscribe Now</button>
+          </form>
+        </div>
+
+        <!-- 4-Column Footer -->
+        <footer class="pc-footer">
+          <div class="pc-footer-grid">
+            <div class="pc-footer-brand">
+              <a href="#top" class="pc-logo">Pet<span class="pc-coral">.</span>care</a>
+              <h4>Opening times</h4>
+              <p>Monday – Saturday: 10am – 4pm<br>Sunday: Closed</p>
+              <div class="pc-socials">
+                <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" aria-label="Zalo">Z</a>
+                <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" aria-label="Telegram">T</a>
+                <a href="tel:0974100372" aria-label="Hotline">📞</a>
+              </div>
+            </div>
+
+            <div class="pc-footer-col">
+              <h4>Address</h4>
+              <ul>
+                <li>15-17 Oldgate</li>
+                <li>Morpeth · Quận 1, TP.HCM</li>
+                <li><a href="tel:0974100372">+84 0974 100 372</a></li>
+                <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">info@petcare.vn</a></li>
+              </ul>
+            </div>
+
+            <div class="pc-footer-col">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#services">Cats · Chăm sóc Mèo</a></li>
+                <li><a href="#safe-hands">Puppy · Chăm sóc Cún</a></li>
+                <li><a href="#take-care">Kitten · Mèo con</a></li>
+                <li><a href="#services">Whole Pets</a></li>
+                <li><a href="#services">Small Animal</a></li>
+              </ul>
+            </div>
+
+            <div class="pc-footer-col">
+              <h4>Here To Help</h4>
+              <ul>
+                <li><a href="#take-care">About Us</a></li>
+                <li><a href="#services">FAQ</a></li>
+                <li><a href="#safe-hands">Blog</a></li>
+                <li><a href="../../index.html#templates">← Kho Giao Diện</a></li>
+                <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pc-footer-copy">
+            <span>© 2026 Pet.care Veterinary &amp; Pet Sitting. All rights reserved · Crafted by Hoang Phuong</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ==========================================
+       PET CARE APPOINTMENT BOOKING MODAL
+       ========================================== -->
+  <div class="pc-modal-backdrop" id="pcModal" aria-hidden="true">
+    <div class="pc-modal-card" role="dialog" aria-modal="true" aria-labelledby="pcModalTitle">
+      <button type="button" class="pc-modal-close" id="pcModalClose" aria-label="Đóng">✕</button>
+      <span class="pc-modal-badge">🐾 PET.CARE · VETERINARY &amp; SITTING</span>
+      <h3 id="pcModalTitle">Đặt Lịch Chăm Sóc &amp; Khám Thú Y</h3>
+      <p class="pc-modal-sub">Để lại thông tin của bạn và bé cưng để bác sĩ thú y Pet.care xác nhận lịch hẹn ngay qua Zalo.</p>
+
+      <form id="pcModalForm" class="pc-modal-form">
+        <input type="text" id="pcCustName" placeholder="Họ và tên Chủ nuôi *" required>
+        <input type="tel" id="pcCustPhone" placeholder="Số điện thoại Zalo *" required>
+        <div class="pc-modal-row-2">
+          <select id="pcServiceType">
+            <option value="Khách sạn thú cưng & Trông giữ">Khách sạn thú cưng &amp; Trông giữ</option>
+            <option value="Spa Grooming & Cắt tỉa lông">Spa Grooming &amp; Cắt tỉa lông</option>
+            <option value="Khám tổng quát & Tiêm phòng Thú y">Khám tổng quát &amp; Tiêm phòng Thú y</option>
+            <option value="Huấn luyện & Dạo bộ 1-kèm-1">Huấn luyện &amp; Dạo bộ 1-kèm-1</option>
+          </select>
+          <input type="text" id="pcPetInfo" placeholder="Tên bé & Giống (VD: Mèo Anh 3kg)">
+        </div>
+        <textarea id="pcCustNote" rows="2" placeholder="Ghi chú ngày gửi / triệu chứng hoặc yêu cầu đặc biệt..."></textarea>
+
+        <div class="pc-modal-actions">
+          <button type="submit" class="pc-btn-coral">Đặt Lịch Qua Zalo ↗</button>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="pc-btn-tg-modal">Chat Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="pc-toast" id="pcToast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>
+
