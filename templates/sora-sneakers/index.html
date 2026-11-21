@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SORA SNEAKERS – Giày Sneaker Streetwear &amp; Thể Thao Hiệu Năng Cao</title>
+  <meta name="description" content="SORA SNEAKERS – Thương hiệu giày sneaker đương đại kết hợp hiệu năng vận động, đệm êm vượt trội và phong cách streetwear hiện đại. Khám phá dòng flagship SORA ONE.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Zalo</a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+    @media(max-width:520px){#hp-bar{padding:0 10px!important;gap:6px!important}#hp-bar span:last-child{gap:5px!important}#hp-bar a{font-size:11px!important;padding:5px 9px!important}#hp-bar>a:first-child{padding:0!important;font-size:12px!important}}
+    @media(max-width:360px){#hp-bar>span:last-child>a:first-child{padding:5px 7px!important;font-size:10px!important}}@media(max-width:479px){#hp-back{padding:5px 8px!important;font-size:10.5px!important}#hp-bar{padding:0 8px!important;gap:5px!important}}</style>
+
+  <!-- MAIN PAGE SHELL -->
+  <div class="sr-page-shell" id="top">
+
+    <!-- ==========================================
+         SECTION 1: MINIMAL STREETWEAR NAVBAR & HERO ("NOT MADE TO BLEND IN.")
+         ========================================== -->
+    <header class="sr-navbar">
+      <div class="sr-container sr-navbar-inner">
+        <a href="#top" class="sr-logo">
+          <span class="sr-logo-main">SORA</span>
+          <span class="sr-logo-sub">S N E A K E R S</span>
+        </a>
+
+        <nav class="sr-nav-links" id="srNavLinks">
+          <a href="#top" class="sr-nav-link is-active">Trang Chủ</a>
+          <a href="#range" class="sr-nav-link">Giày Sneaker</a>
+          <a href="#urban" class="sr-nav-link">Bộ Sưu Tập</a>
+          <a href="#sora-one" class="sr-nav-link">Sora One</a>
+          <a href="#details" class="sr-nav-link">Câu Chuyện</a>
+        </nav>
+
+        <div class="sr-nav-icons">
+          <a href="#sora-one" class="sr-icon-btn" aria-label="Tìm kiếm">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+          </a>
+          <button type="button" class="sr-icon-btn" id="srBagTrigger" aria-label="Giỏ hàng">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span class="sr-bag-count" id="srBagCount">1</span>
+          </button>
+          <button type="button" class="sr-burger" id="srBurger" aria-label="Mở menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="sr-hero">
+      <div class="sr-container sr-hero-grid">
+        <!-- Left Copy -->
+        <div class="sr-hero-copy">
+          <div class="sr-eyebrow">
+            <span class="sr-slashes"><i></i><i></i></span>
+            <span>FOOTWEAR / THIẾT KẾ CHO CHUYỂN ĐỘNG</span>
+          </div>
+
+          <h1 class="sr-hero-title">
+            KHÔNG SINH RA<br>
+            ĐỂ <span class="sr-blue">HÒA LẪN.</span>
+          </h1>
+
+          <p class="sr-hero-desc">
+            Dòng sneaker đương đại kết hợp hiệu năng vận động đỉnh cao, đệm êm suốt ngày dài và phong cách streetwear hiện đại.
+          </p>
+
+          <div class="sr-hero-ctas">
+            <a href="#sora-one" class="sr-btn-volt">
+              <span>MUA BỘ SƯU TẬP</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="#details" class="sr-btn-outline">
+              CÂU CHUYỆN SORA
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Visual with Diagonal Royal-Blue Geometric Slash -->
+        <div class="sr-hero-visual">
+          <div class="sr-blue-slash" aria-hidden="true"></div>
+          <div class="sr-hero-photo-wrap">
+            <img src="img/hero-model.jpg" alt="Người mẫu streetwear diện giày SORA ONE trắng xanh Royal trên bậc thang bê tông" class="sr-hero-img" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: EXPLORE OUR RANGE ("SNEAKERS FOR EVERY MOVE.")
+         ========================================== -->
+    <section class="sr-range-sec" id="range">
+      <div class="sr-container">
+        <div class="sr-range-header">
+          <div>
+            <div class="sr-dash-label">
+              <span class="sr-dash sr-dash-blue"></span>
+              <span>KHÁM PHÁ DÒNG GIÀY · EXPLORE OUR RANGE</span>
+            </div>
+            <h2 class="sr-sec-title">
+              SNEAKERS<br>
+              CHO MỌI<br>
+              BƯỚC CHẠY.
+            </h2>
+          </div>
+
+          <div class="sr-range-intro">
+            <p>
+              Từ những đôi giày dạo phố tối giản hàng ngày đến thiết kế hiệu năng cao cho vận động — khám phá bộ sưu tập được chế tác riêng cho nhịp sống của bạn.
+            </p>
+            <a href="#sora-one" class="sr-link-blue">
+              <span>XEM TẤT CẢ GIÀY</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4-Column Category Grid -->
+        <div class="sr-cat-grid">
+          <article class="sr-cat-card" data-select-color="0">
+            <div class="sr-cat-img-box">
+              <img src="img/sneaker-blue.jpg" alt="Lifestyle Sneakers - Giày Thường Ngày" loading="lazy">
+            </div>
+            <div class="sr-cat-foot">
+              <h3>Lifestyle<br>Sneakers</h3>
+              <span class="sr-cat-arrow">→</span>
+            </div>
+          </article>
+
+          <article class="sr-cat-card" data-select-color="1">
+            <div class="sr-cat-img-box">
+              <img src="img/sneaker-black-volt.jpg" alt="Performance Sneakers - Giày Hiệu Năng" loading="lazy">
+            </div>
+            <div class="sr-cat-foot">
+              <h3>Performance<br>Sneakers</h3>
+              <span class="sr-cat-arrow">→</span>
+            </div>
+          </article>
+
+          <article class="sr-cat-card" data-select-color="2">
+            <div class="sr-cat-img-box">
+              <img src="img/sneaker-white.jpg" alt="Minimal Sneakers - Giày Tối Giản" loading="lazy">
+            </div>
+            <div class="sr-cat-foot">
+              <h3>Minimal<br>Sneakers</h3>
+              <span class="sr-cat-arrow">→</span>
+            </div>
+          </article>
+
+          <article class="sr-cat-card" data-select-color="3">
+            <div class="sr-cat-img-box">
+              <img src="img/urban-stairs.jpg" alt="Running Shoes - Giày Chạy Bộ" loading="lazy">
+            </div>
+            <div class="sr-cat-foot">
+              <h3>Running<br>Shoes</h3>
+              <span class="sr-cat-arrow">→</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: LIMITED EDITION ("URBAN COLLECTION.") & 4 ICON PILLARS
+         ========================================== -->
+    <section class="sr-urban-sec" id="urban">
+      <div class="sr-urban-banner">
+        <div class="sr-container sr-urban-grid">
+          <div class="sr-urban-copy">
+            <div class="sr-dash-label sr-label-light">
+              <span class="sr-dash sr-dash-volt"></span>
+              <span>PHIÊN BẢN GIỚI HẠN · LIMITED EDITION</span>
+            </div>
+
+            <h2 class="sr-urban-title">
+              URBAN<br>
+              COLLECTION.
+            </h2>
+
+            <p class="sr-urban-desc">
+              Bản phối mới đầy táo bạo dung hòa chất bụi bặm đường phố với đệm êm linh hoạt mỗi ngày.
+            </p>
+
+            <a href="#sora-one" class="sr-btn-volt">
+              <span>SĂN NGAY BỘ DROP</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="sr-urban-visual">
+            <img src="img/urban-stairs.jpg" alt="Giày SORA Urban Collection bước trên bậc thang bê tông" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-Column Feature Icons Bar -->
+      <div class="sr-features-bar">
+        <div class="sr-container sr-features-grid">
+          <div class="sr-feat-col">
+            <span class="sr-feat-ico" aria-hidden="true">🪶</span>
+            <strong>Siêu Nhẹ &amp; Êm Ái<br><small>All-Day Comfort</small></strong>
+          </div>
+
+          <div class="sr-feat-col">
+            <span class="sr-feat-ico" aria-hidden="true">❖</span>
+            <strong>Vật Liệu Thoáng Khí<br><small>Breathable Upper</small></strong>
+          </div>
+
+          <div class="sr-feat-col">
+            <span class="sr-feat-ico" aria-hidden="true">⚡</span>
+            <strong>Đệm Phản Hồi Lực<br><small>Cushioned Support</small></strong>
+          </div>
+
+          <div class="sr-feat-col">
+            <span class="sr-feat-ico" aria-hidden="true">💎</span>
+            <strong>Bền Bỉ Mọi Địa Hình<br><small>Everyday Versatility</small></strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: INTERACTIVE FLAGSHIP PRODUCT SHOWCASE ("SORA ONE")
+         ========================================== -->
+    <section class="sr-pdp-sec" id="sora-one">
+      <div class="sr-container">
+        <div class="sr-breadcrumb">
+          <a href="#top">Trang Chủ</a>
+          <span>/</span>
+          <a href="#range">Sneakers</a>
+          <span>/</span>
+          <strong>Sora One</strong>
+        </div>
+
+        <div class="sr-pdp-grid">
+          <!-- Left Studio Gallery (Vertical Thumbnails + Main Royal-Blue Backdrop Stage) -->
+          <div class="sr-pdp-gallery">
+            <div class="sr-pdp-thumbs">
+              <button type="button" class="sr-thumb-btn is-active" data-pdp-img="img/sneaker-blue.jpg">
+                <img src="img/sneaker-blue.jpg" alt="Góc nghiêng Sora One">
+              </button>
+              <button type="button" class="sr-thumb-btn" data-pdp-img="img/macro-mesh.jpg">
+                <img src="img/macro-mesh.jpg" alt="Cận cảnh chất liệu lưới 3D Sora One">
+              </button>
+              <button type="button" class="sr-thumb-btn" data-pdp-img="img/urban-stairs.jpg">
+                <img src="img/urban-stairs.jpg" alt="Sora One trên chân thực tế">
+              </button>
+            </div>
+
+            <div class="sr-pdp-main-photo">
+              <img src="img/sneaker-blue.jpg" alt="Giày Flagship SORA ONE White / Royal Blue" id="srPdpMainImg">
+            </div>
+          </div>
+
+          <!-- Right Interactive Configurator -->
+          <div class="sr-pdp-info">
+            <div class="sr-eyebrow">
+              <span class="sr-slashes sr-slashes-volt"><i></i><i></i></span>
+              <span>SORA ONE · FLAGSHIP</span>
+            </div>
+
+            <h2 class="sr-pdp-title" id="srPdpTitle">SORA ONE</h2>
+            <p class="sr-pdp-subtitle">Lifestyle Sneaker · Giày Thể Thao Đa Năng</p>
+
+            <div class="sr-pdp-price" id="srPdpPrice">2.890.000đ <small>($129.00)</small></div>
+
+            <div class="sr-pdp-rating">
+              <span class="sr-stars-blue">★★★★★</span>
+              <span>4.8 (1,246 đánh giá)</span>
+            </div>
+
+            <!-- Colourway Swatches -->
+            <div class="sr-config-block">
+              <div class="sr-config-label">
+                MÀU SẮC: <strong id="srColorName">Trắng / Xanh Royal (White / Royal Blue)</strong>
+              </div>
+              <div class="sr-color-swatches" id="srColorSwatches">
+                <button type="button" class="sr-swatch-btn is-active" data-color="Trắng / Xanh Royal (White / Royal Blue)" data-price="2890000" data-img="img/sneaker-blue.jpg">
+                  <img src="img/sneaker-blue.jpg" alt="White / Royal Blue">
+                </button>
+                <button type="button" class="sr-swatch-btn" data-color="Đen / Đế Volt (Black / Neon Volt)" data-price="3150000" data-img="img/sneaker-black-volt.jpg">
+                  <img src="img/sneaker-black-volt.jpg" alt="Black / Neon Volt">
+                </button>
+                <button type="button" class="sr-swatch-btn" data-color="Trắng Thuần (Triple White Minimal)" data-price="2690000" data-img="img/sneaker-white.jpg">
+                  <img src="img/sneaker-white.jpg" alt="Triple White">
+                </button>
+                <button type="button" class="sr-swatch-btn" data-color="Đen / Trắng Đô Thị (Urban Edition)" data-price="3390000" data-img="img/urban-stairs.jpg">
+                  <img src="img/urban-stairs.jpg" alt="Urban Edition">
+                </button>
+              </div>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="sr-config-block">
+              <div class="sr-config-label">
+                CHỌN SIZE (EU / US): <strong id="srSizeLabel">41 (US 9)</strong>
+              </div>
+              <div class="sr-size-grid" id="srSizeGrid">
+                <button type="button" class="sr-size-btn" data-size="39 (US 7)">39</button>
+                <button type="button" class="sr-size-btn" data-size="40 (US 8)">40</button>
+                <button type="button" class="sr-size-btn is-active" data-size="41 (US 9)">41</button>
+                <button type="button" class="sr-size-btn" data-size="42 (US 10)">42</button>
+                <button type="button" class="sr-size-btn" data-size="43 (US 11)">43</button>
+                <button type="button" class="sr-size-btn" data-size="44 (US 12)">44</button>
+              </div>
+            </div>
+
+            <!-- Add to Bag & Wishlist Row -->
+            <div class="sr-pdp-actions">
+              <button type="button" class="sr-btn-add-bag" id="srAddToBagBtn">
+                <span>🛍️ THÊM VÀO GIỎ HÀNG · ADD TO BAG</span>
+              </button>
+              <button type="button" class="sr-btn-wish" id="srWishBtn" aria-label="Yêu thích">♡</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: THE DETAILS ("COMFORT MEETS STYLE."), ACCORDION & "THE SORA ONE."
+         ========================================== -->
+    <section class="sr-details-sec" id="details">
+      <div class="sr-container">
+
+        <!-- Macro Mesh Upper Split -->
+        <div class="sr-craft-grid">
+          <div class="sr-craft-photo">
+            <img src="img/macro-mesh.jpg" alt="Cận cảnh vải lưới kỹ thuật 3D và logo chữ S thêu xanh Royal" loading="lazy">
+          </div>
+
+          <div class="sr-craft-copy">
+            <div class="sr-dash-label">
+              <span class="sr-dash sr-dash-volt"></span>
+              <span>CHI TIẾT CHẾ TÁC · THE DETAILS</span>
+            </div>
+            <h2 class="sr-sec-title">
+              ÊM ÁI HÒA QUYỆN<br>
+              PHONG CÁCH.
+            </h2>
+            <p>
+              Chất liệu lưới dệt kỹ thuật 3D thoáng khí kết hợp đệm giữa CloudFoam đàn hồi tức thì và phom dáng gọn gàng, sắc sảo cho mọi hoạt động thường ngày.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Expandable Product Spec Accordions -->
+        <div class="sr-acc-list" id="srAccList">
+          <div class="sr-acc-item is-open">
+            <button type="button" class="sr-acc-q">
+              <span>CHI TIẾT SẢN PHẨM · PRODUCT DETAILS</span>
+              <span class="sr-acc-icon">−</span>
+            </button>
+            <div class="sr-acc-a">
+              <p>Thân giày kết hợp da Microfiber cao cấp và lưới 3D Engineered Mesh siêu thoáng. Đế giữa EVA kép hấp thụ xung lực 78%, đế ngoài cao su rãnh đa hướng chống trượt chuẩn đường phố.</p>
+            </div>
+          </div>
+
+          <div class="sr-acc-item">
+            <button type="button" class="sr-acc-q">
+              <span>BẢNG SIZE &amp; PHOM DÁNG · SIZE &amp; FIT</span>
+              <span class="sr-acc-icon">+</span>
+            </button>
+            <div class="sr-acc-a">
+              <p>Phom chuẩn True-to-Size ôm gọn bàn chân châu Á. Nếu bàn chân bè ngang hoặc thích mang tất dày thể thao, bạn có thể tăng thêm 0.5 – 1 size để thoải mái nhất.</p>
+            </div>
+          </div>
+
+          <div class="sr-acc-item">
+            <button type="button" class="sr-acc-q">
+              <span>GIAO HÀNG &amp; ĐỔI TRẢ 30 NGÀY · SHIPPING &amp; RETURNS</span>
+              <span class="sr-acc-icon">+</span>
+            </button>
+            <div class="sr-acc-a">
+              <p>Miễn phí giao hàng toàn quốc cho mọi đơn hàng SORA. Hỗ trợ kiểm tra hàng trước khi thanh toán và đổi size miễn phí tận nhà trong vòng 30 ngày.</p>
+            </div>
+          </div>
+
+          <div class="sr-acc-item">
+            <button type="button" class="sr-acc-q">
+              <span>HƯỚNG DẪN VỆ SINH &amp; BẢO QUẢN · CARE INSTRUCTIONS</span>
+              <span class="sr-acc-icon">+</span>
+            </button>
+            <div class="sr-acc-a">
+              <p>Lau nhẹ bề mặt bằng khăn ẩm và dung dịch bọt vệ sinh sneaker chuyên dụng. Phơi nơi thoáng mát, tránh ánh nắng gắt trực tiếp hoặc sấy nhiệt độ cao.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial Split Banner ("THE SORA ONE.") -->
+        <div class="sr-soraone-banner">
+          <div class="sr-so-photo">
+            <img src="img/hero-model.jpg" alt="Phong cách đường phố cùng SORA ONE" loading="lazy">
+          </div>
+          <div class="sr-so-copy">
+            <span class="sr-volt-corner" aria-hidden="true"></span>
+            <h2>
+              THE<br>
+              SORA <span class="sr-blue">ONE.</span>
+            </h2>
+            <p>
+              Thiết kế sneaker đa năng nhất của chúng tôi. Tối giản, êm ái vượt trội và sẵn sàng đồng hành cùng bạn ở bất cứ đâu.
+            </p>
+            <a href="#sora-one" class="sr-btn-blue">
+              <span>KHÁM PHÁ SORA ONE</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: DARK SHOWCASE ("YOU MAY ALSO LIKE") & FOOTER
+         ========================================== -->
+    <section class="sr-related-sec">
+      <div class="sr-container">
+        <div class="sr-related-head">
+          <div class="sr-dash-label sr-label-light">
+            <span class="sr-dash sr-dash-volt"></span>
+            <h2 class="sr-related-title">CÓ THỂ BẠN CŨNG THÍCH · YOU MAY ALSO LIKE</h2>
+          </div>
+          <a href="#sora-one" class="sr-viewall-volt">
+            <span>XEM TẤT CẢ GIÀY</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <!-- 4 Dark Product Cards -->
+        <div class="sr-related-grid">
+          <article class="sr-rel-card" data-quick-buy="Sora Run (White / Royal)" data-quick-price="3150000" data-quick-img="img/sneaker-blue.jpg">
+            <div class="sr-rel-img">
+              <img src="img/sneaker-blue.jpg" alt="Sora Run" loading="lazy">
+            </div>
+            <div class="sr-rel-body">
+              <div>
+                <h3>Sora Run</h3>
+                <span>3.150.000đ <small>($139.00)</small></span>
+              </div>
+              <button type="button" class="sr-rel-arrow" aria-label="Chọn mua Sora Run">→</button>
+            </div>
+          </article>
+
+          <article class="sr-rel-card" data-quick-buy="Sora Elite (Midnight Blue)" data-quick-price="3590000" data-quick-img="img/urban-stairs.jpg">
+            <div class="sr-rel-img">
+              <img src="img/urban-stairs.jpg" alt="Sora Elite" loading="lazy">
+            </div>
+            <div class="sr-rel-body">
+              <div>
+                <h3>Sora Elite</h3>
+                <span>3.590.000đ <small>($159.00)</small></span>
+              </div>
+              <button type="button" class="sr-rel-arrow" aria-label="Chọn mua Sora Elite">→</button>
+            </div>
+          </article>
+
+          <article class="sr-rel-card" data-quick-buy="Sora Street (Triple White)" data-quick-price="2690000" data-quick-img="img/sneaker-white.jpg">
+            <div class="sr-rel-img">
+              <img src="img/sneaker-white.jpg" alt="Sora Street" loading="lazy">
+            </div>
+            <div class="sr-rel-body">
+              <div>
+                <h3>Sora Street</h3>
+                <span>2.690.000đ <small>($119.00)</small></span>
+              </div>
+              <button type="button" class="sr-rel-arrow" aria-label="Chọn mua Sora Street">→</button>
+            </div>
+          </article>
+
+          <article class="sr-rel-card" data-quick-buy="Sora Max (Black / Neon Volt)" data-quick-price="3390000" data-quick-img="img/sneaker-black-volt.jpg">
+            <div class="sr-rel-img">
+              <img src="img/sneaker-black-volt.jpg" alt="Sora Max" loading="lazy">
+            </div>
+            <div class="sr-rel-body">
+              <div>
+                <h3>Sora Max</h3>
+                <span>3.390.000đ <small>($149.00)</small></span>
+              </div>
+              <button type="button" class="sr-rel-arrow" aria-label="Chọn mua Sora Max">→</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Dark Streetwear Footer -->
+        <footer class="sr-footer">
+          <div class="sr-footer-top">
+            <div class="sr-footer-brand">
+              <a href="#top" class="sr-logo sr-logo-light">
+                <span class="sr-logo-main">SORA</span>
+                <span class="sr-logo-sub">S N E A K E R S</span>
+              </a>
+              <p>Contemporary sneakers engineered for movement, all-day comfort and modern streetwear expression.</p>
+            </div>
+
+            <div class="sr-footer-links">
+              <a href="#range">Bộ Sưu Tập</a>
+              <a href="#urban">Urban Drop</a>
+              <a href="#sora-one">Sora One</a>
+              <a href="../../index.html#templates">← Kho Giao Diện</a>
+              <a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Zalo: 0974 100 372</a>
+              <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram</a>
+            </div>
+          </div>
+
+          <div class="sr-footer-copy">
+            <span>© 2026 Sora Sneakers. All rights reserved · Crafted by Hoang Phuong</span>
+            <span>Hotline / Zalo: 0974 100 372</span>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ==========================================
+       SHOPPING BAG & QUICK CHECKOUT MODAL
+       ========================================== -->
+  <div class="sr-modal-backdrop" id="srBagModal" aria-hidden="true">
+    <div class="sr-modal-card" role="dialog" aria-modal="true" aria-labelledby="srModalTitle">
+      <button type="button" class="sr-modal-close" id="srModalClose" aria-label="Đóng">✕</button>
+      <div class="sr-eyebrow">
+        <span class="sr-slashes"><i></i><i></i></span>
+        <span>SORA SNEAKERS · GIỎ HÀNG NHANH</span>
+      </div>
+      <h3 id="srModalTitle">Giỏ Hàng Sneaker Của Bạn</h3>
+
+      <div class="sr-bag-items" id="srBagItems"></div>
+
+      <div class="sr-bag-total-row">
+        <span>Tổng thanh toán (Miễn phí ship toàn quốc):</span>
+        <strong id="srBagTotal">2.890.000đ</strong>
+      </div>
+
+      <form id="srCheckoutForm" class="sr-modal-form">
+        <input type="text" id="srCustName" placeholder="Họ và tên người nhận *" required>
+        <input type="tel" id="srCustPhone" placeholder="Số điện thoại Zalo *" required>
+        <input type="text" id="srCustAddr" placeholder="Địa chỉ nhận hàng (Số nhà, Quận/Huyện, Tỉnh/TP) *" required>
+
+        <div class="sr-modal-actions">
+          <button type="submit" class="sr-btn-zalo-modal">Đặt Hàng Qua Zalo ↗</button>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="sr-btn-tg-modal">Chat Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="sr-toast" id="srToast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>
+
