@@ -2664,15 +2664,18 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   // Start with index 0 (Mẫu 01 newest template) in the center active slot (data-pos="0")
   let activeIndex = 0;
 
-  // Build indicator dots for all templates
+  // Build 5 compact indicator dots (instead of 32 dots)
+  const DOT_COUNT = Math.min(5, total);
   if(dotsBox) dotsBox.innerHTML = '';
-  const dots = cards.map((_, idx) => {
+  const dots = Array.from({ length: DOT_COUNT }, (_, dotIdx) => {
     const dot = document.createElement('button');
     dot.type = 'button';
-    dot.className = 'cards-dot' + (idx === activeIndex ? ' active' : '');
-    dot.setAttribute('aria-label', 'Mẫu ' + (idx + 1));
-    dot.title = cards[idx].querySelector('.sc-label span')?.textContent || ('Mẫu ' + (idx + 1));
-    dot.addEventListener('click', () => goTo(idx));
+    dot.className = 'cards-dot' + (dotIdx === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Chuyển mẫu ' + (dotIdx + 1));
+    dot.addEventListener('click', () => {
+      const currentDot = activeIndex % DOT_COUNT;
+      goTo(activeIndex + (dotIdx - currentDot));
+    });
     if(dotsBox) dotsBox.appendChild(dot);
     return dot;
   });
@@ -2689,13 +2692,14 @@ document.querySelectorAll('.faq-q').forEach(btn => {
         card.setAttribute('data-pos', '3');
       }
     });
-    dots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === activeIndex);
+    const activeDot = ((activeIndex % DOT_COUNT) + DOT_COUNT) % DOT_COUNT;
+    dots.forEach((dot, dotIdx) => {
+      dot.classList.toggle('active', dotIdx === activeDot);
     });
     if(hintEl){
       const currentTitle = cards[activeIndex]?.querySelector('.sc-label span')?.textContent || '';
       const numStr = String(activeIndex + 1).padStart(2, '0') + '/' + String(total).padStart(2, '0');
-      hintEl.textContent = `← Mẫu ${numStr}: ${currentTitle} · Bấm nút 2 bên hoặc vuốt để lật toàn bộ ${total} mẫu →`;
+      hintEl.textContent = `← Mẫu ${numStr}: ${currentTitle} · Bấm nút 2 bên hoặc vuốt để lật →`;
     }
   }
 
