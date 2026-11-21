@@ -148,5 +148,35 @@ document.addEventListener('DOMContentLoaded', () => {
       toastEl.classList.remove('is-visible');
     }, 2800);
   }
+
+  // 6. Smooth Scroll-Reveal & Escape Key Handling
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeReservationModal();
+      if (navLinks) navLinks.classList.remove('is-open');
+    }
+  });
+
+  const revealTargets = document.querySelectorAll(
+    '.jg-why-card, .jg-app-grid > div, .jg-about-grid > div, .jg-item-card, .jg-exp-grid > div, .jg-reserve-grid > div'
+  );
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+    );
+    revealTargets.forEach((el, idx) => {
+      el.classList.add('jg-reveal');
+      el.style.transitionDelay = `${(idx % 3) * 60}ms`;
+      io.observe(el);
+    });
+  }
 });
 

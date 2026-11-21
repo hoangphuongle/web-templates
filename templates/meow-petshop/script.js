@@ -215,5 +215,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   renderCart();
+
+  // 7. Smooth Scroll-Reveal & Escape Key Handling
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeCart();
+      if (navLinks) navLinks.classList.remove('is-open');
+    }
+  });
+
+  const revealTargets = document.querySelectorAll(
+    '.mm-bs-strip, .mm-promo-card, .mm-prod-card, .mm-arch-dome, .mm-contact-stage'
+  );
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+    );
+    revealTargets.forEach((el, idx) => {
+      el.classList.add('mm-reveal');
+      el.style.transitionDelay = `${(idx % 4) * 55}ms`;
+      io.observe(el);
+    });
+  }
 });
 

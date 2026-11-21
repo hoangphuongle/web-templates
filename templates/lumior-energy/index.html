@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumior – Nền Tảng Điện Mặt Trời, Điện Gió &amp; Pin Lưu Trữ Thông Minh</title>
+  <meta name="description" content="Lumior – Hệ sinh thái quản lý điện mặt trời áp mái, tuabin gió và pin lưu trữ thông minh theo thời gian thực cho hộ gia đình, biệt thự và khu đô thị xanh.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Zalo</a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+    @media(max-width:520px){#hp-bar{padding:0 10px!important;gap:6px!important}#hp-bar span:last-child{gap:5px!important}#hp-bar a{font-size:11px!important;padding:5px 9px!important}#hp-bar>a:first-child{padding:0!important;font-size:12px!important}}
+    @media(max-width:360px){#hp-bar>span:last-child>a:first-child{padding:5px 7px!important;font-size:10px!important}}@media(max-width:479px){#hp-back{padding:5px 8px!important;font-size:10.5px!important}#hp-bar{padding:0 8px!important;gap:5px!important}}</style>
+
+  <!-- MAIN PAGE SHELL -->
+  <div class="lm-page-shell" id="top">
+
+    <!-- ==========================================
+         SECTION 1: TOP NAVBAR & SUNLIT COASTAL SOLAR/WIND HERO
+         ========================================== -->
+    <header class="lm-topbar">
+      <div class="lm-container lm-topbar-inner">
+        <a href="#top" class="lm-logo">
+          <span class="lm-logo-clover" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <circle cx="8.5" cy="8.5" r="4" fill="#1F5E3B"/>
+              <circle cx="15.5" cy="8.5" r="4" fill="#328753"/>
+              <circle cx="8.5" cy="15.5" r="4" fill="#328753"/>
+              <circle cx="15.5" cy="15.5" r="4" fill="#89C946"/>
+            </svg>
+          </span>
+          <span>Lumior</span>
+        </a>
+
+        <nav class="lm-nav-links" id="lmNavLinks">
+          <a href="#about" class="lm-nav-link">Nền Tảng</a>
+          <a href="#how-it-works" class="lm-nav-link">Giải Pháp</a>
+          <a href="#calculator" class="lm-nav-link">Bản Đồ Điện</a>
+          <a href="#testimonials" class="lm-nav-link">Khách Hàng</a>
+          <a href="#footer-cta" class="lm-nav-link">Bảng Giá</a>
+        </nav>
+
+        <div class="lm-nav-actions">
+          <button type="button" class="lm-btn-quote-top" data-open-modal="Nhận Báo Giá Lắp Đặt Điện Mặt Trời &amp; Pin Lưu Trữ Lumior">
+            Nhận báo giá
+          </button>
+          <button type="button" class="lm-burger" id="lmBurger" aria-label="Mở menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Panoramic Illustrated Solar & Wind Coastal Hero -->
+    <section class="lm-hero">
+      <img src="img/hero-coastal.jpg" alt="Cánh đồng pin năng lượng mặt trời và tuabin gió ven biển nắng ấm" class="lm-hero-bg" loading="eager">
+      <div class="lm-hero-gradient"></div>
+
+      <div class="lm-container lm-hero-content">
+        <div class="lm-hero-bottom-grid">
+          <h1 class="lm-hero-title">
+            Nhìn rõ từng dòng<br>
+            <span class="lm-title-sun-row">
+              <span class="lm-sun-3d" aria-hidden="true">☀️</span>
+              <span>năng lượng</span>
+            </span><br>
+            đang vận hành
+          </h1>
+
+          <div class="lm-hero-right-box">
+            <p class="lm-hero-desc">
+              Sản lượng trực tiếp từ từng tấm pin mặt trời, tuabin gió và hệ thống pin lưu trữ trong khu phố — hiển thị sống động mỗi khi trời hửng nắng.
+            </p>
+            <div class="lm-hero-btns">
+              <button type="button" class="lm-btn-white-pill" data-open-modal="Đặt Lịch Trải Nghiệm Demo Nền Tảng Lumior">
+                <span>Đặt lịch Demo</span>
+                <span class="lm-lime-dot-arrow" aria-hidden="true">↗</span>
+              </button>
+              <a href="#how-it-works" class="lm-btn-lime-pill">
+                Xem bản đồ điện
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: ABOUT LUMIOR EDITORIAL STATEMENT & 4-CARD BENTO METRICS
+         ========================================== -->
+    <section class="lm-about-sec" id="about">
+      <div class="lm-container">
+
+        <!-- Editorial Split Statement -->
+        <div class="lm-about-editorial">
+          <span class="lm-eyebrow">Về Lumior · About Lumior</span>
+          <h2 class="lm-editorial-quote">
+            Chúng tôi tin rằng năng lượng sạch không nên khô khan như một bảng tính Excel — mà phải gần gũi như chính ngôi nhà của bạn.
+            <span>Lumior biến từng tấm pin mặt trời, tuabin gió và bộ pin lưu trữ thành một bức tranh sống động, dễ hiểu cho cả khu đô thị.</span>
+          </h2>
+        </div>
+
+        <!-- 4-Card Bento Metrics Row -->
+        <div class="lm-bento-4col">
+
+          <!-- Card 1: Co-op Members (2,300+) -->
+          <article class="lm-bento-card lm-bento-white">
+            <div class="lm-avatars-cloud">
+              <img src="img/villa-solar.jpg" alt="Thành viên 1" class="lm-av lm-av-1">
+              <img src="img/hero-coastal.jpg" alt="Thành viên 2" class="lm-av lm-av-2">
+              <img src="img/bento-river.jpg" alt="Thành viên 3" class="lm-av lm-av-3">
+              <img src="img/footer-bay.jpg" alt="Thành viên 4" class="lm-av lm-av-4">
+              <img src="img/villa-solar.jpg" alt="Thành viên 5" class="lm-av lm-av-5">
+            </div>
+            <div class="lm-bento-bottom">
+              <small>Hộ gia đình &amp; Thành viên</small>
+              <strong class="lm-bento-num">2,300+</strong>
+            </div>
+          </article>
+
+          <!-- Card 2: Deep Forest Green — CO2 Avoided (1,840 t) -->
+          <article class="lm-bento-card lm-bento-forest">
+            <div class="lm-bento-top">
+              <small>CO₂ cắt giảm năm 2026</small>
+              <strong class="lm-bento-num">1,840<sub>t</sub></strong>
+            </div>
+
+            <div class="lm-bolt-3d" aria-hidden="true">⚡</div>
+
+            <p class="lm-bento-forest-note">
+              Theo dõi từng giờ so với lưới điện quốc gia, sẵn sàng xuất báo cáo xanh ESG thường niên.
+            </p>
+          </article>
+
+          <!-- Card 3: Countries / Regions (9) -->
+          <article class="lm-bento-card lm-bento-white">
+            <p class="lm-bento-regions-text">
+              Vận hành trực tiếp tại Hà Nội, Đà Nẵng, Ninh Thuận, Bình Thuận, TP.HCM và 4 tỉnh thành khác.
+            </p>
+            <div class="lm-bento-map-row">
+              <div class="lm-mini-map-thumb">
+                <img src="img/isometric-island.jpg" alt="Bản đồ vùng năng lượng">
+              </div>
+              <div class="lm-bento-map-num">
+                <small>Khu vực</small>
+                <strong class="lm-bento-num">9</strong>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Full-Bleed Illustrated River Valley Card (60+) -->
+          <article class="lm-bento-card lm-bento-illustrated">
+            <img src="img/bento-river.jpg" alt="Khu đô thị sinh thái năng lượng mặt trời ven sông" class="lm-bento-bg-img" loading="lazy">
+            <div class="lm-bento-img-shade"></div>
+
+            <div class="lm-bento-top lm-z2">
+              <small>Khu đô thị &amp; Hợp tác xã</small>
+              <strong class="lm-bento-num">60+</strong>
+            </div>
+
+            <p class="lm-bento-img-note lm-z2">
+              Từ 12 biệt thự đồi thông đến 400 mái nhà khu đô thị ven biển — mỗi cộng đồng một bản đồ sống.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: HOW IT WORKS ("One team: panels, turbines, batteries")
+         + 3D ISOMETRIC ISLAND & LIVE SOLAR SAVINGS CALCULATOR
+         ========================================== -->
+    <section class="lm-how-sec" id="how-it-works">
+      <div class="lm-container">
+
+        <!-- Section Header Split -->
+        <div class="lm-how-header">
+          <div>
+            <span class="lm-eyebrow">Cách vận hành · How it works</span>
+            <h2 class="lm-sec-title">
+              Một hệ sinh thái: tấm pin,<br>
+              tuabin gió, pin lưu trữ
+            </h2>
+          </div>
+          <p class="lm-how-intro">
+            Lumior kết nối trực tiếp với hệ thống biến tần (Inverter) và thiết bị năng lượng mà gia đình hoặc khu đô thị của bạn đang sở hữu — không cần đục tường, không lắp thêm tủ điện rườm rà.
+          </p>
+        </div>
+
+        <!-- 2-Column Isometric Island + Curved Timeline Steps -->
+        <div class="lm-how-stage">
+
+          <!-- Left: 3D Isometric Energy Island with Live Telemetry Badges -->
+          <div class="lm-island-col">
+            <div class="lm-island-visual">
+              <img src="img/isometric-island.jpg" alt="Mô hình 3D đảo năng lượng sạch với pin mặt trời, tuabin gió và pin lưu trữ" class="lm-island-img" loading="lazy">
+
+              <!-- Floating Live Telemetry Pills -->
+              <div class="lm-telemetry-pill lm-tel-solar">
+                <span class="lm-tel-dot"></span>
+                <span>Solar <strong id="lmTelSolar">3.1 MW</strong></span>
+              </div>
+
+              <div class="lm-telemetry-pill lm-tel-wind">
+                <span class="lm-tel-dot"></span>
+                <span>Wind <strong id="lmTelWind">4.2 MW</strong></span>
+              </div>
+
+              <div class="lm-telemetry-pill lm-tel-battery">
+                <span class="lm-tel-dot lm-dot-green"></span>
+                <span>Battery <strong id="lmTelBattery">84%</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Curved Timeline Arc + 4 Interactive Steps -->
+          <div class="lm-steps-col">
+            <div class="lm-curve-line" aria-hidden="true">
+              <svg viewBox="0 0 60 440" preserveAspectRatio="none">
+                <path d="M12,10 Q52,220 12,430" fill="none" stroke="rgba(15,41,30,0.16)" stroke-width="1.5"/>
+              </svg>
+            </div>
+
+            <div class="lm-steps-stack" id="lmStepsStack">
+              <div class="lm-step-row" data-solar="2.8 MW" data-wind="3.9 MW" data-battery="76%">
+                <span class="lm-step-badge">01</span>
+                <div class="lm-step-text">
+                  <h3>Kết nối mọi thiết bị (Connect everything)</h3>
+                  <p>Quét mã QR trên biến tần (Inverter) hoặc công tơ thông minh để đồng bộ hơn 140+ thương hiệu tấm pin mặt trời, tuabin và pin lưu trữ.</p>
+                </div>
+              </div>
+
+              <div class="lm-step-row is-active" data-solar="3.1 MW" data-wind="4.2 MW" data-battery="84%">
+                <span class="lm-step-badge">02</span>
+                <div class="lm-step-text">
+                  <h3>Theo dõi trực tiếp từng giây (See it live)</h3>
+                  <p>Sản lượng điện từ từng tấm pin và tuabin được làm mới mỗi 5 giây, tích hợp dự báo bức xạ mặt trời theo thời tiết thực tế.</p>
+                </div>
+              </div>
+
+              <div class="lm-step-row" data-solar="3.4 MW" data-wind="4.5 MW" data-battery="96%">
+                <span class="lm-step-badge">03</span>
+                <div class="lm-step-text">
+                  <h3>Lưu trữ thông minh (Store it smart)</h3>
+                  <p>Pin lưu trữ tự động nạp đầy khi giá điện thấp hoặc nắng đỉnh điểm và xả điện êm ái nuôi toàn bộ ngôi nhà suốt giờ cao điểm buổi tối.</p>
+                </div>
+              </div>
+
+              <div class="lm-step-row" data-solar="3.8 MW" data-wind="4.9 MW" data-battery="100%">
+                <span class="lm-step-badge">04</span>
+                <div class="lm-step-text">
+                  <h3>Chia sẻ điện dư &amp; Sinh lời (Share and earn)</h3>
+                  <p>Chia sẻ lượng điện sạch dư thừa cho hàng xóm trong khu đô thị hoặc bán lại lên lưới điện với báo cáo thanh toán tự động hàng tháng.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- INTERACTIVE SOLAR & BATTERY SAVINGS CALCULATOR (TÍNH HIỆU QUẢ ĐIỆN MẶT TRỜI) -->
+        <div class="lm-calc-card" id="calculator">
+          <div class="lm-calc-left">
+            <span class="lm-eyebrow">Tính toán hiệu quả · Solar &amp; Battery Calculator</span>
+            <h3>Ước tính mức tiết kiệm hóa đơn điện hàng tháng của bạn</h3>
+            <p>Kéo thanh trượt theo tiền điện trung bình mỗi tháng để xem cấu hình hệ thống Lumior đề xuất.</p>
+
+            <div class="lm-calc-slider-box">
+              <div class="lm-calc-label-row">
+                <span>Hóa đơn tiền điện hiện tại:</span>
+                <strong id="lmBillVal">3.500.000đ / tháng</strong>
+              </div>
+              <input type="range" id="lmBillRange" min="1500000" max="15000000" step="500000" value="3500000">
+            </div>
+          </div>
+
+          <div class="lm-calc-right">
+            <div class="lm-calc-metrics">
+              <div class="lm-cm-box">
+                <small>Công suất đề xuất</small>
+                <strong id="lmCalcKwp">8 kWp + Pin 10kWh</strong>
+              </div>
+              <div class="lm-cm-box">
+                <small>Tiết kiệm mỗi tháng</small>
+                <strong id="lmCalcSave" class="lm-text-lime">~2.950.000đ (-84%)</strong>
+              </div>
+              <div class="lm-cm-box">
+                <small>CO₂ giảm phát thải</small>
+                <strong id="lmCalcCo2">6.4 tấn / năm</strong>
+              </div>
+            </div>
+
+            <button type="button" class="lm-btn-lime-pill lm-calc-cta" id="lmCalcOpenModal">
+              Nhận Bảng Thiết Kế Hệ Thống Điện Mặt Trời Qua Zalo ↗
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: TESTIMONIALS ("Loved by the people who own the sun")
+         + CO-OP PARTNER LOGOS STRIP
+         ========================================== -->
+    <section class="lm-testi-sec" id="testimonials">
+      <div class="lm-container">
+        <div class="lm-testi-layout">
+
+          <!-- Left Header & Carousel Controls -->
+          <div class="lm-testi-left">
+            <div>
+              <span class="lm-eyebrow">Khách hàng chia sẻ · Testimonials</span>
+              <h2 class="lm-sec-title">
+                Được tin yêu bởi<br>
+                những người làm chủ<br>
+                ánh nắng
+              </h2>
+
+              <div class="lm-rating-line">
+                <strong>4.9</strong>
+                <span class="lm-stars">★★★★★</span>
+                <small>Từ hơn 2,300+ hộ gia đình</small>
+              </div>
+            </div>
+
+            <div class="lm-testi-controls">
+              <button type="button" class="lm-nav-circle" id="lmTestiPrev" aria-label="Đánh giá trước">←</button>
+              <button type="button" class="lm-nav-circle lm-nav-lime" id="lmTestiNext" aria-label="Đánh giá tiếp theo">→</button>
+              <div class="lm-testi-progress">
+                <span id="lmTestiIndex">02</span>
+                <span class="lm-prog-bar"><i id="lmTestiBarFill"></i></span>
+                <span>03</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 2-Card Testimonial Pair (Villa Photo + Dark Forest Quote Card) -->
+          <div class="lm-testi-cards">
+
+            <!-- Left Sunlit Solar Villa Photo Card -->
+            <div class="lm-testi-photo-card">
+              <img src="img/villa-solar.jpg" alt="Biệt thự lắp đặt điện mặt trời Lumior lúc hoàng hôn" id="lmTestiPhoto" loading="lazy">
+              <span class="lm-saved-pill" id="lmTestiSavedPill">Tiết kiệm 41% trong tháng 8</span>
+            </div>
+
+            <!-- Right Deep Forest Green Quote Card -->
+            <article class="lm-testi-quote-card">
+              <div class="lm-tq-top">
+                <span class="lm-stars-white">★★★★★</span>
+                <span class="lm-bill-badge" id="lmTestiBillBadge">-38% hóa đơn điện</span>
+              </div>
+
+              <blockquote class="lm-tq-quote" id="lmTestiQuote">
+                “Pin lưu trữ của gia đình tự động nạp đầy lúc nắng đỉnh điểm với chi phí gần như bằng 0 và nuôi toàn bộ điều hòa, thiết bị điện suốt giờ cao điểm buổi tối. Tôi mở ứng dụng Lumior xem sản lượng điện còn nhiều hơn lướt Instagram.”
+              </blockquote>
+
+              <div class="lm-tq-author">
+                <img src="img/villa-solar.jpg" alt="Chủ nhà" id="lmTestiAvatar">
+                <div>
+                  <strong id="lmTestiAuthor">Marta Kowalczyk · Chị Minh Anh</strong>
+                  <small id="lmTestiRole">Chủ biệt thự EcoVilla · Thành viên từ 2024</small>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+
+        <!-- Partner Energy Co-ops Strip -->
+        <div class="lm-partners-bar">
+          <span class="lm-partners-label">Đồng hành cùng 60+ khu đô thị &amp; hợp tác xã năng lượng</span>
+          <div class="lm-partners-logos">
+            <span>☼ Sol Energia</span>
+            <span>〰 Coopenova</span>
+            <span>⚡ Enerkoop</span>
+            <span>✦ EcoPower</span>
+            <span>◎ WattGrid</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: SCENIC COASTAL ILLUSTRATION CTA ("Let the sun do the paperwork")
+         & DEEP FOREST GREEN ROUNDED FOOTER WITH GIANT NATURE-FILLED "Lumior"
+         ========================================== -->
+    <section class="lm-scenic-footer-wrap" id="footer-cta">
+
+      <!-- Top Centered CTA Header -->
+      <div class="lm-container lm-paperwork-cta">
+        <span class="lm-eyebrow">Cài đặt chỉ trong một tách cà phê · Setup takes one coffee</span>
+        <h2 class="lm-paperwork-title">
+          Để ánh mặt trời<br>
+          lo phần thủ tục
+        </h2>
+        <p class="lm-paperwork-sub">
+          Gia nhập cùng 412 hộ gia đình tại Coastal Ridge và hơn 60+ khu đô thị năng lượng sạch.
+        </p>
+        <div class="lm-paperwork-btns">
+          <button type="button" class="lm-btn-white-pill" data-open-modal="Tải Ứng Dụng Quản Lý Điện Mặt Trời Lumior (iOS &amp; Android)">
+            <span>Tải ứng dụng</span>
+            <span class="lm-lime-dot-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button type="button" class="lm-btn-lime-pill" data-open-modal="Đặt Lịch Khảo Sát &amp; Demo Hệ Thống Điện Mặt Trời Lumior">
+            Đặt lịch khảo sát &amp; Demo
+          </button>
+        </div>
+      </div>
+
+      <!-- Panoramic Coastal Bay Illustration Backdrop -->
+      <div class="lm-scenic-bay-bg">
+        <img src="img/footer-bay.jpg" alt="Vịnh biển xanh và đồi cây năng lượng sạch Lumior" loading="lazy">
+      </div>
+
+      <!-- Deep Forest Green Rounded Footer Box -->
+      <footer class="lm-footer-box">
+        <div class="lm-footer-top">
+          <!-- Col 1: Brand + Newsletter Pill -->
+          <div class="lm-footer-brand">
+            <a href="#top" class="lm-logo lm-logo-light">
+              <span class="lm-logo-clover" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <circle cx="8.5" cy="8.5" r="4" fill="#89C946"/>
+                  <circle cx="15.5" cy="8.5" r="4" fill="#DCEB66"/>
+                  <circle cx="8.5" cy="15.5" r="4" fill="#DCEB66"/>
+                  <circle cx="15.5" cy="15.5" r="4" fill="#FFFFFF"/>
+                </svg>
+              </span>
+              <span>Lumior</span>
+            </a>
+
+            <h3>Năng lượng sạch hiển thị rõ ràng trong tầm mắt.</h3>
+
+            <form class="lm-newsletter-pill" id="lmNewsletterForm">
+              <input type="email" placeholder="Email của bạn..." required aria-label="Email của bạn">
+              <button type="submit">Đăng ký</button>
+            </form>
+          </div>
+
+          <!-- Col 2: Product -->
+          <div class="lm-footer-col">
+            <h4>SẢN PHẨM</h4>
+            <ul>
+              <li><a href="#how-it-works">Bảng điều khiển Live</a></li>
+              <li><a href="#how-it-works">Tự động hóa Pin lưu trữ</a></li>
+              <li><a href="#calculator">Thanh toán điện dư</a></li>
+              <li><a href="#calculator">Bảng giá lắp đặt</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Company -->
+          <div class="lm-footer-col">
+            <h4>CÔNG TY</h4>
+            <ul>
+              <li><a href="#about">Về Lumior</a></li>
+              <li><a href="#testimonials">Câu chuyện khách hàng</a></li>
+              <li><a href="#footer-cta">Báo chí &amp; ESG</a></li>
+              <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Liên hệ</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Support -->
+          <div class="lm-footer-col">
+            <h4>HỖ TRỢ</h4>
+            <ul>
+              <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Zalo: 0974 100 372</a></li>
+              <li><a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram: @lhoangphuong</a></li>
+              <li><a href="#how-it-works">Đối tác lắp đặt</a></li>
+              <li><a href="../../index.html#templates">← Kho Giao Diện</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- GIANT MEADOW-TEXTURED "Lumior" WORDMARK WITH 3D CLOUD & BATTERY -->
+        <div class="lm-giant-wordmark-stage">
+          <span class="lm-float-cloud-3d" aria-hidden="true">☁️</span>
+          <div class="lm-giant-wordmark" aria-hidden="true">Lumior</div>
+          <span class="lm-float-battery-3d" aria-hidden="true">🏠⚡</span>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="lm-footer-bottom">
+          <span>© 2026 Lumior Energy. All rights reserved · Crafted by Hoang Phuong</span>
+          <div class="lm-footer-legal">
+            <a href="#top">Bảo mật</a>
+            <a href="#top">Điều khoản</a>
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Zalo</a>
+            <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram</a>
+          </div>
+        </div>
+      </footer>
+
+    </section>
+
+  </div>
+
+  <!-- ==========================================
+       SOLAR DEMO & QUOTE CONSULTATION MODAL
+       ========================================== -->
+  <div class="lm-modal-backdrop" id="lmModal" aria-hidden="true">
+    <div class="lm-modal-card" role="dialog" aria-modal="true" aria-labelledby="lmModalTitle">
+      <button type="button" class="lm-modal-close" id="lmModalClose" aria-label="Đóng">✕</button>
+      <span class="lm-modal-badge">☀️ LUMIOR CLEAN ENERGY · SOLAR &amp; STORAGE</span>
+      <h3 id="lmModalTitle">Đặt Lịch Khảo Sát &amp; Nhận Báo Giá Điện Mặt Trời</h3>
+      <p class="lm-modal-sub">Để lại thông tin để kỹ sư năng lượng Lumior khảo sát mái nhà và gửi phương án tiết kiệm điện tối ưu qua Zalo.</p>
+
+      <form id="lmModalForm" class="lm-modal-form">
+        <input type="text" id="lmModalName" placeholder="Họ và tên của bạn *" required>
+        <input type="tel" id="lmModalPhone" placeholder="Số điện thoại Zalo *" required>
+        <div class="lm-modal-row-2">
+          <select id="lmModalSystem">
+            <option value="Điện mặt trời hộ gia đình + Pin lưu trữ">Điện mặt trời hộ gia đình + Pin lưu trữ</option>
+            <option value="Điện mặt trời Biệt thự / Villa cao cấp">Điện mặt trời Biệt thự / Villa cao cấp</option>
+            <option value="Hệ thống năng lượng Khu đô thị / Doanh nghiệp">Hệ thống Khu đô thị / Doanh nghiệp</option>
+            <option value="Kết nối Inverter sẵn có vào nền tảng Lumior">Kết nối Inverter sẵn có vào Lumior</option>
+          </select>
+          <input type="text" id="lmModalBill" placeholder="Tiền điện/tháng (VD: 3.5 triệu)">
+        </div>
+        <textarea id="lmModalNote" rows="2" placeholder="Khu vực lắp đặt &amp; ghi chú thêm (VD: Nhà phố 120m² mái bằng, TP.HCM)"></textarea>
+
+        <div class="lm-modal-actions">
+          <button type="submit" class="lm-btn-zalo-modal">Nhận Phương Án Qua Zalo</button>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="lm-btn-tg-modal">Chat Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="lm-toast" id="lmToast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>
+

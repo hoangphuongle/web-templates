@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildCore. – Tổng Thầu Xây Dựng, Cải Tạo &amp; Quản Lý Dự Án Trọn Gói</title>
+  <meta name="description" content="BuildCore – Giải pháp thiết kế kiến trúc, thi công xây dựng nhà phố, biệt thự, văn phòng thương mại và quản lý tiến độ công trình trực tuyến 24/7.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HP Showcase Bar v2 -->
+  <div id="hp-bar" style="position:fixed;top:0;left:0;right:0;z-index:999999;background:rgba(10,10,12,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:space-between;height:52px;padding:0 18px;font-family:-apple-system,BlinkMacSystemFont,'Plus Jakarta Sans',sans-serif;font-size:13px;color:#fff;box-shadow:0 4px 30px rgba(0,0,0,.4);gap:12px">
+    <a href="../../index.html#templates" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff;flex-shrink:0">
+      <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;flex-shrink:0;animation:hpblink 2s infinite"></span>
+      <span style="font-weight:800;letter-spacing:-.02em;font-size:14px">Hoang Phuong<span style="color:#22c55e">.</span></span>
+    </a>
+    <span style="flex:1;text-align:center;color:#888;font-size:12px;display:none" id="hp-mid">Bạn đang xem demo · Thích mẫu này?</span>
+    <span style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="../../index.html#templates" id="hp-back" style="color:#aaa;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.15);border-radius:999px;white-space:nowrap;transition:.2s">← Xem mẫu khác</a>
+      <a href="tel:0974100372" style="color:#ccc;text-decoration:none;font-size:12px;padding:6px 13px;border:1px solid rgba(255,255,255,.1);border-radius:999px;white-space:nowrap;display:none" id="hp-tel">0974 100 372</a>
+      <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#24A1DE;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 14px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 14px rgba(36,161,222,.35)">Telegram</a>
+      <a href="https://zalo.me/0974100372" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#0068ff;color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;white-space:nowrap;box-shadow:0 4px 16px rgba(0,104,255,.35)">Zalo</a>
+    </span>
+  </div>
+  <div style="height:52px"></div>
+  <style>@keyframes hpblink{0%,100%{opacity:1}50%{opacity:.25}}@media(min-width:640px){#hp-mid{display:block!important}#hp-tel{display:inline-flex!important}}
+    @media(max-width:520px){#hp-bar{padding:0 10px!important;gap:6px!important}#hp-bar span:last-child{gap:5px!important}#hp-bar a{font-size:11px!important;padding:5px 9px!important}#hp-bar>a:first-child{padding:0!important;font-size:12px!important}}
+    @media(max-width:360px){#hp-bar>span:last-child>a:first-child{padding:5px 7px!important;font-size:10px!important}}@media(max-width:479px){#hp-back{padding:5px 8px!important;font-size:10.5px!important}#hp-bar{padding:0 8px!important;gap:5px!important}}</style>
+
+  <!-- MAIN PAGE SHELL -->
+  <div class="bc-page-shell" id="top">
+
+    <!-- ==========================================
+         SECTION 1: GOLDEN-HOUR ENGINEER HERO & FROSTED AMBER HUD
+         ========================================== -->
+    <section class="bc-hero">
+      <div class="bc-hero-bg-wrap">
+        <img src="img/hero-engineer.jpg" alt="Kỹ sư trưởng BuildCore cầm bản vẽ kiến trúc tại công trường lúc hoàng hôn" class="bc-hero-bg-img">
+        <div class="bc-hero-overlay"></div>
+      </div>
+
+      <div class="bc-container bc-hero-container">
+        <!-- Top Navigation Bar -->
+        <header class="bc-navbar">
+          <a href="#top" class="bc-logo">
+            <span class="bc-logo-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5.5v-6h-5v6H4a1 1 0 0 1-1-1v-9.5Z" fill="#F5A623"/>
+              </svg>
+            </span>
+            <span class="bc-logo-text">BuildCore<span class="bc-amber">.</span></span>
+          </a>
+
+          <nav class="bc-nav-links" id="bcNavLinks">
+            <a href="#services" class="bc-nav-link">Dịch Vụ</a>
+            <a href="#stories" class="bc-nav-link">Dự Án</a>
+            <a href="#journey" class="bc-nav-link">Quy Trình</a>
+            <a href="#estimator" class="bc-nav-link">Tính Dự Toán</a>
+            <a href="#faq" class="bc-nav-link">Hỏi Đáp</a>
+          </nav>
+
+          <div class="bc-nav-actions">
+            <button type="button" class="bc-btn-amber-sm" data-open-modal="Nhận Báo Giá &amp; Khảo Sát Công Trình Miễn Phí">
+              Nhận Báo Giá
+            </button>
+            <button type="button" class="bc-burger" id="bcBurger" aria-label="Mở menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+
+        <!-- Hero Main Grid -->
+        <div class="bc-hero-grid">
+          <!-- Left Editorial Copy -->
+          <div class="bc-hero-copy">
+            <div class="bc-pill-tag bc-pill-glass">
+              <span class="bc-pill-dot"></span>
+              <span>TỔNG THẦU XÂY DỰNG TRỌN GÓI · FULL-SERVICE CONSTRUCTION</span>
+            </div>
+
+            <h1 class="bc-hero-title">
+              Kiến tạo công trình<br>
+              dẫn lối<br>
+              <span class="bc-amber">thịnh vượng.</span>
+            </h1>
+
+            <p class="bc-hero-desc">
+              Từ quy hoạch ý tưởng, thiết kế kiến trúc đến thi công hoàn thiện chìa khóa trao tay — chúng tôi mang đến giải pháp xây dựng, cải tạo bền vững với giá trị vượt thời gian.
+            </p>
+
+            <div class="bc-hero-actions">
+              <button type="button" class="bc-btn-amber-pill" data-open-modal="Khởi Tạo Dự Án Xây Dựng Cùng BuildCore">
+                <span>Khởi Tạo Dự Án</span>
+                <span class="bc-btn-circle-arrow" aria-hidden="true">↗</span>
+              </button>
+              <a href="#estimator" class="bc-btn-dark-glass">
+                Tính Dự Toán Chi Phí
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Floating Frosted Amber HUD Card (84% On-time Delivery) -->
+          <div class="bc-hero-hud-wrap">
+            <div class="bc-amber-hud-card bc-hero-hud">
+              <div class="bc-hud-top">
+                <span class="bc-hud-icon-badge" aria-hidden="true">🏗️</span>
+                <span class="bc-hud-label">Tiến Độ Dự Án · Project Progress</span>
+                <button type="button" class="bc-hud-arrow-white" data-open-modal="Xem Báo Cáo Tiến Độ Công Trình Trực Tuyến" aria-label="Chi tiết tiến độ">↗</button>
+              </div>
+
+              <!-- Circular Gauge Ring (84%) -->
+              <div class="bc-hud-gauge-box">
+                <svg class="bc-hud-ring-svg" viewBox="0 0 160 160">
+                  <circle class="bc-ring-track" cx="80" cy="80" r="64"></circle>
+                  <circle class="bc-ring-fill" cx="80" cy="80" r="64" stroke-dasharray="402.1" stroke-dashoffset="64.3"></circle>
+                </svg>
+                <div class="bc-hud-gauge-center">
+                  <strong>84%</strong>
+                  <small>Bàn giao đúng hạn</small>
+                </div>
+              </div>
+
+              <!-- 3 Bottom Mini Metrics -->
+              <div class="bc-hud-mini-stats">
+                <div class="bc-hud-mini-col">
+                  <strong>12</strong>
+                  <span class="bc-mini-ico">✓</span>
+                  <small>Dự án đang chạy</small>
+                </div>
+                <div class="bc-hud-mini-col">
+                  <strong>98%</strong>
+                  <span class="bc-mini-ico">✓</span>
+                  <small>Khách hài lòng</small>
+                </div>
+                <div class="bc-hud-mini-col">
+                  <strong>250+</strong>
+                  <span class="bc-mini-ico">👥</span>
+                  <small>Công trình bàn giao</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Partner Logos Bar -->
+        <div class="bc-partners-strip">
+          <div class="bc-partner-item">
+            <span class="bc-p-ico">⬢</span>
+            <span>UrbanBuild</span>
+          </div>
+          <div class="bc-partner-item">
+            <span class="bc-p-ico">▤</span>
+            <span>Stonehaven</span>
+          </div>
+          <div class="bc-partner-item">
+            <span class="bc-p-ico">⌂</span>
+            <span>PrimeConstruct</span>
+          </div>
+          <div class="bc-partner-item">
+            <span class="bc-p-ico">❖</span>
+            <span>BuildRight</span>
+          </div>
+          <div class="bc-partner-item">
+            <span class="bc-p-ico">∷</span>
+            <span>Crestline</span>
+          </div>
+          <div class="bc-partner-item">
+            <span class="bc-p-ico">◑</span>
+            <span>AtlasBuild</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 2: OUR SERVICES BENTO GRID
+         ("Everything you need to build, renovate, and grow.")
+         ========================================== -->
+    <section class="bc-services-sec" id="services">
+      <div class="bc-container">
+        <div class="bc-sec-header">
+          <div class="bc-pill-tag">
+            <span class="bc-pill-dot"></span>
+            <span>DỊCH VỤ XÂY DỰNG · OUR SERVICES</span>
+          </div>
+          <h2 class="bc-sec-title">
+            Mọi giải pháp bạn cần để<br>
+            xây mới, cải tạo và <span class="bc-amber">phát triển.</span>
+          </h2>
+          <p class="bc-sec-sub">
+            Từ quy hoạch thiết kế, xin phép xây dựng đến thi công phần thô, hoàn thiện nội thất và bàn giao — mọi hạng mục đều được chuẩn hóa để hiện thực hóa tầm nhìn của bạn.
+          </p>
+        </div>
+
+        <!-- Asymmetric Bento Layout -->
+        <div class="bc-bento-grid">
+
+          <!-- LEFT TALL CARD: Progress You Can See (78% Bar Chart HUD) -->
+          <article class="bc-bento-tall">
+            <img src="img/site-crane.jpg" alt="Công trường xây dựng BuildCore lúc hoàng hôn" class="bc-bento-tall-bg" loading="lazy">
+            <div class="bc-bento-tall-shade"></div>
+
+            <!-- Floating Frosted Amber Bar-Chart HUD -->
+            <div class="bc-amber-hud-card bc-tall-hud">
+              <div class="bc-hud-top">
+                <span class="bc-hud-icon-badge" aria-hidden="true">📊</span>
+                <span class="bc-hud-label">Tiến Độ Thi Công · Project Progress</span>
+              </div>
+
+              <div class="bc-tall-hud-metric">
+                <small>Hoàn thành hạng mục chính</small>
+                <strong>78%</strong>
+                <span class="bc-trend-up">📈 +12% so với tuần trước</span>
+              </div>
+
+              <!-- 18-Bar Vertical Equalizer / Progress Chart -->
+              <div class="bc-bar-chart" aria-hidden="true">
+                <span style="height:28%"></span>
+                <span style="height:42%"></span>
+                <span style="height:35%"></span>
+                <span style="height:54%"></span>
+                <span style="height:48%"></span>
+                <span style="height:76%" class="is-hi"></span>
+                <span style="height:38%"></span>
+                <span style="height:44%"></span>
+                <span style="height:68%" class="is-hi"></span>
+                <span style="height:52%"></span>
+                <span style="height:64%"></span>
+                <span style="height:92%" class="is-hi"></span>
+                <span style="height:58%"></span>
+                <span style="height:74%" class="is-hi"></span>
+                <span style="height:46%"></span>
+                <span style="height:82%" class="is-hi"></span>
+              </div>
+
+              <div class="bc-tall-hud-foot">
+                <span class="bc-hud-icon-badge" aria-hidden="true">👷</span>
+                <button type="button" class="bc-hud-view-pill" data-open-modal="Trải Nghiệm Hệ Thống Giám Sát Nhật Ký Công Trình 24/7">
+                  <span>Xem Dự Án</span>
+                  <span class="bc-white-dot-arrow">↗</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="bc-bento-tall-caption">
+              <h3>Tiến Độ Minh Bạch Từng Ngày</h3>
+              <p>Theo dõi trực tiếp dự án theo thời gian thực với hình ảnh hiện trường, biên bản nghiệm thu từng cột mốc và báo cáo vật tư minh bạch.</p>
+            </div>
+          </article>
+
+          <!-- RIGHT COLUMN: 1 Wide Top Card + 2 Bottom Square Cards -->
+          <div class="bc-bento-right">
+
+            <!-- Right Top Wide Card -->
+            <article class="bc-bento-card bc-bento-wide">
+              <div class="bc-wide-copy">
+                <div class="bc-bento-icon-box" aria-hidden="true">👷</div>
+                <h3>Tất Cả Hạng Mục Xây Dựng, Đồng Bộ Một Nơi</h3>
+                <p>Quản lý xuyên suốt hồ sơ thiết kế, bảng dự toán BOQ, giấy phép xây dựng, đội ngũ kỹ sư và tiến độ thi công trên một nền tảng duy nhất.</p>
+              </div>
+
+              <div class="bc-wide-visual">
+                <div class="bc-project-status-pill">
+                  <span class="bc-psp-icon">🏠</span>
+                  <img src="img/hero-engineer.jpg" alt="Kỹ sư phụ trách" class="bc-psp-avatar">
+                  <div class="bc-psp-meta">
+                    <strong>BuildCore Project</strong>
+                    <small>⟳ Đang thi công kết cấu...</small>
+                  </div>
+                </div>
+
+                <button type="button" class="bc-all-services-pill" data-open-modal="Đăng Ký Tư Vấn Trọn Gói Dịch Vụ Xây Dựng &amp; Cải Tạo">
+                  <span>Tất Cả Dịch Vụ</span>
+                  <span class="bc-white-dot-arrow">→</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Right Bottom 2 Cards -->
+            <div class="bc-bento-subgrid">
+              <article class="bc-bento-card">
+                <div class="bc-bento-icon-box" aria-hidden="true">❖</div>
+                <h3>Công Trình Bền Vững &amp; Gia Tăng Giá Trị</h3>
+                <p>Quy hoạch, thi công và bàn giao những không gian tối ưu công năng, kết cấu vững chắc theo tiêu chuẩn quốc tế và sinh lời lâu dài.</p>
+              </article>
+
+              <article class="bc-bento-card">
+                <div class="bc-bento-icon-box" aria-hidden="true">🛠️</div>
+                <h3>Đồng Hành Từ Thi Công Đến Bảo Hành</h3>
+                <p>Từ ngày động thổ đến bảo hành kết cấu 10 năm và bảo trì định kỳ — đội ngũ kỹ sư BuildCore luôn sát cánh cùng bạn ở mọi giai đoạn.</p>
+              </article>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 3: 3-COLUMN MILESTONE METRICS (200+, 4.9★, 98%)
+         ========================================== -->
+    <section class="bc-stats-sec">
+      <div class="bc-container">
+        <div class="bc-stats-grid">
+          <div class="bc-stat-col">
+            <div class="bc-pill-tag bc-pill-sm">
+              <span>🏠 CÔNG TRÌNH HOÀN THIỆN · PROJECTS COMPLETED</span>
+            </div>
+            <strong class="bc-stat-big">200+</strong>
+            <p>Biệt thự, nhà phố, tòa nhà văn phòng thương mại và nhà xưởng công nghiệp được bàn giao thành công.</p>
+          </div>
+
+          <div class="bc-stat-col">
+            <div class="bc-pill-tag bc-pill-sm">
+              <span>⭐ ĐÁNH GIÁ CHỦ ĐẦU TƯ · CLIENT RATING</span>
+            </div>
+            <strong class="bc-stat-big">4.9 <span class="bc-amber">★</span></strong>
+            <p>Điểm hài lòng trung bình từ chủ đầu tư dựa trên chất lượng kết cấu, sự minh bạch vật tư và tiến độ thi công.</p>
+          </div>
+
+          <div class="bc-stat-col">
+            <div class="bc-pill-tag bc-pill-sm">
+              <span>📊 ĐÚNG TIẾN ĐỘ · ON-TIME DELIVERY</span>
+            </div>
+            <strong class="bc-stat-big">98%</strong>
+            <p>Dự án bàn giao đúng hoặc sớm hơn lịch trình cam kết trong hợp đồng với tiêu chuẩn an toàn tuyệt đối.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 4: CLIENT STORIES CAROUSEL
+         ("Every project has a story.")
+         ========================================== -->
+    <section class="bc-stories-sec" id="stories">
+      <div class="bc-container">
+        <div class="bc-sec-header">
+          <div class="bc-pill-tag">
+            <span class="bc-pill-dot"></span>
+            <span>CÂU CHUYỆN KHÁCH HÀNG · CLIENT STORIES</span>
+          </div>
+          <h2 class="bc-sec-title">
+            Mỗi <span class="bc-amber">công trình</span> là một dấu ấn.
+          </h2>
+          <p class="bc-sec-sub">
+            Từ lễ động thổ đến ngày trao chìa khóa hoàn công — khám phá cách chúng tôi biến ý tưởng của chủ đầu tư thành không gian sống &amp; làm việc bền vững.
+          </p>
+        </div>
+
+        <!-- 3-Card Horizontal Showcase Stage -->
+        <div class="bc-stories-stage">
+          <!-- Left Peek Card (Villa Homeowner) -->
+          <article class="bc-story-card bc-story-side bc-story-green" data-story-idx="0">
+            <img src="img/story-villa.jpg" alt="Biệt thự hiện đại Thảo Điền" class="bc-story-img" loading="lazy">
+            <div class="bc-story-shade"></div>
+            <div class="bc-story-meta">
+              <strong>Gia Đình Anh Minh &amp; Sarah</strong>
+              <small>Chủ đầu tư Biệt thự Thảo Điền (450m²)</small>
+            </div>
+          </article>
+
+          <!-- Center Main Featured Card -->
+          <article class="bc-story-card bc-story-main is-active" data-story-idx="1" id="bcStoryMainCard">
+            <img src="img/hero-engineer.jpg" alt="Giám đốc dự án BuildCore tại công trường" class="bc-story-img" id="bcStoryMainImg" loading="lazy">
+            <div class="bc-story-shade"></div>
+
+            <div class="bc-story-main-bar">
+              <div class="bc-story-brand">
+                <span class="bc-logo-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5.5v-6h-5v6H4a1 1 0 0 1-1-1v-9.5Z" fill="#F5A623"/>
+                  </svg>
+                </span>
+                <span>BuildCore.</span>
+              </div>
+
+              <div class="bc-story-person">
+                <strong id="bcStoryMainName">KS. Hoàng Quân · James Carter</strong>
+                <small id="bcStoryMainRole">Giám Đốc Dự Án · Tổ Hợp Thương Mại Metropole</small>
+              </div>
+            </div>
+          </article>
+
+          <!-- Right Peek Card (Commercial Partner) -->
+          <article class="bc-story-card bc-story-side bc-story-rust" data-story-idx="2">
+            <img src="img/story-commercial.jpg" alt="Tòa nhà văn phòng thương mại ApexBuild" class="bc-story-img" loading="lazy">
+            <div class="bc-story-shade"></div>
+            <div class="bc-story-meta">
+              <strong>Tập Đoàn ApexBuild</strong>
+              <small>Tòa nhà Văn phòng &amp; Showroom Quận 1</small>
+            </div>
+          </article>
+        </div>
+
+        <!-- Active Story Quote Caption -->
+        <p class="bc-story-quote" id="bcStoryQuote">
+          “Hệ thống theo dõi tiến độ trực tiếp 24/7 của BuildCore giúp ban quản lý kiểm soát 100% chất lượng bê tông, cốt thép và bàn giao vượt tiến độ 3 tuần.”
+        </p>
+
+        <!-- Bottom Avatar & Play Pill Controls -->
+        <div class="bc-story-controls">
+          <button type="button" class="bc-story-nav" id="bcStoryPrev" aria-label="Câu chuyện trước">‹</button>
+
+          <button type="button" class="bc-story-thumb" data-story-select="0" aria-label="Biệt thự Thảo Điền">
+            <img src="img/story-villa.jpg" alt="Khách hàng 1">
+          </button>
+
+          <button type="button" class="bc-story-play-pill" data-open-modal="Xem Hồ Sơ Năng Lực &amp; Video Thực Tế Công Trình BuildCore">
+            <span class="bc-play-ico">▶</span>
+            <span>Xem Thực Tế</span>
+          </button>
+
+          <button type="button" class="bc-story-thumb" data-story-select="2" aria-label="Tòa nhà ApexBuild">
+            <img src="img/story-commercial.jpg" alt="Khách hàng 3">
+          </button>
+
+          <button type="button" class="bc-story-nav" id="bcStoryNext" aria-label="Câu chuyện tiếp theo">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 5: HOW IT WORKS ("Your Construction Journey Starts Here.")
+         + INTERACTIVE CONSTRUCTION COST ESTIMATOR
+         ========================================== -->
+    <section class="bc-journey-sec" id="journey">
+      <div class="bc-container">
+        <div class="bc-journey-grid">
+
+          <!-- Left Column: 3 Interactive Process Steps -->
+          <div class="bc-journey-left">
+            <div class="bc-pill-tag">
+              <span class="bc-pill-dot"></span>
+              <span>QUY TRÌNH LÀM VIỆC · HOW IT WORKS</span>
+            </div>
+
+            <h2 class="bc-sec-title bc-text-left">
+              Hành Trình Xây Dựng<br>
+              <span class="bc-amber">Bắt Đầu Từ Đây.</span>
+            </h2>
+
+            <p class="bc-sec-sub bc-text-left">
+              Quy trình 3 bước minh bạch, khép kín giúp chuyển hóa ý tưởng của bạn thành công trình hoàn mỹ, đúng ngân sách.
+            </p>
+
+            <div class="bc-steps-list" id="bcStepsList">
+              <div class="bc-step-item is-active" data-pct="72%" data-trend="+8% cập nhật tuần này" data-stage="Hạng mục: Thi công Kết cấu &amp; Sàn (Structural Work)">
+                <span class="bc-step-num">01.</span>
+                <div class="bc-step-body">
+                  <h3>Khảo Sát &amp; Tư Vấn Phương Án</h3>
+                  <p>Khảo sát hiện trạng khu đất, lắng nghe nhu cầu công năng, phong cách kiến trúc và ngân sách đầu tư cùng kỹ sư trưởng.</p>
+                </div>
+              </div>
+
+              <div class="bc-step-item" data-pct="86%" data-trend="+14% hoàn tất hồ sơ kỹ thuật" data-stage="Hạng mục: Bản vẽ 3D, Kết cấu MEP &amp; Dự toán BOQ">
+                <span class="bc-step-num">02.</span>
+                <div class="bc-step-body">
+                  <h3>Thiết Kế Bản Vẽ &amp; Báo Giá Dự Toán BOQ</h3>
+                  <p>Lập bản vẽ phối cảnh 3D, hồ sơ xin phép xây dựng và bảng dự toán chi tiết từng chủng loại vật tư — cam kết không phát sinh.</p>
+                </div>
+              </div>
+
+              <div class="bc-step-item" data-pct="98%" data-trend="100% nghiệm thu chuẩn ISO" data-stage="Hạng mục: Hoàn thiện Nội thất &amp; Bàn giao Chìa khóa">
+                <span class="bc-step-num">03.</span>
+                <div class="bc-step-body">
+                  <h3>Thi Công, Giám Sát 24/7 &amp; Bàn Giao</h3>
+                  <p>Tổ chức thi công an toàn, cập nhật nhật ký công trường mỗi ngày trên hệ thống và bàn giao đúng hạn kèm bảo hành 10 năm.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Site Visual + Frosted Amber Area-Chart HUD (72%) -->
+          <div class="bc-journey-right">
+            <div class="bc-journey-visual-card">
+              <img src="img/site-crane.jpg" alt="Công trường xây dựng hiện đại BuildCore" class="bc-journey-bg" loading="lazy">
+              <div class="bc-journey-overlay"></div>
+
+              <!-- Top Floating Glass Bar (Project Plan) -->
+              <div class="bc-plan-top-pill">
+                <div class="bc-plan-pill-left">
+                  <span class="bc-hud-icon-badge">🏠</span>
+                  <span>Hồ Sơ Dự Án · Project Plan</span>
+                </div>
+                <div class="bc-plan-pill-right">
+                  <span class="bc-hud-icon-badge">📊</span>
+                  <button type="button" class="bc-hud-arrow-white" data-open-modal="Nhận Hồ Sơ Mẫu &amp; Tiến Độ Thi Công BuildCore" aria-label="Mở hồ sơ dự án">↗</button>
+                </div>
+              </div>
+
+              <!-- Center Frosted Amber Area-Chart HUD Card -->
+              <div class="bc-amber-hud-card bc-area-hud">
+                <div class="bc-hud-top">
+                  <span class="bc-hud-icon-badge">📈</span>
+                  <span class="bc-hud-label">Tiến Độ Dự Án · Project Progress</span>
+                </div>
+
+                <div class="bc-area-metric-row">
+                  <strong id="bcJourneyPct">72%</strong>
+                  <span id="bcJourneyTrend">+8% cập nhật tuần này</span>
+                </div>
+
+                <!-- Glowing Amber SVG Wave Area Chart -->
+                <div class="bc-area-chart-wrap" aria-hidden="true">
+                  <svg viewBox="0 0 320 95" class="bc-area-svg" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="bcAmberArea" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#F5A623" stop-opacity="0.62"/>
+                        <stop offset="100%" stop-color="#F5A623" stop-opacity="0.0"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M0,72 C32,68 48,40 82,46 C116,52 138,70 172,48 C206,26 228,18 262,36 C288,50 304,34 320,24 L320,95 L0,95 Z" fill="url(#bcAmberArea)"/>
+                    <path d="M0,72 C32,68 48,40 82,46 C116,52 138,70 172,48 C206,26 228,18 262,36 C288,50 304,34 320,24" fill="none" stroke="#FFB73B" stroke-width="3" stroke-linecap="round"/>
+                  </svg>
+                </div>
+
+                <div class="bc-area-stage-tag">
+                  <small>Giai đoạn hiện tại</small>
+                  <strong id="bcJourneyStage">Hạng mục: Thi công Kết cấu &amp; Sàn (Structural Work)</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- INTERACTIVE CONSTRUCTION COST ESTIMATOR (TÍNH DỰ TOÁN XÂY DỰNG NHANH) -->
+        <div class="bc-estimator-box" id="estimator">
+          <div class="bc-est-header">
+            <div>
+              <div class="bc-pill-tag">
+                <span class="bc-pill-dot"></span>
+                <span>CÔNG CỤ TÍNH DỰ TOÁN · INSTANT COST ESTIMATOR</span>
+              </div>
+              <h3>Ước Tính Nhanh Chi Phí Xây Dựng Công Trình</h3>
+            </div>
+            <p>Chọn loại hình công trình, diện tích sàn và gói vật tư để nhận báo giá dự toán sát thực tế nhất.</p>
+          </div>
+
+          <div class="bc-est-controls">
+            <div class="bc-est-field">
+              <label for="bcEstType">Loại hình công trình</label>
+              <select id="bcEstType">
+                <option value="1">Nhà Phố Hiện Đại (Townhouse)</option>
+                <option value="1.18">Biệt Thự / Villa Cao Cấp</option>
+                <option value="1.12">Tòa Nhà Văn Phòng / Showroom</option>
+                <option value="0.65">Cải Tạo &amp; Nâng Cấp Trọn Gói</option>
+              </select>
+            </div>
+
+            <div class="bc-est-field">
+              <label for="bcEstPackage">Gói thầu thi công</label>
+              <select id="bcEstPackage">
+                <option value="3800000">Thi Công Phần Thô &amp; Nhân Công Hoàn Thiện (3.8tr/m²)</option>
+                <option value="6200000" selected>Xây Dựng Trọn Gói – Gói Tiêu Chuẩn (6.2tr/m²)</option>
+                <option value="7800000">Xây Dựng Trọn Gói – Gói Cao Cấp Luxury (7.8tr/m²)</option>
+              </select>
+            </div>
+
+            <div class="bc-est-field">
+              <label for="bcEstArea">Tổng diện tích sàn xây dựng: <strong id="bcEstAreaVal" class="bc-amber">240 m²</strong></label>
+              <input type="range" id="bcEstArea" min="80" max="1200" step="20" value="240">
+            </div>
+          </div>
+
+          <div class="bc-est-footer">
+            <div class="bc-est-result">
+              <span>Chi phí dự toán tạm tính (Đã bao gồm thiết kế &amp; xin phép XD):</span>
+              <strong id="bcEstTotal">1.488.000.000 VNĐ</strong>
+            </div>
+            <button type="button" class="bc-btn-amber-pill" id="bcEstSendBtn">
+              <span>Nhận Bảng Bóc Tách Vật Tư Qua Zalo</span>
+              <span class="bc-btn-circle-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 6: CINEMATIC SUNSET VISION BANNER
+         ("Plan. Build. Track. Deliver. Maintain.")
+         ========================================== -->
+    <section class="bc-vision-banner">
+      <img src="img/team-sunset.jpg" alt="Đội ngũ kỹ sư và kiến trúc sư BuildCore tại công trường lúc hoàng hôn" class="bc-vision-bg" loading="lazy">
+      <div class="bc-vision-overlay"></div>
+
+      <div class="bc-container bc-vision-inner">
+        <div class="bc-vision-left">
+          <div class="bc-logo bc-vision-logo">
+            <span class="bc-logo-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5.5v-6h-5v6H4a1 1 0 0 1-1-1v-9.5Z" fill="#F5A623"/>
+              </svg>
+            </span>
+            <span class="bc-logo-text">BuildCore<span class="bc-amber">.</span></span>
+          </div>
+
+          <div class="bc-vision-motto">
+            <span>Xây Thông Minh Hơn</span>
+            <span>Quản Lý Chặt Chẽ Hơn</span>
+            <span>Bền Vững Vượt Thời Gian</span>
+          </div>
+        </div>
+
+        <div class="bc-vision-words" aria-label="Plan. Build. Track. Deliver. Maintain.">
+          <span>Quy Hoạch.</span>
+          <span>Thi Công.</span>
+          <strong class="is-highlight">Giám Sát.</strong>
+          <span>Bàn Giao.</span>
+          <span>Bảo Trì.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 7: FAQ ACCORDION
+         ("Got questions? We've got answers.")
+         ========================================== -->
+    <section class="bc-faq-sec" id="faq">
+      <div class="bc-container">
+        <div class="bc-faq-grid">
+
+          <!-- Left Column -->
+          <div class="bc-faq-left">
+            <div>
+              <div class="bc-pill-tag">
+                <span class="bc-pill-dot"></span>
+                <span>CÂU HỎI THƯỜNG GẶP · FAQS</span>
+              </div>
+              <h2 class="bc-sec-title bc-text-left">
+                Bạn có thắc mắc?<br>
+                Chúng tôi giải đáp ngay.
+              </h2>
+              <p class="bc-sec-sub bc-text-left">
+                Mọi thông tin bạn cần biết về dịch vụ thi công trọn gói, quy trình giám sát chất lượng và chính sách bảo hành của BuildCore.
+              </p>
+            </div>
+
+            <div class="bc-faq-cta-box">
+              <p>Chưa tìm thấy câu trả lời cho công trình của bạn?<br>Trao đổi trực tiếp cùng kỹ sư trưởng của chúng tôi.</p>
+              <button type="button" class="bc-btn-amber-pill" data-open-modal="Đặt Câu Hỏi &amp; Tư Vấn Kỹ Thuật Cùng Kỹ Sư Trưởng">
+                <span>Liên Hệ Tư Vấn</span>
+                <span class="bc-btn-circle-arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: 5 Accordion Items -->
+          <div class="bc-faq-list" id="bcFaqList">
+            <div class="bc-faq-item is-open">
+              <button type="button" class="bc-faq-q">
+                <span>BuildCore cung cấp những dịch vụ xây dựng nào?</span>
+                <span class="bc-faq-icon">−</span>
+              </button>
+              <div class="bc-faq-a">
+                <p>Chúng tôi cung cấp giải pháp xây dựng khép kín từ quy hoạch ý tưởng, thiết kế kiến trúc &amp; kết cấu MEP, xin giấy phép xây dựng, thi công phần thô, hoàn thiện nội thất đến cải tạo nâng tầng cho nhà phố, biệt thự, văn phòng thương mại và nhà xưởng công nghiệp.</p>
+              </div>
+            </div>
+
+            <div class="bc-faq-item">
+              <button type="button" class="bc-faq-q">
+                <span>Làm thế nào để BuildCore đảm bảo chất lượng vật tư &amp; kết cấu?</span>
+                <span class="bc-faq-icon">+</span>
+              </button>
+              <div class="bc-faq-a">
+                <p>Mọi chủng loại vật tư đưa vào công trường đều được ký duyệt mẫu trước với chủ đầu tư, nghiệm thu theo tiêu chuẩn TCVN/ISO qua 3 cấp kỹ sư và cập nhật hình ảnh, biên bản trực tiếp lên hệ thống theo dõi dự án 24/7.</p>
+              </div>
+            </div>
+
+            <div class="bc-faq-item">
+              <button type="button" class="bc-faq-q">
+                <span>Thời gian thi công trọn gói một công trình mất bao lâu?</span>
+                <span class="bc-faq-icon">+</span>
+              </button>
+              <div class="bc-faq-a">
+                <p>Tùy quy mô diện tích: Nhà phố 3–5 tầng thường từ 3.5 – 4.5 tháng; Biệt thự cao cấp từ 5 – 7 tháng; Cải tạo nội thất &amp; mặt tiền từ 30 – 60 ngày. Tiến độ chi tiết được cam kết rõ theo từng tuần trong hợp đồng.</p>
+              </div>
+            </div>
+
+            <div class="bc-faq-item">
+              <button type="button" class="bc-faq-q">
+                <span>BuildCore có hỗ trợ xin giấy phép xây dựng và hoàn công không?</span>
+                <span class="bc-faq-icon">+</span>
+              </button>
+              <div class="bc-faq-a">
+                <p>Có. Khi ký hợp đồng thi công trọn gói, BuildCore miễn phí 100% chi phí lập bản vẽ thiết kế và hỗ trợ trọn gói thủ tục xin giấy phép xây dựng cũng như hồ sơ hoàn công sau khi bàn giao.</p>
+              </div>
+            </div>
+
+            <div class="bc-faq-item">
+              <button type="button" class="bc-faq-q">
+                <span>Làm sao để nhận bảng báo giá dự toán chi tiết cho dự án của tôi?</span>
+                <span class="bc-faq-icon">+</span>
+              </button>
+              <div class="bc-faq-a">
+                <p>Bạn có thể sử dụng công cụ Tính Dự Toán ngay trên website hoặc bấm nút "Nhận Báo Giá" — kỹ sư trưởng BuildCore sẽ khảo sát thực tế và gửi bảng bóc tách dự toán BOQ chi tiết trong vòng 24 giờ.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SECTION 8: READY TO BRING YOUR PROJECT TO LIFE CTA & GIANT FOOTER
+         ========================================== -->
+    <footer class="bc-footer">
+      <div class="bc-container">
+
+        <!-- Top Next Step CTA Strip -->
+        <div class="bc-nextstep-bar">
+          <div class="bc-nextstep-left">
+            <div class="bc-pill-tag">
+              <span class="bc-pill-dot"></span>
+              <span>BƯỚC TIẾP THEO · YOUR NEXT STEP</span>
+            </div>
+            <h2>Sẵn sàng khởi công<br>dự án của bạn?</h2>
+            <p>Tầm nhìn của bạn gần hơn bạn nghĩ. Hãy cùng quy hoạch, thi công và bàn giao công trình bền vững ngay hôm nay.</p>
+          </div>
+
+          <div class="bc-nextstep-actions">
+            <button type="button" class="bc-btn-amber-pill" data-open-modal="Khởi Tạo Dự Án &amp; Đặt Lịch Khảo Sát Thực Tế">
+              <span>Khởi Tạo Dự Án</span>
+              <span class="bc-btn-circle-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button type="button" class="bc-btn-outline-pill" data-open-modal="Yêu Cầu Bảng Báo Giá Dự Toán BOQ Chi Tiết">
+              Nhận Báo Giá
+            </button>
+          </div>
+        </div>
+
+        <!-- 5-Column Footer Links Grid -->
+        <div class="bc-footer-grid">
+          <div class="bc-footer-brand">
+            <a href="#top" class="bc-logo">
+              <span class="bc-logo-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5.5v-6h-5v6H4a1 1 0 0 1-1-1v-9.5Z" fill="#F5A623"/>
+                </svg>
+              </span>
+              <span class="bc-logo-text">BuildCore<span class="bc-amber">.</span></span>
+            </a>
+            <p>Giải pháp thiết kế kiến trúc &amp; tổng thầu xây dựng đáng tin cậy cho nhà phố, biệt thự, thương mại và công nghiệp.</p>
+          </div>
+
+          <div class="bc-footer-col">
+            <h4>DỊCH VỤ</h4>
+            <ul>
+              <li><a href="#services">Xây Dựng Dân Dụng</a></li>
+              <li><a href="#services">Công Trình Thương Mại</a></li>
+              <li><a href="#services">Cải Tạo &amp; Nâng Cấp</a></li>
+              <li><a href="#services">Thiết Kế &amp; Quy Hoạch</a></li>
+              <li><a href="#services">Quản Lý Dự Án 24/7</a></li>
+            </ul>
+          </div>
+
+          <div class="bc-footer-col">
+            <h4>CÔNG TY</h4>
+            <ul>
+              <li><a href="#top">Về BuildCore</a></li>
+              <li><a href="#stories">Dự Án Tiêu Biểu</a></li>
+              <li><a href="#journey">Quy Trình Chuẩn ISO</a></li>
+              <li><a href="#estimator">Liên Hệ Khảo Sát</a></li>
+            </ul>
+          </div>
+
+          <div class="bc-footer-col">
+            <h4>TÀI NGUYÊN</h4>
+            <ul>
+              <li><a href="#estimator">Tính Dự Toán Online</a></li>
+              <li><a href="#stories">Hồ Sơ Năng Lực</a></li>
+              <li><a href="#faq">Câu Hỏi Thường Gặp</a></li>
+              <li><a href="#estimator">Đơn Giá Xây Dựng 2026</a></li>
+            </ul>
+          </div>
+
+          <div class="bc-footer-col">
+            <h4>KẾT NỐI</h4>
+            <ul>
+              <li><a href="https://zalo.me/0974100372" target="_blank" rel="noopener">💬 Zalo: 0974 100 372</a></li>
+              <li><a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">✈️ Telegram: @lhoangphuong</a></li>
+              <li><a href="tel:0974100372">📞 Hotline: 0974 100 372</a></li>
+              <li><a href="../../index.html#templates">← Kho Giao Diện Mẫu</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Giant Metallic Wordmark -->
+        <div class="bc-giant-wordmark-wrap">
+          <div class="bc-giant-wordmark" aria-hidden="true">BuildCore</div>
+        </div>
+
+        <!-- Bottom Copyright Line -->
+        <div class="bc-footer-copy">
+          <span>© 2026 BuildCore. All rights reserved · Crafted by Hoang Phuong</span>
+          <div class="bc-footer-legal">
+            <a href="https://zalo.me/0974100372" target="_blank" rel="noopener">Zalo Tư Vấn</a>
+            <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener">Telegram</a>
+            <a href="tel:0974100372">0974 100 372</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ==========================================
+       PROJECT CONSULTATION & QUOTE MODAL
+       ========================================== -->
+  <div class="bc-modal-backdrop" id="bcModal" aria-hidden="true">
+    <div class="bc-modal-card" role="dialog" aria-modal="true" aria-labelledby="bcModalTitle">
+      <button type="button" class="bc-modal-close" id="bcModalClose" aria-label="Đóng">✕</button>
+      <div class="bc-pill-tag">
+        <span class="bc-pill-dot"></span>
+        <span>BUILDCORE CONSTRUCTION &amp; ENGINEERING</span>
+      </div>
+      <h3 id="bcModalTitle">Nhận Báo Giá &amp; Khảo Sát Công Trình</h3>
+      <p class="bc-modal-sub">Điền thông tin công trình để kỹ sư trưởng BuildCore gửi bảng dự toán BOQ và tư vấn phương án thi công qua Zalo.</p>
+
+      <form id="bcModalForm" class="bc-modal-form">
+        <input type="text" id="bcModalName" placeholder="Họ và tên Chủ đầu tư *" required>
+        <input type="tel" id="bcModalPhone" placeholder="Số điện thoại Zalo *" required>
+        <div class="bc-modal-row-2">
+          <select id="bcModalType">
+            <option value="Xây mới Nhà phố / Biệt thự">Xây mới Nhà phố / Biệt thự</option>
+            <option value="Thi công Văn phòng / Showroom">Thi công Văn phòng / Showroom</option>
+            <option value="Cải tạo & Nâng tầng trọn gói">Cải tạo &amp; Nâng tầng trọn gói</option>
+            <option value="Thiết kế kiến trúc & Xin phép XD">Thiết kế kiến trúc &amp; Xin phép XD</option>
+          </select>
+          <input type="text" id="bcModalArea" placeholder="Diện tích / Khu vực (VD: 200m², Q.2)">
+        </div>
+        <textarea id="bcModalNote" rows="2" placeholder="Ghi chú nhu cầu (Số tầng, ngân sách dự kiến, thời gian khởi công...)"></textarea>
+
+        <div class="bc-modal-actions">
+          <button type="submit" class="bc-btn-zalo-modal">Nhận Dự Toán Qua Zalo</button>
+          <a href="https://t.me/lhoangphuong" target="_blank" rel="noopener" class="bc-btn-tg-modal">Chat Telegram</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="bc-toast" id="bcToast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <script src="../../lang-switcher.js"></script>
+</body>
+</html>
+

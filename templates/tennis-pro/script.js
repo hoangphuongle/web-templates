@@ -199,5 +199,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   calcTotal();
+
+  // 6. Smooth Scroll-Reveal & Escape Key Handling
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+      if (navLinks) navLinks.classList.remove('is-open');
+    }
+  });
+
+  const revealTargets = document.querySelectorAll(
+    '.tp-about-top-grid > div, .tp-dev-bento-grid > div, .tp-prog-card, .tp-balls-stage, .tp-equip-bento > div, .tp-court-card, .tp-smarter-bottom-row > div'
+  );
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+    );
+    revealTargets.forEach((el, idx) => {
+      el.classList.add('tp-reveal');
+      el.style.transitionDelay = `${(idx % 3) * 60}ms`;
+      io.observe(el);
+    });
+  }
 });
 

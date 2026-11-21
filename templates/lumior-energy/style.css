@@ -1,0 +1,1464 @@
+/* ==========================================================================
+   LUMIOR — CLEAN ENERGY, SOLAR, WIND & SMART BATTERY PLATFORM (STYLE.CSS)
+   ========================================================================== */
+
+:root {
+  --lm-bg: #F5F4EE;
+  --lm-bg-warm: #EFECE4;
+  --lm-forest: #0F291E;
+  --lm-forest-mid: #163829;
+  --lm-lime: #DCEB66;
+  --lm-lime-bright: #E5F46E;
+  --lm-green-accent: #2D7A4C;
+  --lm-white: #FFFFFF;
+  --lm-ink: #131B16;
+  --lm-body: #555E56;
+  --lm-muted: #8C9289;
+  --lm-border: rgba(15, 41, 30, 0.08);
+  --lm-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--lm-font);
+  background: #E5E3DC;
+  color: var(--lm-ink);
+  line-height: 1.58;
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+.lm-page-shell {
+  max-width: 1320px;
+  margin: 0 auto;
+  background: var(--lm-bg);
+  overflow: hidden;
+  box-shadow: 0 28px 80px rgba(15, 41, 30, 0.12);
+}
+
+.lm-container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.lm-z2 {
+  position: relative;
+  z-index: 2;
+}
+
+.lm-text-lime {
+  color: var(--lm-lime);
+}
+
+/* Smooth Scroll Reveal */
+.lm-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.lm-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lm-eyebrow {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--lm-muted);
+  margin-bottom: 10px;
+}
+
+.lm-sec-title {
+  font-size: clamp(2rem, 3.8vw, 2.95rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--lm-ink);
+}
+
+/* Pill Buttons */
+.lm-btn-white-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--lm-white);
+  color: var(--lm-ink);
+  border: 1px solid rgba(15, 41, 30, 0.1);
+  border-radius: 999px;
+  padding: 8px 10px 8px 18px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.lm-btn-white-pill:hover {
+  transform: translateY(-2px);
+}
+
+.lm-lime-dot-arrow {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--lm-lime);
+  color: var(--lm-ink);
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lm-btn-lime-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lm-lime);
+  color: var(--lm-ink);
+  border: none;
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(220, 235, 102, 0.35);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.lm-btn-lime-pill:hover {
+  background: var(--lm-lime-bright);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   1. TOP NAVBAR & SUNLIT COASTAL SOLAR/WIND HERO
+   ========================================================================== */
+
+.lm-topbar {
+  background: var(--lm-white);
+  padding: 13px 0;
+  position: relative;
+  z-index: 40;
+}
+
+.lm-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.lm-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--lm-ink);
+}
+
+.lm-logo-light {
+  color: var(--lm-white);
+}
+
+.lm-logo-clover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lm-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.lm-nav-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--lm-body);
+  transition: color 0.2s ease;
+}
+
+.lm-nav-link:hover {
+  color: var(--lm-ink);
+}
+
+.lm-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lm-btn-quote-top {
+  background: #F4F4EF;
+  color: var(--lm-ink);
+  border: 1px solid rgba(15, 41, 30, 0.12);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lm-btn-quote-top:hover {
+  background: var(--lm-lime);
+}
+
+.lm-burger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--lm-border);
+  background: var(--lm-white);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.lm-burger span {
+  width: 15px;
+  height: 2px;
+  background: var(--lm-ink);
+}
+
+/* Panoramic Coastal Hero */
+.lm-hero {
+  position: relative;
+  min-height: 610px;
+  display: flex;
+  align-items: flex-end;
+  padding: 40px 0 68px;
+  overflow: hidden;
+}
+
+.lm-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.lm-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.0) 0%,
+    rgba(18, 45, 24, 0.18) 55%,
+    rgba(16, 40, 22, 0.72) 100%
+  );
+}
+
+.lm-hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+.lm-hero-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: end;
+  gap: 32px;
+}
+
+.lm-hero-title {
+  font-size: clamp(2.65rem, 5.4vw, 4.35rem);
+  font-weight: 600;
+  line-height: 1.03;
+  letter-spacing: -0.035em;
+  color: var(--lm-white);
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.28);
+}
+
+.lm-title-sun-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lm-sun-3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+  filter: drop-shadow(0 6px 16px rgba(255, 190, 30, 0.55));
+}
+
+.lm-hero-right-box {
+  color: var(--lm-white);
+}
+
+.lm-hero-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 18px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.lm-hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   2. ABOUT LUMIOR EDITORIAL STATEMENT & 4-CARD BENTO METRICS
+   ========================================================================== */
+
+.lm-about-sec {
+  position: relative;
+  z-index: 5;
+  margin-top: -28px;
+  background: var(--lm-bg);
+  border-radius: 32px 32px 0 0;
+  padding: 56px 0 64px;
+}
+
+.lm-about-editorial {
+  display: grid;
+  grid-template-columns: 0.32fr 0.68fr;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+.lm-editorial-quote {
+  font-size: clamp(1.5rem, 2.65vw, 2.15rem);
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.025em;
+  color: var(--lm-ink);
+}
+
+.lm-editorial-quote span {
+  color: #9A9B92;
+  font-weight: 500;
+}
+
+/* 4-Card Bento Grid */
+.lm-bento-4col {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.lm-bento-card {
+  border-radius: 24px;
+  padding: 22px;
+  min-height: 255px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+.lm-bento-card:hover {
+  transform: translateY(-4px);
+}
+
+.lm-bento-white {
+  background: var(--lm-white);
+  border: 1px solid var(--lm-border);
+  box-shadow: 0 12px 32px rgba(15, 41, 30, 0.04);
+}
+
+.lm-bento-forest {
+  background: var(--lm-forest);
+  color: var(--lm-white);
+}
+
+.lm-bento-illustrated {
+  color: var(--lm-white);
+}
+
+.lm-bento-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lm-bento-img-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 41, 30, 0.35) 0%, rgba(15, 41, 30, 0.15) 50%, rgba(15, 41, 30, 0.78) 100%);
+}
+
+/* Card 1 Avatars Cloud */
+.lm-avatars-cloud {
+  position: relative;
+  height: 120px;
+}
+
+.lm-av {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--lm-white);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.lm-av-1 { top: 6px; left: 4px; }
+.lm-av-2 { top: 2px; left: 44%; }
+.lm-av-3 { top: 12px; right: 6px; }
+.lm-av-4 { bottom: 6px; left: 20%; }
+.lm-av-5 { bottom: 4px; right: 16%; }
+
+.lm-bento-bottom small,
+.lm-bento-top small,
+.lm-bento-map-num small {
+  display: block;
+  font-size: 11px;
+  opacity: 0.72;
+  margin-bottom: 2px;
+}
+
+.lm-bento-num {
+  font-size: clamp(2.1rem, 3.2vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.lm-bento-num sub {
+  font-size: 0.55em;
+  vertical-align: baseline;
+  margin-left: 2px;
+}
+
+.lm-bolt-3d {
+  font-size: 72px;
+  line-height: 1;
+  align-self: flex-end;
+  margin: -10px -4px -6px 0;
+  filter: drop-shadow(0 8px 24px rgba(220, 235, 102, 0.45));
+}
+
+.lm-bento-forest-note,
+.lm-bento-img-note {
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.lm-bento-regions-text {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--lm-body);
+}
+
+.lm-bento-map-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lm-mini-map-thumb {
+  width: 84px;
+  height: 84px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--lm-border);
+}
+
+.lm-mini-map-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   3. HOW IT WORKS ("One team: panels, turbines, batteries")
+   ========================================================================== */
+
+.lm-how-sec {
+  padding: 36px 0 72px;
+}
+
+.lm-how-header {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.lm-how-intro {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--lm-body);
+  max-width: 420px;
+  justify-self: end;
+}
+
+.lm-how-stage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+/* Left 3D Isometric Energy Island */
+.lm-island-visual {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  padding: 18px;
+  background: var(--lm-white);
+  border: 1px solid var(--lm-border);
+  box-shadow: 0 18px 44px rgba(15, 41, 30, 0.06);
+}
+
+.lm-island-img {
+  width: 100%;
+  border-radius: 20px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.lm-telemetry-pill {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.94);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(15, 41, 30, 0.12);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--lm-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.lm-tel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #F59E0B;
+}
+
+.lm-dot-green {
+  background: #22C55E;
+}
+
+.lm-tel-solar {
+  top: 26%;
+  left: 28px;
+}
+
+.lm-tel-wind {
+  top: 22%;
+  right: 28px;
+}
+
+.lm-tel-battery {
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Right Curved Steps Stack */
+.lm-steps-col {
+  position: relative;
+  padding-left: 36px;
+}
+
+.lm-curve-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 44px;
+  pointer-events: none;
+}
+
+.lm-curve-line svg {
+  width: 100%;
+  height: 100%;
+}
+
+.lm-steps-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.lm-step-row {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 16px;
+  align-items: start;
+  cursor: pointer;
+  opacity: 0.48;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.lm-step-row:hover,
+.lm-step-row.is-active {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.lm-step-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #E4E3DC;
+  color: var(--lm-body);
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.lm-step-row.is-active .lm-step-badge {
+  background: var(--lm-forest);
+  color: var(--lm-white);
+}
+
+.lm-step-text h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--lm-ink);
+}
+
+.lm-step-text p {
+  font-size: 12px;
+  line-height: 1.58;
+  color: var(--lm-body);
+}
+
+/* Interactive Solar Savings Calculator Card */
+.lm-calc-card {
+  background: var(--lm-forest);
+  color: var(--lm-white);
+  border-radius: 28px;
+  padding: 32px 34px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 32px;
+  align-items: center;
+  box-shadow: 0 22px 55px rgba(15, 41, 30, 0.18);
+}
+
+.lm-calc-left .lm-eyebrow {
+  color: var(--lm-lime);
+}
+
+.lm-calc-left h3 {
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.lm-calc-left p {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.74);
+  margin-bottom: 18px;
+}
+
+.lm-calc-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.lm-calc-label-row strong {
+  color: var(--lm-lime);
+  font-size: 15px;
+}
+
+.lm-calc-slider-box input[type="range"] {
+  width: 100%;
+  accent-color: var(--lm-lime);
+  cursor: pointer;
+}
+
+.lm-calc-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.lm-cm-box {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.lm-cm-box small {
+  display: block;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.68);
+  margin-bottom: 4px;
+}
+
+.lm-cm-box strong {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.lm-calc-cta {
+  width: 100%;
+}
+
+/* ==========================================================================
+   4. TESTIMONIALS ("Loved by the people who own the sun") & CO-OP PARTNERS
+   ========================================================================== */
+
+.lm-testi-sec {
+  padding: 24px 0 64px;
+}
+
+.lm-testi-layout {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 32px;
+  align-items: stretch;
+  margin-bottom: 44px;
+}
+
+.lm-testi-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.lm-rating-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 12.5px;
+}
+
+.lm-rating-line strong {
+  font-weight: 800;
+}
+
+.lm-stars {
+  color: #EAB308;
+  letter-spacing: 1px;
+}
+
+.lm-rating-line small {
+  color: var(--lm-muted);
+}
+
+.lm-testi-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.lm-nav-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--lm-border);
+  background: var(--lm-white);
+  color: var(--lm-ink);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lm-nav-lime {
+  background: var(--lm-lime);
+  border-color: var(--lm-lime);
+}
+
+.lm-testi-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--lm-muted);
+  margin-left: 6px;
+}
+
+.lm-prog-bar {
+  width: 38px;
+  height: 3px;
+  border-radius: 99px;
+  background: rgba(15, 41, 30, 0.14);
+  overflow: hidden;
+  display: inline-block;
+}
+
+.lm-prog-bar i {
+  display: block;
+  width: 66%;
+  height: 100%;
+  background: var(--lm-ink);
+  transition: width 0.25s ease;
+}
+
+/* Right 2-Card Testimonial Pair */
+.lm-testi-cards {
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  gap: 16px;
+}
+
+.lm-testi-photo-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 320px;
+}
+
+.lm-testi-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lm-saved-pill {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: var(--lm-lime);
+  color: var(--lm-ink);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.lm-testi-quote-card {
+  background: var(--lm-forest);
+  color: var(--lm-white);
+  border-radius: 24px;
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.lm-tq-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lm-stars-white {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.lm-bill-badge {
+  background: var(--lm-white);
+  color: var(--lm-ink);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.lm-tq-quote {
+  font-size: clamp(1.02rem, 1.55vw, 1.22rem);
+  font-weight: 500;
+  line-height: 1.48;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.lm-tq-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lm-tq-author img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.lm-tq-author strong {
+  display: block;
+  font-size: 12.5px;
+}
+
+.lm-tq-author small {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Partners Bar */
+.lm-partners-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  border-top: 1px solid var(--lm-border);
+}
+
+.lm-partners-label {
+  font-size: 11.5px;
+  color: var(--lm-muted);
+}
+
+.lm-partners-logos {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: 700;
+  color: #5C635A;
+}
+
+/* ==========================================================================
+   5. SCENIC COASTAL ILLUSTRATION CTA & GIANT MEADOW-FILLED "Lumior" FOOTER
+   ========================================================================== */
+
+.lm-scenic-footer-wrap {
+  position: relative;
+  padding-top: 36px;
+  overflow: hidden;
+}
+
+.lm-paperwork-cta {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 20px;
+}
+
+.lm-paperwork-title {
+  font-size: clamp(2.15rem, 4.2vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.lm-paperwork-sub {
+  font-size: 13px;
+  color: var(--lm-body);
+  margin-bottom: 20px;
+}
+
+.lm-paperwork-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lm-scenic-bay-bg {
+  width: 100%;
+  height: 290px;
+  margin-top: -54px;
+  overflow: hidden;
+}
+
+.lm-scenic-bay-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Deep Forest Green Rounded Footer Box */
+.lm-footer-box {
+  position: relative;
+  z-index: 4;
+  max-width: 1220px;
+  margin: -58px auto 24px;
+  background: var(--lm-forest);
+  color: var(--lm-white);
+  border-radius: 30px;
+  padding: 40px 42px 24px;
+  box-shadow: 0 28px 70px rgba(7, 22, 15, 0.45);
+  overflow: hidden;
+}
+
+.lm-footer-top {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+
+.lm-footer-brand h3 {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.3;
+  max-width: 240px;
+  margin: 18px 0;
+}
+
+.lm-newsletter-pill {
+  display: flex;
+  align-items: center;
+  background: var(--lm-white);
+  border-radius: 999px;
+  padding: 4px;
+  max-width: 270px;
+}
+
+.lm-newsletter-pill input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  padding: 7px 14px;
+  font-size: 12px;
+  color: var(--lm-ink);
+  outline: none;
+}
+
+.lm-newsletter-pill button {
+  background: var(--lm-lime);
+  color: var(--lm-ink);
+  border: none;
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 11.5px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lm-footer-col h4 {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 14px;
+}
+
+.lm-footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lm-footer-col a:hover {
+  color: var(--lm-lime);
+}
+
+/* Giant Meadow-Textured "Lumior" Wordmark */
+.lm-giant-wordmark-stage {
+  position: relative;
+  text-align: center;
+  padding: 12px 0 6px;
+}
+
+.lm-giant-wordmark {
+  font-size: clamp(4.2rem, 16vw, 13.2rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
+  background-image: url('img/hero-coastal.jpg');
+  background-size: cover;
+  background-position: center 65%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.35));
+  user-select: none;
+}
+
+.lm-float-cloud-3d {
+  position: absolute;
+  top: 8%;
+  left: 16%;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+.lm-float-battery-3d {
+  position: absolute;
+  top: 12%;
+  right: 11%;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+.lm-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.lm-footer-legal {
+  display: flex;
+  gap: 16px;
+}
+
+.lm-footer-legal a:hover {
+  color: var(--lm-lime);
+}
+
+/* ==========================================================================
+   6. MODAL & TOAST
+   ========================================================================== */
+
+.lm-modal-backdrop {
+  position: fixed;
+  inset: 52px 0 0 0;
+  z-index: 99990;
+  background: rgba(10, 28, 20, 0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.lm-modal-backdrop.is-open {
+  display: flex;
+}
+
+.lm-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  background: var(--lm-white);
+  border-radius: 26px;
+  padding: 28px 26px;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+}
+
+.lm-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #F0EFE9;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lm-modal-badge {
+  display: inline-block;
+  background: var(--lm-lime);
+  color: var(--lm-ink);
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.lm-modal-card h3 {
+  font-size: 21px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.lm-modal-sub {
+  font-size: 12.5px;
+  color: var(--lm-body);
+  margin-bottom: 18px;
+}
+
+.lm-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lm-modal-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.lm-modal-form input,
+.lm-modal-form select,
+.lm-modal-form textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid #D9D8D0;
+  font-size: 13px;
+}
+
+.lm-modal-actions {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.lm-btn-zalo-modal,
+.lm-btn-tg-modal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+}
+
+.lm-btn-zalo-modal {
+  background: var(--lm-forest);
+  color: var(--lm-white);
+}
+
+.lm-btn-tg-modal {
+  background: #24A1DE;
+  color: var(--lm-white);
+}
+
+.lm-toast {
+  position: fixed;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  right: 22px;
+  z-index: 99995;
+  background: var(--lm-forest);
+  color: var(--lm-white);
+  border-left: 4px solid var(--lm-lime);
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.lm-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE MEDIA QUERIES (DESKTOP / TABLET / MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .lm-hero-bottom-grid,
+  .lm-about-editorial,
+  .lm-how-header,
+  .lm-how-stage,
+  .lm-calc-card,
+  .lm-testi-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .lm-how-intro {
+    justify-self: start;
+    max-width: 100%;
+  }
+
+  .lm-bento-4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lm-footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .lm-container {
+    padding: 0 18px;
+  }
+
+  .lm-nav-links {
+    display: none;
+    position: absolute;
+    top: 62px;
+    left: 18px;
+    right: 18px;
+    background: var(--lm-white);
+    border: 1px solid var(--lm-border);
+    border-radius: 18px;
+    padding: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: 0 20px 45px rgba(15, 41, 30, 0.16);
+    z-index: 60;
+  }
+
+  .lm-nav-links.is-open {
+    display: flex;
+  }
+
+  .lm-burger {
+    display: inline-flex;
+  }
+
+  .lm-testi-cards,
+  .lm-calc-metrics,
+  .lm-footer-top,
+  .lm-modal-row-2,
+  .lm-modal-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .lm-steps-col {
+    padding-left: 0;
+  }
+
+  .lm-curve-line {
+    display: none;
+  }
+
+  .lm-footer-box {
+    margin: -40px 12px 72px;
+    padding: 28px 22px 24px;
+  }
+
+  .lm-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .lm-bento-4col {
+    grid-template-columns: 1fr;
+  }
+
+  .lm-hero-btns,
+  .lm-paperwork-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lm-btn-white-pill,
+  .lm-btn-lime-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .lm-calc-card {
+    padding: 24px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

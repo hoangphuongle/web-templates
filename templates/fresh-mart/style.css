@@ -27,8 +27,10 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 72px;
   overflow-x: hidden;
   max-width: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -38,6 +40,20 @@ body {
   line-height: 1.55;
   overflow-x: hidden;
   max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fm-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.fm-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 img {
@@ -1134,6 +1150,49 @@ textarea,
   textarea {
     font-size: 16px !important;
   }
+
+  .fm-pocket-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 10px;
+    padding-bottom: 4px;
+  }
+
+  .fm-pocket-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .fm-ptab {
+    border-left: none;
+    border-bottom: 3px solid #D9E4D0;
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .fm-ptab.is-active {
+    border-bottom-color: var(--fm-green-leaf);
+  }
+
+  .fm-pocket-banner {
+    height: 240px;
+  }
+
+  .fm-newsletter-form {
+    max-width: 100%;
+  }
+
+  .fm-footer {
+    padding: 40px 0 72px;
+  }
+
+  .fm-footer-copy {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1142,6 +1201,34 @@ textarea,
     position: static;
     width: 100%;
     margin-top: 10px;
+  }
+
+  .fm-hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fm-btn-green-pill,
+  .fm-btn-outline-pill {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .fm-center-tall-card {
+    min-height: 320px;
+  }
+
+  .fm-footer-basket-wrap img {
+    height: 165px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

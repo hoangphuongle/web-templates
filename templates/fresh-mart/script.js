@@ -95,5 +95,35 @@ document.addEventListener('DOMContentLoaded', () => {
       toastEl.classList.remove('is-visible');
     }, 2800);
   }
+
+  // 5. Smooth Scroll-Reveal & Escape Key Handling
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+      if (navLinks) navLinks.classList.remove('is-open');
+    }
+  });
+
+  const revealTargets = document.querySelectorAll(
+    '.fm-stat-card, .fm-center-tall-card, .fm-pocket-grid > div, .fm-plan-card, .fm-impact-banner, .fm-story-card'
+  );
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+    );
+    revealTargets.forEach((el, idx) => {
+      el.classList.add('fm-reveal');
+      el.style.transitionDelay = `${(idx % 3) * 60}ms`;
+      io.observe(el);
+    });
+  }
 });
 
