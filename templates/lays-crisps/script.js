@@ -32,23 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const reviews = [
     {
       quote:
-        '“Lát khoai tây Lay\'s mỏng giòn tan tự nhiên, vị muối giấm Salt & Vinegar và vị sườn nướng BBQ đậm đà cực kỳ cuốn. Mỗi lần tụ tập xem phim cuối tuần cùng bạn bè đều phải đặt nguyên thùng 12 gói mới đủ!”',
-      name: 'Annara Veirmont · Minh Khôi',
-      age: '23 years of Age · Food Reviewer',
+        '“Lát khoai tây Lay\'s mỏng giòn tan tự nhiên, vị muối giấm và vị sườn nướng BBQ đậm đà cực kỳ cuốn. Mỗi lần tụ tập xem phim cuối tuần cùng bạn bè đều phải đặt nguyên thùng 12 gói mới đủ!”',
+      name: 'Minh Khôi · Annara Veirmont',
+      age: '23 tuổi · Reviewer Ẩm Thực',
       img: 'img/yellow-classic-bag.jpg',
     },
     {
       quote:
-        '“Phiên bản giới hạn Lay\'s BLT Flavored và Wavy Original gợn sóng chấm sốt phô mai ngon xuất sắc. Đặt combo trên web giao nhanh chỉ 25 phút vẫn giữ nguyên độ giòn.”',
+        '“Phiên bản giới hạn Lay\'s vị Thịt Xông Khói BLT và Wavy gợn sóng chấm sốt phô mai ngon xuất sắc. Đặt combo trên web giao nhanh chỉ 25 phút vẫn giữ nguyên độ giòn.”',
       name: 'Hải Yến · Jessica Chen',
-      age: '25 years of Age · Content Creator',
+      age: '25 tuổi · Sáng Tạo Nội Dung',
       img: 'img/blt-purple-bag.jpg',
     },
     {
       quote:
-        '“Vị Yogurt & Herb thanh mát dễ ăn cực kỳ, cả văn phòng mình ai cũng mê dùng cho bữa xế chiều.”',
+        '“Vị Sữa Chua Thảo Mộc thanh mát dễ ăn cực kỳ, cả văn phòng mình ai cũng mê dùng cho bữa xế chiều.”',
       name: 'Hoàng Nam · Alex Rivera',
-      age: '27 years of Age · Product Designer',
+      age: '27 tuổi · Thiết Kế Sản Phẩm',
       img: 'img/green-herb-bag.jpg',
     },
   ];

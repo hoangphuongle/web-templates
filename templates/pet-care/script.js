@@ -39,22 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       quote:
         '“Nơi duy nhất tôi hoàn toàn yên tâm gửi bé cưng mỗi khi đi công tác xa. Điều duy nhất khiến tôi \'đau đầu\' là bé vui đến mức chẳng muốn về nhà! Các bạn nhân viên cực kỳ nhẹ nhàng và luôn gửi hình ảnh, video bé chơi đùa mỗi buổi chiều.”',
-      name: 'Christina Klein · Minh Thảo',
-      role: 'CEO – Designtech',
+      name: 'Minh Thảo · Christina Klein',
+      role: 'Giám đốc Thiết kế – Designtech',
       img: 'img/cat-peach.jpg',
     },
     {
       quote:
         '“Bác sĩ thú y tại Pet.care chẩn đoán và điều trị rất tận tình. Bé mèo Anh nhà mình từng biếng ăn lâu ngày nhưng sau liệu trình dinh dưỡng 2 tuần đã khỏe mạnh và lanh lợi trở lại.”',
-      name: 'David Nguyễn · Hoàng Bách',
-      role: 'Architect – StudioHB',
+      name: 'Hoàng Bách · David Nguyễn',
+      role: 'Kiến trúc sư – StudioHB',
       img: 'img/cat-blue.jpg',
     },
     {
       quote:
         '“Dịch vụ dạo bộ 1-kèm-1 và tắm spa cắt tỉa lông cho bé Poodle cực kỳ ưng ý, lông thơm mềm suốt cả tuần!”',
       name: 'Hương Giang · Sarah Lee',
-      role: 'Product Manager',
+      role: 'Quản lý Sản phẩm',
       img: 'img/dog-teal.jpg',
     },
   ];

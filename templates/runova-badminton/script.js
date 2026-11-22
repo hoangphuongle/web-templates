@@ -140,14 +140,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Testimonials Slider
   const testimonials = [
     {
-      quote: '"OVER A YEAR AT<br />RUNOVA <span class="rn-muted">THE BEST<br />SPORTS CENTER</span> FOR<br />BADMINTON AND FUN!"',
+      quote: '"HƠN MỘT NĂM TẠI<br />RUNOVA — <span class="rn-muted">TRUNG TÂM<br />CẦU LÔNG ĐỈNH NHẤT</span> CHO<br />TẬP LUYỆN &amp; GIAO LƯU!"',
       vi: '"Hơn 1 năm gắn bó cùng CLB Runova — Mặt thảm sân cực bám chân, trần cao thoáng không bị chói đèn và đặt lịch giữ sân online siêu tiện lợi!"',
       name: 'Minh Khôi · Noah Carter',
       role: 'Đội trưởng CLB Cầu Lông Quận 7 · Hội viên Vàng',
       avatar: 'img/about-player.png',
     },
     {
-      quote: '"PRO BWF COURTS &<br />FAST <span class="rn-muted">ONLINE COURT<br />BOOKING</span> IN JUST<br />30 SECONDS!"',
+      quote: '"THẢM SÂN CHUẨN BWF &amp;<br />ĐẶT SÂN <span class="rn-muted">TRỰC TUYẾN<br />NHANH GỌN</span> CHỈ TRONG<br />30 GIÂY!"',
       vi: '"Sơ đồ chọn sân trực quan như đặt vé xem phim, biết ngay sân nào trống giờ vàng 18h–20h mà không cần gọi điện hỏi từng sân."',
       name: 'Thanh Thảo · Sarah Nguyen',
       role: 'Vận động viên Phong trào · Giải Đôi Nữ Runova Open',

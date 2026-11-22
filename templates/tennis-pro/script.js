@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const slotBtns = document.querySelectorAll('.tp-slot-btn');
   const addonBtns = document.querySelectorAll('.tp-addon-btn');
 
-  let selectedCourt = 'Court 01 – Arthur Ashe (Hard)';
+  let selectedCourt = 'Sân 01 – Arthur Ashe (Sân Cứng)';
   let hourlyRate = 250000;
   let selectedSlotsCount = 1; // 1 slot = 2 hours
 

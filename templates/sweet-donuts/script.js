@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartCountEl = document.getElementById('sdCartCount');
 
   let cart = [
-    { name: 'Cruller (Coconut Glaze)', price: 45000, img: 'img/prod-cruller.jpg' },
-    { name: 'Long John Raised Donut', price: 55000, img: 'img/prod-longjohn.jpg' },
+    { name: 'Donut Xoắn Pháp Cruller', price: 45000, img: 'img/prod-cruller.jpg' },
+    { name: 'Donut Thanh Dài Sô-cô-la', price: 55000, img: 'img/prod-longjohn.jpg' },
   ];
 
   function formatVND(n) {

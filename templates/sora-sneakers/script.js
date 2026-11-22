@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const swatchBtns = document.querySelectorAll('.sr-swatch-btn');
   const sizeBtns = document.querySelectorAll('.sr-size-btn');
 
-  let currentColor = 'Trắng / Xanh Royal (White / Royal Blue)';
-  let currentSize = '41 (US 9)';
+  let currentColor = 'Trắng / Xanh Royal';
+  let currentSize = 'Cỡ 41';
   let currentPrice = 2890000;
   let currentImg = 'img/sneaker-blue.jpg';
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (colorName) colorName.textContent = currentColor;
       if (pdpMainImg) pdpMainImg.src = currentImg;
-      if (pdpPrice) pdpPrice.innerHTML = `${formatVND(currentPrice)} <small>($129.00)</small>`;
+      if (pdpPrice) pdpPrice.innerHTML = `${formatVND(currentPrice)}`;
     });
   });
 

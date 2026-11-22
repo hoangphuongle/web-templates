@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (phoneOrderBtn) {
     phoneOrderBtn.addEventListener('click', () => {
-      openReservationModal(`Đặt Món Nhanh: ${qty}x Sesame Salmon Stock Maki (${qty * unitPriceK}.000đ)`);
+      openReservationModal(`Đặt Món Nhanh: ${qty}x Maki Cá Hồi Mè Rang (${qty * unitPriceK}.000đ)`);
     });
   }
 
