@@ -1660,6 +1660,16 @@ select {
     margin-top: 40px;
   }
 
+  .rn-hero-title {
+    font-size: clamp(46px, 12vw, 72px);
+    line-height: 1.04;
+  }
+
+  .rn-dual-heading {
+    font-size: clamp(28px, 7.2vw, 40px);
+    line-height: 1.12;
+  }
+
   .rn-statement-row,
   .rn-products-header {
     grid-template-columns: 1fr;
@@ -1683,6 +1693,12 @@ select {
     display: none;
   }
 
+  .rn-modal-card {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    padding: 24px 20px;
+  }
+
   .rn-about-section,
   .rn-booking-section,
   .rn-explore-section,
@@ -1693,18 +1709,41 @@ select {
   .rn-footer {
     padding: 36px 18px;
   }
+
+  .rn-footer {
+    padding-bottom: 72px;
+  }
 }
 
 @media (max-width: 480px) {
+  .rn-navbar {
+    padding: 8px 10px 8px 16px;
+  }
+
+  .rn-search-btn {
+    display: none;
+  }
+
+  .rn-join-pill {
+    padding: 7px 12px;
+    font-size: 11.5px;
+  }
+
+  .rn-courts-grid,
+  .rn-timeslot-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
   .rn-form-row-2,
-  .rn-acc-content,
-  .rn-timeslot-grid,
-  .rn-courts-grid {
+  .rn-acc-content {
     grid-template-columns: 1fr;
   }
+
   .rn-quote-mark {
     font-size: 56px;
   }
+
   .rn-comm-right {
     justify-self: stretch;
     max-width: 100%;

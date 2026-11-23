@@ -1774,6 +1774,10 @@ textarea,
     padding: 0 18px;
   }
 
+  .bc-navbar {
+    position: relative;
+  }
+
   .bc-hero {
     min-height: auto;
     padding: 18px 0 32px;
@@ -1784,12 +1788,24 @@ textarea,
     gap: 24px;
   }
 
+  .bc-hero-title {
+    font-size: clamp(2rem, 7.2vw, 2.75rem);
+    line-height: 1.14;
+  }
+
+  .bc-sec-heading,
+  .bc-vision-title,
+  .bc-nextstep-title {
+    font-size: clamp(1.7rem, 5.8vw, 2.35rem);
+    line-height: 1.18;
+  }
+
   .bc-hero-hud {
     max-width: 100%;
   }
 
   .bc-bento-tall {
-    min-height: 460px;
+    min-height: 420px;
     padding: 20px 18px;
   }
 
@@ -1808,7 +1824,7 @@ textarea,
   .bc-nav-links {
     display: none;
     position: absolute;
-    top: 72px;
+    top: calc(100% + 6px);
     left: 18px;
     right: 18px;
     background: #181B22;
@@ -1876,6 +1892,12 @@ textarea,
     justify-content: center;
   }
 
+  .bc-modal-card {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    padding: 24px 20px;
+  }
+
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {
@@ -1884,6 +1906,10 @@ textarea,
 }
 
 @media (max-width: 480px) {
+  .bc-container {
+    padding: 0 16px;
+  }
+
   .bc-partners-strip {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -1905,6 +1931,11 @@ textarea,
   .bc-btn-outline-pill {
     width: 100%;
     justify-content: center;
+  }
+
+  .bc-journey-visual-card {
+    min-height: 360px;
+    padding: 16px;
   }
 
   .bc-plan-top-pill {

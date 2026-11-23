@@ -583,12 +583,19 @@
       }
     }
     @media (max-width: 768px) {
+      html, body {
+        max-width: 100%;
+        overflow-x: hidden !important;
+      }
       html body #hp-bar .hp-vp-switcher {
         display: none !important;
       }
       html body #hp-bar {
         padding: 0 12px !important;
         gap: 8px !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
       }
       html body #hp-bar #hp-back,
       html body #hp-bar a[href*="index.html"]:not(:first-child) {
@@ -599,19 +606,19 @@
     @media (max-width: 640px) {
       #hp-lang-float {
         left: 10px;
-        bottom: 14px;
+        bottom: max(12px, env(safe-area-inset-bottom));
       }
       .hp-lang-trigger {
-        padding: 7px 11px;
-        font-size: 11.5px;
-        gap: 6px;
+        padding: 6px 10px;
+        font-size: 11px;
+        gap: 5px;
       }
       .hp-lang-trigger .hp-trig-flag {
-        font-size: 14px;
+        font-size: 13px;
       }
       html body #hp-bar > a:first-child span:last-child {
         display: inline !important;
-        font-size: 12.5px !important;
+        font-size: 12px !important;
       }
       html body #hp-bar #hp-back,
       html body #hp-bar a[href*="index.html"]:not(:first-child) {
@@ -624,7 +631,7 @@
         font-size: 11px !important;
       }
     }
-    @media (max-width: 420px) {
+    @media (max-width: 440px) {
       html body #hp-bar {
         padding: 0 8px !important;
         gap: 4px !important;
@@ -633,7 +640,11 @@
         gap: 5px !important;
       }
       html body #hp-bar > a:first-child span:last-child {
-        font-size: 11.5px !important;
+        font-size: 11px !important;
+        max-width: 86px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
       html body #hp-bar > span:last-child {
         gap: 4px !important;
@@ -647,6 +658,11 @@
       html body #hp-bar a[href*="zalo.me"] {
         padding: 5px 8px !important;
         font-size: 10.5px !important;
+      }
+    }
+    @media (max-width: 375px) {
+      html body #hp-bar > a:first-child span:last-child {
+        display: none !important;
       }
     }
 

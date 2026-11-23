@@ -20,9 +20,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-/* ── RESET ── */
+/* ── RESET & SECTION SCROLL SNAP ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
-html { scroll-behavior:smooth; overflow-x:hidden; overflow-x:clip }
+html {
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+  overflow-x:clip;
+  scroll-snap-type:y proximity;
+  scroll-padding-top:70px;
+}
 body {
   font-family:'Be Vietnam Pro', sans-serif;
   background:#fff;
@@ -33,6 +39,90 @@ body {
 }
 a { text-decoration:none; color:inherit }
 img { max-width:100%; display:block }
+
+/* Section snap points */
+.hero,
+.stats-bar,
+#templates,
+.tpl-row,
+#du-an,
+#dich-vu,
+#quy-trinh,
+#faq,
+#testimonials,
+#lien-he,
+.ft {
+  scroll-snap-align:start;
+}
+.tpl-row {
+  scroll-margin-top:90px;
+}
+
+/* ── FLOATING SECTION DOTS NAV (BÊN PHẢI MÀN HÌNH) ── */
+.sec-dots-nav {
+  position:fixed;
+  right:20px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:88;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(0,0,0,.09);
+  padding:12px 9px;
+  border-radius:999px;
+  box-shadow:0 8px 28px rgba(0,0,0,.1);
+}
+.sec-dot-btn {
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:rgba(13,13,13,.22);
+  border:none;
+  padding:0;
+  cursor:pointer;
+  position:relative;
+  transition:all .28s cubic-bezier(.22,1,.36,1);
+}
+.sec-dot-btn:hover {
+  background:#0d0d0d;
+  transform:scale(1.25);
+}
+.sec-dot-btn.active {
+  height:24px;
+  background:#22c55e;
+  box-shadow:0 0 0 3px rgba(34,197,94,.22);
+}
+.sec-dot-btn::before {
+  content:attr(data-label);
+  position:absolute;
+  right:22px;
+  top:50%;
+  transform:translateY(-50%) translateX(6px);
+  background:#0d0d0d;
+  color:#fff;
+  font-family:'Be Vietnam Pro',sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+  white-space:nowrap;
+  padding:5px 11px;
+  border-radius:8px;
+  opacity:0;
+  pointer-events:none;
+  transition:all .22s ease;
+  box-shadow:0 4px 14px rgba(0,0,0,.18);
+}
+.sec-dot-btn:hover::before {
+  opacity:1;
+  transform:translateY(-50%) translateX(0);
+}
+@media(max-width:920px){
+  html { scroll-snap-type:none }
+  .sec-dots-nav { display:none }
+}
 
 /* ── HEADER ── */
 .nav {
@@ -1049,7 +1139,7 @@ img { max-width:100%; display:block }
 <script>addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>40))</script>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero-sec">
   <div class="hero-pill rv"><span class="hero-pill-dot"></span> Nhận thiết kế – Bàn giao 7 ngày</div>
   <h1 class="rv">Mẫu website thu hút,<br>click để xem ngay</h1>
   <p class="hero-sub rv">Chọn mẫu ưng ý, nhắn Zalo là xong. Thiết kế website cho Spa, Nail, Gym, Khách sạn, Nhà hàng & Doanh nghiệp.</p>
@@ -2872,6 +2962,125 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 
   updateDeck();
+})();
+
+// ── SECTION-BY-SECTION SCROLL NAVIGATION (DOTS + WHEEL/KEYBOARD STEPPING) ──
+(function(){
+  const sections = [
+    { id: 'hero-sec',     label: 'Đầu trang' },
+    { id: 'templates',    label: 'Kho 35+ Mẫu Web' },
+    { id: 'du-an',        label: 'Dự án Live' },
+    { id: 'dich-vu',      label: 'Bảng giá Dịch vụ' },
+    { id: 'quy-trinh',    label: 'Quy trình 7 ngày' },
+    { id: 'faq',          label: 'Hỏi đáp FAQ' },
+    { id: 'testimonials', label: 'Khách hàng đánh giá' },
+    { id: 'lien-he',      label: 'Liên hệ tư vấn' }
+  ].filter(s => document.getElementById(s.id));
+
+  if(!sections.length) return;
+
+  // Create right-side floating section dots bar
+  const nav = document.createElement('nav');
+  nav.className = 'sec-dots-nav';
+  nav.setAttribute('aria-label', 'Điều hướng từng phần');
+
+  const btns = sections.map((sec, idx) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'sec-dot-btn' + (idx === 0 ? ' active' : '');
+    btn.setAttribute('data-label', sec.label);
+    btn.setAttribute('aria-label', sec.label);
+    btn.addEventListener('click', () => {
+      const el = document.getElementById(sec.id);
+      if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    nav.appendChild(btn);
+    return btn;
+  });
+
+  document.body.appendChild(nav);
+
+  let activeSecIdx = 0;
+
+  // Highlight active dot on scroll
+  function syncActiveSection(){
+    const probeY = window.scrollY + window.innerHeight * 0.34;
+    let current = 0;
+    sections.forEach((sec, idx) => {
+      const el = document.getElementById(sec.id);
+      if(el && el.offsetTop <= probeY){
+        current = idx;
+      }
+    });
+    activeSecIdx = current;
+    btns.forEach((btn, idx) => btn.classList.toggle('active', idx === current));
+  }
+
+  window.addEventListener('scroll', syncActiveSection, { passive: true });
+  syncActiveSection();
+
+  // Compute all snap stops in document order (main sections + visible template rows)
+  function getSnapStops(){
+    const selector = '#hero-sec, #templates, #tplList .tpl-row:not(.hidden), #du-an, #dich-vu, #quy-trinh, #faq, #testimonials, #lien-he, footer.ft';
+    return Array.from(document.querySelectorAll(selector));
+  }
+
+  let isAutoStepping = false;
+  function stepToStop(dir){
+    const stops = getSnapStops();
+    const curY = window.scrollY;
+    const navOffset = 68;
+    let targetEl = null;
+
+    if(dir > 0){
+      targetEl = stops.find(el => (el.getBoundingClientRect().top + window.scrollY - navOffset) > curY + 36);
+    } else {
+      for(let i = stops.length - 1; i >= 0; i--){
+        const top = stops[i].getBoundingClientRect().top + window.scrollY - navOffset;
+        if(top < curY - 36){
+          targetEl = stops[i];
+          break;
+        }
+      }
+    }
+
+    if(targetEl){
+      isAutoStepping = true;
+      const destY = Math.max(0, targetEl.getBoundingClientRect().top + window.scrollY - (targetEl.id === 'hero-sec' ? 0 : navOffset));
+      window.scrollTo({ top: destY, behavior: 'smooth' });
+      setTimeout(() => { isAutoStepping = false; }, 620);
+      return true;
+    }
+    return false;
+  }
+
+  // Smooth wheel section-by-section stepping on desktop
+  window.addEventListener('wheel', (e) => {
+    if(window.innerWidth <= 920) return;
+    if(e.ctrlKey || e.metaKey) return;
+    if(Math.abs(e.deltaY) < 28) return;
+
+    if(isAutoStepping){
+      e.preventDefault();
+      return;
+    }
+
+    const dir = e.deltaY > 0 ? 1 : -1;
+    const moved = stepToStop(dir);
+    if(moved){
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  // PageDown / PageUp / ArrowDown / ArrowUp keyboard section stepping
+  window.addEventListener('keydown', (e) => {
+    if(['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName || '')) return;
+    if(e.key === 'PageDown' || (e.key === 'ArrowDown' && !e.altKey && !e.metaKey)){
+      if(stepToStop(1)) e.preventDefault();
+    } else if(e.key === 'PageUp' || (e.key === 'ArrowUp' && !e.altKey && !e.metaKey)){
+      if(stepToStop(-1)) e.preventDefault();
+    }
+  });
 })();
 </script>
 <script src="lang-switcher.js"></script>
