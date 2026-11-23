@@ -153,11 +153,11 @@ img { max-width:100%; display:block }
 }
 .btn-nav-ghost:hover { background:#fff; color:#0d0d0d }
 
-/* ── HERO ── */
+/* ── HERO (SECTION 1) ── */
 .hero {
   min-height:100vh;
-  padding:130px 5% 80px;
-  display:flex; flex-direction:column; align-items:center;
+  padding:110px 5% 80px;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
   text-align:center;
   position:relative; overflow:hidden;
   background: #ffffff;
@@ -167,7 +167,8 @@ img { max-width:100%; display:block }
     radial-gradient(ellipse 50% 40% at 100% 90%, rgba(168,85,247,.07) 0%, transparent 55%);
 }
 /* Subtle grid lines — tech feel */
-.hero::before {
+.hero::before,
+.cards-fan-sec::before {
   content:'';
   position:absolute; inset:0;
   background-image:
@@ -185,7 +186,8 @@ img { max-width:100%; display:block }
   pointer-events:none; z-index:0;
 }
 /* Keep hero content above */
-.hero > * { position:relative; z-index:1; }
+.hero > *,
+.cards-fan-sec > * { position:relative; z-index:1; }
 .hero-pill {
   display:inline-flex; align-items:center; gap:8px;
   background:#fff; border:1px solid rgba(0,0,0,.1);
@@ -215,7 +217,7 @@ img { max-width:100%; display:block }
 }
 .hero-btns {
   display:flex; gap:14px; flex-wrap:wrap; justify-content:center;
-  margin-bottom:80px;
+  margin-bottom:0;
 }
 .btn-primary {
   display:inline-flex; align-items:center; gap:8px;
@@ -235,7 +237,36 @@ img { max-width:100%; display:block }
 }
 .btn-secondary:hover { border-color:#0d0d0d; transform:translateY(-2px); box-shadow:0 8px 20px rgba(0,0,0,.08) }
 
-/* ── PLAYING CARD FAN DECK (HERO) ── */
+/* ── PLAYING CARD FAN DECK (SECTION 2 RIÊNG BIỆT) ── */
+.cards-fan-sec {
+  min-height:100vh;
+  padding:96px 5% 64px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  background:#ffffff;
+  border-top:1px solid rgba(0,0,0,.06);
+  background-image:
+    radial-gradient(ellipse 70% 55% at 50% 50%, rgba(34,197,94,.06) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 45% at 85% 20%, rgba(99,102,241,.07) 0%, transparent 60%);
+}
+.cards-fan-head {
+  margin-bottom:22px;
+}
+.cards-fan-head .sec-label {
+  justify-content:center;
+  margin-bottom:8px;
+}
+.cards-fan-head h2 {
+  font-size:clamp(1.5rem, 2.8vw, 2.25rem);
+  font-weight:800;
+  letter-spacing:-.03em;
+  color:#0d0d0d;
+}
 .cards-wrap {
   width:100%; max-width:1060px;
   margin:0 auto;
@@ -971,8 +1002,9 @@ img { max-width:100%; display:block }
   .btn-nav-ghost { display:none }
   .btn-nav-zalo, .btn-nav-tg { padding:8px 13px; font-size:.76rem }
 
-  /* Hero */
-  .hero { min-height:auto; padding:98px 4% 40px }
+  /* Hero & Card Fan Section on Mobile */
+  .hero { min-height:auto; padding:98px 4% 48px }
+  .cards-fan-sec { min-height:auto; padding:56px 4% 44px }
   .hero-pill { margin-bottom:20px; font-size:.74rem; padding:6px 14px }
   .hero h1 { font-size:clamp(1.75rem,6.8vw,2.65rem); margin-bottom:14px; line-height:1.12 }
   .hero-sub { font-size:.92rem; margin-bottom:24px }
@@ -1155,18 +1187,21 @@ img { max-width:100%; display:block }
     <div style="font-size:.7rem;font-weight:700;color:#22c55e;letter-spacing:.05em">✓ RESPONSIVE</div>
     <div style="font-size:.65rem;color:rgba(255,255,255,.5);margin-top:2px">Mobile · Tablet · Desktop</div>
   </div>
-  <div style="position:absolute;bottom:44%;left:3%;background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:12px;padding:10px 14px;box-shadow:0 4px 16px rgba(0,0,0,.07);z-index:2;animation:floatA 7s ease-in-out infinite;display:flex;align-items:center;gap:8px">
+  <div style="position:absolute;bottom:18%;left:4%;background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:12px;padding:10px 14px;box-shadow:0 4px 16px rgba(0,0,0,.07);z-index:2;animation:floatA 7s ease-in-out infinite;display:flex;align-items:center;gap:8px">
     <span style="font-size:1.1rem">🚀</span>
     <div style="text-align:left">
       <div style="font-size:.68rem;font-weight:800;color:#0d0d0d">Bàn giao 7 ngày</div>
       <div style="font-size:.62rem;color:#888">Nhanh · Đúng hẹn</div>
     </div>
   </div>
+</section>
 
-  <!-- Floating tags — must be OUTSIDE cards-stage to avoid nth-child bug -->
-  <div class="hero-tag tag-1">👟 SORA Sneakers Streetwear</div>
-  <div class="hero-tag tag-2">☀️ Lumior Năng Lượng Xanh</div>
-  <div class="hero-tag tag-3">🏗️ BuildCore. Xây Dựng</div>
+<!-- SECTION 2: PLAYING CARD FAN DECK (SECTION RIÊNG BIỆT) -->
+<section class="cards-fan-sec" id="cards-sec">
+  <div class="cards-fan-head">
+    <div class="sec-label">Lật xem nhanh 35+ mẫu</div>
+    <h2>Kệ bài giao diện nổi bật</h2>
+  </div>
 
   <!-- Playing Card Fan Deck — click arrows or swipe to flip card-by-card -->
   <div class="cards-wrap" id="cardsWrap">
@@ -1214,7 +1249,7 @@ img { max-width:100%; display:block }
   </div>
   <div class="cards-dots" id="cardsDots"></div>
   <!-- fan hint -->
-  <p id="cardsFanHint" style="font-size:.75rem;color:#888;margin-top:10px;letter-spacing:.03em;font-weight:600">← Bấm nút 2 bên hoặc vuốt để lật xem toàn bộ 32 mẫu →</p>
+  <p id="cardsFanHint" style="font-size:.75rem;color:#888;margin-top:10px;letter-spacing:.03em;font-weight:600">← Bấm nút 2 bên hoặc vuốt để lật xem toàn bộ 35 mẫu →</p>
 </section>
 
 <!-- STATS -->
@@ -2967,7 +3002,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 (function(){
   const sections = [
     { id: 'hero-sec',     label: 'Đầu trang' },
-    { id: 'cardsWrap',    label: 'Kệ bài Demo' },
+    { id: 'cards-sec',    label: 'Kệ bài Demo' },
     { id: 'templates',    label: 'Kho 35+ Mẫu Web' },
     { id: 'du-an',        label: 'Dự án Live' },
     { id: 'dich-vu',      label: 'Bảng giá Dịch vụ' },
@@ -2982,9 +3017,8 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   function getTargetScrollY(el){
     if(!el || el.id === 'hero-sec') return 0;
     const rectTop = el.getBoundingClientRect().top + window.scrollY;
-    if(el.id === 'cardsWrap'){
-      // Frame the playing card fan + stats bar comfortably in the viewport
-      return Math.max(0, rectTop - 88);
+    if(el.id === 'cards-sec'){
+      return Math.max(0, rectTop);
     }
     return Math.max(0, rectTop - 68);
   }
@@ -3088,9 +3122,9 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   window.addEventListener('scroll', syncActiveSection, { passive: true });
   syncActiveSection();
 
-  // Compute all snap stops in document order (main sections + cardsWrap + visible template rows)
+  // Compute all snap stops in document order (main sections + cards-sec + visible template rows)
   function getSnapStops(){
-    const selector = '#hero-sec, #cardsWrap, #templates, #tplList .tpl-row:not(.hidden), #du-an, #dich-vu, #quy-trinh, #faq, #testimonials, #lien-he, footer.ft';
+    const selector = '#hero-sec, #cards-sec, #templates, #tplList .tpl-row:not(.hidden), #du-an, #dich-vu, #quy-trinh, #faq, #testimonials, #lien-he, footer.ft';
     return Array.from(document.querySelectorAll(selector));
   }
 
