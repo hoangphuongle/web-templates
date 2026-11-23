@@ -293,14 +293,15 @@ img { max-width:100%; display:block }
   background:#fff;
   border-radius:18px;
   overflow:hidden;
-  box-shadow:0 18px 45px rgba(0,0,0,.13), 0 4px 12px rgba(0,0,0,.07);
+  box-shadow:0 18px 42px rgba(0,0,0,.13), 0 4px 12px rgba(0,0,0,.06);
   border:3px solid #fff;
   transform-origin:50% 92%;
   backface-visibility:hidden;
   -webkit-backface-visibility:hidden;
+  will-change:transform, opacity;
   transition:
-    transform .46s cubic-bezier(.22, 1, .36, 1),
-    opacity .32s ease;
+    transform .54s cubic-bezier(.22, 1, .36, 1),
+    opacity .42s cubic-bezier(.22, 1, .36, 1);
   cursor:pointer;
 }
 /* Active center card (Lá bài đang chọn ở chính giữa) */
@@ -309,8 +310,6 @@ img { max-width:100%; display:block }
   z-index:30;
   opacity:1;
   visibility:visible;
-  will-change:transform;
-  box-shadow:0 28px 64px rgba(0,0,0,.2), 0 8px 20px rgba(0,0,0,.09);
 }
 .sc-card[data-pos="0"]:hover {
   transform:translate3d(0, -16px, 0) rotate(0deg) scale(1.05);
@@ -321,14 +320,12 @@ img { max-width:100%; display:block }
   z-index:20;
   opacity:1;
   visibility:visible;
-  will-change:transform;
 }
 .sc-card[data-pos="1"] {
   transform:translate3d(var(--spread-1), 4px, 0) rotate(6deg) scale(.94);
   z-index:20;
   opacity:1;
   visibility:visible;
-  will-change:transform;
 }
 /* Outer left & right cards */
 .sc-card[data-pos="-2"] {
@@ -336,24 +333,38 @@ img { max-width:100%; display:block }
   z-index:12;
   opacity:1;
   visibility:visible;
-  will-change:transform;
 }
 .sc-card[data-pos="2"] {
   transform:translate3d(var(--spread-2), 14px, 0) rotate(12deg) scale(.86);
   z-index:12;
   opacity:1;
   visibility:visible;
-  will-change:transform;
 }
-/* Hidden deck cards tucked behind center deck — zero GPU overhead */
+/* Left & right wing standby slots (-3 and 3) so entering/exiting cards glide smoothly along the arc */
+.sc-card[data-pos="-3"] {
+  transform:translate3d(calc(var(--spread-2) * -1.2), 26px, 0) rotate(-16deg) scale(.78);
+  z-index:6;
+  opacity:0;
+  visibility:visible;
+  pointer-events:none;
+}
 .sc-card[data-pos="3"] {
-  transform:translate3d(0, 10px, 0) rotate(0deg) scale(.78);
-  z-index:2;
+  transform:translate3d(calc(var(--spread-2) * 1.2), 26px, 0) rotate(16deg) scale(.78);
+  z-index:6;
+  opacity:0;
+  visibility:visible;
+  pointer-events:none;
+}
+/* Off-stage cards (not near the active 7-card window) */
+.sc-card[data-pos="off"] {
+  transform:translate3d(0, 20px, 0) rotate(0deg) scale(.75);
+  z-index:1;
   opacity:0;
   visibility:hidden;
   pointer-events:none;
   will-change:auto;
   box-shadow:none;
+  transition:none;
 }
 /* Subtle hover lift on side cards to hint they can be picked */
 .sc-card:not([data-pos="0"]):hover {
@@ -2867,9 +2878,9 @@ document.querySelectorAll('.faq-q').forEach(btn => {
         const firstLine = h3El.innerHTML.split(/<br\s*\/?>/i)[0];
         shortName = firstLine.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
       }
-      const isInitialVisible = (i <= 3 || i >= tplRows.length - 3);
+      const isInitialVisible = (i <= 5 || i >= tplRows.length - 5);
       const srcAttr = isInitialVisible ? imgSrc : TRANSPARENT_PIXEL;
-      return `<a href="${href}" target="_blank" rel="noopener" class="sc-card" data-pos="3">
+      return `<a href="${href}" target="_blank" rel="noopener" class="sc-card" data-pos="off">
         <img src="${srcAttr}" data-src="${imgSrc}" decoding="async" alt="${imgAlt.replace(/"/g, '&quot;')}">
         <div class="sc-label"><span>${shortName}</span><small>Xem demo →</small></div>
         <span class="sc-arrow">↗</span>
@@ -2906,16 +2917,16 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       let rel = (idx - activeIndex) % total;
       if(rel > half) rel -= total;
       if(rel < -half) rel += total;
-      if(rel >= -3 && rel <= 3){
+      if(rel >= -5 && rel <= 5){
         const img = card.querySelector('img[data-src]');
         if(img && img.getAttribute('src') !== img.dataset.src){
           img.src = img.dataset.src;
         }
       }
-      if(rel >= -2 && rel <= 2){
+      if(rel >= -3 && rel <= 3){
         card.setAttribute('data-pos', String(rel));
       } else {
-        card.setAttribute('data-pos', '3');
+        card.setAttribute('data-pos', 'off');
       }
     });
     const activeDot = ((activeIndex % DOT_COUNT) + DOT_COUNT) % DOT_COUNT;
@@ -3028,18 +3039,21 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   let wheelUnlockTimer = null;
   let lastAbsDelta = 0;
   let lastWheelDir = 0;
+  let wheelAcc = 0;
+  let wheelAccResetTimer = null;
 
-  function scheduleUnlock(delay = 110){
+  function scheduleUnlock(delay = 140){
     clearTimeout(wheelUnlockTimer);
     wheelUnlockTimer = setTimeout(() => {
       if(!rafId){
         isAutoStepping = false;
         lastAbsDelta = 0;
+        wheelAcc = 0;
       }
     }, delay);
   }
 
-  function smoothScrollToY(destY, duration = 480){
+  function smoothScrollToY(destY, duration = 600){
     if(rafId) cancelAnimationFrame(rafId);
     const startY = window.scrollY;
     const diff = destY - startY;
@@ -3050,20 +3064,25 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     isAutoStepping = true;
     const startTime = performance.now();
 
-    function easeOutCubic(t){
-      return 1 - Math.pow(1 - t, 3);
+    // Smooth S-curve (zero frame-1 jolt, feather-soft landing)
+    function easeInOutCubic(t){
+      return t < 0.5
+        ? 4 * t * t * t
+        : 1 - Math.pow(-2 * t + 2, 3) / 2;
     }
 
     function tick(now){
       const elapsed = now - startTime;
       const progress = Math.min(1, elapsed / duration);
-      const eased = easeOutCubic(progress);
-      window.scrollTo(0, Math.round(startY + diff * eased));
+      const eased = easeInOutCubic(progress);
+      window.scrollTo(0, startY + diff * eased);
       if(progress < 1){
         rafId = requestAnimationFrame(tick);
       } else {
+        window.scrollTo(0, destY);
         rafId = null;
-        scheduleUnlock(110);
+        syncActiveSection();
+        scheduleUnlock(140);
       }
     }
 
@@ -3083,7 +3102,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     btn.setAttribute('aria-label', sec.label);
     btn.addEventListener('click', () => {
       const el = document.getElementById(sec.id);
-      if(el) smoothScrollToY(getTargetScrollY(el), 560);
+      if(el) smoothScrollToY(getTargetScrollY(el), 600);
     });
     nav.appendChild(btn);
     return btn;
@@ -3098,14 +3117,15 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       const target = id ? document.getElementById(id) : null;
       if(target){
         e.preventDefault();
-        smoothScrollToY(getTargetScrollY(target), 560);
+        smoothScrollToY(getTargetScrollY(target), 600);
       }
     });
   });
 
-  // Highlight active dot on scroll
+  // Highlight active dot on scroll (throttled so it never causes layout thrashing during animation)
+  let scrollTicking = false;
   function syncActiveSection(){
-    const probeY = window.scrollY + window.innerHeight * 0.32;
+    const probeY = window.scrollY + window.innerHeight * 0.35;
     let current = 0;
     sections.forEach((sec, idx) => {
       const el = document.getElementById(sec.id);
@@ -3119,10 +3139,17 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     btns.forEach((btn, idx) => btn.classList.toggle('active', idx === current));
   }
 
-  window.addEventListener('scroll', syncActiveSection, { passive: true });
+  window.addEventListener('scroll', () => {
+    if(isAutoStepping || scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      syncActiveSection();
+      scrollTicking = false;
+    });
+  }, { passive: true });
   syncActiveSection();
 
-  // Compute all snap stops in document order (main sections + cards-sec + visible template rows)
+  // Compute all snap stops in document order
   function getSnapStops(){
     const selector = '#hero-sec, #cards-sec, #templates, #tplList .tpl-row:not(.hidden), #du-an, #dich-vu, #quy-trinh, #faq, #testimonials, #lien-he, footer.ft';
     return Array.from(document.querySelectorAll(selector));
@@ -3131,14 +3158,15 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   function stepToStop(dir){
     const stops = getSnapStops();
     const curY = window.scrollY;
+    const minStep = 84;
     let targetEl = null;
 
     if(dir > 0){
-      targetEl = stops.find(el => getTargetScrollY(el) > curY + 32);
+      targetEl = stops.find(el => getTargetScrollY(el) > curY + minStep);
     } else {
       for(let i = stops.length - 1; i >= 0; i--){
         const top = getTargetScrollY(stops[i]);
-        if(top < curY - 32){
+        if(top < curY - minStep){
           targetEl = stops[i];
           break;
         }
@@ -3146,43 +3174,49 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     }
 
     if(targetEl){
-      smoothScrollToY(getTargetScrollY(targetEl), 520);
+      smoothScrollToY(getTargetScrollY(targetEl), 580);
       return true;
     }
     return false;
   }
 
-  // Smooth wheel section-by-section stepping on desktop (absorbs trackpad momentum cleanly)
+  // Smooth wheel section-by-section stepping on desktop (zero native pre-jump, zero post-drift)
   window.addEventListener('wheel', (e) => {
     if(window.innerWidth <= 920) return;
     if(e.ctrlKey || e.metaKey) return;
 
     const absDelta = Math.abs(e.deltaY);
+    if(absDelta === 0) return;
     const dir = e.deltaY > 0 ? 1 : -1;
+
+    // Prevent native scroll so the browser never micro-jumps before/after our smooth glide
+    e.preventDefault();
 
     // While animating or while leftover trackpad inertia is decaying, absorb wheel events
     if(isAutoStepping){
-      e.preventDefault();
-      // If animation already finished AND user reverses direction or makes a fresh acceleration spike, allow next step
-      if(!rafId && (dir !== lastWheelDir || absDelta > lastAbsDelta + 22) && absDelta >= 22){
+      if(!rafId && (dir !== lastWheelDir || absDelta > lastAbsDelta + 24) && absDelta >= 24){
         lastAbsDelta = absDelta;
         lastWheelDir = dir;
+        wheelAcc = 0;
         stepToStop(dir);
         return;
       }
       lastAbsDelta = absDelta;
-      scheduleUnlock(110);
+      scheduleUnlock(130);
       return;
     }
 
-    if(absDelta < 18) return;
+    wheelAcc += e.deltaY;
+    clearTimeout(wheelAccResetTimer);
+    wheelAccResetTimer = setTimeout(() => { wheelAcc = 0; }, 140);
 
+    if(Math.abs(wheelAcc) < 16) return;
+
+    const stepDir = wheelAcc > 0 ? 1 : -1;
+    wheelAcc = 0;
     lastAbsDelta = absDelta;
-    lastWheelDir = dir;
-    const moved = stepToStop(dir);
-    if(moved){
-      e.preventDefault();
-    }
+    lastWheelDir = stepDir;
+    stepToStop(stepDir);
   }, { passive: false });
 
   // PageDown / PageUp / ArrowDown / ArrowUp keyboard section stepping
