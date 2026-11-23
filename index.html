@@ -20,13 +20,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-/* ── RESET & SECTION SCROLL SNAP ── */
+/* ── RESET & SECTION SCROLL ── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
 html {
-  scroll-behavior:smooth;
   overflow-x:hidden;
   overflow-x:clip;
-  scroll-snap-type:y proximity;
   scroll-padding-top:70px;
 }
 body {
@@ -40,20 +38,7 @@ body {
 a { text-decoration:none; color:inherit }
 img { max-width:100%; display:block }
 
-/* Section snap points */
-.hero,
-.stats-bar,
-#templates,
-.tpl-row,
-#du-an,
-#dich-vu,
-#quy-trinh,
-#faq,
-#testimonials,
-#lien-he,
-.ft {
-  scroll-snap-align:start;
-}
+.cards-wrap,
 .tpl-row {
   scroll-margin-top:90px;
 }
@@ -280,62 +265,68 @@ img { max-width:100%; display:block }
   box-shadow:0 18px 45px rgba(0,0,0,.13), 0 4px 12px rgba(0,0,0,.07);
   border:3px solid #fff;
   transform-origin:50% 92%;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
   transition:
-    transform .52s cubic-bezier(.22, 1, .36, 1),
-    box-shadow .45s ease,
-    opacity .4s ease,
-    filter .4s ease;
+    transform .46s cubic-bezier(.22, 1, .36, 1),
+    opacity .32s ease;
   cursor:pointer;
-  will-change:transform;
 }
 /* Active center card (Lá bài đang chọn ở chính giữa) */
 .sc-card[data-pos="0"] {
   transform:translate3d(0, -10px, 0) rotate(0deg) scale(1.03);
   z-index:30;
   opacity:1;
-  box-shadow:0 30px 70px rgba(0,0,0,.22), 0 8px 22px rgba(0,0,0,.1);
-  filter:brightness(1);
+  visibility:visible;
+  will-change:transform;
+  box-shadow:0 28px 64px rgba(0,0,0,.2), 0 8px 20px rgba(0,0,0,.09);
 }
 .sc-card[data-pos="0"]:hover {
   transform:translate3d(0, -16px, 0) rotate(0deg) scale(1.05);
-  box-shadow:0 36px 80px rgba(0,0,0,.26);
 }
 /* Immediate left & right cards */
 .sc-card[data-pos="-1"] {
   transform:translate3d(calc(var(--spread-1) * -1), 4px, 0) rotate(-6deg) scale(.94);
   z-index:20;
   opacity:1;
-  filter:brightness(.97);
+  visibility:visible;
+  will-change:transform;
 }
 .sc-card[data-pos="1"] {
   transform:translate3d(var(--spread-1), 4px, 0) rotate(6deg) scale(.94);
   z-index:20;
   opacity:1;
-  filter:brightness(.97);
+  visibility:visible;
+  will-change:transform;
 }
 /* Outer left & right cards */
 .sc-card[data-pos="-2"] {
   transform:translate3d(calc(var(--spread-2) * -1), 14px, 0) rotate(-12deg) scale(.86);
   z-index:12;
   opacity:1;
-  filter:brightness(.93);
+  visibility:visible;
+  will-change:transform;
 }
 .sc-card[data-pos="2"] {
   transform:translate3d(var(--spread-2), 14px, 0) rotate(12deg) scale(.86);
   z-index:12;
   opacity:1;
-  filter:brightness(.93);
+  visibility:visible;
+  will-change:transform;
 }
-/* 6th card tucked behind center deck so the 5 visible cards stay 100% symmetrical */
+/* Hidden deck cards tucked behind center deck — zero GPU overhead */
 .sc-card[data-pos="3"] {
   transform:translate3d(0, 10px, 0) rotate(0deg) scale(.78);
   z-index:2;
   opacity:0;
+  visibility:hidden;
   pointer-events:none;
+  will-change:auto;
+  box-shadow:none;
 }
 /* Subtle hover lift on side cards to hint they can be picked */
 .sc-card:not([data-pos="0"]):hover {
-  filter:brightness(1.02);
+  opacity:.96;
 }
 .sc-card img { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:top; display:block; pointer-events:none }
 .sc-label {
@@ -1182,7 +1173,7 @@ img { max-width:100%; display:block }
     <button type="button" class="card-nav-btn card-nav-prev" id="cardPrevBtn" aria-label="Mẫu trước">
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
     </button>
-    <div class="cards-stage rv" id="cardsStage">
+    <div class="cards-stage" id="cardsStage">
       <a href="templates/build-core/index.html" target="_blank" class="sc-card" id="card-buildcore" data-pos="-2">
         <img src="templates/build-core/img/thumbnail.png" alt="BuildCore Tổng Thầu Xây Dựng & Kiến Trúc">
         <div class="sc-label"><span>BuildCore. Xây Dựng</span><small>Xem demo →</small></div>
@@ -2827,6 +2818,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 
   // Automatically build the card deck from all .tpl-row items in #tplList
   const tplRows = Array.from(document.querySelectorAll('#tplList .tpl-row'));
+  const TRANSPARENT_PIXEL = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
   if(tplRows.length > 0){
     stage.innerHTML = tplRows.map((row, i) => {
       const viewLink = row.querySelector('.btn-view');
@@ -2840,9 +2832,10 @@ document.querySelectorAll('.faq-q').forEach(btn => {
         const firstLine = h3El.innerHTML.split(/<br\s*\/?>/i)[0];
         shortName = firstLine.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
       }
-      const loadingAttr = i <= 3 || i >= tplRows.length - 2 ? '' : ' loading="lazy"';
+      const isInitialVisible = (i <= 3 || i >= tplRows.length - 3);
+      const srcAttr = isInitialVisible ? imgSrc : TRANSPARENT_PIXEL;
       return `<a href="${href}" target="_blank" rel="noopener" class="sc-card" data-pos="3">
-        <img src="${imgSrc}" alt="${imgAlt.replace(/"/g, '&quot;')}"${loadingAttr}>
+        <img src="${srcAttr}" data-src="${imgSrc}" decoding="async" alt="${imgAlt.replace(/"/g, '&quot;')}">
         <div class="sc-label"><span>${shortName}</span><small>Xem demo →</small></div>
         <span class="sc-arrow">↗</span>
       </a>`;
@@ -2878,6 +2871,12 @@ document.querySelectorAll('.faq-q').forEach(btn => {
       let rel = (idx - activeIndex) % total;
       if(rel > half) rel -= total;
       if(rel < -half) rel += total;
+      if(rel >= -3 && rel <= 3){
+        const img = card.querySelector('img[data-src]');
+        if(img && img.getAttribute('src') !== img.dataset.src){
+          img.src = img.dataset.src;
+        }
+      }
       if(rel >= -2 && rel <= 2){
         card.setAttribute('data-pos', String(rel));
       } else {
@@ -2964,10 +2963,11 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   updateDeck();
 })();
 
-// ── SECTION-BY-SECTION SCROLL NAVIGATION (DOTS + WHEEL/KEYBOARD STEPPING) ──
+// ── SECTION-BY-SECTION SCROLL NAVIGATION (DOTS + SMOOTH RAF STEPPING) ──
 (function(){
   const sections = [
     { id: 'hero-sec',     label: 'Đầu trang' },
+    { id: 'cardsWrap',    label: 'Kệ bài Demo' },
     { id: 'templates',    label: 'Kho 35+ Mẫu Web' },
     { id: 'du-an',        label: 'Dự án Live' },
     { id: 'dich-vu',      label: 'Bảng giá Dịch vụ' },
@@ -2978,6 +2978,63 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   ].filter(s => document.getElementById(s.id));
 
   if(!sections.length) return;
+
+  function getTargetScrollY(el){
+    if(!el || el.id === 'hero-sec') return 0;
+    const rectTop = el.getBoundingClientRect().top + window.scrollY;
+    if(el.id === 'cardsWrap'){
+      // Frame the playing card fan + stats bar comfortably in the viewport
+      return Math.max(0, rectTop - 88);
+    }
+    return Math.max(0, rectTop - 68);
+  }
+
+  let isAutoStepping = false;
+  let rafId = null;
+  let wheelUnlockTimer = null;
+  let lastAbsDelta = 0;
+  let lastWheelDir = 0;
+
+  function scheduleUnlock(delay = 110){
+    clearTimeout(wheelUnlockTimer);
+    wheelUnlockTimer = setTimeout(() => {
+      if(!rafId){
+        isAutoStepping = false;
+        lastAbsDelta = 0;
+      }
+    }, delay);
+  }
+
+  function smoothScrollToY(destY, duration = 480){
+    if(rafId) cancelAnimationFrame(rafId);
+    const startY = window.scrollY;
+    const diff = destY - startY;
+    if(Math.abs(diff) < 4){
+      isAutoStepping = false;
+      return;
+    }
+    isAutoStepping = true;
+    const startTime = performance.now();
+
+    function easeOutCubic(t){
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function tick(now){
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / duration);
+      const eased = easeOutCubic(progress);
+      window.scrollTo(0, Math.round(startY + diff * eased));
+      if(progress < 1){
+        rafId = requestAnimationFrame(tick);
+      } else {
+        rafId = null;
+        scheduleUnlock(110);
+      }
+    }
+
+    rafId = requestAnimationFrame(tick);
+  }
 
   // Create right-side floating section dots bar
   const nav = document.createElement('nav');
@@ -2992,7 +3049,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     btn.setAttribute('aria-label', sec.label);
     btn.addEventListener('click', () => {
       const el = document.getElementById(sec.id);
-      if(el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if(el) smoothScrollToY(getTargetScrollY(el), 560);
     });
     nav.appendChild(btn);
     return btn;
@@ -3000,44 +3057,54 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 
   document.body.appendChild(nav);
 
-  let activeSecIdx = 0;
+  // Also make in-page anchor links (#templates) use smoothScrollToY
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href').slice(1);
+      const target = id ? document.getElementById(id) : null;
+      if(target){
+        e.preventDefault();
+        smoothScrollToY(getTargetScrollY(target), 560);
+      }
+    });
+  });
 
   // Highlight active dot on scroll
   function syncActiveSection(){
-    const probeY = window.scrollY + window.innerHeight * 0.34;
+    const probeY = window.scrollY + window.innerHeight * 0.32;
     let current = 0;
     sections.forEach((sec, idx) => {
       const el = document.getElementById(sec.id);
-      if(el && el.offsetTop <= probeY){
-        current = idx;
+      if(el){
+        const elTop = el.getBoundingClientRect().top + window.scrollY;
+        if(elTop <= probeY){
+          current = idx;
+        }
       }
     });
-    activeSecIdx = current;
     btns.forEach((btn, idx) => btn.classList.toggle('active', idx === current));
   }
 
   window.addEventListener('scroll', syncActiveSection, { passive: true });
   syncActiveSection();
 
-  // Compute all snap stops in document order (main sections + visible template rows)
+  // Compute all snap stops in document order (main sections + cardsWrap + visible template rows)
   function getSnapStops(){
-    const selector = '#hero-sec, #templates, #tplList .tpl-row:not(.hidden), #du-an, #dich-vu, #quy-trinh, #faq, #testimonials, #lien-he, footer.ft';
+    const selector = '#hero-sec, #cardsWrap, #templates, #tplList .tpl-row:not(.hidden), #du-an, #dich-vu, #quy-trinh, #faq, #testimonials, #lien-he, footer.ft';
     return Array.from(document.querySelectorAll(selector));
   }
 
-  let isAutoStepping = false;
   function stepToStop(dir){
     const stops = getSnapStops();
     const curY = window.scrollY;
-    const navOffset = 68;
     let targetEl = null;
 
     if(dir > 0){
-      targetEl = stops.find(el => (el.getBoundingClientRect().top + window.scrollY - navOffset) > curY + 36);
+      targetEl = stops.find(el => getTargetScrollY(el) > curY + 32);
     } else {
       for(let i = stops.length - 1; i >= 0; i--){
-        const top = stops[i].getBoundingClientRect().top + window.scrollY - navOffset;
-        if(top < curY - 36){
+        const top = getTargetScrollY(stops[i]);
+        if(top < curY - 32){
           targetEl = stops[i];
           break;
         }
@@ -3045,27 +3112,39 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     }
 
     if(targetEl){
-      isAutoStepping = true;
-      const destY = Math.max(0, targetEl.getBoundingClientRect().top + window.scrollY - (targetEl.id === 'hero-sec' ? 0 : navOffset));
-      window.scrollTo({ top: destY, behavior: 'smooth' });
-      setTimeout(() => { isAutoStepping = false; }, 620);
+      smoothScrollToY(getTargetScrollY(targetEl), 520);
       return true;
     }
     return false;
   }
 
-  // Smooth wheel section-by-section stepping on desktop
+  // Smooth wheel section-by-section stepping on desktop (absorbs trackpad momentum cleanly)
   window.addEventListener('wheel', (e) => {
     if(window.innerWidth <= 920) return;
     if(e.ctrlKey || e.metaKey) return;
-    if(Math.abs(e.deltaY) < 28) return;
 
+    const absDelta = Math.abs(e.deltaY);
+    const dir = e.deltaY > 0 ? 1 : -1;
+
+    // While animating or while leftover trackpad inertia is decaying, absorb wheel events
     if(isAutoStepping){
       e.preventDefault();
+      // If animation already finished AND user reverses direction or makes a fresh acceleration spike, allow next step
+      if(!rafId && (dir !== lastWheelDir || absDelta > lastAbsDelta + 22) && absDelta >= 22){
+        lastAbsDelta = absDelta;
+        lastWheelDir = dir;
+        stepToStop(dir);
+        return;
+      }
+      lastAbsDelta = absDelta;
+      scheduleUnlock(110);
       return;
     }
 
-    const dir = e.deltaY > 0 ? 1 : -1;
+    if(absDelta < 18) return;
+
+    lastAbsDelta = absDelta;
+    lastWheelDir = dir;
     const moved = stepToStop(dir);
     if(moved){
       e.preventDefault();
