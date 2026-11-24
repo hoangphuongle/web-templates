@@ -992,6 +992,13 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  .insta-head {
+    font-size: clamp(1.25rem, 5.2vw, 1.65rem);
+    line-height: 1.2;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

@@ -1091,8 +1091,17 @@ textarea,
   }
 
   .sd-hero-title {
-    font-size: clamp(2rem, 7.2vw, 2.8rem);
-    line-height: 1.12;
+    font-size: clamp(1.58rem, 6.2vw, 2.2rem);
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  .sd-sec-heading,
+  .sd-craving-copy h2,
+  .sd-journey-copy h2 {
+    font-size: clamp(1.4rem, 5.4vw, 1.85rem);
+    line-height: 1.24;
+    text-wrap: balance;
   }
 
   .sd-wave-bottom,

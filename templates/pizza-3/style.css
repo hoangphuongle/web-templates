@@ -6685,6 +6685,19 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  .card-main-title,
+  .section-title,
+  .offer-title,
+  .promo-section-title,
+  .about-main-title,
+  .combo-title-main,
+  .testimonials-title-main {
+    font-size: clamp(1.35rem, 5.5vw, 1.8rem) !important;
+    line-height: 1.26 !important;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

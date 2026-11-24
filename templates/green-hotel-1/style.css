@@ -2542,6 +2542,20 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  .hero-title {
+    font-size: clamp(23px, 6.2vw, 30px) !important;
+    line-height: 1.24 !important;
+  }
+  .section-header .title,
+  .why-content .title,
+  .main-title,
+  .info-title {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+    line-height: 1.26 !important;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

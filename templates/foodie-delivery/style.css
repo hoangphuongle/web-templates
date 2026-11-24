@@ -1303,6 +1303,17 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  .offer-title {
+    font-size: clamp(1.65rem, 6.2vw, 2.2rem);
+    line-height: 1.16;
+  }
+  .sec-title {
+    font-size: clamp(1.4rem, 5.4vw, 1.85rem);
+    line-height: 1.24;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

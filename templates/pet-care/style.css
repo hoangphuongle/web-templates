@@ -1084,13 +1084,31 @@ textarea,
   }
 
   .pc-hero-title {
-    font-size: clamp(2.1rem, 7.2vw, 2.75rem);
-    line-height: 1.16;
+    font-size: clamp(1.85rem, 6.8vw, 2.45rem);
+    line-height: 1.18;
+    text-wrap: balance;
   }
 
   .pc-sec-title {
-    font-size: clamp(1.7rem, 5.8vw, 2.25rem);
-    line-height: 1.2;
+    font-size: clamp(1.48rem, 5.5vw, 1.95rem);
+    line-height: 1.24;
+    text-wrap: balance;
+  }
+
+  .pc-title-line {
+    width: 32px;
+  }
+
+  .pc-help-center h2,
+  .pc-newsletter-box h2 {
+    font-size: clamp(1.22rem, 4.8vw, 1.55rem);
+    line-height: 1.32;
+    text-wrap: balance;
+  }
+
+  .pc-help-center h2 br,
+  .pc-newsletter-box h2 br {
+    display: none;
   }
 
   .pc-takecare-card,

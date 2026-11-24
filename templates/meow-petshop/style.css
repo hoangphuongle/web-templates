@@ -1623,8 +1623,17 @@ textarea,
   }
 
   .mm-hero-title {
-    font-size: clamp(2rem, 7.2vw, 2.7rem);
-    line-height: 1.15;
+    font-size: clamp(1.6rem, 6.2vw, 2.2rem);
+    line-height: 1.18;
+    text-wrap: balance;
+  }
+
+  .mm-bs-heading,
+  .mm-shop-title,
+  .mm-contact-heading {
+    font-size: clamp(1.45rem, 5.5vw, 1.95rem);
+    line-height: 1.22;
+    text-wrap: balance;
   }
 
   .mm-bs-top-row {

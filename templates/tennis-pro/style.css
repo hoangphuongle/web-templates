@@ -1518,14 +1518,23 @@ textarea,
     background-position: 68% top;
   }
 
+  .tp-hero-title,
   .tp-hero-display {
-    font-size: clamp(3.1rem, 12vw, 4.6rem);
-    line-height: 1.04;
+    font-size: clamp(1.72rem, 6.4vw, 2.3rem);
+    line-height: 1.2;
+    text-wrap: balance;
   }
 
-  .tp-sec-heading,
+  .tp-about-heading,
+  .tp-sec-title,
+  .tp-sec-heading {
+    font-size: clamp(1.42rem, 5.4vw, 1.9rem);
+    line-height: 1.24;
+    text-wrap: balance;
+  }
+
   .tp-sunset-float-card h3 {
-    line-height: 1.08;
+    line-height: 1.16;
   }
 
   .tp-dev-visual-card {

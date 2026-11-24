@@ -1104,6 +1104,20 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  .mt-hero-title {
+    font-size: clamp(1.85rem, 6.8vw, 2.5rem);
+    line-height: 1.15;
+  }
+  .mt-sec-title,
+  .mt-exp-title,
+  .mt-art-title,
+  .mt-reserve-left .mt-sec-title {
+    font-size: clamp(1.5rem, 5.6vw, 2.05rem);
+    line-height: 1.2;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

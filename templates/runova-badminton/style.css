@@ -1661,13 +1661,19 @@ select {
   }
 
   .rn-hero-title {
-    font-size: clamp(46px, 12vw, 72px);
-    line-height: 1.04;
+    font-size: clamp(38px, 10.5vw, 58px);
+    line-height: 1.06;
   }
 
   .rn-dual-heading {
-    font-size: clamp(28px, 7.2vw, 40px);
-    line-height: 1.12;
+    font-size: clamp(24px, 6.4vw, 34px);
+    line-height: 1.16;
+    text-wrap: balance;
+  }
+
+  .rn-statement-text {
+    font-size: clamp(17px, 4.6vw, 22px);
+    line-height: 1.38;
   }
 
   .rn-statement-row,

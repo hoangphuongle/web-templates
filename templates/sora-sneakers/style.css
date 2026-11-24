@@ -1412,15 +1412,18 @@ textarea,
   }
 
   .sr-hero-title {
-    font-size: clamp(2.35rem, 8.2vw, 3.4rem);
-    line-height: 1.06;
+    font-size: clamp(2rem, 7.6vw, 2.75rem);
+    line-height: 1.08;
+    text-wrap: balance;
   }
 
   .sr-sec-title,
   .sr-urban-title,
   .sr-pdp-title,
   .sr-so-copy h2 {
-    line-height: 1.08;
+    font-size: clamp(1.65rem, 6.4vw, 2.25rem);
+    line-height: 1.12;
+    text-wrap: balance;
   }
 
   .sr-pdp-gallery {

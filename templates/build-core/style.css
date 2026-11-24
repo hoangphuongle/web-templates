@@ -1789,15 +1789,23 @@ textarea,
   }
 
   .bc-hero-title {
-    font-size: clamp(2rem, 7.2vw, 2.75rem);
-    line-height: 1.14;
+    font-size: clamp(1.85rem, 6.8vw, 2.5rem);
+    line-height: 1.18;
+    text-wrap: balance;
   }
 
+  .bc-sec-title,
+  .bc-nextstep-left h2,
   .bc-sec-heading,
   .bc-vision-title,
   .bc-nextstep-title {
-    font-size: clamp(1.7rem, 5.8vw, 2.35rem);
-    line-height: 1.18;
+    font-size: clamp(1.5rem, 5.6vw, 2rem);
+    line-height: 1.22;
+    text-wrap: balance;
+  }
+
+  .bc-br-desk {
+    display: none;
   }
 
   .bc-hero-hud {

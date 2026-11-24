@@ -2569,6 +2569,24 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  .hero-title {
+    font-size: clamp(24px, 6.4vw, 31px) !important;
+    line-height: 1.24 !important;
+  }
+  .booking-title,
+  .promo-title,
+  .neon-title,
+  .why-title,
+  .main-title-serif,
+  .title-white,
+  .faq-title,
+  .form-title {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+    line-height: 1.26 !important;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

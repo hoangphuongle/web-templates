@@ -2168,6 +2168,19 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  .deal-title,
+  .section-title,
+  .menu-title,
+  .menu-today-title,
+  .bs-title,
+  .reviews-title,
+  .booking-title {
+    font-size: clamp(20px, 5.5vw, 26px) !important;
+    line-height: 1.28 !important;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

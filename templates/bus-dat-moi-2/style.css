@@ -1809,6 +1809,21 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  .hero-content h1 {
+    font-size: clamp(23px, 6.2vw, 31px) !important;
+    line-height: 1.24 !important;
+  }
+  .section-title,
+  .why-us-title,
+  .faq-title,
+  .blog-section-title,
+  .reviews-heading {
+    font-size: clamp(20px, 5.5vw, 27px) !important;
+    line-height: 1.28 !important;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

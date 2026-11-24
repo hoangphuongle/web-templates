@@ -1383,15 +1383,30 @@ textarea,
   }
 
   .lm-hero-title {
-    font-size: clamp(2rem, 7.2vw, 2.7rem);
-    line-height: 1.14;
+    font-size: clamp(1.85rem, 6.8vw, 2.5rem);
+    line-height: 1.18;
+    text-wrap: balance;
+  }
+
+  .lm-sun-3d {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .lm-editorial-quote {
+    font-size: clamp(1.2rem, 4.6vw, 1.55rem);
+    line-height: 1.38;
   }
 
   .lm-sec-title,
+  .lm-paperwork-title,
   .lm-calc-title,
   .lm-join-title {
-    font-size: clamp(1.75rem, 6vw, 2.35rem);
-    line-height: 1.15;
+    font-size: clamp(1.48rem, 5.6vw, 2rem);
+    line-height: 1.22;
+    text-wrap: balance;
   }
 
   .lm-about-sec {

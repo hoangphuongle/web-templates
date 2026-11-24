@@ -1133,6 +1133,16 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  .services-header h2,
+  .how-left h2,
+  .collection-header h2,
+  .app-left h2 {
+    font-size: clamp(1.4rem, 5.4vw, 1.85rem);
+    line-height: 1.25;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

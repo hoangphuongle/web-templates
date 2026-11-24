@@ -1354,6 +1354,19 @@ textarea,
     display: inline-flex;
   }
 
+  .jg-hero-title {
+    font-size: clamp(2.35rem, 9vw, 3.2rem);
+    line-height: 1.06;
+  }
+
+  .jg-sec-title,
+  .jg-app-heading,
+  .jg-dl-center h2 {
+    font-size: clamp(1.48rem, 5.6vw, 2rem);
+    line-height: 1.22;
+    text-wrap: balance;
+  }
+
   .jg-why-grid,
   .jg-cards-track,
   .jg-modal-row-2,

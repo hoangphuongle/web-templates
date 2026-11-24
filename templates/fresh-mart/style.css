@@ -1141,13 +1141,16 @@ textarea,
   }
 
   .fm-hero-title {
-    font-size: clamp(2rem, 7.2vw, 2.7rem);
-    line-height: 1.15;
+    font-size: clamp(1.85rem, 6.8vw, 2.45rem);
+    line-height: 1.18;
+    text-wrap: balance;
   }
 
-  .fm-sec-title {
-    font-size: clamp(1.7rem, 5.8vw, 2.3rem);
-    line-height: 1.18;
+  .fm-sec-title,
+  .fm-impact-left h2 {
+    font-size: clamp(1.36rem, 5.1vw, 1.85rem);
+    line-height: 1.25;
+    text-wrap: balance;
   }
 
   .fm-pocket-caption-row,

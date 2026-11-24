@@ -172,6 +172,17 @@ a, button, input, select, textarea, [role="button"] {
   }
 }
 @media (max-width: 768px) {
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
+  h1 {
+    font-size: clamp(1.85rem, 6.8vw, 2.45rem);
+    line-height: 1.18;
+  }
+  .section-head h2, h2 {
+    font-size: clamp(1.5rem, 5.6vw, 2.05rem);
+    line-height: 1.22;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
   select,
   textarea {

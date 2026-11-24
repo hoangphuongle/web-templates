@@ -587,6 +587,10 @@
         max-width: 100%;
         overflow-x: hidden !important;
       }
+      h1, h2, h3, h4 {
+        text-wrap: balance;
+        overflow-wrap: break-word;
+      }
       html body #hp-bar .hp-vp-switcher {
         display: none !important;
       }
